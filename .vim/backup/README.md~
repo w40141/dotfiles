@@ -1,5 +1,6 @@
-# Ruby on Rails チュートリアル：サンプルアプリケーション
+dotfiles
+=====================================
 
-This is the first application for the
-[*Ruby on Rails Tutorial*](http://railstutorial.jp/)
-by [Michael Hartl](http://michaelhartl.com/).
+$ cd ~/ # if windows use this > cd %HOMEPATH%
+$ git clone add https://github.com/your_name/dotfiles.git
+$ sh dotfilesLink.sh # if windows use this > mklink.bat
