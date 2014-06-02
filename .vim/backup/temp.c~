@@ -1,0 +1,21 @@
+#include<stdio.h>
+#include<math.h>
+
+int main(){
+    double a, c;
+    a=89.19528486862891070921;
+    long b=545783030020000000000000000000000000000;
+    c=log(b);
+
+    while(a!=c){
+        if(a>c){
+            b=b*2;
+            c=log(b);
+        }else{
+            b=b/2+1;
+            c=log(b);
+        }
+        printf("%lf", b);
+    }
+    return 0;
+}

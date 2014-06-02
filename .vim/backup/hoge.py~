@@ -1,0 +1,3 @@
+#!/usr/bin/env python
+m = 123445
+print ("%0512x"%m).decode("hex")

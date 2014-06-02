@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/w40141/first_app.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = heroku
+	merge = refs/heads/master
+[remote "heroku"]
+	url = git@heroku.com:thawing-reef-3269.git
+	fetch = +refs/heads/*:refs/remotes/heroku/*
