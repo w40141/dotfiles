@@ -120,124 +120,124 @@ $\2
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	d
-"1	LINE	0
-	
-"2	BLOCK	4
-	     
-	"----
-	" Neo
-	"----
-	     
-	"{{{ 
-	"{{{ 
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-"3	BLOCK	4
-	     
-	"----
-	" Neo
-	"----
-	     
-	"{{{ 
-	"{{{ 
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
+"0	LINE	0
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc
+""1	LINE	0
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc
+"2	LINE	0
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc
+"3	LINE	0
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc
 "4	LINE	0
-	  ooooo
-"5	LINE	0
-	  onn
-"6	LINE	0
 	
-"7	LINE	0
-	# fi
+"5	LINE	0
+	
+"6	BLOCK	4
+	     
+	"----
+	" Neo
+	"----
+	     
+	"{{{ 
+	"{{{ 
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+"7	BLOCK	4
+	     
+	"----
+	" Neo
+	"----
+	     
+	"{{{ 
+	"{{{ 
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
 "8	LINE	0
-	#   . `brew --prefix`/etc/autojump             
+	  ooooo
 "9	LINE	0
-	# if [ -f `brew --prefix`/etc/autojump ]; then 
+	  onn
 "z	CHAR	0
 	 if(a==b){
 	        return (y)
@@ -246,21 +246,23 @@ $\2
 	    }
 	
 "-	CHAR	0
-	d
+	c
 
 # File marks:
-'0  5  58  ~/dotfiles/README.md
-'1  4  44  ~/dotfiles/README.md
-'2  35  0  ~/.viminfo
-'3  1  0  ~/README.md
-'4  2  0  ~/dot_file
-'5  1  0  ~/.zshenv
-'6  5  11  ~/programming/net/readNet.py
-'7  4  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
-'8  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/net_1.csv
-'9  5  61  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test3.csv
+'0  8  48  ~/dotfiles/dotfilesLink.sh
+'1  5  58  ~/dotfiles/README.md
+'2  4  44  ~/dotfiles/README.md
+'3  35  0  ~/.viminfo
+'4  1  0  ~/README.md
+'5  2  0  ~/dot_file
+'6  1  0  ~/.zshenv
+'7  5  11  ~/programming/net/readNet.py
+'8  4  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
+'9  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/net_1.csv
 
 # Jumplist (newest first):
+-'  8  48  ~/dotfiles/dotfilesLink.sh
+-'  1  0  ~/dotfiles/dotfilesLink.sh
 -'  5  58  ~/dotfiles/README.md
 -'  1  0  ~/dotfiles/README.md
 -'  4  44  ~/dotfiles/README.md
@@ -358,9 +360,28 @@ $\2
 -'  6  14  ~/programming/python/tmp.py
 -'  5  10  ~/programming/python/tmp.py
 -'  8  3  ~/programming/python/tmp.py
--'  9  9  ~/programming/python/tmp.py
 
 # History of marks within files (newest to oldest):
+
+> ~/dotfiles/dotfilesLink.sh
+	"	8	48
+	^	8	49
+	.	8	48
+	+	3	33
+	+	4	0
+	+	5	0
+	+	6	0
+	+	7	0
+	+	8	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	4	28
+	+	5	28
+	+	6	34
+	+	7	32
+	+	9	0
+	+	8	48
 
 > ~/dotfiles/README.md
 	"	5	58
@@ -1710,8 +1731,3 @@ $\2
 
 > ~/ralis_projects/first_app/F
 	"	1	0
-
-> ~/__Tagbar__
-	"	23	0
-	.	35	0
-	+	35	0
