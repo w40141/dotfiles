@@ -2,9 +2,10 @@
 
 import csv
 
-f=open('net_2.csv', 'rb')
+f=open('test.csv', 'rb')
 
 dataReader=csv.reader(f)
 
 for row in dataReader:
-    print row
+    if row[1]!=6:
+        print row

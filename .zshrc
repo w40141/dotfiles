@@ -407,8 +407,8 @@ bindkey "^R" history-incremental-search-backward
 # -------------------------------------
 
 # {{{
-# cdしたあとで、自動的に ls する
-# function chpwd() { ls -1 }
+cdしたあとで、自動的に ls する
+function chpwd() { ls -1 }
 
 # ターミナルのタイトルをカレントディレクトリにする
 case "${TERM}" in

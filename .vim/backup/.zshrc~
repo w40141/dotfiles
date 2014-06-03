@@ -407,8 +407,8 @@ bindkey "^R" history-incremental-search-backward
 # -------------------------------------
 
 # {{{
-# cdしたあとで、自動的に ls する
-# function chpwd() { ls -1 }
+cdしたあとで、自動的に ls する
+function chpwd() { ls -1 }
 
 # ターミナルのタイトルをカレントディレクトリにする
 case "${TERM}" in
@@ -440,10 +440,6 @@ if which rbenv > /dev/null; then
     export PATH=${RBENV_ROOT}/shims:${PATH}
     eval "$(rbenv init -)";
 fi
-
-# if [ -f `brew --prefix`/etc/autojump ]; then 
-#   . `brew --prefix`/etc/autojump             
-# fi                                           
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 
