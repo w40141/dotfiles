@@ -417,7 +417,7 @@ function cdup(){
     zle rest-prompt
 }
 zle -N cdup
-bindkey "\^"cdup
+bindkey "\^" cdup
 
 # ターミナルのタイトルをカレントディレクトリにする
 case "${TERM}" in

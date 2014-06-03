@@ -251,20 +251,21 @@ $\2
 	 
 
 # File marks:
-'0  420  12  ~/.zshrc
-'1  413  13  ~/.zshrc
-'2  411  23  ~/.zshrc
-'3  411  23  ~/dotfiles/.zshrc
-'4  410  1  ~/dotfiles/.zshrc
-'5  410  0  ~/.zshrc
-'6  11  15  ~/programming/net/readNet.py
-'7  9  4  ~/programming/net/readNet.py
-'8  1  0  ~/_brew
-'9  1  0  ~/dotfiles/.zsh/functions/_brew
+'0  421  0  ~/.zshrc
+'1  420  12  ~/.zshrc
+'2  413  13  ~/.zshrc
+'3  411  23  ~/.zshrc
+'4  411  23  ~/dotfiles/.zshrc
+'5  410  1  ~/dotfiles/.zshrc
+'6  410  0  ~/.zshrc
+'7  11  15  ~/programming/net/readNet.py
+'8  9  4  ~/programming/net/readNet.py
+'9  1  0  ~/_brew
 
 # Jumplist (newest first):
--'  420  12  ~/.zshrc
+-'  421  0  ~/.zshrc
 -'  1  0  ~/.zshrc
+-'  420  12  ~/.zshrc
 -'  82  0  ~/.zshrc
 -'  392  0  ~/.zshrc
 -'  120  0  ~/.zshrc
@@ -272,7 +273,6 @@ $\2
 -'  96  0  ~/.zshrc
 -'  419  0  ~/.zshrc
 -'  413  13  ~/.zshrc
--'  421  0  ~/.zshrc
 -'  411  23  ~/.zshrc
 -'  411  23  ~/dotfiles/.zshrc
 -'  1  0  ~/dotfiles/.zshrc
@@ -353,9 +353,9 @@ $\2
 # History of marks within files (newest to oldest):
 
 > ~/.zshrc
-	"	420	12
-	^	420	13
-	.	420	12
+	"	421	0
+	^	417	12
+	.	417	11
 	+	5	0
 	+	4	0
 	+	17	0
@@ -403,6 +403,7 @@ $\2
 	+	420	8
 	+	421	8
 	+	420	12
+	+	417	11
 
 > ~/dotfiles/.zshrc
 	"	411	23

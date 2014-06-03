@@ -414,7 +414,7 @@ function chpwd() { ls -a }
 function cdup(){
     echo
     cd ..
-    zle rest-prompt
+    zle reset-prompt
 }
 zle -N cdup
 bindkey "\^" cdup
