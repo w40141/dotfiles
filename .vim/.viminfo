@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/vimproc
+~MSle0~/bindk
 
 # Last Substitute Search Pattern:
 ~MSle0&@
@@ -72,6 +72,8 @@ $\2
 :wq1
 
 # Search String History (newest to oldest):
+?/bindk
+?/bindley
 ?/ani
 ?/vimproc
 ?/fugitive
@@ -120,71 +122,22 @@ $\2
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-	    if row[1]!=6:
+"0	CHAR	0
+	 
 "1	LINE	0
-	    if row[1]!=6:
+	
 "2	LINE	0
-	ln -sf ~/dotfiles/.vimrc ~/.vimrc
+	    if row[1]!=6:
 "3	LINE	0
 	ln -sf ~/dotfiles/.vimrc ~/.vimrc
 "4	LINE	0
 	ln -sf ~/dotfiles/.vimrc ~/.vimrc
 "5	LINE	0
-	
+	ln -sf ~/dotfiles/.vimrc ~/.vimrc
 "6	LINE	0
 	
-"7	BLOCK	4
-	     
-	"----
-	" Neo
-	"----
-	     
-	"{{{ 
-	"{{{ 
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
-	"    
+"7	LINE	0
+	
 "8	BLOCK	4
 	     
 	"----
@@ -236,8 +189,57 @@ $\2
 	"    
 	"    
 	"    
-"9	LINE	0
-	  ooooo
+"9	BLOCK	4
+	     
+	"----
+	" Neo
+	"----
+	     
+	"{{{ 
+	"{{{ 
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
+	"    
 "z	CHAR	0
 	 if(a==b){
 	        return (y)
@@ -245,26 +247,37 @@ $\2
 	        yy(y+1)
 	    }
 	
-"-	CHAR	0
-	6
+""-	CHAR	0
+	 
 
 # File marks:
-'0  410  1  ~/dotfiles/.zshrc
-'1  410  0  ~/.zshrc
-'2  11  15  ~/programming/net/readNet.py
-'3  9  4  ~/programming/net/readNet.py
-'4  1  0  ~/_brew
-'5  1  0  ~/dotfiles/.zsh/functions/_brew
-'6  131  0  ~/dotfiles/.zsh/functions/_brew
-'7  8  48  ~/dotfiles/dotfilesLink.sh
-'8  5  58  ~/dotfiles/README.md
-'9  4  44  ~/dotfiles/README.md
+'0  420  12  ~/.zshrc
+'1  413  13  ~/.zshrc
+'2  411  23  ~/.zshrc
+'3  411  23  ~/dotfiles/.zshrc
+'4  410  1  ~/dotfiles/.zshrc
+'5  410  0  ~/.zshrc
+'6  11  15  ~/programming/net/readNet.py
+'7  9  4  ~/programming/net/readNet.py
+'8  1  0  ~/_brew
+'9  1  0  ~/dotfiles/.zsh/functions/_brew
 
 # Jumplist (newest first):
--'  410  1  ~/dotfiles/.zshrc
--'  1  0  ~/dotfiles/.zshrc
--'  410  0  ~/.zshrc
+-'  420  12  ~/.zshrc
 -'  1  0  ~/.zshrc
+-'  82  0  ~/.zshrc
+-'  392  0  ~/.zshrc
+-'  120  0  ~/.zshrc
+-'  97  0  ~/.zshrc
+-'  96  0  ~/.zshrc
+-'  419  0  ~/.zshrc
+-'  413  13  ~/.zshrc
+-'  421  0  ~/.zshrc
+-'  411  23  ~/.zshrc
+-'  411  23  ~/dotfiles/.zshrc
+-'  1  0  ~/dotfiles/.zshrc
+-'  410  1  ~/dotfiles/.zshrc
+-'  410  0  ~/.zshrc
 -'  11  15  ~/programming/net/readNet.py
 -'  10  17  ~/programming/net/readNet.py
 -'  1  0  ~/programming/net/readNet.py
@@ -322,54 +335,27 @@ $\2
 -'  568  4  ~/default/.vimrc
 -'  751  18  ~/default/.vimrc
 -'  1  0  ~/default/.vimrc
--'  446  4  ~/.zshrc
+-'  455  4  ~/.zshrc
 -'  158  0  ~/.zshrc
 -'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/tcp_out.csv
 -'  1  2  ~/Google ドライブ/4年/前期/ネットワーク解析/test3.csv
 -'  12  2  ~/Google ドライブ/4年/前期/ネットワーク解析/test3.csv
 -'  16  2  ~/Google ドライブ/4年/前期/ネットワーク解析/test3.csv
 -'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/test1.csv
--'  20  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_1.csv
--'  16  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_1.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_1.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/NetWork.csv
--'  1  0  ~/programming/ctf/math1.py
--'  2  1236  ~/programming/ctf/hoge.py
--'  1  0  ~/programming/ctf/hoge.py
--'  12  0  ~/programming/ctf/math1.py
--'  808  14  ~/.vimrc
--'  10  0  ~/programming/ctf/math1.py
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/test2.pcap
--'  6175  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
--'  2  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
--'  238  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
--'  28  0  ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/time3.csv
--'  2100  0  ~/Google ドライブ/4年/前期/ネットワーク解析/time3.csv
--'  2125  6  ~/Google ドライブ/4年/前期/ネットワーク解析/time3.csv
--'  1  0  ~/Downloads/Book1.csv
--'  1  0  ~/programming/test1.csv
--'  3  0  ~/programming/test1.csv
--'  11  200  ~/Downloads/Book1.csv
--'  1  0  /usr/local/lib/pkgconfig/tcl.pc
--'  1  0  ~/programming/python/tmp.py
--'  981  4  ~/.vimrc
--'  979  4  ~/.vimrc
--'  1  0  ~/programming/ctf/tes.c
--'  679  0  ~/Google ドライブ/4年/前期/ネットワーク解析/test1.csv
--'  1  0  ~/Downloads/index.pl
--'  6  1234  ~/programming/ctf/math1.py
+-'  411  23  ~/dotfiles/.zshrc
+-'  1  0  ~/dotfiles/.zshrc
+-'  410  1  ~/dotfiles/.zshrc
+-'  11  15  ~/programming/net/readNet.py
+-'  10  17  ~/programming/net/readNet.py
+-'  1  0  ~/programming/net/readNet.py
+-'  411  23  ~/dotfiles/.zshrc
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/.zshrc
-	"	410	1
-
 > ~/.zshrc
-	"	410	0
-	^	351	115
-	.	411	0
+	"	420	12
+	^	420	13
+	.	420	12
 	+	5	0
 	+	4	0
 	+	17	0
@@ -386,13 +372,44 @@ $\2
 	+	404	0
 	+	409	0
 	+	408	0
-	+	446	18
+	+	455	18
 	+	156	4
 	+	162	4
 	+	351	114
-	+	443	3
-	+	443	0
-	+	411	0
+	+	452	3
+	+	452	0
+	+	411	23
+	+	414	16
+	+	415	3
+	+	425	3
+	+	426	7
+	+	427	3
+	+	428	3
+	+	63	0
+	+	442	3
+	+	415	8
+	+	416	0
+	+	418	0
+	+	417	18
+	+	418	0
+	+	420	15
+	+	413	6
+	+	414	6
+	+	413	13
+	+	420	12
+	+	82	0
+	+	420	0
+	+	82	0
+	+	420	8
+	+	421	8
+	+	420	12
+
+> ~/dotfiles/.zshrc
+	"	411	23
+	^	411	24
+	.	411	23
+	+	410	1
+	+	411	23
 
 > ~/programming/net/readNet.py
 	"	11	15
