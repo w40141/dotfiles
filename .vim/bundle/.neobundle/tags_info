@@ -36,13 +36,13 @@ unite-colorscheme
 unite-outline
 unite.vim
 vim-anzu
-vim-browsereload-mac
 vim-colors-solarized
 vim-colors-wombat
 vim-css3-syntax
 vim-fugitive
 vim-gitgutter
 vim-hybrid
+vim-indent-guides
 vim-lucius
 vim-pyte
 vim-quickhl

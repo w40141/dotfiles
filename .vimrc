@@ -516,7 +516,6 @@ autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 "      NeoBundle 'plugin-name', {'type' : 'nosync'}
 "      NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/bundle/manual'}
 "
-"
 "    使用方法
 "     インストール済みプラグイン一覧
 "      :NeoBundleList
@@ -722,6 +721,15 @@ else
   " gco カーソル行の下にコメントアウト
   " gcO カーソル行の上にコメントアウト
   NeoBundle 'tyru/caw.vim.git'
+"      NeoBundleLazy , {repository}{
+"        \ 'autoload' : {
+"        \   'insert' : 1,
+"        \   'filetypes' : [{filetype}],
+"        \   'commands' : [{command}],
+"        \   'mappings' : [
+"        \     [<mode>, <mapping>]
+"        \   ]
+"        \ }}
   "}}}
 
   " テキスト整形
@@ -795,7 +803,7 @@ else
         \ }}
 
   NeoBundle "tpope/vim-fugitive"
-  
+
   NeoBundleLazy "gregsexton/gitv", {
         \ "depends": ["tpope/vim-fugitive"],
         \ "autoload": {
@@ -804,13 +812,13 @@ else
   " "}}}
 
   " インデントの可視化"{{{
-  " NeoBundle "nathanaelkane/vim-indent-guides"
-  " let s:hooks = neobundle#get_hooks("vim-indent-guides")
-  " function! s:hooks.on_source(bundle)
-  "   let g:indent_guides_guide_size = 1
-  "   IndentGuidesEnable
-  " endfunction
-  "}}}
+  NeoBundle "nathanaelkane/vim-indent-guides"
+  let s:hooks = neobundle#get_hooks("vim-indent-guides")
+  function! s:hooks.on_source(bundle)
+    let g:indent_guides_guide_size = 1
+    IndentGuidesEnable
+  endfunction
+  " }}}
 
   " quickhl : 任意の単語をハイライトにする"{{{
   " <Space>m でカーソル下の単語、もしくは選択した範囲のハイライトを行う
@@ -888,23 +896,23 @@ else
   nmap <Leader>o <Plug>(openbrowser-open)
   vmap <Leader>o <Plug>(openbrowser-open)
   " ググる
-  nnoremap <Leader>g :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+  nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
   "}}}
 
   " ブラウザを自動更新するプラグイン"{{{
-  NeoBundle 'tell-k/vim-browsereload-mac'
-  " リロード後に戻ってくるアプリ 変更してください
-  let g:returnApp = "iTerm"
-  nmap <Space>bc :ChromeReloadStart<CR>
-  nmap <Space>bC :ChromeReloadStop<CR>
-  nmap <Space>bf :FirefoxReloadStart<CR>
-  nmap <Space>bF :FirefoxReloadStop<CR>
-  nmap <Space>bs :SafariReloadStart<CR>
-  nmap <Space>bS :SafariReloadStop<CR>
-  nmap <Space>bo :OperaReloadStart<CR>
-  nmap <Space>bO :OperaReloadStop<CR>
-  nmap <Space>ba :AllBrowserReloadStart<CR>
-  nmap <Space>bA :AllBrowserReloadStop<CR>
+  " NeoBundle 'tell-k/vim-browsereload-mac'
+  " " リロード後に戻ってくるアプリ 変更してください
+  " let g:returnApp = "iTerm"
+  " nmap <Space>bc :ChromeReloadStart<CR>
+  " nmap <Space>bC :ChromeReloadStop<CR>
+  " nmap <Space>bf :FirefoxReloadStart<CR>
+  " nmap <Space>bF :FirefoxReloadStop<CR>
+  " nmap <Space>bs :SafariReloadStart<CR>
+  " nmap <Space>bS :SafariReloadStop<CR>
+  " nmap <Space>bo :OperaReloadStart<CR>
+  " nmap <Space>bO :OperaReloadStop<CR>
+  " nmap <Space>ba :AllBrowserReloadStart<CR>
+  " nmap <Space>bA :AllBrowserReloadStop<CR>
   "}}}
 
   " HTML関係{{{
