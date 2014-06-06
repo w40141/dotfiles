@@ -825,10 +825,7 @@ else
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
   " <Space>M で全てのハイライトを解除する
-  NeoBundleLazy 't9md/vim-quickhl', {
-        \ "autload": {
-        \ "mappings": [<Plug>(quickhl-manual-this), <Plug>(quickhl-manual-reset)]
-        \ }}
+  NeoBundle 't9md/vim-quickhl'
   nmap <Space>m <Plug>(quickhl-manual-this)
   xmap <Space>m <Plug>(quickhl-manual-this)
   nmap <Space>M <Plug>(quickhl-manual-reset)
@@ -964,10 +961,7 @@ else
   "}}}
 
   " HTMLが開かれるまでロードしない"{{{
-  NeoBundleLazy 'mattn/zencoding-vim', {
-        \ "autoload": {
-        \ "filetypes": ['html']
-        \ }}
+  " NeoBundle 'mattn/zencoding-vim'
   "}}}
   "}}}
 

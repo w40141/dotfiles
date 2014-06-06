@@ -939,7 +939,7 @@ else
   " html/CSS入力補助プラグイン"{{{
   NeoBundle 'mattn/emmet-vim'
   let g:user_emmet_mode = 'iv'
-  let g:user_emmet_leader_key = '<C-Y>'
+  let g:user_emmet_leader_key = '<C-e>'
   let g:use_emmet_complete_tag = 1
   let g:user_emmet_settings = {
         \ 'lang' : 'ja',
@@ -961,10 +961,7 @@ else
   "}}}
 
   " HTMLが開かれるまでロードしない"{{{
-  NeoBundleLazy 'mattn/zencoding-vim', {
-        \ "autoload": {
-        \ "filetypes": ['html']
-        \ }}
+  " NeoBundle 'mattn/zencoding-vim'
   "}}}
   "}}}
 
