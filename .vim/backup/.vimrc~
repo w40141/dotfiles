@@ -50,9 +50,6 @@ set autoread
 " クリップボードをWindowsと連携する
 set clipboard=unnamed
 
-" 履歴保存
-set history=1000
-
 " ビープ音すべてを無効にする
 set visualbell t_vb=
 
@@ -174,8 +171,14 @@ set showmatch
 " 閉括弧が入力された時対応する括弧に一時的に移動
 set nostartofline
 
+" コマンドライン履歴保存
+set history=10000
+
 " vimのコマンドライン補完
-set wildmode=full
+set wildmenu
+
+" vimのコマンドライン
+set wildmode=longest:full,full
 
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap+=b,s,h,l,<,>,[,]
@@ -411,8 +414,9 @@ inoremap (( ()<LEFT>
 inoremap "" ""<LEFT>
 inoremap '' ''<LEFT>
 inoremap << <><LEFT>
-inoremap []5 [%  %]<LEFT><LEFT><LEFT>
-inoremap {}5 {%  %}<LEFT><LEFT><LEFT>
+inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
+inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
+inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
 
 vnoremap { "zdi^V{<C-R>z}<ESC>
 vnoremap [ "zdi^V[<C-R>z]<ESC>
@@ -591,7 +595,7 @@ else
   nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
   nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
   nnoremap <silent> [unite]r :<C-u>Unite register<CR>
-  nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+  nnoremap <silent> [unite]m :<C-u>Unite file<CR>
   nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
   nnoremap <silent> [unite]o :<C-u>Unite outline<CR>
   nnoremap <silent> [unite]t :<C-u>Unite tab<CR>
@@ -939,7 +943,7 @@ else
   " html/CSS入力補助プラグイン"{{{
   NeoBundle 'mattn/emmet-vim'
   let g:user_emmet_mode = 'iv'
-  let g:user_emmet_leader_key = '<C-Y>'
+  let g:user_emmet_leader_key = '<C-e>'
   let g:use_emmet_complete_tag = 1
   let g:user_emmet_settings = {
         \ 'lang' : 'ja',

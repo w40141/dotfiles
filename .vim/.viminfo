@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/\<anav\>
+~MSle0~/history
 
 # Last Substitute Search Pattern:
 ~MSle0&@
@@ -17,15 +17,21 @@
 $@
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:e programming/hogehoge/
+:NeoBundleInstall
+:NeoBu
+:NeoBundleClean
+:NeoBundleCheck
+:neobundlppn
+:q
+:help cmdwin
 :w
+:Unite file
 :s
 :TweetVimSay zencodingらく
 :q!
 :NeoBundleClean
-:NeoBundleInstall
-:NeoBundleCheck
 :;q
 :'<,'>;jj
 :w te.py
@@ -61,7 +67,6 @@ $@
 :e
 :Unite outline
 :Unite buffer file file_mru
-:Unite file
 :Unite colorscheme -auto-priview
 :NeoCompleteEnable
 :NeoCompleteEnableｊ
@@ -74,6 +79,11 @@ $@
 :wq1
 
 # Search String History (newest to oldest):
+?/history
+?/wildme
+?/wildm
+?/wild
+?/wildmenu
 ? 
 ? \$cursor\$
 ? \<anav\>
@@ -130,25 +140,27 @@ $@
 
 # Registers:
 "0	LINE	0
-	
-""1	LINE	0
-	    it { should_not have_title('| Home')}
+	inoremap {{5 {%  %}<LEFT><LEFT><LEFT>
+"1	LINE	0
+	set wildmode=list:full
 "2	LINE	0
-	    it { should have_title(full_title(''))}
+	" 履歴保存
+	set history=10000
+	
 "3	LINE	0
-	    it { should have_content('Sample App')}
+	++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 "4	LINE	0
-	
+	inoremap {{5 {%  %}<LEFT><LEFT><LEFT>
 "5	LINE	0
-	
+	[%  %]
 "6	LINE	0
-	  # match '/help', to: 'static_pages#help', via: 'get'
+	    it { should_not have_title('| Home')}
 "7	LINE	0
-	  match '/contact', to: 'static_pages#contact', via: 'get'
+	    it { should have_title(full_title(''))}
 "8	LINE	0
-	  match '/about', to: 'static_pages#about', via: 'get'
+	    it { should have_content('Sample App')}
 "9	LINE	0
-	        <%= render 'layouts/footer' %>
+	
 "z	CHAR	0
 	 if(a==b){
 	        return (y)
@@ -156,22 +168,34 @@ $@
 	        yy(y+1)
 	    }
 	
-"-	CHAR	0
-	 
+""-	CHAR	0
+	t
 
 # File marks:
-'0  1  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
-'1  5  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
-'2  10  42  ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
-'3  12  0  ~/rails_projects/sample_app/config/routes.rb
-'4  11  0  ~/rails_projects/sample_app/config/routes.rb
-'5  10  0  ~/rails_projects/sample_app/config/routes.rb
-'6  9  0  ~/rails_projects/sample_app/config/routes.rb
-'7  3  27  ~/rails_projects/sample_app/app/views/users/new.html.erb
-'8  5  56  ~/rails_projects/sample_app/config/routes.rb
-'9  2  0  ~/rails_projects/sample_app/config
+'0  182  0  ~/.vimrc
+'1  1  0  ~/programming/hogehoge
+'2  181  29  ~/.vimrc
+'3  69  0  ~/.vimrc
+'4  5  24  ~/.vimrc
+'5  597  44  ~/.vimrc
+'6  1  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
+'7  5  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
+'8  10  42  ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
+'9  12  0  ~/rails_projects/sample_app/config/routes.rb
 
 # Jumplist (newest first):
+-'  182  0  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  1  0  ~/programming/hogehoge
+-'  74  0  ~/.vimrc
+-'  181  29  ~/.vimrc
+-'  69  0  ~/.vimrc
+-'  5  24  ~/.vimrc
+-'  180  26  ~/.vimrc
+-'  72  0  ~/.vimrc
+-'  417  6  ~/.vimrc
+-'  597  44  ~/.vimrc
+-'  598  0  ~/.vimrc
 -'  1  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
 -'  5  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
 -'  6  23  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
@@ -252,15 +276,170 @@ $@
 -'  12  0  ~/rails_projects/sample_app/config/routes.rb
 -'  1  0  ~/rails_projects/sample_app/config/routes.rb
 -'  11  0  ~/rails_projects/sample_app/config/routes.rb
--'  10  0  ~/rails_projects/sample_app/config/routes.rb
--'  9  0  ~/rails_projects/sample_app/config/routes.rb
--'  3  27  ~/rails_projects/sample_app/app/views/users/new.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/users/new.html.erb
--'  5  56  ~/rails_projects/sample_app/config/routes.rb
--'  2  0  ~/rails_projects/sample_app/config
--'  1  0  ~/rails_projects/sample_app/config
+-'  1  0  ~/programming/hogehoge
 
 # History of marks within files (newest to oldest):
+
+> ~/.vimrc
+	"	182	0
+	^	181	30
+	.	181	29
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	727	37
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	0
+	+	737	4
+	+	737	0
+	+	737	2
+	+	763	0
+	+	763	0
+	+	762	11
+	+	727	29
+	+	737	0
+	+	810	0
+	+	820	0
+	+	824	0
+	+	832	0
+	+	824	0
+	+	819	0
+	+	820	0
+	+	728	0
+	+	810	0
+	+	825	0
+	+	832	37
+	+	833	22
+	+	833	0
+	+	833	18
+	+	837	6
+	+	833	24
+	+	996	0
+	+	833	0
+	+	833	95
+	+	833	27
+	+	833	53
+	+	833	51
+	+	833	81
+	+	833	9
+	+	825	3
+	+	903	19
+	+	833	80
+	+	833	0
+	+	832	29
+	+	968	10
+	+	969	0
+	+	968	10
+	+	969	0
+	+	969	0
+	+	969	0
+	+	969	0
+	+	968	0
+	+	946	36
+	+	598	44
+	+	410	0
+	+	409	0
+	+	417	10
+	+	418	10
+	+	419	0
+	+	420	0
+	+	419	19
+	+	417	10
+	+	418	10
+	+	419	10
+	+	433	0
+	+	432	0
+	+	178	11
+	+	180	29
+	+	53	0
+	+	174	20
+	+	181	0
+	+	5	0
+	+	4	0
+	+	181	29
+	j	692	5
+
+> ~/[unite] - files
+	"	1	1
+	^	1	2
+	.	2	0
+	+	172	0
+	+	170	0
+	+	151	0
+	+	151	0
+	+	151	0
+	+	1	15
+	+	150	0
+	+	1	0
+	+	110	0
+	+	89	0
+	+	109	0
+	+	109	0
+	+	68	0
+	+	47	0
+	+	47	0
+	+	46	0
+	+	46	0
+	+	45	0
+	+	45	0
+	+	44	0
+	+	44	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	44	0
+	+	23	0
+	+	23	0
+	+	2	0
+
+> ~/dotfiles/.vim/bundle/.neobundle/doc/cmdline.jax
+	"	1063	28
+
+> ~/[unite] - default
+	"	1	1
+	^	1	2
+	.	2	0
+	+	1	2
+	+	105	0
+	+	85	0
+	+	64	0
+	+	1	0
+	+	47	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	27	0
+	+	23	0
+	+	1	2
+	+	1	0
+	+	2	0
 
 > ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
 	"	1	0
@@ -810,111 +989,6 @@ $@
 	+	5	31
 	+	6	23
 
-> ~/.vimrc
-	"	1	0
-	.	942	36
-	+	759	23
-	+	759	0
-	+	759	0
-	+	759	0
-	+	759	0
-	+	759	0
-	+	759	12
-	+	759	25
-	+	759	24
-	+	759	0
-	+	759	10
-	+	759	9
-	+	759	0
-	+	759	0
-	+	519	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	723	37
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	0
-	+	733	4
-	+	733	0
-	+	733	2
-	+	759	0
-	+	759	0
-	+	758	11
-	+	723	29
-	+	733	0
-	+	806	0
-	+	816	0
-	+	820	0
-	+	828	0
-	+	820	0
-	+	815	0
-	+	816	0
-	+	724	0
-	+	806	0
-	+	821	0
-	+	828	37
-	+	829	22
-	+	829	0
-	+	829	18
-	+	833	6
-	+	829	24
-	+	992	0
-	+	829	0
-	+	829	95
-	+	829	27
-	+	829	53
-	+	829	51
-	+	829	81
-	+	829	9
-	+	821	3
-	+	899	19
-	+	829	80
-	+	829	0
-	+	828	29
-	+	964	10
-	+	965	0
-	+	964	10
-	+	965	0
-	+	965	0
-	+	965	0
-	+	965	0
-	+	964	0
-	+	942	36
-	j	688	5
-
 > ~/.zshrc
 	"	420	10
 	^	420	11
@@ -1446,37 +1520,6 @@ $@
 > ~/Google ドライブ/4年/前期/ネットワーク解析/test.csv
 	"	1924	0
 
-> ~/[unite] - files
-	"	1	15
-	^	1	16
-	.	2	0
-	+	151	0
-	+	149	0
-	+	130	0
-	+	130	0
-	+	130	0
-	+	1	15
-	+	129	0
-	+	1	0
-	+	89	0
-	+	68	0
-	+	88	0
-	+	88	0
-	+	47	0
-	+	26	0
-	+	26	0
-	+	25	0
-	+	25	0
-	+	24	0
-	+	24	0
-	+	23	0
-	+	23	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	23	0
-	+	2	0
-
 > ~/rails_projects/demo_app/Gemfile.lock
 	"	31	0
 
@@ -1516,24 +1559,6 @@ $@
 	.	1	1
 	+	2	0
 	+	1	1
-
-> ~/[unite] - default
-	"	1	1
-	^	1	2
-	.	1	2
-	+	1	2
-	+	84	0
-	+	64	0
-	+	43	0
-	+	1	0
-	+	26	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	6	0
-	+	2	0
-	+	1	2
-	+	1	2
 
 > ~/rails_projects/demo_app/.gitignore
 	"	25	6
@@ -1617,13 +1642,3 @@ $@
 	^	42	30
 	.	42	29
 	+	42	29
-
-> ~/ralis_projects/sample_app/spec/requests/static_pages_spec.rb
-	"	4	24
-	^	8	46
-	.	8	45
-	+	4	20
-	+	9	0
-	+	6	48
-	+	7	32
-	+	8	45
