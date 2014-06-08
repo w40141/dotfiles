@@ -3,9 +3,11 @@
 import csv
 
 f=open('test.csv', 'rb')
-
+date=[]
 dataReader=csv.reader(f)
 
 for row in dataReader:
-    if row[1]!=6:
-        print row
+    date.append(row[2])
+
+date.sort()
+print deta
