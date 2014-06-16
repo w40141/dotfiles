@@ -168,53 +168,75 @@ $
 	nnoremap gh gT
 	nnoremap gl gt
 ""1	LINE	0
-	" inoremap = <Space>=<Space>
+	" 括弧の編集"{{{
+	inoremap {{ {}<LEFT>
+	inoremap [[ []<LEFT>
+	inoremap (( ()<LEFT>
+	inoremap "" ""<LEFT>
+	inoremap '' ''<LEFT>
+	inoremap << <><LEFT>
+	inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
+	inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
+	inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
+	"}}}
 	
-"2	LINE	0
-	
+"2	BLOCK	0
+	"
+	i
+	i
+	i
+	i
+	i
+	i
+	i
+	i
+	i
+	"
+	 
 "3	LINE	0
-	" コンマの後に自動的にスペースを挿入
-	inoremap , ,<Space>
-	
-	" =の前後にスペースを挿入
-	" inoremap = <Space>=<Space>
-	
+	" 括弧の編集"{{{
+	inoremap {{ {}<LEFT>
+	inoremap [[ []<LEFT>
+	inoremap (( ()<LEFT>
+	inoremap "" ""<LEFT>
+	inoremap '' ''<LEFT>
+	inoremap << <><LEFT>
+	inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
+	inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
+	inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
+	"}}}
 "4	LINE	0
-	" コンマの後に自動的にスペースを挿入
-	inoremap , ,<Space>
+	vnoremap { "zdi^V{<C-R>z}<ESC>
+	vnoremap [ "zdi^V[<C-R>z]<ESC>
+	vnoremap ( "zdi^V(<C-R>z)<ESC>
+	vnoremap " "zdi^V"<C-R>z^V"<ESC>
+	vnoremap ' "zdi'<C-R>z'<ESC>
 	
-"5	LINE	0
-	call submode#enter_with('bufmove',  'n',  ',  's>',  '<C-w>>')
-	call submode#enter_with('bufmove',  'n',  ',  's<',  '<C-w><')
-	call submode#enter_with('bufmove',  'n',  ',  's+',  '<C-w>+')
-	call submode#enter_with('bufmove',  'n',  ',  's-',  '<C-w>-')
-	call submode#map('bufmove',  'n',  ',  '>',  '<C-w>>')
-	call submode#map('bufmove',  'n',  ',  '<',  '<C-w><')
-	call submode#map('bufmove',  'n',  ',  '+',  '<C-w>+')
-	call submode#map('bufmove',  'n',  ',  '-',  '<C-w>-')
-	
-"6	LINE	0
 	nnoremap ZZ <Nop>
 	nnoremap ZQ <Nop>
 	nnoremap Q gq
 	
-"7	LINE	0
-	" タブ移動
-	nnoremap gh gT
-	nnoremap gl gt
+	" 線を引く
+	inoremap <expr> dl* repeat('*', 79 - col('.'))
+	inoremap <expr> dl# repeat('#', 79 - col('.'))
+	inoremap <expr> dl+ repeat('+', 79 - col('.'))
+	inoremap <expr> dl- repeat('-', 79 - col('.'))
+	inoremap <expr> dl= repeat('=', 79 - col('.'))
 	
+"5	LINE	0
+	" カーソル位置の単語をyankする
+	nnoremap vy viwy
+	" カーソル位置の単語をyankした文字に置き換える
+	nnoremap vp viwpviwy
+	
+"6	LINE	0
+	
+"7	LINE	0
+	" =の前後にスペースを挿入
 "8	LINE	0
-	" ノーマルモードでも改行可能
-	noremap <CR> i<CR><ESC>
+	" inoremap = <Space>=<Space>
 	
 "9	LINE	0
-	"挿入モードでの移動
-	inoremap <C-k> <up>
-	inoremap <C-h> <left>
-	inoremap <C-j> <down>
-	inoremap <C-l> <right>
-	inoremap <C-d> <delete>
-	inoremap jj <esc>
 	
 "w	CHAR	0
 	wjj
@@ -226,21 +248,31 @@ $
 	    }
 	
 "-	CHAR	0
-	"
+	}}}
 
 # File marks:
-'0  497  0  ~/.vimrc
-'1  489  1  ~/.vimrc
-'2  432  0  ~/.vimrc
-'3  1  0  ~/programming/ctf/pic/hoge.html
-'4  1  251  ~/programming/ctf/hoge
-'5  5  2  ~/hoge.py
-'6  1  12  ~/hoge.py
-'7  4  0  ~/hoge.py
-'8  152  0  ~/programming/mysh/mysh.c
-'9  3  13  ~/programming/mysh/README.md
+'0  322  0  ~/dotfiles/.vimrc
+'1  497  0  ~/.vimrc
+'2  489  1  ~/.vimrc
+'3  432  0  ~/.vimrc
+'4  1  0  ~/programming/ctf/pic/hoge.html
+'5  1  251  ~/programming/ctf/hoge
+'6  5  2  ~/hoge.py
+'7  1  12  ~/hoge.py
+'8  4  0  ~/hoge.py
+'9  152  0  ~/programming/mysh/mysh.c
 
 # Jumplist (newest first):
+-'  322  0  ~/dotfiles/.vimrc
+-'  504  4  ~/dotfiles/.vimrc
+-'  410  0  ~/dotfiles/.vimrc
+-'  398  0  ~/dotfiles/.vimrc
+-'  528  0  ~/dotfiles/.vimrc
+-'  423  0  ~/dotfiles/.vimrc
+-'  534  0  ~/dotfiles/.vimrc
+-'  505  0  ~/dotfiles/.vimrc
+-'  489  6  ~/dotfiles/.vimrc
+-'  1  0  ~/dotfiles/.vimrc
 -'  497  0  ~/.vimrc
 -'  425  1  ~/.vimrc
 -'  1  0  ~/.vimrc
@@ -326,20 +358,37 @@ $
 -'  53  39  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
 -'  10  4  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
 -'  27  20  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  21  27  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  21  2  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
--'  20  20  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
--'  3  20  ~/rails_projects/sample_app/app/assets/javascripts/application.js
--'  1  0  ~/rails_projects/sample_app/app/assets/javascripts/application.js
--'  20  83  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  26  25  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  9  38  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  13  35  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  10  19  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  12  4  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
 
 # History of marks within files (newest to oldest):
+
+> ~/dotfiles/.vimrc
+	"	322	0
+	^	523	0
+	.	523	0
+	+	380	0
+	+	506	0
+	+	428	0
+	+	438	43
+	+	424	0
+	+	488	0
+	+	423	0
+	+	483	0
+	+	483	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	423	0
+	+	445	20
+	+	446	0
+	+	423	0
+	+	398	0
+	+	399	0
+	+	410	0
+	+	370	0
+	+	411	0
+	+	322	0
+	+	321	0
+	+	523	0
 
 > ~/.vimrc
 	"	497	0
@@ -2304,9 +2353,3 @@ $
 	+	27	0
 	+	26	59
 	+	21	31
-
-> ~/rails_projects/sample_app/.gitignore
-	"	24	6
-	^	24	7
-	.	24	6
-	+	24	6

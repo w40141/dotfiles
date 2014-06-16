@@ -319,6 +319,7 @@ augroup END
 " ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
 "--------------------
 
+"{{{
 " 設定の仕方"{{{
 "----------------------------------------------------------
 "   コマンド    | ノーマル | 挿入 | コマンド | ビジュアル |
@@ -366,6 +367,7 @@ inoremap <C-d> <delete>
 inoremap jj <esc>
 "}}}
 
+" 編集系"{{{
 " ;と:を入れ替
 noremap ; :
 noremap : ;
@@ -375,8 +377,6 @@ noremap <CR> i<CR><ESC>
 
 " コンマの後に自動的にスペースを挿入
 inoremap , ,<Space>
-
-" =の前後にスペースを挿入
 
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
@@ -396,17 +396,6 @@ vnoremap v $h
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" 矢印キー無効"{{{
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-inoremap <Up> <Nop>
-inoremap <Down> <Nop>
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-"}}}
-
 " 括弧の編集"{{{
 inoremap {{ {}<LEFT>
 inoremap [[ []<LEFT>
@@ -418,41 +407,43 @@ inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
 inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
 inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
 "}}}
+"}}}
 
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
+" 矢印キー無効"{{{
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+"}}}
 
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-nnoremap Q gq
+" 補助系"{{{
+" ctrl-v で insert/command モードで貼り付け
+inoremap <c-v> <esc>"*pa
+cnoremap <c-v> <c-r>+
 
-" 線を引く
-inoremap <expr> dl* repeat('*', 79 - col('.'))
-inoremap <expr> dl# repeat('#', 79 - col('.'))
-inoremap <expr> dl+ repeat('+', 79 - col('.'))
-inoremap <expr> dl- repeat('-', 79 - col('.'))
-inoremap <expr> dl= repeat('=', 79 - col('.'))
+" カーソル位置の単語をyankする
+nnoremap vy viwy
+" カーソル位置の単語をyankした文字に置き換える
+nnoremap vp viwpviwy
 
-" Ctrl-v で insert/command モードで貼り付け
-inoremap <C-v> <ESC>"*pa
-cnoremap <C-v> <C-r>+
+cnoremap clean neobundleclean
+cnoremap update neobundleupdate
+cnoremap install neobundleinstall
+cnoremap install! neobundleinstall!
 
-cnoremap clean NeoBundleClean
-cnoremap update NeoBundleUpdate
-cnoremap install NeoBundleInstall
-cnoremap install! NeoBundleInstall!
-
-"コマンドモード時にカーソル移動するのに便利
-cnoremap <C-A> <Home>
-cnoremap <C-B> <Left>
-cnoremap <C-D> <Delete>
-cnoremap <C-E> <End>
-cnoremap <C-F> <Right>
-cnoremap <C-N> <Down>
-cnoremap <C-P> <Up>
+"コマンドモード時のカーソル移動
+cnoremap <c-a> <home>
+cnoremap <c-b> <left>
+cnoremap <c-d> <delete>
+cnoremap <c-e> <end>
+cnoremap <c-f> <right>
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>"
+}}}
 
 "画面分割＆タブページ設定"{{{
 noremap s <Nop>
@@ -489,14 +480,28 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 "}}}
 
+" その他"{{{
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
-" カーソル位置の単語をyankする
-nnoremap vy viwy
-" カーソル位置の単語をyankした文字に置き換える
-nnoremap vp viwpviwy
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
+
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q gq
+
+" 線を引く
+inoremap <expr> dl* repeat('*', 79 - col('.'))
+inoremap <expr> dl# repeat('#', 79 - col('.'))
+inoremap <expr> dl+ repeat('+', 79 - col('.'))
+inoremap <expr> dl- repeat('-', 79 - col('.'))
+inoremap <expr> dl= repeat('=', 79 - col('.'))
+"}}}
 
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成"{{{
 function! s:mkdir(dir, force)
@@ -512,6 +517,7 @@ autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 " QuickFixおよびHelpでは q でバッファを閉じる
 autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
+"}}}
 "}}}
 "}}}
 
