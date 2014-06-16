@@ -443,7 +443,7 @@ cnoremap <c-e> <end>
 cnoremap <c-f> <right>
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>"
-}}}
+"}}}
 
 "画面分割＆タブページ設定"{{{
 noremap s <Nop>

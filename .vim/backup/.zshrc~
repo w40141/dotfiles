@@ -117,6 +117,9 @@ setopt auto_param_slash
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
 
+# 大小文字を区別しないで補完
+zst ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
 bindkey "^I" menu-complete
 
 # 補完関数ファイル
