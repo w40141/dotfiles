@@ -8,19 +8,36 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/history
+~MSle0~/sid
 
 # Last Substitute Search Pattern:
 ~MSle0&@
 
 # Last Substitute String:
-$@
+$
 
 # Command Line History (newest to oldest):
 :wq
 :w
+:update
 :q
+:Unite buffer
+:Unite
+:ls
+:e piyo.js
+:e fuga.css
+:e hoge.html
 :q!
+:Unite tab
+:U
+:Unite t
+:Unite tav
+:tabnew
+:split
+:w hoge.py
+:w 1readNet.py
+:ew
+:w time_proto_len.csv
 :e programming/hogehoge/
 :NeoBundleInstall
 :NeoBu
@@ -36,7 +53,6 @@ $@
 :'<,'>;jj
 :w te.py
 :e log.py
-:Unite
 :%
 :!
 :e test.txt
@@ -79,13 +95,20 @@ $@
 :wq1
 
 # Search String History (newest to oldest):
+? \$cursor\$
+? 
+?/sid
+?/side
+?/misc
+?/email add
+?/address
+?/ema
+? \<if\>
 ?/history
 ?/wildme
 ?/wildm
 ?/wild
 ?/wildmenu
-? 
-? \$cursor\$
 ? \<anav\>
 ?/s\/base_titl\/base_title
 ?/bindk
@@ -131,6 +154,7 @@ $@
 
 # Input Line History (newest to oldest):
 @y
+@h1
 @;wq
 @j
 @http://schemas.openxmlformats.org/offic
@@ -140,25 +164,60 @@ $@
 
 # Registers:
 "0	LINE	0
-	  it { should respond_to(:password_confirmation)}
+	" タブ移動
+	nnoremap gh gT
+	nnoremap gl gt
 ""1	LINE	0
+	" inoremap = <Space>=<Space>
 	
 "2	LINE	0
 	
 "3	LINE	0
+	" コンマの後に自動的にスペースを挿入
+	inoremap , ,<Space>
+	
+	" =の前後にスペースを挿入
+	" inoremap = <Space>=<Space>
 	
 "4	LINE	0
+	" コンマの後に自動的にスペースを挿入
+	inoremap , ,<Space>
 	
 "5	LINE	0
-	        print row
+	call submode#enter_with('bufmove',  'n',  ',  's>',  '<C-w>>')
+	call submode#enter_with('bufmove',  'n',  ',  's<',  '<C-w><')
+	call submode#enter_with('bufmove',  'n',  ',  's+',  '<C-w>+')
+	call submode#enter_with('bufmove',  'n',  ',  's-',  '<C-w>-')
+	call submode#map('bufmove',  'n',  ',  '>',  '<C-w>>')
+	call submode#map('bufmove',  'n',  ',  '<',  '<C-w><')
+	call submode#map('bufmove',  'n',  ',  '+',  '<C-w>+')
+	call submode#map('bufmove',  'n',  ',  '-',  '<C-w>-')
+	
 "6	LINE	0
-	    if row[1]!='6':
+	nnoremap ZZ <Nop>
+	nnoremap ZQ <Nop>
+	nnoremap Q gq
+	
 "7	LINE	0
+	" タブ移動
+	nnoremap gh gT
+	nnoremap gl gt
 	
 "8	LINE	0
-	end
-"9	LINE	0
+	" ノーマルモードでも改行可能
+	noremap <CR> i<CR><ESC>
 	
+"9	LINE	0
+	"挿入モードでの移動
+	inoremap <C-k> <up>
+	inoremap <C-h> <left>
+	inoremap <C-j> <down>
+	inoremap <C-l> <right>
+	inoremap <C-d> <delete>
+	inoremap jj <esc>
+	
+"w	CHAR	0
+	wjj
 "z	CHAR	0
 	 if(a==b){
 	        return (y)
@@ -167,481 +226,127 @@ $@
 	    }
 	
 "-	CHAR	0
-	 
+	"
 
 # File marks:
-'0  13  0  ~/programming/net/readNet.py
-'1  12  0  ~/programming/net/readNet.py
-'2  8  0  ~/programming/net/readNet.py
-'3  420  10  ~/.zshrc
-'4  989  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
-'5  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
-'6  150  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
-'7  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
-'8  9  0  ~/programming/net/test.csv
-'9  1  0  ~/programming/net/net_2.csv
+'0  497  0  ~/.vimrc
+'1  489  1  ~/.vimrc
+'2  432  0  ~/.vimrc
+'3  1  0  ~/programming/ctf/pic/hoge.html
+'4  1  251  ~/programming/ctf/hoge
+'5  5  2  ~/hoge.py
+'6  1  12  ~/hoge.py
+'7  4  0  ~/hoge.py
+'8  152  0  ~/programming/mysh/mysh.c
+'9  3  13  ~/programming/mysh/README.md
 
 # Jumplist (newest first):
--'  13  0  ~/programming/net/readNet.py
--'  1  0  ~/programming/net/readNet.py
--'  12  0  ~/programming/net/readNet.py
--'  8  0  ~/programming/net/readNet.py
--'  420  10  ~/.zshrc
--'  1  0  ~/.zshrc
--'  989  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
--'  150  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
--'  1  0  ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
--'  9  0  ~/programming/net/test.csv
--'  1  0  ~/programming/net/test.csv
--'  1  0  ~/programming/net/net_2.csv
--'  96  60  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  86  21  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  9  22  ~/rails_projects/sample_app/app/models/user.rb
--'  1  0  ~/rails_projects/sample_app/app/models/user.rb
--'  95  7  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  7  42  ~/rails_projects/sample_app/app/models/user.rb
--'  85  4  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  8  20  ~/rails_projects/sample_app/app/models/user.rb
--'  77  2  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  69  59  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  1  0  ~/rails_projects/sample_app/db/migrate/20140606145208_add_password_digest_to_users.rb
--'  14  39  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  7  24  ~/rails_projects/sample_app/Gemfile
--'  1  0  ~/rails_projects/sample_app/Gemfile
--'  2  40  ~/rails_projects/sample_app/app/models/user.rb
--'  3  39  ~/rails_projects/sample_app/db/migrate/20140606143042_add_index_to_users_email.rb
--'  1  0  ~/rails_projects/sample_app/db/migrate/20140606143042_add_index_to_users_email.rb
--'  59  50  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  10  2  ~/rails_projects/sample_app/app/models/user.rb
--'  60  4  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  61  3  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  5  66  ~/rails_projects/sample_app/app/models/user.rb
--'  1204  3  ~/.vimrc
+-'  497  0  ~/.vimrc
+-'  425  1  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  1  0  ~/.vimrs
--'  99  0  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  9  0  ~/rails_projects/sample_app/Gemfile
--'  100  6  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  3  53  ~/rails_projects/sample_app/app/models/user.rb
--'  32  4  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  24  4  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  22  14  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  20  0  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  6  64  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  5  2  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  9  6  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  10  7  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  4  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  10  4  ~/rails_projects/sample_app/app/helpers/application_helper.rb
--'  8  7  ~/rails_projects/sample_app/app/helpers/application_helper.rb
--'  1  0  ~/rails_projects/sample_app/app/helpers/application_helper.rb
--'  3  0  ~/rails_projects/sample_app/spec/support/utilities.rb
--'  1  0  ~/rails_projects/sample_app/spec/support/utilities.rb
--'  11  50  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  3  0  ~/rails_projects/sample_app/app/views/users/new.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/users/new.html.erb
+-'  489  1  ~/.vimrc
+-'  432  0  ~/.vimrc
+-'  428  0  ~/.vimrc
+-'  381  0  ~/.vimrc
+-'  410  0  ~/.vimrc
+-'  420  0  ~/.vimrc
+-'  427  0  ~/.vimrc
+-'  440  0  ~/.vimrc
+-'  568  11  ~/.vimrc
+-'  481  0  ~/.vimrc
+-'  1  0  ~/programming/ctf/pic/hoge.html
+-'  1  0  ~/programming/ctf/pic/piyo.js
+-'  1  0  ~/programming/ctf/pic/fuga.css
+-'  1  251  ~/programming/ctf/hoge
+-'  5  2  ~/hoge.py
+-'  3  291  ~/hoge.py
+-'  1  0  ~/hoge.py
+-'  4  0  ~/hoge.py
+-'  152  0  ~/programming/mysh/mysh.c
+-'  1  0  ~/programming/mysh/mysh.c
+-'  3  13  ~/programming/mysh/README.md
+-'  1  0  ~/programming/mysh/README.md
+-'  1  0  ~/programming/mysh/temp.c
+-'  5  0  ~/programming/net/report1.zip
+-'  1  0  ~/programming/net/time_proto_len.csv
+-'  175  0  ~/programming/net/time_proto_len.csv
+-'  14  0  ~/programming/net/tcpPerSec.csv
+-'  1  0  ~/programming/net/tcpPerSec.csv
+-'  5  0  ~/programming/net/report.csv
+-'  1  0  ~/programming/net/report.csv
+-'  24  0  ~/programming/net/cdfMake.py
+-'  1  0  ~/programming/net/cdfMake.py
+-'  25  5  ~/programming/net/cdfMake.py
+-'  4  18  ~/programming/net/cdfMake.py
+-'  5  11  ~/programming/net/cdfMake.py
+-'  27  5  ~/programming/net/cdfMake.py
+-'  18  9  ~/programming/net/cdfMake.py
+-'  1  0  ~/programming/net/cdf
+-'  25  9  ~/programming/net/2readNet.py
+-'  1  0  ~/programming/net/2readNet.py
+-'  20  15  ~/programming/net/2readNet.py
+-'  24  10  ~/programming/net/2readNet.py
+-'  17  36  ~/programming/net/2readNet.py
+-'  16  18  ~/programming/net/2readNet.py
+-'  20  15  ~/programming/net/cdfMake.py
+-'  19  0  ~/programming/net/cdfMake.py
+-'  8  0  ~/programming/net/cdfMake.py
+-'  12  0  ~/programming/net/2readNet.py
+-'  507  0  ~/programming/net/report.csv
+-'  25  9  ~/programming/net/report.csv
+-'  709  0  ~/Downloads/report.csv
+-'  1  0  ~/Downloads/report.csv
+-'  1  990  ~/programming/net/test.txt
+-'  18  24  ~/programming/net/2readNet.py
+-'  19  24  ~/programming/net/2readNet.py
+-'  239475  0  ~/programming/net/time_proto_len.csv
+-'  325  0  ~/programming/net/time_proto_len.csv
+-'  25  0  ~/programming/net/1readNet.py
+-'  1  0  ~/programming/net/1readNet.py
+-'  17  9  ~/programming/net/1readNet.py
+-'  18  0  ~/programming/net/1readNet.py
+-'  15  0  ~/programming/net/1readNet.py
+-'  617  0  ~/programming/net/test.csv
+-'  1  0  ~/programming/net/test.csv
+-'  24  0  ~/programming/net/readNet.py
+-'  1  0  ~/programming/net/readNet.py
+-'  23  4  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+-'  1  0  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+-'  17  12  ~/rails_projects/sample_app/app/controllers/sessions_controller.rb
+-'  1  0  ~/rails_projects/sample_app/app/controllers/sessions_controller.rb
+-'  43  8  ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
+-'  47  0  ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
+-'  1  0  ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
+-'  17  7  ~/rails_projects/sample_app/app/controllers/users_controller.rb
 -'  1  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
--'  5  0  ~/rails_projects/sample_app/config/routes.rb
--'  1  0  ~/rails_projects/sample_app/config/routes.rb
--'  2  10  ~/rails_projects/sample_app/app/views/users/new.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/static_pages/help.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
--'  10  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  51  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
 -'  1  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  44  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
--'  9  46  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  57  33  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  54  12  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  53  39  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  10  4  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+-'  27  20  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
 -'  1  0  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
--'  11  0  ~/rails_projects/sample_app/app/views/layouts/application.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/layouts/application.html.erb
--'  4  0  ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/static_pages/h
--'  8  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  13  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  14  17  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  5  0  ~/rails_projects/sample_app/spec/helpers/static_pages_helper_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/helpers/static_pages_helper_spec.rb
--'  49  48  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
--'  11  0  ~/rails_projects/sample_app/spec/models/user_spec.rb
--'  1  0  ~/rails_projects/sample_app/db/migrate/20140606063123_create_users.rb
--'  5  0  ~/rails_projects/sample_app/spec/views/static_pages/home.html.erb_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/views/static_pages/home.html.erb_spec.rb
--'  15  0  ~/rails_projects/sample_app/spec/helpers/static_pages_helper_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/support/utilities.rb
--'  18  2  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  13  0  spec/helpers/application_helper/spec.rb
--'  1  0  spec/helpers/application_helper/spec.rb
--'  51  16  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
--'  40  8  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
--'  6  0  ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
+-'  21  27  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  21  2  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+-'  20  20  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+-'  3  20  ~/rails_projects/sample_app/app/assets/javascripts/application.js
+-'  1  0  ~/rails_projects/sample_app/app/assets/javascripts/application.js
+-'  20  83  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  26  25  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  9  38  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  13  35  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  10  19  ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+-'  12  4  ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
 
 # History of marks within files (newest to oldest):
 
-> ~/programming/net/readNet.py
-	"	13	0
-	.	14	0
-	+	5	25
-	+	14	12
-	+	9	21
-	+	5	11
-	+	14	16
-	+	14	3
-	+	14	15
-	+	14	15
-	+	14	0
-	+	10	20
-	+	14	0
-	+	12	4
-	+	14	0
-	+	12	13
-	+	6	6
-	+	12	0
-	+	12	0
-	+	12	0
-	+	14	0
-	+	12	10
-	+	11	0
-	+	13	10
-	+	14	0
-	+	14	0
-
-> ~/.zshrc
-	"	420	10
-	^	420	11
-	.	420	10
-	+	5	0
-	+	4	0
-	+	17	0
-	+	22	0
-	+	21	0
-	+	99	0
-	+	104	0
-	+	103	0
-	+	144	0
-	+	359	0
-	+	364	0
-	+	386	0
-	+	391	0
-	+	404	0
-	+	409	0
-	+	408	0
-	+	455	18
-	+	156	4
-	+	162	4
-	+	351	114
-	+	452	3
-	+	452	0
-	+	411	23
-	+	414	16
-	+	415	3
-	+	425	3
-	+	426	7
-	+	427	3
-	+	428	3
-	+	63	0
-	+	442	3
-	+	415	8
-	+	416	0
-	+	418	0
-	+	417	18
-	+	418	0
-	+	420	15
-	+	413	6
-	+	414	6
-	+	413	13
-	+	420	12
-	+	82	0
-	+	420	0
-	+	82	0
-	+	420	8
-	+	421	8
-	+	420	12
-	+	417	11
-	+	420	10
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
-	"	989	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
-	"	1	0
-
-> ~/programming/net/test.csv
-	"	9	0
-
-> ~/programming/net/net_2.csv
-	"	1	0
-	.	1	1
-	+	1	1
-
-> ~/rails_projects/sample_app/spec/models/user_spec.rb
-	"	96	60
-	^	96	61
-	.	96	60
-	+	5	73
-	+	10	17
-	+	100	0
-	+	12	33
-	+	13	30
-	+	9	0
-	+	5	10
-	+	5	10
-	+	9	6
-	+	9	6
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	5	0
-	+	6	0
-	+	5	10
-	+	6	4
-	+	8	4
-	+	19	22
-	+	21	40
-	+	22	29
-	+	23	29
-	+	24	4
-	+	22	14
-	+	26	41
-	+	27	29
-	+	28	28
-	+	29	4
-	+	31	37
-	+	32	32
-	+	33	30
-	+	34	4
-	+	100	1
-	+	100	0
-	+	36	44
-	+	37	29
-	+	38	96
-	+	41	37
-	+	46	42
-	+	47	27
-	+	48	75
-	+	49	38
-	+	47	22
-	+	50	21
-	+	100	0
-	+	51	33
-	+	99	2
-	+	100	0
-	+	56	51
-	+	60	21
-	+	58	20
-	+	61	6
-	+	61	0
-	+	63	30
-	+	64	4
-	+	59	50
-	+	14	39
-	+	15	0
-	+	16	0
-	+	15	33
-	+	16	46
-	+	7	65
-	+	6	64
-	+	7	1
-	+	66	44
-	+	68	67
-	+	69	21
-	+	71	30
-	+	99	0
-	+	72	4
-	+	74	56
-	+	75	53
-	+	76	30
-	+	77	4
-	+	99	0
-	+	17	37
-	+	79	48
-	+	80	61
-	+	81	26
-	+	84	51
-	+	85	25
-	+	86	52
-	+	88	37
-	+	89	59
-	+	92	39
-	+	93	75
-	+	95	51
-	+	96	63
-	+	98	4
-	+	95	7
-	+	81	20
-	+	89	58
-	+	96	60
-
-> ~/rails_projects/sample_app/app/models/user.rb
-	"	9	22
-	^	9	30
-	.	9	30
-	+	3	31
-	+	5	17
-	+	5	0
-	+	3	53
-	+	4	55
-	+	5	69
-	+	7	19
-	+	2	40
-	+	8	0
-	+	6	13
-	+	7	14
-	+	8	0
-	+	9	30
-
-> ~/rails_projects/sample_app/db/migrate/20140606145208_add_password_digest_to_users.rb
-	"	1	0
-
-> ~/rails_projects/sample_app/Gemfile
-	"	7	24
-	^	7	25
-	.	7	24
-	+	2	10
-	+	8	0
-	+	8	0
-	+	12	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	9	27
-	+	8	0
-	+	10	0
-	+	8	0
-	+	10	22
-	+	12	26
-	+	12	0
-	+	13	0
-	+	14	13
-	+	17	0
-	+	15	36
-	+	16	23
-	+	18	0
-	+	18	0
-	+	19	24
-	+	20	21
-	+	21	25
-	+	22	25
-	+	23	23
-	+	24	20
-	+	27	23
-	+	34	0
-	+	31	20
-	+	32	29
-	+	33	0
-	+	4	18
-	+	18	0
-	+	19	2
-	+	32	4
-	+	21	25
-	+	19	15
-	+	12	0
-	+	11	17
-	+	34	0
-	+	5	31
-	+	6	23
-	+	7	24
-
-> ~/rails_projects/sample_app/db/migrate/20140606143042_add_index_to_users_email.rb
-	"	3	39
-	^	3	40
-	.	3	39
-	+	3	39
-
 > ~/.vimrc
-	"	1204	3
-	.	763	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	727	37
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	0
-	+	737	4
-	+	737	0
-	+	737	2
-	+	763	0
-	+	763	0
-	+	762	11
-	+	727	29
-	+	737	0
-	+	810	0
-	+	820	0
-	+	824	0
-	+	832	0
-	+	824	0
-	+	819	0
-	+	820	0
-	+	728	0
-	+	810	0
-	+	825	0
-	+	832	37
-	+	833	22
-	+	833	0
-	+	833	18
-	+	837	6
-	+	833	24
-	+	996	0
-	+	833	0
-	+	833	95
-	+	833	27
-	+	833	53
-	+	833	51
-	+	833	81
-	+	833	9
-	+	825	3
-	+	903	19
-	+	833	80
-	+	833	0
-	+	832	29
-	+	968	10
-	+	969	0
-	+	968	10
-	+	969	0
-	+	969	0
-	+	969	0
-	+	969	0
-	+	968	0
-	+	946	36
-	+	598	44
+	"	497	0
+	^	515	0
+	.	514	61
 	+	410	0
-	+	409	0
+	+	410	0
 	+	417	10
 	+	418	10
 	+	419	0
@@ -650,7 +355,7 @@ $@
 	+	417	10
 	+	418	10
 	+	419	10
-	+	433	0
+	+	432	0
 	+	432	0
 	+	178	11
 	+	180	29
@@ -660,199 +365,1440 @@ $@
 	+	5	0
 	+	4	0
 	+	181	29
-	+	763	0
-	j	692	5
+	+	737	0
+	+	458	0
+	+	492	62
+	+	492	62
+	+	492	62
+	+	492	62
+	+	492	54
+	+	492	54
+	+	492	54
+	+	492	53
+	+	492	0
+	+	457	37
+	+	458	0
+	+	458	0
+	+	459	22
+	+	480	0
+	+	460	0
+	+	462	37
+	+	475	0
+	+	467	0
+	+	468	34
+	+	475	0
+	+	473	0
+	+	474	49
+	+	475	0
+	+	477	0
+	+	475	0
+	+	483	0
+	+	480	0
+	+	481	0
+	+	481	0
+	+	480	10
+	+	482	25
+	+	484	25
+	+	480	0
+	+	487	0
+	+	486	25
+	+	488	22
+	+	480	0
+	+	566	0
+	+	566	0
+	+	570	51
+	+	569	0
+	+	570	27
+	+	570	29
+	+	523	0
+	+	352	0
+	+	369	0
+	+	490	0
+	+	490	0
+	+	490	0
+	+	485	0
+	+	490	0
+	+	483	0
+	+	490	0
+	+	399	0
+	+	409	0
+	+	410	0
+	+	360	0
+	+	342	0
+	+	373	0
+	+	341	0
+	+	368	0
+	+	369	0
+	+	422	0
+	+	410	0
+	+	381	0
+	+	432	0
+	+	428	0
+	+	428	0
+	+	492	0
+	+	432	0
+	+	376	0
+	+	377	0
+	+	375	0
+	+	380	0
+	+	457	0
+	+	491	0
+	+	501	0
+	+	514	61
+	j	666	5
 
-> ~/.vimrs
+> ~/programming/ctf/pic/hoge.html
 	"	1	0
 
-> ~/.vimra
+> ~/programming/ctf/pic/fuga.css
 	"	1	0
 
-> ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
-	"	4	0
-	^	18	3
-	.	14	17
-	+	1	21
-	+	5	26
-	+	6	41
-	+	7	47
-	+	10	41
-	+	11	78
-	+	14	54
-	+	15	47
-	+	18	2
-	+	14	17
+> ~/programming/ctf/pic/piyo.js
+	"	1	0
 
-> ~/rails_projects/sample_app/app/helpers/application_helper.rb
-	"	10	4
-	^	8	8
-	.	8	0
-	+	3	28
-	+	4	50
-	+	8	35
-	+	10	4
-	+	8	0
-
-> ~/rails_projects/sample_app/spec/support/utilities.rb
-	"	3	0
-	^	3	0
-	.	10	0
+> ~/programming/ctf/pic/[unite] - default
+	"	1	2
+	^	1	3
+	.	2	0
+	+	1	0
+	+	3	0
 	+	2	0
-	+	10	0
-	+	10	0
-	+	10	0
 
-> ~/rails_projects/sample_app/app/views/users/new.html.erb
-	"	3	0
-	^	2	11
-	.	2	10
-	+	1	32
-	+	3	10
-	+	1	26
-	+	2	10
+> ~/programming/ctf/hoge
+	"	1	251
+	^	1	252
+	.	1	251
+	+	1	251
+
+> ~/hoge.py
+	"	5	2
+	^	5	1
+	.	5	0
+	+	1	0
+	+	3	0
+	+	2	0
+	+	1	12
+	+	3	0
+	+	5	6
+	+	3	580
+	+	3	0
+	+	3	0
+	+	5	0
+	+	6	0
+	+	6	0
+	+	5	0
+
+> ~/[unite] - default
+	"	1	2
+	^	1	3
+	.	1	2
+	+	1	2
+	+	107	0
+	+	87	0
+	+	66	0
+	+	1	0
+	+	49	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	29	0
+	+	25	0
+	+	1	2
+	+	1	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	2	0
+	+	1	2
+
+> ~/programming/mysh/mysh.c
+	"	152	0
+
+> ~/programming/mysh/README.md
+	"	3	13
+
+> ~/programming/mysh/temp.c
+	"	1	0
+
+> ~/programming/net/report1.zip
+	"	5	0
+	.	1	0
+	+	1	0
+
+> ~/programming/net/time_proto_len.csv
+	"	1	0
+
+> ~/programming/net/tcpPerSec.csv
+	"	14	0
+
+> ~/programming/net/report.csv
+	"	5	0
+
+> ~/programming/net/cdfMake.py
+	"	24	0
+	^	4	19
+	.	26	5
+	+	25	9
+	+	18	9
+	+	26	5
+	+	25	18
+	+	5	0
+	+	4	18
+	+	26	0
+	+	26	5
+
+> ~/programming/net/cdf
+	"	1	0
+
+> ~/programming/net/2readNet.py
+	"	25	9
+	^	25	10
+	.	25	9
+	+	19	0
+	+	16	18
+	+	19	3
+	+	19	17
+	+	19	27
+	+	26	0
+	+	19	9
+	+	19	0
+	+	19	0
+	+	8	6
+	+	19	0
+	+	19	29
+	+	19	28
+	+	19	0
+	+	18	0
+	+	8	0
+	+	6	0
+	+	18	28
+	+	19	28
+	+	19	9
+	+	18	31
+	+	19	22
+	+	18	24
+	+	19	0
+	+	26	0
+	+	20	18
+	+	24	0
+	+	25	12
+	+	20	0
+	+	24	0
+	+	24	28
+	+	24	0
+	+	24	0
+	+	25	12
+	+	19	9
+	+	26	0
+	+	19	9
+	+	26	0
+	+	24	13
+	+	24	20
+	+	24	15
+	+	24	16
+	+	19	0
+	+	8	0
+	+	10	4
+	+	12	16
+	+	20	21
+	+	24	0
+	+	18	29
+	+	4	10
+	+	19	0
+	+	24	0
+	+	22	20
+	+	24	0
+	+	23	16
+	+	24	0
+	+	17	29
+	+	18	26
+	+	17	36
+	+	26	0
+	+	24	0
+	+	25	6
+	+	20	15
+	+	22	0
+	+	21	15
+	+	25	0
+	+	26	0
+	+	25	9
+
+> ~/programming/net/memo
+	"	15	3
+	^	15	4
+	.	15	3
+	+	3	0
+	+	6	0
+	+	4	43
+	+	9	0
+	+	10	42
+	+	11	24
+	+	12	43
+	+	14	15
+	+	15	3
+
+> ~/Downloads/report.csv
+	"	709	0
+
+> ~/programming/net/test.txt
+	"	1	990
+
+> ~/programming/net/1readNet.py
+	"	25	0
+	^	14	17
+	.	25	0
+	+	14	16
+	+	15	3
+	+	25	0
+	+	16	9
+	+	14	16
+	+	16	0
+	+	25	0
+
+> ~/programming/net/net_2.csv
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/programming/net/test.csv
+	"	29	0
+
+> ~/programming/net/1report.csv
+	"	4	0
+
+> ~/programming/net/test.py
+	"	1	0
+	^	2	0
+	.	12	15
+	+	13	9
+	+	1	0
+	+	2	0
+	+	11	15
+	+	12	15
+
+> ~/programming/net/readNet.py
+	"	24	0
+	.	24	0
+	+	19	28
+	+	18	18
+	+	19	28
+	+	25	0
+	+	19	36
+	+	6	5
+	+	9	8
+	+	19	9
+	+	25	38
+	+	25	11
+	+	18	13
+	+	25	0
+	+	25	11
+	+	25	25
+	+	16	10
+	+	25	25
+	+	25	11
+	+	25	28
+	+	25	25
+	+	19	4
+	+	25	0
+	+	25	11
+	+	25	22
+	+	25	11
+	+	9	12
+	+	8	10
+	+	9	0
+	+	25	17
+	+	25	17
+	+	25	0
+	+	25	0
+	+	25	0
+	+	25	11
+	+	25	0
+	+	25	14
+	+	25	0
+	+	25	9
+	+	25	0
+	+	25	0
+	+	25	18
+	+	25	23
+	+	25	0
+	+	25	30
+	+	25	0
+	+	17	12
+	+	25	0
+	+	19	0
+	+	17	0
+	+	8	8
+	+	17	0
+	+	19	0
+	+	25	16
+	+	20	31
+	+	25	11
+	+	20	35
+	+	4	30
+	+	4	18
+	+	4	10
+	+	8	0
+	+	20	4
+	+	6	0
+	+	7	4
+	+	21	14
+	+	25	0
+	+	4	0
+	+	4	0
+	+	25	0
+	+	23	36
+	+	25	0
+	+	24	9
+	+	4	0
+	+	4	18
+	+	4	0
+	+	2	17
+	+	4	23
+	+	1	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	3	30
+	+	23	13
+	+	1	0
+	+	24	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	23	0
+	+	22	0
+	+	23	0
+	+	24	0
+	+	23	0
+	+	24	0
+	+	23	19
+	+	8	3
+	+	23	0
+	+	24	0
+	+	23	0
+	+	24	18
+	+	24	0
+
+> ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+	"	23	4
+	^	26	5
+	.	26	4
+	+	5	53
+	+	6	69
+	+	6	0
+	+	8	4
+	+	14	25
+	+	16	4
+	+	19	57
+	+	20	64
+	+	12	4
+	+	20	20
+	+	27	0
+	+	10	11
+	+	25	33
+	+	26	4
+
+> ~/rails_projects/sample_app/app/controllers/sessions_controller.rb
+	"	17	12
+	^	19	24
+	.	19	23
+	+	21	0
+	+	17	0
+	+	16	0
+	+	21	0
+	+	13	14
+	+	7	62
+	+	8	61
+	+	11	0
+	+	14	0
+	+	13	0
+	+	12	55
+	+	13	0
+	+	9	0
+	+	15	0
+	+	12	14
+	+	10	21
+	+	19	23
+
+> ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
+	"	43	8
+	^	45	9
+	.	45	8
+	+	5	18
+	+	6	0
+	+	7	23
+	+	12	0
+	+	49	0
+	+	8	32
+	+	10	41
+	+	11	39
+	+	12	0
+	+	3	24
+	+	14	22
+	+	15	32
+	+	17	42
+	+	18	39
+	+	20	41
+	+	21	72
+	+	47	4
+	+	48	38
+	+	48	44
+	+	48	45
+	+	48	44
+	+	48	28
+	+	48	39
+	+	48	60
+	+	48	58
+	+	48	60
+	+	48	0
+	+	48	0
+	+	48	0
+	+	27	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	30	26
+	+	32	17
+	+	33	17
+	+	34	22
+	+	32	0
+	+	34	26
+	+	38	29
+	+	23	46
+	+	24	36
+	+	25	62
+	+	26	8
+	+	47	0
+	+	42	39
+	+	43	40
+	+	44	42
+	+	45	8
+	a	32	0
 
 > ~/rails_projects/sample_app/app/controllers/users_controller.rb
-	"	1	0
-
-> ~/rails_projects/sample_app/config/routes.rb
-	"	5	0
-	^	5	57
-	.	12	0
-	+	12	24
-	+	12	0
-	+	12	26
-	+	12	50
-	+	12	54
-	+	12	57
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	24
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	2	0
-	+	12	0
-	+	12	0
-	+	12	16
-	+	12	17
-	+	12	41
-	+	12	44
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	4	0
-	+	12	0
-	+	4	57
-	+	4	0
-	+	7	57
-	+	12	0
-	+	4	0
-	+	2	6
-	+	8	25
-	+	12	0
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-	+	9	23
-	+	10	24
-	+	11	26
-	+	3	0
-	+	5	56
-	+	9	0
-	+	10	0
-	+	11	0
-	+	12	0
-
-> ~/rails_projects/sample_app/app/views/static_pages/help.html.erb
-	"	1	0
-	^	1	27
-	.	1	26
-	+	1	7
-	+	8	0
-	+	8	0
-	+	5	71
-	+	7	66
-	+	5	71
-	+	8	0
-	+	1	6
-	+	1	5
-	+	1	6
-	+	1	10
-	+	1	61
-	+	1	9
-	+	1	12
-	+	9	7
-	+	9	5
-	+	1	0
-	+	1	27
-	+	1	67
-	+	1	0
-	+	9	0
-	+	1	26
-
-> ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
-	"	1	0
-	^	10	43
-	.	10	42
-	+	14	65
-	+	14	0
-	+	1	15
-	+	1	0
-	+	1	10
-	+	1	61
-	+	1	13
-	+	1	14
-	+	1	0
-	+	14	0
-	+	14	7
-	+	14	5
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	28
-	+	1	67
-	+	1	0
-	+	14	0
-	+	1	29
-	+	11	6
-	+	1	18
-	+	14	0
-	+	5	17
-	+	5	2
-	+	8	3
-	+	2	0
-	+	3	0
-	+	10	66
-	+	11	0
-	+	13	3
-	+	10	3
-	+	2	0
-	+	10	42
+	"	17	7
+	^	14	19
+	.	14	18
+	+	27	32
+	+	28	4
+	+	29	0
+	+	28	32
+	+	28	0
+	+	28	33
+	+	28	0
+	+	27	1
+	+	28	1
+	+	27	0
+	+	29	0
+	+	31	17
+	+	35	33
+	+	37	16
+	+	48	0
+	+	39	18
+	+	41	4
+	+	48	0
+	+	40	4
+	+	46	80
+	+	47	0
+	+	45	5
+	+	46	0
+	+	44	0
+	+	4	32
+	+	6	0
+	+	8	17
+	+	12	33
+	+	18	18
+	+	20	4
+	+	24	4
+	+	22	8
+	+	25	80
+	+	26	4
+	+	25	37
+	+	18	7
+	+	12	29
+	+	16	22
+	+	15	50
+	+	16	0
+	+	21	0
+	+	14	18
 
 > ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-	"	10	0
-	^	13	3
-	.	13	2
-	+	1	21
+	"	51	0
+	^	52	42
+	.	59	0
+	+	64	0
+	+	64	0
+	+	64	0
+	+	64	0
+	+	64	0
+	+	63	0
+	+	15	28
+	+	17	15
+	+	17	36
+	+	19	41
+	+	20	37
+	+	62	4
+	+	67	18
+	+	67	42
+	+	67	38
+	+	67	66
+	+	67	6
+	+	67	40
+	+	67	43
+	+	67	48
+	+	67	14
+	+	67	11
+	+	67	11
+	+	67	41
+	+	67	44
+	+	67	0
+	+	67	8
+	+	67	0
+	+	67	34
+	+	67	68
+	+	67	0
+	+	69	0
+	+	67	0
+	+	66	0
+	+	67	0
+	+	77	0
+	+	68	0
+	+	70	0
+	+	94	0
+	+	97	0
+	+	95	0
+	+	77	0
+	+	97	0
+	+	71	21
+	+	96	0
+	+	77	0
+	+	76	0
+	+	73	0
+	+	75	35
+	+	85	0
+	+	85	45
+	+	17	0
+	+	17	14
+	+	16	4
+	+	17	0
+	+	19	6
+	+	20	6
+	+	67	6
+	+	68	6
+	+	92	14
+	+	20	0
+	+	14	0
+	+	14	0
+	+	7	28
+	+	8	44
+	+	9	36
+	+	11	41
+	+	12	39
+	+	13	4
+	+	14	0
+	+	22	22
+	+	23	32
+	+	25	39
+	+	27	42
+	+	28	38
+	+	29	66
+	+	40	40
+	+	42	43
+	+	43	48
+	+	44	41
+	+	45	45
+	+	46	8
+	+	42	46
+	+	57	34
+	+	58	68
+	+	61	4
+	+	32	36
+	+	33	38
+	+	35	43
+	+	36	41
+	+	37	0
+	+	48	41
+	+	49	38
+	+	50	61
+	+	53	43
+	+	54	78
+	+	55	8
+	+	54	0
+	+	52	41
+	+	59	0
+	a	42	0
+
+> ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+	"	27	20
+	^	25	63
+	.	25	51
+	+	1	0
+	+	4	46
+	+	7	52
+	+	8	52
+	+	25	47
+	+	9	35
+	+	10	0
+	+	10	0
+	+	11	59
+	+	12	37
+	+	12	87
+	+	13	60
+	+	22	39
+	+	14	0
+	+	16	0
+	+	22	28
+	+	11	63
+	+	12	0
+	+	26	0
+	+	27	0
+	+	15	47
+	+	16	66
+	+	17	57
+	+	18	45
+	+	19	32
+	+	20	83
+	+	11	58
+	+	12	63
+	+	23	27
+	+	12	0
+	+	10	56
+	+	24	0
+	+	25	51
+
+> ~/rails_projects/sample_app/app/assets/javascripts/application.js
+	"	3	20
+	^	3	21
+	.	3	20
+	+	1	0
+	+	3	20
+
+> ~/rails_projects/sample_app/app/helpers/s
+	"	1	0
+
+> ~/rails_projects/sample_app/app/models/user.rb
+	"	23	4
+	^	24	5
+	.	24	4
+	+	4	31
+	+	6	17
+	+	6	0
+	+	4	53
+	+	5	55
+	+	6	69
+	+	8	19
+	+	2	40
+	+	9	0
+	+	7	13
+	+	8	14
+	+	9	0
+	+	10	30
+	+	2	0
+	+	4	0
+	+	2	31
+	+	5	41
+	+	4	0
+	+	3	37
+	+	16	25
+	+	17	38
+	+	23	61
+	+	24	4
+
+> ~/rails_projects/sample_app/spec/models/user_spec.rb
+	"	115	4
+	^	115	5
+	.	115	4
+	+	5	10
+	+	6	4
+	+	8	4
+	+	20	22
+	+	22	40
+	+	23	29
+	+	24	29
+	+	25	4
+	+	23	14
+	+	27	41
+	+	28	29
+	+	29	28
+	+	30	4
+	+	32	37
+	+	33	32
+	+	34	30
+	+	35	4
+	+	117	1
+	+	117	0
+	+	37	44
+	+	38	29
+	+	39	96
+	+	43	37
+	+	48	42
+	+	49	27
+	+	50	75
+	+	51	38
+	+	49	22
+	+	52	21
+	+	117	0
+	+	53	33
+	+	116	2
+	+	117	0
+	+	58	51
+	+	62	21
+	+	60	20
+	+	63	6
+	+	63	0
+	+	65	30
+	+	66	4
+	+	61	50
+	+	14	39
+	+	15	0
+	+	16	0
+	+	15	33
+	+	16	46
+	+	7	65
+	+	6	64
+	+	7	1
+	+	78	44
+	+	80	67
+	+	81	21
+	+	83	30
+	+	116	0
+	+	84	4
+	+	86	56
+	+	87	53
+	+	88	30
+	+	89	4
+	+	116	0
+	+	18	37
+	+	91	48
+	+	92	61
+	+	93	26
+	+	96	51
+	+	97	25
+	+	98	52
+	+	100	37
+	+	101	59
+	+	104	39
+	+	105	75
+	+	107	51
+	+	108	63
+	+	110	4
+	+	107	7
+	+	93	20
+	+	101	58
+	+	108	60
+	+	68	45
+	+	69	42
+	+	69	0
+	+	69	45
+	+	71	45
+	+	74	64
+	+	76	4
+	+	39	66
+	+	40	19
+	+	39	64
+	+	16	90
+	+	13	32
+	+	14	42
+	+	15	35
+	+	16	49
+	+	17	2
+	+	16	48
+	+	18	39
+	+	112	30
+	+	113	25
+	+	114	48
+	+	115	4
+
+> ~/rails_projects/sample_app/db/migrate/20140611101900_add_remember_token_to_users.rb
+	"	2	11
+	^	4	37
+	.	4	36
+	+	4	19
+	+	3	20
+	+	4	36
+
+> ~/rails_projects/sample_app/app/controllers/application_controller.rb
+	"	2	23
+	^	5	24
+	.	5	23
+	+	5	23
+
+> ~/rails_projects/sample_app/spec/requests/a
+	"	1	0
+
+> ~/rails_projects/sample_app/app/views/sessions/new.html.erb
+	"	6	0
+	^	6	44
+	.	6	43
+	+	1	26
+	+	2	10
+	+	4	0
+	+	17	0
+	+	5	22
+	+	6	59
+	+	8	32
+	+	17	0
+	+	17	0
+	+	9	38
+	+	10	0
+	+	11	32
+	+	12	41
+	+	13	0
+	+	17	0
+	+	14	73
+	+	15	0
+	+	16	0
+	+	17	60
+	+	6	43
+
+> ~/rails_projects/sample_app/config/routes.rb
+	"	8	0
+	^	3	29
+	.	3	28
+	+	15	24
+	+	15	0
+	+	15	26
+	+	15	50
+	+	15	54
+	+	15	57
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	24
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	4	0
+	+	15	0
+	+	15	0
+	+	15	16
+	+	15	17
+	+	15	41
+	+	15	44
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	15	0
+	+	5	0
+	+	15	0
+	+	5	57
+	+	5	0
+	+	10	57
+	+	15	0
+	+	5	0
+	+	4	6
+	+	11	25
+	+	15	0
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	12	23
+	+	13	24
+	+	14	26
+	+	4	0
+	+	6	56
+	+	12	0
+	+	13	0
+	+	14	0
+	+	15	0
+	+	4	15
+	+	4	0
+	+	4	10
+	+	4	17
+	+	4	11
+	+	4	0
+	+	2	17
+	+	4	0
+	+	3	51
+	+	7	0
+	+	8	0
+	+	7	32
+	+	8	16
+	+	6	0
+	+	8	59
+	+	3	28
+	a	6	0
+
+> ~/rails_projects/sample_app/app/controllers/s
+	"	1	0
+
+> ~/rails_projects/sample_app/app/views/layouts/application.html.erb
+	"	15	16
+	.	15	0
+	+	4	61
+	+	3	0
+	+	4	17
+	+	26	0
+	+	27	0
+	+	4	44
+	+	22	19
+	+	22	76
+	+	26	0
+	+	22	0
+	+	9	0
+	+	23	63
+	+	24	37
+	+	25	36
+	+	26	25
+	+	26	24
+	+	29	0
+	+	26	0
+	+	21	0
+	+	21	0
+	+	9	15
+	+	9	24
+	+	9	82
+	+	9	18
+	+	9	21
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	21	0
+	+	11	107
+	+	11	0
+	+	11	46
+	+	11	63
+	+	11	42
+	+	11	59
+	+	11	62
+	+	11	63
+	+	12	31
+	+	16	22
+	+	20	0
+	+	11	58
+	+	11	0
+	+	11	32
+	+	11	0
+	+	11	0
+	+	9	0
+	+	8	34
+	+	9	0
+	+	11	0
+	+	21	33
+	+	5	0
+	+	21	0
+	+	17	0
+	+	19	54
+	+	18	54
+	+	13	0
+	+	16	0
+	+	13	13
+	+	16	13
+	+	13	41
+	+	16	0
+	+	15	18
+	+	16	18
+	+	15	23
+	+	15	0
+	+	15	65
+	+	15	0
+	+	14	71
+	+	15	0
+
+> ~/rails_projects/sample_app/app/helpers/users_helper.rb
+	"	8	4
+	^	6	76
+	.	6	75
+	+	11	61
+	+	12	69
+	+	13	57
+	+	14	4
+	+	9	0
+	+	1	0
 	+	3	24
-	+	5	16
-	+	7	27
-	+	8	30
-	+	10	40
-	+	11	50
-	+	13	2
+	+	4	59
+	+	6	65
+	+	7	57
+	+	8	0
+	+	3	40
+	+	5	21
+	+	6	75
+
+> ~/.ssh/id_rsa.pub
+	"	1	418
+	^	1	54
+	.	2	0
+	+	2	0
+	+	1	0
+	+	2	0
+
+> ~/.ssh/id_rsa
+	"	27	0
+
+> ~/.ssh/known_hosts
+	"	5	297
+
+> ~/rails_projects/sample_app/app/controllers/static_pages_controller.rb
+	"	7	0
+	.	8	0
+	+	9	4
+	+	12	4
+	+	8	0
+
+> ~/rails_projects/sample_app/Gemfile
+	"	31	0
+	^	17	34
+	.	17	33
+	+	2	10
+	+	8	0
+	+	8	0
+	+	12	0
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	0
+	+	26	0
+	+	9	27
+	+	8	0
+	+	10	0
+	+	8	0
+	+	10	22
+	+	12	26
+	+	12	0
+	+	13	0
+	+	14	13
+	+	19	0
+	+	15	36
+	+	16	23
+	+	20	0
+	+	20	0
+	+	21	24
+	+	22	21
+	+	23	25
+	+	24	25
+	+	25	23
+	+	26	20
+	+	29	23
+	+	36	0
+	+	33	20
+	+	34	29
+	+	35	0
+	+	4	18
+	+	20	0
+	+	21	2
+	+	34	4
+	+	23	25
+	+	21	15
+	+	12	0
+	+	11	17
+	+	36	0
+	+	5	31
+	+	6	23
+	+	7	24
+	+	18	33
+	+	17	33
+
+> ~/rails_projects/sample_app/config/environments/production.rb
+	"	43	0
+	.	43	0
+	+	43	0
+
+> ~/rails_projects/sample_app/app/assets/stylesheets/custom.css.scss
+	"	162	0
+	^	174	1
+	.	162	0
+	+	105	5
+	+	102	3
+	+	178	0
+	+	18	0
+	+	3	0
+	+	4	0
+	+	5	24
+	+	41	0
+	+	43	0
+	+	63	10
+	+	83	4
+	+	84	7
+	+	85	7
+	+	86	0
+	+	84	18
+	+	94	41
+	+	95	19
+	+	96	3
+	+	98	4
+	+	97	14
+	+	99	20
+	+	101	0
+	+	102	0
+	+	105	0
+	+	175	0
+	+	179	1
+	+	97	0
+	+	179	3
+	+	13	19
+	+	19	0
+	+	15	33
+	+	14	4
+	+	15	4
+	+	14	4
+	+	15	4
+	+	16	25
+	+	182	0
+	+	184	13
+	+	235	0
+	+	183	0
+	+	235	0
+	+	186	14
+	+	189	34
+	+	235	0
+	+	189	23
+	+	235	0
+	+	235	0
+	+	190	0
+	+	192	0
+	+	194	7
+	+	195	13
+	+	198	23
+	+	200	25
+	+	215	0
+	+	202	14
+	+	205	25
+	+	207	12
+	+	213	0
+	+	220	0
+	+	222	0
+	+	224	44
+	+	235	0
+	+	229	23
+	+	232	7
+	+	233	0
+	+	7	19
+	+	10	25
+	+	9	26
+	+	109	0
+	+	111	13
+	+	118	0
+	+	116	23
+	+	119	0
+	+	121	7
+	+	175	0
+	+	124	33
+	+	131	30
+	+	135	28
+	+	175	0
+	+	175	0
+	+	141	0
+	+	147	1
+	+	175	0
+	+	122	7
+	+	124	40
+	+	125	21
+	+	124	40
+	+	136	27
+	+	149	0
+	+	151	44
+	+	156	23
+	+	159	7
+	+	160	0
+	+	162	0
+	+	175	0
+	+	173	18
+	+	172	11
+	+	174	0
+	+	175	0
+	+	162	0
+
+> ~/rails_projects/sample_app/app/views/shared/_error_messages.html.erb
+	"	1	0
+	^	12	12
+	.	12	0
+	+	12	0
+
+> ~/rails_projects/sample_app/app/views/users/new.html.erb
+	"	9	4
+	^	7	45
+	.	7	44
+	+	1	32
+	+	25	10
+	+	1	26
+	+	2	10
+	+	25	0
+	+	26	31
+	+	27	33
+	+	29	32
+	+	34	0
+	+	30	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	34	0
+	+	30	27
+	+	31	0
+	+	32	0
+	+	34	0
+	+	32	29
+	+	33	34
+	+	34	12
+	+	34	0
+	+	35	0
+	+	37	0
+	+	38	0
+	+	35	32
+	+	36	37
+	+	38	45
+	+	39	50
+	+	41	71
+	+	42	10
+	+	25	0
+	+	41	52
+	+	25	0
+	+	4	0
+	+	5	31
+	+	23	4
+	+	6	36
+	+	23	0
+	+	9	32
+	+	10	32
+	+	23	0
+	+	12	0
+	+	13	0
+	+	13	0
+	+	13	0
+	+	15	0
+	+	18	0
+	+	23	0
+	+	11	0
+	+	12	30
+	+	13	33
+	+	14	0
+	+	15	32
+	+	16	36
+	+	17	0
+	+	18	60
+	+	16	25
+	+	19	25
+	+	23	0
+	+	19	54
+	+	21	78
+	+	22	10
+	+	7	44
+
+> app/views/shared/_error_messages.html.erb
+	"	1	7
+	^	12	8
+	.	2	0
+	+	12	8
+	+	2	0
+
+> ~/rails_projects/sample_app/app/views/static_pages/_error_messages.html.erb
+	"	12	5
+	^	12	6
+	.	12	0
+	+	1	22
+	+	2	0
+	+	3	39
+	+	4	75
+	+	5	0
+	+	7	55
+	+	8	29
+	+	11	10
+	+	9	0
+	+	12	0
+
+> ~/rails_projects/sample_app/app/views/users/show.html.erb
+	"	1	32
+	^	9	0
+	.	10	0
+	+	1	0
+	+	1	29
+	+	22	0
+	+	22	22
+	+	1	2
+	+	22	7
+	+	22	0
+	+	22	0
+	+	22	0
+	+	22	0
+	+	1	0
+	+	22	5
+	+	22	4
+	+	22	3
+	+	22	0
+	+	22	25
+	+	22	0
+	+	22	0
+	+	22	0
+	+	15	0
+	+	22	0
+	+	18	0
+	+	22	0
+	+	1	33
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	4
+	+	12	21
+	+	12	0
+	+	12	0
+	+	12	25
+	+	2	0
+	+	12	0
+	+	2	0
+	+	4	0
+	+	12	0
+	+	10	0
+	+	10	0
+	+	9	0
+	+	8	0
+	+	3	0
+	+	10	0
+
+> ~/rails_projects/sample_app/config/environments/test.rb
+	"	36	42
+	^	36	43
+	.	36	42
+	+	38	42
+	+	36	42
+
+> ~/rails_projects/sample_app/spec/factories.rb
+	"	5	33
+	^	3	35
+	.	3	34
+	+	1	25
+	+	1	32
+	+	1	21
+	+	1	34
+	+	1	3
+	+	1	0
+	+	1	0
+	+	1	20
+	+	1	21
+	+	10	24
+	+	11	31
+	+	12	21
+	+	13	34
+	+	15	2
+	+	10	34
+	+	7	24
+	+	7	31
+	+	7	21
+	+	7	34
+	+	9	0
+	+	8	0
+	+	9	0
+	+	3	0
+	+	3	34
+	a	3	0
 
 > ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
-	"	44	0
+	"	1	0
 	^	51	43
 	.	50	16
 	+	31	0
@@ -956,76 +1902,216 @@ $@
 	+	51	43
 	+	50	16
 
-> ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
-	"	9	46
-	^	9	47
-	.	9	47
-	+	1	0
-	+	4	46
-	+	7	52
-	+	8	52
-	+	9	47
+> ~/.matplotlib/matplotlibrc
+	"	1	14
+	^	1	15
+	.	1	14
+	+	1	14
 
-> ~/rails_projects/sample_app/app/views/layouts/application.html.erb
-	"	11	0
-	.	14	0
-	+	4	61
-	+	3	0
-	+	4	17
-	+	21	0
-	+	22	0
-	+	4	44
-	+	17	19
-	+	17	76
-	+	21	0
-	+	17	0
-	+	9	0
-	+	18	63
-	+	19	37
-	+	20	36
-	+	21	25
-	+	21	24
-	+	24	0
-	+	21	0
-	+	16	0
-	+	16	0
-	+	9	15
-	+	9	24
-	+	9	82
-	+	9	18
-	+	9	21
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	16	0
-	+	11	107
-	+	11	0
-	+	11	46
-	+	11	63
-	+	11	42
-	+	11	59
-	+	11	62
-	+	11	63
-	+	12	31
-	+	13	22
-	+	15	0
-	+	11	58
-	+	11	0
-	+	11	32
-	+	11	0
-	+	11	0
-	+	9	0
-	+	8	34
-	+	9	0
-	+	11	0
-	+	16	33
+> ~/.matplotlib/matplotlib
+	"	1	12
+	^	1	13
+	.	1	12
+	+	1	12
+
+> ~/.pip/pip.log
+	"	11109	0
+
+> ~/.zshrc
+	"	442	42
+	^	442	43
+	.	442	42
 	+	5	0
-	+	16	0
+	+	4	0
+	+	17	0
+	+	22	0
+	+	21	0
+	+	99	0
+	+	104	0
+	+	103	0
+	+	144	0
+	+	359	0
+	+	364	0
+	+	386	0
+	+	391	0
+	+	404	0
+	+	409	0
+	+	408	0
+	+	458	18
+	+	156	4
+	+	162	4
+	+	351	114
+	+	455	3
+	+	455	0
+	+	411	23
+	+	414	16
+	+	415	3
+	+	425	3
+	+	426	7
+	+	427	3
+	+	428	3
+	+	63	0
+	+	445	3
+	+	415	8
+	+	416	0
+	+	418	0
+	+	417	18
+	+	418	0
+	+	420	15
+	+	413	6
+	+	414	6
+	+	413	13
+	+	420	12
+	+	82	0
+	+	420	0
+	+	82	0
+	+	420	8
+	+	421	8
+	+	420	12
+	+	417	11
+	+	420	10
+	+	441	0
+	+	440	0
+	+	441	0
+	+	454	0
+	+	443	0
+	+	442	42
+
+> ~/Downloads/matplotlib-1.3.1/CONTRIBUTING.md
+	"	1	0
+
+> ~/Downloads/matplotlib-1.3.1/README.rst
+	"	12	0
+
+> ~/programming/ctf/de350e9bf36df442f00b40be7374bf44
+	"	1	0
+
+> ~/programming/net/rowDate1.pcap
+	"	1	0
+
+> ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
+	"	989	0
+
+> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
+	"	1	0
+
+> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
+	"	1	0
+
+> ~/rails_projects/sample_app/db/migrate/20140606145208_add_password_digest_to_users.rb
+	"	1	0
+
+> ~/rails_projects/sample_app/db/migrate/20140606143042_add_index_to_users_email.rb
+	"	3	39
+	^	3	40
+	.	3	39
+	+	3	39
+
+> ~/.vimrs
+	"	1	0
+
+> ~/.vimra
+	"	1	0
+
+> ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+	"	4	0
+	^	18	3
+	.	14	17
+	+	1	21
+	+	5	26
+	+	6	41
+	+	7	47
+	+	10	41
+	+	11	78
+	+	14	54
+	+	15	47
+	+	18	2
+	+	14	17
+
+> ~/rails_projects/sample_app/app/helpers/application_helper.rb
+	"	10	4
+	^	8	8
+	.	8	0
+	+	3	28
+	+	4	50
+	+	8	35
+	+	10	4
+	+	8	0
+
+> ~/rails_projects/sample_app/spec/support/utilities.rb
+	"	3	0
+	^	3	0
+	.	10	0
+	+	2	0
+	+	10	0
+	+	10	0
+	+	10	0
+
+> ~/rails_projects/sample_app/app/views/static_pages/help.html.erb
+	"	1	0
+	^	1	27
+	.	1	26
+	+	1	7
+	+	8	0
+	+	8	0
+	+	5	71
+	+	7	66
+	+	5	71
+	+	8	0
+	+	1	6
+	+	1	5
+	+	1	6
+	+	1	10
+	+	1	61
+	+	1	9
+	+	1	12
+	+	9	7
+	+	9	5
+	+	1	0
+	+	1	27
+	+	1	67
+	+	1	0
+	+	9	0
+	+	1	26
+
+> ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
+	"	1	0
+	^	10	43
+	.	10	42
+	+	14	65
 	+	14	0
+	+	1	15
+	+	1	0
+	+	1	10
+	+	1	61
+	+	1	13
+	+	1	14
+	+	1	0
+	+	14	0
+	+	14	7
+	+	14	5
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	28
+	+	1	67
+	+	1	0
+	+	14	0
+	+	1	29
+	+	11	6
+	+	1	18
+	+	14	0
+	+	5	17
+	+	5	2
+	+	8	3
+	+	2	0
+	+	3	0
+	+	10	66
+	+	11	0
+	+	13	3
+	+	10	3
+	+	2	0
+	+	10	42
 
 > ~/rails_projects/sample_app/app/views/static_pages/h
 	"	1	0
@@ -1089,25 +2175,6 @@ $@
 > ~/dotfiles/.vim/bundle/.neobundle/doc/cmdline.jax
 	"	1063	28
 
-> ~/[unite] - default
-	"	1	1
-	^	1	2
-	.	2	0
-	+	1	2
-	+	105	0
-	+	85	0
-	+	64	0
-	+	1	0
-	+	47	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	27	0
-	+	23	0
-	+	1	2
-	+	1	0
-	+	2	0
-
 > ~/rails_projects/sample_app/app/views/layouts/_footer.html.erb
 	"	9	7
 	^	3	8
@@ -1153,13 +2220,6 @@ $@
 	+	6	0
 	+	1	30
 
-> ~/rails_projects/sample_app/app/controllers/static_pages_controller.rb
-	"	12	4
-	^	12	5
-	.	12	4
-	+	9	4
-	+	12	4
-
 > spec/support/utilities.rb
 	"	7	1
 	.	9	0
@@ -1191,71 +2251,6 @@ $@
 	+	1	0
 	+	9	0
 	+	1	33
-
-> ~/rails_projects/sample_app/app/assets/stylesheets/custom.css.scss
-	"	96	3
-	^	100	4
-	.	100	3
-	+	1	17
-	+	9	6
-	+	12	0
-	+	10	21
-	+	17	9
-	+	18	0
-	+	25	8
-	+	21	8
-	+	31	0
-	+	102	0
-	+	30	1
-	+	31	1
-	+	102	0
-	+	1	19
-	+	7	0
-	+	8	0
-	+	59	0
-	+	64	18
-	+	63	20
-	+	67	23
-	+	66	28
-	+	76	0
-	+	71	0
-	+	75	0
-	+	7	12
-	+	59	9
-	+	64	19
-	+	32	0
-	+	57	0
-	+	77	0
-	+	84	7
-	+	71	13
-	+	93	5
-	+	90	3
-	+	99	0
-	+	6	0
-	+	3	0
-	+	4	0
-	+	5	24
-	+	29	0
-	+	31	0
-	+	51	10
-	+	71	4
-	+	72	7
-	+	73	7
-	+	74	0
-	+	72	18
-	+	82	41
-	+	83	19
-	+	84	3
-	+	86	4
-	+	85	14
-	+	87	20
-	+	89	0
-	+	90	0
-	+	93	0
-	+	96	0
-	+	100	1
-	+	85	0
-	+	100	3
 
 > ~/rails_projects/sample_app/app/assets/stylesheets/application.css
 	"	8	0
@@ -1315,411 +2310,3 @@ $@
 	^	24	7
 	.	24	6
 	+	24	6
-
-> ~/dotfiles/.zshrc
-	"	411	23
-	^	411	24
-	.	411	23
-	+	410	1
-	+	411	23
-
-> ~/_brew
-	"	1	0
-
-> ~/dotfiles/.zsh/functions/_brew
-	"	1	0
-
-> ~/dotfiles/dotfilesLink.sh
-	"	8	48
-	^	8	49
-	.	8	48
-	+	3	33
-	+	4	0
-	+	5	0
-	+	6	0
-	+	7	0
-	+	8	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	4	28
-	+	5	28
-	+	6	34
-	+	7	32
-	+	9	0
-	+	8	48
-
-> ~/dotfiles/README.md
-	"	5	58
-	^	5	59
-	.	5	58
-	+	6	0
-	+	4	46
-	+	5	58
-
-> ~/.viminfo
-	"	35	0
-
-> ~/README.md
-	"	1	0
-
-> ~/.zshenv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/net_1.csv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test3.csv
-	"	5	61
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test1.csv
-	"	1	0
-
-> ~/programming/net/[unite] - files
-	"	1	30
-	^	1	31
-	.	2	0
-	+	3	0
-	+	2	0
-
-> ~/programming/hogehoge/hoge.txt
-	"	2	283
-	^	2	193
-	.	2	190
-	+	2	271
-	+	2	190
-
-> ~/dot_file/setup.sh
-	"	4	0
-	^	3	36
-	.	3	19
-	+	14	0
-	+	3	19
-
-> ~/.zshrc.antigen
-	"	5	0
-
-> ~/.gitconfig
-	"	14	0
-
-> ~/programming/ctf/word/webSettings.xml
-	"	1	0
-
-> ~/programming/ctf/docProps/app.xml
-	"	1	0
-
-> ~/programming/ctf/.DS_Store
-	"	1	0
-
-> ~/programming/ctf/_rels/.rels
-	"	2	41
-	^	2	47
-	.	2	46
-	+	1	51
-	+	2	46
-
-> /private/var/folders/k6/jgf1_c496l57rwys1d0gtx_h0000gn/T/vs6oMI1/QuickfixPreview
-	"	1	0
-
-> ~/programming/ctf/[Content_Types].xml
-	"	2	1320
-
-> ~/programming/net_2.csv
-	"	5	1
-
-> ~/programming/net_1.csv
-	"	1	0
-
-> ~/programming/cft
-	"	1	0
-
-> ~/default/.vimrc
-	"	855	5
-	^	727	29
-	.	791	0
-	+	727	28
-	+	791	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/net_2.csv
-	"	385	16
-	.	1	1
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	2	0
-	+	1	1
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/tcp_out.csv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/test3.csv
-	"	1	2
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/test1.csv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/net_1.csv
-	"	20	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/NetWork.csv
-	"	1	0
-
-> ~/programming/ctf/math1.py
-	"	1	0
-	^	10	11
-	.	9	0
-	+	16	1235
-	+	28	0
-	+	25	18
-	+	27	12
-	+	10	11
-	+	8	2
-	+	10	15
-	+	8	2
-	+	10	22
-	+	10	6
-	+	10	19
-	+	10	6
-	+	14	7
-	+	10	19
-	+	10	0
-	+	10	0
-	+	12	0
-	+	12	0
-	+	11	7
-	+	7	4
-	+	4	618
-	+	5	618
-	+	6	1234
-	+	9	0
-	+	10	11
-	+	9	0
-
-> ~/programming/ctf/hoge.py
-	"	2	1236
-	^	2	1237
-	.	2	1196
-	+	3	10
-	+	2	1196
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/test2.pcap
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/time3.csv
-	"	1	0
-
-> ~/Downloads/Book1.csv
-	"	1	0
-
-> ~/programming/test1.csv
-	"	1	0
-	.	1	0
-	+	2	0
-	+	1	0
-
-> /usr/local/lib/pkgconfig/tcl.pc
-	"	1	0
-
-> ~/programming/python/tmp.py
-	"	1	0
-	^	4	18
-	.	4	17
-	+	1	4
-	+	9	6
-	+	3	5
-	+	7	8
-	+	9	6
-	+	9	0
-	+	5	2
-	+	8	0
-	+	8	14
-	+	9	14
-	+	8	14
-	+	9	28
-	+	9	0
-	+	9	0
-	+	9	0
-	+	7	11
-	+	3	25
-	+	3	2
-	+	8	15
-	+	9	22
-	+	8	0
-	+	9	12
-	+	9	0
-	+	8	0
-	+	8	0
-	+	8	16
-	+	9	11
-	+	9	12
-	+	7	15
-	+	5	18
-	+	9	0
-	+	8	20
-	+	7	19
-	+	8	4
-	+	7	28
-	+	5	10
-	+	9	0
-	+	4	40
-	+	5	0
-	+	7	19
-	+	6	14
-	+	7	18
-	+	4	15
-	+	7	16
-	+	4	13
-	+	4	17
-
-> ~/programming/python/tes.py
-	"	2	1234
-	^	2	1235
-	.	2	1234
-	+	2	1234
-
-> ~/programming/ctf/tes.c
-	"	1	0
-	.	1	0
-	+	1	1234
-	+	1	0
-	+	2	0
-	+	1	0
-
-> ~/Downloads/index.pl
-	"	1	0
-
-> ~/programming/python/te
-	"	1	0
-
-> ~/programming/c/temp.c
-	"	32	17
-	^	34	4
-	.	34	4
-	+	10	16
-	+	11	16
-	+	15	17
-	+	14	18
-	+	14	30
-	+	17	0
-	+	17	9
-	+	19	0
-	+	21	1
-	+	14	22
-	+	17	22
-	+	15	16
-	+	12	20
-	+	5	15
-	+	19	11
-	+	10	7
-	+	19	4
-	+	20	21
-	+	12	14
-	+	15	18
-	+	5	9
-	+	6	29
-	+	7	44
-	+	2	15
-	+	10	12
-	+	10	18
-	+	9	0
-	+	9	0
-	+	8	12
-	+	10	14
-	+	8	4
-	+	10	13
-	+	11	13
-	+	14	0
-	+	17	0
-	+	18	24
-	+	14	16
-	+	13	0
-	+	14	0
-	+	16	0
-	+	13	0
-	+	16	20
-	+	19	0
-	+	20	0
-	+	5	12
-	+	7	15
-	+	35	0
-	+	25	4
-	+	26	4
-	+	27	8
-	+	28	4
-	+	29	12
-	+	30	8
-	+	31	12
-	+	32	12
-	+	33	8
-	+	34	4
-
-> ~/programming/temp
-	"	14	0
-	^	12	0
-	.	12	0
-	+	11	0
-	+	3	11
-	+	4	11
-	+	5	11
-	+	6	7
-	+	7	11
-	+	8	11
-	+	9	7
-	+	10	3
-	+	20	1
-	+	21	0
-	+	13	0
-	+	12	0
-
-> ~/programming/python/te.py
-	"	1	0
-
-> ~/programming/python/log.py
-	"	1	0
-
-> ~/programming/test.txt
-	"	7	4
-	^	4	11
-	.	8	0
-	+	1	12
-	+	9	12
-	+	1	10
-	+	3	13
-	+	9	3
-	+	9	10
-	+	9	0
-	+	9	0
-	+	6	17
-	+	5	10
-	+	8	0
-
-> ~/programming/python/test.py
-	"	1	3914
-	^	1	3914
-	.	1	3911
-	+	30	0
-	+	1	2
-	+	1	3
-	+	1	14
-	+	1	1
-	+	1	2
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	8
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	4
-	+	1	2
-	+	1	3
-	+	1	0
-	+	1	3911

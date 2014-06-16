@@ -338,9 +338,7 @@ augroup END
 "}}}
 
 "{{{
-" ノーマルモードでも改行可能
-noremap <CR> i<CR><ESC>
-
+" 移動系"{{{
 " 行頭と行末への移動
 noremap 1 0
 noremap 0 $
@@ -351,10 +349,6 @@ noremap J 5j
 noremap K 5k
 noremap L 5l
 
-" ;と:を入れ替
-noremap ; :
-noremap : ;
-
 "表示上の移動を可能にする
 nnoremap j gj
 nnoremap k gk
@@ -363,13 +357,26 @@ nnoremap k gk
 nnoremap zl zL
 nnoremap zh zH
 
-" タブ移動
-nnoremap gh gT
-nnoremap gl gt
+"挿入モードでの移動
+inoremap <C-k> <up>
+inoremap <C-h> <left>
+inoremap <C-j> <down>
+inoremap <C-l> <right>
+inoremap <C-d> <delete>
+inoremap jj <esc>
+"}}}
 
-nnoremap ZZ <Nop>
-nnoremap ZQ <Nop>
-nnoremap Q gq
+" ;と:を入れ替
+noremap ; :
+noremap : ;
+
+" ノーマルモードでも改行可能
+noremap <CR> i<CR><ESC>
+
+" コンマの後に自動的にスペースを挿入
+inoremap , ,<Space>
+
+" =の前後にスペースを挿入
 
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
@@ -389,7 +396,7 @@ vnoremap v $h
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" 矢印キー無効
+" 矢印キー無効"{{{
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -398,16 +405,9 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
+"}}}
 
-"挿入モードでの移動
-inoremap <C-k> <up>
-inoremap <C-h> <left>
-inoremap <C-j> <down>
-inoremap <C-l> <right>
-inoremap <C-d> <delete>
-inoremap jj <esc>
-
-" 括弧の編集
+" 括弧の編集"{{{
 inoremap {{ {}<LEFT>
 inoremap [[ []<LEFT>
 inoremap (( ()<LEFT>
@@ -417,6 +417,7 @@ inoremap << <><LEFT>
 inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
 inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
 inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
+"}}}
 
 vnoremap { "zdi^V{<C-R>z}<ESC>
 vnoremap [ "zdi^V[<C-R>z]<ESC>
@@ -424,11 +425,9 @@ vnoremap ( "zdi^V(<C-R>z)<ESC>
 vnoremap " "zdi^V"<C-R>z^V"<ESC>
 vnoremap ' "zdi'<C-R>z'<ESC>
 
-" コンマの後に自動的にスペースを挿入
-inoremap , ,<Space>
-
-" =の前後にスペースを挿入
-" inoremap = <Space>=<Space>
+nnoremap ZZ <Nop>
+nnoremap ZQ <Nop>
+nnoremap Q gq
 
 " 線を引く
 inoremap <expr> dl* repeat('*', 79 - col('.'))
@@ -455,6 +454,41 @@ cnoremap <C-F> <Right>
 cnoremap <C-N> <Down>
 cnoremap <C-P> <Up>
 
+"画面分割＆タブページ設定"{{{
+noremap s <Nop>
+"ウィンドウを分割
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+"分割したウィンドウ間を移動
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sw <C-w>w
+"分割したウィンドウを移動
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sr <C-w>r
+"カレントウィンドウの大きさを変える
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap s= <C-w>=
+nnoremap sN :<C-u>bn<CR>
+nnoremap sP :<C-u>bp<CR>
+"新規タブ
+nnoremap st :<C-u>tabnew<CR>
+"次のタブに切り替え
+nnoremap gl gt
+"前のタブに切り替え
+nnoremap gh gT
+"ウィンドウを閉じる
+nnoremap sq :<C-u>q<CR>
+"バッファを閉じる
+nnoremap sQ :<C-u>bd<CR>
+"}}}
+
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
@@ -464,7 +498,7 @@ nnoremap vy viwy
 " カーソル位置の単語をyankした文字に置き換える
 nnoremap vp viwpviwy
 
-" :e などでファイルを開く際にフォルダが存在しない場合は自動作成
+" :e などでファイルを開く際にフォルダが存在しない場合は自動作成"{{{
 function! s:mkdir(dir, force)
   if !isdirectory(a:dir) && (a:force ||
         \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
@@ -479,74 +513,13 @@ autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 " QuickFixおよびHelpでは q でバッファを閉じる
 autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 "}}}
+"}}}
 
 "--------------------
 " NeoBundle
 "--------------------
 
 "{{{
-"{{{
-"     リビジョン指定
-"      (リビジョン番号 or ブランチ名 or タグ名)
-"      NeoBundle {repository}, {revision}
-"        or
-"      NeoBundle {repository},  {
-"        \ 'rev' : {revision},
-"        \ }
-"
-"     依存プラグイン
-"      (1つしかない場合はListでなくても良い)
-"      NeoBundle {repository},  {
-"        \ 'depends' : [ {repository} ],
-"        \ }
-"
-"     遅延読み込み
-"      (ぞれぞれ、1つしかない場合はListでなくても良い)
-"      (insert/filetypes/commands/mappings は OR 条件)
-"      NeoBundleLazy , {repository}{
-"        \ 'autoload' : {
-"        \   'insert' : 1,
-"        \   'filetypes' : [{filetype}],
-"        \   'commands' : [{command}],
-"        \   'mappings' : [
-"        \     [<mode>, <mapping>]
-"        \   ]
-"        \ }}
-"
-"      mappingsはmodeを省略しも良い
-"      省略した場合は、'nxo' が指定される
-"
-"     リポジトリを持たないプラグインの管理
-"      NeoBundle 'plugin-name', {'type' : 'nosync'}
-"      NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/bundle/manual'}
-"
-"    使用方法
-"     インストール済みプラグイン一覧
-"      :NeoBundleList
-"     インストール(新規)
-"      :NeoBundleInstall
-"     アップデート
-"      :NeoBundleInstall!
-"     使用していないプラグインを削除
-"      :NeoBundleClean(!)
-"     プラグイン検索(NeoBundle非対応)
-"      :BundleSearch
-"     ヘルプ
-"      :help neobundle
-"
-"    Unite連携
-"     インストール
-"      :Unite neobundle/install
-"     アップデート
-"      :Unite neobundle/install:!
-"     個別アップデート
-"      :Unite neobundle/install:neocomplcache
-"      :Unite neobundle/install:neocomplcache:unite.vim
-"     インストール済みのプラグインの列挙
-"      :Unite neobundle -input=!Not
-"     インストールしていないプラグインの列挙
-"      :Unite neobundle -input=Not
-"}}}
 
 " 各プラグイン"{{{
 
@@ -594,6 +567,7 @@ else
   nmap ,u [unite]
   nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
   nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+  nnoremap <silent> [unite]B :<C-u>Unite buffer_tab -buffer-name=file<CR>
   nnoremap <silent> [unite]r :<C-u>Unite register<CR>
   nnoremap <silent> [unite]m :<C-u>Unite file<CR>
   nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>

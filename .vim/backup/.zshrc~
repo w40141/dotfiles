@@ -438,17 +438,20 @@ zstyle ':completion:*' list-colors \
 
 # source ~/.zshrc.antigen
 
-if which pyenv > /dev/null; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH=${PYENV_ROOT}/shims:${PATH}
-    eval "$(pyenv init -)";
-fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-if which rbenv > /dev/null; then
-    export RBENV_ROOT="${HOME}/.rbenv"
-    export PATH=${RBENV_ROOT}/shims:${PATH}
-    eval "$(rbenv init -)";
-fi
+# if which pyenv > /dev/null; then            
+#     export PYENV_ROOT="${HOME}/.pyenv"      
+#     export PATH=${PYENV_ROOT}/shims:${PATH} 
+#     eval "$(pyenv init -)";                 
+# fi                                          
+
+# if which rbenv > /dev/null; then            
+#     export RBENV_ROOT="${HOME}/.rbenv"      
+#     export PATH=${RBENV_ROOT}/shims:${PATH} 
+#     eval "$(rbenv init -)";                 
+# fi                                          
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 

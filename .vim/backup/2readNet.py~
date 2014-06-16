@@ -1,0 +1,26 @@
+import csv
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+
+time=[]
+date=[]
+x=[0]
+y=[0]
+num=0
+
+f=open('tcpPerSec.csv', 'rb')
+dataReader=csv.reader(f)
+
+for row in dataReader:
+    if row[1]=='6':
+        num=math.floor(float(row[0]))
+        time.append(int(num))
+
+for i in range(0, 6475):
+    num=time.count(i)
+    y.append(num)
+
+print y
+# plt.plot(time, y)
+# plt.show()
