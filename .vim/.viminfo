@@ -17,9 +17,9 @@
 $
 
 # Command Line History (newest to oldest):
-:q
 :wq
 :w
+:q
 :NeoBundleClean
 :Scouter
 :TweetVimSay
@@ -178,43 +178,67 @@ $
 "0	CHAR	0
 	"
 ""1	LINE	0
-	
+	  " nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 "2	LINE	0
-	  NeoBundle 'tpope/vim-surround'
+	  " ググる
 "3	LINE	0
-	  NeoBundle 'jpo/vim-railscasts-theme'
+	  NeoBundleLazy 'open-browser.vim', {
+	        \'autoload': {
+	        \ 'function': "OpenBrowser",
+	        \ 'commands': ["OpenBrowser", "OpenBrowserSearch"],
+	        \ 'mappings': "<Plug>(openbrowser-smart-open)"
+	  },
+	  }
+	
 "4	LINE	0
-	  NeoBundle 'Shougo/vimshell'
+	  " URLを開いたり、ググったり出来る"{{{
 "5	LINE	0
-	        \}}
+	        \ ]}}
 "6	LINE	0
-	        \  "commands": [VimShell]
+	        \     ['vx',  '<Plug>VSurround']
 "7	LINE	0
-	        \"autoload": {
+	        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
 "8	LINE	0
-	
+	        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
 "9	LINE	0
-	
+	        \     ['nx',  '<Plug>Ysurround'],  ['nx',  '<Plug>YSurround'],
 "w	CHAR	0
 	wjj
 "z	CHAR	0
 	Shougo/vimshell
 "-	CHAR	0
-	 
+	)
 
 # File marks:
-'0  1  0  ~/.vimrc
-'1  774  0  ~/.vimrc
-'2  1013  2  ~/.vimrc
-'3  641  27  ~/.vimrc
-'4  6  9  ~/[vimshell] - default
-'5  572  2  ~/.vimrc
-'6  1207  2  ~/.vimrc
-'7  1207  8  ~/.vimrc
-'8  1207  3  ~/.vimrc
-'9  1207  4  ~/.vimrc
+'0  1202  3  ~/dotfiles/.vimrc
+'1  902  20  ~/dotfiles/.vimrc
+'2  897  12  ~/dotfiles/.vimrc
+'3  891  2  ~/dotfiles/.vimrc
+'4  899  52  ~/dotfiles/.vimrc
+'5  899  1  ~/dotfiles/.vimrc
+'6  899  4  ~/dotfiles/.vimrc
+'7  899  2  ~/dotfiles/.vimrc
+'8  1  0  ~/dotfiles/.vimrq
+'9  1  0  ~/.vimrc
 
 # Jumplist (newest first):
+-'  1202  3  ~/dotfiles/.vimrc
+-'  1  0  ~/dotfiles/.vimrc
+-'  902  20  ~/dotfiles/.vimrc
+-'  897  12  ~/dotfiles/.vimrc
+-'  891  2  ~/dotfiles/.vimrc
+-'  899  52  ~/dotfiles/.vimrc
+-'  755  2  ~/dotfiles/.vimrc
+-'  754  21  ~/dotfiles/.vimrc
+-'  4  1  ~/dotfiles/.vimrc
+-'  5  0  ~/dotfiles/.vimrc
+-'  69  0  ~/dotfiles/.vimrc
+-'  70  2  ~/dotfiles/.vimrc
+-'  634  7  ~/dotfiles/.vimrc
+-'  528  0  ~/dotfiles/.vimrc
+-'  527  0  ~/dotfiles/.vimrc
+-'  1203  0  ~/dotfiles/.vimrc
+-'  1  0  ~/dotfiles/.vimrq
 -'  1  0  ~/.vimrc
 -'  774  0  ~/.vimrc
 -'  1013  2  ~/.vimrc
@@ -265,8 +289,6 @@ $
 -'  20  0  ~/dotfiles/.zshrc
 -'  1  0  ~/dotfiles/.zshrc
 -'  7  0  ~/Documents/memo/2014-06-16-hogeohge.txt
--'  863  7  ~/dotfiles/.vimrc
--'  1  0  ~/dotfiles/.vimrc
 -'  437  0  ~/dotfiles/.vimrc
 -'  492  4  ~/dotfiles/.vimrc
 -'  1  0  ~/programming/net/test.txt
@@ -274,9 +296,7 @@ $
 -'  504  4  ~/dotfiles/.vimrc
 -'  410  0  ~/dotfiles/.vimrc
 -'  398  0  ~/dotfiles/.vimrc
--'  528  0  ~/dotfiles/.vimrc
 -'  423  0  ~/dotfiles/.vimrc
--'  534  0  ~/dotfiles/.vimrc
 -'  505  0  ~/dotfiles/.vimrc
 -'  489  6  ~/dotfiles/.vimrc
 -'  497  0  ~/.vimrc
@@ -287,33 +307,77 @@ $
 -'  381  0  ~/.vimrc
 -'  1  0  ~/.vimt
 -'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  spec/helpers/application_helper_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/controllers
--'  1  0  ~/rails_projects/sample_app/spec/controllers
--'  2  0  ~/rails_projects/sample_app/spec/helpers
--'  1  0  ~/rails_projects/sample_app/spec/helpers
--'  3  0  ~/ruby-sample/web.rb
--'  1  0  ~/ruby-sample/web.rb
--'  417  0  ~/.zshrc
--'  1  0  ~/.zshrc
--'  528  2  ~/.vimrc
--'  647  8  ~/.vimrc
--'  570  3  ~/.vimrc
--'  645  18  ~/.vimrc
--'  648  5  ~/.vimrc
--'  567  2  ~/.vimrc
--'  1138  23  ~/.vimrc
--'  1105  24  ~/.vimrc
--'  1161  12  ~/.vimrc
--'  1  0  ~/.vimt
--'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  spec/helpers/application_helper_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/controllers
--'  1  0  ~/rails_projects/sample_app/spec/controllers
--'  6  9  ~/[vimshell] - default
--'  1198  2  ~/.vimrc
+-'  1  0  ~/dotfiles/.vimrq
+-'  1  0  ~/.vimrc
+-'  1201  0  ~/dotfiles/.vimrc
+-'  896  52  ~/dotfiles/.vimrc
+-'  895  1  ~/dotfiles/.vimrc
+-'  900  52  ~/dotfiles/.vimrc
+-'  903  20  ~/dotfiles/.vimrc
 
 # History of marks within files (newest to oldest):
+
+> ~/dotfiles/.vimrc
+	"	1202	3
+	^	901	49
+	.	902	0
+	+	380	0
+	+	506	0
+	+	428	0
+	+	438	43
+	+	424	0
+	+	488	0
+	+	423	0
+	+	483	0
+	+	483	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	423	0
+	+	445	20
+	+	446	0
+	+	423	0
+	+	398	0
+	+	399	0
+	+	410	0
+	+	370	0
+	+	411	0
+	+	322	0
+	+	321	0
+	+	523	0
+	+	446	0
+	+	5	12
+	+	5	0
+	+	5	0
+	+	4	0
+	+	755	11
+	+	756	0
+	+	755	31
+	+	899	37
+	+	899	0
+	+	899	22
+	+	899	0
+	+	899	36
+	+	899	59
+	+	899	47
+	+	899	0
+	+	899	4
+	+	899	0
+	+	899	52
+	+	897	14
+	+	899	0
+	+	891	0
+	+	899	0
+	+	898	0
+	+	893	0
+	+	897	13
+	+	900	48
+	+	901	48
+	+	902	0
+	n	850	6
+
+> ~/dotfiles/.vimrq
+	"	1	0
 
 > ~/.vimrc
 	"	1	0
@@ -549,37 +613,6 @@ $
 	.	121	45
 	+	118	0
 	+	121	45
-
-> ~/dotfiles/.vimrc
-	"	863	7
-	^	446	1
-	.	446	0
-	+	380	0
-	+	506	0
-	+	428	0
-	+	438	43
-	+	424	0
-	+	488	0
-	+	423	0
-	+	483	0
-	+	483	0
-	+	505	0
-	+	505	0
-	+	505	0
-	+	423	0
-	+	445	20
-	+	446	0
-	+	423	0
-	+	398	0
-	+	399	0
-	+	410	0
-	+	370	0
-	+	411	0
-	+	322	0
-	+	321	0
-	+	523	0
-	+	446	0
-	n	858	6
 
 > ~/Documents/memo/2014-06-16-hogeohge.txt
 	"	7	0
@@ -2235,6 +2268,3 @@ $
 	+	23	0
 	+	23	0
 	+	2	0
-
-> ~/dotfiles/.vim/bundle/.neobundle/doc/cmdline.jax
-	"	1063	28

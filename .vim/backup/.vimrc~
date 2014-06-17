@@ -752,15 +752,7 @@ else
   " This is a selected text.  S(    This is ( a selected text ).
   " This is a selected text.  S{    This is { a selected text }.
   " This is a selected text.  S<b>  This is <b>a selected text</b>.
-  NeoBundleLazy 'tpope/vim-surround',  {
-        \ 'autoload' : {
-        \   'mappings' : [
-        \     ['nx',  '<Plug>Dsurround'],  ['nx',  '<Plug>Csurround'],
-        \     ['nx',  '<Plug>Ysurround'],  ['nx',  '<Plug>YSurround'],
-        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
-        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
-        \     ['vx',  '<Plug>VSurround']
-        \ ]}}
+  NeoBundle 'tpope/vim-surround'
   "}}}
 
   " clever-f"{{{
@@ -897,12 +889,16 @@ else
   "}}}
 
   " URLを開いたり、ググったり出来る"{{{
-  NeoBundle 'open-browser.vim'
+  NeoBundleLazy "tyru/open-browser.vim", {
+        \   'autoload' : {
+        \       'functions' : "OpenBrowser",
+        \       'commands'  : ["OpenBrowser", "OpenBrowserSearch"],
+        \       'mappings'  : "<Plug>(openbrowser-smart-search)"
+        \   }}
+
   " カーソル下のURLをブラウザで開く
-  nmap <Leader>o <Plug>(openbrowser-open)
-  vmap <Leader>o <Plug>(openbrowser-open)
-  " ググる
-  nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+  nmap <Leader>o <Plug>(openbrowser-smart-search)
+  vmap <Leader>o <Plug>(openbrowser-smart-search)
   "}}}
 
   " ブラウザを自動更新するプラグイン"{{{
