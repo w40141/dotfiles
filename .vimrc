@@ -565,6 +565,7 @@ else
         \ "autoload": {
         \   "commands": ["Unite", "UniteWithBufferDir"]
         \ }}
+
   NeoBundleLazy 'h1mesuke/unite-outline', {
         \ "autoload": {
         \   "unite_sources": ["outline"],
@@ -628,6 +629,18 @@ else
       nmap <buffer> <C-l> <C-w>l
     endfunction
   endfunction
+  "}}}
+
+  " vimshell"{{{
+  NeoBundleLazy 'Shougo/vimshell', {
+        \ 'depends' : 'Shougo/vimproc',
+        \ 'autoload' : {
+        \   'commands' : [{ 'name' : 'VimShell',
+        \                   'complete' : 'customlist, vimshell#complete'},
+        \                   'VimShellExecute',  'VimShellInteractive',
+        \                   'VimShellTerminal',  'VimShellPop'],
+        \   'mappings' : ['<Plug>(vimshell_']
+        \ }}
   "}}}
   "}}}
 
@@ -739,7 +752,15 @@ else
   " This is a selected text.  S(    This is ( a selected text ).
   " This is a selected text.  S{    This is { a selected text }.
   " This is a selected text.  S<b>  This is <b>a selected text</b>.
-  NeoBundle 'tpope/vim-surround'
+  NeoBundleLazy 'tpope/vim-surround',  {
+        \ 'autoload' : {
+        \   'mappings' : [
+        \     ['nx',  '<Plug>Dsurround'],  ['nx',  '<Plug>Csurround'],
+        \     ['nx',  '<Plug>Ysurround'],  ['nx',  '<Plug>YSurround'],
+        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
+        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
+        \     ['vx',  '<Plug>VSurround']
+        \ ]}}
   "}}}
 
   " clever-f"{{{
@@ -989,25 +1010,25 @@ else
 
   " カラースキーム"{{{
   " :Unite colorscheme -auto-priview
-  NeoBundle 'ujihisa/unite-colorscheme'
-  NeoBundle 'altercation/vim-colors-solarized'
-  NeoBundle 'croaker/mustang-vim'
-  NeoBundle 'nanotech/jellybeans.vim'
-  NeoBundle 'tomasr/molokai'
-  NeoBundle 'w0ng/vim-hybrid'
-  NeoBundle 'vim-scripts/twilight'
-  NeoBundle 'jonathanfilip/vim-lucius'
+  " NeoBundle 'ujihisa/unite-colorscheme'
+  " NeoBundle 'altercation/vim-colors-solarized'
+  " NeoBundle 'croaker/mustang-vim'
+  " NeoBundle 'nanotech/jellybeans.vim'
+  " NeoBundle 'tomasr/molokai'
+  " NeoBundle 'w0ng/vim-hybrid'
+  " NeoBundle 'vim-scripts/twilight'
+  " NeoBundle 'jonathanfilip/vim-lucius'
+  " NeoBundle 'vim-scripts/Wombat'
+  " NeoBundle 'vim-scripts/rdark'
+  " NeoBundle 'altercation/vim-colors-solarized'
+  " NeoBundle 'jeffreyiacono/vim-colors-wombat'
+  " NeoBundle 'vim-scripts/Lucius'
+  " NeoBundle 'vim-scripts/Zenburn'
+  " NeoBundle 'mrkn/mrkn256.vim'
+  " NeoBundle 'therubymug/vim-pyte'
+  " NeoBundle 'chriskempson/vim-tomorrow-theme'
   NeoBundle 'jpo/vim-railscasts-theme'
-  NeoBundle 'vim-scripts/Wombat'
-  NeoBundle 'vim-scripts/rdark'
-  NeoBundle 'altercation/vim-colors-solarized'
-  NeoBundle 'jeffreyiacono/vim-colors-wombat'
-  NeoBundle 'vim-scripts/Lucius'
-  NeoBundle 'vim-scripts/Zenburn'
-  NeoBundle 'mrkn/mrkn256.vim'
-  NeoBundle 'therubymug/vim-pyte'
-  NeoBundle 'chriskempson/vim-tomorrow-theme'
-  colorscheme railscasts 
+  colorscheme railscasts
   "}}}
 
   " ステータスライン表示"{{{

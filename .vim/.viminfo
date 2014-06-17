@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/comple
+~MSle0~/shell
 
 # Last Substitute Search Pattern:
 ~MSle0&@
@@ -17,11 +17,17 @@
 $
 
 # Command Line History (newest to oldest):
-:wq
 :q
+:wq
 :w
-:NeoBundleCheckUpdate
+:NeoBundleClean
+:Scouter
+:TweetVimSay
+:TweetVimSay test
+:tw test
+:VimShell
 :NeoBundleInstall
+:NeoBundleCheckUpdate
 :w hoge.pl
 :q!
 :update
@@ -50,7 +56,6 @@ $
 :Unite file
 :s
 :TweetVimSay zencodingらく
-:NeoBundleClean
 :;q
 :'<,'>;jj
 :w te.py
@@ -79,9 +84,7 @@ $
 :clear
 :CloseQFixWin
 :h
-:Scouter
 :VimFiler
-:TweetVimSay
 :e
 :Unite outline
 :Unite buffer file file_mru
@@ -97,6 +100,9 @@ $
 :wq1
 
 # Search String History (newest to oldest):
+?/shell
+?/Shell
+?/vimshell
 ?/comple
 ? \$cursor\$
 ? 
@@ -156,10 +162,10 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@y
 @da
 @memo
 @hogeohge
-@y
 @h1
 @;wq
 @j
@@ -169,75 +175,56 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	    let g:indent_guides_guide_size = 1
-	    let g:indent_guides_auto_colors=0
-	    let g:indent_guides_enable_on_vim_startup=1
-	    autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
-"1	LINE	0
-	  let s:hooks = neobundle#get_hooks("vim-indent-guides")
-	  function! s:hooks.on_source(bundle)
-	    let g:indent_guides_enable_on_vim_startup=1
-	    let g:indent_guides_auto_colors=0
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
-	    let g:indent_guides_guide_size = 1
-	  endfunction
+"0	CHAR	0
+	"
+""1	LINE	0
+	
 "2	LINE	0
-	    let g:indent_guides_auto_colors=0
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	  NeoBundle 'tpope/vim-surround'
 "3	LINE	0
-	    let g:indent_guides_enable_on_vim_startup=1
+	  NeoBundle 'jpo/vim-railscasts-theme'
 "4	LINE	0
-	  " let s:hooks = neobundle#get_hooks("vim-indent-guides")
-	  " function! s:hooks.on_source(bundle)
-	  "   let g:indent_guides_guide_size = 1
-	  "   let g:indent_guides_auto_colors=0
-	  "   let g:indent_guides_enable_on_vim_startup=1
-	  "   autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	  "   autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
-	  " endfunction
-	  " }}}
+	  NeoBundle 'Shougo/vimshell'
 "5	LINE	0
-	  " ガイドの幅
+	        \}}
 "6	LINE	0
-	  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
+	        \  "commands": [VimShell]
 "7	LINE	0
-	  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+	        \"autoload": {
 "8	LINE	0
-	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
+	
 "9	LINE	0
-	" 偶数番目のインデントの色
+	
 "w	CHAR	0
 	wjj
-""z	CHAR	0
-	 if(a==b){
-	        return (y)
-	    }else{
-	        yy(y+1)
-	    }
-	
+"z	CHAR	0
+	Shougo/vimshell
 "-	CHAR	0
-	e
+	 
 
 # File marks:
-'0  804  4  ~/.vimrc
-'1  803  52  ~/.vimrc
-'2  1  0  ~/.vimt
-'3  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
-'4  1  0  spec/helpers/application_helper_spec.rb
-'5  2  0  ~/rails_projects/sample_app/spec/controllers
-'6  2  0  ~/rails_projects/sample_app/spec/helpers
-'7  3  0  ~/ruby-sample/web.rb
-'8  531  0  ~/.vimrc
-'9  806  4  ~/.vimrc
+'0  1  0  ~/.vimrc
+'1  774  0  ~/.vimrc
+'2  1013  2  ~/.vimrc
+'3  641  27  ~/.vimrc
+'4  6  9  ~/[vimshell] - default
+'5  572  2  ~/.vimrc
+'6  1207  2  ~/.vimrc
+'7  1207  8  ~/.vimrc
+'8  1207  3  ~/.vimrc
+'9  1207  4  ~/.vimrc
 
 # Jumplist (newest first):
--'  804  4  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  803  52  ~/.vimrc
+-'  774  0  ~/.vimrc
+-'  1013  2  ~/.vimrc
+-'  1173  0  ~/.vimrc
+-'  641  27  ~/.vimrc
+-'  6  9  ~/[vimshell] - default
+-'  572  2  ~/.vimrc
+-'  527  0  ~/.vimrc
+-'  1207  2  ~/.vimrc
+-'  524  0  ~/.vimrc
 -'  1  0  ~/.vimt
 -'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
 -'  1  0  spec/helpers/application_helper_spec.rb
@@ -247,12 +234,6 @@ $
 -'  1  0  ~/rails_projects/sample_app/spec/helpers
 -'  3  0  ~/ruby-sample/web.rb
 -'  1  0  ~/ruby-sample/web.rb
--'  531  0  ~/.vimrc
--'  806  4  ~/.vimrc
--'  1181  0  ~/.vimrc
--'  805  16  ~/.vimrc
--'  802  4  ~/.vimrc
--'  807  6  ~/.vimrc
 -'  417  0  ~/.zshrc
 -'  1  0  ~/.zshrc
 -'  423  8  ~/.zshrc
@@ -304,94 +285,40 @@ $
 -'  432  0  ~/.vimrc
 -'  428  0  ~/.vimrc
 -'  381  0  ~/.vimrc
--'  410  0  ~/.vimrc
--'  420  0  ~/.vimrc
--'  427  0  ~/.vimrc
--'  440  0  ~/.vimrc
--'  568  11  ~/.vimrc
--'  481  0  ~/.vimrc
--'  1  0  ~/programming/ctf/pic/hoge.html
--'  1  0  ~/programming/ctf/pic/piyo.js
--'  1  0  ~/programming/ctf/pic/fuga.css
--'  1  251  ~/programming/ctf/hoge
--'  5  2  ~/hoge.py
--'  3  291  ~/hoge.py
--'  1  0  ~/hoge.py
--'  4  0  ~/hoge.py
--'  152  0  ~/programming/mysh/mysh.c
--'  1  0  ~/programming/mysh/mysh.c
--'  3  13  ~/programming/mysh/README.md
--'  1  0  ~/programming/mysh/README.md
--'  1  0  ~/programming/mysh/temp.c
--'  5  0  ~/programming/net/report1.zip
--'  1  0  ~/programming/net/time_proto_len.csv
--'  175  0  ~/programming/net/time_proto_len.csv
--'  14  0  ~/programming/net/tcpPerSec.csv
--'  1  0  ~/programming/net/tcpPerSec.csv
--'  5  0  ~/programming/net/report.csv
--'  1  0  ~/programming/net/report.csv
--'  24  0  ~/programming/net/cdfMake.py
--'  1  0  ~/programming/net/cdfMake.py
--'  25  5  ~/programming/net/cdfMake.py
+-'  1  0  ~/.vimt
+-'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+-'  1  0  spec/helpers/application_helper_spec.rb
+-'  2  0  ~/rails_projects/sample_app/spec/controllers
+-'  1  0  ~/rails_projects/sample_app/spec/controllers
+-'  2  0  ~/rails_projects/sample_app/spec/helpers
+-'  1  0  ~/rails_projects/sample_app/spec/helpers
+-'  3  0  ~/ruby-sample/web.rb
+-'  1  0  ~/ruby-sample/web.rb
+-'  417  0  ~/.zshrc
+-'  1  0  ~/.zshrc
+-'  528  2  ~/.vimrc
+-'  647  8  ~/.vimrc
+-'  570  3  ~/.vimrc
+-'  645  18  ~/.vimrc
+-'  648  5  ~/.vimrc
+-'  567  2  ~/.vimrc
+-'  1138  23  ~/.vimrc
+-'  1105  24  ~/.vimrc
+-'  1161  12  ~/.vimrc
+-'  1  0  ~/.vimt
+-'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+-'  1  0  spec/helpers/application_helper_spec.rb
+-'  2  0  ~/rails_projects/sample_app/spec/controllers
+-'  1  0  ~/rails_projects/sample_app/spec/controllers
+-'  6  9  ~/[vimshell] - default
+-'  1198  2  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
 > ~/.vimrc
-	"	804	4
-	^	804	39
-	.	804	0
-	+	475	0
-	+	473	0
-	+	474	49
-	+	475	0
-	+	477	0
-	+	475	0
-	+	483	0
-	+	480	0
-	+	481	0
-	+	481	0
-	+	480	10
-	+	482	25
-	+	484	25
-	+	480	0
-	+	487	0
-	+	486	25
-	+	488	22
-	+	480	0
-	+	566	0
-	+	566	0
-	+	570	51
-	+	569	0
-	+	570	27
-	+	570	29
-	+	523	0
-	+	352	0
-	+	369	0
-	+	490	0
-	+	490	0
-	+	490	0
-	+	485	0
-	+	490	0
-	+	483	0
-	+	490	0
-	+	399	0
-	+	409	0
-	+	410	0
-	+	360	0
-	+	342	0
-	+	373	0
-	+	341	0
-	+	368	0
-	+	369	0
-	+	422	0
-	+	410	0
-	+	381	0
-	+	432	0
-	+	428	0
-	+	428	0
-	+	492	0
-	+	432	0
-	+	376	0
+	"	1	0
+	^	755	1
+	.	764	0
 	+	377	0
 	+	375	0
 	+	380	0
@@ -399,48 +326,109 @@ $
 	+	491	0
 	+	501	0
 	+	514	61
-	+	807	65
-	+	807	0
-	+	807	63
-	+	807	66
-	+	807	66
-	+	807	69
-	+	807	0
-	+	807	0
-	+	802	0
-	+	807	0
-	+	802	0
-	+	800	0
-	+	802	0
-	+	801	0
-	+	802	0
-	+	805	0
-	+	805	14
-	+	805	0
-	+	805	0
-	+	803	0
-	+	800	0
-	+	802	19
-	+	803	19
-	+	805	0
-	+	806	0
-	+	805	0
-	+	806	0
-	+	806	21
-	+	806	21
-	+	806	0
-	+	806	0
-	+	806	0
-	+	806	0
-	+	805	0
-	+	802	63
-	+	803	66
-	+	802	63
-	+	803	65
-	+	802	24
-	+	803	52
-	+	804	0
-	j	666	5
+	+	1207	65
+	+	1207	0
+	+	1207	63
+	+	1207	66
+	+	1207	66
+	+	1207	69
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	14
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	19
+	+	1207	19
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	21
+	+	1207	21
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	63
+	+	1207	66
+	+	1207	63
+	+	1207	65
+	+	1207	24
+	+	1207	52
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	0
+	+	1207	17
+	+	1207	17
+	+	1207	17
+	+	1207	17
+	+	1207	17
+	+	1207	0
+	+	1207	36
+	+	1207	3
+	+	1207	0
+	+	1207	0
+	+	1207	9
+	+	1207	20
+	+	1207	24
+	+	1207	31
+	+	1207	3
+	+	1207	0
+	+	1207	0
+	+	528	0
+	+	645	11
+	+	645	0
+	+	645	28
+	+	644	0
+	+	643	9
+	+	645	0
+	+	633	0
+	+	635	0
+	+	636	38
+	+	638	47
+	+	639	73
+	+	640	67
+	+	641	61
+	+	638	11
+	+	640	27
+	+	641	27
+	+	1173	0
+	+	1031	23
+	+	1021	0
+	+	1030	0
+	+	1029	0
+	+	634	0
+	+	644	0
+	+	764	0
+	+	763	11
+	+	758	67
+	+	759	67
+	+	760	69
+	+	761	69
+	+	755	0
+	+	764	0
+	j	679	5
+
+> ~/[vimshell] - default
+	"	6	9
+	^	6	10
+	.	6	10
+	+	1	13
+	+	3	11
+	+	4	12
+	+	6	10
 
 > ~/.vimt
 	"	1	0
@@ -2250,37 +2238,3 @@ $
 
 > ~/dotfiles/.vim/bundle/.neobundle/doc/cmdline.jax
 	"	1063	28
-
-> ~/rails_projects/sample_app/app/views/layouts/_footer.html.erb
-	"	9	7
-	^	3	8
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	23
-	+	1	11
-	+	1	61
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	83
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	2	64
-	+	5	0
-	+	8	43
-	+	9	45
-	+	10	61
-	+	6	0
-	+	8	47
-	+	9	51
-	+	3	0
