@@ -414,13 +414,13 @@ bindkey "^R" history-incremental-search-backward
 function chpwd() { ls -a }
 
 # ^で"cd .."をする
-function cdup(){
-    echo
-    cd ..
-    zle reset-prompt
-}
-zle -N cdup
-bindkey "\|" cdup
+# function cdup(){     
+#     echo             
+#     cd ..            
+#     zle reset-prompt 
+# }                    
+# zle -N cdup          
+# bindkey "" cdup      
 
 # ターミナルのタイトルをカレントディレクトリにする
 case "${TERM}" in

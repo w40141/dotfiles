@@ -1,0 +1,26 @@
+#!/usr/bin/perl
+# your code goes here
+
+use warnings;
+
+use Data::Dump qw(dump);
+use Digest::MD5;
+use MIME::Base64;
+
+my ($user, $realm, $password) = ("q9", "secret", "c627e19450db746b739f41b64097d449");
+my $md5 = Digest::MD5->new;
+my @digest = ();
+
+$md5->add(join(":", $user, $realm, $password));
+push(@digest, $md5->hexdigest);
+$md5->reset;
+
+my ($nonce, $nc, $cnonce, $qop) = ("bbKtsfbABAA=5dad3cce7a7dd2c3335c9b400a19d6ad02df299b", "00000002", "6945eb2a7ba8cf7f", "auth");
+push(@digest, $nonce, $nc, $cnonce, $qop);
+
+$md5->add(join(":", "GET", "/~q9/htdigest"));
+push(@digest, $md5->hexdigest);
+$md5->reset;
+
+$md5->add(join(":", @digest));
+print dump($md5->hexdigest);

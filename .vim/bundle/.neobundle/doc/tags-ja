@@ -7068,6 +7068,7 @@ notation	intro.jax	/*notation*
 notepad	gui_w32.jax	/*notepad*
 nr2char()	eval.jax	/*nr2char()*
 nroff.vim	syntax.jax	/*nroff.vim*
+number_relativenumber	options.jax	/*number_relativenumber*
 numbered-function	eval.jax	/*numbered-function*
 o	insert.jax	/*o*
 o_CTRL-V	motion.jax	/*o_CTRL-V*

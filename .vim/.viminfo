@@ -17,10 +17,13 @@
 $
 
 # Command Line History (newest to oldest):
-:q!
-:q
 :wq
+:q
 :w
+:NeoBundleCheckUpdate
+:NeoBundleInstall
+:w hoge.pl
+:q!
 :update
 :Unite buffer
 :Unite
@@ -39,7 +42,6 @@ $
 :ew
 :w time_proto_len.csv
 :e programming/hogehoge/
-:NeoBundleInstall
 :NeoBu
 :NeoBundleClean
 :NeoBundleCheck
@@ -168,83 +170,49 @@ $
 
 # Registers:
 "0	LINE	0
-	" タブ移動
-	nnoremap gh gT
-	nnoremap gl gt
-""1	LINE	0
-	" 括弧の編集"{{{
-	inoremap {{ {}<LEFT>
-	inoremap [[ []<LEFT>
-	inoremap (( ()<LEFT>
-	inoremap "" ""<LEFT>
-	inoremap '' ''<LEFT>
-	inoremap << <><LEFT>
-	inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
-	inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
-	inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
-	"}}}
-	
-"2	BLOCK	0
-	"
-	i
-	i
-	i
-	i
-	i
-	i
-	i
-	i
-	i
-	"
-	 
+	    let g:indent_guides_guide_size = 1
+	    let g:indent_guides_auto_colors=0
+	    let g:indent_guides_enable_on_vim_startup=1
+	    autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
+"1	LINE	0
+	  let s:hooks = neobundle#get_hooks("vim-indent-guides")
+	  function! s:hooks.on_source(bundle)
+	    let g:indent_guides_enable_on_vim_startup=1
+	    let g:indent_guides_auto_colors=0
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	    let g:indent_guides_guide_size = 1
+	  endfunction
+"2	LINE	0
+	    let g:indent_guides_auto_colors=0
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
 "3	LINE	0
-	" 括弧の編集"{{{
-	inoremap {{ {}<LEFT>
-	inoremap [[ []<LEFT>
-	inoremap (( ()<LEFT>
-	inoremap "" ""<LEFT>
-	inoremap '' ''<LEFT>
-	inoremap << <><LEFT>
-	inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
-	inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
-	inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
-	"}}}
+	    let g:indent_guides_enable_on_vim_startup=1
 "4	LINE	0
-	vnoremap { "zdi^V{<C-R>z}<ESC>
-	vnoremap [ "zdi^V[<C-R>z]<ESC>
-	vnoremap ( "zdi^V(<C-R>z)<ESC>
-	vnoremap " "zdi^V"<C-R>z^V"<ESC>
-	vnoremap ' "zdi'<C-R>z'<ESC>
-	
-	nnoremap ZZ <Nop>
-	nnoremap ZQ <Nop>
-	nnoremap Q gq
-	
-	" 線を引く
-	inoremap <expr> dl* repeat('*', 79 - col('.'))
-	inoremap <expr> dl# repeat('#', 79 - col('.'))
-	inoremap <expr> dl+ repeat('+', 79 - col('.'))
-	inoremap <expr> dl- repeat('-', 79 - col('.'))
-	inoremap <expr> dl= repeat('=', 79 - col('.'))
-	
+	  " let s:hooks = neobundle#get_hooks("vim-indent-guides")
+	  " function! s:hooks.on_source(bundle)
+	  "   let g:indent_guides_guide_size = 1
+	  "   let g:indent_guides_auto_colors=0
+	  "   let g:indent_guides_enable_on_vim_startup=1
+	  "   autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	  "   autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	  " endfunction
+	  " }}}
 "5	LINE	0
-	" カーソル位置の単語をyankする
-	nnoremap vy viwy
-	" カーソル位置の単語をyankした文字に置き換える
-	nnoremap vp viwpviwy
-	
+	  " ガイドの幅
 "6	LINE	0
-	
+	  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#333344 ctermbg=darkgray
 "7	LINE	0
-	" =の前後にスペースを挿入
+	  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 "8	LINE	0
-	" inoremap = <Space>=<Space>
-	
+	autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#444433 ctermbg=black
 "9	LINE	0
-	
+	" 偶数番目のインデントの色
 "w	CHAR	0
 	wjj
-"z	CHAR	0
+""z	CHAR	0
 	 if(a==b){
 	        return (y)
 	    }else{
@@ -252,24 +220,54 @@ $
 	    }
 	
 "-	CHAR	0
-	}}}
+	e
 
 # File marks:
-'0  1  0  ~/dotfiles/add
-'1  121  5  ~/.zshrc
-'2  121  45  ~/dotfiles/.zshrc
-'3  7  0  ~/Documents/memo/2014-06-16-hogeohge.txt
-'4  437  0  ~/dotfiles/.vimrc
-'5  492  4  ~/dotfiles/.vimrc
-'6  1  0  ~/programming/net/test.txt
-'7  322  0  ~/dotfiles/.vimrc
-'8  497  0  ~/.vimrc
-'9  489  1  ~/.vimrc
+'0  804  4  ~/.vimrc
+'1  803  52  ~/.vimrc
+'2  1  0  ~/.vimt
+'3  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+'4  1  0  spec/helpers/application_helper_spec.rb
+'5  2  0  ~/rails_projects/sample_app/spec/controllers
+'6  2  0  ~/rails_projects/sample_app/spec/helpers
+'7  3  0  ~/ruby-sample/web.rb
+'8  531  0  ~/.vimrc
+'9  806  4  ~/.vimrc
 
 # Jumplist (newest first):
+-'  804  4  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  803  52  ~/.vimrc
+-'  1  0  ~/.vimt
+-'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+-'  1  0  spec/helpers/application_helper_spec.rb
+-'  2  0  ~/rails_projects/sample_app/spec/controllers
+-'  1  0  ~/rails_projects/sample_app/spec/controllers
+-'  2  0  ~/rails_projects/sample_app/spec/helpers
+-'  1  0  ~/rails_projects/sample_app/spec/helpers
+-'  3  0  ~/ruby-sample/web.rb
+-'  1  0  ~/ruby-sample/web.rb
+-'  531  0  ~/.vimrc
+-'  806  4  ~/.vimrc
+-'  1181  0  ~/.vimrc
+-'  805  16  ~/.vimrc
+-'  802  4  ~/.vimrc
+-'  807  6  ~/.vimrc
+-'  417  0  ~/.zshrc
+-'  1  0  ~/.zshrc
+-'  423  8  ~/.zshrc
+-'  1  54  ~/programming/ctf/word/_rels/document.xml.rels
+-'  2  495  ~/programming/ctf/_rels/.rels
+-'  1  0  ~/programming/ctf/_rels/.rels
+-'  2  0  ~/programming/ctf/word/document.xml
+-'  1  0  ~/programming/ctf/word/document.xml
+-'  1  0  ~/programming/ctf/docProps/app.xml
+-'  10  0  ~/hoge.pl
+-'  1  0  ~/hoge.pl
+-'  5  0  ~/hoge.pl
+-'  21  40  ~/hoge.pl
 -'  1  0  ~/dotfiles/add
 -'  121  5  ~/.zshrc
--'  1  0  ~/.zshrc
 -'  121  45  ~/dotfiles/.zshrc
 -'  139  9  ~/dotfiles/.zshrc
 -'  138  9  ~/dotfiles/.zshrc
@@ -302,7 +300,6 @@ $
 -'  489  6  ~/dotfiles/.vimrc
 -'  497  0  ~/.vimrc
 -'  425  1  ~/.vimrc
--'  1  0  ~/.vimrc
 -'  489  1  ~/.vimrc
 -'  432  0  ~/.vimrc
 -'  428  0  ~/.vimrc
@@ -336,193 +333,13 @@ $
 -'  24  0  ~/programming/net/cdfMake.py
 -'  1  0  ~/programming/net/cdfMake.py
 -'  25  5  ~/programming/net/cdfMake.py
--'  4  18  ~/programming/net/cdfMake.py
--'  5  11  ~/programming/net/cdfMake.py
--'  27  5  ~/programming/net/cdfMake.py
--'  18  9  ~/programming/net/cdfMake.py
--'  1  0  ~/programming/net/cdf
--'  25  9  ~/programming/net/2readNet.py
--'  1  0  ~/programming/net/2readNet.py
--'  20  15  ~/programming/net/2readNet.py
--'  24  10  ~/programming/net/2readNet.py
--'  17  36  ~/programming/net/2readNet.py
--'  16  18  ~/programming/net/2readNet.py
--'  20  15  ~/programming/net/cdfMake.py
--'  19  0  ~/programming/net/cdfMake.py
--'  8  0  ~/programming/net/cdfMake.py
--'  12  0  ~/programming/net/2readNet.py
--'  507  0  ~/programming/net/report.csv
--'  121  45  ~/dotfiles/.zshrc
--'  139  9  ~/dotfiles/.zshrc
--'  138  9  ~/dotfiles/.zshrc
--'  137  9  ~/dotfiles/.zshrc
--'  134  9  ~/dotfiles/.zshrc
--'  133  9  ~/dotfiles/.zshrc
--'  130  9  ~/dotfiles/.zshrc
--'  127  39  ~/dotfiles/.zshrc
--'  126  24  ~/dotfiles/.zshrc
--'  123  18  ~/dotfiles/.zshrc
--'  118  7  ~/dotfiles/.zshrc
--'  436  9  ~/dotfiles/.zshrc
--'  140  9  ~/dotfiles/.zshrc
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/add
-	"	1	0
-
-> ~/.zshrc
-	"	121	5
-	^	121	6
-	.	121	5
-	+	5	0
-	+	4	0
-	+	17	0
-	+	22	0
-	+	21	0
-	+	99	0
-	+	104	0
-	+	103	0
-	+	144	0
-	+	359	0
-	+	364	0
-	+	386	0
-	+	391	0
-	+	404	0
-	+	409	0
-	+	408	0
-	+	458	18
-	+	156	4
-	+	162	4
-	+	351	114
-	+	455	3
-	+	455	0
-	+	411	23
-	+	414	16
-	+	415	3
-	+	425	3
-	+	426	7
-	+	427	3
-	+	428	3
-	+	63	0
-	+	445	3
-	+	415	8
-	+	416	0
-	+	418	0
-	+	417	18
-	+	418	0
-	+	420	15
-	+	413	6
-	+	414	6
-	+	413	13
-	+	420	12
-	+	82	0
-	+	420	0
-	+	82	0
-	+	420	8
-	+	421	8
-	+	420	12
-	+	417	11
-	+	420	10
-	+	441	0
-	+	440	0
-	+	441	0
-	+	454	0
-	+	443	0
-	+	442	42
-	+	121	5
-
-> ~/dotfiles/.zshrc
-	"	121	45
-	^	121	46
-	.	121	45
-	+	118	0
-	+	121	45
-
-> ~/dotfiles/.vimrc
-	"	863	7
-	^	446	1
-	.	446	0
-	+	380	0
-	+	506	0
-	+	428	0
-	+	438	43
-	+	424	0
-	+	488	0
-	+	423	0
-	+	483	0
-	+	483	0
-	+	505	0
-	+	505	0
-	+	505	0
-	+	423	0
-	+	445	20
-	+	446	0
-	+	423	0
-	+	398	0
-	+	399	0
-	+	410	0
-	+	370	0
-	+	411	0
-	+	322	0
-	+	321	0
-	+	523	0
-	+	446	0
-	n	858	6
-
-> ~/Documents/memo/2014-06-16-hogeohge.txt
-	"	7	0
-	.	1	0
-	+	1	0
-
-> ~/programming/net/test.txt
-	"	1	0
-
 > ~/.vimrc
-	"	497	0
-	^	515	0
-	.	514	61
-	+	410	0
-	+	410	0
-	+	417	10
-	+	418	10
-	+	419	0
-	+	420	0
-	+	419	19
-	+	417	10
-	+	418	10
-	+	419	10
-	+	432	0
-	+	432	0
-	+	178	11
-	+	180	29
-	+	53	0
-	+	174	20
-	+	181	0
-	+	5	0
-	+	4	0
-	+	181	29
-	+	737	0
-	+	458	0
-	+	492	62
-	+	492	62
-	+	492	62
-	+	492	62
-	+	492	54
-	+	492	54
-	+	492	54
-	+	492	53
-	+	492	0
-	+	457	37
-	+	458	0
-	+	458	0
-	+	459	22
-	+	480	0
-	+	460	0
-	+	462	37
-	+	475	0
-	+	467	0
-	+	468	34
+	"	804	4
+	^	804	39
+	.	804	0
 	+	475	0
 	+	473	0
 	+	474	49
@@ -582,7 +399,207 @@ $
 	+	491	0
 	+	501	0
 	+	514	61
+	+	807	65
+	+	807	0
+	+	807	63
+	+	807	66
+	+	807	66
+	+	807	69
+	+	807	0
+	+	807	0
+	+	802	0
+	+	807	0
+	+	802	0
+	+	800	0
+	+	802	0
+	+	801	0
+	+	802	0
+	+	805	0
+	+	805	14
+	+	805	0
+	+	805	0
+	+	803	0
+	+	800	0
+	+	802	19
+	+	803	19
+	+	805	0
+	+	806	0
+	+	805	0
+	+	806	0
+	+	806	21
+	+	806	21
+	+	806	0
+	+	806	0
+	+	806	0
+	+	806	0
+	+	805	0
+	+	802	63
+	+	803	66
+	+	802	63
+	+	803	65
+	+	802	24
+	+	803	52
+	+	804	0
 	j	666	5
+
+> ~/.vimt
+	"	1	0
+
+> ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+	"	1	0
+	^	18	3
+	.	14	17
+	+	1	21
+	+	5	26
+	+	6	41
+	+	7	47
+	+	10	41
+	+	11	78
+	+	14	54
+	+	15	47
+	+	18	2
+	+	14	17
+
+> spec/helpers/application_helper_spec.rb
+	"	1	0
+
+> ~/ruby-sample/web.rb
+	"	3	0
+
+> ~/.zshrc
+	"	417	0
+	^	423	9
+	.	423	0
+	+	5	0
+	+	4	0
+	+	17	0
+	+	22	0
+	+	21	0
+	+	99	0
+	+	104	0
+	+	103	0
+	+	144	0
+	+	359	0
+	+	364	0
+	+	386	0
+	+	391	0
+	+	404	0
+	+	409	0
+	+	408	0
+	+	458	18
+	+	156	4
+	+	162	4
+	+	351	114
+	+	455	3
+	+	455	0
+	+	411	23
+	+	414	16
+	+	415	3
+	+	425	3
+	+	426	7
+	+	427	3
+	+	428	3
+	+	63	0
+	+	445	3
+	+	415	8
+	+	416	0
+	+	418	0
+	+	417	18
+	+	418	0
+	+	420	15
+	+	413	6
+	+	414	6
+	+	413	13
+	+	420	12
+	+	82	0
+	+	420	0
+	+	82	0
+	+	420	8
+	+	421	8
+	+	420	12
+	+	417	11
+	+	420	10
+	+	441	0
+	+	440	0
+	+	441	0
+	+	454	0
+	+	443	0
+	+	442	42
+	+	121	5
+	+	423	9
+	+	423	0
+
+> ~/programming/ctf/word/_rels/document.xml.rels
+	"	1	54
+
+> ~/programming/ctf/_rels/.rels
+	"	2	495
+
+> ~/programming/ctf/word/document.xml
+	"	2	0
+
+> ~/programming/ctf/docProps/app.xml
+	"	1	0
+
+> ~/hoge.pl
+	"	10	0
+	.	27	0
+	+	21	32
+	+	18	104
+	+	10	81
+	+	18	119
+	+	10	72
+	+	21	40
+	+	27	0
+
+> ~/dotfiles/add
+	"	1	0
+
+> ~/dotfiles/.zshrc
+	"	121	45
+	^	121	46
+	.	121	45
+	+	118	0
+	+	121	45
+
+> ~/dotfiles/.vimrc
+	"	863	7
+	^	446	1
+	.	446	0
+	+	380	0
+	+	506	0
+	+	428	0
+	+	438	43
+	+	424	0
+	+	488	0
+	+	423	0
+	+	483	0
+	+	483	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	423	0
+	+	445	20
+	+	446	0
+	+	423	0
+	+	398	0
+	+	399	0
+	+	410	0
+	+	370	0
+	+	411	0
+	+	322	0
+	+	321	0
+	+	523	0
+	+	446	0
+	n	858	6
+
+> ~/Documents/memo/2014-06-16-hogeohge.txt
+	"	7	0
+	.	1	0
+	+	1	0
+
+> ~/programming/net/test.txt
+	"	1	0
 
 > ~/programming/ctf/pic/hoge.html
 	"	1	0
@@ -2087,21 +2104,6 @@ $
 > ~/.vimra
 	"	1	0
 
-> ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
-	"	4	0
-	^	18	3
-	.	14	17
-	+	1	21
-	+	5	26
-	+	6	41
-	+	7	47
-	+	10	41
-	+	11	78
-	+	14	54
-	+	15	47
-	+	18	2
-	+	14	17
-
 > ~/rails_projects/sample_app/app/helpers/application_helper.rb
 	"	10	4
 	^	8	8
@@ -2282,66 +2284,3 @@ $
 	+	8	47
 	+	9	51
 	+	3	0
-
-> ~/rails_projects/sample_app/app/views/static_pages/contact.html.erb
-	"	5	19
-	^	1	31
-	.	1	30
-	+	1	31
-	+	1	16
-	+	3	3
-	+	5	63
-	+	6	0
-	+	1	30
-
-> spec/support/utilities.rb
-	"	7	1
-	.	9	0
-	+	1	26
-	+	2	48
-	+	6	35
-	+	9	0
-
-> ~/rails_projects/sample_app/app/views/static_pages/about.html.erb
-	"	5	0
-	^	2	0
-	.	1	33
-	+	1	17
-	+	3	3
-	+	4	70
-	+	6	65
-	+	8	0
-	+	1	15
-	+	1	6
-	+	1	10
-	+	1	67
-	+	1	11
-	+	1	8
-	+	9	7
-	+	9	5
-	+	1	0
-	+	1	32
-	+	1	65
-	+	1	0
-	+	9	0
-	+	1	33
-
-> ~/rails_projects/sample_app/app/assets/stylesheets/application.css
-	"	8	0
-
-> ~/rails_projects/sample_app/app/views/layouts/_shim.html.erb
-	"	1	8
-	.	1	0
-	+	1	0
-
-> ~/rails_projects/sample_app/config/application.rb
-	"	27	58
-	^	27	59
-	.	27	58
-	+	27	58
-
-> ~/rails_projects/sample_app/app/views/layouts/applocation.html.erb
-	"	1	0
-
-> ~/rails_projects/sample_app/.vimrc
-	"	1	0
