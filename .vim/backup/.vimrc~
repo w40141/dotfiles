@@ -823,7 +823,10 @@ else
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
   " <Space>M で全てのハイライトを解除する
-  NeoBundle 't9md/vim-quickhl'
+  NeoBundleLazy 't9md/vim-quickhl', {
+        \ "autoload": {
+        \   "mappings": ["<Plug>(quickhl-manual-reset)", "<Plug>(quickhl-manual-this)"]
+        \}}
   nmap <Space>m <Plug>(quickhl-manual-this)
   xmap <Space>m <Plug>(quickhl-manual-this)
   nmap <Space>M <Plug>(quickhl-manual-reset)
@@ -854,7 +857,7 @@ else
   " 新規画面を右に出し、結果表示
   NeoBundleLazy "thinca/vim-quickrun", {
         \ "autoload": {
-        \   "mappings": [['nxo', '<Plug>(quickrun)']]
+        \   "mappings": ['nxo', '<Plug>(quickrun)']
         \ }}
   nmap <Leader>r <Plug>(quickrun)
   let s:hooks = neobundle#get_hooks("vim-quickrun")

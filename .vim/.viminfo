@@ -18,8 +18,8 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:w
 :q
+:w
 :NeoBundleClean
 :Scouter
 :TweetVimSay
@@ -177,11 +177,13 @@ $
 # Registers:
 "0	CHAR	0
 	"
-""1	LINE	0
-	  " nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+"1	LINE	0
+	        \   "mappings: ["<Plug>(quickhl-manual-reset)", "<Plug>(quickhl-manual-this)"]"
 "2	LINE	0
-	  " ググる
+	  " nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
 "3	LINE	0
+	  " ググる
+"4	LINE	0
 	  NeoBundleLazy 'open-browser.vim', {
 	        \'autoload': {
 	        \ 'function': "OpenBrowser",
@@ -190,44 +192,49 @@ $
 	  },
 	  }
 	
-"4	LINE	0
-	  " URLを開いたり、ググったり出来る"{{{
 "5	LINE	0
-	        \ ]}}
+	  " URLを開いたり、ググったり出来る"{{{
 "6	LINE	0
-	        \     ['vx',  '<Plug>VSurround']
+	        \ ]}}
 "7	LINE	0
-	        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
+	        \     ['vx',  '<Plug>VSurround']
 "8	LINE	0
-	        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
+	        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
 "9	LINE	0
-	        \     ['nx',  '<Plug>Ysurround'],  ['nx',  '<Plug>YSurround'],
+	        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
 "w	CHAR	0
 	wjj
-"z	CHAR	0
-	Shougo/vimshell
-"-	CHAR	0
-	)
+"z	LINE	0
+	File:/Users/aisuke/dotfiles/.vimrc
+	
+""-	CHAR	0
+	"
 
 # File marks:
-'0  1202  3  ~/dotfiles/.vimrc
-'1  902  20  ~/dotfiles/.vimrc
-'2  897  12  ~/dotfiles/.vimrc
-'3  891  2  ~/dotfiles/.vimrc
-'4  899  52  ~/dotfiles/.vimrc
-'5  899  1  ~/dotfiles/.vimrc
-'6  899  4  ~/dotfiles/.vimrc
-'7  899  2  ~/dotfiles/.vimrc
-'8  1  0  ~/dotfiles/.vimrq
-'9  1  0  ~/.vimrc
+'0  836  7  ~/dotfiles/.vimrc
+'1  860  50  ~/dotfiles/.vimrc
+'2  1205  3  ~/dotfiles/.vimrc
+'3  905  20  ~/dotfiles/.vimrc
+'4  900  12  ~/dotfiles/.vimrc
+'5  894  2  ~/dotfiles/.vimrc
+'6  902  52  ~/dotfiles/.vimrc
+'7  902  1  ~/dotfiles/.vimrc
+'8  902  4  ~/dotfiles/.vimrc
+'9  902  2  ~/dotfiles/.vimrc
 
 # Jumplist (newest first):
--'  1202  3  ~/dotfiles/.vimrc
+-'  836  7  ~/dotfiles/.vimrc
+-'  1203  5  ~/dotfiles/.vimrc
+-'  1204  7  ~/dotfiles/.vimrc
+-'  1134  36  ~/dotfiles/.vimrc
 -'  1  0  ~/dotfiles/.vimrc
--'  902  20  ~/dotfiles/.vimrc
--'  897  12  ~/dotfiles/.vimrc
--'  891  2  ~/dotfiles/.vimrc
--'  899  52  ~/dotfiles/.vimrc
+-'  860  50  ~/dotfiles/.vimrc
+-'  792  4  ~/dotfiles/.vimrc
+-'  1205  3  ~/dotfiles/.vimrc
+-'  905  20  ~/dotfiles/.vimrc
+-'  900  12  ~/dotfiles/.vimrc
+-'  894  2  ~/dotfiles/.vimrc
+-'  902  52  ~/dotfiles/.vimrc
 -'  755  2  ~/dotfiles/.vimrc
 -'  754  21  ~/dotfiles/.vimrc
 -'  4  1  ~/dotfiles/.vimrc
@@ -237,7 +244,7 @@ $
 -'  634  7  ~/dotfiles/.vimrc
 -'  528  0  ~/dotfiles/.vimrc
 -'  527  0  ~/dotfiles/.vimrc
--'  1203  0  ~/dotfiles/.vimrc
+-'  1206  0  ~/dotfiles/.vimrc
 -'  1  0  ~/dotfiles/.vimrq
 -'  1  0  ~/.vimrc
 -'  774  0  ~/.vimrc
@@ -307,20 +314,13 @@ $
 -'  381  0  ~/.vimrc
 -'  1  0  ~/.vimt
 -'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  ~/dotfiles/.vimrq
--'  1  0  ~/.vimrc
--'  1201  0  ~/dotfiles/.vimrc
--'  896  52  ~/dotfiles/.vimrc
--'  895  1  ~/dotfiles/.vimrc
--'  900  52  ~/dotfiles/.vimrc
--'  903  20  ~/dotfiles/.vimrc
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/.vimrc
-	"	1202	3
-	^	901	49
-	.	902	0
+	"	836	7
+	^	829	11
+	.	829	10
 	+	380	0
 	+	506	0
 	+	428	0
@@ -353,28 +353,35 @@ $
 	+	755	11
 	+	756	0
 	+	755	31
-	+	899	37
-	+	899	0
-	+	899	22
-	+	899	0
-	+	899	36
-	+	899	59
-	+	899	47
-	+	899	0
-	+	899	4
-	+	899	0
-	+	899	52
-	+	897	14
-	+	899	0
-	+	891	0
-	+	899	0
-	+	898	0
-	+	893	0
-	+	897	13
-	+	900	48
-	+	901	48
+	+	902	37
 	+	902	0
-	n	850	6
+	+	902	22
+	+	902	0
+	+	902	36
+	+	902	59
+	+	902	47
+	+	902	0
+	+	902	4
+	+	902	0
+	+	902	52
+	+	900	14
+	+	902	0
+	+	894	0
+	+	902	0
+	+	901	0
+	+	896	0
+	+	900	13
+	+	903	48
+	+	904	48
+	+	905	0
+	+	826	37
+	+	827	23
+	+	829	0
+	+	828	24
+	+	860	50
+	+	828	86
+	+	829	10
+	n	853	6
 
 > ~/dotfiles/.vimrq
 	"	1	0
