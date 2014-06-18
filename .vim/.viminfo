@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/shell
+~MSle0~/expandt
 
 # Last Substitute Search Pattern:
 ~MSle0&@
@@ -18,8 +18,11 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:q
+:q!
 :w
+:q
+:w 2_program.cpp
+:w hogehoge
 :NeoBundleClean
 :Scouter
 :TweetVimSay
@@ -29,7 +32,6 @@ $
 :NeoBundleInstall
 :NeoBundleCheckUpdate
 :w hoge.pl
-:q!
 :update
 :Unite buffer
 :Unite
@@ -100,6 +102,16 @@ $
 :wq1
 
 # Search String History (newest to oldest):
+?/expandt
+?/expandta
+?/expa
+?/ex
+?/noe
+?/expanta
+?/set list
+?/f
+?/fl
+?/flag
 ?/shell
 ?/Shell
 ?/vimshell
@@ -175,54 +187,128 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	CHAR	0
-	"
-"1	LINE	0
-	        \   "mappings: ["<Plug>(quickhl-manual-reset)", "<Plug>(quickhl-manual-this)"]"
-"2	LINE	0
-	  " nnoremap <Leader>o :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
-"3	LINE	0
-	  " ググる
+"0	LINE	0
+	oomktvziqtaovmmpxzoqrzsxlpwpgoj111111111111111111111111111111
+""1	BLOCK	2
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+"2	BLOCK	2
+	 et
+	 et
+"3	BLOCK	2
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
+	 et
 "4	LINE	0
-	  NeoBundleLazy 'open-browser.vim', {
-	        \'autoload': {
-	        \ 'function': "OpenBrowser",
-	        \ 'commands': ["OpenBrowser", "OpenBrowserSearch"],
-	        \ 'mappings': "<Plug>(openbrowser-smart-open)"
-	  },
-	  }
-	
+	" 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 "5	LINE	0
-	  " URLを開いたり、ググったり出来る"{{{
+	" 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
 "6	LINE	0
-	        \ ]}}
+	" tabとspaceの混在を防ぐ
 "7	LINE	0
-	        \     ['vx',  '<Plug>VSurround']
+	" tabとspaceの混在を防ぐ
 "8	LINE	0
-	        \     ['nx',  '<Plug>YSsurround'],  ['vx',  '<Plug>VgSurround'],
+	
 "9	LINE	0
-	        \     ['nx',  '<Plug>Yssurround'],  ['nx',  '<Plug>YSsurround'],
+	" tabとspaceの混在を防ぐ
+	set listchars=tab:>-,eol:$,trail:+,nbsp:%,extends:>,precedes:<,
+	
 "w	CHAR	0
 	wjj
 "z	LINE	0
 	File:/Users/aisuke/dotfiles/.vimrc
 	
-""-	CHAR	0
-	"
+"-	CHAR	0
+	 
 
 # File marks:
-'0  836  7  ~/dotfiles/.vimrc
-'1  860  50  ~/dotfiles/.vimrc
-'2  1205  3  ~/dotfiles/.vimrc
-'3  905  20  ~/dotfiles/.vimrc
-'4  900  12  ~/dotfiles/.vimrc
-'5  894  2  ~/dotfiles/.vimrc
-'6  902  52  ~/dotfiles/.vimrc
-'7  902  1  ~/dotfiles/.vimrc
-'8  902  4  ~/dotfiles/.vimrc
-'9  902  2  ~/dotfiles/.vimrc
+'0  4  0  ~/.vimrc
+'1  275  0  ~/.vimrc
+'2  98  0  ~/.vimrc
+'3  225  5  ~/.vimrc
+'4  197  27  ~/.vimrc
+'5  5  16  ~/programming/ctf/program.cpp
+'6  6  9  ~/programming/ctf/program.cpp
+'7  5  144  ~/programming/ctf/program.cpp
+'8  4  10  ~/programming/ctf/program.cpp
+'9  12  11  ~/programming/ctf/hogehoge
 
 # Jumplist (newest first):
+-'  4  0  ~/.vimrc
+-'  5  8  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  275  0  ~/.vimrc
+-'  278  54  ~/.vimrc
+-'  225  6  ~/.vimrc
+-'  271  10  ~/.vimrc
+-'  94  0  ~/.vimrc
+-'  98  0  ~/.vimrc
+-'  512  46  ~/.vimrc
+-'  484  10  ~/.vimrc
+-'  486  0  ~/.vimrc
+-'  291  55  ~/.vimrc
+-'  108  44  ~/.vimrc
+-'  101  43  ~/.vimrc
+-'  103  0  ~/.vimrc
+-'  197  0  ~/.vimrc
+-'  105  0  ~/.vimrc
+-'  125  0  ~/.vimrc
+-'  196  0  ~/.vimrc
+-'  5  16  ~/programming/ctf/program.cpp
+-'  1  0  ~/programming/ctf/program.cpp
+-'  3  0  ~/programming/ctf/program.cpp
+-'  6  9  ~/programming/ctf/program.cpp
+-'  4  10  ~/programming/ctf/program.cpp
+-'  12  11  ~/programming/ctf/hogehoge
+-'  2  20  ~/programming/ctf/hogehoge
+-'  31  17  ~/programming/ctf/hogehoge
+-'  3  27  ~/programming/ctf/hogehoge
+-'  4  26  ~/programming/ctf/hogehoge
+-'  7  14  ~/programming/ctf/hogehoge
+-'  8  2  ~/programming/ctf/hogehoge
+-'  9  15  ~/programming/ctf/hogehoge
+-'  10  2  ~/programming/ctf/hogehoge
+-'  11  8  ~/programming/ctf/hogehoge
+-'  14  7  ~/programming/ctf/hogehoge
+-'  15  28  ~/programming/ctf/hogehoge
+-'  19  5  ~/programming/ctf/hogehoge
+-'  21  5  ~/programming/ctf/hogehoge
+-'  22  26  ~/programming/ctf/hogehoge
+-'  23  1  ~/programming/ctf/hogehoge
+-'  24  6  ~/programming/ctf/hogehoge
+-'  30  28  ~/programming/ctf/hogehoge
+-'  1  8  ~/programming/ctf/hogehoge
+-'  18  28  ~/programming/ctf/hogehoge
+-'  17  28  ~/programming/ctf/hogehoge
+-'  16  28  ~/programming/ctf/hogehoge
+-'  13  28  ~/programming/ctf/hogehoge
+-'  6  27  ~/programming/ctf/hogehoge
+-'  5  27  ~/programming/ctf/hogehoge
+-'  32  0  ~/programming/ctf/hogehoge
+-'  1  0  ~/programming/ctf/hoge.py
+-'  1  0  ~/programming/ctf/hoge
 -'  836  7  ~/dotfiles/.vimrc
 -'  1203  5  ~/dotfiles/.vimrc
 -'  1204  7  ~/dotfiles/.vimrc
@@ -246,76 +332,292 @@ $
 -'  527  0  ~/dotfiles/.vimrc
 -'  1206  0  ~/dotfiles/.vimrc
 -'  1  0  ~/dotfiles/.vimrq
--'  1  0  ~/.vimrc
--'  774  0  ~/.vimrc
--'  1013  2  ~/.vimrc
--'  1173  0  ~/.vimrc
--'  641  27  ~/.vimrc
+-'  773  0  ~/.vimrc
+-'  1012  2  ~/.vimrc
+-'  1172  0  ~/.vimrc
+-'  640  27  ~/.vimrc
 -'  6  9  ~/[vimshell] - default
--'  572  2  ~/.vimrc
--'  527  0  ~/.vimrc
--'  1207  2  ~/.vimrc
--'  524  0  ~/.vimrc
--'  1  0  ~/.vimt
--'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  spec/helpers/application_helper_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/controllers
--'  1  0  ~/rails_projects/sample_app/spec/controllers
--'  2  0  ~/rails_projects/sample_app/spec/helpers
--'  1  0  ~/rails_projects/sample_app/spec/helpers
--'  3  0  ~/ruby-sample/web.rb
--'  1  0  ~/ruby-sample/web.rb
--'  417  0  ~/.zshrc
--'  1  0  ~/.zshrc
--'  423  8  ~/.zshrc
--'  1  54  ~/programming/ctf/word/_rels/document.xml.rels
--'  2  495  ~/programming/ctf/_rels/.rels
--'  1  0  ~/programming/ctf/_rels/.rels
--'  2  0  ~/programming/ctf/word/document.xml
--'  1  0  ~/programming/ctf/word/document.xml
--'  1  0  ~/programming/ctf/docProps/app.xml
--'  10  0  ~/hoge.pl
--'  1  0  ~/hoge.pl
--'  5  0  ~/hoge.pl
--'  21  40  ~/hoge.pl
--'  1  0  ~/dotfiles/add
--'  121  5  ~/.zshrc
--'  121  45  ~/dotfiles/.zshrc
--'  139  9  ~/dotfiles/.zshrc
--'  138  9  ~/dotfiles/.zshrc
--'  137  9  ~/dotfiles/.zshrc
--'  134  9  ~/dotfiles/.zshrc
--'  133  9  ~/dotfiles/.zshrc
--'  130  9  ~/dotfiles/.zshrc
--'  127  39  ~/dotfiles/.zshrc
--'  126  24  ~/dotfiles/.zshrc
--'  123  18  ~/dotfiles/.zshrc
--'  118  7  ~/dotfiles/.zshrc
--'  436  9  ~/dotfiles/.zshrc
--'  140  9  ~/dotfiles/.zshrc
--'  20  0  ~/dotfiles/.zshrc
--'  1  0  ~/dotfiles/.zshrc
--'  7  0  ~/Documents/memo/2014-06-16-hogeohge.txt
--'  437  0  ~/dotfiles/.vimrc
--'  492  4  ~/dotfiles/.vimrc
--'  1  0  ~/programming/net/test.txt
--'  322  0  ~/dotfiles/.vimrc
--'  504  4  ~/dotfiles/.vimrc
--'  410  0  ~/dotfiles/.vimrc
--'  398  0  ~/dotfiles/.vimrc
--'  423  0  ~/dotfiles/.vimrc
--'  505  0  ~/dotfiles/.vimrc
--'  489  6  ~/dotfiles/.vimrc
--'  497  0  ~/.vimrc
--'  425  1  ~/.vimrc
--'  489  1  ~/.vimrc
--'  432  0  ~/.vimrc
--'  428  0  ~/.vimrc
--'  381  0  ~/.vimrc
--'  1  0  ~/.vimt
--'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+-'  571  2  ~/.vimrc
+-'  526  0  ~/.vimrc
+-'  1206  2  ~/.vimrc
+-'  523  0  ~/.vimrc
+-'  12  11  ~/programming/ctf/hogehoge
+-'  2  20  ~/programming/ctf/hogehoge
+-'  31  17  ~/programming/ctf/hogehoge
+-'  3  27  ~/programming/ctf/hogehoge
+-'  4  26  ~/programming/ctf/hogehoge
+-'  7  14  ~/programming/ctf/hogehoge
+-'  8  2  ~/programming/ctf/hogehoge
+-'  9  15  ~/programming/ctf/hogehoge
+-'  10  2  ~/programming/ctf/hogehoge
+-'  11  8  ~/programming/ctf/hogehoge
 
 # History of marks within files (newest to oldest):
+
+> ~/.vimrc
+	"	4	0
+	.	5	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	19
+	+	1206	19
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	21
+	+	1206	21
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	63
+	+	1206	66
+	+	1206	63
+	+	1206	65
+	+	1206	24
+	+	1206	52
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	0
+	+	1206	17
+	+	1206	17
+	+	1206	17
+	+	1206	17
+	+	1206	17
+	+	1206	0
+	+	1206	36
+	+	1206	3
+	+	1206	0
+	+	1206	0
+	+	1206	9
+	+	1206	20
+	+	1206	24
+	+	1206	31
+	+	1206	3
+	+	1206	0
+	+	1206	0
+	+	527	0
+	+	644	11
+	+	644	0
+	+	644	28
+	+	643	0
+	+	642	9
+	+	644	0
+	+	632	0
+	+	634	0
+	+	635	38
+	+	637	47
+	+	638	73
+	+	639	67
+	+	640	61
+	+	637	11
+	+	639	27
+	+	640	27
+	+	1172	0
+	+	1030	23
+	+	1020	0
+	+	1029	0
+	+	1028	0
+	+	633	0
+	+	643	0
+	+	763	0
+	+	762	11
+	+	757	67
+	+	758	67
+	+	759	69
+	+	760	69
+	+	754	0
+	+	763	0
+	+	197	27
+	+	197	0
+	+	197	0
+	+	196	0
+	+	197	27
+	+	225	0
+	+	197	0
+	+	105	0
+	+	103	0
+	+	101	44
+	+	102	127
+	+	102	0
+	+	101	40
+	+	485	0
+	+	225	5
+	+	5	0
+	+	277	53
+	+	278	53
+	+	279	54
+	+	292	54
+	+	291	53
+	+	294	53
+	+	295	54
+	+	5	0
+	j	678	5
+
+> ~/programming/ctf/hoge.rb
+	"	2	13
+	^	2	14
+	.	2	13
+	+	1	12
+	+	4	22
+	+	2	13
+
+> ~/programming/ctf/program.cpp
+	"	11	0
+	.	12	0
+	+	4	32
+	+	5	206
+	+	5	179
+	+	20	0
+	+	19	0
+	+	19	0
+	+	18	7
+	+	11	539
+	+	18	0
+	+	11	526
+	+	11	513
+	+	17	0
+	+	11	498
+	+	17	0
+	+	11	480
+	+	11	452
+	+	15	0
+	+	11	368
+	+	11	349
+	+	11	329
+	+	14	0
+	+	11	294
+	+	11	277
+	+	11	259
+	+	11	239
+	+	11	228
+	+	14	0
+	+	11	215
+	+	17	67
+	+	11	190
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	11	57
+	+	11	49
+	+	12	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	5	306
+	+	11	0
+	+	5	284
+	+	11	0
+	+	11	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	5	218
+	+	9	0
+	+	5	182
+	+	8	0
+	+	5	175
+	+	5	154
+	+	8	0
+	+	6	0
+	+	5	127
+	+	5	120
+	+	1	7
+	+	2	7
+	+	4	0
+	+	3	0
+	+	4	4
+	+	4	7
+	+	5	15
+	+	5	15
+	+	5	18
+	+	5	37
+	+	5	32
+	+	11	4
+	+	11	8
+	+	1	16
+	+	5	15
+	+	16	0
+	+	13	0
+	+	14	0
+	+	10	0
+	+	7	0
+	+	5	9
+	+	5	88
+	+	6	0
+	+	5	73
+	+	6	0
+	+	5	58
+	+	5	37
+	+	5	37
+	+	6	0
+	+	5	15
+	+	6	0
+	+	5	15
+	+	5	16
+	+	12	0
+
+> ~/programming/ctf/hogehoge
+	"	12	11
+	^	3	12
+	.	3	11
+	+	1	60
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	32	0
+	+	1	11
+	+	2	1
+	+	3	11
+
+> ~/programming/ctf/hoge.py
+	"	1	0
+
+> ~/programming/ctf/hoge
+	"	1	0
+	^	1	252
+	.	1	251
+	+	1	251
 
 > ~/dotfiles/.vimrc
 	"	836	7
@@ -385,112 +687,6 @@ $
 
 > ~/dotfiles/.vimrq
 	"	1	0
-
-> ~/.vimrc
-	"	1	0
-	^	755	1
-	.	764	0
-	+	377	0
-	+	375	0
-	+	380	0
-	+	457	0
-	+	491	0
-	+	501	0
-	+	514	61
-	+	1207	65
-	+	1207	0
-	+	1207	63
-	+	1207	66
-	+	1207	66
-	+	1207	69
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	14
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	19
-	+	1207	19
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	21
-	+	1207	21
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	63
-	+	1207	66
-	+	1207	63
-	+	1207	65
-	+	1207	24
-	+	1207	52
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	0
-	+	1207	17
-	+	1207	17
-	+	1207	17
-	+	1207	17
-	+	1207	17
-	+	1207	0
-	+	1207	36
-	+	1207	3
-	+	1207	0
-	+	1207	0
-	+	1207	9
-	+	1207	20
-	+	1207	24
-	+	1207	31
-	+	1207	3
-	+	1207	0
-	+	1207	0
-	+	528	0
-	+	645	11
-	+	645	0
-	+	645	28
-	+	644	0
-	+	643	9
-	+	645	0
-	+	633	0
-	+	635	0
-	+	636	38
-	+	638	47
-	+	639	73
-	+	640	67
-	+	641	61
-	+	638	11
-	+	640	27
-	+	641	27
-	+	1173	0
-	+	1031	23
-	+	1021	0
-	+	1030	0
-	+	1029	0
-	+	634	0
-	+	644	0
-	+	764	0
-	+	763	11
-	+	758	67
-	+	759	67
-	+	760	69
-	+	761	69
-	+	755	0
-	+	764	0
-	j	679	5
 
 > ~/[vimshell] - default
 	"	6	9
@@ -645,12 +841,6 @@ $
 	+	1	0
 	+	3	0
 	+	2	0
-
-> ~/programming/ctf/hoge
-	"	1	251
-	^	1	252
-	.	1	251
-	+	1	251
 
 > ~/hoge.py
 	"	5	2
@@ -2222,56 +2412,3 @@ $
 
 > ~/rails_projects/sample_app/spec/helpers/static_pages_helper_spec.rb
 	"	5	0
-
-> ~/rails_projects/sample_app/db/migrate/20140606063123_create_users.rb
-	"	1	0
-
-> ~/rails_projects/sample_app/spec/views/static_pages/home.html.erb_spec.rb
-	"	5	0
-
-> spec/helpers/application_helper/spec.rb
-	"	13	0
-	^	18	3
-	.	18	2
-	+	1	21
-	+	5	26
-	+	6	41
-	+	7	47
-	+	10	42
-	+	11	78
-	+	14	50
-	+	15	47
-	+	18	2
-
-> ~/[unite] - files
-	"	1	1
-	^	1	2
-	.	2	0
-	+	172	0
-	+	170	0
-	+	151	0
-	+	151	0
-	+	151	0
-	+	1	15
-	+	150	0
-	+	1	0
-	+	110	0
-	+	89	0
-	+	109	0
-	+	109	0
-	+	68	0
-	+	47	0
-	+	47	0
-	+	46	0
-	+	46	0
-	+	45	0
-	+	45	0
-	+	44	0
-	+	44	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	44	0
-	+	23	0
-	+	23	0
-	+	2	0

@@ -98,7 +98,9 @@ set grepprg=grep\ -nh
 
 "{{{
 " 不可視文字を表示
+" eolは改行, trail:は行末スペース
 set list
+set listchars=tab:>-,eol:$,trail:+,nbsp:%,extends:>,precedes:<,
 
 " 行番号を表示する
 set number
@@ -192,9 +194,6 @@ set backspace=2
 "C-vの矩形選択で行末より後ろもカーソルを置ける
 set virtualedit=block
 
-" tabとspaceの混在を防ぐ
-set listchars=tab:>-,trail:-,nbsp:-,extends:>,precedes:<,
-
 " ペーストモード
 set pastetoggle=<C-E>
 
@@ -223,7 +222,7 @@ endif
 
 "{{{
 " タブの代わりに空白文字を指定する
-set expandtab
+set noexpandtab
 
 " C言語のインデントに従って自動インデントを行う
 set cindent
@@ -275,39 +274,39 @@ augroup vimrc
   " modeline : モードラインを有効
 
   autocmd!
-  autocmd FileType apache     setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType c          setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType cpp        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType csh        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType eruby      setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType gitcommit  setlocal sw=4 sts=4 ts=4 et tw=72
-  autocmd FileType gitconfig  setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType java       setlocal sw=4 sts=4 ts=4 noet
-  autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType less       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType make       setlocal sw=4 sts=4 ts=4 noet
-  autocmd FileType perl       setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType python     setlocal sw=4 sts=4 ts=8 et tw=80
-  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType sql        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType typescript setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType vb         setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType wsh        setlocal sw=4 sts=4 ts=4 et
-  autocmd FileType xhtml      setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType xml        setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
-  autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType apache     setlocal sw=4 sts=4 ts=4
+  autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4
+  autocmd FileType c          setlocal sw=4 sts=4 ts=4
+  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2
+  autocmd FileType cpp        setlocal sw=4 sts=4 ts=4
+  autocmd FileType cs         setlocal sw=4 sts=4 ts=4
+  autocmd FileType csh        setlocal sw=4 sts=4 ts=4
+  autocmd FileType css        setlocal sw=2 sts=2 ts=2
+  autocmd FileType diff       setlocal sw=4 sts=4 ts=4
+  autocmd FileType eruby      setlocal sw=4 sts=4 ts=4
+  autocmd FileType gitcommit  setlocal sw=4 sts=4 ts=4 tw=72
+  autocmd FileType gitconfig  setlocal sw=2 sts=2 ts=2
+  autocmd FileType haml       setlocal sw=2 sts=2 ts=2
+  autocmd FileType html       setlocal sw=2 sts=2 ts=2
+  autocmd FileType java       setlocal sw=4 sts=4 ts=4
+  autocmd FileType javascript setlocal sw=2 sts=2 ts=2
+  autocmd FileType less       setlocal sw=2 sts=2 ts=2
+  autocmd FileType make       setlocal sw=4 sts=4 ts=4
+  autocmd FileType perl       setlocal sw=4 sts=4 ts=4
+  autocmd FileType php        setlocal sw=4 sts=4 ts=4
+  autocmd FileType python     setlocal sw=4 sts=4 ts=8 tw=80
+  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2
+  autocmd FileType scala      setlocal sw=2 sts=2 ts=2
+  autocmd FileType sh         setlocal sw=4 sts=4 ts=4
+  autocmd FileType sql        setlocal sw=4 sts=4 ts=4
+  autocmd FileType typescript setlocal sw=4 sts=4 ts=4
+  autocmd FileType vb         setlocal sw=4 sts=4 ts=4
+  autocmd FileType vim        setlocal sw=2 sts=2 ts=2
+  autocmd FileType wsh        setlocal sw=4 sts=4 ts=4
+  autocmd FileType xhtml      setlocal sw=2 sts=2 ts=2
+  autocmd FileType xml        setlocal sw=2 sts=2 ts=2
+  autocmd FileType yaml       setlocal sw=2 sts=2 ts=2
+  autocmd FileType zsh        setlocal sw=4 sts=4 ts=4
 
   autocmd FileType qf,qfreplace,quickrun,git,diff,gitv,gitcommit
         \ setlocal nofoldenable nomodeline foldcolumn=0 foldlevel=0
