@@ -8,7 +8,7 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/expandt
+~MSle0~/sys
 
 # Last Substitute Search Pattern:
 ~MSle0&@
@@ -18,19 +18,22 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:q!
-:w
+:NeoBundleCheckUpdate
+:NeoBundleCheck
 :q
+:NeoBundleUpdate
+:q!
+:NeoBundleInstall
+:w
+:shell
+:NeoBundleClean
 :w 2_program.cpp
 :w hogehoge
-:NeoBundleClean
 :Scouter
 :TweetVimSay
 :TweetVimSay test
 :tw test
 :VimShell
-:NeoBundleInstall
-:NeoBundleCheckUpdate
 :w hoge.pl
 :update
 :Unite buffer
@@ -52,7 +55,6 @@ $
 :e programming/hogehoge/
 :NeoBu
 :NeoBundleClean
-:NeoBundleCheck
 :neobundlppn
 :help cmdwin
 :Unite file
@@ -80,7 +82,6 @@ $
 :nmp
 :map
 :in!
-:NeoBundleUpdate
 ::NeoBundleClean
 :clean
 :clear
@@ -102,6 +103,7 @@ $
 :wq1
 
 # Search String History (newest to oldest):
+?/sys
 ?/expandt
 ?/expandta
 ?/expa
@@ -188,181 +190,167 @@ $
 
 # Registers:
 "0	LINE	0
-	oomktvziqtaovmmpxzoqrzsxlpwpgoj111111111111111111111111111111
-""1	BLOCK	2
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-"2	BLOCK	2
-	 et
-	 et
-"3	BLOCK	2
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
-	 et
+	    let g:indent_guides_guide_size = 1
+	    let g:indent_guides_auto_colors=0
+	    let g:indent_guides_enable_on_vim_startup=1
+	    autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
+"1	LINE	0
+					
+"2	LINE	0
+	
+"3	LINE	0
+	                        
 "4	LINE	0
-	" 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+					\}}
 "5	LINE	0
-	" 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+					\		"commands": ['MemoGrep', 'MemoList', 'MemoNew']
 "6	LINE	0
-	" tabとspaceの混在を防ぐ
+					\ "autload": {
 "7	LINE	0
-	" tabとspaceの混在を防ぐ
+	  let s:hooks = neobundle#get_hooks("vim-indent-guides")
+	  function! s:hooks.on_source(bundle)
+	    let g:indent_guides_enable_on_vim_startup=1
+	    let g:indent_guides_auto_colors=0
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	    let g:indent_guides_guide_size = 1
+	  endfunction
 "8	LINE	0
-	
+	    let g:indent_guides_auto_colors=0
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
+	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
 "9	LINE	0
-	" tabとspaceの混在を防ぐ
-	set listchars=tab:>-,eol:$,trail:+,nbsp:%,extends:>,precedes:<,
-	
+	    let g:indent_guides_enable_on_vim_startup=1
 "w	CHAR	0
 	wjj
-"z	LINE	0
-	File:/Users/aisuke/dotfiles/.vimrc
+"z	CHAR	0
+	 if(a==b){
+	        return (y)
+	    }else{
+	        yy(y+1)
+	    }
 	
-"-	CHAR	0
-	 
+""-	CHAR	0
+	"
 
 # File marks:
-'0  4  0  ~/.vimrc
-'1  275  0  ~/.vimrc
-'2  98  0  ~/.vimrc
-'3  225  5  ~/.vimrc
-'4  197  27  ~/.vimrc
-'5  5  16  ~/programming/ctf/program.cpp
-'6  6  9  ~/programming/ctf/program.cpp
-'7  5  144  ~/programming/ctf/program.cpp
-'8  4  10  ~/programming/ctf/program.cpp
-'9  12  11  ~/programming/ctf/hogehoge
+'0  318  0  ~/.vimrc
+'1  22  39  ~/.vimrc
+'2  2  0  ~/.vimrc
+'3  811  3  ~/.vimrc
+'4  8  15  ~/programming/python/turtle1.py
+'5  221  0  ~/dotfiles/.vimrc
+'6  880  2  ~/dotfiles/.vimrc
+'7  872  13  ~/dotfiles/.vimrc
+'8  9  23  ~/programming/python/turtle1.py
+'9  225  2  ~/.vimrc
 
 # Jumplist (newest first):
--'  4  0  ~/.vimrc
--'  5  8  ~/.vimrc
+-'  318  0  ~/.vimrc
+-'  819  0  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  275  0  ~/.vimrc
--'  278  54  ~/.vimrc
--'  225  6  ~/.vimrc
--'  271  10  ~/.vimrc
--'  94  0  ~/.vimrc
--'  98  0  ~/.vimrc
--'  512  46  ~/.vimrc
--'  484  10  ~/.vimrc
--'  486  0  ~/.vimrc
--'  291  55  ~/.vimrc
--'  108  44  ~/.vimrc
--'  101  43  ~/.vimrc
--'  103  0  ~/.vimrc
--'  197  0  ~/.vimrc
--'  105  0  ~/.vimrc
--'  125  0  ~/.vimrc
--'  196  0  ~/.vimrc
--'  5  16  ~/programming/ctf/program.cpp
--'  1  0  ~/programming/ctf/program.cpp
--'  3  0  ~/programming/ctf/program.cpp
--'  6  9  ~/programming/ctf/program.cpp
--'  4  10  ~/programming/ctf/program.cpp
--'  12  11  ~/programming/ctf/hogehoge
--'  2  20  ~/programming/ctf/hogehoge
--'  31  17  ~/programming/ctf/hogehoge
--'  3  27  ~/programming/ctf/hogehoge
--'  4  26  ~/programming/ctf/hogehoge
--'  7  14  ~/programming/ctf/hogehoge
--'  8  2  ~/programming/ctf/hogehoge
--'  9  15  ~/programming/ctf/hogehoge
--'  10  2  ~/programming/ctf/hogehoge
--'  11  8  ~/programming/ctf/hogehoge
--'  14  7  ~/programming/ctf/hogehoge
--'  15  28  ~/programming/ctf/hogehoge
--'  19  5  ~/programming/ctf/hogehoge
--'  21  5  ~/programming/ctf/hogehoge
--'  22  26  ~/programming/ctf/hogehoge
--'  23  1  ~/programming/ctf/hogehoge
--'  24  6  ~/programming/ctf/hogehoge
--'  30  28  ~/programming/ctf/hogehoge
--'  1  8  ~/programming/ctf/hogehoge
--'  18  28  ~/programming/ctf/hogehoge
--'  17  28  ~/programming/ctf/hogehoge
--'  16  28  ~/programming/ctf/hogehoge
--'  13  28  ~/programming/ctf/hogehoge
--'  6  27  ~/programming/ctf/hogehoge
--'  5  27  ~/programming/ctf/hogehoge
--'  32  0  ~/programming/ctf/hogehoge
--'  1  0  ~/programming/ctf/hoge.py
--'  1  0  ~/programming/ctf/hoge
--'  836  7  ~/dotfiles/.vimrc
--'  1203  5  ~/dotfiles/.vimrc
--'  1204  7  ~/dotfiles/.vimrc
--'  1134  36  ~/dotfiles/.vimrc
+-'  22  39  ~/.vimrc
+-'  527  0  ~/.vimrc
+-'  2  0  ~/.vimrc
+-'  811  3  ~/.vimrc
+-'  8  15  ~/programming/python/turtle1.py
+-'  1  0  ~/programming/python/turtle1.py
+-'  221  0  ~/dotfiles/.vimrc
 -'  1  0  ~/dotfiles/.vimrc
--'  860  50  ~/dotfiles/.vimrc
--'  792  4  ~/dotfiles/.vimrc
--'  1205  3  ~/dotfiles/.vimrc
--'  905  20  ~/dotfiles/.vimrc
--'  900  12  ~/dotfiles/.vimrc
--'  894  2  ~/dotfiles/.vimrc
--'  902  52  ~/dotfiles/.vimrc
--'  755  2  ~/dotfiles/.vimrc
--'  754  21  ~/dotfiles/.vimrc
--'  4  1  ~/dotfiles/.vimrc
--'  5  0  ~/dotfiles/.vimrc
--'  69  0  ~/dotfiles/.vimrc
--'  70  2  ~/dotfiles/.vimrc
--'  634  7  ~/dotfiles/.vimrc
+-'  880  2  ~/dotfiles/.vimrc
+-'  3  21  ~/dotfiles/.vimrc
+-'  872  13  ~/dotfiles/.vimrc
+-'  9  23  ~/programming/python/turtle1.py
+-'  225  2  ~/.vimrc
+-'  804  4  ~/.vimrc
+-'  803  52  ~/.vimrc
+-'  1  0  ~/.vimt
+-'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
+-'  1  0  spec/helpers/application_helper_spec.rb
+-'  2  0  ~/rails_projects/sample_app/spec/controllers
+-'  1  0  ~/rails_projects/sample_app/spec/controllers
+-'  2  0  ~/rails_projects/sample_app/spec/helpers
+-'  1  0  ~/rails_projects/sample_app/spec/helpers
+-'  3  0  ~/ruby-sample/web.rb
+-'  1  0  ~/ruby-sample/web.rb
+-'  531  0  ~/.vimrc
+-'  806  4  ~/.vimrc
+-'  1181  0  ~/.vimrc
+-'  805  16  ~/.vimrc
+-'  802  4  ~/.vimrc
+-'  807  6  ~/.vimrc
+-'  417  0  ~/.zshrc
+-'  1  0  ~/.zshrc
+-'  423  8  ~/.zshrc
+-'  1  54  ~/programming/ctf/word/_rels/document.xml.rels
+-'  2  495  ~/programming/ctf/_rels/.rels
+-'  1  0  ~/programming/ctf/_rels/.rels
+-'  2  0  ~/programming/ctf/word/document.xml
+-'  1  0  ~/programming/ctf/word/document.xml
+-'  1  0  ~/programming/ctf/docProps/app.xml
+-'  10  0  ~/hoge.pl
+-'  1  0  ~/hoge.pl
+-'  5  0  ~/hoge.pl
+-'  21  40  ~/hoge.pl
+-'  1  0  ~/dotfiles/add
+-'  121  5  ~/.zshrc
+-'  121  45  ~/dotfiles/.zshrc
+-'  139  9  ~/dotfiles/.zshrc
+-'  138  9  ~/dotfiles/.zshrc
+-'  137  9  ~/dotfiles/.zshrc
+-'  134  9  ~/dotfiles/.zshrc
+-'  133  9  ~/dotfiles/.zshrc
+-'  130  9  ~/dotfiles/.zshrc
+-'  127  39  ~/dotfiles/.zshrc
+-'  126  24  ~/dotfiles/.zshrc
+-'  123  18  ~/dotfiles/.zshrc
+-'  118  7  ~/dotfiles/.zshrc
+-'  436  9  ~/dotfiles/.zshrc
+-'  140  9  ~/dotfiles/.zshrc
+-'  20  0  ~/dotfiles/.zshrc
+-'  1  0  ~/dotfiles/.zshrc
+-'  7  0  ~/Documents/memo/2014-06-16-hogeohge.txt
+-'  863  7  ~/dotfiles/.vimrc
+-'  437  0  ~/dotfiles/.vimrc
+-'  492  4  ~/dotfiles/.vimrc
+-'  1  0  ~/programming/net/test.txt
+-'  322  0  ~/dotfiles/.vimrc
+-'  504  4  ~/dotfiles/.vimrc
+-'  410  0  ~/dotfiles/.vimrc
+-'  398  0  ~/dotfiles/.vimrc
 -'  528  0  ~/dotfiles/.vimrc
--'  527  0  ~/dotfiles/.vimrc
--'  1206  0  ~/dotfiles/.vimrc
--'  1  0  ~/dotfiles/.vimrq
--'  773  0  ~/.vimrc
--'  1012  2  ~/.vimrc
--'  1172  0  ~/.vimrc
--'  640  27  ~/.vimrc
--'  6  9  ~/[vimshell] - default
--'  571  2  ~/.vimrc
--'  526  0  ~/.vimrc
--'  1206  2  ~/.vimrc
--'  523  0  ~/.vimrc
--'  12  11  ~/programming/ctf/hogehoge
--'  2  20  ~/programming/ctf/hogehoge
--'  31  17  ~/programming/ctf/hogehoge
--'  3  27  ~/programming/ctf/hogehoge
--'  4  26  ~/programming/ctf/hogehoge
--'  7  14  ~/programming/ctf/hogehoge
--'  8  2  ~/programming/ctf/hogehoge
--'  9  15  ~/programming/ctf/hogehoge
--'  10  2  ~/programming/ctf/hogehoge
--'  11  8  ~/programming/ctf/hogehoge
+-'  423  0  ~/dotfiles/.vimrc
+-'  534  0  ~/dotfiles/.vimrc
+-'  505  0  ~/dotfiles/.vimrc
+-'  489  6  ~/dotfiles/.vimrc
+-'  497  0  ~/.vimrc
+-'  425  1  ~/.vimrc
+-'  489  1  ~/.vimrc
+-'  432  0  ~/.vimrc
+-'  428  0  ~/.vimrc
+-'  381  0  ~/.vimrc
+-'  410  0  ~/.vimrc
+-'  420  0  ~/.vimrc
+-'  427  0  ~/.vimrc
+-'  440  0  ~/.vimrc
+-'  568  11  ~/.vimrc
+-'  481  0  ~/.vimrc
+-'  1  0  ~/programming/ctf/pic/hoge.html
+-'  1  0  ~/programming/ctf/pic/piyo.js
+-'  1  0  ~/programming/ctf/pic/fuga.css
+-'  1  251  ~/programming/ctf/hoge
+-'  5  2  ~/hoge.py
+-'  3  291  ~/hoge.py
+-'  1  0  ~/hoge.py
+-'  4  0  ~/hoge.py
+-'  152  0  ~/programming/mysh/mysh.c
 
 # History of marks within files (newest to oldest):
 
 > ~/.vimrc
-	"	4	0
-	.	5	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	19
-	+	1206	19
+	"	318	0
+	.	819	0
 	+	1206	0
 	+	1206	0
 	+	1206	0
@@ -457,7 +445,110 @@ $
 	+	294	53
 	+	295	54
 	+	5	0
+	+	225	0
+	+	224	50
+	+	99	0
+	+	98	0
+	+	817	0
+	+	819	0
 	j	678	5
+
+> ~/programming/python/turtle1.py
+	"	8	15
+	^	8	16
+	.	8	15
+	+	9	51
+	+	9	0
+	+	8	15
+
+> ~/dotfiles/.vimrc
+	"	221	0
+	^	876	3
+	.	880	2
+	+	380	0
+	+	506	0
+	+	428	0
+	+	438	43
+	+	424	0
+	+	488	0
+	+	423	0
+	+	483	0
+	+	483	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	423	0
+	+	445	20
+	+	446	0
+	+	423	0
+	+	398	0
+	+	399	0
+	+	410	0
+	+	370	0
+	+	411	0
+	+	322	0
+	+	321	0
+	+	523	0
+	+	446	0
+	+	5	12
+	+	5	0
+	+	5	0
+	+	3	21
+	+	755	11
+	+	756	0
+	+	755	31
+	+	902	37
+	+	902	0
+	+	902	22
+	+	902	0
+	+	902	36
+	+	902	59
+	+	902	47
+	+	902	0
+	+	902	4
+	+	902	0
+	+	902	52
+	+	900	14
+	+	902	0
+	+	894	0
+	+	902	0
+	+	901	0
+	+	896	0
+	+	900	13
+	+	903	48
+	+	904	48
+	+	905	0
+	+	826	37
+	+	827	23
+	+	829	0
+	+	828	24
+	+	860	50
+	+	828	86
+	+	829	10
+	+	873	0
+	+	874	43
+	+	875	43
+	+	875	18
+	+	875	18
+	+	875	0
+	+	875	4
+	+	225	0
+	+	3	27
+	+	3	21
+	+	817	0
+	+	3	21
+	+	226	0
+	+	874	11
+	+	875	0
+	+	874	35
+	+	4	0
+	+	876	2
+	+	878	2
+	+	880	2
+	n	876	0
+
+> ~/programming/python/tmp.py
+	"	1	0
 
 > ~/programming/ctf/hoge.rb
 	"	2	13
@@ -618,72 +709,6 @@ $
 	^	1	252
 	.	1	251
 	+	1	251
-
-> ~/dotfiles/.vimrc
-	"	836	7
-	^	829	11
-	.	829	10
-	+	380	0
-	+	506	0
-	+	428	0
-	+	438	43
-	+	424	0
-	+	488	0
-	+	423	0
-	+	483	0
-	+	483	0
-	+	505	0
-	+	505	0
-	+	505	0
-	+	423	0
-	+	445	20
-	+	446	0
-	+	423	0
-	+	398	0
-	+	399	0
-	+	410	0
-	+	370	0
-	+	411	0
-	+	322	0
-	+	321	0
-	+	523	0
-	+	446	0
-	+	5	12
-	+	5	0
-	+	5	0
-	+	4	0
-	+	755	11
-	+	756	0
-	+	755	31
-	+	902	37
-	+	902	0
-	+	902	22
-	+	902	0
-	+	902	36
-	+	902	59
-	+	902	47
-	+	902	0
-	+	902	4
-	+	902	0
-	+	902	52
-	+	900	14
-	+	902	0
-	+	894	0
-	+	902	0
-	+	901	0
-	+	896	0
-	+	900	13
-	+	903	48
-	+	904	48
-	+	905	0
-	+	826	37
-	+	827	23
-	+	829	0
-	+	828	24
-	+	860	50
-	+	828	86
-	+	829	10
-	n	853	6
 
 > ~/dotfiles/.vimrq
 	"	1	0
@@ -2406,9 +2431,3 @@ $
 	+	10	3
 	+	2	0
 	+	10	42
-
-> ~/rails_projects/sample_app/app/views/static_pages/h
-	"	1	0
-
-> ~/rails_projects/sample_app/spec/helpers/static_pages_helper_spec.rb
-	"	5	0

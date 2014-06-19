@@ -221,7 +221,7 @@ endif
 "--------------------
 
 "{{{
-" タブの代わりに空白文字を指定する
+" タブの代わりに空白文字を指定しない
 set noexpandtab
 
 " C言語のインデントに従って自動インデントを行う
@@ -870,14 +870,14 @@ else
   "}}}
 
   " メモ"{{{
-  NeoBundle 'glidenote/memolist.vim'
   NeoBundle 'fuenor/qfixgrep.git'
+  NeoBundle 'glidenote/memolist.vim'
   " 新規作成
-  cnoremap ,mn :MemoNew<CR>
+  noremap ,mn :MemoNew<CR>
   " メモ一覧
-  cnoremap ,ml  :MemoList<CR>
+  noremap ,ml  :MemoList<CR>
   " メモ検索
-  cnoremap ,mg  :MemoGrep<CR>
+  noremap ,mg  :MemoGrep<CR>
   " 保存先
   let g:memolist_path="~/Documents/memo"
   " 形式
