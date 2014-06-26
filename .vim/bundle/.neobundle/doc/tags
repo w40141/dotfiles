@@ -625,9 +625,11 @@ fugitive-:Glcd	fugitive.txt	/*fugitive-:Glcd*
 fugitive-:Glgrep	fugitive.txt	/*fugitive-:Glgrep*
 fugitive-:Gllog	fugitive.txt	/*fugitive-:Gllog*
 fugitive-:Glog	fugitive.txt	/*fugitive-:Glog*
+fugitive-:Gmerge	fugitive.txt	/*fugitive-:Gmerge*
 fugitive-:Gmove	fugitive.txt	/*fugitive-:Gmove*
 fugitive-:Gpedit	fugitive.txt	/*fugitive-:Gpedit*
 fugitive-:Gpedit!	fugitive.txt	/*fugitive-:Gpedit!*
+fugitive-:Gpull	fugitive.txt	/*fugitive-:Gpull*
 fugitive-:Gread	fugitive.txt	/*fugitive-:Gread*
 fugitive-:Gread!	fugitive.txt	/*fugitive-:Gread!*
 fugitive-:Gremove	fugitive.txt	/*fugitive-:Gremove*
@@ -837,14 +839,13 @@ g:openbrowser_fix_hosts	openbrowser.txt	/*g:openbrowser_fix_hosts*
 g:openbrowser_fix_paths	openbrowser.txt	/*g:openbrowser_fix_paths*
 g:openbrowser_fix_schemes	openbrowser.txt	/*g:openbrowser_fix_schemes*
 g:openbrowser_force_foreground_after_open	openbrowser.txt	/*g:openbrowser_force_foreground_after_open*
+g:openbrowser_format_message	openbrowser.txt	/*g:openbrowser_format_message*
 g:openbrowser_no_default_menus	openbrowser.txt	/*g:openbrowser_no_default_menus*
 g:openbrowser_open_commands	openbrowser.txt	/*g:openbrowser_open_commands*
 g:openbrowser_open_filepath_in_vim	openbrowser.txt	/*g:openbrowser_open_filepath_in_vim*
 g:openbrowser_open_rules	openbrowser.txt	/*g:openbrowser_open_rules*
 g:openbrowser_open_vim_command	openbrowser.txt	/*g:openbrowser_open_vim_command*
 g:openbrowser_search_engines	openbrowser.txt	/*g:openbrowser_search_engines*
-g:openbrowser_short_message	openbrowser.txt	/*g:openbrowser_short_message*
-g:openbrowser_show_message	openbrowser.txt	/*g:openbrowser_show_message*
 g:openbrowser_use_vimproc	openbrowser.txt	/*g:openbrowser_use_vimproc*
 g:quickhl_cword_enable_at_startup	quickhl.txt	/*g:quickhl_cword_enable_at_startup*
 g:quickhl_cword_hl_command	quickhl.txt	/*g:quickhl_cword_hl_command*
@@ -1246,6 +1247,7 @@ neobundle#get()	neobundle.txt	/*neobundle#get()*
 neobundle#get_hooks()	neobundle.txt	/*neobundle#get_hooks()*
 neobundle#get_not_installed_bundle_names()	neobundle.txt	/*neobundle#get_not_installed_bundle_names()*
 neobundle#has_cache()	neobundle.txt	/*neobundle#has_cache()*
+neobundle#has_fresh_cache()	neobundle.txt	/*neobundle#has_fresh_cache()*
 neobundle#hooks	neobundle.txt	/*neobundle#hooks*
 neobundle#is_installed()	neobundle.txt	/*neobundle#is_installed()*
 neobundle#is_sourced()	neobundle.txt	/*neobundle#is_sourced()*
@@ -1265,6 +1267,7 @@ neobundle-hooks-on_source	neobundle.txt	/*neobundle-hooks-on_source*
 neobundle-install	neobundle.txt	/*neobundle-install*
 neobundle-interface	neobundle.txt	/*neobundle-interface*
 neobundle-introduction	neobundle.txt	/*neobundle-introduction*
+neobundle-migrate-from-pathogen	neobundle.txt	/*neobundle-migrate-from-pathogen*
 neobundle-options	neobundle.txt	/*neobundle-options*
 neobundle-options-augroup	neobundle.txt	/*neobundle-options-augroup*
 neobundle-options-autoload	neobundle.txt	/*neobundle-options-autoload*
@@ -1272,6 +1275,7 @@ neobundle-options-base_path	neobundle.txt	/*neobundle-options-base_path*
 neobundle-options-build	neobundle.txt	/*neobundle-options-build*
 neobundle-options-default	neobundle.txt	/*neobundle-options-default*
 neobundle-options-depends	neobundle.txt	/*neobundle-options-depends*
+neobundle-options-directory	neobundle.txt	/*neobundle-options-directory*
 neobundle-options-disabled	neobundle.txt	/*neobundle-options-disabled*
 neobundle-options-external_commands	neobundle.txt	/*neobundle-options-external_commands*
 neobundle-options-focus	neobundle.txt	/*neobundle-options-focus*
@@ -1827,9 +1831,9 @@ unite#define_filter()	unite.txt	/*unite#define_filter()*
 unite#define_kind()	unite.txt	/*unite#define_kind()*
 unite#define_source()	unite.txt	/*unite#define_source()*
 unite#do_action()	unite.txt	/*unite#do_action()*
-unite#filters#converter_default#use(()	unite.txt	/*unite#filters#converter_default#use(()*
-unite#filters#matcher_default#use(()	unite.txt	/*unite#filters#matcher_default#use(()*
-unite#filters#sorter_default#use(()	unite.txt	/*unite#filters#sorter_default#use(()*
+unite#filters#converter_default#use()	unite.txt	/*unite#filters#converter_default#use()*
+unite#filters#matcher_default#use()	unite.txt	/*unite#filters#matcher_default#use()*
+unite#filters#sorter_default#use()	unite.txt	/*unite#filters#sorter_default#use()*
 unite#force_redraw()	unite.txt	/*unite#force_redraw()*
 unite#get_candidates()	unite.txt	/*unite#get_candidates()*
 unite#get_context()	unite.txt	/*unite#get_context()*

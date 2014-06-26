@@ -18,13 +18,18 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:NeoBundleCheckUpdate
-:NeoBundleCheck
-:q
-:NeoBundleUpdate
 :q!
-:NeoBundleInstall
+:q
 :w
+:NeoBundleCheckUpdate
+:w test.py
+:w 2_sql.py
+:w sql_root.py
+:e ~/.vimrc
+:q1
+:NeoBundleCheck
+:NeoBundleUpdate
+:NeoBundleInstall
 :shell
 :NeoBundleClean
 :w 2_program.cpp
@@ -103,6 +108,9 @@ $
 :wq1
 
 # Search String History (newest to oldest):
+? \$cursor\$
+?/<C-t>
+?/zen
 ?/sys
 ?/expandt
 ?/expandta
@@ -118,7 +126,6 @@ $
 ?/Shell
 ?/vimshell
 ?/comple
-? \$cursor\$
 ? 
 ?/sid
 ?/side
@@ -190,40 +197,28 @@ $
 
 # Registers:
 "0	LINE	0
-	    let g:indent_guides_guide_size = 1
-	    let g:indent_guides_auto_colors=0
-	    let g:indent_guides_enable_on_vim_startup=1
-	    autocmd VimEnter, ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter, ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	    params = urllib.urlencode(values)
+	    request = urllib2.Request(theurl, params)
+	    response = urllib2.urlopen(request)
+	    the_page = response.read()
 "1	LINE	0
-					
+	                                        h1>tr.ro    t   rw
 "2	LINE	0
-	
+	table>tr.row*3
 "3	LINE	0
-	                        
+	tabel>tr.row*3>td.col$*3
 "4	LINE	0
-					\}}
+	h1>div.row
 "5	LINE	0
-					\		"commands": ['MemoGrep', 'MemoList', 'MemoNew']
+	            h1>div.row>div.span6_offset3>a
 "6	LINE	0
-					\ "autload": {
+	h1>div.row>div.span6_offset3>add
 "7	LINE	0
-	  let s:hooks = neobundle#get_hooks("vim-indent-guides")
-	  function! s:hooks.on_source(bundle)
-	    let g:indent_guides_enable_on_vim_startup=1
-	    let g:indent_guides_auto_colors=0
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
-	    let g:indent_guides_guide_size = 1
-	  endfunction
+	    end
 "8	LINE	0
-	    let g:indent_guides_auto_colors=0
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesOdd ctermbg=215
-	    autocmd VimEnter,ColorScheme * :hi IndentGuidesEnable ctermbg=223
+	      # end
 "9	LINE	0
-	    let g:indent_guides_enable_on_vim_startup=1
-"w	CHAR	0
-	wjj
+	      #   expect { click_button submit }.to change(User, :count).by(1)
 "z	CHAR	0
 	 if(a==b){
 	        return (y)
@@ -232,24 +227,93 @@ $
 	    }
 	
 ""-	CHAR	0
-	"
+	 
 
 # File marks:
-'0  318  0  ~/.vimrc
-'1  22  39  ~/.vimrc
-'2  2  0  ~/.vimrc
-'3  811  3  ~/.vimrc
-'4  8  15  ~/programming/python/turtle1.py
-'5  221  0  ~/dotfiles/.vimrc
-'6  880  2  ~/dotfiles/.vimrc
-'7  872  13  ~/dotfiles/.vimrc
-'8  9  23  ~/programming/python/turtle1.py
-'9  225  2  ~/.vimrc
+'0  945  9  ~/dotfiles/.vimrc
+'1  3  16  ~/rails_projects/sample_app/app/views/users/edit.html.erb
+'2  1  0  ~/rails_projects/sample_app/app/views/users/edit.html.erb
+'3  25  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
+'4  71  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+'5  59  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+'6  225  14  ~/.vimrc
+'7  65  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+'8  54  43  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+'9  2  0  ~/programming/ctf/program.cpp
 
 # Jumplist (newest first):
+-'  945  9  ~/dotfiles/.vimrc
+-'  1  0  ~/dotfiles/.vimrc
+-'  3  16  ~/rails_projects/sample_app/app/views/users/edit.html.erb
+-'  1  0  ~/rails_projects/sample_app/app/views/users/edit.html.erb
+-'  25  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
+-'  1  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
+-'  71  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  59  4  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  1  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  75  2  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  225  14  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  65  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  54  43  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+-'  2  0  ~/programming/ctf/program.cpp
+-'  4  9  ~/programming/ctf/program.cpp
+-'  41  0  ~/programming/ctf/program.cpp
+-'  1  0  ~/programming/ctf/program.cpp
+-'  25  0  ~/programming/ctf/program.cpp
+-'  79  0  ~/programming/ctf/sql_root.py
+-'  1  0  ~/programming/ctf/sql_root.py
+-'  19  29  ~/programming/ctf/sql_root.py
+-'  72  26  ~/programming/ctf/sql_root.py
+-'  53  22  ~/programming/ctf/sql_root.py
+-'  22  17  ~/programming/ctf/sql_root.py
+-'  9  0  ~/programming/ctf/sql_root.py
+-'  17  0  ~/programming/ctf/sql_root.py
+-'  18  0  ~/programming/ctf/sql_root.py
+-'  64  0  ~/programming/ctf/sql_root.py
+-'  57  19  ~/programming/ctf/sql_root.py
+-'  48  0  ~/programming/ctf/sql_root.py
+-'  50  54  ~/programming/ctf/sql_root.py
+-'  10  4  ~/programming/ctf/sql_root.py
+-'  1  0  ~/programming/ctf/braind_sql.py
+-'  5  0  ~/programming/ctf/braind_sql.py
+-'  27  25  ~/programming/ctf/sql_root.py
+-'  32  9  ~/programming/ctf/sql_root.py
+-'  9  0  ~/programming/ctf/braind_sql.py
+-'  8  28  ~/programming/ctf/2_sql.py
+-'  1  0  ~/programming/ctf/2_sql.py
+-'  19  10  ~/programming/ctf/2_sql.py
+-'  13  17  ~/programming/ctf/2_sql.py
+-'  13  17  ~/programming/ctf/braind_sql.py
+-'  14  0  ~/programming/ctf/braind_sql.py
+-'  49  0  ~/programming/ctf/sql_root.py
+-'  29  0  ~/programming/ctf/sql_root.py
+-'  34  11  ~/programming/ctf/sql_root.py
+-'  55  29  ~/programming/ctf/sql_root.py
+-'  52  36  ~/programming/ctf/sql_root.py
+-'  15  0  ~/programming/ctf/sql_root.py
+-'  26  12  ~/programming/ctf/sql_root.py
+-'  7  19  ~/programming/ctf/braind_sql.py
+-'  20  10  ~/programming/ctf/braind_sql.py
+-'  27  31  ~/programming/ctf/braind_sql.py
+-'  22  53  ~/programming/ctf/braind_sql.py
+-'  24  7  ~/programming/ctf/braind_sql.py
+-'  29  24  ~/programming/ctf/braind_sql.py
+-'  10  35  ~/programming/ctf/braind_sql.py
+-'  35  32  ~/programming/ctf/braind_sql.py
+-'  15  31  ~/programming/ctf/braind_sql.py
+-'  12  25  ~/programming/ctf/braind_sql.py
+-'  1  0  ~/ghc-clang-wrapper
+-'  1  0  ~/hoge.pl
+-'  1  0  ~/programming/ctf/square_cipher
+-'  1056  3  ~/.vimrc
+-'  17  30  ~/programming/ctf/square_cipher
+-'  9  0  ~/programming/ctf/alpha_mixed
+-'  1  0  ~/programming/ctf/alpha_mixed
+-'  1  1321  ~/programming/ctf/alpha
+-'  91  6  ~/programming/ctf/program.cpp
 -'  318  0  ~/.vimrc
 -'  819  0  ~/.vimrc
--'  1  0  ~/.vimrc
 -'  22  39  ~/.vimrc
 -'  527  0  ~/.vimrc
 -'  2  0  ~/.vimrc
@@ -257,12 +321,10 @@ $
 -'  8  15  ~/programming/python/turtle1.py
 -'  1  0  ~/programming/python/turtle1.py
 -'  221  0  ~/dotfiles/.vimrc
--'  1  0  ~/dotfiles/.vimrc
 -'  880  2  ~/dotfiles/.vimrc
 -'  3  21  ~/dotfiles/.vimrc
 -'  872  13  ~/dotfiles/.vimrc
 -'  9  23  ~/programming/python/turtle1.py
--'  225  2  ~/.vimrc
 -'  804  4  ~/.vimrc
 -'  803  52  ~/.vimrc
 -'  1  0  ~/.vimt
@@ -278,193 +340,13 @@ $
 -'  806  4  ~/.vimrc
 -'  1181  0  ~/.vimrc
 -'  805  16  ~/.vimrc
--'  802  4  ~/.vimrc
--'  807  6  ~/.vimrc
--'  417  0  ~/.zshrc
--'  1  0  ~/.zshrc
--'  423  8  ~/.zshrc
--'  1  54  ~/programming/ctf/word/_rels/document.xml.rels
--'  2  495  ~/programming/ctf/_rels/.rels
--'  1  0  ~/programming/ctf/_rels/.rels
--'  2  0  ~/programming/ctf/word/document.xml
--'  1  0  ~/programming/ctf/word/document.xml
--'  1  0  ~/programming/ctf/docProps/app.xml
--'  10  0  ~/hoge.pl
--'  1  0  ~/hoge.pl
--'  5  0  ~/hoge.pl
--'  21  40  ~/hoge.pl
--'  1  0  ~/dotfiles/add
--'  121  5  ~/.zshrc
--'  121  45  ~/dotfiles/.zshrc
--'  139  9  ~/dotfiles/.zshrc
--'  138  9  ~/dotfiles/.zshrc
--'  137  9  ~/dotfiles/.zshrc
--'  134  9  ~/dotfiles/.zshrc
--'  133  9  ~/dotfiles/.zshrc
--'  130  9  ~/dotfiles/.zshrc
--'  127  39  ~/dotfiles/.zshrc
--'  126  24  ~/dotfiles/.zshrc
--'  123  18  ~/dotfiles/.zshrc
--'  118  7  ~/dotfiles/.zshrc
--'  436  9  ~/dotfiles/.zshrc
--'  140  9  ~/dotfiles/.zshrc
--'  20  0  ~/dotfiles/.zshrc
--'  1  0  ~/dotfiles/.zshrc
--'  7  0  ~/Documents/memo/2014-06-16-hogeohge.txt
--'  863  7  ~/dotfiles/.vimrc
--'  437  0  ~/dotfiles/.vimrc
--'  492  4  ~/dotfiles/.vimrc
--'  1  0  ~/programming/net/test.txt
--'  322  0  ~/dotfiles/.vimrc
--'  504  4  ~/dotfiles/.vimrc
--'  410  0  ~/dotfiles/.vimrc
--'  398  0  ~/dotfiles/.vimrc
--'  528  0  ~/dotfiles/.vimrc
--'  423  0  ~/dotfiles/.vimrc
--'  534  0  ~/dotfiles/.vimrc
--'  505  0  ~/dotfiles/.vimrc
--'  489  6  ~/dotfiles/.vimrc
--'  497  0  ~/.vimrc
--'  425  1  ~/.vimrc
--'  489  1  ~/.vimrc
--'  432  0  ~/.vimrc
--'  428  0  ~/.vimrc
--'  381  0  ~/.vimrc
--'  410  0  ~/.vimrc
--'  420  0  ~/.vimrc
--'  427  0  ~/.vimrc
--'  440  0  ~/.vimrc
--'  568  11  ~/.vimrc
--'  481  0  ~/.vimrc
--'  1  0  ~/programming/ctf/pic/hoge.html
--'  1  0  ~/programming/ctf/pic/piyo.js
--'  1  0  ~/programming/ctf/pic/fuga.css
--'  1  251  ~/programming/ctf/hoge
--'  5  2  ~/hoge.py
--'  3  291  ~/hoge.py
--'  1  0  ~/hoge.py
--'  4  0  ~/hoge.py
--'  152  0  ~/programming/mysh/mysh.c
 
 # History of marks within files (newest to oldest):
 
-> ~/.vimrc
-	"	318	0
-	.	819	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	21
-	+	1206	21
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	63
-	+	1206	66
-	+	1206	63
-	+	1206	65
-	+	1206	24
-	+	1206	52
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	0
-	+	1206	17
-	+	1206	17
-	+	1206	17
-	+	1206	17
-	+	1206	17
-	+	1206	0
-	+	1206	36
-	+	1206	3
-	+	1206	0
-	+	1206	0
-	+	1206	9
-	+	1206	20
-	+	1206	24
-	+	1206	31
-	+	1206	3
-	+	1206	0
-	+	1206	0
-	+	527	0
-	+	644	11
-	+	644	0
-	+	644	28
-	+	643	0
-	+	642	9
-	+	644	0
-	+	632	0
-	+	634	0
-	+	635	38
-	+	637	47
-	+	638	73
-	+	639	67
-	+	640	61
-	+	637	11
-	+	639	27
-	+	640	27
-	+	1172	0
-	+	1030	23
-	+	1020	0
-	+	1029	0
-	+	1028	0
-	+	633	0
-	+	643	0
-	+	763	0
-	+	762	11
-	+	757	67
-	+	758	67
-	+	759	69
-	+	760	69
-	+	754	0
-	+	763	0
-	+	197	27
-	+	197	0
-	+	197	0
-	+	196	0
-	+	197	27
-	+	225	0
-	+	197	0
-	+	105	0
-	+	103	0
-	+	101	44
-	+	102	127
-	+	102	0
-	+	101	40
-	+	485	0
-	+	225	5
-	+	5	0
-	+	277	53
-	+	278	53
-	+	279	54
-	+	292	54
-	+	291	53
-	+	294	53
-	+	295	54
-	+	5	0
-	+	225	0
-	+	224	50
-	+	99	0
-	+	98	0
-	+	817	0
-	+	819	0
-	j	678	5
-
-> ~/programming/python/turtle1.py
-	"	8	15
-	^	8	16
-	.	8	15
-	+	9	51
-	+	9	0
-	+	8	15
-
 > ~/dotfiles/.vimrc
-	"	221	0
-	^	876	3
-	.	880	2
+	"	945	9
+	^	946	11
+	.	946	9
 	+	380	0
 	+	506	0
 	+	428	0
@@ -545,24 +427,288 @@ $
 	+	876	2
 	+	878	2
 	+	880	2
+	+	947	36
+	+	946	9
 	n	876	0
 
-> ~/programming/python/tmp.py
-	"	1	0
+> ~/rails_projects/sample_app/app/views/users/edit.html.erb
+	"	3	16
+	^	3	17
+	.	3	0
+	+	1	28
+	+	5	0
+	+	5	0
+	+	5	0
+	+	5	0
+	+	5	0
+	+	5	0
+	+	2	0
+	+	3	0
 
-> ~/programming/ctf/hoge.rb
-	"	2	13
-	^	2	14
-	.	2	13
-	+	1	12
-	+	4	22
-	+	2	13
+> ~/.vimrc
+	"	950	19
+	^	946	37
+	.	946	36
+	+	1202	0
+	+	1202	0
+	+	1202	0
+	+	1202	0
+	+	1202	0
+	+	1202	63
+	+	1202	66
+	+	1202	63
+	+	1202	65
+	+	1202	24
+	+	1202	52
+	+	1202	0
+	+	1202	0
+	+	1202	0
+	+	1202	0
+	+	1202	17
+	+	1202	17
+	+	1202	17
+	+	1202	17
+	+	1202	17
+	+	1202	0
+	+	1202	36
+	+	1202	3
+	+	1202	0
+	+	1202	0
+	+	1202	9
+	+	1202	20
+	+	1202	24
+	+	1202	31
+	+	1202	3
+	+	1202	0
+	+	1202	0
+	+	527	0
+	+	644	11
+	+	644	0
+	+	644	28
+	+	643	0
+	+	642	9
+	+	644	0
+	+	632	0
+	+	634	0
+	+	635	38
+	+	637	47
+	+	638	73
+	+	639	67
+	+	640	61
+	+	637	11
+	+	639	27
+	+	640	27
+	+	1168	0
+	+	1026	23
+	+	1016	0
+	+	1025	0
+	+	1024	0
+	+	633	0
+	+	643	0
+	+	763	0
+	+	762	11
+	+	757	67
+	+	758	67
+	+	759	69
+	+	760	69
+	+	754	0
+	+	763	0
+	+	197	27
+	+	197	0
+	+	197	0
+	+	196	0
+	+	197	27
+	+	225	0
+	+	197	0
+	+	105	0
+	+	103	0
+	+	101	44
+	+	102	127
+	+	102	0
+	+	101	40
+	+	485	0
+	+	225	5
+	+	5	0
+	+	277	53
+	+	278	53
+	+	279	54
+	+	292	54
+	+	291	53
+	+	294	53
+	+	295	54
+	+	5	0
+	+	225	0
+	+	224	50
+	+	99	0
+	+	98	0
+	+	817	0
+	+	819	0
+	+	225	4
+	+	5	0
+	+	4	0
+	+	946	36
+	+	966	0
+	+	946	36
+	j	678	5
+
+> ~/rails_projects/sample_app/app/controllers/users_controller.rb
+	"	25	0
+	^	24	5
+	.	24	4
+	+	31	32
+	+	32	4
+	+	33	0
+	+	32	32
+	+	32	0
+	+	32	33
+	+	32	0
+	+	31	1
+	+	32	1
+	+	31	0
+	+	33	0
+	+	35	17
+	+	39	33
+	+	41	16
+	+	52	0
+	+	43	18
+	+	45	4
+	+	52	0
+	+	44	4
+	+	50	80
+	+	51	0
+	+	49	5
+	+	50	0
+	+	48	0
+	+	4	32
+	+	6	0
+	+	8	17
+	+	12	33
+	+	18	18
+	+	20	4
+	+	28	4
+	+	26	8
+	+	29	80
+	+	30	4
+	+	29	37
+	+	18	7
+	+	12	29
+	+	16	22
+	+	15	50
+	+	16	0
+	+	25	0
+	+	14	18
+	+	23	32
+	+	24	4
+
+> ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+	"	71	0
+	^	57	5
+	.	61	0
+	+	80	0
+	+	82	0
+	+	80	0
+	+	79	0
+	+	80	0
+	+	90	0
+	+	81	0
+	+	83	0
+	+	107	0
+	+	110	0
+	+	108	0
+	+	90	0
+	+	110	0
+	+	84	21
+	+	109	0
+	+	90	0
+	+	89	0
+	+	86	0
+	+	88	35
+	+	98	0
+	+	98	45
+	+	17	0
+	+	17	14
+	+	16	4
+	+	17	0
+	+	19	6
+	+	20	6
+	+	80	6
+	+	81	6
+	+	105	14
+	+	20	0
+	+	14	0
+	+	14	0
+	+	7	28
+	+	8	44
+	+	9	36
+	+	11	41
+	+	12	39
+	+	13	4
+	+	14	0
+	+	22	22
+	+	23	32
+	+	25	39
+	+	27	42
+	+	28	38
+	+	29	66
+	+	40	40
+	+	42	43
+	+	43	48
+	+	44	41
+	+	45	45
+	+	46	8
+	+	42	46
+	+	74	34
+	+	74	68
+	+	74	4
+	+	32	36
+	+	33	38
+	+	35	43
+	+	36	41
+	+	37	0
+	+	48	41
+	+	49	38
+	+	50	61
+	+	53	43
+	+	54	78
+	+	55	8
+	+	54	0
+	+	52	41
+	+	74	0
+	+	74	0
+	+	59	21
+	+	60	42
+	+	61	39
+	+	63	22
+	+	64	30
+	+	64	52
+	+	65	42
+	+	66	72
+	+	69	42
+	+	70	43
+	+	72	38
+	+	75	0
+	+	59	5
+	+	60	7
+	+	61	7
+	+	63	7
+	+	64	9
+	+	65	9
+	+	66	9
+	+	67	7
+	+	69	7
+	+	70	9
+	+	72	7
+	+	56	6
+	+	73	0
+	+	59	0
+	+	57	4
+	+	59	0
+	+	61	0
+	a	42	0
 
 > ~/programming/ctf/program.cpp
-	"	11	0
-	.	12	0
-	+	4	32
-	+	5	206
+	"	2	0
+	.	4	0
 	+	5	179
 	+	20	0
 	+	19	0
@@ -661,6 +807,279 @@ $
 	+	5	15
 	+	5	16
 	+	12	0
+	+	8	0
+	+	4	0
+
+> ~/programming/ctf/sql_root.py
+	"	79	0
+	^	19	30
+	.	19	30
+	+	27	99
+	+	27	0
+	+	4	0
+	+	4	11
+	+	5	13
+	+	18	0
+	+	6	13
+	+	18	0
+	+	10	51
+	+	12	51
+	+	15	34
+	+	4	64
+	+	5	17
+	+	6	13
+	+	27	75
+	+	18	0
+	+	17	13
+	+	49	0
+	+	50	77
+	+	27	74
+	+	29	32
+	+	52	36
+	+	27	10
+	+	29	35
+	+	32	25
+	+	50	77
+	+	55	29
+	+	32	25
+	+	9	6
+	+	32	25
+	+	55	29
+	+	9	6
+	+	32	17
+	+	35	0
+	+	48	20
+	+	9	5
+	+	48	11
+	+	48	8
+	+	9	0
+	+	48	8
+	+	49	0
+	+	49	0
+	+	49	10
+	+	48	8
+	+	35	0
+	+	27	71
+	+	48	0
+	+	9	0
+	+	36	0
+	+	48	26
+	+	50	24
+	+	27	0
+	+	50	73
+	+	9	9
+	+	32	0
+	+	9	0
+	+	27	25
+	+	9	4
+	+	50	29
+	+	27	50
+	+	50	54
+	+	27	0
+	+	49	0
+	+	48	0
+	+	37	0
+	+	38	50
+	+	33	22
+	+	34	11
+	+	48	21
+	+	64	0
+	+	65	21
+	+	67	54
+	+	26	12
+	+	60	18
+	+	62	26
+	+	57	19
+	+	64	0
+	+	63	7
+	+	9	0
+	+	9	0
+	+	18	0
+	+	18	0
+	+	9	0
+	+	19	0
+	+	25	0
+	+	26	0
+	+	7	0
+	+	9	0
+	+	25	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	23	0
+	+	24	17
+	+	19	25
+	+	32	23
+	+	43	22
+	+	55	26
+	+	72	26
+	+	19	30
+
+> ~/programming/ctf/braind_sql.py
+	"	1	0
+	.	5	0
+	+	7	28
+	+	36	0
+	+	12	10
+	+	7	11
+	+	11	8
+	+	12	26
+	+	36	0
+	+	7	6
+	+	7	44
+	+	11	0
+	+	7	45
+	+	7	8
+	+	8	30
+	+	10	30
+	+	7	82
+	+	7	82
+	+	8	0
+	+	7	82
+	+	7	82
+	+	7	82
+	+	6	21
+	+	7	0
+	+	7	3
+	+	8	3
+	+	10	3
+	+	11	3
+	+	12	3
+	+	7	0
+	+	5	0
+	+	5	0
+	+	14	28
+	+	36	7
+	+	7	113
+	+	36	0
+	+	36	0
+	+	15	13
+	+	36	14
+	+	15	56
+	+	19	29
+	+	21	28
+	+	22	8
+	+	7	72
+	+	8	0
+	+	22	70
+	+	22	70
+	+	36	0
+	+	22	70
+	+	22	111
+	+	7	67
+	+	22	138
+	+	33	0
+	+	22	124
+	+	28	40
+	+	28	32
+	+	29	53
+	+	31	16
+	+	29	24
+	+	4	16
+	+	33	32
+	+	34	7
+	+	36	0
+	+	35	32
+	+	7	67
+	+	22	70
+	+	15	46
+	+	29	24
+	+	23	0
+	+	28	0
+	+	23	7
+	+	25	7
+	+	26	7
+	+	27	7
+	+	5	0
+	+	9	0
+	+	24	0
+	+	9	3
+	+	24	7
+	+	8	9
+	+	10	10
+	+	11	37
+	+	23	13
+	+	25	44
+	+	26	41
+	+	31	0
+	+	30	38
+	+	35	26
+	+	22	117
+	+	20	10
+	+	7	0
+	+	14	0
+	+	13	17
+	+	5	0
+
+> ~/programming/ctf/2_sql.py
+	"	8	28
+	.	19	0
+	+	19	0
+	+	13	18
+	+	22	0
+	+	10	0
+	+	4	0
+	+	19	10
+	+	13	0
+	+	19	0
+
+> ~/ghc-clang-wrapper
+	"	1	0
+
+> ~/hoge.pl
+	"	1	0
+	.	27	0
+	+	21	32
+	+	18	104
+	+	10	81
+	+	18	119
+	+	10	72
+	+	21	40
+	+	27	0
+
+> ~/programming/ctf/square_cipher
+	"	1	0
+	^	31	31
+	.	31	30
+	+	31	30
+
+> ~/programming/ctf/alpha_mixed
+	"	9	0
+	^	9	0
+	.	8	80
+	+	1	80
+	+	2	80
+	+	3	80
+	+	4	80
+	+	5	80
+	+	6	80
+	+	7	80
+	+	8	80
+
+> ~/programming/ctf/alpha
+	"	1	1321
+	^	1	1322
+	.	1	1321
+	+	1	1321
+
+> ~/programming/python/turtle1.py
+	"	8	15
+	^	8	16
+	.	8	15
+	+	9	51
+	+	9	0
+	+	8	15
+
+> ~/programming/python/tmp.py
+	"	1	0
+
+> ~/programming/ctf/hoge.rb
+	"	2	13
+	^	2	14
+	.	2	13
+	+	1	12
+	+	4	22
+	+	2	13
 
 > ~/programming/ctf/hogehoge
 	"	12	11
@@ -820,17 +1239,6 @@ $
 
 > ~/programming/ctf/docProps/app.xml
 	"	1	0
-
-> ~/hoge.pl
-	"	10	0
-	.	27	0
-	+	21	32
-	+	18	104
-	+	10	81
-	+	18	119
-	+	10	72
-	+	21	40
-	+	27	0
 
 > ~/dotfiles/add
 	"	1	0
@@ -1269,159 +1677,6 @@ $
 	+	44	42
 	+	45	8
 	a	32	0
-
-> ~/rails_projects/sample_app/app/controllers/users_controller.rb
-	"	17	7
-	^	14	19
-	.	14	18
-	+	27	32
-	+	28	4
-	+	29	0
-	+	28	32
-	+	28	0
-	+	28	33
-	+	28	0
-	+	27	1
-	+	28	1
-	+	27	0
-	+	29	0
-	+	31	17
-	+	35	33
-	+	37	16
-	+	48	0
-	+	39	18
-	+	41	4
-	+	48	0
-	+	40	4
-	+	46	80
-	+	47	0
-	+	45	5
-	+	46	0
-	+	44	0
-	+	4	32
-	+	6	0
-	+	8	17
-	+	12	33
-	+	18	18
-	+	20	4
-	+	24	4
-	+	22	8
-	+	25	80
-	+	26	4
-	+	25	37
-	+	18	7
-	+	12	29
-	+	16	22
-	+	15	50
-	+	16	0
-	+	21	0
-	+	14	18
-
-> ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-	"	51	0
-	^	52	42
-	.	59	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	64	0
-	+	63	0
-	+	15	28
-	+	17	15
-	+	17	36
-	+	19	41
-	+	20	37
-	+	62	4
-	+	67	18
-	+	67	42
-	+	67	38
-	+	67	66
-	+	67	6
-	+	67	40
-	+	67	43
-	+	67	48
-	+	67	14
-	+	67	11
-	+	67	11
-	+	67	41
-	+	67	44
-	+	67	0
-	+	67	8
-	+	67	0
-	+	67	34
-	+	67	68
-	+	67	0
-	+	69	0
-	+	67	0
-	+	66	0
-	+	67	0
-	+	77	0
-	+	68	0
-	+	70	0
-	+	94	0
-	+	97	0
-	+	95	0
-	+	77	0
-	+	97	0
-	+	71	21
-	+	96	0
-	+	77	0
-	+	76	0
-	+	73	0
-	+	75	35
-	+	85	0
-	+	85	45
-	+	17	0
-	+	17	14
-	+	16	4
-	+	17	0
-	+	19	6
-	+	20	6
-	+	67	6
-	+	68	6
-	+	92	14
-	+	20	0
-	+	14	0
-	+	14	0
-	+	7	28
-	+	8	44
-	+	9	36
-	+	11	41
-	+	12	39
-	+	13	4
-	+	14	0
-	+	22	22
-	+	23	32
-	+	25	39
-	+	27	42
-	+	28	38
-	+	29	66
-	+	40	40
-	+	42	43
-	+	43	48
-	+	44	41
-	+	45	45
-	+	46	8
-	+	42	46
-	+	57	34
-	+	58	68
-	+	61	4
-	+	32	36
-	+	33	38
-	+	35	43
-	+	36	41
-	+	37	0
-	+	48	41
-	+	49	38
-	+	50	61
-	+	53	43
-	+	54	78
-	+	55	8
-	+	54	0
-	+	52	41
-	+	59	0
-	a	42	0
 
 > ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
 	"	27	20
@@ -2331,103 +2586,3 @@ $
 
 > ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
 	"	1	0
-
-> ~/rails_projects/sample_app/db/migrate/20140606145208_add_password_digest_to_users.rb
-	"	1	0
-
-> ~/rails_projects/sample_app/db/migrate/20140606143042_add_index_to_users_email.rb
-	"	3	39
-	^	3	40
-	.	3	39
-	+	3	39
-
-> ~/.vimrs
-	"	1	0
-
-> ~/.vimra
-	"	1	0
-
-> ~/rails_projects/sample_app/app/helpers/application_helper.rb
-	"	10	4
-	^	8	8
-	.	8	0
-	+	3	28
-	+	4	50
-	+	8	35
-	+	10	4
-	+	8	0
-
-> ~/rails_projects/sample_app/spec/support/utilities.rb
-	"	3	0
-	^	3	0
-	.	10	0
-	+	2	0
-	+	10	0
-	+	10	0
-	+	10	0
-
-> ~/rails_projects/sample_app/app/views/static_pages/help.html.erb
-	"	1	0
-	^	1	27
-	.	1	26
-	+	1	7
-	+	8	0
-	+	8	0
-	+	5	71
-	+	7	66
-	+	5	71
-	+	8	0
-	+	1	6
-	+	1	5
-	+	1	6
-	+	1	10
-	+	1	61
-	+	1	9
-	+	1	12
-	+	9	7
-	+	9	5
-	+	1	0
-	+	1	27
-	+	1	67
-	+	1	0
-	+	9	0
-	+	1	26
-
-> ~/rails_projects/sample_app/app/views/static_pages/home.html.erb
-	"	1	0
-	^	10	43
-	.	10	42
-	+	14	65
-	+	14	0
-	+	1	15
-	+	1	0
-	+	1	10
-	+	1	61
-	+	1	13
-	+	1	14
-	+	1	0
-	+	14	0
-	+	14	7
-	+	14	5
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	28
-	+	1	67
-	+	1	0
-	+	14	0
-	+	1	29
-	+	11	6
-	+	1	18
-	+	14	0
-	+	5	17
-	+	5	2
-	+	8	3
-	+	2	0
-	+	3	0
-	+	10	66
-	+	11	0
-	+	13	3
-	+	10	3
-	+	2	0
-	+	10	42

@@ -222,7 +222,7 @@ endif
 
 "{{{
 " タブの代わりに空白文字を指定しない
-set noexpandtab
+set expandtab
 
 " C言語のインデントに従って自動インデントを行う
 set cindent
@@ -943,7 +943,8 @@ else
   " html/CSS入力補助プラグイン"{{{
   NeoBundle 'mattn/emmet-vim'
   let g:user_emmet_mode = 'iv'
-  let g:user_emmet_leader_key = '<C-e>'
+  " <C-t>,
+  let g:user_emmet_leader_key = '<C-t>'
   let g:use_emmet_complete_tag = 1
   let g:user_emmet_settings = {
         \ 'lang' : 'ja',
@@ -962,10 +963,6 @@ else
     autocmd!
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
-  "}}}
-
-  " HTMLが開かれるまでロードしない"{{{
-  " NeoBundle 'mattn/zencoding-vim'
   "}}}
   "}}}
 

