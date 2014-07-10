@@ -1,0 +1,147 @@
+#-*- coding: utf-8 -*-
+
+import csv
+import numpy as np
+import sys
+from collections import defaultdict
+import math
+import random
+
+class NaiveBays:
+
+    global MAX
+    global ONE
+    global CV
+
+    # 初期化
+    def __init__(self):
+        self.categories = set()
+        self.voca = set()
+        self.catcount = {}
+        self.wordcount = {}
+        self.denominator = {}
+
+    #ナイーブベイズ分類器の訓練
+    def train(self,data):
+        for d in data:
+            cat = d[0]
+            self.categories.add(cat)
+        for cat in self.categories:
+            self.wordcount[cat] = defaultdict(int)
+            self.catcount[cat] = 0
+        #カウント
+        for d in data:
+            cat,feat = d[0],d[1:]
+            self.catcount[cat] += 1
+            for x in feat:
+                self.voca.add(x)
+                self.wordcount[cat][x] += 1
+        #P(word|cat)の分母の値を計算
+        for cat in self.categories:
+            self.denominator[cat]  = sum(self.wordcount[cat].values()) 
+
+    #log(P(iris|size))が最大となるカテゴリを返す
+    def classify(self, doc):
+        best = None
+        max = -sys.maxint
+        for cat in self.catcount.keys():
+            p = self.score(doc, cat)
+            if p > max:
+                max = p
+                best = cat
+        return best
+
+    #単語の条件付き確率 P(word|cat) を求める
+    def wordProb(self, word, cat):
+        # ラプラススムージングを適用
+        # wordcount[cat]はdefaultdict(int)なのでカテゴリに存在しなかった単語はデフォルトの0を返す
+        # 分母はtrain()の最後で一括計算済み
+        return float(self.wordcount[cat][word] + 1) / float(self.denominator[cat])
+
+    #文章が与えられた時のカテゴリの事後確率の対数log(P(cat|doc))を求める
+    def score(self, doc, cat):
+        total = sum(self.catcount.values())  # 総文書数
+        score = math.log(float(self.catcount[cat]) / total)  # log P(cat)
+        for word in doc:
+            # logをとるとかけ算は足し算になる
+            score += math.log(self.wordProb(word, cat))  # log P(word|cat)
+        return score
+
+    def __str__(self):
+        total = sum(self.catcount.values())
+        return "data: %d, patterns: %d, categories: %d" % (total, len(self.voca), len(self.categories))
+
+if __name__ == "__main__":
+
+    nb = NaiveBays()
+    data = []
+    fpr_list = []
+    fnr_list = []
+    image_class = ['BRICKFACE', 'SKY', 'FOLIAGE', 'CEMENT', 'WINDOW', 'PATH','GRASS']
+
+    f = open('segmentation.csv')
+    line = csv.reader(f)
+
+    #データの読み込み
+    for row in line:
+        data.append(row)
+
+    length_data = len(data)
+    priod_data = length_data/10
+
+    random.shuffle(data)
+
+    #10-fold クロスバリデーション
+    k = 0
+    for i in range(10):
+        student = data[k:k+priod_data]
+        if i == 0:
+            teacher = data[priod_data:]
+        elif i == 9:
+            teacher = data[0:(length_data-priod_data)]
+        else:
+            teacher == data[0:k]
+            teacher == data[k+priod_data:]
+        k += priod_data
+        print "Time : %d" % (i+1)
+        nb.train(teacher)
+        print nb
+
+        tp = [1]*7
+        fp = [0]*7
+        fn = [0]*7
+        tn = [1]*7
+        fpr = [0]*7
+        fnr = [0]*7
+        print image_class
+        for j in range(priod_data):
+            guess = nb.classify(student[j][1:])
+            for m in range(7):
+                if guess == image_class[m]:
+                    if guess == student[j][0]:
+                        tp[m] += 1
+                    else:
+                        fp[m] += 1
+                else:
+                    if guess == student[j][0]:
+                        fn[m] += 1
+                    else:
+                        tn[m] += 1
+
+                fpr[m] = float(fp[m])/(fp[m]+tn[m])
+                fnr[m] = float(fn[m])/(tp[m]+fn[m])
+
+                fpr_list.append(fpr[m])
+                fnr_list.append(fnr[m])
+
+        print "FPR average rate : %f" %np.average(fpr_list[i*priod_data:(i+1)*priod_data])
+        print "FPR standard devison : %f" %np.std(fpr_list[i*priod_data:(i+1)*priod_data])
+        print "FNR average rate : %f" % np.average(fnr_list[i*priod_data:(i+1)*priod_data])
+        print "FNR standard devison : %f" % np.std(fnr_list[i*priod_data:(i+1)*priod_data])
+
+    print ("")
+    print "ALL average"
+    print "FPR average rate : %f" % np.average(fpr_list)
+    print "FPR standard devison : %f" % np.std(fpr_list)
+    print "FNR average rate : %f" % np.average(fnr_list)
+    print "FNR standard devison : %f" % np.std(fnr_list)

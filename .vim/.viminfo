@@ -8,19 +8,33 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~MSle0~/sys
+~Msle0~/)])
 
 # Last Substitute Search Pattern:
-~MSle0&@
+~MSle0&date
 
 # Last Substitute String:
-$
+$data
 
 # Command Line History (newest to oldest):
 :wq
-:q!
 :q
+:q!
+:w segmentation_date.csv
+:%s/date/data/gc
+:%s/date/data
+:/%s/date/data
+:%s/data/date/gc
 :w
+:%s/feature/voca/gc
+: %S/feature/voca/gc
+:%s/sizeconut/wordcount/gc
+:w balance-scale.data.csv
+:MemoNew
+:w braind_table.py
+:h
+:w not20game.py
+:w 100monkeisan.py
 :NeoBundleCheckUpdate
 :w test.py
 :w 2_sql.py
@@ -91,7 +105,6 @@ $
 :clean
 :clear
 :CloseQFixWin
-:h
 :VimFiler
 :e
 :Unite outline
@@ -108,6 +121,33 @@ $
 :wq1
 
 # Search String History (newest to oldest):
+?/gundo
+?/<Leader>G
+? )])
+?/sizeP
+? date
+? %s
+? data
+?/wordProb
+?/rate_
+?/size[
+? feature
+?/sizecount
+? sizeconut
+?/nb
+?/train
+?/Naive
+?/NaiveB
+?/init
+?/undo
+?/num
+?/hist_ignore
+?/hist_i
+?/share_
+?/hist_
+?/index
+?/for no
+? 
 ? \$cursor\$
 ?/<C-t>
 ?/zen
@@ -126,7 +166,6 @@ $
 ?/Shell
 ?/vimshell
 ?/comple
-? 
 ?/sid
 ?/side
 ?/misc
@@ -148,7 +187,6 @@ $
 ?/fugitive
 ?/zsh-
 ?/syntastic
-?/gundo
 ?/webapi
 ?/tagbar
 ? \m<|2|>
@@ -166,7 +204,6 @@ $
 ? \<NeoBundleLazy\>
 ?/NeoBu
 ?/vim-qu
-?/undo
 ?/]
 ?/Ali
 ?/gist
@@ -183,6 +220,9 @@ $
 # Expression History (newest to oldest):
 
 # Input Line History (newest to oldest):
+@ES
+@就活
+@KDDI
 @y
 @da
 @memo
@@ -196,263 +236,156 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	LINE	0
-	    params = urllib.urlencode(values)
-	    request = urllib2.Request(theurl, params)
-	    response = urllib2.urlopen(request)
-	    the_page = response.read()
+"0	BLOCK	28
+	i*priod_data:(i+1)*priod_data
 "1	LINE	0
-	                                        h1>tr.ro    t   rw
-"2	LINE	0
-	table>tr.row*3
-"3	LINE	0
-	tabel>tr.row*3>td.col$*3
-"4	LINE	0
-	h1>div.row
-"5	LINE	0
-	            h1>div.row>div.span6_offset3>a
-"6	LINE	0
-	h1>div.row>div.span6_offset3>add
-"7	LINE	0
-	    end
-"8	LINE	0
-	      # end
-"9	LINE	0
-	      #   expect { click_button submit }.to change(User, :count).by(1)
-"z	CHAR	0
-	 if(a==b){
-	        return (y)
-	    }else{
-	        yy(y+1)
-	    }
 	
+"2	LINE	0
+	269
+<REGION-CENTROID-COL,REGION-CENTROID-ROW,REGION-PIXEL-COUNT,SHORT-LINE-DENSITY-5,SHORT-LINE-DENSITY-2,VEDGE-MEAN,VEDGE-SD,HEDGE-MEAN,HEDGE-SD,INTENSITY-MEAN,RAWRED-MEAN,RAWBLUE-MEAN,RAWGREEN-MEAN,EXRED-MEAN,EXBLUE-MEAN,EXGREEN-MEAN,VALUE-MEAN,SATURATION-MEAN,HUE-MEAN
+"3	LINE	0
+	
+"4	LINE	0
+	;;; *-* Last-edit: 11/21/90 15:28:30 by Brodley; *-* 
+"5	LINE	0
+	;;; -*- Mode:Common-Lisp; Base:10 -*-
+"6	BLOCK	3
+	    
+	    
+	    
+	    
+	    
+	    
+"7	LINE	0
+	        "
+"8	LINE	0
+	
+"9	LINE	0
+	
+"q	CHAR	0
+	wwwwwwwww
+"z	CHAR	0
+	cement,
 ""-	CHAR	0
 	 
 
 # File marks:
-'0  945  9  ~/dotfiles/.vimrc
-'1  3  16  ~/rails_projects/sample_app/app/views/users/edit.html.erb
-'2  1  0  ~/rails_projects/sample_app/app/views/users/edit.html.erb
-'3  25  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
-'4  71  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-'5  59  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-'6  225  14  ~/.vimrc
-'7  65  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-'8  54  43  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-'9  2  0  ~/programming/ctf/program.cpp
+'0  1001  4  ~/.vimrc
+'1  1  0  ~/programming/python/ga.py
+'2  1  0  ~/programming/python/a.rb
+'3  1  0  ~/.vimrc
+'4  985  4  ~/.vimrc
+'5  1  30  ~/programming/net/report2.txt
+'6  1  0  ~/programming/net/segmentation_data.test.data
+'7  82  30  ~/programming/net/NaiveBays.py
+'8  29  70  ~/programming/net/report2.txt
+'9  108  0  ~/programming/net/report2.txt
 
 # Jumplist (newest first):
--'  945  9  ~/dotfiles/.vimrc
--'  1  0  ~/dotfiles/.vimrc
--'  3  16  ~/rails_projects/sample_app/app/views/users/edit.html.erb
--'  1  0  ~/rails_projects/sample_app/app/views/users/edit.html.erb
--'  25  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
--'  1  0  ~/rails_projects/sample_app/app/controllers/users_controller.rb
--'  71  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  59  4  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  1  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  75  2  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  225  14  ~/.vimrc
+-'  1001  4  ~/.vimrc
 -'  1  0  ~/.vimrc
--'  65  0  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  54  43  ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
--'  2  0  ~/programming/ctf/program.cpp
--'  4  9  ~/programming/ctf/program.cpp
--'  41  0  ~/programming/ctf/program.cpp
--'  1  0  ~/programming/ctf/program.cpp
--'  25  0  ~/programming/ctf/program.cpp
--'  79  0  ~/programming/ctf/sql_root.py
+-'  1  0  ~/programming/python/ga.py
+-'  1  0  ~/programming/python/a.rb
+-'  985  4  ~/.vimrc
+-'  1  30  ~/programming/net/report2.txt
+-'  3  84  ~/programming/net/report2.txt
+-'  1  0  ~/programming/net/segmentation_data.test.data
+-'  82  30  ~/programming/net/NaiveBays.py
+-'  1  0  ~/programming/net/NaiveBays.py
+-'  29  70  ~/programming/net/report2.txt
+-'  108  0  ~/programming/net/report2.txt
+-'  143  21  ~/programming/net/NaiveBays.py
+-'  140  88  ~/programming/net/NaiveBays.py
+-'  137  86  ~/programming/net/NaiveBays.py
+-'  144  0  ~/programming/net/NaiveBays.py
+-'  135  2  ~/programming/net/NaiveBays.py
+-'  60  0  ~/programming/net/report2.txt
+-'  146  32  ~/programming/net/NaiveBays.py
+-'  64  0  ~/programming/net/report2.txt
+-'  131  28  ~/programming/net/NaiveBays.py
+-'  25  0  ~/programming/net/segmentation.csv
+-'  1  0  ~/programming/net/segmentation.csv
+-'  78  6  ~/programming/net/NaiveBays.py
+-'  147  49  ~/programming/net/NaiveBays.py
+-'  117  35  ~/programming/net/NaiveBays.py
+-'  134  12  ~/programming/net/NaiveBays.py
+-'  141  14  ~/programming/net/NaiveBays.py
+-'  133  0  ~/programming/net/NaiveBays.py
+-'  111  14  ~/programming/net/NaiveBays.py
+-'  112  14  ~/programming/net/NaiveBays.py
+-'  132  0  ~/programming/net/NaiveBays.py
+-'  115  14  ~/programming/net/NaiveBays.py
+-'  113  14  ~/programming/net/NaiveBays.py
+-'  130  46  ~/programming/net/NaiveBays.py
+-'  129  33  ~/programming/net/NaiveBays.py
+-'  121  1  ~/programming/net/NaiveBays.py
+-'  80  76  ~/programming/net/NaiveBays.py
+-'  119  34  ~/programming/net/NaiveBays.py
+-'  104  40  ~/programming/net/NaiveBays.py
+-'  101  44  ~/programming/net/NaiveBays.py
+-'  116  24  ~/programming/net/NaiveBays.py
+-'  125  19  ~/programming/net/NaiveBays.py
+-'  120  42  ~/programming/net/NaiveBays.py
+-'  128  15  ~/programming/net/NaiveBays.py
+-'  148  0  ~/programming/net/NaiveBays.py
+-'  122  12  ~/programming/net/NaiveBays.py
+-'  118  0  ~/programming/net/NaiveBays.py
+-'  70  21  ~/programming/net/NaiveBays.py
+-'  92  0  ~/programming/net/NaiveBays.py
+-'  50  0  ~/programming/net/NaiveBays.py
+-'  72  81  ~/programming/net/NaiveBays.py
+-'  105  0  ~/programming/net/NaiveBays.py
+-'  90  20  ~/programming/net/NaiveBays.py
+-'  93  0  ~/programming/net/NaiveBays.py
+-'  34  20  ~/programming/net/NaiveBays.py
+-'  28  0  ~/programming/net/NaiveBays.py
+-'  89  0  ~/programming/net/NaiveBays.py
+-'  87  11  ~/programming/net/NaiveBays.py
+-'  55  8  ~/programming/net/NaiveBays.py
+-'  74  23  ~/programming/net/NaiveBays.py
+-'  88  0  ~/programming/net/NaiveBays.py
+-'  41  49  ~/programming/net/NaiveBays.py
+-'  42  26  ~/programming/net/NaiveBays.py
+-'  38  21  ~/programming/net/NaiveBays.py
+-'  30  17  ~/programming/net/NaiveBays.py
+-'  21  8  ~/programming/net/NaiveBays.py
+-'  44  25  ~/programming/net/NaiveBays.py
+-'  108  14  ~/programming/net/NaiveBays.py
+-'  107  8  ~/programming/net/NaiveBays.py
+-'  76  4  ~/programming/net/NaiveBays.py
+-'  109  8  ~/programming/net/NaiveBays.py
+-'  25  8  ~/programming/net/NaiveBays.py
+-'  10  6  ~/programming/net/NaiveBays.py
+-'  48  0  ~/programming/net/balance-scale.data.csv
+-'  1  0  ~/programming/net/balance-scale.data.csv
+-'  1  0  ~/programming/net/balance-scale.data.txt
+-'  1  0  ~/Downloads/SUSY.csv
+-'  583  0  ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
+-'  1  0  ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
+-'  5  75  ~/Downloads/leaf/leaf.csv
+-'  1  0  ~/Downloads/leaf/leaf.csv
+-'  1  7  ~/Documents/abcd.fasta
+-'  19  0  ~/Documents/abcd.fasta
+-'  7  0  ~/programming/ctf/not20game.py
+-'  1  0  ~/programming/ctf/not20game.py
+-'  24  15  ~/programming/ctf/not20game.py
+-'  17  66  ~/Documents/abcd.fasta
+-'  3  0  ~/Documents/abcd.fasta
+-'  1  24  ~/Documents/sequence.fasta
+-'  2  0  ~/Documents/sequence.fasta
+-'  2  24  ~/Documents/abcd.fasta
+-'  5  24  ~/Documents/abcd.fasta
+-'  18  66  ~/programming/ctf/not20game.py
+-'  21  0  ~/programming/ctf/not20game.py
+-'  1  0  ~/programming/ctf/braind_table.py
 -'  1  0  ~/programming/ctf/sql_root.py
--'  19  29  ~/programming/ctf/sql_root.py
--'  72  26  ~/programming/ctf/sql_root.py
--'  53  22  ~/programming/ctf/sql_root.py
--'  22  17  ~/programming/ctf/sql_root.py
--'  9  0  ~/programming/ctf/sql_root.py
--'  17  0  ~/programming/ctf/sql_root.py
--'  18  0  ~/programming/ctf/sql_root.py
--'  64  0  ~/programming/ctf/sql_root.py
--'  57  19  ~/programming/ctf/sql_root.py
--'  48  0  ~/programming/ctf/sql_root.py
--'  50  54  ~/programming/ctf/sql_root.py
--'  10  4  ~/programming/ctf/sql_root.py
--'  1  0  ~/programming/ctf/braind_sql.py
--'  5  0  ~/programming/ctf/braind_sql.py
--'  27  25  ~/programming/ctf/sql_root.py
--'  32  9  ~/programming/ctf/sql_root.py
--'  9  0  ~/programming/ctf/braind_sql.py
--'  8  28  ~/programming/ctf/2_sql.py
--'  1  0  ~/programming/ctf/2_sql.py
--'  19  10  ~/programming/ctf/2_sql.py
--'  13  17  ~/programming/ctf/2_sql.py
--'  13  17  ~/programming/ctf/braind_sql.py
--'  14  0  ~/programming/ctf/braind_sql.py
--'  49  0  ~/programming/ctf/sql_root.py
--'  29  0  ~/programming/ctf/sql_root.py
--'  34  11  ~/programming/ctf/sql_root.py
--'  55  29  ~/programming/ctf/sql_root.py
--'  52  36  ~/programming/ctf/sql_root.py
--'  15  0  ~/programming/ctf/sql_root.py
--'  26  12  ~/programming/ctf/sql_root.py
--'  7  19  ~/programming/ctf/braind_sql.py
--'  20  10  ~/programming/ctf/braind_sql.py
--'  27  31  ~/programming/ctf/braind_sql.py
--'  22  53  ~/programming/ctf/braind_sql.py
--'  24  7  ~/programming/ctf/braind_sql.py
--'  29  24  ~/programming/ctf/braind_sql.py
--'  10  35  ~/programming/ctf/braind_sql.py
--'  35  32  ~/programming/ctf/braind_sql.py
--'  15  31  ~/programming/ctf/braind_sql.py
--'  12  25  ~/programming/ctf/braind_sql.py
--'  1  0  ~/ghc-clang-wrapper
--'  1  0  ~/hoge.pl
--'  1  0  ~/programming/ctf/square_cipher
--'  1056  3  ~/.vimrc
--'  17  30  ~/programming/ctf/square_cipher
--'  9  0  ~/programming/ctf/alpha_mixed
--'  1  0  ~/programming/ctf/alpha_mixed
--'  1  1321  ~/programming/ctf/alpha
--'  91  6  ~/programming/ctf/program.cpp
--'  318  0  ~/.vimrc
--'  819  0  ~/.vimrc
--'  22  39  ~/.vimrc
--'  527  0  ~/.vimrc
--'  2  0  ~/.vimrc
--'  811  3  ~/.vimrc
--'  8  15  ~/programming/python/turtle1.py
--'  1  0  ~/programming/python/turtle1.py
--'  221  0  ~/dotfiles/.vimrc
--'  880  2  ~/dotfiles/.vimrc
--'  3  21  ~/dotfiles/.vimrc
--'  872  13  ~/dotfiles/.vimrc
--'  9  23  ~/programming/python/turtle1.py
--'  804  4  ~/.vimrc
--'  803  52  ~/.vimrc
--'  1  0  ~/.vimt
--'  1  0  ~/rails_projects/sample_app/spec/helpers/application_helper_spec.rb
--'  1  0  spec/helpers/application_helper_spec.rb
--'  2  0  ~/rails_projects/sample_app/spec/controllers
--'  1  0  ~/rails_projects/sample_app/spec/controllers
--'  2  0  ~/rails_projects/sample_app/spec/helpers
--'  1  0  ~/rails_projects/sample_app/spec/helpers
--'  3  0  ~/ruby-sample/web.rb
--'  1  0  ~/ruby-sample/web.rb
--'  531  0  ~/.vimrc
--'  806  4  ~/.vimrc
--'  1181  0  ~/.vimrc
--'  805  16  ~/.vimrc
 
 # History of marks within files (newest to oldest):
 
-> ~/dotfiles/.vimrc
-	"	945	9
-	^	946	11
-	.	946	9
-	+	380	0
-	+	506	0
-	+	428	0
-	+	438	43
-	+	424	0
-	+	488	0
-	+	423	0
-	+	483	0
-	+	483	0
-	+	505	0
-	+	505	0
-	+	505	0
-	+	423	0
-	+	445	20
-	+	446	0
-	+	423	0
-	+	398	0
-	+	399	0
-	+	410	0
-	+	370	0
-	+	411	0
-	+	322	0
-	+	321	0
-	+	523	0
-	+	446	0
-	+	5	12
-	+	5	0
-	+	5	0
-	+	3	21
-	+	755	11
-	+	756	0
-	+	755	31
-	+	902	37
-	+	902	0
-	+	902	22
-	+	902	0
-	+	902	36
-	+	902	59
-	+	902	47
-	+	902	0
-	+	902	4
-	+	902	0
-	+	902	52
-	+	900	14
-	+	902	0
-	+	894	0
-	+	902	0
-	+	901	0
-	+	896	0
-	+	900	13
-	+	903	48
-	+	904	48
-	+	905	0
-	+	826	37
-	+	827	23
-	+	829	0
-	+	828	24
-	+	860	50
-	+	828	86
-	+	829	10
-	+	873	0
-	+	874	43
-	+	875	43
-	+	875	18
-	+	875	18
-	+	875	0
-	+	875	4
-	+	225	0
-	+	3	27
-	+	3	21
-	+	817	0
-	+	3	21
-	+	226	0
-	+	874	11
-	+	875	0
-	+	874	35
-	+	4	0
-	+	876	2
-	+	878	2
-	+	880	2
-	+	947	36
-	+	946	9
-	n	876	0
-
-> ~/rails_projects/sample_app/app/views/users/edit.html.erb
-	"	3	16
-	^	3	17
-	.	3	0
-	+	1	28
-	+	5	0
-	+	5	0
-	+	5	0
-	+	5	0
-	+	5	0
-	+	5	0
-	+	2	0
-	+	3	0
-
 > ~/.vimrc
-	"	950	19
-	^	946	37
-	.	946	36
-	+	1202	0
-	+	1202	0
-	+	1202	0
-	+	1202	0
+	"	1001	4
+	^	1001	30
+	.	1001	29
 	+	1202	0
 	+	1202	63
 	+	1202	66
@@ -549,269 +482,359 @@ $
 	+	946	36
 	+	966	0
 	+	946	36
+	+	975	0
+	+	982	0
+	+	1002	0
+	+	1001	29
 	j	678	5
 
-> ~/rails_projects/sample_app/app/controllers/users_controller.rb
-	"	25	0
-	^	24	5
-	.	24	4
-	+	31	32
-	+	32	4
-	+	33	0
-	+	32	32
-	+	32	0
-	+	32	33
-	+	32	0
-	+	31	1
-	+	32	1
-	+	31	0
-	+	33	0
-	+	35	17
-	+	39	33
-	+	41	16
-	+	52	0
-	+	43	18
-	+	45	4
-	+	52	0
-	+	44	4
-	+	50	80
-	+	51	0
-	+	49	5
-	+	50	0
-	+	48	0
-	+	4	32
-	+	6	0
-	+	8	17
-	+	12	33
-	+	18	18
-	+	20	4
-	+	28	4
-	+	26	8
-	+	29	80
-	+	30	4
-	+	29	37
-	+	18	7
-	+	12	29
-	+	16	22
-	+	15	50
-	+	16	0
-	+	25	0
-	+	14	18
-	+	23	32
-	+	24	4
+> ~/programming/python/ga.py
+	"	1	0
+	^	1	0
+	.	1	0
+	+	1	0
 
-> ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
-	"	71	0
-	^	57	5
-	.	61	0
-	+	80	0
-	+	82	0
-	+	80	0
-	+	79	0
-	+	80	0
-	+	90	0
-	+	81	0
-	+	83	0
-	+	107	0
-	+	110	0
-	+	108	0
-	+	90	0
-	+	110	0
-	+	84	21
-	+	109	0
-	+	90	0
-	+	89	0
-	+	86	0
-	+	88	35
-	+	98	0
-	+	98	45
-	+	17	0
-	+	17	14
-	+	16	4
-	+	17	0
-	+	19	6
-	+	20	6
-	+	80	6
-	+	81	6
-	+	105	14
-	+	20	0
-	+	14	0
-	+	14	0
-	+	7	28
-	+	8	44
-	+	9	36
-	+	11	41
-	+	12	39
-	+	13	4
-	+	14	0
-	+	22	22
-	+	23	32
-	+	25	39
-	+	27	42
+> ~/programming/python/a.rb
+	"	1	0
+
+> ~/programming/net/report2.txt
+	"	1	30
+	^	2	104
+	.	2	103
+	+	1	30
+	+	28	0
+	+	1	0
+	+	28	21
+	+	29	48
+	+	27	62
 	+	28	38
-	+	29	66
-	+	40	40
-	+	42	43
-	+	43	48
-	+	44	41
-	+	45	45
-	+	46	8
-	+	42	46
-	+	74	34
-	+	74	68
-	+	74	4
-	+	32	36
-	+	33	38
-	+	35	43
-	+	36	41
-	+	37	0
-	+	48	41
-	+	49	38
-	+	50	61
-	+	53	43
-	+	54	78
-	+	55	8
-	+	54	0
-	+	52	41
-	+	74	0
-	+	74	0
-	+	59	21
-	+	60	42
-	+	61	39
-	+	63	22
-	+	64	30
-	+	64	52
-	+	65	42
-	+	66	72
-	+	69	42
-	+	70	43
-	+	72	38
-	+	75	0
-	+	59	5
-	+	60	7
-	+	61	7
-	+	63	7
-	+	64	9
-	+	65	9
-	+	66	9
-	+	67	7
-	+	69	7
-	+	70	9
-	+	72	7
-	+	56	6
-	+	73	0
-	+	59	0
-	+	57	4
-	+	59	0
-	+	61	0
-	a	42	0
-
-> ~/programming/ctf/program.cpp
-	"	2	0
-	.	4	0
-	+	5	179
-	+	20	0
-	+	19	0
-	+	19	0
-	+	18	7
-	+	11	539
-	+	18	0
-	+	11	526
-	+	11	513
-	+	17	0
-	+	11	498
-	+	17	0
-	+	11	480
-	+	11	452
-	+	15	0
-	+	11	368
-	+	11	349
-	+	11	329
-	+	14	0
-	+	11	294
-	+	11	277
-	+	11	259
-	+	11	239
-	+	11	228
-	+	14	0
-	+	11	215
-	+	17	67
-	+	11	190
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	11	57
-	+	11	49
-	+	12	0
-	+	12	0
+	+	1	0
+	+	3	111
+	+	23	0
+	+	5	2
+	+	6	2
+	+	7	2
+	+	8	2
+	+	8	74
+	+	8	130
+	+	8	130
+	+	9	0
+	+	9	72
+	+	10	0
+	+	5	3
+	+	6	3
+	+	7	3
+	+	8	3
+	+	10	110
+	+	10	111
+	+	10	168
 	+	11	0
-	+	11	0
-	+	5	306
-	+	11	0
-	+	5	284
-	+	11	0
-	+	11	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	5	218
-	+	9	0
-	+	5	182
-	+	8	0
-	+	5	175
-	+	5	154
-	+	8	0
-	+	6	0
-	+	5	127
-	+	5	120
-	+	1	7
-	+	2	7
-	+	4	0
-	+	3	0
-	+	4	4
-	+	4	7
-	+	5	15
-	+	5	15
-	+	5	18
-	+	5	37
-	+	5	32
-	+	11	4
-	+	11	8
-	+	1	16
-	+	5	15
-	+	16	0
+	+	12	0
+	+	13	0
+	+	12	104
 	+	13	0
 	+	14	0
-	+	10	0
-	+	7	0
-	+	5	9
-	+	5	88
-	+	6	0
-	+	5	73
-	+	6	0
-	+	5	58
-	+	5	37
-	+	5	37
-	+	6	0
-	+	5	15
-	+	6	0
-	+	5	15
-	+	5	16
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	21	111
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	18
+	+	103	276
+	+	3	0
+	+	2	103
+
+> ~/programming/net/segmentation_data.test.data
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/programming/net/NaiveBays.py
+	"	82	30
+	^	82	31
+	.	82	30
+	+	112	14
+	+	113	14
+	+	141	50
+	+	110	14
+	+	111	14
+	+	112	14
+	+	113	14
+	+	112	14
+	+	111	14
+	+	141	0
+	+	134	65
+	+	141	0
+	+	134	26
+	+	141	50
+	+	134	12
+	+	141	12
+	+	133	0
+	+	141	0
+	+	141	0
+	+	141	0
+	+	141	12
+	+	111	14
+	+	110	14
+	+	112	14
+	+	113	14
+	+	141	0
+	+	141	0
+	+	134	42
+	+	135	40
+	+	141	0
+	+	134	19
+	+	135	19
+	+	141	0
+	+	141	0
+	+	141	0
+	+	141	11
+	+	141	11
+	+	141	0
+	+	135	0
+	+	141	40
+	+	135	0
+	+	141	0
+	+	147	7
+	+	141	0
+	+	147	0
+	+	144	34
+	+	135	0
+	+	141	0
+	+	135	0
+	+	134	16
+	+	135	16
+	+	134	32
+	+	135	32
+	+	134	15
+	+	135	15
+	+	144	52
+	+	118	0
+	+	146	0
+	+	147	0
+	+	144	14
+	+	147	0
+	+	145	14
+	+	146	14
+	+	147	14
+	+	145	49
+	+	146	56
+	+	147	49
+	+	78	6
+	+	79	6
+	+	80	0
+	+	78	0
+	+	141	0
+	+	141	0
+	+	144	26
+	+	146	26
+	+	144	32
+	+	146	32
+	+	141	0
+	+	141	0
+	+	141	0
+	+	136	0
+	+	136	0
+	+	137	3
+	+	138	7
+	+	139	7
+	+	140	8
+	+	137	67
+	+	138	67
+	+	139	60
+	+	140	60
+	+	137	39
+	+	137	39
+	+	138	43
+	+	139	0
+	+	139	89
+	+	140	89
+	+	141	0
+	+	142	12
+	+	143	21
+	+	82	30
+
+> ~/programming/net/segmentation.csv
+	"	25	0
+	.	1	0
+	+	1	0
+
+> ~/programming/net/report1/cdfMake.py
+	"	12	23
+
+> ~/programming/net/balance-scale.data.csv
+	"	625	0
+
+> ~/programming/net/balance-scale.data.txt
+	"	1	0
+
+> ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
+	"	583	0
+
+> ~/Downloads/leaf/leaf.csv
+	"	5	75
+
+> ~/Documents/abcd.fasta
+	"	1	7
+	^	1	8
+	.	1	7
+	+	3	0
+	+	1	1
+	+	1	2
+	+	1	24
+	+	20	0
+	+	1	7
+
+> ~/programming/ctf/not20game.py
+	"	7	0
+	^	24	16
+	.	24	15
+	+	24	0
+	+	24	0
+	+	24	15
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	39
+	+	24	7
+	+	24	0
+	+	24	17
+	+	24	17
+	+	24	15
+	+	24	0
+	+	24	39
+	+	24	0
+	+	24	7
+	+	24	7
+	+	24	7
+	+	24	7
+	+	24	0
+	+	24	0
+	+	24	30
+	+	24	20
+	+	24	0
+	+	24	0
+	+	24	19
+	+	24	0
+	+	24	0
+	+	25	28
+	+	24	4
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	25	0
 	+	12	0
+	+	12	0
+	+	12	0
+	+	24	0
+	+	24	0
+	+	24	0
+	+	24	15
+	+	24	28
+	+	24	38
+	+	24	7
+	+	24	7
+	+	24	7
+	+	24	7
+	+	24	7
+	+	24	4
+	+	24	4
+	+	24	4
+	+	24	4
+	+	24	4
+	+	24	17
+	+	2	10
+	+	24	0
+	+	24	0
+	+	24	18
+	+	24	13
+	+	24	0
+	+	24	0
+	+	24	9
+	+	24	15
+	+	24	10
+	+	24	20
+	+	24	0
+	+	24	14
+	+	24	0
+	+	24	0
+	+	24	0
+	+	22	29
+	+	16	3
+	+	16	7
+	+	18	7
+	+	21	7
+	+	22	7
+	+	15	8
+	+	16	0
+	+	15	4
+	+	16	0
+	+	18	3
+	+	21	3
+	+	22	3
+	+	18	18
+	+	18	0
+	+	17	10
+	+	21	0
+	+	20	13
+	+	16	30
+	+	18	9
+	+	16	26
+	+	19	0
+	+	18	33
+	+	20	0
+	+	21	0
+	+	18	66
+	+	24	15
+
+> ~/Documents/sequence.fasta
+	"	7	0
+	^	1	25
+	.	20	0
+	+	2	0
+	+	1	24
+	+	20	0
+
+> ~/programming/ctf/braind_table.py
+	"	1	0
+	^	16	29
+	.	16	29
+	+	6	16
+	+	5	36
+	+	7	0
+	+	7	0
 	+	8	0
-	+	4	0
+	+	9	0
+	+	10	0
+	+	11	14
+	+	12	16
+	+	11	14
+	+	12	15
+	+	11	0
+	+	12	0
+	+	11	79
+	+	11	107
+	+	11	25
+	+	11	128
+	+	12	0
+	+	11	80
+	+	11	80
+	+	9	10
+	+	11	20
+	+	11	146
+	+	16	29
 
 > ~/programming/ctf/sql_root.py
-	"	79	0
+	"	1	0
 	^	19	30
 	.	19	30
 	+	27	99
@@ -917,99 +940,1102 @@ $
 
 > ~/programming/ctf/braind_sql.py
 	"	1	0
-	.	5	0
-	+	7	28
-	+	36	0
-	+	12	10
-	+	7	11
-	+	11	8
-	+	12	26
-	+	36	0
-	+	7	6
-	+	7	44
-	+	11	0
-	+	7	45
-	+	7	8
-	+	8	30
-	+	10	30
-	+	7	82
-	+	7	82
-	+	8	0
-	+	7	82
-	+	7	82
-	+	7	82
+	^	8	11
+	.	6	0
+	+	6	82
+	+	6	82
+	+	6	82
 	+	6	21
-	+	7	0
-	+	7	3
-	+	8	3
-	+	10	3
-	+	11	3
-	+	12	3
-	+	7	0
-	+	5	0
-	+	5	0
-	+	14	28
-	+	36	7
-	+	7	113
-	+	36	0
-	+	36	0
-	+	15	13
-	+	36	14
-	+	15	56
-	+	19	29
-	+	21	28
-	+	22	8
-	+	7	72
-	+	8	0
-	+	22	70
-	+	22	70
-	+	36	0
-	+	22	70
-	+	22	111
-	+	7	67
-	+	22	138
-	+	33	0
-	+	22	124
-	+	28	40
-	+	28	32
-	+	29	53
-	+	31	16
-	+	29	24
-	+	4	16
-	+	33	32
-	+	34	7
-	+	36	0
-	+	35	32
-	+	7	67
-	+	22	70
-	+	15	46
-	+	29	24
-	+	23	0
-	+	28	0
+	+	6	0
+	+	6	3
+	+	6	3
+	+	6	3
+	+	6	3
+	+	6	3
+	+	6	0
+	+	6	0
+	+	6	0
+	+	6	28
 	+	23	7
-	+	25	7
-	+	26	7
-	+	27	7
-	+	5	0
-	+	9	0
-	+	24	0
-	+	9	3
-	+	24	7
-	+	8	9
-	+	10	10
-	+	11	37
-	+	23	13
-	+	25	44
-	+	26	41
-	+	31	0
-	+	30	38
-	+	35	26
-	+	22	117
-	+	20	10
-	+	7	0
+	+	6	113
+	+	23	0
+	+	23	0
+	+	6	13
+	+	23	14
+	+	6	56
+	+	6	29
+	+	9	28
+	+	9	8
+	+	6	72
+	+	6	0
+	+	9	70
+	+	9	70
+	+	23	0
+	+	9	70
+	+	9	111
+	+	6	67
+	+	9	138
+	+	20	0
+	+	9	124
+	+	14	40
+	+	14	32
+	+	15	53
+	+	16	16
+	+	15	24
+	+	4	16
+	+	20	32
+	+	21	7
+	+	23	0
+	+	22	32
+	+	6	67
+	+	9	70
+	+	6	46
+	+	15	24
+	+	10	0
 	+	14	0
-	+	13	17
+	+	10	7
+	+	12	7
+	+	12	7
+	+	13	7
+	+	6	0
+	+	6	0
+	+	11	0
+	+	6	3
+	+	11	7
+	+	6	9
+	+	6	10
+	+	6	37
+	+	10	13
+	+	12	44
+	+	12	41
+	+	16	0
+	+	16	38
+	+	22	26
+	+	9	117
+	+	7	10
+	+	6	0
+	+	6	0
+	+	6	17
+	+	6	0
+	+	6	0
+	+	6	0
+	+	16	0
+	+	19	0
+	+	18	29
+	+	9	0
+	+	16	0
+	+	18	25
+	+	17	11
+	+	6	38
+	+	6	0
+	+	6	0
+	+	6	10
+	+	6	69
+	+	6	0
+	+	12	0
+	+	6	0
 	+	5	0
+	+	6	0
+	+	6	68
+	+	6	0
+	+	6	0
+	+	7	19
+	+	8	11
+	+	6	0
+
+> ~/programming/ctf/ans2.py
+	"	1	0
+
+> ~/programming/ctf/ans1.py
+	"	1	0
+	^	2	0
+	.	1	0
+	+	4	8
+	+	5	9
+	+	13	0
+	+	13	0
+	+	13	0
+	+	14	0
+	+	14	10
+	+	21	4
+	+	21	4
+	+	14	0
+	+	13	0
+	+	13	0
+	+	21	0
+	+	20	8
+	+	21	0
+	+	20	7
+	+	21	0
+	+	20	0
+	+	20	3
+	+	21	0
+	+	20	0
+	+	20	14
+	+	20	0
+	+	19	7
+	+	21	0
+	+	21	0
+	+	21	25
+	+	19	0
+	+	16	23
+	+	19	0
+	+	16	25
+	+	19	16
+	+	16	23
+	+	19	0
+	+	19	0
+	+	19	0
+	+	19	12
+	+	21	0
+	+	16	23
+	+	17	17
+	+	18	20
+	+	19	0
+	+	21	0
+	+	19	0
+	+	20	12
+	+	21	0
+	+	20	0
+	+	19	22
+	+	20	0
+	+	21	0
+	+	1	0
+
+> ~/Documents/memo/2014-07-05-kddi.txt
+	"	18	0
+	^	16	582
+	.	16	582
+	+	1	0
+	+	8	0
+	+	7	0
+	+	19	0
+	+	7	33
+	+	14	561
+	+	16	372
+	+	17	207
+	+	18	532
+	+	17	0
+	+	16	489
+	+	17	0
+	+	16	582
+
+> ~/work/report.txt
+	"	216	0
+	^	216	0
+	.	216	0
+	+	33	1382
+	+	35	3
+	+	35	785
+	+	42	1324
+	+	39	37
+	+	40	903
+	+	44	1341
+	+	47	561
+	+	51	449
+	+	47	15
+	+	55	376
+	+	58	3
+	+	58	0
+	+	58	861
+	+	64	192
+	+	47	565
+	+	53	0
+	+	49	621
+	+	53	995
+	+	58	382
+	+	58	851
+	+	60	323
+	+	62	513
+	+	66	59
+	+	67	1170
+	+	66	55
+	+	71	651
+	+	76	471
+	+	73	50
+	+	74	849
+	+	78	20
+	+	83	372
+	+	79	292
+	+	81	668
+	+	88	986
+	+	87	55
+	+	85	697
+	+	93	299
+	+	91	615
+	+	90	49
+	+	98	0
+	+	99	705
+	+	104	324
+	+	102	1353
+	+	107	890
+	+	106	19
+	+	112	526
+	+	109	55
+	+	110	1376
+	+	117	1602
+	+	114	43
+	+	115	1037
+	+	120	1216
+	+	119	34
+	+	122	24
+	+	124	534
+	+	129	444
+	+	127	555
+	+	126	73
+	+	138	563
+	+	136	415
+	+	134	477
+	+	132	271
+	+	131	52
+	+	143	440
+	+	141	577
+	+	149	848
+	+	147	367
+	+	152	618
+	+	151	46
+	+	160	997
+	+	158	1438
+	+	156	675
+	+	166	492
+	+	164	445
+	+	172	611
+	+	170	576
+	+	178	588
+	+	176	622
+	+	174	0
+	+	174	825
+	+	180	516
+	+	190	967
+	+	188	448
+	+	188	298
+	+	186	749
+	+	184	851
+	+	190	328
+	+	192	590
+	+	197	0
+	+	196	323
+	+	208	0
+	+	204	532
+	+	202	319
+	+	200	480
+	+	214	819
+	+	212	343
+	+	210	905
+	+	208	200
+	+	216	0
+
+> ~/programming/ctf/injection/README.md
+	"	2	0
+	^	2	0
+	.	1	9
+	+	1	9
+
+> ~/Downloads/hoge
+	"	1	34739
+
+> ~/Downloads/TheFlagIsALie-8f3cce5cc4d27fcd822437c53f7c8e6b
+	"	1	67
+
+> ~/Downloads/q4/flag.txt
+	"	1	0
+
+> ~/dotfiles/.vim/bundle/.neobundle/doc/help.jax
+	"	87	0
+
+> ~/programming/ctf/__Gundo_Preview__
+	"	1	0
+	.	1	0
+	+	1	0
+
+> ~/programming/ctf/__Gundo__
+	"	8	1
+	.	1	0
+	+	1	0
+
+> ~/.zshrc
+	"	89	0
+	.	114	0
+	+	5	0
+	+	4	0
+	+	17	0
+	+	22	0
+	+	21	0
+	+	127	0
+	+	132	0
+	+	131	0
+	+	172	0
+	+	387	0
+	+	392	0
+	+	414	0
+	+	419	0
+	+	432	0
+	+	437	0
+	+	436	0
+	+	486	18
+	+	184	4
+	+	190	4
+	+	379	114
+	+	483	3
+	+	483	0
+	+	439	23
+	+	442	16
+	+	443	3
+	+	453	3
+	+	454	7
+	+	455	3
+	+	456	3
+	+	73	0
+	+	473	3
+	+	443	8
+	+	444	0
+	+	446	0
+	+	445	18
+	+	446	0
+	+	448	15
+	+	441	6
+	+	442	6
+	+	441	13
+	+	448	12
+	+	92	0
+	+	448	0
+	+	92	0
+	+	448	8
+	+	449	8
+	+	448	12
+	+	445	11
+	+	448	10
+	+	469	0
+	+	468	0
+	+	469	0
+	+	482	0
+	+	471	0
+	+	470	42
+	+	149	5
+	+	451	9
+	+	451	0
+	+	41	22
+	+	52	10
+	+	52	0
+	+	53	0
+	+	47	47
+	+	99	0
+	+	41	0
+	+	100	0
+	+	42	24
+	+	44	41
+	+	47	0
+	+	120	0
+	+	114	0
+
+> ~/rails_projects/sample_app/app/controllers/users_controller.rb
+	"	5	10
+	^	6	18
+	.	6	17
+	+	58	32
+	+	59	4
+	+	60	0
+	+	59	32
+	+	59	0
+	+	59	33
+	+	59	0
+	+	58	1
+	+	59	1
+	+	58	0
+	+	60	0
+	+	62	17
+	+	66	33
+	+	68	16
+	+	79	0
+	+	70	18
+	+	72	4
+	+	79	0
+	+	71	4
+	+	77	80
+	+	78	0
+	+	76	5
+	+	77	0
+	+	75	0
+	+	10	32
+	+	12	0
+	+	14	17
+	+	18	33
+	+	24	18
+	+	26	4
+	+	43	4
+	+	41	8
+	+	44	80
+	+	45	4
+	+	44	37
+	+	24	7
+	+	18	29
+	+	22	22
+	+	21	50
+	+	22	0
+	+	40	0
+	+	20	18
+	+	29	32
+	+	29	4
+	+	32	32
+	+	33	41
+	+	40	0
+	+	37	17
+	+	39	4
+	+	36	0
+	+	34	0
+	+	35	22
+	+	50	69
+	+	52	4
+	+	50	69
+	+	2	37
+	+	3	50
+	+	29	0
+	+	55	32
+	+	56	52
+	+	57	4
+	+	49	19
+	+	50	51
+	+	51	6
+	+	50	0
+	+	29	0
+	+	9	0
+	+	6	17
+
+> ~/rails_projects/sample_app/spec/requests/user_pages_spec.rb
+	"	23	4
+	^	23	5
+	.	23	4
+	+	32	0
+	+	40	22
+	+	41	32
+	+	43	39
+	+	45	42
+	+	46	38
+	+	47	66
+	+	58	40
+	+	60	43
+	+	61	48
+	+	62	41
+	+	63	45
+	+	64	8
+	+	60	46
+	+	114	34
+	+	114	68
+	+	114	4
+	+	50	36
+	+	51	38
+	+	53	43
+	+	54	41
+	+	55	0
+	+	66	41
+	+	67	38
+	+	68	61
+	+	71	43
+	+	72	78
+	+	73	8
+	+	72	0
+	+	70	41
+	+	114	0
+	+	114	0
+	+	77	21
+	+	78	42
+	+	83	39
+	+	85	22
+	+	86	30
+	+	86	52
+	+	87	42
+	+	88	72
+	+	91	42
+	+	92	43
+	+	94	38
+	+	115	0
+	+	77	5
+	+	78	7
+	+	83	7
+	+	85	7
+	+	86	9
+	+	87	9
+	+	88	9
+	+	89	7
+	+	91	7
+	+	92	9
+	+	94	7
+	+	74	6
+	+	95	0
+	+	77	0
+	+	75	4
+	+	77	0
+	+	83	0
+	+	78	42
+	+	83	12
+	+	88	69
+	+	83	0
+	+	81	29
+	+	82	6
+	+	97	37
+	+	98	35
+	+	99	43
+	+	101	37
+	+	102	39
+	+	103	38
+	+	104	54
+	+	105	33
+	+	108	40
+	+	109	60
+	+	110	59
+	+	111	57
+	+	112	57
+	+	101	0
+	+	104	24
+	+	101	43
+	+	102	43
+	+	104	36
+	+	101	36
+	+	102	36
+	+	103	35
+	+	113	6
+	+	110	51
+	+	7	21
+	+	9	39
+	+	10	68
+	+	11	65
+	+	13	6
+	+	15	41
+	+	16	43
+	+	18	33
+	+	20	59
+	+	23	4
+	a	101	0
+
+> ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
+	"	88	8
+	^	87	11
+	.	87	10
+	+	109	45
+	+	109	44
+	+	109	28
+	+	109	39
+	+	109	60
+	+	109	58
+	+	109	60
+	+	109	0
+	+	109	0
+	+	109	0
+	+	27	0
+	+	27	0
+	+	28	0
+	+	29	0
+	+	30	26
+	+	33	17
+	+	34	17
+	+	35	22
+	+	33	0
+	+	35	26
+	+	39	29
+	+	23	46
+	+	24	36
+	+	25	62
+	+	26	8
+	+	49	0
+	+	44	39
+	+	45	40
+	+	46	42
+	+	47	8
+	+	33	27
+	+	33	0
+	+	36	0
+	+	31	27
+	+	40	42
+	+	49	0
+	+	109	0
+	+	109	29
+	+	109	41
+	+	109	46
+	+	109	42
+	+	109	43
+	+	109	47
+	+	109	45
+	+	109	53
+	+	109	42
+	+	109	66
+	+	109	0
+	+	49	0
+	+	49	0
+	+	51	0
+	+	109	0
+	+	108	0
+	+	109	0
+	+	108	0
+	+	74	23
+	+	89	0
+	+	91	31
+	+	92	68
+	+	108	8
+	+	92	71
+	+	93	56
+	+	92	43
+	+	93	77
+	+	94	45
+	+	96	69
+	+	97	49
+	+	98	77
+	+	99	59
+	+	100	8
+	+	102	16
+	+	108	0
+	+	108	0
+	+	102	73
+	+	105	8
+	+	106	0
+	+	103	43
+	+	105	8
+	+	105	0
+	+	103	44
+	+	104	59
+	+	56	61
+	+	58	36
+	+	59	41
+	+	60	48
+	+	61	32
+	+	62	10
+	+	64	34
+	+	71	10
+	+	71	0
+	+	66	59
+	+	67	51
+	+	70	8
+	+	71	0
+	+	84	45
+	+	85	36
+	+	86	40
+	+	88	0
+	+	86	43
+	+	87	10
+	a	33	0
+
+> ~/rails_projects/sample_app/app/controllers/sessions_controller.rb
+	"	13	7
+	^	10	26
+	.	11	0
+	+	21	0
+	+	17	0
+	+	16	0
+	+	21	0
+	+	13	14
+	+	7	62
+	+	8	61
+	+	11	0
+	+	14	0
+	+	13	0
+	+	12	55
+	+	13	0
+	+	9	0
+	+	15	0
+	+	12	14
+	+	11	21
+	+	19	23
+	+	10	25
+	+	11	0
+
+> ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
+	"	36	0
+	^	39	5
+	.	39	4
+	+	5	53
+	+	6	69
+	+	6	0
+	+	8	4
+	+	14	25
+	+	16	4
+	+	19	57
+	+	20	64
+	+	12	4
+	+	20	20
+	+	40	0
+	+	10	11
+	+	29	33
+	+	30	4
+	+	23	25
+	+	25	4
+	+	32	31
+	+	33	35
+	+	34	30
+	+	38	35
+	+	39	4
+
+> ~/rails_projects/sample_app/app/helpers/s
+	"	1	0
+
+> ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
+	"	16	78
+	^	17	87
+	.	17	86
+	+	1	0
+	+	4	46
+	+	7	52
+	+	8	52
+	+	25	47
+	+	9	35
+	+	10	0
+	+	10	0
+	+	11	59
+	+	12	37
+	+	12	87
+	+	13	60
+	+	22	39
+	+	14	0
+	+	16	0
+	+	22	28
+	+	11	63
+	+	12	0
+	+	26	0
+	+	27	0
+	+	15	47
+	+	16	66
+	+	17	57
+	+	18	45
+	+	19	32
+	+	20	83
+	+	11	58
+	+	12	63
+	+	23	27
+	+	12	0
+	+	10	56
+	+	24	0
+	+	25	51
+	+	17	86
+
+> ~/rails_projects/sample_app/spec/support/utilities.rb
+	"	6	2
+	^	14	3
+	.	14	2
+	+	3	27
+	+	4	26
+	+	6	43
+	+	7	69
+	+	10	36
+	+	11	42
+	+	12	26
+	+	14	2
+
+> ~/rails_projects/sample_app/app/views/users/edit.html.erb
+	"	26	0
+	^	21	47
+	.	22	10
+	+	1	28
+	+	31	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	31	0
+	+	28	0
+	+	29	0
+	+	2	0
+	+	5	79
+	+	28	0
+	+	2	26
+	+	5	36
+	+	25	0
+	+	4	0
+	+	6	33
+	+	7	44
+	+	9	28
+	+	10	33
+	+	11	0
+	+	12	0
+	+	15	0
+	+	25	0
+	+	12	29
+	+	13	34
+	+	15	32
+	+	16	41
+	+	18	64
+	+	19	54
+	+	21	73
+	+	22	0
+	+	24	29
+	+	25	55
+	+	26	0
+	+	3	0
+	+	21	47
+	+	22	10
+
+> ~/programming/java/report.java
+	"	6	4
+	^	7	26
+	.	7	25
+	+	1	0
+	+	1	17
+	+	1	13
+	+	1	0
+	+	1	0
+	+	1	2
+	+	1	23
+	+	4	23
+	+	5	0
+	+	4	11
+	+	5	20
+	+	5	20
+	+	5	32
+	+	1	0
+	+	2	0
+	+	1	7
+	+	5	38
+	+	6	0
+	+	5	19
+	+	7	24
+	+	5	24
+	+	7	23
+	+	8	1
+	+	7	25
+
+> ~/text
+	"	1	0
+	.	1	0
+	+	9	85
+	+	9	76
+	+	20	0
+	+	9	37
+	+	9	47
+	+	9	54
+	+	9	28
+	+	9	9
+	+	9	28
+	+	9	38
+	+	20	0
+	+	9	48
+	+	9	56
+	+	9	25
+	+	9	28
+	+	9	38
+	+	9	48
+	+	9	55
+	+	20	0
+	+	20	0
+	+	1	4
+	+	8	0
+	+	20	0
+	+	9	48
+	+	9	38
+	+	9	28
+	+	9	0
+	+	8	48
+	+	9	30
+	+	7	0
+	+	11	0
+	+	1	2
+	+	11	3
+	+	9	24
+	+	8	42
+	+	11	30
+	+	17	3
+	+	1	16
+	+	1	4
+	+	17	0
+	+	19	189
+	+	18	117
+	+	1	219
+	+	1	0
+	+	1	216
+	+	1	285
+	+	1	18
+	+	1	33
+	+	1	9
+	+	1	96
+	+	1	0
+
+> ~/dotfiles/.vimrc
+	"	945	9
+	^	946	11
+	.	946	9
+	+	380	0
+	+	506	0
+	+	428	0
+	+	438	43
+	+	424	0
+	+	488	0
+	+	423	0
+	+	483	0
+	+	483	0
+	+	505	0
+	+	505	0
+	+	505	0
+	+	423	0
+	+	445	20
+	+	446	0
+	+	423	0
+	+	398	0
+	+	399	0
+	+	410	0
+	+	370	0
+	+	411	0
+	+	322	0
+	+	321	0
+	+	523	0
+	+	446	0
+	+	5	12
+	+	5	0
+	+	5	0
+	+	3	21
+	+	755	11
+	+	756	0
+	+	755	31
+	+	902	37
+	+	902	0
+	+	902	22
+	+	902	0
+	+	902	36
+	+	902	59
+	+	902	47
+	+	902	0
+	+	902	4
+	+	902	0
+	+	902	52
+	+	900	14
+	+	902	0
+	+	894	0
+	+	902	0
+	+	901	0
+	+	896	0
+	+	900	13
+	+	903	48
+	+	904	48
+	+	905	0
+	+	826	37
+	+	827	23
+	+	829	0
+	+	828	24
+	+	860	50
+	+	828	86
+	+	829	10
+	+	873	0
+	+	874	43
+	+	875	43
+	+	875	18
+	+	875	18
+	+	875	0
+	+	875	4
+	+	225	0
+	+	3	27
+	+	3	21
+	+	817	0
+	+	3	21
+	+	226	0
+	+	874	11
+	+	875	0
+	+	874	35
+	+	4	0
+	+	876	2
+	+	878	2
+	+	880	2
+	+	947	36
+	+	946	9
+	n	876	0
+
+> ~/programming/ctf/program.cpp
+	"	2	0
+	.	4	0
+	+	5	179
+	+	20	0
+	+	19	0
+	+	19	0
+	+	18	7
+	+	11	539
+	+	18	0
+	+	11	526
+	+	11	513
+	+	17	0
+	+	11	498
+	+	17	0
+	+	11	480
+	+	11	452
+	+	15	0
+	+	11	368
+	+	11	349
+	+	11	329
+	+	14	0
+	+	11	294
+	+	11	277
+	+	11	259
+	+	11	239
+	+	11	228
+	+	14	0
+	+	11	215
+	+	17	67
+	+	11	190
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	11	57
+	+	11	49
+	+	12	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	5	306
+	+	11	0
+	+	5	284
+	+	11	0
+	+	11	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	5	218
+	+	9	0
+	+	5	182
+	+	8	0
+	+	5	175
+	+	5	154
+	+	8	0
+	+	6	0
+	+	5	127
+	+	5	120
+	+	1	7
+	+	2	7
+	+	4	0
+	+	3	0
+	+	4	4
+	+	4	7
+	+	5	15
+	+	5	15
+	+	5	18
+	+	5	37
+	+	5	32
+	+	11	4
+	+	11	8
+	+	1	16
+	+	5	15
+	+	16	0
+	+	13	0
+	+	14	0
+	+	10	0
+	+	7	0
+	+	5	9
+	+	5	88
+	+	6	0
+	+	5	73
+	+	6	0
+	+	5	58
+	+	5	37
+	+	5	37
+	+	6	0
+	+	5	15
+	+	6	0
+	+	5	15
+	+	5	16
+	+	12	0
+	+	8	0
+	+	4	0
 
 > ~/programming/ctf/2_sql.py
 	"	8	28
@@ -1164,69 +2190,6 @@ $
 
 > ~/ruby-sample/web.rb
 	"	3	0
-
-> ~/.zshrc
-	"	417	0
-	^	423	9
-	.	423	0
-	+	5	0
-	+	4	0
-	+	17	0
-	+	22	0
-	+	21	0
-	+	99	0
-	+	104	0
-	+	103	0
-	+	144	0
-	+	359	0
-	+	364	0
-	+	386	0
-	+	391	0
-	+	404	0
-	+	409	0
-	+	408	0
-	+	458	18
-	+	156	4
-	+	162	4
-	+	351	114
-	+	455	3
-	+	455	0
-	+	411	23
-	+	414	16
-	+	415	3
-	+	425	3
-	+	426	7
-	+	427	3
-	+	428	3
-	+	63	0
-	+	445	3
-	+	415	8
-	+	416	0
-	+	418	0
-	+	417	18
-	+	418	0
-	+	420	15
-	+	413	6
-	+	414	6
-	+	413	13
-	+	420	12
-	+	82	0
-	+	420	0
-	+	82	0
-	+	420	8
-	+	421	8
-	+	420	12
-	+	417	11
-	+	420	10
-	+	441	0
-	+	440	0
-	+	441	0
-	+	454	0
-	+	443	0
-	+	442	42
-	+	121	5
-	+	423	9
-	+	423	0
 
 > ~/programming/ctf/word/_rels/document.xml.rels
 	"	1	54
@@ -1582,149 +2545,12 @@ $
 	+	24	18
 	+	24	0
 
-> ~/rails_projects/sample_app/app/helpers/sessions_helper.rb
-	"	23	4
-	^	26	5
-	.	26	4
-	+	5	53
-	+	6	69
-	+	6	0
-	+	8	4
-	+	14	25
-	+	16	4
-	+	19	57
-	+	20	64
-	+	12	4
-	+	20	20
-	+	27	0
-	+	10	11
-	+	25	33
-	+	26	4
-
-> ~/rails_projects/sample_app/app/controllers/sessions_controller.rb
-	"	17	12
-	^	19	24
-	.	19	23
-	+	21	0
-	+	17	0
-	+	16	0
-	+	21	0
-	+	13	14
-	+	7	62
-	+	8	61
-	+	11	0
-	+	14	0
-	+	13	0
-	+	12	55
-	+	13	0
-	+	9	0
-	+	15	0
-	+	12	14
-	+	10	21
-	+	19	23
-
-> ~/rails_projects/sample_app/spec/requests/authentication_pages_spec.rb
-	"	43	8
-	^	45	9
-	.	45	8
-	+	5	18
-	+	6	0
-	+	7	23
-	+	12	0
-	+	49	0
-	+	8	32
-	+	10	41
-	+	11	39
-	+	12	0
-	+	3	24
-	+	14	22
-	+	15	32
-	+	17	42
-	+	18	39
-	+	20	41
-	+	21	72
-	+	47	4
-	+	48	38
-	+	48	44
-	+	48	45
-	+	48	44
-	+	48	28
-	+	48	39
-	+	48	60
-	+	48	58
-	+	48	60
-	+	48	0
-	+	48	0
-	+	48	0
-	+	27	0
-	+	27	0
-	+	28	0
-	+	29	0
-	+	30	26
-	+	32	17
-	+	33	17
-	+	34	22
-	+	32	0
-	+	34	26
-	+	38	29
-	+	23	46
-	+	24	36
-	+	25	62
-	+	26	8
-	+	47	0
-	+	42	39
-	+	43	40
-	+	44	42
-	+	45	8
-	a	32	0
-
-> ~/rails_projects/sample_app/app/views/layouts/_header.html.erb
-	"	27	20
-	^	25	63
-	.	25	51
-	+	1	0
-	+	4	46
-	+	7	52
-	+	8	52
-	+	25	47
-	+	9	35
-	+	10	0
-	+	10	0
-	+	11	59
-	+	12	37
-	+	12	87
-	+	13	60
-	+	22	39
-	+	14	0
-	+	16	0
-	+	22	28
-	+	11	63
-	+	12	0
-	+	26	0
-	+	27	0
-	+	15	47
-	+	16	66
-	+	17	57
-	+	18	45
-	+	19	32
-	+	20	83
-	+	11	58
-	+	12	63
-	+	23	27
-	+	12	0
-	+	10	56
-	+	24	0
-	+	25	51
-
 > ~/rails_projects/sample_app/app/assets/javascripts/application.js
 	"	3	20
 	^	3	21
 	.	3	20
 	+	1	0
 	+	3	20
-
-> ~/rails_projects/sample_app/app/helpers/s
-	"	1	0
 
 > ~/rails_projects/sample_app/app/models/user.rb
 	"	23	4
@@ -1900,689 +2726,3 @@ $
 	+	16	0
 	+	17	60
 	+	6	43
-
-> ~/rails_projects/sample_app/config/routes.rb
-	"	8	0
-	^	3	29
-	.	3	28
-	+	15	24
-	+	15	0
-	+	15	26
-	+	15	50
-	+	15	54
-	+	15	57
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	24
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	4	0
-	+	15	0
-	+	15	0
-	+	15	16
-	+	15	17
-	+	15	41
-	+	15	44
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	15	0
-	+	5	0
-	+	15	0
-	+	5	57
-	+	5	0
-	+	10	57
-	+	15	0
-	+	5	0
-	+	4	6
-	+	11	25
-	+	15	0
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	12	23
-	+	13	24
-	+	14	26
-	+	4	0
-	+	6	56
-	+	12	0
-	+	13	0
-	+	14	0
-	+	15	0
-	+	4	15
-	+	4	0
-	+	4	10
-	+	4	17
-	+	4	11
-	+	4	0
-	+	2	17
-	+	4	0
-	+	3	51
-	+	7	0
-	+	8	0
-	+	7	32
-	+	8	16
-	+	6	0
-	+	8	59
-	+	3	28
-	a	6	0
-
-> ~/rails_projects/sample_app/app/controllers/s
-	"	1	0
-
-> ~/rails_projects/sample_app/app/views/layouts/application.html.erb
-	"	15	16
-	.	15	0
-	+	4	61
-	+	3	0
-	+	4	17
-	+	26	0
-	+	27	0
-	+	4	44
-	+	22	19
-	+	22	76
-	+	26	0
-	+	22	0
-	+	9	0
-	+	23	63
-	+	24	37
-	+	25	36
-	+	26	25
-	+	26	24
-	+	29	0
-	+	26	0
-	+	21	0
-	+	21	0
-	+	9	15
-	+	9	24
-	+	9	82
-	+	9	18
-	+	9	21
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	21	0
-	+	11	107
-	+	11	0
-	+	11	46
-	+	11	63
-	+	11	42
-	+	11	59
-	+	11	62
-	+	11	63
-	+	12	31
-	+	16	22
-	+	20	0
-	+	11	58
-	+	11	0
-	+	11	32
-	+	11	0
-	+	11	0
-	+	9	0
-	+	8	34
-	+	9	0
-	+	11	0
-	+	21	33
-	+	5	0
-	+	21	0
-	+	17	0
-	+	19	54
-	+	18	54
-	+	13	0
-	+	16	0
-	+	13	13
-	+	16	13
-	+	13	41
-	+	16	0
-	+	15	18
-	+	16	18
-	+	15	23
-	+	15	0
-	+	15	65
-	+	15	0
-	+	14	71
-	+	15	0
-
-> ~/rails_projects/sample_app/app/helpers/users_helper.rb
-	"	8	4
-	^	6	76
-	.	6	75
-	+	11	61
-	+	12	69
-	+	13	57
-	+	14	4
-	+	9	0
-	+	1	0
-	+	3	24
-	+	4	59
-	+	6	65
-	+	7	57
-	+	8	0
-	+	3	40
-	+	5	21
-	+	6	75
-
-> ~/.ssh/id_rsa.pub
-	"	1	418
-	^	1	54
-	.	2	0
-	+	2	0
-	+	1	0
-	+	2	0
-
-> ~/.ssh/id_rsa
-	"	27	0
-
-> ~/.ssh/known_hosts
-	"	5	297
-
-> ~/rails_projects/sample_app/app/controllers/static_pages_controller.rb
-	"	7	0
-	.	8	0
-	+	9	4
-	+	12	4
-	+	8	0
-
-> ~/rails_projects/sample_app/Gemfile
-	"	31	0
-	^	17	34
-	.	17	33
-	+	2	10
-	+	8	0
-	+	8	0
-	+	12	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	0
-	+	26	0
-	+	9	27
-	+	8	0
-	+	10	0
-	+	8	0
-	+	10	22
-	+	12	26
-	+	12	0
-	+	13	0
-	+	14	13
-	+	19	0
-	+	15	36
-	+	16	23
-	+	20	0
-	+	20	0
-	+	21	24
-	+	22	21
-	+	23	25
-	+	24	25
-	+	25	23
-	+	26	20
-	+	29	23
-	+	36	0
-	+	33	20
-	+	34	29
-	+	35	0
-	+	4	18
-	+	20	0
-	+	21	2
-	+	34	4
-	+	23	25
-	+	21	15
-	+	12	0
-	+	11	17
-	+	36	0
-	+	5	31
-	+	6	23
-	+	7	24
-	+	18	33
-	+	17	33
-
-> ~/rails_projects/sample_app/config/environments/production.rb
-	"	43	0
-	.	43	0
-	+	43	0
-
-> ~/rails_projects/sample_app/app/assets/stylesheets/custom.css.scss
-	"	162	0
-	^	174	1
-	.	162	0
-	+	105	5
-	+	102	3
-	+	178	0
-	+	18	0
-	+	3	0
-	+	4	0
-	+	5	24
-	+	41	0
-	+	43	0
-	+	63	10
-	+	83	4
-	+	84	7
-	+	85	7
-	+	86	0
-	+	84	18
-	+	94	41
-	+	95	19
-	+	96	3
-	+	98	4
-	+	97	14
-	+	99	20
-	+	101	0
-	+	102	0
-	+	105	0
-	+	175	0
-	+	179	1
-	+	97	0
-	+	179	3
-	+	13	19
-	+	19	0
-	+	15	33
-	+	14	4
-	+	15	4
-	+	14	4
-	+	15	4
-	+	16	25
-	+	182	0
-	+	184	13
-	+	235	0
-	+	183	0
-	+	235	0
-	+	186	14
-	+	189	34
-	+	235	0
-	+	189	23
-	+	235	0
-	+	235	0
-	+	190	0
-	+	192	0
-	+	194	7
-	+	195	13
-	+	198	23
-	+	200	25
-	+	215	0
-	+	202	14
-	+	205	25
-	+	207	12
-	+	213	0
-	+	220	0
-	+	222	0
-	+	224	44
-	+	235	0
-	+	229	23
-	+	232	7
-	+	233	0
-	+	7	19
-	+	10	25
-	+	9	26
-	+	109	0
-	+	111	13
-	+	118	0
-	+	116	23
-	+	119	0
-	+	121	7
-	+	175	0
-	+	124	33
-	+	131	30
-	+	135	28
-	+	175	0
-	+	175	0
-	+	141	0
-	+	147	1
-	+	175	0
-	+	122	7
-	+	124	40
-	+	125	21
-	+	124	40
-	+	136	27
-	+	149	0
-	+	151	44
-	+	156	23
-	+	159	7
-	+	160	0
-	+	162	0
-	+	175	0
-	+	173	18
-	+	172	11
-	+	174	0
-	+	175	0
-	+	162	0
-
-> ~/rails_projects/sample_app/app/views/shared/_error_messages.html.erb
-	"	1	0
-	^	12	12
-	.	12	0
-	+	12	0
-
-> ~/rails_projects/sample_app/app/views/users/new.html.erb
-	"	9	4
-	^	7	45
-	.	7	44
-	+	1	32
-	+	25	10
-	+	1	26
-	+	2	10
-	+	25	0
-	+	26	31
-	+	27	33
-	+	29	32
-	+	34	0
-	+	30	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	34	0
-	+	30	27
-	+	31	0
-	+	32	0
-	+	34	0
-	+	32	29
-	+	33	34
-	+	34	12
-	+	34	0
-	+	35	0
-	+	37	0
-	+	38	0
-	+	35	32
-	+	36	37
-	+	38	45
-	+	39	50
-	+	41	71
-	+	42	10
-	+	25	0
-	+	41	52
-	+	25	0
-	+	4	0
-	+	5	31
-	+	23	4
-	+	6	36
-	+	23	0
-	+	9	32
-	+	10	32
-	+	23	0
-	+	12	0
-	+	13	0
-	+	13	0
-	+	13	0
-	+	15	0
-	+	18	0
-	+	23	0
-	+	11	0
-	+	12	30
-	+	13	33
-	+	14	0
-	+	15	32
-	+	16	36
-	+	17	0
-	+	18	60
-	+	16	25
-	+	19	25
-	+	23	0
-	+	19	54
-	+	21	78
-	+	22	10
-	+	7	44
-
-> app/views/shared/_error_messages.html.erb
-	"	1	7
-	^	12	8
-	.	2	0
-	+	12	8
-	+	2	0
-
-> ~/rails_projects/sample_app/app/views/static_pages/_error_messages.html.erb
-	"	12	5
-	^	12	6
-	.	12	0
-	+	1	22
-	+	2	0
-	+	3	39
-	+	4	75
-	+	5	0
-	+	7	55
-	+	8	29
-	+	11	10
-	+	9	0
-	+	12	0
-
-> ~/rails_projects/sample_app/app/views/users/show.html.erb
-	"	1	32
-	^	9	0
-	.	10	0
-	+	1	0
-	+	1	29
-	+	22	0
-	+	22	22
-	+	1	2
-	+	22	7
-	+	22	0
-	+	22	0
-	+	22	0
-	+	22	0
-	+	1	0
-	+	22	5
-	+	22	4
-	+	22	3
-	+	22	0
-	+	22	25
-	+	22	0
-	+	22	0
-	+	22	0
-	+	15	0
-	+	22	0
-	+	18	0
-	+	22	0
-	+	1	33
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	4
-	+	12	21
-	+	12	0
-	+	12	0
-	+	12	25
-	+	2	0
-	+	12	0
-	+	2	0
-	+	4	0
-	+	12	0
-	+	10	0
-	+	10	0
-	+	9	0
-	+	8	0
-	+	3	0
-	+	10	0
-
-> ~/rails_projects/sample_app/config/environments/test.rb
-	"	36	42
-	^	36	43
-	.	36	42
-	+	38	42
-	+	36	42
-
-> ~/rails_projects/sample_app/spec/factories.rb
-	"	5	33
-	^	3	35
-	.	3	34
-	+	1	25
-	+	1	32
-	+	1	21
-	+	1	34
-	+	1	3
-	+	1	0
-	+	1	0
-	+	1	20
-	+	1	21
-	+	10	24
-	+	11	31
-	+	12	21
-	+	13	34
-	+	15	2
-	+	10	34
-	+	7	24
-	+	7	31
-	+	7	21
-	+	7	34
-	+	9	0
-	+	8	0
-	+	9	0
-	+	3	0
-	+	3	34
-	a	3	0
-
-> ~/rails_projects/sample_app/spec/requests/static_pages_spec.rb
-	"	1	0
-	^	51	43
-	.	50	16
-	+	31	0
-	+	28	29
-	+	31	34
-	+	31	0
-	+	31	46
-	+	37	0
-	+	34	33
-	+	37	42
-	+	37	47
-	+	11	43
-	+	11	38
-	+	11	49
-	+	11	4
-	+	21	29
-	+	21	21
-	+	21	0
-	+	21	44
-	+	21	0
-	+	11	0
-	+	7	42
-	+	8	36
-	+	9	45
-	+	10	4
-	+	14	32
-	+	15	22
-	+	14	19
-	+	17	42
-	+	18	36
-	+	20	0
-	+	21	0
-	+	25	0
-	+	25	0
-	+	23	25
-	+	24	25
-	+	25	0
-	+	29	0
-	+	31	0
-	+	30	0
-	+	29	26
-	+	30	29
-	+	31	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	37	0
-	+	35	0
-	+	33	0
-	+	37	0
-	+	35	28
-	+	36	28
-	+	37	0
-	+	8	36
-	+	9	7
-	+	5	16
-	+	13	28
-	+	14	34
-	+	15	21
-	+	18	40
-	+	22	12
-	+	23	28
-	+	24	21
-	+	28	12
-	+	29	29
-	+	30	21
-	+	34	12
-	+	35	31
-	+	36	23
-	+	7	16
-	+	25	0
-	+	31	0
-	+	37	0
-	+	39	51
-	+	41	22
-	+	42	50
-	+	43	0
-	+	45	0
-	+	47	0
-	+	48	0
-	+	43	19
-	+	44	46
-	+	45	22
-	+	46	49
-	+	47	19
-	+	48	27
-	+	49	48
-	+	50	25
-	+	51	43
-	+	53	0
-	+	51	52
-	+	49	48
-	+	40	8
-	+	51	43
-	+	50	0
-	+	51	0
-	+	51	43
-	+	50	16
-
-> ~/.matplotlib/matplotlibrc
-	"	1	14
-	^	1	15
-	.	1	14
-	+	1	14
-
-> ~/.matplotlib/matplotlib
-	"	1	12
-	^	1	13
-	.	1	12
-	+	1	12
-
-> ~/.pip/pip.log
-	"	11109	0
-
-> ~/Downloads/matplotlib-1.3.1/CONTRIBUTING.md
-	"	1	0
-
-> ~/Downloads/matplotlib-1.3.1/README.rst
-	"	12	0
-
-> ~/programming/ctf/de350e9bf36df442f00b40be7374bf44
-	"	1	0
-
-> ~/programming/net/rowDate1.pcap
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/1report.csv
-	"	989	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test.csv
-	"	1	0
-
-> ~/Google ドライブ/4年/前期/ネットワーク解析/report/test2.pcap
-	"	1	0

@@ -11,6 +11,7 @@ gist-vim
 gitv
 gundo.vim
 html5.vim
+jedi-vim
 lightline.vim
 memolist.vim
 neobundle.vim
@@ -27,6 +28,7 @@ unite-outline
 unite.vim
 vim-anzu
 vim-css3-syntax
+vim-django-support
 vim-fugitive
 vim-gitgutter
 vim-indent-guides
@@ -38,6 +40,7 @@ vim-ruby
 vim-scouter
 vim-snippets
 vim-surround
+vim-virtualenv
 vimdoc-ja
 vimfiler
 vimproc

