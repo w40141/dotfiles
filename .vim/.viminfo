@@ -266,20 +266,21 @@ $\2
 	 
 
 # File marks:
-'0  4  44  ~/dotfiles/README.md
-'1  1  3258  ~/Downloads/Filesystem001.bin
-'2  1  0  ~/work/kanto/mondai
-'3  1  0  ~/work/kanto/hint1.txt
-'4  4  0  ~/work/kanto/mondai2.txt
-'5  1  0  ~/programming/python/hoge.py
-'6  2  17  ~/programming/python/hoge.py
-'7  8  12  ~/programming/python/hoge.py
-'8  18  39  ~/programming/python/hoge.py
-'9  19  11  ~/programming/python/hoge.py
+'0  5  55  ~/dotfiles/README.md
+'1  4  44  ~/dotfiles/README.md
+'2  1  3258  ~/Downloads/Filesystem001.bin
+'3  1  0  ~/work/kanto/mondai
+'4  1  0  ~/work/kanto/hint1.txt
+'5  4  0  ~/work/kanto/mondai2.txt
+'6  1  0  ~/programming/python/hoge.py
+'7  2  17  ~/programming/python/hoge.py
+'8  8  12  ~/programming/python/hoge.py
+'9  18  39  ~/programming/python/hoge.py
 
 # Jumplist (newest first):
--'  4  44  ~/dotfiles/README.md
+-'  5  55  ~/dotfiles/README.md
 -'  1  0  ~/dotfiles/README.md
+-'  4  44  ~/dotfiles/README.md
 -'  1  3258  ~/Downloads/Filesystem001.bin
 -'  1  0  ~/work/kanto/mondai
 -'  1  0  ~/work/kanto/hint1.txt
@@ -375,17 +376,16 @@ $\2
 -'  7  0  ~/work/kanto/mondai2.zip
 -'  17  11  ~/programming/python/hoge.py
 -'  1  0  ~/programming/python/hoge.py
--'  2  17  ~/programming/python/hoge.py
--'  8  12  ~/programming/python/hoge.py
 
 # History of marks within files (newest to oldest):
 
 > ~/dotfiles/README.md
-	"	4	44
-	^	5	41
-	.	4	44
+	"	5	55
+	^	5	56
+	.	5	55
 	+	5	53
-	+	4	44
+	+	4	46
+	+	5	55
 
 > ~/Downloads/Filesystem001.bin
 	"	1	3258
