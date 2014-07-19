@@ -8,24 +8,25 @@
 # hlsearch on (H) or off (h):
 ~h
 # Last Search Pattern:
-~Msle0~/)])
+~MSle0~/gundo
 
 # Last Substitute Search Pattern:
 ~MSle0&date
 
 # Last Substitute String:
-$data
+$\2
 
 # Command Line History (newest to oldest):
 :wq
 :q
 :q!
+:w
+:w test
 :w segmentation_date.csv
 :%s/date/data/gc
 :%s/date/data
 :/%s/date/data
 :%s/data/date/gc
-:w
 :%s/feature/voca/gc
 : %S/feature/voca/gc
 :%s/sizeconut/wordcount/gc
@@ -216,6 +217,7 @@ $data
 ?/neo
 ?/autop
 ?/CL
+?/print
 
 # Expression History (newest to oldest):
 
@@ -236,32 +238,26 @@ $data
 # Input Line History (newest to oldest):
 
 # Registers:
-"0	BLOCK	28
-	i*priod_data:(i+1)*priod_data
+"0	LINE	0
+	    count += 1
 "1	LINE	0
-	
+	        if n%1000==0:print(i)
 "2	LINE	0
-	269
-<REGION-CENTROID-COL,REGION-CENTROID-ROW,REGION-PIXEL-COUNT,SHORT-LINE-DENSITY-5,SHORT-LINE-DENSITY-2,VEDGE-MEAN,VEDGE-SD,HEDGE-MEAN,HEDGE-SD,INTENSITY-MEAN,RAWRED-MEAN,RAWBLUE-MEAN,RAWGREEN-MEAN,EXRED-MEAN,EXBLUE-MEAN,EXGREEN-MEAN,VALUE-MEAN,SATURATION-MEAN,HUE-MEAN
+	print(v)
 "3	LINE	0
-	
+	print(prime(val, p))
 "4	LINE	0
-	;;; *-* Last-edit: 11/21/90 15:28:30 by Brodley; *-* 
+	print("begin")
 "5	LINE	0
-	;;; -*- Mode:Common-Lisp; Base:10 -*-
-"6	BLOCK	3
-	    
-	    
-	    
-	    
-	    
-	    
+	val = 100000
+"6	LINE	0
+	print(data)
 "7	LINE	0
-	        "
+	    if val%i==0:print(i)
 "8	LINE	0
-	
+	for i in prime(val, data):
 "9	LINE	0
-	
+	def is_prime(val, prime(
 "q	CHAR	0
 	wwwwwwwww
 "z	CHAR	0
@@ -270,120 +266,453 @@ $data
 	 
 
 # File marks:
-'0  1001  4  ~/.vimrc
-'1  1  0  ~/programming/python/ga.py
-'2  1  0  ~/programming/python/a.rb
-'3  1  0  ~/.vimrc
-'4  985  4  ~/.vimrc
-'5  1  30  ~/programming/net/report2.txt
-'6  1  0  ~/programming/net/segmentation_data.test.data
-'7  82  30  ~/programming/net/NaiveBays.py
-'8  29  70  ~/programming/net/report2.txt
-'9  108  0  ~/programming/net/report2.txt
+'0  4  44  ~/dotfiles/README.md
+'1  1  3258  ~/Downloads/Filesystem001.bin
+'2  1  0  ~/work/kanto/mondai
+'3  1  0  ~/work/kanto/hint1.txt
+'4  4  0  ~/work/kanto/mondai2.txt
+'5  1  0  ~/programming/python/hoge.py
+'6  2  17  ~/programming/python/hoge.py
+'7  8  12  ~/programming/python/hoge.py
+'8  18  39  ~/programming/python/hoge.py
+'9  19  11  ~/programming/python/hoge.py
 
 # Jumplist (newest first):
--'  1001  4  ~/.vimrc
+-'  4  44  ~/dotfiles/README.md
+-'  1  0  ~/dotfiles/README.md
+-'  1  3258  ~/Downloads/Filesystem001.bin
+-'  1  0  ~/work/kanto/mondai
+-'  1  0  ~/work/kanto/hint1.txt
+-'  4  0  ~/work/kanto/mondai2.txt
+-'  1  0  ~/work/kanto/mondai2.txt
+-'  1  0  ~/programming/python/hoge.py
+-'  2  17  ~/programming/python/hoge.py
+-'  8  12  ~/programming/python/hoge.py
+-'  18  39  ~/programming/python/hoge.py
+-'  19  11  ~/programming/python/hoge.py
+-'  22  6  ~/programming/python/hoge.py
+-'  21  15  ~/programming/python/hoge.py
+-'  7  24  ~/programming/python/hoge.py
+-'  4  0  ~/programming/python/hoge.py
+-'  3  9  ~/programming/python/hoge.py
+-'  2  0  zipfile:/Users/aisuke/work/kanto/mondai2.zip::mondai3.zip
+-'  2  0  ~/work/kanto/mondai2.zip
+-'  7  0  ~/work/kanto/mondai2.zip
+-'  3  0  ~/work/kanto/mondai1.txt
+-'  1  0  ~/work/kanto/mondai1.txt
+-'  4  0  ~/work/kanto/mondai1.txt
+-'  23  7  ~/programming/python/hoge.py
+-'  24  24  ~/programming/python/hoge.py
+-'  10  36  ~/programming/python/hoge.py
+-'  102  0  ~/programming/ctf/program.cpp
+-'  1  0  ~/programming/ctf/program.cpp
+-'  87  0  ~/work/pkcrack-1.2.2/src/zipdecrypt.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/zipdecrypt.c
+-'  83  0  ~/work/pkcrack-1.2.2/src/main.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/main.c
+-'  93  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  71  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/extract
+-'  44  0  ~/work/pkcrack-1.2.2/src/exfunc.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/exfunc.c
+-'  2  5  ~/work/pkcrack-1.2.2/src/Makefile
+-'  1  0  ~/work/pkcrack-1.2.2/src/Makefile
+-'  58  0  ~/work/pkcrack-1.2.2/src/readhead.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/readhead.c
+-'  50  0  ~/programming/net/test
+-'  1  0  ~/programming/net/test
 -'  1  0  ~/.vimrc
--'  1  0  ~/programming/python/ga.py
--'  1  0  ~/programming/python/a.rb
--'  985  4  ~/.vimrc
--'  1  30  ~/programming/net/report2.txt
--'  3  84  ~/programming/net/report2.txt
--'  1  0  ~/programming/net/segmentation_data.test.data
--'  82  30  ~/programming/net/NaiveBays.py
+-'  1  0  ~/option-window
+-'  275  25  ~/work/report.txt
+-'  1  0  ~/work/report.txt
+-'  2  0  ~/Documents/memo
+-'  1  0  ~/Documents/memo
+-'  1  0  ~/programming/net/memo
+-'  20  0  ~/programming/net/NaiveBays.py
 -'  1  0  ~/programming/net/NaiveBays.py
--'  29  70  ~/programming/net/report2.txt
--'  108  0  ~/programming/net/report2.txt
--'  143  21  ~/programming/net/NaiveBays.py
--'  140  88  ~/programming/net/NaiveBays.py
--'  137  86  ~/programming/net/NaiveBays.py
--'  144  0  ~/programming/net/NaiveBays.py
--'  135  2  ~/programming/net/NaiveBays.py
--'  60  0  ~/programming/net/report2.txt
--'  146  32  ~/programming/net/NaiveBays.py
--'  64  0  ~/programming/net/report2.txt
--'  131  28  ~/programming/net/NaiveBays.py
--'  25  0  ~/programming/net/segmentation.csv
--'  1  0  ~/programming/net/segmentation.csv
--'  78  6  ~/programming/net/NaiveBays.py
--'  147  49  ~/programming/net/NaiveBays.py
--'  117  35  ~/programming/net/NaiveBays.py
--'  134  12  ~/programming/net/NaiveBays.py
--'  141  14  ~/programming/net/NaiveBays.py
--'  133  0  ~/programming/net/NaiveBays.py
--'  111  14  ~/programming/net/NaiveBays.py
--'  112  14  ~/programming/net/NaiveBays.py
--'  132  0  ~/programming/net/NaiveBays.py
--'  115  14  ~/programming/net/NaiveBays.py
--'  113  14  ~/programming/net/NaiveBays.py
--'  130  46  ~/programming/net/NaiveBays.py
--'  129  33  ~/programming/net/NaiveBays.py
--'  121  1  ~/programming/net/NaiveBays.py
--'  80  76  ~/programming/net/NaiveBays.py
--'  119  34  ~/programming/net/NaiveBays.py
--'  104  40  ~/programming/net/NaiveBays.py
--'  101  44  ~/programming/net/NaiveBays.py
--'  116  24  ~/programming/net/NaiveBays.py
--'  125  19  ~/programming/net/NaiveBays.py
--'  120  42  ~/programming/net/NaiveBays.py
--'  128  15  ~/programming/net/NaiveBays.py
--'  148  0  ~/programming/net/NaiveBays.py
--'  122  12  ~/programming/net/NaiveBays.py
--'  118  0  ~/programming/net/NaiveBays.py
--'  70  21  ~/programming/net/NaiveBays.py
--'  92  0  ~/programming/net/NaiveBays.py
--'  50  0  ~/programming/net/NaiveBays.py
--'  72  81  ~/programming/net/NaiveBays.py
--'  105  0  ~/programming/net/NaiveBays.py
--'  90  20  ~/programming/net/NaiveBays.py
--'  93  0  ~/programming/net/NaiveBays.py
--'  34  20  ~/programming/net/NaiveBays.py
--'  28  0  ~/programming/net/NaiveBays.py
--'  89  0  ~/programming/net/NaiveBays.py
--'  87  11  ~/programming/net/NaiveBays.py
--'  55  8  ~/programming/net/NaiveBays.py
--'  74  23  ~/programming/net/NaiveBays.py
--'  88  0  ~/programming/net/NaiveBays.py
--'  41  49  ~/programming/net/NaiveBays.py
--'  42  26  ~/programming/net/NaiveBays.py
--'  38  21  ~/programming/net/NaiveBays.py
--'  30  17  ~/programming/net/NaiveBays.py
--'  21  8  ~/programming/net/NaiveBays.py
--'  44  25  ~/programming/net/NaiveBays.py
--'  108  14  ~/programming/net/NaiveBays.py
--'  107  8  ~/programming/net/NaiveBays.py
--'  76  4  ~/programming/net/NaiveBays.py
--'  109  8  ~/programming/net/NaiveBays.py
--'  25  8  ~/programming/net/NaiveBays.py
--'  10  6  ~/programming/net/NaiveBays.py
--'  48  0  ~/programming/net/balance-scale.data.csv
--'  1  0  ~/programming/net/balance-scale.data.csv
--'  1  0  ~/programming/net/balance-scale.data.txt
--'  1  0  ~/Downloads/SUSY.csv
--'  583  0  ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
--'  1  0  ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
--'  5  75  ~/Downloads/leaf/leaf.csv
--'  1  0  ~/Downloads/leaf/leaf.csv
--'  1  7  ~/Documents/abcd.fasta
--'  19  0  ~/Documents/abcd.fasta
--'  7  0  ~/programming/ctf/not20game.py
--'  1  0  ~/programming/ctf/not20game.py
--'  24  15  ~/programming/ctf/not20game.py
--'  17  66  ~/Documents/abcd.fasta
--'  3  0  ~/Documents/abcd.fasta
--'  1  24  ~/Documents/sequence.fasta
--'  2  0  ~/Documents/sequence.fasta
--'  2  24  ~/Documents/abcd.fasta
--'  5  24  ~/Documents/abcd.fasta
--'  18  66  ~/programming/ctf/not20game.py
--'  21  0  ~/programming/ctf/not20game.py
--'  1  0  ~/programming/ctf/braind_table.py
--'  1  0  ~/programming/ctf/sql_root.py
+-'  17  0  ~/programming/net/report1/cdfMake.py
+-'  1  0  ~/programming/net/report1/cdfMake.py
+-'  1  0  ~/programming/python/test.txt
+-'  9  17  ~/programming/python/ga.py
+-'  1  0  ~/programming/python/ga.py
+-'  102  0  ~/programming/ctf/program.cpp
+-'  1  0  ~/programming/ctf/program.cpp
+-'  87  0  ~/work/pkcrack-1.2.2/src/zipdecrypt.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/zipdecrypt.c
+-'  83  0  ~/work/pkcrack-1.2.2/src/main.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/main.c
+-'  93  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  71  0  ~/work/pkcrack-1.2.2/src/extract.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/extract
+-'  44  0  ~/work/pkcrack-1.2.2/src/exfunc.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/exfunc.c
+-'  2  5  ~/work/pkcrack-1.2.2/src/Makefile
+-'  1  0  ~/work/pkcrack-1.2.2/src/Makefile
+-'  58  0  ~/work/pkcrack-1.2.2/src/readhead.c
+-'  1  0  ~/work/pkcrack-1.2.2/src/readhead.c
+-'  50  0  ~/programming/net/test
+-'  1  0  ~/programming/net/test
+-'  1  0  ~/.vimrc
+-'  1  0  ~/option-window
+-'  275  25  ~/work/report.txt
+-'  1  0  ~/work/report.txt
+-'  2  0  ~/Documents/memo
+-'  1  0  ~/Documents/memo
+-'  1  0  ~/programming/net/memo
+-'  20  0  ~/programming/net/NaiveBays.py
+-'  1  0  ~/programming/net/NaiveBays.py
+-'  17  0  ~/programming/net/report1/cdfMake.py
+-'  1  0  ~/programming/net/report1/cdfMake.py
+-'  2  0  zipfile:/Users/aisuke/work/kanto/mondai2.zip::mondai3.zip
+-'  2  0  ~/work/kanto/mondai2.zip
+-'  7  0  ~/work/kanto/mondai2.zip
+-'  3  0  ~/work/kanto/mondai1.txt
+-'  20  15  ~/programming/python/hoge.py
+-'  2  0  zipfile:/Users/aisuke/work/kanto/mondai2.zip::mondai3.zip
+-'  2  0  ~/work/kanto/mondai2.zip
+-'  7  0  ~/work/kanto/mondai2.zip
+-'  17  11  ~/programming/python/hoge.py
+-'  1  0  ~/programming/python/hoge.py
+-'  2  17  ~/programming/python/hoge.py
+-'  8  12  ~/programming/python/hoge.py
 
 # History of marks within files (newest to oldest):
 
+> ~/dotfiles/README.md
+	"	4	44
+	^	5	41
+	.	4	44
+	+	5	53
+	+	4	44
+
+> ~/Downloads/Filesystem001.bin
+	"	1	3258
+
+> ~/work/kanto/mondai
+	"	1	0
+
+> ~/work/kanto/hint1.txt
+	"	1	0
+
+> ~/work/kanto/mondai2.txt
+	"	4	0
+
+> ~/programming/python/hoge.py
+	"	1	0
+	^	2	18
+	.	2	17
+	+	24	9
+	+	24	12
+	+	24	17
+	+	24	3
+	+	24	15
+	+	24	12
+	+	24	6
+	+	24	4
+	+	24	24
+	+	24	0
+	+	24	23
+	+	24	24
+	+	24	0
+	+	24	0
+	+	24	16
+	+	24	14
+	+	24	21
+	+	24	0
+	+	24	16
+	+	24	14
+	+	24	7
+	+	24	0
+	+	24	0
+	+	24	32
+	+	24	0
+	+	24	27
+	+	24	47
+	+	24	14
+	+	24	0
+	+	24	0
+	+	24	20
+	+	24	0
+	+	24	6
+	+	3	5
+	+	4	3
+	+	24	27
+	+	24	11
+	+	24	0
+	+	4	0
+	+	24	0
+	+	19	14
+	+	3	6
+	+	24	0
+	+	24	0
+	+	24	21
+	+	24	0
+	+	22	44
+	+	24	0
+	+	22	0
+	+	1	0
+	+	3	13
+	+	19	0
+	+	19	0
+	+	19	0
+	+	22	0
+	+	22	0
+	+	22	0
+	+	22	0
+	+	3	3
+	+	22	6
+	+	22	0
+	+	22	0
+	+	22	0
+	+	3	9
+	+	22	25
+	+	3	0
+	+	1	0
+	+	22	0
+	+	21	0
+	+	22	0
+	+	2	17
+	+	22	23
+	+	2	16
+	+	22	22
+	+	2	12
+	+	5	13
+	+	5	0
+	+	5	0
+	+	22	31
+	+	5	12
+	+	5	0
+	+	22	24
+	+	2	9
+	+	19	0
+	+	19	0
+	+	21	16
+	+	21	0
+	+	21	0
+	+	22	14
+	+	20	0
+	+	2	13
+	+	17	0
+	+	19	0
+	+	6	13
+	+	18	35
+	+	17	0
+	+	17	0
+	+	8	7
+	+	6	12
+	+	2	17
+
+> ~/work/kanto/mondai2.zip
+	"	2	0
+	.	1	0
+	+	1	0
+
+> zipfile:/Users/aisuke/work/kanto/mondai2.zip::hint1.txt
+	"	1	0
+
+> zipfile:/Users/aisuke/work/kanto/mondai2.zip::mondai2.txt
+	"	1	0
+
+> zipfile:/Users/aisuke/work/kanto/mondai2.zip::mondai3.zip
+	"	2	0
+	.	2	0
+	+	1	0
+	+	2	0
+
+> ~/work/kanto/mondai1.txt
+	"	3	0
+
+> ~/programming/ctf/program.cpp
+	"	1	0
+	^	87	16
+	.	87	15
+	+	11	539
+	+	18	0
+	+	11	526
+	+	11	513
+	+	17	0
+	+	11	498
+	+	17	0
+	+	11	480
+	+	11	452
+	+	15	0
+	+	11	368
+	+	11	349
+	+	11	329
+	+	14	0
+	+	11	294
+	+	11	277
+	+	11	259
+	+	11	239
+	+	11	228
+	+	14	0
+	+	11	215
+	+	17	67
+	+	11	190
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	12	0
+	+	11	57
+	+	11	49
+	+	12	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	5	306
+	+	11	0
+	+	5	284
+	+	11	0
+	+	11	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	9	0
+	+	5	218
+	+	9	0
+	+	5	182
+	+	8	0
+	+	5	175
+	+	5	154
+	+	8	0
+	+	6	0
+	+	5	127
+	+	5	120
+	+	1	7
+	+	2	7
+	+	4	0
+	+	3	0
+	+	4	4
+	+	4	7
+	+	5	15
+	+	5	15
+	+	5	18
+	+	5	37
+	+	5	32
+	+	11	4
+	+	11	8
+	+	1	16
+	+	5	15
+	+	16	0
+	+	13	0
+	+	14	0
+	+	10	0
+	+	7	0
+	+	5	9
+	+	5	88
+	+	6	0
+	+	5	73
+	+	6	0
+	+	5	58
+	+	5	37
+	+	5	37
+	+	6	0
+	+	5	15
+	+	6	0
+	+	5	15
+	+	5	16
+	+	12	0
+	+	8	0
+	+	4	0
+	+	1	0
+	+	17	7
+	+	27	0
+	+	58	4
+	+	87	15
+
+> ~/programming/ctf/[quickrun output]
+	"	1	0
+	.	19	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	19	0
+	+	1	0
+	+	19	0
+	+	18	0
+	+	19	0
+
+> ~/work/pkcrack-1.2.2/src/zipdecrypt.c
+	"	87	0
+	.	87	0
+	+	87	0
+
+> ~/work/pkcrack-1.2.2/src/main.c
+	"	83	0
+	.	83	0
+	+	83	0
+
+> ~/work/pkcrack-1.2.2/src/extract.c
+	"	93	0
+	^	93	4
+	.	93	0
+	+	71	0
+	+	93	0
+
+> ~/work/pkcrack-1.2.2/src/extract
+	"	1	0
+
+> ~/work/pkcrack-1.2.2/src/exfunc.c
+	"	44	0
+	.	44	0
+	+	44	0
+
+> ~/work/pkcrack-1.2.2/src/Makefile
+	"	2	5
+	.	2	9
+	+	2	9
+
+> ~/work/pkcrack-1.2.2/src/readhead.c
+	"	58	0
+	.	58	0
+	+	58	0
+
+> ~/programming/net/test
+	"	50	0
+
+> ~/option-window
+	"	1	0
+	.	916	0
+	+	916	0
+
 > ~/.vimrc
-	"	1001	4
+	"	1	0
 	^	1001	30
 	.	1001	29
 	+	1202	0
@@ -488,75 +817,127 @@ $data
 	+	1001	29
 	j	678	5
 
-> ~/programming/python/ga.py
-	"	1	0
-	^	1	0
-	.	1	0
-	+	1	0
+> ~/work/report.txt
+	"	275	25
+	^	275	590
+	.	275	0
+	+	85	697
+	+	93	299
+	+	91	615
+	+	90	49
+	+	98	0
+	+	99	705
+	+	104	324
+	+	102	1353
+	+	107	890
+	+	106	19
+	+	112	526
+	+	109	55
+	+	110	1376
+	+	117	1602
+	+	114	43
+	+	115	1037
+	+	120	1216
+	+	119	34
+	+	122	24
+	+	124	534
+	+	129	444
+	+	127	555
+	+	126	73
+	+	138	563
+	+	136	415
+	+	134	477
+	+	132	271
+	+	131	52
+	+	143	440
+	+	141	577
+	+	149	848
+	+	147	367
+	+	152	618
+	+	151	46
+	+	160	997
+	+	158	1438
+	+	156	675
+	+	166	492
+	+	164	445
+	+	172	611
+	+	170	576
+	+	178	588
+	+	176	622
+	+	174	0
+	+	174	825
+	+	180	516
+	+	190	967
+	+	188	448
+	+	188	298
+	+	186	749
+	+	184	851
+	+	190	328
+	+	192	590
+	+	197	0
+	+	196	323
+	+	208	0
+	+	204	532
+	+	202	319
+	+	200	480
+	+	214	819
+	+	212	343
+	+	210	905
+	+	208	200
+	+	216	25
+	+	219	711
+	+	217	860
+	+	219	3
+	+	218	0
+	+	227	701
+	+	224	314
+	+	222	546
+	+	236	502
+	+	234	334
+	+	232	1189
+	+	230	590
+	+	237	0
+	+	248	561
+	+	246	495
+	+	244	368
+	+	242	463
+	+	240	421
+	+	238	695
+	+	254	196
+	+	252	760
+	+	250	291
+	+	265	799
+	+	263	453
+	+	261	418
+	+	259	966
+	+	257	360
+	+	256	2
+	+	257	0
+	+	256	15
+	+	272	532
+	+	270	835
+	+	268	783
+	+	272	466
+	+	274	18
+	+	275	587
+	+	275	0
 
-> ~/programming/python/a.rb
+> ~/programming/net/memo
 	"	1	0
-
-> ~/programming/net/report2.txt
-	"	1	30
-	^	2	104
-	.	2	103
-	+	1	30
-	+	28	0
-	+	1	0
-	+	28	21
-	+	29	48
-	+	27	62
-	+	28	38
-	+	1	0
-	+	3	111
-	+	23	0
-	+	5	2
-	+	6	2
-	+	7	2
-	+	8	2
-	+	8	74
-	+	8	130
-	+	8	130
-	+	9	0
-	+	9	72
-	+	10	0
-	+	5	3
-	+	6	3
-	+	7	3
-	+	8	3
-	+	10	110
-	+	10	111
-	+	10	168
-	+	11	0
-	+	12	0
-	+	13	0
-	+	12	104
-	+	13	0
-	+	14	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	18	0
-	+	19	0
-	+	20	0
-	+	21	0
-	+	21	111
-	+	22	0
-	+	23	0
-	+	24	0
-	+	25	18
-	+	103	276
+	^	15	4
+	.	15	3
 	+	3	0
-	+	2	103
-
-> ~/programming/net/segmentation_data.test.data
-	"	1	0
-	.	1	0
-	+	1	0
+	+	6	0
+	+	4	43
+	+	9	0
+	+	10	42
+	+	11	24
+	+	12	43
+	+	14	15
+	+	15	3
 
 > ~/programming/net/NaiveBays.py
-	"	82	30
+	"	20	0
 	^	82	31
 	.	82	30
 	+	112	14
@@ -660,13 +1041,246 @@ $data
 	+	143	21
 	+	82	30
 
+> ~/programming/python/ga.py
+	"	9	12
+	^	13	0
+	.	13	0
+	+	18	0
+	+	7	0
+	+	15	0
+	+	15	3
+	+	7	0
+	+	7	0
+	+	7	0
+	+	15	4
+	+	7	0
+	+	14	0
+	+	6	11
+	+	14	12
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	19
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	15	16
+	+	14	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	15	16
+	+	14	0
+	+	14	0
+	+	16	0
+	+	18	0
+	+	18	0
+	+	18	0
+	+	18	10
+	+	18	0
+	+	18	0
+	+	18	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	14
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	33
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	24
+	+	16	17
+	+	17	0
+	+	16	14
+	+	16	0
+	+	16	0
+	+	16	28
+	+	16	0
+	+	17	0
+	+	16	0
+	+	17	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	17	23
+	+	16	0
+	+	16	14
+	+	17	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	0
+	+	16	11
+	+	16	0
+	+	9	0
+	+	8	25
+	+	10	0
+	+	8	27
+	+	9	0
+	+	11	11
+	+	12	11
+	+	13	0
+
+> ~/programming/net/report1/cdfMake.py
+	"	17	0
+
+> ~/programming/python/test.txt
+	"	1	0
+	^	1	0
+
+> ~/programming/python/rand.py
+	"	10	0
+	^	8	21
+	.	7	0
+	+	1	22
+	+	4	25
+	+	4	0
+	+	4	0
+	+	11	0
+	+	11	0
+	+	12	0
+	+	4	0
+	+	4	0
+	+	9	7
+	+	11	7
+	+	10	8
+	+	11	13
+	+	9	41
+	+	10	41
+	+	11	23
+	+	9	27
+	+	10	27
+	+	11	0
+	+	12	0
+	+	11	0
+	+	11	0
+	+	6	22
+	+	6	15
+	+	3	9
+	+	6	13
+	+	3	0
+	+	6	0
+	+	4	0
+	+	4	0
+	+	4	0
+	+	6	0
+	+	6	0
+	+	6	16
+	+	10	0
+	+	10	0
+	+	10	0
+	+	11	19
+	+	10	0
+	+	11	15
+	+	10	0
+	+	10	0
+	+	11	17
+	+	10	0
+	+	10	0
+	+	10	0
+	+	11	28
+	+	6	18
+	+	7	0
+	+	6	22
+	+	5	0
+	+	6	0
+	+	8	0
+	+	7	0
+	+	7	0
+
+> ~/programming/net/report1/cdf
+	"	1	0
+
+> ~/programming/python/a.rb
+	"	1	0
+
+> ~/programming/net/report2.txt
+	"	1	30
+	^	2	104
+	.	2	103
+	+	1	30
+	+	28	0
+	+	1	0
+	+	28	21
+	+	29	48
+	+	27	62
+	+	28	38
+	+	1	0
+	+	3	111
+	+	23	0
+	+	5	2
+	+	6	2
+	+	7	2
+	+	8	2
+	+	8	74
+	+	8	130
+	+	8	130
+	+	9	0
+	+	9	72
+	+	10	0
+	+	5	3
+	+	6	3
+	+	7	3
+	+	8	3
+	+	10	110
+	+	10	111
+	+	10	168
+	+	11	0
+	+	12	0
+	+	13	0
+	+	12	104
+	+	13	0
+	+	14	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	19	0
+	+	20	0
+	+	21	0
+	+	21	111
+	+	22	0
+	+	23	0
+	+	24	0
+	+	25	18
+	+	103	276
+	+	3	0
+	+	2	103
+
+> ~/programming/net/segmentation_data.test.data
+	"	1	0
+	.	1	0
+	+	1	0
+
 > ~/programming/net/segmentation.csv
 	"	25	0
 	.	1	0
 	+	1	0
-
-> ~/programming/net/report1/cdfMake.py
-	"	12	23
 
 > ~/programming/net/balance-scale.data.csv
 	"	625	0
@@ -1119,111 +1733,6 @@ $data
 	+	16	489
 	+	17	0
 	+	16	582
-
-> ~/work/report.txt
-	"	216	0
-	^	216	0
-	.	216	0
-	+	33	1382
-	+	35	3
-	+	35	785
-	+	42	1324
-	+	39	37
-	+	40	903
-	+	44	1341
-	+	47	561
-	+	51	449
-	+	47	15
-	+	55	376
-	+	58	3
-	+	58	0
-	+	58	861
-	+	64	192
-	+	47	565
-	+	53	0
-	+	49	621
-	+	53	995
-	+	58	382
-	+	58	851
-	+	60	323
-	+	62	513
-	+	66	59
-	+	67	1170
-	+	66	55
-	+	71	651
-	+	76	471
-	+	73	50
-	+	74	849
-	+	78	20
-	+	83	372
-	+	79	292
-	+	81	668
-	+	88	986
-	+	87	55
-	+	85	697
-	+	93	299
-	+	91	615
-	+	90	49
-	+	98	0
-	+	99	705
-	+	104	324
-	+	102	1353
-	+	107	890
-	+	106	19
-	+	112	526
-	+	109	55
-	+	110	1376
-	+	117	1602
-	+	114	43
-	+	115	1037
-	+	120	1216
-	+	119	34
-	+	122	24
-	+	124	534
-	+	129	444
-	+	127	555
-	+	126	73
-	+	138	563
-	+	136	415
-	+	134	477
-	+	132	271
-	+	131	52
-	+	143	440
-	+	141	577
-	+	149	848
-	+	147	367
-	+	152	618
-	+	151	46
-	+	160	997
-	+	158	1438
-	+	156	675
-	+	166	492
-	+	164	445
-	+	172	611
-	+	170	576
-	+	178	588
-	+	176	622
-	+	174	0
-	+	174	825
-	+	180	516
-	+	190	967
-	+	188	448
-	+	188	298
-	+	186	749
-	+	184	851
-	+	190	328
-	+	192	590
-	+	197	0
-	+	196	323
-	+	208	0
-	+	204	532
-	+	202	319
-	+	200	480
-	+	214	819
-	+	212	343
-	+	210	905
-	+	208	200
-	+	216	0
 
 > ~/programming/ctf/injection/README.md
 	"	2	0
@@ -1933,110 +2442,6 @@ $data
 	+	946	9
 	n	876	0
 
-> ~/programming/ctf/program.cpp
-	"	2	0
-	.	4	0
-	+	5	179
-	+	20	0
-	+	19	0
-	+	19	0
-	+	18	7
-	+	11	539
-	+	18	0
-	+	11	526
-	+	11	513
-	+	17	0
-	+	11	498
-	+	17	0
-	+	11	480
-	+	11	452
-	+	15	0
-	+	11	368
-	+	11	349
-	+	11	329
-	+	14	0
-	+	11	294
-	+	11	277
-	+	11	259
-	+	11	239
-	+	11	228
-	+	14	0
-	+	11	215
-	+	17	67
-	+	11	190
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	12	0
-	+	11	57
-	+	11	49
-	+	12	0
-	+	12	0
-	+	11	0
-	+	11	0
-	+	5	306
-	+	11	0
-	+	5	284
-	+	11	0
-	+	11	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	9	0
-	+	5	218
-	+	9	0
-	+	5	182
-	+	8	0
-	+	5	175
-	+	5	154
-	+	8	0
-	+	6	0
-	+	5	127
-	+	5	120
-	+	1	7
-	+	2	7
-	+	4	0
-	+	3	0
-	+	4	4
-	+	4	7
-	+	5	15
-	+	5	15
-	+	5	18
-	+	5	37
-	+	5	32
-	+	11	4
-	+	11	8
-	+	1	16
-	+	5	15
-	+	16	0
-	+	13	0
-	+	14	0
-	+	10	0
-	+	7	0
-	+	5	9
-	+	5	88
-	+	6	0
-	+	5	73
-	+	6	0
-	+	5	58
-	+	5	37
-	+	5	37
-	+	6	0
-	+	5	15
-	+	6	0
-	+	5	15
-	+	5	16
-	+	12	0
-	+	8	0
-	+	4	0
-
 > ~/programming/ctf/2_sql.py
 	"	8	28
 	.	19	0
@@ -2278,451 +2683,3 @@ $data
 	+	4	0
 	+	2	0
 	+	1	2
-
-> ~/programming/mysh/mysh.c
-	"	152	0
-
-> ~/programming/mysh/README.md
-	"	3	13
-
-> ~/programming/mysh/temp.c
-	"	1	0
-
-> ~/programming/net/report1.zip
-	"	5	0
-	.	1	0
-	+	1	0
-
-> ~/programming/net/time_proto_len.csv
-	"	1	0
-
-> ~/programming/net/tcpPerSec.csv
-	"	14	0
-
-> ~/programming/net/report.csv
-	"	5	0
-
-> ~/programming/net/cdfMake.py
-	"	24	0
-	^	4	19
-	.	26	5
-	+	25	9
-	+	18	9
-	+	26	5
-	+	25	18
-	+	5	0
-	+	4	18
-	+	26	0
-	+	26	5
-
-> ~/programming/net/cdf
-	"	1	0
-
-> ~/programming/net/2readNet.py
-	"	25	9
-	^	25	10
-	.	25	9
-	+	19	0
-	+	16	18
-	+	19	3
-	+	19	17
-	+	19	27
-	+	26	0
-	+	19	9
-	+	19	0
-	+	19	0
-	+	8	6
-	+	19	0
-	+	19	29
-	+	19	28
-	+	19	0
-	+	18	0
-	+	8	0
-	+	6	0
-	+	18	28
-	+	19	28
-	+	19	9
-	+	18	31
-	+	19	22
-	+	18	24
-	+	19	0
-	+	26	0
-	+	20	18
-	+	24	0
-	+	25	12
-	+	20	0
-	+	24	0
-	+	24	28
-	+	24	0
-	+	24	0
-	+	25	12
-	+	19	9
-	+	26	0
-	+	19	9
-	+	26	0
-	+	24	13
-	+	24	20
-	+	24	15
-	+	24	16
-	+	19	0
-	+	8	0
-	+	10	4
-	+	12	16
-	+	20	21
-	+	24	0
-	+	18	29
-	+	4	10
-	+	19	0
-	+	24	0
-	+	22	20
-	+	24	0
-	+	23	16
-	+	24	0
-	+	17	29
-	+	18	26
-	+	17	36
-	+	26	0
-	+	24	0
-	+	25	6
-	+	20	15
-	+	22	0
-	+	21	15
-	+	25	0
-	+	26	0
-	+	25	9
-
-> ~/programming/net/memo
-	"	15	3
-	^	15	4
-	.	15	3
-	+	3	0
-	+	6	0
-	+	4	43
-	+	9	0
-	+	10	42
-	+	11	24
-	+	12	43
-	+	14	15
-	+	15	3
-
-> ~/Downloads/report.csv
-	"	709	0
-
-> ~/programming/net/1readNet.py
-	"	25	0
-	^	14	17
-	.	25	0
-	+	14	16
-	+	15	3
-	+	25	0
-	+	16	9
-	+	14	16
-	+	16	0
-	+	25	0
-
-> ~/programming/net/net_2.csv
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/programming/net/test.csv
-	"	29	0
-
-> ~/programming/net/1report.csv
-	"	4	0
-
-> ~/programming/net/test.py
-	"	1	0
-	^	2	0
-	.	12	15
-	+	13	9
-	+	1	0
-	+	2	0
-	+	11	15
-	+	12	15
-
-> ~/programming/net/readNet.py
-	"	24	0
-	.	24	0
-	+	19	28
-	+	18	18
-	+	19	28
-	+	25	0
-	+	19	36
-	+	6	5
-	+	9	8
-	+	19	9
-	+	25	38
-	+	25	11
-	+	18	13
-	+	25	0
-	+	25	11
-	+	25	25
-	+	16	10
-	+	25	25
-	+	25	11
-	+	25	28
-	+	25	25
-	+	19	4
-	+	25	0
-	+	25	11
-	+	25	22
-	+	25	11
-	+	9	12
-	+	8	10
-	+	9	0
-	+	25	17
-	+	25	17
-	+	25	0
-	+	25	0
-	+	25	0
-	+	25	11
-	+	25	0
-	+	25	14
-	+	25	0
-	+	25	9
-	+	25	0
-	+	25	0
-	+	25	18
-	+	25	23
-	+	25	0
-	+	25	30
-	+	25	0
-	+	17	12
-	+	25	0
-	+	19	0
-	+	17	0
-	+	8	8
-	+	17	0
-	+	19	0
-	+	25	16
-	+	20	31
-	+	25	11
-	+	20	35
-	+	4	30
-	+	4	18
-	+	4	10
-	+	8	0
-	+	20	4
-	+	6	0
-	+	7	4
-	+	21	14
-	+	25	0
-	+	4	0
-	+	4	0
-	+	25	0
-	+	23	36
-	+	25	0
-	+	24	9
-	+	4	0
-	+	4	18
-	+	4	0
-	+	2	17
-	+	4	23
-	+	1	0
-	+	4	0
-	+	4	0
-	+	4	0
-	+	3	30
-	+	23	13
-	+	1	0
-	+	24	0
-	+	23	0
-	+	23	0
-	+	23	0
-	+	23	0
-	+	23	0
-	+	22	0
-	+	23	0
-	+	24	0
-	+	23	0
-	+	24	0
-	+	23	19
-	+	8	3
-	+	23	0
-	+	24	0
-	+	23	0
-	+	24	18
-	+	24	0
-
-> ~/rails_projects/sample_app/app/assets/javascripts/application.js
-	"	3	20
-	^	3	21
-	.	3	20
-	+	1	0
-	+	3	20
-
-> ~/rails_projects/sample_app/app/models/user.rb
-	"	23	4
-	^	24	5
-	.	24	4
-	+	4	31
-	+	6	17
-	+	6	0
-	+	4	53
-	+	5	55
-	+	6	69
-	+	8	19
-	+	2	40
-	+	9	0
-	+	7	13
-	+	8	14
-	+	9	0
-	+	10	30
-	+	2	0
-	+	4	0
-	+	2	31
-	+	5	41
-	+	4	0
-	+	3	37
-	+	16	25
-	+	17	38
-	+	23	61
-	+	24	4
-
-> ~/rails_projects/sample_app/spec/models/user_spec.rb
-	"	115	4
-	^	115	5
-	.	115	4
-	+	5	10
-	+	6	4
-	+	8	4
-	+	20	22
-	+	22	40
-	+	23	29
-	+	24	29
-	+	25	4
-	+	23	14
-	+	27	41
-	+	28	29
-	+	29	28
-	+	30	4
-	+	32	37
-	+	33	32
-	+	34	30
-	+	35	4
-	+	117	1
-	+	117	0
-	+	37	44
-	+	38	29
-	+	39	96
-	+	43	37
-	+	48	42
-	+	49	27
-	+	50	75
-	+	51	38
-	+	49	22
-	+	52	21
-	+	117	0
-	+	53	33
-	+	116	2
-	+	117	0
-	+	58	51
-	+	62	21
-	+	60	20
-	+	63	6
-	+	63	0
-	+	65	30
-	+	66	4
-	+	61	50
-	+	14	39
-	+	15	0
-	+	16	0
-	+	15	33
-	+	16	46
-	+	7	65
-	+	6	64
-	+	7	1
-	+	78	44
-	+	80	67
-	+	81	21
-	+	83	30
-	+	116	0
-	+	84	4
-	+	86	56
-	+	87	53
-	+	88	30
-	+	89	4
-	+	116	0
-	+	18	37
-	+	91	48
-	+	92	61
-	+	93	26
-	+	96	51
-	+	97	25
-	+	98	52
-	+	100	37
-	+	101	59
-	+	104	39
-	+	105	75
-	+	107	51
-	+	108	63
-	+	110	4
-	+	107	7
-	+	93	20
-	+	101	58
-	+	108	60
-	+	68	45
-	+	69	42
-	+	69	0
-	+	69	45
-	+	71	45
-	+	74	64
-	+	76	4
-	+	39	66
-	+	40	19
-	+	39	64
-	+	16	90
-	+	13	32
-	+	14	42
-	+	15	35
-	+	16	49
-	+	17	2
-	+	16	48
-	+	18	39
-	+	112	30
-	+	113	25
-	+	114	48
-	+	115	4
-
-> ~/rails_projects/sample_app/db/migrate/20140611101900_add_remember_token_to_users.rb
-	"	2	11
-	^	4	37
-	.	4	36
-	+	4	19
-	+	3	20
-	+	4	36
-
-> ~/rails_projects/sample_app/app/controllers/application_controller.rb
-	"	2	23
-	^	5	24
-	.	5	23
-	+	5	23
-
-> ~/rails_projects/sample_app/spec/requests/a
-	"	1	0
-
-> ~/rails_projects/sample_app/app/views/sessions/new.html.erb
-	"	6	0
-	^	6	44
-	.	6	43
-	+	1	26
-	+	2	10
-	+	4	0
-	+	17	0
-	+	5	22
-	+	6	59
-	+	8	32
-	+	17	0
-	+	17	0
-	+	9	38
-	+	10	0
-	+	11	32
-	+	12	41
-	+	13	0
-	+	17	0
-	+	14	73
-	+	15	0
-	+	16	0
-	+	17	60
-	+	6	43

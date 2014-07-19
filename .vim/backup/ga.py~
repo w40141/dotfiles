@@ -1,0 +1,16 @@
+#! /usr/bin/env python
+
+class GA:
+
+    def __init__(self):
+        path
+
+    date = []
+    f = open('test.txt')
+    for line in f:
+        line = line.replace('\n', '')
+        item = line.split(',')
+        item = int(item)
+        date.append(item)
+
+    print(date)

@@ -1,6 +1,23 @@
-#coding:UTF-8
+val = 6546380656065132151
+num = 100000000
+p = [2]
 
+def prime(num, data):
+    count = 0
+    for n in range(3, num, 2):
+        count += 1
+        isprime = True
+        for i in range(1, len(data)):
+            if data[i] ** 2 > n:
+                break
+            if n % data[i] == 0:
+                isprime = False
+                break
+        if isprime:
+            data.append(n)
+        if count % 1000 == 0:print(count)
+    return data
 
-s=u"大学で研究していることはありませんが、大学では情報分野全般を広く浅く勉強しています。今、特に興味がある分野は情報セキュリティです。授業で学ぶと言うよりは、勉強会という形でCTFの問題を通して主にwebに潜む脆弱性やその脆弱性に対する対策、言語に潜む脆弱性などを勉強しています。同時にPythonの勉強もしています。将来研究したいことはネットワークセキュリティもしくはディバイスハッキングについてです。"
-
-print "len="+len(s)
+v = prime(num, p)
+l=[i for i in v if val % i ==0]
+print(l)
