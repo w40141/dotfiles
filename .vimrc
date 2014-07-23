@@ -51,7 +51,7 @@ set autoread
 set clipboard=unnamed
 
 " ビープ音すべてを無効にする
-set visualbell t_vb=
+set visualbell t_vb=0
 
 "エラーメッセージの表示時にビープを鳴らさない
 set noerrorbells

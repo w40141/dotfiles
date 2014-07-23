@@ -1,0 +1,11 @@
+#! /usr/bin/python
+
+import hashlib
+
+salt = 'flag_hoge'
+
+num = '1'
+
+m = hashlib.sha512(salt+num).hexdigest()
+
+print m

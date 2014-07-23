@@ -1,0 +1,20 @@
+import hashlib,crypt,getpass,pwd
+splited =  []
+salt = []
+crptpwd = []
+
+qtxt = open('pass.txt','r')
+for line in  qtxt:
+      splited = line.replace('$',':').split(':')
+      salt.append(splited[3])
+      crptpwd.append(splited[4])
+
+for j in range(0,len(salt)):
+      passlisttxt = open('dictionary.txt','r')
+      for m in passlisttxt:
+            line2 = m.split('\n')
+            mycrptpwd = crypt.crypt(line2[0],"$6$"+salt[j]).split('$')
+            print mycrptpwd
+            if mycrptpwd[1] == crptpwd[j]:
+                  print line2[0]
+                  break

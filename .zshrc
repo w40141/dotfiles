@@ -66,7 +66,7 @@ setopt autopushd
 setopt pushd_ignore_dups
 
 # zsh 用の設定
-. /usr/local/etc/autojump.zsh
+# . /usr/local/etc/autojump.zsh
 
 # cd 時の仕掛け
 function precmd () {
@@ -150,10 +150,13 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 bindkey "^I" menu-complete
 
-# 補完関数ファイル
-fpath=(~/.zsh/functions/Completion(N-/) ${fpath})
-fpath=(~/.zsh/functions/Completion/zsh-completions(N-/) ${fpath})
-fpath=(~/.zsh/functions/ $fpath)
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+    # 補完関数ファイル
+    # fpath=(~/.zsh/functions/Completion(N-/) ${fpath})                 
+    # fpath=(~/.zsh/functions/Completion/zsh-completions(N-/) ${fpath}) 
+    # fpath=(~/.zsh/functions/ $fpath)                                  
+fi
 
 zstyle ':completion:*:default' menu select=2
 
