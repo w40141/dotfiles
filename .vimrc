@@ -57,10 +57,10 @@ set visualbell t_vb=0
 set noerrorbells
 
 " backup(~/.vim/backup)
-set backup
-set backupdir=~/.vim/backup
-set noswapfile
-set viminfo+=n~/.vim/.viminfo
+" set backup
+" set backupdir=~/.vim/backup
+" set noswapfile
+" set viminfo+=n~/.vim/.viminfo
 
 " <Leader>キーを変更 (default: \)
 " <LocalLeader>キーを変更

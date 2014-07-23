@@ -17,8 +17,8 @@
 $\2
 
 # Command Line History (newest to oldest):
-:q
 :wq
+:q
 :q!
 :w
 :w whites
@@ -280,18 +280,20 @@ $\2
 	'
 
 # File marks:
-'0  1  0  ~/programming/python/py_pra/todoitem.py
-'1  501  20  ~/.vimrc
-'2  1  0  ~/programming/ctf/encrypt/flag.enc
-'3  175  0  ~/programming/ctf/encrypt/mt19937ar.cpp
-'4  1  0  ~/programming/ctf/encrypt/john.py
-'5  14  0  ~/programming/ctf/net/digest.py
-'6  12  24  ~/programming/ctf/encrypt/john.py
-'7  18  25  ~/programming/ctf/encrypt/john.py
-'8  17  26  ~/programming/ctf/encrypt/john.py
-'9  13  35  ~/programming/ctf/encrypt/john.py
+'0  60  0  ~/dotfiles/.vimrc
+'1  1  0  ~/programming/python/py_pra/todoitem.py
+'2  501  20  ~/.vimrc
+'3  1  0  ~/programming/ctf/encrypt/flag.enc
+'4  175  0  ~/programming/ctf/encrypt/mt19937ar.cpp
+'5  1  0  ~/programming/ctf/encrypt/john.py
+'6  14  0  ~/programming/ctf/net/digest.py
+'7  12  24  ~/programming/ctf/encrypt/john.py
+'8  18  25  ~/programming/ctf/encrypt/john.py
+'9  17  26  ~/programming/ctf/encrypt/john.py
 
 # Jumplist (newest first):
+-'  60  0  ~/dotfiles/.vimrc
+-'  1  0  ~/dotfiles/.vimrc
 -'  1  0  ~/programming/python/py_pra/todoitem.py
 -'  501  20  ~/.vimrc
 -'  262  26  ~/.vimrc
@@ -389,9 +391,13 @@ $\2
 -'  14  0  ~/programming/ctf/net/digest.py
 -'  1  0  ~/programming/ctf/net/digest.py
 -'  12  24  ~/programming/ctf/encrypt/john.py
--'  18  25  ~/programming/ctf/encrypt/john.py
 
 # History of marks within files (newest to oldest):
+
+> ~/dotfiles/.vimrc
+	"	60	0
+	.	63	0
+	+	63	0
 
 > ~/programming/python/py_pra/todoitem.py
 	"	1	0
@@ -2569,6 +2575,3 @@ $\2
 
 > ~/programming/net/balance-scale.data.txt
 	"	1	0
-
-> ~/Downloads/Indian Liver Patient Dataset (ILPD).csv
-	"	583	0

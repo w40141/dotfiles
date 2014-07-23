@@ -1,7 +1,0 @@
-import math *
-def uranai(name, recipes):
-    print(name, "さんは")
-    print(recipes[ord(name[0]) % len(recipes)])
-    print("を食べると, Pythonマスターになります")
-
-print(log(8, 2))
