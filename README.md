@@ -2,8 +2,8 @@ dotfiles
 -------------
 
 **If you don't install brew, zsh, and git, you should install them.**  
-
- 1. Install brew  
+ 
+1. Install brew  
     You past this command.  
     `$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`  
     >[homebrew](http://brew.sh/index_ja.html)  
