@@ -20,7 +20,8 @@ dotfiles
 		$ mkdir -p ~/.vim/bundle  
 		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bunedle/neobundle.vim
 		
-	>http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310
+    >http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310
+    >https://github.com/Shougo/neobundle.vim
 	
 4. git clone dotfiles  
 
