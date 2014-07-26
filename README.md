@@ -18,7 +18,8 @@ Next, you install zsh and git.
 3. Neobundle install
 
 4. git clone dotfiles  
-        $ cd ~/ # if windows use this > cd %HOMEPATH%  
-        $ git clone https://github.com/w40141/dotfiles.git  
-        $ cd dotfiles
-        $ sh dotfilesLink.sh # if windows use this > mklink.bat
+
+		$ cd ~/ # if windows use this > cd %HOMEPATH%  
+ 		$ git clone https://github.com/w40141/dotfiles.git  
+		$ cd dotfiles  
+		$ sh dotfilesLink.sh # if windows use this > mklink.bat  
