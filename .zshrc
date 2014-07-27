@@ -130,13 +130,11 @@ bindkey "^N" history-beginning-search-forward-end
 # -------------------------------------
 
 # {{{
-# if [ -e /usr/local/share/zsh-completions ]; then    
-#     fpath=(/usr/local/share/zsh-completions $fpath) 
-# fi                                                  
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-autoload -Uz compinit
+autoload -U compinit
 compinit -u
 
 # ファイル名の展開でディレクトリにマッチした場合末尾に/を付加
@@ -182,9 +180,9 @@ typeset -xT SUDO_PATH sudo_path
 typeset -U sudo_path
 sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"
 
-path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
+# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
 # }}}
 
 # -------------------------------------
@@ -484,3 +482,4 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # }}}
+
