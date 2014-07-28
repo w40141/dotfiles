@@ -123,6 +123,9 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
+
+# 時間のかかる処理が終わったら通知する
+REPORTTIME=2
 # }}}
 
 # -------------------------------------
@@ -130,9 +133,11 @@ bindkey "^N" history-beginning-search-forward-end
 # -------------------------------------
 
 # {{{
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-fi
+# if [ -e /usr/local/share/zsh-completions ]; then    
+#     fpath=(/usr/local/share/zsh-completions $fpath) 
+# fi                                                  
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -U compinit
 compinit -u
@@ -172,17 +177,17 @@ zstyle ':completion:*' group-name ''
 # -------------------------------------
 
 # {{{
-# 重複する要素を自動的に削除
-typeset -U path cdpath fpath manpath
+# # 重複する要素を自動的に削除                                        
+# typeset -U path cdpath fpath manpath                                             
 
-# sudo用のpathを設定
-typeset -xT SUDO_PATH sudo_path
-typeset -U sudo_path
-sudo_path=({/usr/local,/usr,}/sbin(N-/))
+# # sudo用のpathを設定                                                        
+# typeset -xT SUDO_PATH sudo_path                                                  
+# typeset -U sudo_path                                                             
+# sudo_path=({/usr/local,/usr,}/sbin(N-/))                                         
 
-# export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"
+# export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"                 
 
-# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
+# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path}) 
 # }}}
 
 # -------------------------------------
