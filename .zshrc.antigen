@@ -1,8 +1,8 @@
-source ~/antigen/antigen.zsh
+# source ~/antigen/antigen.zsh    
 
-# Bundles from the default repo
-antigen-bundle git
-antigen-bundle autojunp
-antigen-bundle heroku
+# # Bundles from the default repo 
+# antigen-bundle git              
+# antigen-bundle autojunp         
+# antigen-bundle heroku           
 
-antigen-theme robbyrussell
+# antigen-theme robbyrussell      

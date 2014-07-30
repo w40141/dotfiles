@@ -11,8 +11,8 @@ dotfiles
 	You command `brew doctor` after installing brew.  
 	If there are some errors, you must fix the errors.
 
-2. Install zsh and git
-	Next, you install zsh and git.   
+2. Install zsh and git  
+	Next, you install zsh and git.  
 	`$ brew install zsh git`
 
 3. Neobundle install  
