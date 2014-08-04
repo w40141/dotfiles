@@ -426,8 +426,8 @@ g:unite_data_directory				*g:unite_data_directory*
 		source of file_mru saves the information of the most recent
 		used files into this directory.
 
-		The default value is expand('~/.cache/unite'); the absolute
-		path of it.
+		Default value is "$XDG_CACHE_DIR/unite" or
+		expand("~/.cache/unite"); the absolute path of it.
 
 g:unite_no_default_keymappings		*g:unite_no_default_keymappings*
 		If this variable is 1, unite doesn't set any default key
@@ -452,6 +452,13 @@ g:unite_source_file_ignore_pattern	*g:unite_source_file_ignore_pattern*
 		Note: This variable must be set before using |unite|.
 
 		Refer to autoload/unite/sources/file.vim for the default value.
+
+					*g:unite_source_file_async_command*
+g:unite_source_file_async_command
+		Specify the filelist command and arguments in file/async
+		source.
+
+		The default value is "ls -a".
 
 g:unite_source_bookmark_directory	*g:unite_source_bookmark_directory*
 		Specify the directory where |unite-source-bookmark| writes
@@ -920,7 +927,7 @@ g:unite_abbr_highlight				*g:unite_abbr_highlight*
 
 g:unite_cursor_line_time		*g:unite_cursor_line_time*
 		Specify the cursor line highlight time.
-		If you scrolls cursor quickly less than it, unite will skip
+		If you scroll cursor quickly less than it, unite will skip
 		cursor line highlight.
 		If it is "0.0", this feature will be disabled.
 		Note: It is deprecated variable.  Please use
@@ -1046,15 +1053,12 @@ Normal mode mappings.
 		Narrows with inputting directory name.
 
 <Plug>(unite_delete_backward_path)	*<Plug>(unite_delete_backward_path)*
-		Deletes a path upward.  Refer to
+		Deletes a narrowing text or a path upward.  Refer to
 		|i_<Plug>(unite_delete_backward_path)|.
 
 				*<Plug>(unite_toggle_transpose_window)*
 <Plug>(unite_toggle_transpose_window)
 		Change the unite buffer's split direction.
-
-<Plug>(unite_narrowing_path)			*<Plug>(unite_narrowing_path)*
-		Narrowing candidates by candidate path (or word).
 
 				*<Plug>(unite_narrowing_input_history)*
 <Plug>(unite_narrowing_input_history)
@@ -1728,6 +1732,10 @@ the context dictionary.
 		-input={input-text}
 		Specify an initial narrowing text.  The default value is ''.
 
+						*unite-options-path*
+		-path={input-text}
+		Specify an initial narrowing path.  The default value is ''.
+
 						*unite-options-prompt*
 		-prompt={prompt-text}
 		Specify the prompt.  The default value is '> '.
@@ -1821,6 +1829,10 @@ the context dictionary.
 						*unite-options-auto-resize*
 		-auto-resize
 		Auto resize unite buffer height by candidates number.
+
+						*unite-options-no-resize*
+		-no-resize
+		Do not resize the unite buffer after opening it.
 
 						*unite-options-toggle*
 		-toggle
@@ -1943,7 +1955,7 @@ the context dictionary.
 						*unite-options-cursor-line-time*
 		-cursor-line-time={icon-text}
 		Specify the cursor line highlight time.
-		If you scrolls cursor quickly less than it, unite will skip
+		If you scroll cursor quickly less than it, unite will skip
 		cursor line highlight.
 		If it is "0.0", this feature will be disabled.
 
@@ -1964,6 +1976,9 @@ file/new	Nominates a new input file as a candidate.
 
 		Source arguments:
 		1. the file/directory path.
+
+						*unite-source-file/async*
+file/async	Similar to |unite-source-file|, but get files asynchronously.
 
 						*unite-source-file_rec*
 file_rec	Gather files recursive and nominates all directory or file
@@ -2100,7 +2115,7 @@ output		Nominates executed Vim command as candidates.
 
 		Source arguments:
 		1. Vim command.
-		2~. command args (but you cannot use "!" by itself)
+		2. command args (but you cannot use "!" by itself)
 
 		If the last argument is "!", it prints by dummy candidates.
 		This behavior is useful for output message.
@@ -2309,12 +2324,26 @@ openable	An interface that can open.  This doesn't require any keys,
 						*unite-kind-cdable*
 cdable		An interface that can change the working directory.
 
-			action__directory	(String)	(Required)
+			action__directory	(String)	(Optional)
 				The target directory.
 
+						*unite-kind-file_base*
+file_base	An interface for file operations.
+
+			action__path		(String)	(Required)
+				The path of the target directory.
+
+						*unite-kind-file_vimfiler_base*
+file_vimfiler_base
+		An interface for vimfiler file operations.
+
+			action__path		(String)	(Required)
+				The path of the target directory.
+
 						*unite-kind-file*
-file		An interface for files.  This kind inherits cdable, uri
-		and openable, so this requires kinds that they require.
+file		An interface for files.  This kind inherits cdable, file_base,
+		file_vimfiler_base, uri and openable, so this requires kinds
+		that they require.
 
 			action__path		(String)	(Required)
 				The path of the target directory.
@@ -2575,7 +2604,7 @@ converter_nothing
 converter_relative_word
 		A converter which converts a candidate's word into a
 		corresponding relative path.
-		word can be used by matcher to narrow down the candidates and
+		Word can be used by matcher to narrow down the candidates and
 		must be set in precedence of the matcher.
 		If context information contains source__directory, this
 		converter uses it as the base path in relative path
@@ -2834,7 +2863,7 @@ name			String		(Required)
 			    /
 			    -    (except the first character)
 
-			    Good: "buffer" , "file_mru", "view/git"
+			    Good: "buffer", "file_mru", "view/git"
 			    Bad:  "BadOne", "!@#$%^&*()_[]{}-|", ""
 
 				*unite-source-attribute-gather_candidates*
@@ -3158,7 +3187,8 @@ NOTATION					*unite-notation*
 
 			abbr			(String)	(Optional)
 				String Displayed in unite buffer.
-				If it is omit, word attribute is used instead.
+				If it is omitted, word attribute is used
+				instead.
 				The attribute is not used for matcher.
 
 			source			(String)	(Optional)
@@ -3167,7 +3197,7 @@ NOTATION					*unite-notation*
 
 			kind			(String/List)	(Optional)
 				The candidate kind name.
-				If it is omit, "common" is used.
+				If it is omitted, "common" is used.
 				Kind name list is acceptable.
 				Ex: ["file", "directory"]
 				If you use list, you do not have to define the
@@ -3236,7 +3266,7 @@ name			String		(Required)
 			    /
 			    -    (except the first character)
 
-			    Good: "buffer" , "file_mru", "view/git"
+			    Good: "buffer", "file_mru", "view/git"
 			    Bad:  "BadOne", "!@#$%^&*()_[]{}-|", ""
 
 					*unite-kind-attribute-default_action*
@@ -3443,7 +3473,10 @@ Q: How to make direct action (or choose action menu) to current file or given
 path?
 
 A: >
-	call unite#do_candidates_action('some_action',
+	call unite#action#do_candidates('some_action',
+	\  unite#get_candidates([['file', expand('%')]]))
+
+	call unite#mappings#_choose_action(
 	\  unite#get_candidates([['file', expand('%')]]))
 <
 Q: unite.vim statusline conflicts with powerline.
@@ -3584,7 +3617,8 @@ And the default max candidates are limited. You can customize it by
 
 And you must clear previous cache in file_rec sources and wait until the cache
 is completed ("Directory traverse was completed" message is showed).
-In large files directory, making the cache is slow. So I don't recommend it.
+In a directory including large file, making the cache is slow. So I don't
+recommend it.
 To clear cache, you must execute |<Plug>(unite_redraw)| in unite
 buffer (the default is mapped to <C-l>).
 

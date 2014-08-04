@@ -71,9 +71,21 @@
 			アルモードでは、"D" はビジュアル選択されたテキストと行
 			末までの全てのテキストを削除する。 {Vi にはない}
 
-					*:d* *:de* *:del* *:delete* *:dl*
+					*:d* *:de* *:del* *:delete* *:dl* *:dp*
 :[range]d[elete] [x]	[range] 行 (既定値: 現在行) を [レジスタ x に入れ] 削
 			除する。
+			Note これらの奇妙な省略形:
+			   :dl		delete と list
+			   :dell	同上
+			   :delel	同上
+			   :deletl	同上
+			   :deletel	同上
+			   :dp		delete と print
+			   :dep		同上
+			   :delp	同上
+			   :delep	同上
+			   :deletp	同上
+			   :deletep	同上
 
 :[range]d[elete] [x] {count}
 			[range] 行目 (既定: 現在行 |cmdline-ranges|) から
@@ -268,9 +280,9 @@ r{char}			カーソル下の文字を {char} に置き換える。
 
 							*gr*
 gr{char}		カーソル下の仮想文字を {char} に置き換える。このコマン
-			ドはファイル上の空白ではなく、画面上の空白を置き換える。
-			詳細は |gR| と |Virtual-Replace-mode| を参照。|r| と同
-			様、回数を指定できる。
+			ドはファイル上の文字単位ではなく、画面上の文字幅単位で
+			置き換える。詳細は |gR| と |Virtual-Replace-mode| を参
+			照。|r| と同様、回数を指定できる。
 			{char} の入力方法は |r| と同様である。
 			{Vimが |+vreplace| 機能付きでコンパイルされたときのみ
 			有効}

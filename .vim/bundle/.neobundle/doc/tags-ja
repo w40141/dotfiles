@@ -11,6 +11,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 %	motion.jax	/*%*
 %:.	cmdline.jax	/*%:.*
 %:8	cmdline.jax	/*%:8*
+%:S	cmdline.jax	/*%:S*
 %:e	cmdline.jax	/*%:e*
 %:gs	cmdline.jax	/*%:gs*
 %:h	cmdline.jax	/*%:h*
@@ -1782,6 +1783,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :3match	pattern.jax	/*:3match*
 ::.	cmdline.jax	/*::.*
 ::8	cmdline.jax	/*::8*
+::S	cmdline.jax	/*::S*
 ::e	cmdline.jax	/*::e*
 ::gs	cmdline.jax	/*::gs*
 ::h	cmdline.jax	/*::h*
@@ -2125,6 +2127,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :doautoa	autocmd.jax	/*:doautoa*
 :doautoall	autocmd.jax	/*:doautoall*
 :doautocmd	autocmd.jax	/*:doautocmd*
+:dp	change.jax	/*:dp*
 :dr	windows.jax	/*:dr*
 :drop	windows.jax	/*:drop*
 :ds	tagsrch.jax	/*:ds*
@@ -2426,6 +2429,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :map!	map.jax	/*:map!*
 :map-<buffer>	map.jax	/*:map-<buffer>*
 :map-<expr>	map.jax	/*:map-<expr>*
+:map-<nowait>	map.jax	/*:map-<nowait>*
 :map-<script>	map.jax	/*:map-<script>*
 :map-<silent>	map.jax	/*:map-<silent>*
 :map-<special>	map.jax	/*:map-<special>*
@@ -2436,6 +2440,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :map-expression	map.jax	/*:map-expression*
 :map-local	map.jax	/*:map-local*
 :map-modes	map.jax	/*:map-modes*
+:map-nowait	map.jax	/*:map-nowait*
 :map-operator	map.jax	/*:map-operator*
 :map-script	map.jax	/*:map-script*
 :map-silent	map.jax	/*:map-silent*
@@ -2512,8 +2517,11 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :noautocmd	autocmd.jax	/*:noautocmd*
 :noh	pattern.jax	/*:noh*
 :nohlsearch	pattern.jax	/*:nohlsearch*
+:nor	map.jax	/*:nor*
+:nore	map.jax	/*:nore*
 :norea	map.jax	/*:norea*
 :noreabbrev	map.jax	/*:noreabbrev*
+:norem	map.jax	/*:norem*
 :noremap	map.jax	/*:noremap*
 :noremap!	map.jax	/*:noremap!*
 :noreme	gui.jax	/*:noreme*
@@ -2521,6 +2529,8 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :norm	various.jax	/*:norm*
 :normal	various.jax	/*:normal*
 :normal-range	various.jax	/*:normal-range*
+:nos	recover.jax	/*:nos*
+:noswapfile	recover.jax	/*:noswapfile*
 :nu	various.jax	/*:nu*
 :number	various.jax	/*:number*
 :nun	map.jax	/*:nun*
@@ -3593,6 +3603,7 @@ E201	autocmd.jax	/*E201*
 E202	options.jax	/*E202*
 E203	autocmd.jax	/*E203*
 E204	autocmd.jax	/*E204*
+E205	options.jax	/*E205*
 E206	options.jax	/*E206*
 E207	editing.jax	/*E207*
 E208	message.jax	/*E208*
@@ -3652,6 +3663,8 @@ E259	if_cscop.jax	/*E259*
 E26	rileft.jax	/*E26*
 E261	if_cscop.jax	/*E261*
 E262	if_cscop.jax	/*E262*
+E263	if_pyth.jax	/*E263*
+E264	if_pyth.jax	/*E264*
 E265	if_ruby.jax	/*E265*
 E266	if_ruby.jax	/*E266*
 E267	if_ruby.jax	/*E267*
@@ -4306,6 +4319,8 @@ E879	syntax.jax	/*E879*
 E88	windows.jax	/*E88*
 E881	autocmd.jax	/*E881*
 E885	sign.jax	/*E885*
+E886	starting.jax	/*E886*
+E887	if_pyth.jax	/*E887*
 E89	message.jax	/*E89*
 E90	message.jax	/*E90*
 E91	options.jax	/*E91*
@@ -4439,6 +4454,7 @@ PHP_BracesAtCodeLevel	indent.jax	/*PHP_BracesAtCodeLevel*
 PHP_autoformatcomment	indent.jax	/*PHP_autoformatcomment*
 PHP_default_indenting	indent.jax	/*PHP_default_indenting*
 PHP_outdentSLComments	indent.jax	/*PHP_outdentSLComments*
+PHP_outdentphpescape	indent.jax	/*PHP_outdentphpescape*
 PHP_removeCRwhenUnix	indent.jax	/*PHP_removeCRwhenUnix*
 PHP_vintage_case_default_indent	indent.jax	/*PHP_vintage_case_default_indent*
 Pattern	pattern.jax	/*Pattern*
@@ -4766,6 +4782,7 @@ anzu-mode	anzu.jax	/*anzu-mode*
 anzu-setting	anzu.jax	/*anzu-setting*
 anzu-usage	anzu.jax	/*anzu-usage*
 anzu-variables	anzu.jax	/*anzu-variables*
+anzu.txt	anzu.jax	/*anzu.txt*
 ap	motion.jax	/*ap*
 apache.vim	syntax.jax	/*apache.vim*
 append()	eval.jax	/*append()*
@@ -6696,6 +6713,7 @@ map-listing	map.jax	/*map-listing*
 map-modes	map.jax	/*map-modes*
 map-multibyte	map.jax	/*map-multibyte*
 map-overview	map.jax	/*map-overview*
+map-precedence	map.jax	/*map-precedence*
 map-self-destroy	tips.jax	/*map-self-destroy*
 map-typing	map.jax	/*map-typing*
 map-which-keys	map.jax	/*map-which-keys*
@@ -7576,6 +7594,8 @@ save-file	editing.jax	/*save-file*
 save-settings	starting.jax	/*save-settings*
 scheme.vim	syntax.jax	/*scheme.vim*
 scp	pi_netrw.jax	/*scp*
+screenattr()	eval.jax	/*screenattr()*
+screenchar()	eval.jax	/*screenchar()*
 screencol()	eval.jax	/*screencol()*
 screenrow()	eval.jax	/*screenrow()*
 script	usr_41.jax	/*script*

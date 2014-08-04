@@ -669,6 +669,10 @@ else
       " NeoComplCacheを有効化
       " NeoComplCacheEnable
     endfunction
+    if !exists('g:neocomplete#force_omni_input_patterns')
+      let g:neocomplete#force_omni_input_patterns = {}
+    endif
+    let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
   endif
   "}}}
 
@@ -833,11 +837,18 @@ else
   "}}}
 
   " シンタックスチェック"{{{
-  NeoBundle "scrooloose/syntastic", {
-        \ "build": {
-        \   "mac": ["pip install flake8", "npm -g install coffeelint"],
-        \   "unix": ["pip install flake8", "npm -g install coffeelint"],
-        \ }}
+  NeoBundle "scrooloose/syntastic"
+  let g:syntastic_enable_signs=1
+  let g:syntastic_auto_loc_list=2
+  let g:syntastic_mode_map = {'mode': 'passive'} 
+  augroup AutoSyntastic
+    autocmd!
+    autocmd InsertLeave,TextChanged * call s:syntastic() 
+  augroup END
+  function! s:syntastic()
+    w
+    SyntasticCheck
+  endfunction
   "}}}
 
   " クラスアウトライン"{{{
@@ -1000,8 +1011,25 @@ else
     " gundoと被るため大文字に変更
     let g:jedi#goto_assigments_command = '<Leader>G'
   endfunction
-  " "}}}
-  " "}}}
+  "}}}
+  "}}}
+
+  " Ruby & Rails 関係"{{{
+  " Rails向けのコマンド"{{{
+  " NeoBundleLazy "tpope/vim-rails", {
+  "       \ "autoload": {
+  "       \ "filetypes": ["haml", "ruby", "eruby"],
+  "       \ }}
+  "}}}
+
+  " Ruby向けにendを自動挿入"{{{
+  " NeobundleLazy "tpope/vim-endwise.git", {
+  "       \ "autoload": {
+  "       \ "insert": 1,
+  "       \ "filetypes": ["haml", "Ruby", "eruby"],
+  "       \}}
+  "}}}
+  "}}}
 
   " カラースキーム"{{{
   " :Unite colorscheme -auto-priview

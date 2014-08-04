@@ -118,7 +118,7 @@ setopt hist_no_store
 setopt hist_expand
 
 # 履歴検索のショートカット
-autoload history-search-end
+autoload -U history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
@@ -129,17 +129,35 @@ REPORTTIME=2
 # }}}
 
 # -------------------------------------
+# パス
+# -------------------------------------
+
+# {{{
+# 重複する要素を自動的に削除
+typeset -U path cdpath fpath manpath
+
+# sudo用のpathを設定
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"
+
+# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
+# }}}
+
+# -------------------------------------
 # 補完機能の強化
 # -------------------------------------
 
 # {{{
-# if [ -e /usr/local/share/zsh-completions ]; then    
-#     fpath=(/usr/local/share/zsh-completions $fpath) 
-# fi                                                  
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-autoload -U compinit
+autoload -Uz compinit
 compinit -u
 
 # ファイル名の展開でディレクトリにマッチした場合末尾に/を付加
@@ -170,24 +188,6 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
-# }}}
-
-# -------------------------------------
-# パス
-# -------------------------------------
-
-# {{{
-# 重複する要素を自動的に削除
-typeset -U path cdpath fpath manpath
-
-# sudo用のpathを設定
-typeset -xT SUDO_PATH sudo_path
-typeset -U sudo_path
-sudo_path=({/usr/local,/usr,}/sbin(N-/))
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:$PATH"
-
-# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
 # }}}
 
 # -------------------------------------

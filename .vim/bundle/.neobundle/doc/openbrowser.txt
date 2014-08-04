@@ -28,6 +28,7 @@ Interface			|openbrowser-interface|
   Commands			|openbrowser-commands|
   Functions			|openbrowser-functions|
 Available Syntax in Options		|openbrowser-option-syntax|
+FAQ					|openbrowser-faq|
 Changelog			|openbrowser-changelog|
 Thanks			|openbrowser-thanks|
 
@@ -230,6 +231,19 @@ g:openbrowser_open_vim_command
 g:openbrowser_format_message
 								(default: See below)
 
+	Default value is:
+>
+	let g:openbrowser_format_message = {
+	\   'msg': "opening '{uri}' ... {done ? 'done! ({command})' : ''}",
+	\   'truncate': 1,
+	\   'min_uri_len': 15,
+	\}
+<
+	In the "msg" key's value, you can use some existing variables:
+
+	uri: URI to open
+	done: zero before opening URI, non-zero afterward
+
 	If the value is empty string,
 	openbrowser does not output any message when opening URL.
 	If the value is not empty string,
@@ -237,15 +251,19 @@ g:openbrowser_format_message
 	See |openbrowser-option-syntax| about detailed syntax description
 	for the format.
 
-	Default value is:
->
-	let g:openbrowser_format_message = "opening '{uri}' ... {done ? 'done!
-	({command})' : ''}"
-<
-	In the format, you can use some existing variables:
+	If "truncate" key's value is non-zero,
+	openbrowser outputs a truncated message
+	when the message is enough long to show |hit-enter-prompt|.
+	If the value is zero, openbrowser does not truncate
+	the output message.
+	Here is the truncating algorithm:
 
-	uri: URI to open
-	done: zero before opening URI, non-zero afterward
+	1. Remove "http" or "https" protocol in URI(URL).
+	2. After 1, if URI is longer than command-line, then
+		2.1. Truncate URI as possible as
+		     |g:openbrowser_format_message|.min_uri_len is allowed.
+		2.2. After 2.1, if URI is longer than command-line, then
+			2.2.1. Truncate whole string.
 
 					*g:openbrowser_use_vimproc*
 g:openbrowser_use_vimproc
@@ -364,6 +382,15 @@ See :help |quickrun-syntax-option| for details.
 
 }}}
 ==============================================================================
+FAQ							*openbrowser-faq* {{{
+
+Q. How to open a current file in browser?
+A. Define the following command.
+>
+	command! OpenBrowserCurrent execute "OpenBrowser" "file:///" . expand('%:p:gs?\\?/?')
+<
+
+}}}
 ==============================================================================
 CHANGELOG							*openbrowser-changelog* {{{
 

@@ -20,6 +20,7 @@
 'syntastic_auto_loc_list'	syntastic.txt	/*'syntastic_auto_loc_list'*
 'syntastic_check_on_open'	syntastic.txt	/*'syntastic_check_on_open'*
 'syntastic_check_on_wq'	syntastic.txt	/*'syntastic_check_on_wq'*
+'syntastic_cursor_columns'	syntastic.txt	/*'syntastic_cursor_columns'*
 'syntastic_debug'	syntastic.txt	/*'syntastic_debug'*
 'syntastic_debug_file'	syntastic.txt	/*'syntastic_debug_file'*
 'syntastic_echo_current_error'	syntastic.txt	/*'syntastic_echo_current_error'*
@@ -286,7 +287,6 @@
 <Plug>(unite_loop_cursor_up)	unite.txt	/*<Plug>(unite_loop_cursor_up)*
 <Plug>(unite_narrowing_dot)	unite.txt	/*<Plug>(unite_narrowing_dot)*
 <Plug>(unite_narrowing_input_history)	unite.txt	/*<Plug>(unite_narrowing_input_history)*
-<Plug>(unite_narrowing_path)	unite.txt	/*<Plug>(unite_narrowing_path)*
 <Plug>(unite_new_candidate)	unite.txt	/*<Plug>(unite_new_candidate)*
 <Plug>(unite_print_candidate)	unite.txt	/*<Plug>(unite_print_candidate)*
 <Plug>(unite_print_message_log)	unite.txt	/*<Plug>(unite_print_message_log)*
@@ -631,6 +631,7 @@ fugitive-:Gcommit	fugitive.txt	/*fugitive-:Gcommit*
 fugitive-:Gdiff	fugitive.txt	/*fugitive-:Gdiff*
 fugitive-:Ge	fugitive.txt	/*fugitive-:Ge*
 fugitive-:Gedit	fugitive.txt	/*fugitive-:Gedit*
+fugitive-:Gfetch	fugitive.txt	/*fugitive-:Gfetch*
 fugitive-:Ggrep	fugitive.txt	/*fugitive-:Ggrep*
 fugitive-:Git	fugitive.txt	/*fugitive-:Git*
 fugitive-:Git!	fugitive.txt	/*fugitive-:Git!*
@@ -643,6 +644,7 @@ fugitive-:Gmove	fugitive.txt	/*fugitive-:Gmove*
 fugitive-:Gpedit	fugitive.txt	/*fugitive-:Gpedit*
 fugitive-:Gpedit!	fugitive.txt	/*fugitive-:Gpedit!*
 fugitive-:Gpull	fugitive.txt	/*fugitive-:Gpull*
+fugitive-:Gpush	fugitive.txt	/*fugitive-:Gpush*
 fugitive-:Gread	fugitive.txt	/*fugitive-:Gread*
 fugitive-:Gread!	fugitive.txt	/*fugitive-:Gread!*
 fugitive-:Gremove	fugitive.txt	/*fugitive-:Gremove*
@@ -704,11 +706,14 @@ g:clever_f_chars_match_any_signs	clever_f.txt	/*g:clever_f_chars_match_any_signs
 g:clever_f_fix_key_direction	clever_f.txt	/*g:clever_f_fix_key_direction*
 g:clever_f_hide_cursor_on_cmdline	clever_f.txt	/*g:clever_f_hide_cursor_on_cmdline*
 g:clever_f_ignore_case	clever_f.txt	/*g:clever_f_ignore_case*
+g:clever_f_mark_char	clever_f.txt	/*g:clever_f_mark_char*
+g:clever_f_mark_char_color	clever_f.txt	/*g:clever_f_mark_char_color*
 g:clever_f_mark_cursor	clever_f.txt	/*g:clever_f_mark_cursor*
 g:clever_f_mark_cursor_color	clever_f.txt	/*g:clever_f_mark_cursor_color*
 g:clever_f_not_overwrites_standard_mappings	clever_f.txt	/*g:clever_f_not_overwrites_standard_mappings*
 g:clever_f_show_prompt	clever_f.txt	/*g:clever_f_show_prompt*
 g:clever_f_smart_case	clever_f.txt	/*g:clever_f_smart_case*
+g:clever_f_timeout_ms	clever_f.txt	/*g:clever_f_timeout_ms*
 g:clever_f_use_migemo	clever_f.txt	/*g:clever_f_use_migemo*
 g:django_support#auto_activate	vim-django-support.txt	/*g:django_support#auto_activate*
 g:django_support#project_root	vim-django-support.txt	/*g:django_support#project_root*
@@ -979,6 +984,7 @@ g:unite_quick_match_table	unite.txt	/*g:unite_quick_match_table*
 g:unite_source_alias_aliases	unite.txt	/*g:unite_source_alias_aliases*
 g:unite_source_bookmark_directory	unite.txt	/*g:unite_source_bookmark_directory*
 g:unite_source_buffer_time_format	unite.txt	/*g:unite_source_buffer_time_format*
+g:unite_source_file_async_command	unite.txt	/*g:unite_source_file_async_command*
 g:unite_source_file_ignore_pattern	unite.txt	/*g:unite_source_file_ignore_pattern*
 g:unite_source_file_rec_async_command	unite.txt	/*g:unite_source_file_rec_async_command*
 g:unite_source_file_rec_ignore_pattern	unite.txt	/*g:unite_source_file_rec_ignore_pattern*
@@ -1028,7 +1034,6 @@ g:vimfiler_data_directory	vimfiler.txt	/*g:vimfiler_data_directory*
 g:vimfiler_default_columns	vimfiler.txt	/*g:vimfiler_default_columns*
 g:vimfiler_detect_drives	vimfiler.txt	/*g:vimfiler_detect_drives*
 g:vimfiler_directory_display_top	vimfiler.txt	/*g:vimfiler_directory_display_top*
-g:vimfiler_draw_files_limit	vimfiler.txt	/*g:vimfiler_draw_files_limit*
 g:vimfiler_edit_action	vimfiler.txt	/*g:vimfiler_edit_action*
 g:vimfiler_enable_auto_cd	vimfiler.txt	/*g:vimfiler_enable_auto_cd*
 g:vimfiler_execute_file_list	vimfiler.txt	/*g:vimfiler_execute_file_list*
@@ -1326,6 +1331,7 @@ neobundle-options-augroup	neobundle.txt	/*neobundle-options-augroup*
 neobundle-options-autoload	neobundle.txt	/*neobundle-options-autoload*
 neobundle-options-base_path	neobundle.txt	/*neobundle-options-base_path*
 neobundle-options-build	neobundle.txt	/*neobundle-options-build*
+neobundle-options-build_commands	neobundle.txt	/*neobundle-options-build_commands*
 neobundle-options-default	neobundle.txt	/*neobundle-options-default*
 neobundle-options-depends	neobundle.txt	/*neobundle-options-depends*
 neobundle-options-directory	neobundle.txt	/*neobundle-options-directory*
@@ -1472,6 +1478,7 @@ openbrowser#smart_search()	openbrowser.txt	/*openbrowser#smart_search()*
 openbrowser-changelog	openbrowser.txt	/*openbrowser-changelog*
 openbrowser-commands	openbrowser.txt	/*openbrowser-commands*
 openbrowser-contents	openbrowser.txt	/*openbrowser-contents*
+openbrowser-faq	openbrowser.txt	/*openbrowser-faq*
 openbrowser-functions	openbrowser.txt	/*openbrowser-functions*
 openbrowser-interface	openbrowser.txt	/*openbrowser-interface*
 openbrowser-introduction	openbrowser.txt	/*openbrowser-introduction*
@@ -1821,12 +1828,14 @@ syntastic-global-options	syntastic.txt	/*syntastic-global-options*
 syntastic-highlighting	syntastic.txt	/*syntastic-highlighting*
 syntastic-intro	syntastic.txt	/*syntastic-intro*
 syntastic-license	syntastic.txt	/*syntastic-license*
+syntastic-netrw	syntastic.txt	/*syntastic-netrw*
 syntastic-notes	syntastic.txt	/*syntastic-notes*
 syntastic-powershell	syntastic.txt	/*syntastic-powershell*
 syntastic-pymode	syntastic.txt	/*syntastic-pymode*
 syntastic-quickstart	syntastic.txt	/*syntastic-quickstart*
 syntastic-statusline-flag	syntastic.txt	/*syntastic-statusline-flag*
 syntastic-vim-virtualenv	syntastic.txt	/*syntastic-vim-virtualenv*
+syntastic-ycm	syntastic.txt	/*syntastic-ycm*
 syntastic.txt	syntastic.txt	/*syntastic.txt*
 syntax_complete	neocomplcache.txt	/*syntax_complete*
 tagbar	tagbar.txt	/*tagbar*
@@ -1859,6 +1868,7 @@ tweetvim-file-hash_tag	tweetvim.txt	/*tweetvim-file-hash_tag*
 tweetvim-file-screen_name	tweetvim.txt	/*tweetvim-file-screen_name*
 tweetvim-file-token	tweetvim.txt	/*tweetvim-file-token*
 tweetvim-files	tweetvim.txt	/*tweetvim-files*
+tweetvim-hooks	tweetvim.txt	/*tweetvim-hooks*
 tweetvim-interface	tweetvim.txt	/*tweetvim-interface*
 tweetvim-introduction	tweetvim.txt	/*tweetvim-introduction*
 tweetvim-key-mappings	tweetvim.txt	/*tweetvim-key-mappings*
@@ -2000,6 +2010,8 @@ unite-kind-common	unite.txt	/*unite-kind-common*
 unite-kind-completion	unite.txt	/*unite-kind-completion*
 unite-kind-directory	unite.txt	/*unite-kind-directory*
 unite-kind-file	unite.txt	/*unite-kind-file*
+unite-kind-file_base	unite.txt	/*unite-kind-file_base*
+unite-kind-file_vimfiler_base	unite.txt	/*unite-kind-file_vimfiler_base*
 unite-kind-guicmd	unite.txt	/*unite-kind-guicmd*
 unite-kind-jump_list	unite.txt	/*unite-kind-jump_list*
 unite-kind-neobundle	neobundle.txt	/*unite-kind-neobundle*
@@ -2045,7 +2057,9 @@ unite-options-no-cursor-line	unite.txt	/*unite-options-no-cursor-line*
 unite-options-no-empty	unite.txt	/*unite-options-no-empty*
 unite-options-no-focus	unite.txt	/*unite-options-no-focus*
 unite-options-no-quit	unite.txt	/*unite-options-no-quit*
+unite-options-no-resize	unite.txt	/*unite-options-no-resize*
 unite-options-no-split	unite.txt	/*unite-options-no-split*
+unite-options-path	unite.txt	/*unite-options-path*
 unite-options-profile-name	unite.txt	/*unite-options-profile-name*
 unite-options-prompt	unite.txt	/*unite-options-prompt*
 unite-options-prompt-direction	unite.txt	/*unite-options-prompt-direction*
@@ -2150,6 +2164,7 @@ unite-source-command	unite.txt	/*unite-source-command*
 unite-source-directory	unite.txt	/*unite-source-directory*
 unite-source-directory/new	unite.txt	/*unite-source-directory\/new*
 unite-source-file	unite.txt	/*unite-source-file*
+unite-source-file/async	unite.txt	/*unite-source-file\/async*
 unite-source-file/new	unite.txt	/*unite-source-file\/new*
 unite-source-file_point	unite.txt	/*unite-source-file_point*
 unite-source-file_rec	unite.txt	/*unite-source-file_rec*
@@ -2185,8 +2200,6 @@ unite_default_key_mappings	unite.txt	/*unite_default_key_mappings*
 vS	surround.txt	/*vS*
 v_<C-Y>,	emmet.txt	/*v_<C-Y>,*
 v_<Plug>(unite_toggle_selected_candidates)	unite.txt	/*v_<Plug>(unite_toggle_selected_candidates)*
-v_<Plug>(vimshell_select_next_prompt)	vimshell.txt	/*v_<Plug>(vimshell_select_next_prompt)*
-v_<Plug>(vimshell_select_previous_prompt)	vimshell.txt	/*v_<Plug>(vimshell_select_previous_prompt)*
 v_vimshell_default_key_mappings	vimshell.txt	/*v_vimshell_default_key_mappings*
 vgS	surround.txt	/*vgS*
 vim-django-support	vim-django-support.txt	/*vim-django-support*

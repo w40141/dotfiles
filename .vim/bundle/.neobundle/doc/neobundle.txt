@@ -298,10 +298,10 @@ neobundle#has_cache()			 *neobundle#has_cache()*
 	  NeoBundleSaveCache
 	endif
 <
-neobundle#has_fresh_cache()		 *neobundle#has_fresh_cache()*
+neobundle#has_fresh_cache([{vimrc}])	 *neobundle#has_fresh_cache()*
 		Similar to |neobundle#has_cache|, but compares the
 		modification time of the cache file to your configuration file
-		(|$MYVIMRC|).
+		({vimrc} or |$MYVIMRC|).
 
 ------------------------------------------------------------------------------
 COMMANDS 					*neobundle-commands*
@@ -463,7 +463,7 @@ COMMANDS 					*neobundle-commands*
 						*:NeoBundleLoadCache*
 :NeoBundleLoadCache
 		Load plugin configuration from the cache file,
-		which is located in `neobundle#get_rtp_dir() . '/cache.vim'`.
+		which is located in `neobundle#get_rtp_dir() . '/cache'`.
 
 						*:NeoBundleClearCache*
 :NeoBundleClearCache
@@ -762,7 +762,8 @@ OPTIONS 					*neobundle-options*
 		build			(Dictionary)
 		Specify the build script.
 		You may use this option if the plugin has to be built before
-		use.
+		use. If the build script requires external commands, see
+		|neobundle-options-build_commands|.
 		This command is executed by |system()| or |vimproc#system()|
 		in plugin runtimepath.
 		For example: |vimproc|
@@ -845,6 +846,18 @@ OPTIONS 					*neobundle-options*
 >
 		NeoBundle 'ujihisa/neco-ghc', { 'external_commands' : 'ghc-mod' }
 <
+					*neobundle-options-build_commands*
+		build_commands		(Dictionary or List or String)
+		Specify a list of external commands that are required for
+		building the plugin. If any of these commands are not
+		installed, the bundle will not be built. The list is the same
+		format as |neobundle-options-external_commands|.
+
+		Example:
+>
+		NeoBundle 'Valloric/YouCompleteMe', { 'build_commands' : 'cmake' }
+<
+
 						*neobundle-options-stay_same*
 		stay_same		(Number)
 		If set to 1, neobundle doesn't update it automatically when
@@ -992,6 +1005,10 @@ OPTIONS 					*neobundle-options*
 <
 			on_source	(List) or (String)
 			Load the bundle when the list bundles are loaded.
+			Note: If they are not autoload bundles, "on_source"
+			hooks are called when |VimEnter| auto command.
+			You can call them manually by |neobundle#call_hook()|.
+
 			For example: >
 			if neobundle#tap('plugin-B.vim')
 			  call neobundle#config({
@@ -1510,22 +1527,15 @@ Q: I want to compile vimproc automatically.
 
 A:
 >
-	let vimproc_updcmd = has('win64') ?
-	  \ 'tools\\update-dll-mingw 64' : 'tools\\update-dll-mingw 32'
-	execute "NeoBundle 'Shougo/vimproc.vim'," . string({
+	NeoBundle 'Shougo/vimproc.vim', {
 		\ 'build' : {
-		\     'windows' : vimproc_updcmd,
+		\     'windows' : 'tools\\update-dll-mingw',
 		\     'cygwin' : 'make -f make_cygwin.mak',
 		\     'mac' : 'make -f make_mac.mak',
 		\     'unix' : 'make -f make_unix.mak',
 		\    },
-		\ })
+		\ }
 <
-Note that arguments of NeoBundle command are evaluated inside the NeoBundle
-command. Thus, local variables cannot be passed to NeoBundle command. If you
-want to use local variables as arguments of NeoBundle command, you have to
-expand them into a string and pass it to `:execute` command.
-
 
 Q: What's the "outdated" plugin?
 
