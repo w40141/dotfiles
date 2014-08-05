@@ -705,11 +705,7 @@ else
     " Tell Neosnippet about the other snippets
     let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
   endfunction
-"}}}
-
-  NeoBundle 'tpope/vim-rails'
-  NeoBundle 'vim-ruby/vim-ruby'
-
+  "}}}
   "}}}
 
   " 編集補助"{{{
@@ -838,11 +834,43 @@ else
 
   " シンタックスチェック"{{{
   NeoBundle "scrooloose/syntastic"
+  let g:syntastic_check_on_open=0
+  let g:syntastic_check_on_wq=0
   let g:syntastic_enable_signs=1
   let g:syntastic_auto_loc_list=2
-  let g:syntastic_mode_map = { 'mode': 'passive',
-        \ 'active_filetypes': ['ruby'] }
+  let g:syntastic_mode_map = { 'mode': 'active',
+        \ 'active_filetypes': ['ruby'],
+        \ 'passiv_filetypes': ['python']
+        \ }
   let g:syntastic_ruby_checkers = ['rubocop']
+  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  " " pythonの設定"{{{
+  " function! Preserve(command)
+  "   " Save the last search.
+  "   let search = @/
+  "   " Save the current cursor position.
+  "   let cursor_position = getpos('.')
+  "   " Save the current window position.
+  "   normal! H
+  "   let window_position = getpos('.')
+  "   call setpos('.', cursor_position)
+  "   " Execute the command.
+  "   execute a:command
+  "   " Restore the last search.
+  "   let @/ = search
+  "   " Restore the previous window position.
+  "   call setpos('.', window_position)
+  "   normal! zt
+  "   " Restore the previous cursor position.
+  "   call setpos('.', cursor_position)
+  " endfunction
+  "
+  " function! Autopep8()
+  "   call Preserve(':silent %!autopep8 -')
+  " endfunction
+  " " Shift + F で自動修正
+  " autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
+  " "}}}
   augroup AutoSyntastic
     autocmd!
     autocmd InsertLeave,TextChanged * call s:syntastic() 
@@ -980,20 +1008,46 @@ else
   "}}}
 
   " python関係"{{{
+  " pythonの構文エラーの検出"{{{
+  NeoBundleLazy "kevinw/pyflakes-vim", {
+        \ "autoload": {
+        \ "filetypes": ["python", "python3"]
+        \ }}
+  let g:pyflakes_use_quickfix=0
+"}}}
+
+  " pythonのコーディング規約チェック"{{{
+  NeoBundleLazy "nvie/vim-flake8", {
+        \ "autoload": {
+        \ "filetypes": ["python", "python3"]
+        \ }}
+  map <buffer> <Leader>i :call Flake8()<CR>
+"}}}
+
+  " pythonの自動修正"{{{
+  NeoBundleLazy "tell-k/vim-autopep8", {
+        \ "autoload": {
+        \ "filetypes": ["python", "python3"]
+        \ }}
+  map <buffer> <Leader>I :call Autopep8()<CR>
+  " 使うときは<F8>を押す。もし、替えたければ下のようにする
+  " autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
+"}}}
+
   " Djangoを正しくVimで読み込めるようにする"{{{
   NeoBundleLazy "lambdalisue/vim-django-support", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   "}}}
-  "
+
   " Vimで正しくvirtualenvを処理できるようにする"{{{
   NeoBundleLazy "jmcantrell/vim-virtualenv", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   "}}}
-  "
+
   " jedi-vim"{{{
   NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
@@ -1018,18 +1072,18 @@ else
 
   " Ruby & Rails 関係"{{{
   " Rails向けのコマンド"{{{
-  " NeoBundleLazy "tpope/vim-rails", {
-  "       \ "autoload": {
-  "       \ "filetypes": ["haml", "ruby", "eruby"],
-  "       \ }}
+  NeoBundleLazy "tpope/vim-rails", {
+        \ "autoload": {
+        \ "filetypes": ["haml", "ruby", "eruby"],
+        \ }}
   "}}}
 
   " Ruby向けにendを自動挿入"{{{
-  " NeobundleLazy "tpope/vim-endwise.git", {
-  "       \ "autoload": {
-  "       \ "insert": 1,
-  "       \ "filetypes": ["haml", "Ruby", "eruby"],
-  "       \}}
+  NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
+        \ 'autoload' : {
+        \ "filetypes": ["haml", "ruby", "eruby"],
+        \ }}
+  let g:endwise_no_mappings=1
   "}}}
   "}}}
 
