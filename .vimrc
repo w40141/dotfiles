@@ -1,4 +1,4 @@
-"--------------------
+" --------------------
 " 基本的な設定
 "--------------------
 
@@ -643,6 +643,16 @@ else
   "}}}
   "}}}
 
+  " シンタックスチェック"{{{
+  NeoBundle "scrooloose/syntastic"
+  let g:syntastic_mode_map={ 'mode': 'active',
+                        \ 'active_filetypes': [],
+                        \ 'passive_filetypes': []
+                        \}
+  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:syntastic_ruby_checkers = ['rubocop']
+  "}}}
+
   " 補完"{{{
   " Insertモードに入るまではneocompleteはロードされない"{{{
   if has('lua') && v:version >= 703 && has('patch885')
@@ -832,55 +842,6 @@ else
   xmap <Space>M <Plug>(quickhl-manual-reset)
   "}}}
 
-  " シンタックスチェック"{{{
-  NeoBundle "scrooloose/syntastic"
-  let g:syntastic_check_on_open=0
-  let g:syntastic_check_on_wq=0
-  let g:syntastic_enable_signs=1
-  let g:syntastic_auto_loc_list=2
-  let g:syntastic_mode_map = { 'mode': 'active',
-        \ 'active_filetypes': ['ruby'],
-        \ 'passiv_filetypes': ['python']
-        \ }
-  let g:syntastic_ruby_checkers = ['rubocop']
-  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
-  " " pythonの設定"{{{
-  " function! Preserve(command)
-  "   " Save the last search.
-  "   let search = @/
-  "   " Save the current cursor position.
-  "   let cursor_position = getpos('.')
-  "   " Save the current window position.
-  "   normal! H
-  "   let window_position = getpos('.')
-  "   call setpos('.', cursor_position)
-  "   " Execute the command.
-  "   execute a:command
-  "   " Restore the last search.
-  "   let @/ = search
-  "   " Restore the previous window position.
-  "   call setpos('.', window_position)
-  "   normal! zt
-  "   " Restore the previous cursor position.
-  "   call setpos('.', cursor_position)
-  " endfunction
-  "
-  " function! Autopep8()
-  "   call Preserve(':silent %!autopep8 -')
-  " endfunction
-  " " Shift + F で自動修正
-  " autocmd FileType python nnoremap <S-f> :call Autopep8()<CR>
-  " "}}}
-  augroup AutoSyntastic
-    autocmd!
-    autocmd InsertLeave,TextChanged * call s:syntastic() 
-  augroup END
-  function! s:syntastic()
-    w
-    SyntasticCheck
-  endfunction
-  "}}}
-
   " クラスアウトライン"{{{
   NeoBundleLazy 'majutsushi/tagbar', {
         \ "autload": {
@@ -1009,19 +970,19 @@ else
 
   " python関係"{{{
   " pythonの構文エラーの検出"{{{
-  NeoBundleLazy "kevinw/pyflakes-vim", {
-        \ "autoload": {
-        \ "filetypes": ["python", "python3"]
-        \ }}
-  let g:pyflakes_use_quickfix=0
+  " NeoBundleLazy "kevinw/pyflakes-vim", {
+  "       \ "autoload": {
+  "       \ "filetypes": ["python", "python3"]
+  "       \ }}
+  " let g:pyflakes_use_quickfix=0
 "}}}
 
   " pythonのコーディング規約チェック"{{{
-  NeoBundleLazy "nvie/vim-flake8", {
-        \ "autoload": {
-        \ "filetypes": ["python", "python3"]
-        \ }}
-  map <buffer> <Leader>i :call Flake8()<CR>
+  " NeoBundleLazy "nvie/vim-flake8", {
+  "       \ "autoload": {
+  "       \ "filetypes": ["python", "python3"]
+  "       \ }}
+  " map <buffer> <Leader>i :call Flake8()<CR>
 "}}}
 
   " pythonの自動修正"{{{
@@ -1077,6 +1038,8 @@ else
         \ "filetypes": ["haml", "ruby", "eruby"],
         \ }}
   "}}}
+
+  NeoBundle 'bbatsov/rubocop'
 
   " Ruby向けにendを自動挿入"{{{
   NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
@@ -1153,18 +1116,6 @@ else
         \ 'separator': { 'left': "\u2b80", 'right': "\u2b82" },
         \ 'subseparator': { 'left': "\u2b81", 'right': "\u2b83" }
         \ }
-
-  let g:syntastic_mode_map = { 'mode': 'passive' }
-
-  augroup AutoSyntastic
-    autocmd!
-    autocmd BufWritePost *.c,*.cpp call s:syntastic()
-  augroup END
-
-  function! s:syntastic()
-    SyntasticCheck
-    call lightline#update()
-  endfunction
 
   function! MyModified()
     return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
@@ -1248,6 +1199,12 @@ else
   NeoBundle 'basyura/twibill.vim'
   NeoBundle 'basyura/bitly.vim'
   nnoremap tw :TweetVimSay
+  "}}}
+
+  " マニュアル"{{{
+  NeoBundle 'thinca/vim-ref'
+  let g:ref_cache_dir=$HOME.'/.vim/refs/catch'
+  let g:ref_phpmanual_path=$HOME.'/.vim/refs/php-chunked-xhtml'
   "}}}
 
   " バッファ一覧を表示し、ショートカットを開ける"{{{

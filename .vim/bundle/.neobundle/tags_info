@@ -19,8 +19,8 @@ neocomplcache.vim
 neosnippet-snippets
 neosnippet.vim
 open-browser.vim
-pyflakes-vim
 qfixgrep
+rubocop
 switch.vim
 syntastic
 tagbar
@@ -32,7 +32,6 @@ vim-autopep8
 vim-css3-syntax
 vim-django-support
 vim-endwise
-vim-flake8
 vim-fugitive
 vim-gitgutter
 vim-indent-guides
@@ -40,6 +39,7 @@ vim-quickhl
 vim-quickrun
 vim-rails
 vim-railscasts-theme
+vim-ref
 vim-scouter
 vim-snippets
 vim-surround
