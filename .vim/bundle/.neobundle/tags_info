@@ -21,7 +21,6 @@ neosnippet.vim
 open-browser.vim
 pyflakes-vim
 qfixgrep
-rubocop
 switch.vim
 syntastic
 tagbar
