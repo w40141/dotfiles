@@ -151,6 +151,21 @@ set smarttab
 " 前時代的スクリーンベルを無効化
 set t_vb=
 set novisualbell
+
+" phpの設定{{{
+" 文字列中のSQLをハイライト
+let php_sql_query = 1
+" Baselibメッソドのハイライト
+let php_baselib = 1
+" 文字列中のHTMLをハイライト
+let php_htmlInStrings = 1
+" <? を無効にする→ ハイライト除外にする
+let php_noShortTags = 1
+" ], )の対応エラーをハイライト
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+"}}}
+
 "}}}
 
 "--------------------
@@ -217,7 +232,7 @@ endif
 "}}}
 
 "--------------------
-" タブ設定
+" タブ, 空白設定
 "--------------------
 
 "{{{
@@ -657,16 +672,6 @@ else
   let g:syntastic_error_symbol = '✗'
   let g:syntastic_warning_symbol = '⚠'
   "}}}
-
-  " augroup PHP
-  "   autocmd!
-  "  autocmd FileType php set makeprg=php\ -l\ %
-  "  " php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
-  "  autocmd BufWritePost *.php silent make | if len(getqflist()) != 1 | copen | else | cclose | endif
-  " augroup END
-  "
-  " " なくてもいいけどあった方がより便利
-  " syntax on
 
   " 補完"{{{
   " Insertモードに入るまではneocompleteはロードされない"{{{
