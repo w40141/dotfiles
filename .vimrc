@@ -1,4 +1,4 @@
-" --------------------
+"--------------------
 " 基本的な設定
 "--------------------
 
@@ -1202,9 +1202,9 @@ else
   "}}}
 
   " マニュアル"{{{
-  NeoBundle 'thinca/vim-ref'
-  let g:ref_cache_dir=$HOME.'/.vim/refs/catch'
-  let g:ref_phpmanual_path=$HOME.'/.vim/refs/php-chunked-xhtml'
+  " NeoBundle 'thinca/vim-ref'
+  " let g:ref_cache_dir=$HOME.'~/refs/catch'
+  " let g:ref_phpmanual_path=$HOME.'~/refs/php-chunked-xhtml'
   "}}}
 
   " バッファ一覧を表示し、ショートカットを開ける"{{{
