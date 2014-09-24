@@ -2,7 +2,7 @@
 " 基本的な設定
 "--------------------
 
-"{{{
+" {{{
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
@@ -14,14 +14,15 @@ set t_Co=256
 " vi互換をオフする
 set nocompatible
 
-" OS判定フラグ
+" OS判定フラグ {{{
 let s:is_windows = has('win16') || has('win32') || has('win64')
 let s:is_cygwin = has('win32unix')
 let s:is_mac = !s:is_windows && !s:is_cygwin
       \ && (has('mac') || has('macunix') || has('gui_macvim')
       \ || (!executable('xdg-open') && system('uname') =~? '^darwin'))
+" }}}
 
-" エンコード
+" エンコード {{{
 if s:is_windows
   " For Windows.
   language messages ja_JP
@@ -34,6 +35,7 @@ else
   " For Linux.
   language messages C
 endif
+" }}}
 
 " SSH クライアントの設定によってはマウスが使える
 set mouse=n
@@ -65,13 +67,13 @@ set noerrorbells
 " <Leader>キーを変更 (default: \)
 " <LocalLeader>キーを変更
 let g:mapleader=','
-"}}}
+" }}}
 
 "--------------------
 " 検索設定
 "--------------------
 
-"{{{
+" {{{
 " 検索時に大/小を区別しない
 set ignorecase
 
@@ -90,13 +92,13 @@ set incsearch
 " grep検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
-"}}}
+" }}}
 
 "--------------------
 " 表示設定
 "--------------------
 
-"{{{
+" {{{
 " 不可視文字を表示
 " eolは改行, trail:は行末スペース
 set list
@@ -138,12 +140,22 @@ set shortmess+=I
 " カーソル行をハイライト
 set cursorline
 
-"カレントウィンドウのみにカーソル行をハイライト
+" タブの代わりに空白文字を指定しない
+set expandtab
+
+" C言語のインデントに従って自動インデントを行う
+set cindent
+
+" 行頭での<tab>の幅
+set shiftwidth=4 tabstop=4 softtabstop=4
+
+"カレントウィンドウのみにカーソル行をハイライト {{{
 augroup cch
   autocmd! cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
+" }}}
 
 " 新しい行を作った時に高度な自動インデントを行う
 set smarttab
@@ -151,32 +163,16 @@ set smarttab
 " 前時代的スクリーンベルを無効化
 set t_vb=
 set novisualbell
-
-" phpの設定{{{
-" 文字列中のSQLをハイライト
-let php_sql_query = 1
-" Baselibメッソドのハイライト
-let php_baselib = 1
-" 文字列中のHTMLをハイライト
-let php_htmlInStrings = 1
-" <? を無効にする→ ハイライト除外にする
-let php_noShortTags = 1
-" ], )の対応エラーをハイライト
-let php_parent_error_close = 1
-let php_parent_error_open = 1
-"}}}
-
-"}}}
+" }}}
 
 "--------------------
 " 編集設定
 "--------------------
 
-"{{{
+" {{{
 " 折りたたみ機能を使う
 set foldenable
 set foldmethod=marker
-" set foldmethod=indent
 set foldcolumn=1
 
 "deleteでインデントを削除可能にする
@@ -229,25 +225,19 @@ if has('unnamedplus')
 else
   set clipboard& clipboard+=unnamed
 endif
-"}}}
+" }}}
 
 "--------------------
-" タブ, 空白設定
+" 言語別設定
 "--------------------
 
-"{{{
-" タブの代わりに空白文字を指定しない
-set expandtab
+" {{{
 
-" C言語のインデントに従って自動インデントを行う
-set cindent
+" タブ設定 {{{
 
-" 行頭での<tab>の幅
-set shiftwidth=4 tabstop=4 softtabstop=4
-
-" vim の言語別設定
-" autocmd! FileType <language> setlocal shiftwidth=? tabstop=? softtabstop=?
 augroup vimrc
+
+  " 拡張子 {{{
   autocmd!
   " typescript
   autocmd BufRead,BufNewFile *.ts setl filetype=typescript
@@ -258,28 +248,30 @@ augroup vimrc
   autocmd FileType applescript inoremap <buffer> <S-CR>  ￢<CR>
   " markdown
   autocmd BufRead,BufNewFile *.md setl filetype=markdown
-
   " Rakefile
   autocmd BufNewfile,BufRead Rakefile foldmethod=syntax foldnestmax=1
-
-
   autocmd FileType ref nnoremap <buffer> <TAB> <C-w>w
+  " }}}
 
-  " ファイル書き込み時に再度 filetype 判定
+" ファイル書き込み時に再度 filetype 判定 {{{
   autocmd BufWritePost *
         \ if &l:filetype ==# '' || exists('b:ftdetect')
         \ |   unlet! b:ftdetect
         \ |   filetype detect
         \ | endif
+" }}}
 
-  " Improved include pattern.
+  " Improved include pattern. {{{
   autocmd FileType html
         \ setlocal includeexpr=substitute(v:fname,'^\\/','','') |
         \ setlocal path+=./;/
   autocmd FileType php setlocal path+=/usr/local/share/pear
   autocmd FileType apache setlocal path+=./;/
+  " }}}
 
-  " Set sw/sts/ts.
+" タブ設定方法 {{{
+  " autocmd FileType <language> setlocal shiftwidth=? tabstop=? softtabstop=?
+  " Set sw/sts/ts
   " sw  : shiftwidth (インデント時に使用されるスペースの数)
   " sts : softtabstop (0でないなら、タブを入力時、その数値分だけ半角スペースを挿入)
   " ts  : tabstop (タブを画面で表示する際の幅)
@@ -287,7 +279,9 @@ augroup vimrc
   " ml  : modeline
   " tw  : textwidth
   " modeline : モードラインを有効
+" }}}
 
+" 言語ごとの設定 {{{
   autocmd!
   autocmd FileType apache     setlocal sw=4 sts=4 ts=4
   autocmd FileType aspvbs     setlocal sw=4 sts=4 ts=4
@@ -322,19 +316,46 @@ augroup vimrc
   autocmd FileType xml        setlocal sw=2 sts=2 ts=2
   autocmd FileType yaml       setlocal sw=2 sts=2 ts=2
   autocmd FileType zsh        setlocal sw=4 sts=4 ts=4
-
   autocmd FileType qf,qfreplace,quickrun,git,diff,gitv,gitcommit
         \ setlocal nofoldenable nomodeline foldcolumn=0 foldlevel=0
+" }}}
+
 augroup END
-"}}}
+
+" }}}
+
+" phpの設定 {{{
+" 文字列中のSQLをハイライト
+let php_sql_query = 1
+" Baselibメッソドのハイライト
+let php_baselib = 1
+" 文字列中のHTMLをハイライト
+let php_htmlInStrings = 1
+" <? を無効にする→ ハイライト除外にする
+let php_noShortTags = 1
+" ], )の対応エラーをハイライト
+let php_parent_error_close = 1
+let php_parent_error_open = 1
+
+" PHP Lint
+nmap ,l :call PHPLint()
+
+" PHPLint
+function PHPLint()
+  let result = system( &ft . ' -l ' . bufname(""))
+  echo result
+endfunction
+" }}}
+
+" }}}
 
 "--------------------
 " キーマッピング関係
-" ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
 "--------------------
 
-"{{{
-" 設定の仕方"{{{
+" {{{
+
+" 設定の仕方 {{{
 "----------------------------------------------------------
 "   コマンド    | ノーマル | 挿入 | コマンド | ビジュアル |
 "----------------------------------------------------------
@@ -350,10 +371,11 @@ augroup END
 "----------------------------------------------------------
 " map!/noremap! |    --    |  @@  |    @@    |     --     |
 "----------------------------------------------------------
-"}}}
+" ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
+" }}}
 
-"{{{
-" 移動系"{{{
+" {{{
+" 移動系 {{{
 " 行頭と行末への移動
 noremap 1 0
 noremap 0 $
@@ -379,9 +401,9 @@ inoremap <C-j> <down>
 inoremap <C-l> <right>
 inoremap <C-d> <delete>
 inoremap jj <esc>
-"}}}
+" }}}
 
-" 編集系"{{{
+" 編集系 {{{
 " ;と:を入れ替
 noremap ; :
 noremap : ;
@@ -410,7 +432,7 @@ vnoremap v $h
 nnoremap <Tab> %
 vnoremap <Tab> %
 
-" 括弧の編集"{{{
+" 括弧の編集 {{{
 inoremap {{ {}<LEFT>
 inoremap [[ []<LEFT>
 inoremap (( ()<LEFT>
@@ -420,10 +442,10 @@ inoremap << <><LEFT>
 inoremap ]]5 [%  %]<LEFT><LEFT><LEFT>
 inoremap }}5 {%  %}<LEFT><LEFT><LEFT>
 inoremap >>5 <%=  %><LEFT><LEFT><LEFT>
-"}}}
-"}}}
+" }}}
+" }}}
 
-" 矢印キー無効"{{{
+" 矢印キー無効 {{{
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
@@ -432,9 +454,9 @@ inoremap <Up> <Nop>
 inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
-"}}}
+" }}}
 
-" 補助系"{{{
+" 補助系 {{{
 " ctrl-v で insert/command モードで貼り付け
 inoremap <c-v> <esc>"*pa
 cnoremap <c-v> <c-r>+
@@ -457,9 +479,9 @@ cnoremap <c-e> <end>
 cnoremap <c-f> <right>
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>"
-"}}}
+" }}}
 
-"画面分割＆タブページ設定"{{{
+"画面分割＆タブページ設定 {{{
 noremap s <Nop>
 "ウィンドウを分割
 nnoremap ss :<C-u>sp<CR>
@@ -492,9 +514,9 @@ nnoremap gh gT
 nnoremap sq :<C-u>q<CR>
 "バッファを閉じる
 nnoremap sQ :<C-u>bd<CR>
-"}}}
+" }}}
 
-" その他"{{{
+" その他 {{{
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
@@ -515,9 +537,9 @@ inoremap <expr> dl# repeat('#', 79 - col('.'))
 inoremap <expr> dl+ repeat('+', 79 - col('.'))
 inoremap <expr> dl- repeat('-', 79 - col('.'))
 inoremap <expr> dl= repeat('=', 79 - col('.'))
-"}}}
+" }}}
 
-" :e などでファイルを開く際にフォルダが存在しない場合は自動作成"{{{
+" :e などでファイルを開く際にフォルダが存在しない場合は自動作成 {{{
 function! s:mkdir(dir, force)
   if !isdirectory(a:dir) && (a:force ||
         \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
@@ -531,19 +553,20 @@ autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 
 " QuickFixおよびHelpでは q でバッファを閉じる
 autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
-"}}}
-"}}}
-"}}}
+" }}}
+" }}}
+
+" }}}
 
 "--------------------
 " NeoBundle
 "--------------------
 
-"{{{
+" {{{
 
 " 各プラグイン"{{{
 
-" NeoBundle"{{{
+" NeoBundle {{{
 let s:noplugin = 0
 let s:bundle_root = expand('~/.vim/bundle')
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
@@ -571,10 +594,10 @@ else
         \   "mac"       : "make -f make_mac.mak",
         \   "unix"      : "make -f make_unix.mak",
         \ }}
-  "}}}
+" }}}
 
-  " ファイラー"{{{
-  " Unite"{{{
+" ファイラー {{{
+  " Unite {{{
   NeoBundleLazy "Shougo/unite.vim", {
         \ "autoload": {
         \   "commands": ["Unite", "UniteWithBufferDir"]
@@ -611,9 +634,9 @@ else
       nmap <buffer> <C-p> <Plug>(unite_select_previous_line)
     endfunction
   endfunction
-  "}}}
+  " }}}
 
-  "vimfiler"{{{
+  "vimfiler {{{
   NeoBundleLazy "Shougo/vimfiler", {
         \ "depends": ["Shougo/unite.vim"],
         \ "autoload": {
@@ -643,9 +666,9 @@ else
       nmap <buffer> <C-l> <C-w>l
     endfunction
   endfunction
-  "}}}
+  " }}}
 
-  " vimshell"{{{
+  " vimshell {{{
   NeoBundleLazy 'Shougo/vimshell', {
         \ 'depends' : 'Shougo/vimproc',
         \ 'autoload' : {
@@ -655,10 +678,10 @@ else
         \                   'VimShellTerminal',  'VimShellPop'],
         \   'mappings' : ['<Plug>(vimshell_']
         \ }}
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " シンタックスチェック"{{{
+  " シンタックスチェック {{{
   NeoBundle "scrooloose/syntastic"
   let g:syntastic_mode_map={ 'mode': 'active',
                         \ 'active_filetypes': [],
@@ -671,10 +694,10 @@ else
   let g:syntastic_enable_signs = 1
   let g:syntastic_error_symbol = '✗'
   let g:syntastic_warning_symbol = '⚠'
-  "}}}
+  " }}}
 
-  " 補完"{{{
-  " Insertモードに入るまではneocompleteはロードされない"{{{
+  " 補完 {{{
+  " Insertモードに入るまではneocompleteはロードされない {{{
   if has('lua') && v:version >= 703 && has('patch885')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
           \ "autoload": {
@@ -704,9 +727,9 @@ else
     endif
     let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
   endif
-  "}}}
+  " }}}
 
-  " Insertモードに入るまでロードしない"{{{
+  " Insertモードに入るまでロードしない {{{
   NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundleLazy "Shougo/neosnippet.vim", {
         \ "depends": ["honza/vim-snippets"],
@@ -735,11 +758,11 @@ else
     " Tell Neosnippet about the other snippets
     let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
   endfunction
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " 編集補助"{{{
-  " コメントアウト"{{{
+  " 編集補助 {{{
+  " コメントアウト {{{
   " gcc コメントアウト
   " gci 文の頭からコメントアウト
   " gcI 行頭からコメントアウト
@@ -756,24 +779,24 @@ else
 "        \     [<mode>, <mapping>]
 "        \   ]
 "        \ }}
-  "}}}
+  " }}}
 
   " テキスト整形
   NeoBundle 'vim-scripts/Align'
 
-  " Yankring"{{{
+  " Yankring {{{
   " <C-p>, <C-n>
   NeoBundle 'vim-scripts/YankRing.vim'
-  "}}}
+  " }}}
 
-  "switch : true/false切り替え (+/-)"{{{
+  "switch : true/false切り替え (+/-) {{{
   NeoBundleLazy 'AndrewRadev/switch.vim', {
         \ "autoload" : {
         \   "commands" : "Switch",
         \ }}
-  "}}}
+  " }}}
 
-  " 囲まれているものの編集補助"{{{
+  " 囲まれているものの編集補助 {{{
   " ヴィジュアルモード
   " This is a selected text.  S'    This is 'a selected text'.
   " This is a selected text.  S"    This is "a selected text".
@@ -782,19 +805,19 @@ else
   " This is a selected text.  S{    This is { a selected text }.
   " This is a selected text.  S<b>  This is <b>a selected text</b>.
   NeoBundle 'tpope/vim-surround'
-  "}}}
+  " }}}
 
-  " clever-f"{{{
+  " clever-f {{{
   " f@でカーソルから次の@まで移動できる
   " その後はf連打で文字移動
   NeoBundleLazy 'rhysd/clever-f.vim', {
         \ "autoload" : {
         \   "mappings" : "f",
         \ }}
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " クラスアウトライン"{{{
+  " クラスアウトライン {{{
   NeoBundleLazy 'majutsushi/tagbar', {
         \ "autload": {
         \   "commands": ["TagbarToggle"],
@@ -803,25 +826,25 @@ else
         \   "mac": "brew install ctags",
         \ }}
   nmap <Leader>t :TagbarToggle<CR>
-  "}}}
+  " }}}
 
-  " GundoToggle"{{{
+  " GundoToggle {{{
   NeoBundleLazy 'sjl/gundo.vim', {
         \ "autoload": {
         \ "commands": ["GundoToggle"]
         \ }}
   nnoremap <Leader>g :GundoToggle<CR>
-  "}}}
+  " }}}
 
-  " Tasklist"{{{
+  " Tasklist {{{
   NeoBundleLazy "vim-scripts/TaskList.vim", {
         \ "autoload": {
         \   "mappings": ['<Plug>TaskList'],
         \}}
   nmap <Leader>T <plug>TaskList
-  "}}}
+  " }}}
 
-  " git"{{{
+  " git {{{
   NeoBundleLazy "mattn/gist-vim", {
         \ "depends": ["mattn/webapi-vim"],
         \ "autoload": {
@@ -835,9 +858,9 @@ else
         \ "autoload": {
         \   "commands": ["Gitv"],
         \ }}
-  " "}}}
+  " }}}
 
-  " インデントの可視化"{{{
+  " インデントの可視化 {{{
   NeoBundle "nathanaelkane/vim-indent-guides"
   let g:indent_guides_enable_on_vim_startup=1
   let g:indent_guides_auto_colors=0
@@ -847,7 +870,7 @@ else
   let g:indent_guides_guide_size = 1
   " }}}
 
-  " quickhl : 任意の単語をハイライトにする"{{{
+  " quickhl:任意の単語をハイライトにする {{{
   " <Space>m でカーソル下の単語、もしくは選択した範囲のハイライトを行う
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
@@ -860,9 +883,9 @@ else
   xmap <Space>m <Plug>(quickhl-manual-this)
   nmap <Space>M <Plug>(quickhl-manual-reset)
   xmap <Space>M <Plug>(quickhl-manual-reset)
-  "}}}
+  " }}}
 
-  " クラスアウトライン"{{{
+  " クラスアウトライン {{{
   NeoBundleLazy 'majutsushi/tagbar', {
         \ "autload": {
         \   "commands": ["TagbarToggle"],
@@ -871,9 +894,9 @@ else
         \   "mac": "brew install ctags",
         \ }}
   nmap <Leader>t :TagbarToggle<CR>
-  "}}}
+  " }}}
 
-  " quickrun : vim上で実行"{{{
+  " quickrun : vim上で実行 {{{
   " :QuickRun, \r
   " 新規画面を右に出し、結果表示
   NeoBundleLazy "thinca/vim-quickrun", {
@@ -889,9 +912,9 @@ else
     let g:quickrun_config={'*': {'split': 'vertical'}}
     set splitright
   endfunction
-  "}}}
+  " }}}
 
-  " メモ"{{{
+  " メモ {{{
   NeoBundle 'fuenor/qfixgrep.git'
   NeoBundle 'glidenote/memolist.vim'
   " 新規作成
@@ -910,9 +933,9 @@ else
   let g:memolist_prompt_categories=1
   let g:memolist_qfixgrep=1
   let g:memolist_vimfiler=1
-  "}}}
+  " }}}
 
-  " URLを開いたり、ググったり出来る"{{{
+  " URLを開いたり、ググったり出来る {{{
   NeoBundleLazy "tyru/open-browser.vim", {
         \   'autoload' : {
         \       'functions' : "OpenBrowser",
@@ -923,9 +946,9 @@ else
   " カーソル下のURLをブラウザで開く
   nmap <Leader>o <Plug>(openbrowser-smart-search)
   vmap <Leader>o <Plug>(openbrowser-smart-search)
-  "}}}
+  " }}}
 
-  " ブラウザを自動更新するプラグイン"{{{
+  " ブラウザを自動更新するプラグイン {{{
   " NeoBundle 'tell-k/vim-browsereload-mac'
   " " リロード後に戻ってくるアプリ 変更してください
   " let g:returnApp = "iTerm"
@@ -939,10 +962,10 @@ else
   " nmap <Space>bO :OperaReloadStop<CR>
   " nmap <Space>ba :AllBrowserReloadStart<CR>
   " nmap <Space>bA :AllBrowserReloadStop<CR>
-  "}}}
+  " }}}
 
-  " HTML関係{{{
-  " html5のコードをシンタックス表示する"{{{
+  " HTML関係 {{{
+  " html5のコードをシンタックス表示する {{{
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'taichouchou2/html5.vim'
   " HTML 5 tags
@@ -960,9 +983,9 @@ else
   syn keyword htmlArg contained hidden role
   syn match   htmlArg "\<\(aria-[\-a-zA-Z0-9_]\+\)=" contained
   syn match   htmlArg contained "\s*data-[-a-zA-Z0-9_]\+"
-  "}}}
+  " }}}
 
-  " html/CSS入力補助プラグイン"{{{
+  " html/CSS入力補助プラグイン {{{
   NeoBundle 'mattn/emmet-vim'
   let g:user_emmet_mode = 'iv'
   " <C-t>,
@@ -985,19 +1008,19 @@ else
     autocmd!
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " python関係"{{{
-  " pythonの構文エラーの検出"{{{
+  " python関係 {{{
+  " pythonの構文エラーの検出 {{{
   NeoBundleLazy "kevinw/pyflakes-vim", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
         \ }}
   let g:pyflakes_use_quickfix=0
-"}}}
+  " }}}
 
-  " pythonのコーディング規約チェック"{{{
+  " pythonのコーディング規約チェック {{{
   NeoBundleLazy "nvie/vim-flake8", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
@@ -1005,9 +1028,9 @@ else
   nnoremap 8l  :call Flake8()<CR>
   " 保存時に実行
   " autocmd BufWritePost *.py call Flake8()
-"}}}
+  " }}}
 
-  " pythonの自動修正"{{{
+  " pythonの自動修正 {{{
   " NeoBundleLazy "tell-k/vim-autopep8", {
   "       \ "autoload": {
   "       \ "filetypes": ["python", "python3"]
@@ -1015,23 +1038,23 @@ else
   " nnoremap 2a :call Autopep8()<CR>
   " 使うときは<F8>を押す。もし、替えたければ下のようにする
   " autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
-"}}}
+  " }}}
 
-  " Djangoを正しくVimで読み込めるようにする"{{{
+  " Djangoを正しくVimで読み込めるようにする {{{
   NeoBundleLazy "lambdalisue/vim-django-support", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
-  "}}}
+  " }}}
 
-  " Vimで正しくvirtualenvを処理できるようにする"{{{
+  " Vimで正しくvirtualenvを処理できるようにする {{{
   NeoBundleLazy "jmcantrell/vim-virtualenv", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
-  "}}}
+  " }}}
 
-  " python補完プラグイン{{{
+  " python補完プラグイン {{{
   NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"],
@@ -1050,27 +1073,27 @@ else
     " gundoと被るため大文字に変更
     let g:jedi#goto_assigments_command = '<Leader>G'
   endfunction
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " Ruby & Rails 関係"{{{
-  " Rails向けのコマンド"{{{
+  " Ruby & Rails 関係 {{{
+  " Rails向けのコマンド {{{
   NeoBundleLazy "tpope/vim-rails", {
         \ "autoload": {
         \ "filetypes": ["haml", "ruby", "eruby"],
         \ }}
-  "}}}
+  " }}}
 
-  " Ruby向けにendを自動挿入"{{{
+  " Ruby向けにendを自動挿入 {{{
   NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
         \ 'autoload' : {
         \ "filetypes": ["haml", "ruby", "eruby"],
         \ }}
   let g:endwise_no_mappings=1
-  "}}}
-  "}}}
+  " }}}
+  " }}}
 
-  " カラースキーム"{{{
+  " カラースキーム {{{
   " :Unite colorscheme -auto-priview
   " NeoBundle 'ujihisa/unite-colorscheme'
   " NeoBundle 'altercation/vim-colors-solarized'
@@ -1091,9 +1114,9 @@ else
   " NeoBundle 'chriskempson/vim-tomorrow-theme'
   NeoBundle 'jpo/vim-railscasts-theme'
   colorscheme railscasts
-  "}}}
+  " }}}
 
-  " ステータスライン表示"{{{
+  " ステータスライン表示 {{{
   NeoBundle 'itchyny/lightline.vim'
   NeoBundle 'osyo-manga/vim-anzu'
   NeoBundle 'majutsushi/tagbar'
@@ -1210,32 +1233,33 @@ else
   function! MyCurrentTag()
     return tagbar#currenttag('%s', '')
   endfunction
-  "}}}
+  " }}}
 
   " その他"{{{
-  " Twitter"{{{
+
+  " Twitter {{{
   NeoBundle 'basyura/TweetVim'
   NeoBundle 'mattn/webapi-vim'
   NeoBundle 'basyura/twibill.vim'
   NeoBundle 'basyura/bitly.vim'
   nnoremap tw :TweetVimSay
-  "}}}
+  " }}}
 
-  " マニュアル"{{{
+  " マニュアル {{{
   " NeoBundle 'thinca/vim-ref'
   " let g:ref_cache_dir=$HOME.'~/refs/catch'
   " let g:ref_phpmanual_path=$HOME.'~/refs/php-chunked-xhtml'
-  "}}}
+  " }}}
 
-  " バッファ一覧を表示し、ショートカットを開ける"{{{
+  " バッファ一覧を表示し、ショートカットを開ける {{{
   " :EasyBuffer
   NeoBundleLazy 'troydm/easybuffer.vim', {
         \ 'autoload': {
         \ 'command' : 'EasyBuffer',
         \ }}
-  "}}}
+  " }}}
 
-  " scouter : vimmerの戦闘力(vimrcの行数)を計測する"{{{
+  " scouter : vimmerの戦闘力(vimrcの行数)を計測する {{{
   "   100行以下  : 初心者
   "   500行以下  : 初級者
   "   1000行以下 : 中級者
@@ -1245,18 +1269,19 @@ else
         \ "autoload" : {
         \   "commands" : "Scouter"
         \ }}
-  "}}}
+  " }}}
 
   " 日本語ヘルプ
   NeoBundle 'vim-jp/vimdoc-ja'
-  "}}}
+
+  " }}}
 
   " インストールされていないプラグインのチェックおよびダウンロード
   NeoBundleCheck
 endif
-"}}}
+" }}}
 
 " ファイルタイププラグインおよびインデントを有効化
 syntax on
 filetype plugin indent on
-"}}}
+" }}}
