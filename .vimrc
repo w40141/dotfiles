@@ -324,6 +324,12 @@ augroup END
 
 " }}}
 
+" テンプレート {{{
+  autocmd BufNewFile *.c    0r ~/.vim/template/c.txt
+  autocmd BufNewFile *.py   0r ~/.vim/template/python.txt
+  autocmd BufNewFile *.php  0r ~/.vim/template/php.txt
+" }}}
+
 " phpの設定 {{{
 " 文字列中のSQLをハイライト
 let php_sql_query = 1
@@ -697,6 +703,7 @@ else
   " }}}
 
   " 補完 {{{
+
   " Insertモードに入るまではneocompleteはロードされない {{{
   if has('lua') && v:version >= 703 && has('patch885')
     NeoBundleLazy 'Shougo/neocomplete.vim', {
@@ -759,6 +766,7 @@ else
     let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
   endfunction
   " }}}
+
   " }}}
 
   " 編集補助 {{{
