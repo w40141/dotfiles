@@ -19,6 +19,7 @@ neocomplcache.vim
 neosnippet-snippets
 neosnippet.vim
 open-browser.vim
+pyflakes-vim
 qfixgrep
 rubocop
 switch.vim
@@ -28,10 +29,10 @@ twibill.vim
 unite-outline
 unite.vim
 vim-anzu
-vim-autopep8
 vim-css3-syntax
 vim-django-support
 vim-endwise
+vim-flake8
 vim-fugitive
 vim-gitgutter
 vim-indent-guides

@@ -647,10 +647,15 @@ else
   NeoBundle "scrooloose/syntastic"
   let g:syntastic_mode_map={ 'mode': 'active',
                         \ 'active_filetypes': [],
-                        \ 'passive_filetypes': []
+                        \ 'passive_filetypes': ['python', 'python3']
                         \}
-  let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  " let g:syntastic_python_checkers = ['pyflakes', 'pep8']
   let g:syntastic_ruby_checkers = ['rubocop']
+  let g:syntastic_javascript_checkers = ['jshint']
+
+  let g:syntastic_enable_signs = 1
+  let g:syntastic_error_symbol = '✗'
+  let g:syntastic_warning_symbol = '⚠'
   "}}}
 
   " 補完"{{{
@@ -970,27 +975,29 @@ else
 
   " python関係"{{{
   " pythonの構文エラーの検出"{{{
-  " NeoBundleLazy "kevinw/pyflakes-vim", {
-  "       \ "autoload": {
-  "       \ "filetypes": ["python", "python3"]
-  "       \ }}
-  " let g:pyflakes_use_quickfix=0
-"}}}
-
-  " pythonのコーディング規約チェック"{{{
-  " NeoBundleLazy "nvie/vim-flake8", {
-  "       \ "autoload": {
-  "       \ "filetypes": ["python", "python3"]
-  "       \ }}
-  " map <buffer> <Leader>i :call Flake8()<CR>
-"}}}
-
-  " pythonの自動修正"{{{
-  NeoBundleLazy "tell-k/vim-autopep8", {
+  NeoBundleLazy "kevinw/pyflakes-vim", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
         \ }}
-  map <buffer> <Leader>I :call Autopep8()<CR>
+  let g:pyflakes_use_quickfix=0
+"}}}
+
+  " pythonのコーディング規約チェック"{{{
+  NeoBundleLazy "nvie/vim-flake8", {
+        \ "autoload": {
+        \ "filetypes": ["python", "python3"]
+        \ }}
+  nnoremap 8l  :call Flake8()<CR>
+  " 保存時に実行
+  " autocmd BufWritePost *.py call Flake8()
+"}}}
+
+  " pythonの自動修正"{{{
+  " NeoBundleLazy "tell-k/vim-autopep8", {
+  "       \ "autoload": {
+  "       \ "filetypes": ["python", "python3"]
+  "       \ }}
+  " nnoremap 2a :call Autopep8()<CR>
   " 使うときは<F8>を押す。もし、替えたければ下のようにする
   " autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
 "}}}
@@ -1009,7 +1016,7 @@ else
         \ }}
   "}}}
 
-  " jedi-vim"{{{
+  " python補完プラグイン{{{
   NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"],

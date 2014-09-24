@@ -546,13 +546,6 @@ alignmap-t~	Align.txt	/*alignmap-t~*
 alignmaps	Align.txt	/*alignmaps*
 alignusage	Align.txt	/*alignusage*
 any-item-example	yankring.txt	/*any-item-example*
-autopep8-customization	autopep8.txt	/*autopep8-customization*
-autopep8-installation	autopep8.txt	/*autopep8-installation*
-autopep8-license	autopep8.txt	/*autopep8-license*
-autopep8-overview	autopep8.txt	/*autopep8-overview*
-autopep8-required	autopep8.txt	/*autopep8-required*
-autopep8-usage	autopep8.txt	/*autopep8-usage*
-autopep8.txt	autopep8.txt	/*autopep8.txt*
 b:django_support#project_root	vim-django-support.txt	/*b:django_support#project_root*
 b:neocomplcache_sources_list	neocomplcache.txt	/*b:neocomplcache_sources_list*
 b:quickrun_config	quickrun.txt	/*b:quickrun_config*
