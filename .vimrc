@@ -380,7 +380,8 @@ endfunction
 " ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
 " }}}
 
-" {{{
+" その他 {{{
+
 " 移動系 {{{
 " 行頭と行末への移動
 noremap 1 0
@@ -560,6 +561,7 @@ autocmd MyAutoCmd QuickfixCmdPost make,grep,grepadd,vimgrep copen
 " QuickFixおよびHelpでは q でバッファを閉じる
 autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " }}}
+
 " }}}
 
 " }}}
@@ -570,7 +572,7 @@ autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 
 " {{{
 
-" 各プラグイン"{{{
+" 各プラグイン {{{
 
 " NeoBundle {{{
 let s:noplugin = 0
@@ -581,17 +583,20 @@ if !isdirectory(s:neobundle_root) || v:version < 702
   " 読み込まない
   let s:noplugin = 1
 else
-  " NeoBundleを'runtimepath'に追加し初期化を行う
+
+  " NeoBundleを'runtimepath'に追加し初期化を行う {{{
   if has('vim_starting')
     execute "set runtimepath+=" . s:neobundle_root
   endif
+  " }}}
 
-  " NeoBundle自身をNeoBundleで管理させる
+  " NeoBundle自身をNeoBundleで管理させる {{{
   call neobundle#begin(s:bundle_root)
   NeoBundleFetch 'Shougo/neobundle.vim'
   call neobundle#end()
+  " }}}
 
-  " vimproc非同期通信を可能にする"
+  " vimproc非同期通信を可能にする {{{
   " 'build'が指定されているのでインストール時に自動的に
   " 指定されたコマンドが実行され vimproc がコンパイルされる
   NeoBundle "Shougo/vimproc", {
@@ -601,15 +606,20 @@ else
         \   "mac"       : "make -f make_mac.mak",
         \   "unix"      : "make -f make_unix.mak",
         \ }}
-" }}}
+  " }}}
+
+  " }}}
 
 " ファイラー {{{
+
   " Unite {{{
   NeoBundleLazy "Shougo/unite.vim", {
         \ "autoload": {
         \   "commands": ["Unite", "UniteWithBufferDir"]
         \ }}
+  " }}}
 
+  " unite-outline {{{
   NeoBundleLazy 'h1mesuke/unite-outline', {
         \ "autoload": {
         \   "unite_sources": ["outline"],
@@ -686,6 +696,7 @@ else
         \   'mappings' : ['<Plug>(vimshell_']
         \ }}
   " }}}
+
   " }}}
 
   " シンタックスチェック {{{
@@ -710,6 +721,7 @@ else
     return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
   endfunction
 
+  " insertに入るまで読み込まない {{{
   if s:meet_neocomplete_requirements()
     NeoBundleLazy 'Shougo/neocomplete.vim', {
           \ "autoload": {
@@ -723,6 +735,7 @@ else
           \ }}
     NeoBundleFetch 'Shougo/neocomplete.vim'
   endif
+  " }}}
 
   if s:meet_neocomplete_requirements()
     " neocomplete の設定"{{{

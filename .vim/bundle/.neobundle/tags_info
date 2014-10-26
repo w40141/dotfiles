@@ -17,6 +17,7 @@ memolist.vim
 neobundle.vim
 neocomplcache.vim
 neocomplete-php.vim
+neocomplete.vim
 neosnippet
 neosnippet-snippets
 open-browser.vim
