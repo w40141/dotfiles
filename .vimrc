@@ -705,39 +705,56 @@ else
 
   " 補完 {{{
 
-  " Insertモードに入るまではneocompleteはロードされない {{{
-  if has('lua') && v:version >= 703 && has('patch885')
+  " neocomplete {{{
+  function! s:meet_neocomplete_requirements()
+    return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
+  endfunction
+
+  if s:meet_neocomplete_requirements()
     NeoBundleLazy 'Shougo/neocomplete.vim', {
           \ "autoload": {
           \   "insert": 1,
           \ }}
-    let g:neocomplete#enable_at_startup = 1
-    let s:hooks = neobundle#get_hooks("neocomplete.vim")
-    function! s:hooks.on_source(bundle)
-      let g:acp_enableAtStartup = 0
-      let g:neocomplet#enable_smart_case = 1
-    endfunction
+    NeoBundleFetch 'Shougo/neocomplcache.vim'
   else
     NeoBundleLazy 'Shougo/neocomplcache.vim', {
           \ "autoload": {
           \   "insert": 1,
           \ }}
-    let g:neocomplcache_enable_at_startup = 1
-    let s:hooks = neobundle#get_hooks("neocomplcache.vim")
-    function! s:hooks.on_source(bundle)
-      let g:acp_enableAtStartup = 0
-      let g:neocomplcache_enable_smart_case = 1
-      " NeoComplCacheを有効化
-      " NeoComplCacheEnable
-    endfunction
-    if !exists('g:neocomplete#force_omni_input_patterns')
-      let g:neocomplete#force_omni_input_patterns = {}
-    endif
-    let g:neocomplete#force_omni_input_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+    NeoBundleFetch 'Shougo/neocomplete.vim'
   endif
+
+  if s:meet_neocomplete_requirements()
+    " neocomplete の設定"{{{
+    let g:acp_enableAtStartup = 0
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_ignore_case = 1
+    let g:neocomplete#enable_smart_case = 1
+    if !exists('g:neocomplete#keyword_patterns')
+      let g:neocomplete#keyword_patterns = {}
+    endif
+    let g:neocomplete#keyword_patterns._ = '\h\w*'
+    "}}}
+  else
+    " neocomplcache の設定"{{{
+    let g:acp_enableatstartup = 0
+    let g:neocomplcache_enable_at_startup = 1
+    let g:neocomplcache_enable_ignore_case = 1
+    let g:neocomplcache_enable_smart_case = 1
+    let s:hooks = neobundle#get_hooks("neocomplcache.vim")
+    if !exists('g:neocomplcache_keyword_patterns')
+      let g:neocomplcache_keyword_patterns = {}
+    endif
+    let g:neocomplcache_keyword_patterns._ = '\h\w*'
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+    "}}}
+  endif
+  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
   " }}}
 
-  " Insertモードに入るまでロードしない {{{
+  " neosnippet {{{
   NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundleLazy "Shougo/neosnippet", {
         \ "depends": ["honza/vim-snippets"],
@@ -1019,12 +1036,17 @@ else
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
   " }}}
- 
-  NeoBundleLazy 'violetyk/neocomplete-php.vim', {
-        \ "autoload":{
-        \ "FileType":["php"]
-        \ }}
+
+
+  NeoBundle 'violetyk/neocomplete-php.vim'
   let g:neocomplete_php_locale = 'ja'
+
+  " NeoBundleLazy 'violetyk/neocomplete-php.vim', {
+  "       \ "autoload":{
+  "       \ "FileType":["php"]
+  "       \ }}
+  " let g:neocomplete_php_locale = 'ja'
+
 
   " }}}
 
