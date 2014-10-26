@@ -585,10 +585,11 @@ else
   if has('vim_starting')
     execute "set runtimepath+=" . s:neobundle_root
   endif
-  call neobundle#rc(s:bundle_root)
 
   " NeoBundle自身をNeoBundleで管理させる
+  call neobundle#begin(s:bundle_root)
   NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
 
   " vimproc非同期通信を可能にする"
   " 'build'が指定されているのでインストール時に自動的に
@@ -738,7 +739,7 @@ else
 
   " Insertモードに入るまでロードしない {{{
   NeoBundle 'Shougo/neosnippet-snippets'
-  NeoBundleLazy "Shougo/neosnippet.vim", {
+  NeoBundleLazy "Shougo/neosnippet", {
         \ "depends": ["honza/vim-snippets"],
         \ "autoload": {
         \   "insert": 1,
@@ -972,7 +973,7 @@ else
   " nmap <Space>bA :AllBrowserReloadStop<CR>
   " }}}
 
-  " HTML関係 {{{
+  " web関係 {{{
   " html5のコードをシンタックス表示する {{{
   NeoBundle 'hail2u/vim-css3-syntax'
   NeoBundle 'taichouchou2/html5.vim'
@@ -995,8 +996,9 @@ else
 
   " html/CSS入力補助プラグイン {{{
   NeoBundle 'mattn/emmet-vim'
-  let g:user_emmet_mode = 'iv'
-  " <C-t>,
+  let g:user_emmet_mode = 'a'
+  " how to use
+  " push "<C-t>,"
   let g:user_emmet_leader_key = '<C-t>'
   let g:use_emmet_complete_tag = 1
   let g:user_emmet_settings = {
@@ -1017,6 +1019,13 @@ else
     autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
   augroup END
   " }}}
+ 
+  NeoBundleLazy 'violetyk/neocomplete-php.vim', {
+        \ "autoload":{
+        \ "FileType":["php"]
+        \ }}
+  let g:neocomplete_php_locale = 'ja'
+
   " }}}
 
   " python関係 {{{

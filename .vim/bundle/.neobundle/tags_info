@@ -16,8 +16,9 @@ lightline.vim
 memolist.vim
 neobundle.vim
 neocomplcache.vim
+neocomplete-php.vim
+neosnippet
 neosnippet-snippets
-neosnippet.vim
 open-browser.vim
 pyflakes-vim
 qfixgrep

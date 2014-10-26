@@ -7822,6 +7822,7 @@ spell-FLAG	spell.jax	/*spell-FLAG*
 spell-FOL	spell.jax	/*spell-FOL*
 spell-FORBIDDENWORD	spell.jax	/*spell-FORBIDDENWORD*
 spell-HOME	spell.jax	/*spell-HOME*
+spell-IGNOREEXTRA	spell.jax	/*spell-IGNOREEXTRA*
 spell-KEEPCASE	spell.jax	/*spell-KEEPCASE*
 spell-KEY	spell.jax	/*spell-KEY*
 spell-LANG	spell.jax	/*spell-LANG*
