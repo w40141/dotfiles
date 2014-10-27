@@ -1,8 +1,6 @@
 "--------------------
-" 基本的な設定
-"--------------------
+" 基本設定 {{{
 
-" {{{
 " release autogroup in MyAutoCmd
 augroup MyAutoCmd
   autocmd!
@@ -68,12 +66,11 @@ set noerrorbells
 " <LocalLeader>キーを変更
 let g:mapleader=','
 " }}}
-
-"--------------------
-" 検索設定
 "--------------------
 
-" {{{
+"--------------------
+" 検索設定 {{{
+
 " 検索時に大/小を区別しない
 set ignorecase
 
@@ -93,12 +90,11 @@ set incsearch
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
 " }}}
-
-"--------------------
-" 表示設定
 "--------------------
 
-" {{{
+"--------------------
+" 表示設定 {{{
+
 " 不可視文字を表示
 " eolは改行, trail:は行末スペース
 set list
@@ -164,12 +160,11 @@ set smarttab
 set t_vb=
 set novisualbell
 " }}}
-
-"--------------------
-" 編集設定
 "--------------------
 
-" {{{
+"--------------------
+" 編集設定 {{{
+
 " 折りたたみ機能を使う
 set foldenable
 set foldmethod=marker
@@ -226,12 +221,10 @@ else
   set clipboard& clipboard+=unnamed
 endif
 " }}}
-
-"--------------------
-" 言語別設定
 "--------------------
 
-" {{{
+"--------------------
+" 言語別設定 {{{
 
 " タブ設定 {{{
 
@@ -354,12 +347,10 @@ endfunction
 " }}}
 
 " }}}
-
-"--------------------
-" キーマッピング関係
 "--------------------
 
-" {{{
+"--------------------
+" キーマッピング関係 {{{
 
 " 設定の仕方 {{{
 "----------------------------------------------------------
@@ -378,9 +369,10 @@ endfunction
 " map!/noremap! |    --    |  @@  |    @@    |     --     |
 "----------------------------------------------------------
 " ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
+" 確認する場合:map
 " }}}
 
-" その他 {{{
+" キーマッピング {{{
 
 " 移動系 {{{
 " 行頭と行末への移動
@@ -402,7 +394,7 @@ nnoremap zl zL
 nnoremap zh zH
 
 "挿入モードでの移動
-inoremap <C-k> <up>
+" inoremap <C-k> <up>
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-l> <right>
@@ -414,6 +406,12 @@ inoremap jj <esc>
 " ;と:を入れ替
 noremap ; :
 noremap : ;
+
+" キー置換
+noremap <Space>h ^
+noremap <Space>l $
+noremap <Space>m %
+nnoremap <Space>/ *
 
 " ノーマルモードでも改行可能
 noremap <CR> i<CR><ESC>
@@ -565,12 +563,10 @@ autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " }}}
 
 " }}}
-
-"--------------------
-" NeoBundle
 "--------------------
 
-" {{{
+"--------------------
+" NeoBundle {{{
 
 " 各プラグイン {{{
 
@@ -765,7 +761,7 @@ else
     let g:neocomplcache_enable_underbar_completion = 1
     "}}}
   endif
-  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+  " inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
   " }}}
 
@@ -776,28 +772,27 @@ else
         \ "autoload": {
         \   "insert": 1,
         \ }}
-  let s:hooks = neobundle#get_hooks("neosnippet.vim")
-  function! s:hooks.on_source(bundle)
-    " Plugin key-mappings.
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
-    " SuperTab like snippets behavior.
-    imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-          \ "\<Plug>(neosnippet_expand_or_jump)"
-          \: pumvisible() ? "\<C-n>" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-          \ "\<Plug>(neosnippet_expand_or_jump)"
-          \: "\<TAB>"
-    " For snippet_complete marker.
-    if has('conceal')
-      set conceallevel=2 concealcursor=i
-    endif
-    " Enable snipMate compatibility feature.
-    let g:neosnippet#enable_snipmate_compatibility = 1
-    " Tell Neosnippet about the other snippets
-    let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
-  endfunction
+  " Plugin key-mappings.
+  " <C-k>で展開
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)"
+        \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+        \ "\<Plug>(neosnippet_expand_or_jump)"
+        \: "\<TAB>"
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+  " Enable snipMate compatibility feature.
+  " let g:neosnippet#enable_snipmate_compatibility = 1
+  " Tell Neosnippet about the other snippets
+  " let g:neosnippet#snippets_directory=s:bundle_root . '/vim-snippets/snippets'
+
   " }}}
 
   " }}}
@@ -1339,3 +1334,4 @@ endif
 syntax on
 filetype plugin indent on
 " }}}
+"--------------------
