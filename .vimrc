@@ -571,6 +571,19 @@ autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " 各プラグイン {{{
 
 " NeoBundle {{{
+
+" 遅延読み込みの方法 {{{
+" NeoBundleLazy '{ repository }', {
+"       \ 'autoload' : {
+"       \   'insert' : 1,
+"       \   'filetypes' : [{filetype}],
+"       \   'commands' : [{command}],
+"       \   'mappings' : [
+"       \     [<mode>, <mapping>]
+"       \   ]
+"       \ }}
+" }}}
+
 let s:noplugin = 0
 let s:bundle_root = expand('~/.vim/bundle')
 let s:neobundle_root = s:bundle_root . '/neobundle.vim'
@@ -805,16 +818,10 @@ else
   " gca 行末にコメントアウト
   " gco カーソル行の下にコメントアウト
   " gcO カーソル行の上にコメントアウト
-  NeoBundle 'tyru/caw.vim.git'
-"      NeoBundleLazy , {repository}{
-"        \ 'autoload' : {
-"        \   'insert' : 1,
-"        \   'filetypes' : [{filetype}],
-"        \   'commands' : [{command}],
-"        \   'mappings' : [
-"        \     [<mode>, <mapping>]
-"        \   ]
-"        \ }}
+  NeoBundleLazy 'tyru/caw.vim.git', {
+        \ 'autoload': {
+        \   'insert': 1,
+        \ }}
   " }}}
 
   " テキスト整形
@@ -833,13 +840,8 @@ else
   " }}}
 
   " 囲まれているものの編集補助 {{{
-  " ヴィジュアルモード
-  " This is a selected text.  S'    This is 'a selected text'.
-  " This is a selected text.  S"    This is "a selected text".
-  " This is a selected text.  S[    This is [ a selected text ].
-  " This is a selected text.  S(    This is ( a selected text ).
-  " This is a selected text.  S{    This is { a selected text }.
-  " This is a selected text.  S<b>  This is <b>a selected text</b>.
+  " ヴィジュアルモードで^^間を選択すると
+  " This is ^a selected text^.  S@    This is @a selected text@.
   NeoBundle 'tpope/vim-surround'
   " }}}
 
@@ -851,6 +853,14 @@ else
         \   "mappings" : "f",
         \ }}
   " }}}
+  " }}}
+
+  " Tasklist {{{
+  NeoBundleLazy "vim-scripts/TaskList.vim", {
+        \ "autoload": {
+        \   "mappings": ['<Plug>TaskList'],
+        \}}
+  nmap <Leader>T <plug>TaskList
   " }}}
 
   " クラスアウトライン {{{
@@ -870,14 +880,6 @@ else
         \ "commands": ["GundoToggle"]
         \ }}
   nnoremap <Leader>g :GundoToggle<CR>
-  " }}}
-
-  " Tasklist {{{
-  NeoBundleLazy "vim-scripts/TaskList.vim", {
-        \ "autoload": {
-        \   "mappings": ['<Plug>TaskList'],
-        \}}
-  nmap <Leader>T <plug>TaskList
   " }}}
 
   " git {{{
@@ -919,17 +921,6 @@ else
   xmap <Space>m <Plug>(quickhl-manual-this)
   nmap <Space>M <Plug>(quickhl-manual-reset)
   xmap <Space>M <Plug>(quickhl-manual-reset)
-  " }}}
-
-  " クラスアウトライン {{{
-  NeoBundleLazy 'majutsushi/tagbar', {
-        \ "autload": {
-        \   "commands": ["TagbarToggle"],
-        \ },
-        \ "build": {
-        \   "mac": "brew install ctags",
-        \ }}
-  nmap <Leader>t :TagbarToggle<CR>
   " }}}
 
   " quickrun : vim上で実行 {{{
@@ -1048,14 +1039,14 @@ else
   " }}}
 
 
-  NeoBundle 'violetyk/neocomplete-php.vim'
-  let g:neocomplete_php_locale = 'ja'
-
-  " NeoBundleLazy 'violetyk/neocomplete-php.vim', {
-  "       \ "autoload":{
-  "       \ "FileType":["php"]
-  "       \ }}
+  " NeoBundle 'violetyk/neocomplete-php.vim'
   " let g:neocomplete_php_locale = 'ja'
+
+  NeoBundleLazy 'violetyk/neocomplete-php.vim', {
+        \ "autoload": {
+        \ "fileyypes": ["php"]
+        \ }}
+  let g:neocomplete_php_locale = 'ja'
 
 
   " }}}
