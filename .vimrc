@@ -811,6 +811,7 @@ else
   " }}}
 
   " 編集補助 {{{
+
   " コメントアウト {{{
   " gcc コメントアウト
   " gci 文の頭からコメントアウト
@@ -853,6 +854,7 @@ else
         \   "mappings" : "f",
         \ }}
   " }}}
+
   " }}}
 
   " Tasklist {{{
@@ -898,20 +900,31 @@ else
         \ }}
   " }}}
 
-  " インデントの可視化 {{{
-  NeoBundle "nathanaelkane/vim-indent-guides"
-  " vim-indent-guidesを自動起動
-  let g:indent_guides_enable_on_vim_startup=1
-  " 自動カラーを無効
-  let g:indent_guides_auto_colors=0
-  " 奇数番目のインデントの色
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
-  " 偶数番目のインデントの色
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
-  " ガイドの幅
-  let g:indent_guides_guide_size = 1
-  " 色のサンプルは以下のサイト
-  " http://h2plus.biz/hiromitsu/entry/674
+  " インデントの可視化"{{{
+
+  " vim-indent-guides {{{
+  " NeoBundle "nathanaelkane/vim-indent-guides"
+  " " vim-indent-guidesを自動起動
+  " let g:indent_guides_enable_on_vim_startup=1
+  " " 自動カラーを無効
+  " let g:indent_guides_auto_colors=0
+  " " 奇数番目のインデントの色
+  " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+  " " 偶数番目のインデントの色
+  " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+  " " ガイドの幅
+  " let g:indent_guides_guide_size = 1
+  " " 色のサンプルは以下のサイト
+  " " http://h2plus.biz/hiromitsu/entry/674
+  " }}}
+
+  " indentLine {{{
+  NeoBundle "Yggdroot/indentLine"
+  let g:indentLine_color_term = 111
+  let g:indentLine_color_gui = '#708090'
+  let g:indentLine_char = '¦' "use ¦, ┆ or │
+  " }}}
+
   " }}}
 
   " quickhl:任意の単語をハイライトにする {{{
