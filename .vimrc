@@ -900,12 +900,18 @@ else
 
   " インデントの可視化 {{{
   NeoBundle "nathanaelkane/vim-indent-guides"
+  " vim-indent-guidesを自動起動
   let g:indent_guides_enable_on_vim_startup=1
+  " 自動カラーを無効
   let g:indent_guides_auto_colors=0
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=110
-  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=46
-  " http://h2plus.biz/hiromitsu/entry/674
+  " 奇数番目のインデントの色
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=black
+  " 偶数番目のインデントの色
+  autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgrey
+  " ガイドの幅
   let g:indent_guides_guide_size = 1
+  " 色のサンプルは以下のサイト
+  " http://h2plus.biz/hiromitsu/entry/674
   " }}}
 
   " quickhl:任意の単語をハイライトにする {{{
@@ -975,22 +981,6 @@ else
   vmap <Leader>o <Plug>(openbrowser-smart-search)
   " }}}
 
-  " ブラウザを自動更新するプラグイン {{{
-  " NeoBundle 'tell-k/vim-browsereload-mac'
-  " " リロード後に戻ってくるアプリ 変更してください
-  " let g:returnApp = "iTerm"
-  " nmap <Space>bc :ChromeReloadStart<CR>
-  " nmap <Space>bC :ChromeReloadStop<CR>
-  " nmap <Space>bf :FirefoxReloadStart<CR>
-  " nmap <Space>bF :FirefoxReloadStop<CR>
-  " nmap <Space>bs :SafariReloadStart<CR>
-  " nmap <Space>bS :SafariReloadStop<CR>
-  " nmap <Space>bo :OperaReloadStart<CR>
-  " nmap <Space>bO :OperaReloadStop<CR>
-  " nmap <Space>ba :AllBrowserReloadStart<CR>
-  " nmap <Space>bA :AllBrowserReloadStop<CR>
-  " }}}
-
   " web関係 {{{
   " html5のコードをシンタックス表示する {{{
   NeoBundle 'hail2u/vim-css3-syntax'
@@ -1038,7 +1028,7 @@ else
   augroup END
   " }}}
 
-
+  " php-neocomplete {{{
   " NeoBundle 'violetyk/neocomplete-php.vim'
   " let g:neocomplete_php_locale = 'ja'
 
@@ -1047,7 +1037,23 @@ else
         \ "fileyypes": ["php"]
         \ }}
   let g:neocomplete_php_locale = 'ja'
+  " }}}
 
+  " ブラウザを自動更新するプラグイン {{{
+  " NeoBundle 'tell-k/vim-browsereload-mac'
+  " " リロード後に戻ってくるアプリ 変更してください
+  " let g:returnApp = "iTerm"
+  " nmap <Space>bc :ChromeReloadStart<CR>
+  " nmap <Space>bC :ChromeReloadStop<CR>
+  " nmap <Space>bf :FirefoxReloadStart<CR>
+  " nmap <Space>bF :FirefoxReloadStop<CR>
+  " nmap <Space>bs :SafariReloadStart<CR>
+  " nmap <Space>bS :SafariReloadStop<CR>
+  " nmap <Space>bo :OperaReloadStart<CR>
+  " nmap <Space>bO :OperaReloadStop<CR>
+  " nmap <Space>ba :AllBrowserReloadStart<CR>
+  " nmap <Space>bA :AllBrowserReloadStop<CR>
+  " }}}
 
   " }}}
 
