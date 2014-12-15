@@ -476,7 +476,7 @@ cnoremap update neobundleupdate
 cnoremap install neobundleinstall
 cnoremap install! neobundleinstall!
 
-"コマンドモード時のカーソル移動
+" コマンドモード時のカーソル移動
 cnoremap <c-a> <home>
 cnoremap <c-b> <left>
 cnoremap <c-d> <delete>
@@ -486,40 +486,57 @@ cnoremap <c-n> <down>
 cnoremap <c-p> <up>"
 " }}}
 
-"画面分割＆タブページ設定 {{{
+" 画面分割＆タブページ設定 {{{
 noremap s <Nop>
-"ウィンドウを分割
+" ウィンドウを分割
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
-"分割したウィンドウ間を移動
+" 分割したウィンドウ間を移動
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
 nnoremap sw <C-w>w
-"分割したウィンドウを移動
+" 分割したウィンドウを移動
 nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
 nnoremap sr <C-w>r
-"カレントウィンドウの大きさを変える
+" カレントウィンドウの大きさを変える
 nnoremap so <C-w>_<C-w>|
 nnoremap sO <C-w>=
 nnoremap s= <C-w>=
 nnoremap sN :<C-u>bn<CR>
 nnoremap sP :<C-u>bp<CR>
-"新規タブ
+"g新規タブ
 nnoremap st :<C-u>tabnew<CR>
-"次のタブに切り替え
+" 次のタブに切り替え
 nnoremap gl gt
-"前のタブに切り替え
+" 前のタブに切り替え
 nnoremap gh gT
-"ウィンドウを閉じる
+" ウィンドウを閉じる
 nnoremap sq :<C-u>q<CR>
-"バッファを閉じる
+" バッファを閉じる
 nnoremap sQ :<C-u>bd<CR>
 " }}}
+
+" バッファ設定 {{{
+" バッファリストの1つ前のバッファを開く
+nnoremap <silent>bp :bprevious<CR>
+" バッファリストの次のバッファを開く
+nnoremap <silent>bn :bnext<CR>
+" 直前のバッファを開く
+nnoremap <silent>bb :b#<CR>
+" バッファリストの先頭を開く
+nnoremap <silent>bf :bf<CR>
+" バッファリストの最後を開く
+nnoremap <silent>bl :bl<CR>
+" 変更中の次のバッファへ移動
+nnoremap <silent>bm :bm<CR>
+" カレントのバッファを閉じてバッファリストから削除
+nnoremap <silent>bd :bdelete<CR>
+"}}}
 
 " その他 {{{
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
@@ -1181,7 +1198,7 @@ else
   NeoBundle 'majutsushi/tagbar'
   NeoBundle 'airblade/vim-gitgutter'
 
-  " git関連
+  " git関連"{{{
   let g:gitgutter_sign_added = '✚'
   let g:gitgutter_sign_modified = '➜'
   let g:gitgutter_sign_removed = '✘'
@@ -1294,6 +1311,8 @@ else
   endfunction
   " }}}
 
+  " }}}
+
   " その他"{{{
 
   " Twitter {{{
@@ -1302,6 +1321,48 @@ else
   NeoBundle 'basyura/twibill.vim'
   NeoBundle 'basyura/bitly.vim'
   nnoremap tw :TweetVimSay
+  " タイムライン選択用の Unite を起動する
+  nnoremap <silent> t :Unite tweetvim<CR>
+  " ユーザーストリームを表示
+  nnoremap <silent> U :TweetVimUserStream<CR>
+
+  " 定義済バッファキーマップ {{{
+
+  " タイムライン表示バッファ {{{
+  " nmap <silent> <buffer> <CR> <Plug>(tweetvim_action_enter)
+  " nmap <silent> <buffer> r  <Plug>(tweetvim_action_reply)
+  " nmap <silent> <buffer> i  <Plug>(tweetvim_action_in_reply_to)
+  " nmap <silent> <buffer> u  <Plug>(tweetvim_action_user_timeline)
+  " nmap <silent> <buffer> o  <Plug>(tweetvim_action_open_links)
+  " nmap <silent> <buffer> q  <Plug>(tweetvim_action_search)
+  " nmap <silent> <buffer> <leader>f  <Plug>(tweetvim_action_favorite)
+  " nmap <silent> <buffer> <leader>uf <Plug>(tweetvim_action_remove_favorite)
+  " nmap <silent> <buffer> <leader>r  <Plug>(tweetvim_action_retweet)
+  " nmap <silent> <buffer> <leader>q  <Plug>(tweetvim_action_qt)
+  " nmap <silent> <buffer> <leader>e  <Plug>(tweetvim_action_expand_url)
+  " nmap <silent> <buffer> <leader>F  <Plug>(tweetvim_action_favstar)
+  " nmap <silent> <buffer> <Leader><Leader>  <Plug>(tweetvim_action_reload)
+  " nmap <silent> <buffer> ff  <Plug>(tweetvim_action_page_next)
+  " nmap <silent> <buffer> bb  <Plug>(tweetvim_action_page_previous)
+  " nmap <silent> <buffer> H  <Plug>(tweetvim_buffer_previous)
+  " nmap <silent> <buffer> L  <Plug>(tweetvim_buffer_next)
+  " nmap <silent> <buffer> j <Plug>(tweetvim_action_cursor_down)
+  " nmap <silent> <buffer> k <Plug>(tweetvim_action_cursor_up)
+  " nnoremap <silent> <buffer> a :call unite#sources#tweetvim_action#start()<CR>
+  " nnoremap <silent> <buffer> t :call unite#sources#tweetvim_timeline#start()<CR>
+  " }}}
+
+  " ツイート用バッファ {{{
+  " nnoremap <buffer> <silent> q :bd!<CR>
+  " nnoremap <buffer> <silent> <C-s>      :call <SID>show_history()<CR>
+  " inoremap <buffer> <silent> <C-s> <ESC>:call <SID>show_history()<CR>
+  " nnoremap <buffer> <silent> <CR>       :call <SID>post_tweet()<CR>
+  " inoremap <buffer> <silent> <C-i> <ESC>:call unite#sources#tweetvim_tweet_history#start()<CR>
+  " nnoremap <buffer> <silent> <C-i> <ESC>:call unite#sources#tweetvim_tweet_history#start()<CR>
+  " }}}
+
+  " }}}
+
   " }}}
 
   " マニュアル {{{
