@@ -1198,7 +1198,7 @@ else
   NeoBundle 'majutsushi/tagbar'
   NeoBundle 'airblade/vim-gitgutter'
 
-  " git関連"{{{
+  " git表示関連"{{{
   let g:gitgutter_sign_added = '✚'
   let g:gitgutter_sign_modified = '➜'
   let g:gitgutter_sign_removed = '✘'

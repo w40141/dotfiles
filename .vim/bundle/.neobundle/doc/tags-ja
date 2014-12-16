@@ -5458,6 +5458,7 @@ edit-dialogs	editing.jax	/*edit-dialogs*
 edit-files	editing.jax	/*edit-files*
 edit-intro	editing.jax	/*edit-intro*
 edit-no-break	usr_25.jax	/*edit-no-break*
+edit-paragraph-join	usr_25.jax	/*edit-paragraph-join*
 editing.txt	editing.jax	/*editing.txt*
 efm-%>	quickfix.jax	/*efm-%>*
 efm-entries	quickfix.jax	/*efm-entries*

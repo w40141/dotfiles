@@ -246,7 +246,7 @@ g:vimshell_data_directory		*g:vimshell_data_directory*
 		Specify directories to store vimshell configurations.  And
 		history file is saved in this directory.
 
-		Default value is "$XDG_CACHE_DIR/vimshell" or
+		Default value is "$XDG_CACHE_HOME/vimshell" or
 		expand("~/.cache/vimshell"); the absolute path of it.
 
 g:vimshell_temporary_directory		*g:vimshell_temporary_directory*
@@ -591,7 +591,7 @@ Normal mode key mappings.
 <Plug>(vimshell_execute_by_background)
 		Execute command by iexe.
 
-Visual mode key mappings.
+Insert mode key mappings.
 					*i_<Plug>(vimshell_command_complete)*
 <Plug>(vimshell_command_complete)
 		Start completion.
