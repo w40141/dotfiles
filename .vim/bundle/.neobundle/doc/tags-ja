@@ -2720,7 +2720,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :sbr	windows.jax	/*:sbr*
 :sbrewind	windows.jax	/*:sbrewind*
 :sbuffer	windows.jax	/*:sbuffer*
-:scrip	repeat.jax	/*:scrip*
+:scr	repeat.jax	/*:scr*
 :scripte	repeat.jax	/*:scripte*
 :scriptencoding	repeat.jax	/*:scriptencoding*
 :scriptnames	repeat.jax	/*:scriptnames*
@@ -2755,7 +2755,6 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :sfirst	windows.jax	/*:sfirst*
 :sh	various.jax	/*:sh*
 :shell	various.jax	/*:shell*
-:si	gui_w32.jax	/*:si*
 :sig	sign.jax	/*:sig*
 :sign	sign.jax	/*:sign*
 :sign-define	sign.jax	/*:sign-define*
@@ -2768,6 +2767,7 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :sign-unplace	sign.jax	/*:sign-unplace*
 :sil	various.jax	/*:sil*
 :silent	various.jax	/*:silent*
+:sim	gui_w32.jax	/*:sim*
 :simalt	gui_w32.jax	/*:simalt*
 :sl	various.jax	/*:sl*
 :sla	windows.jax	/*:sla*
