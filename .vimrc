@@ -728,16 +728,16 @@ else
   " シンタックスチェック {{{
   NeoBundle "scrooloose/syntastic"
   let g:syntastic_mode_map={ 'mode': 'active',
-                        \ 'active_filetypes': [],
+                        \ 'active_filetypes': ['C'],
                         \ 'passive_filetypes': ['python', 'python3', 'html']
                         \}
-  " let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+  let g:syntastic_python_checkers = ['flake8']
   let g:syntastic_ruby_checkers = ['rubocop']
   let g:syntastic_javascript_checkers = ['jshint']
 
   let g:syntastic_enable_signs = 1
-  let g:syntastic_error_symbol = '✗'
-  let g:syntastic_warning_symbol = '⚠'
+  let g:syntastic_error_symbol = '✗ '
+  let g:syntastic_warning_symbol = '⚠ '
   " }}}
 
   " 補完 {{{
@@ -1102,6 +1102,11 @@ else
         \ "filetypes": ["python", "python3"]
         \ }}
   nnoremap 8l  :call Flake8()<CR>
+  let g:flake8_error_marker='EE'     " set error marker to 'EE'
+  let g:flake8_warning_marker='WW'   " set warning marker to 'WW'
+  let g:flake8_pyflake_marker='tes'     " disable PyFlakes warnings
+  let g:flake8_complexity_marker=''  " disable McCabe complexity warnings
+  let g:flake8_naming_marker=''      " disable naming '''
   " 保存時に実行
   " autocmd BufWritePost *.py call Flake8()
   " }}}
