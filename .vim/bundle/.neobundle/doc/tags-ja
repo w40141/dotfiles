@@ -2247,6 +2247,8 @@ $VIMRUNTIME	starting.jax	/*$VIMRUNTIME*
 :ha	print.jax	/*:ha*
 :hardcopy	print.jax	/*:hardcopy*
 :help	helphelp.jax	/*:help*
+:helpc	helphelp.jax	/*:helpc*
+:helpclose	helphelp.jax	/*:helpclose*
 :helpf	helphelp.jax	/*:helpf*
 :helpfind	helphelp.jax	/*:helpfind*
 :helpg	helphelp.jax	/*:helpg*
@@ -7312,6 +7314,7 @@ printf()	eval.jax	/*printf()*
 printf-%	eval.jax	/*printf-%*
 printf-E	eval.jax	/*printf-E*
 printf-G	eval.jax	/*printf-G*
+printf-S	eval.jax	/*printf-S*
 printf-X	eval.jax	/*printf-X*
 printf-c	eval.jax	/*printf-c*
 printf-d	eval.jax	/*printf-d*
@@ -8794,6 +8797,7 @@ window-variable	eval.jax	/*window-variable*
 windowid-variable	eval.jax	/*windowid-variable*
 windows	windows.jax	/*windows*
 windows-3.1	os_win32.jax	/*windows-3.1*
+windows-icon	os_win32.jax	/*windows-icon*
 windows-intro	windows.jax	/*windows-intro*
 windows-starting	windows.jax	/*windows-starting*
 windows.txt	windows.jax	/*windows.txt*

@@ -728,16 +728,24 @@ else
   " シンタックスチェック {{{
   NeoBundle "scrooloose/syntastic"
   let g:syntastic_mode_map={ 'mode': 'active',
-                        \ 'active_filetypes': ['C'],
+                        \ 'active_filetypes': ['c'],
                         \ 'passive_filetypes': ['python', 'python3', 'html']
                         \}
-  let g:syntastic_python_checkers = ['flake8']
-  let g:syntastic_ruby_checkers = ['rubocop']
-  let g:syntastic_javascript_checkers = ['jshint']
 
-  let g:syntastic_enable_signs = 1
-  let g:syntastic_error_symbol = '✗ '
-  let g:syntastic_warning_symbol = '⚠ '
+  if ! empty(neobundle#get("syntastic"))
+    let g:syntastic_python_checkers = ['flake8']
+    let g:syntastic_ruby_checkers = ['rubocop']
+    let g:syntastic_javascript_checkers = ['jshint']
+    let g:syntastic_c_check_header = 1
+
+    let g:syntastic_enable_signs = 1
+    let g:syntastic_auto_loc_list = 2
+    let g:syntastic_check_on_open = 0
+    let g:syntastic_check_on_wq = 0
+
+    let g:syntastic_error_symbol = '✗ '
+    let g:syntastic_warning_symbol = '⚠ '
+  endif
   " }}}
 
   " 補完 {{{
@@ -842,8 +850,9 @@ else
         \ }}
   " }}}
 
-  " テキスト整形
+  " テキスト整形 {{{
   NeoBundle 'vim-scripts/Align'
+  " }}}
 
   " Yankring {{{
   " <C-p>, <C-n>
