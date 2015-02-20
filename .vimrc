@@ -394,7 +394,7 @@ nnoremap zl zL
 nnoremap zh zH
 
 "挿入モードでの移動
-" inoremap <C-k> <up>
+inoremap <C-k> <up>
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-l> <right>
@@ -471,10 +471,12 @@ nnoremap vy viwy
 " カーソル位置の単語をyankした文字に置き換える
 nnoremap vp viwpviwy
 
-cnoremap clean neobundleclean
-cnoremap update neobundleupdate
-cnoremap install neobundleinstall
-cnoremap install! neobundleinstall!
+cnoremap clean    NeoBundleClean
+cnoremap update   NeoBundleUpdate
+cnoremap install  NeoBundleInstall
+cnoremap install! NeoBundleInstall!
+cnoremap cu       NeoBundleCheckUpdate
+cnoremap check    NeoBundleCheck
 
 " コマンドモード時のカーソル移動
 cnoremap <c-a> <home>
@@ -730,7 +732,7 @@ else
   let g:syntastic_mode_map={ 'mode': 'active',
                         \ 'active_filetypes': ['c'],
                         \ 'passive_filetypes': ['python', 'python3', 'html']
-                        \}
+                        \ }
 
   if ! empty(neobundle#get("syntastic"))
     let g:syntastic_python_checkers = ['flake8']
@@ -799,7 +801,6 @@ else
     let g:neocomplcache_enable_underbar_completion = 1
     "}}}
   endif
-  " inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
   inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
   " }}}
 
@@ -811,10 +812,10 @@ else
         \   "insert": 1,
         \ }}
   " Plugin key-mappings.
-  " <C-k>で展開
-  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  " <C-i>で展開
+  imap <C-i>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-i>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-i>     <Plug>(neosnippet_expand_target)
   " SuperTab like snippets behavior.
   imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
         \ "\<Plug>(neosnippet_expand_or_jump)"

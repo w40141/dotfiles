@@ -1162,6 +1162,8 @@ i_<Plug>(unite_exit)	unite.txt	/*i_<Plug>(unite_exit)*
 i_<Plug>(unite_input_directory)	unite.txt	/*i_<Plug>(unite_input_directory)*
 i_<Plug>(unite_insert_leave)	unite.txt	/*i_<Plug>(unite_insert_leave)*
 i_<Plug>(unite_move_head)	unite.txt	/*i_<Plug>(unite_move_head)*
+i_<Plug>(unite_move_left)	unite.txt	/*i_<Plug>(unite_move_left)*
+i_<Plug>(unite_move_right)	unite.txt	/*i_<Plug>(unite_move_right)*
 i_<Plug>(unite_narrowing_input_history)	unite.txt	/*i_<Plug>(unite_narrowing_input_history)*
 i_<Plug>(unite_narrowing_path)	unite.txt	/*i_<Plug>(unite_narrowing_path)*
 i_<Plug>(unite_new_candidate)	unite.txt	/*i_<Plug>(unite_new_candidate)*

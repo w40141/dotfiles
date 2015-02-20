@@ -487,3 +487,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
 # }}}
+
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
