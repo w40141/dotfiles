@@ -340,7 +340,7 @@ let php_parent_error_open = 1
 nmap ,l :call PHPLint()
 
 " PHPLint
-function PHPLint()
+function! PHPLint()
   let result = system( &ft . ' -l ' . bufname(""))
   echo result
 endfunction
@@ -471,12 +471,12 @@ nnoremap vy viwy
 " カーソル位置の単語をyankした文字に置き換える
 nnoremap vp viwpviwy
 
-cnoremap clean    NeoBundleClean
-cnoremap update   NeoBundleUpdate
-cnoremap install  NeoBundleInstall
-cnoremap install! NeoBundleInstall!
-cnoremap cu       NeoBundleCheckUpdate
-cnoremap check    NeoBundleCheck
+" cnoremap clean    neobundleclean
+" cnoremap update   neobundleupdate
+" cnoremap install  neobundleinstall
+" cnoremap install! neobundleinstall!
+" cnoremap cu       neobundlecheckupdate
+" cnoremap check    NeoBundleCheck
 
 " コマンドモード時のカーソル移動
 cnoremap <c-a> <home>
@@ -777,31 +777,47 @@ else
     " neocomplete の設定"{{{
     let g:acp_enableAtStartup = 0
     let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_ignore_case = 1
+    " let g:neocomplete#enable_ignore_case = 1
     let g:neocomplete#enable_smart_case = 1
     let g:neocomplete#sources#syntax#min_keyword_length = 3
     let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+    let g:neocomplete#skip_auto_completion_time = ""
     if !exists('g:neocomplete#keyword_patterns')
       let g:neocomplete#keyword_patterns = {}
     endif
-    let g:neocomplete#keyword_patterns._ = '\h\w*'
+    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+    imap <expr><C-g>  neocomplete#undo_completion()
+    imap <expr><C-l>  neocomplete#complete_common_string()
+    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+    function! s:my_cr_function()
+      return neocomplete#close_popup() . "\<CR>"
+      " For no inserting <CR> key.
+      "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+    endfunction
+    " <TAB>: completion.
+    " <C-h>, <BS>: close popup and delete backword char.
+    imap <expr><C-h>  neocomplete#smart_close_popup()."\<C-h>"
+    imap <expr><BS>   neocomplete#smart_close_popup()."\<C-h>"
+    imap <expr><C-y>  neocomplete#close_popup()
+    imap <expr><C-e>  neocomplete#cancel_popup()
     "}}}
   else
     " neocomplcache の設定"{{{
-    let g:acp_enableatstartup = 0
     let g:neocomplcache_enable_at_startup = 1
-    let g:neocomplcache_enable_ignore_case = 1
     let g:neocomplcache_enable_smart_case = 1
+    let g:neocomplcache_enable_camel_case_completion = 1
+    let g:neocomplcache_enable_underbar_completion = 1
+    let g:acp_enableatstartup = 0
+    let g:neocomplcache_enable_ignore_case = 1
     let s:hooks = neobundle#get_hooks("neocomplcache.vim")
     if !exists('g:neocomplcache_keyword_patterns')
       let g:neocomplcache_keyword_patterns = {}
     endif
     let g:neocomplcache_keyword_patterns._ = '\h\w*'
-    let g:neocomplcache_enable_camel_case_completion = 1
-    let g:neocomplcache_enable_underbar_completion = 1
     "}}}
   endif
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+  inoremap <expr><TAB>    pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
   " }}}
 
   " neosnippet {{{
@@ -1024,7 +1040,7 @@ else
   " web関係 {{{
   " html5のコードをシンタックス表示する {{{
   NeoBundle 'hail2u/vim-css3-syntax'
-  NeoBundle 'taichouchou2/html5.vim'
+  " NeoBundle 'taichouchou2/html5.vim'
   " HTML 5 tags
   syn keyword htmlTagName contained article aside audio bb canvas command
   syn keyword htmlTagName contained datalist details dialog embed figure
