@@ -369,6 +369,9 @@ endfunction
 " map!/noremap! |    --    |  @@  |    @@    |     --     |
 "----------------------------------------------------------
 " ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
+" noremap は再帰的に定義しない。
+" map は再帰的に定義する。
+" 詳しくは→ http://cocopon.me/blog/?p=3871
 " 確認する場合:map
 " }}}
 
@@ -433,7 +436,7 @@ nnoremap  <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
 " vを二回で行末まで選択
 vnoremap v $h
 
-" TABにて対応ペアにジャンプ
+" tabにて対応ペアにジャンプ
 nnoremap <Tab> %
 vnoremap <Tab> %
 
@@ -861,10 +864,7 @@ else
   " gca 行末にコメントアウト
   " gco カーソル行の下にコメントアウト
   " gcO カーソル行の上にコメントアウト
-  NeoBundleLazy 'tyru/caw.vim.git', {
-        \ 'autoload': {
-        \   'insert': 1,
-        \ }}
+  NeoBundle 'tyru/caw.vim.git'
   " }}}
 
   " テキスト整形 {{{
@@ -970,7 +970,7 @@ else
 
   " }}}
 
-  " quickhl:任意の単語をハイライトにする {{{
+  " quickhl:任意の単語をハイライトにする m {{{
   " <Space>m でカーソル下の単語、もしくは選択した範囲のハイライトを行う
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
