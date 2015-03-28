@@ -593,6 +593,7 @@ autocmd MyAutoCmd FileType help,qf nnoremap <buffer> q <C-w>c
 " 各プラグイン {{{
 
 " NeoBundle {{{
+" https://github.com/Shougo/neobundle.vim
 
 " 遅延読み込みの方法 {{{
 " NeoBundleLazy '{ repository }', {
@@ -627,7 +628,12 @@ else
   call neobundle#end()
   " }}}
 
-  " vimproc非同期通信を可能にする {{{
+
+  " }}}
+
+  " vimproc {{{
+  " https://github.com/Shougo/vimproc.vim
+  " 非同期通信を可能にする
   " 'build'が指定されているのでインストール時に自動的に
   " 指定されたコマンドが実行され vimproc がコンパイルされる
   NeoBundle "Shougo/vimproc", {
@@ -639,9 +645,7 @@ else
         \ }}
   " }}}
 
-  " }}}
-
-" ファイラー {{{
+  " ファイラー {{{
 
   " Unite {{{
   " https://github.com/Shougo/unite.vim
@@ -689,6 +693,7 @@ else
   " }}}
 
   "vimfiler {{{
+  "https://github.com/Shougo/vimfiler.vim
   NeoBundleLazy "Shougo/vimfiler", {
         \ "depends": ["Shougo/unite.vim"],
         \ "autoload": {
@@ -722,6 +727,7 @@ else
   " }}}
 
   " vimshell {{{
+  " https://github.com/Shougo/vimshell.vim
   NeoBundleLazy 'Shougo/vimshell', {
         \ 'depends' : 'Shougo/vimproc',
         \ 'autoload' : {
@@ -733,11 +739,15 @@ else
         \ }}
   " }}}
 
+  " nerdtree {{{
+  " https://github.com/scrooloose/nerdtree
   NeoBundle 'scrooloose/nerdtree'
+  " }}}
 
   " }}}
 
-  " シンタックスチェック {{{
+  " syntastic {{{
+  " https://github.com/scrooloose/syntastic
   NeoBundle "scrooloose/syntastic"
   let g:syntastic_mode_map={ 'mode': 'active',
                         \ 'active_filetypes': ['c'],
@@ -762,7 +772,9 @@ else
 
   " 補完 {{{
 
-  " neocomplete {{{
+  " neocomplete & neocomplcache {{{
+  " https://github.com/Shougo/neocomplete.vim
+  " https://github.com/Shougo/neocomplcache.vim
   function! s:meet_neocomplete_requirements()
     return has('lua') && (v:version > 703 || (v:version == 703 && has('patch885')))
   endfunction
@@ -831,6 +843,10 @@ else
   " }}}
 
   " neosnippet {{{
+  " https://github.com/honza/vim-snippets
+  " https://github.com/Shougo/neosnippet-snippets
+  " https://github.com/Shougo/neosnippet.vim
+  NeoBundle 'honza/vim-snippets'
   NeoBundle 'Shougo/neosnippet-snippets'
   NeoBundleLazy "Shougo/neosnippet", {
         \ "depends": ["honza/vim-snippets"],
@@ -864,39 +880,45 @@ else
 
   " 編集補助 {{{
 
-  " コメントアウト {{{
+  " caw コメントアウト {{{
+  " https://github.com/tyru/caw.vim/
   " gcc コメントアウト
   " gci 文の頭からコメントアウト
   " gcI 行頭からコメントアウト
   " gca 行末にコメントアウト
   " gco カーソル行の下にコメントアウト
   " gcO カーソル行の上にコメントアウト
-  NeoBundle 'tyru/caw.vim.git'
+  NeoBundle 'tyru/caw.vim'
   " }}}
 
   " テキスト整形 {{{
-  NeoBundle 'vim-scripts/Align'
+  " NeoBundle 'vim-scripts/Align'
   " }}}
 
   " Yankring {{{
+  " https://github.com/vim-scripts/YankRing.vim
   " <C-p>, <C-n>
   NeoBundle 'vim-scripts/YankRing.vim'
   " }}}
 
-  "switch : true/false切り替え (+/-) {{{
+  " switch {{{
+  "true/false切り替え (+/-)
   NeoBundleLazy 'AndrewRadev/switch.vim', {
         \ "autoload" : {
         \   "commands" : "Switch",
         \ }}
   " }}}
 
-  " 囲まれているものの編集補助 {{{
+  " surround {{{
+  " https://github.com/tpope/vim-surround
+  " 囲まれているものの編集補助
   " ヴィジュアルモードで^^間を選択すると
   " This is ^a selected text^.  S@    This is @a selected text@.
   NeoBundle 'tpope/vim-surround'
   " }}}
 
   " clever-f {{{
+  " https://github.com/rhysd/clever-f.vim
   " f@でカーソルから次の@まで移動できる
   " その後はf連打で文字移動
   NeoBundleLazy 'rhysd/clever-f.vim', {
@@ -908,14 +930,16 @@ else
   " }}}
 
   " Tasklist {{{
-  NeoBundleLazy "vim-scripts/TaskList.vim", {
-        \ "autoload": {
-        \   "mappings": ['<Plug>TaskList'],
-        \}}
-  nmap <Leader>T <plug>TaskList
+  " NeoBundleLazy "vim-scripts/TaskList.vim", {
+  "       \ "autoload": {
+  "       \   "mappings": ['<Plug>TaskList'],
+  "       \}}
+  " nmap <Leader>T <plug>TaskList
   " }}}
 
-  " クラスアウトライン {{{
+  " tagbar {{{
+  " https://github.com/majutsushi/tagbar
+  " クラスアウトライン
   NeoBundleLazy 'majutsushi/tagbar', {
         \ "autload": {
         \   "commands": ["TagbarToggle"],
@@ -927,6 +951,7 @@ else
   " }}}
 
   " GundoToggle {{{
+  " https://github.com/sjl/gundo.vim
   NeoBundleLazy 'sjl/gundo.vim', {
         \ "autoload": {
         \ "commands": ["GundoToggle"]
@@ -934,20 +959,31 @@ else
   nnoremap <Leader>g :GundoToggle<CR>
   " }}}
 
-  " git {{{
+  " git関連 {{{
+
+  " gist-vim {{{
+  " https://github.com/mattn/gist-vim
   NeoBundleLazy "mattn/gist-vim", {
         \ "depends": ["mattn/webapi-vim"],
         \ "autoload": {
         \   "commands": ["Gist"],
         \ }}
+  " }}}
 
+  " fugitive {{{
+  " https://github.com/tpope/vim-fugitive
   NeoBundle "tpope/vim-fugitive"
+  " }}}
 
+  " gitv {{{
+  " https://github.com/gregsexton/gitv
   NeoBundleLazy "gregsexton/gitv", {
         \ "depends": ["tpope/vim-fugitive"],
         \ "autoload": {
         \   "commands": ["Gitv"],
         \ }}
+  " }}}
+
   " }}}
 
   " インデントの可視化"{{{
@@ -969,6 +1005,7 @@ else
   " }}}
 
   " indentLine {{{
+  " https://github.com/Yggdroot/indentLine
   NeoBundle "Yggdroot/indentLine"
   let g:indentLine_color_term = 111
   let g:indentLine_color_gui = '#708090'
@@ -977,7 +1014,9 @@ else
 
   " }}}
 
-  " quickhl:任意の単語をハイライトにする m {{{
+  " quickhl {{{
+  " https://github.com/t9md/vim-quickhl
+  " 任意の単語をハイライトにする
   " <Space>m でカーソル下の単語、もしくは選択した範囲のハイライトを行う
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
@@ -992,8 +1031,10 @@ else
   xmap <Space>M <Plug>(quickhl-manual-reset)
   " }}}
 
-  " quickrun : vim上で実行 {{{
-  " :QuickRun, \r
+  " quickrun {{{
+  " https://github.com/thinca/vim-quickrun
+  " vim上で実行
+  " :QuickRun or \r
   " 新規画面を右に出し、結果表示
   NeoBundleLazy "thinca/vim-quickrun", {
         \ "autoload": {
@@ -1011,41 +1052,45 @@ else
   " }}}
 
   " メモ {{{
-  NeoBundle 'fuenor/qfixgrep.git'
-  NeoBundle 'glidenote/memolist.vim'
-  " 新規作成
-  noremap ,mn :MemoNew<CR>
-  " メモ一覧
-  noremap ,ml  :MemoList<CR>
-  " メモ検索
-  noremap ,mg  :MemoGrep<CR>
-  " 保存先
-  let g:memolist_path="~/Documents/memo"
-  " 形式
-  let g:memolist_memo_suffix="txt"
-  " タグの有効化
-  let g:memolist_prompt_tags=1
-  " カテゴリの有効化
-  let g:memolist_prompt_categories=1
-  let g:memolist_qfixgrep=1
-  let g:memolist_vimfiler=1
+  " NeoBundle 'fuenor/qfixgrep.git'
+  " NeoBundle 'glidenote/memolist.vim'
+  " " 新規作成
+  " noremap ,mn :MemoNew<CR>
+  " " メモ一覧
+  " noremap ,ml  :MemoList<CR>
+  " " メモ検索
+  " noremap ,mg  :MemoGrep<CR>
+  " " 保存先
+  " let g:memolist_path="~/Documents/memo"
+  " " 形式
+  " let g:memolist_memo_suffix="txt"
+  " " タグの有効化
+  " let g:memolist_prompt_tags=1
+  " " カテゴリの有効化
+  " let g:memolist_prompt_categories=1
+  " let g:memolist_qfixgrep=1
+  " let g:memolist_vimfiler=1
   " }}}
 
-  " URLを開いたり、ググったり出来る {{{
+  " open-browser {{{
+  " https://github.com/tyru/open-browser.vim
+  " URLを開いたり、ググったり出来る
   NeoBundleLazy "tyru/open-browser.vim", {
         \   'autoload' : {
         \       'functions' : "OpenBrowser",
         \       'commands'  : ["OpenBrowser", "OpenBrowserSearch"],
         \       'mappings'  : "<Plug>(openbrowser-smart-search)"
         \   }}
-
   " カーソル下のURLをブラウザで開く
   nmap <Leader>o <Plug>(openbrowser-smart-search)
   vmap <Leader>o <Plug>(openbrowser-smart-search)
   " }}}
 
   " web関係 {{{
-  " html5のコードをシンタックス表示する {{{
+
+  " vim-css3-syntax {{{
+  " https://github.com/hail2u/vim-css3-syntax
+  " html5のコードをシンタックス表示する
   NeoBundle 'hail2u/vim-css3-syntax'
   " NeoBundle 'taichouchou2/html5.vim'
   " HTML 5 tags
@@ -1065,7 +1110,9 @@ else
   syn match   htmlArg contained "\s*data-[-a-zA-Z0-9_]\+"
   " }}}
 
-  " html/CSS入力補助プラグイン {{{
+  " emmet {{{
+  " https://github.com/mattn/emmet-vim
+  " html/CSS入力補助プラグイン
   NeoBundle 'mattn/emmet-vim'
   let g:user_emmet_mode = 'a'
   " how to use
@@ -1091,10 +1138,8 @@ else
   augroup END
   " }}}
 
-  " php-neocomplete {{{
-  " NeoBundle 'violetyk/neocomplete-php.vim'
-  " let g:neocomplete_php_locale = 'ja'
-
+  " neocomplete-php {{{
+  " https://github.com/violetyk/neocomplete-php.vim
   NeoBundleLazy 'violetyk/neocomplete-php.vim', {
         \ "autoload": {
         \ "fileyypes": ["php"]
@@ -1121,7 +1166,10 @@ else
   " }}}
 
   " python関係 {{{
-  " pythonの構文エラーの検出 {{{
+
+  " pyflakes {{{
+  " https://github.com/kevinw/pyflakes-vim
+  " pythonの構文エラーの検出
   NeoBundleLazy "kevinw/pyflakes-vim", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
@@ -1129,7 +1177,9 @@ else
   let g:pyflakes_use_quickfix=0
   " }}}
 
-  " pythonのコーディング規約チェック {{{
+  " flake8 {{{
+  " https://github.com/nvie/vim-flake8
+  " pythonのコーディング規約チェック
   NeoBundleLazy "nvie/vim-flake8", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
@@ -1154,21 +1204,27 @@ else
   " autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
   " }}}
 
-  " Djangoを正しくVimで読み込めるようにする {{{
+  " Django {{{
+  " https://github.com/lambdalisue/vim-django-support
+  " Djangoを正しくVimで読み込めるようにする
   NeoBundleLazy "lambdalisue/vim-django-support", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   " }}}
 
-  " Vimで正しくvirtualenvを処理できるようにする {{{
+  " virtualenv {{{
+  " https://github.com/jmcantrell/vim-virtualenv
+  " Vimで正しくvirtualenvを処理できるようにする
   NeoBundleLazy "jmcantrell/vim-virtualenv", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   " }}}
 
-  " python補完プラグイン {{{
+  " jedi {{{
+  " https://github.com/davidhalter/jedi-vim
+  " python補完プラグイン
   NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"],
@@ -1191,7 +1247,9 @@ else
   " }}}
 
   " Ruby & Rails 関係 {{{
-  " Rails向けのコマンド {{{
+
+  " vim-rails {{{
+  " Rails向けのコマンド
   NeoBundleLazy "tpope/vim-rails", {
         \ "autoload": {
         \ "filetypes": ["haml", "ruby", "eruby"],
