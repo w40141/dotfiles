@@ -644,17 +644,12 @@ else
 " ファイラー {{{
 
   " Unite {{{
+  " https://github.com/Shougo/unite.vim
   NeoBundleLazy "Shougo/unite.vim", {
         \ "autoload": {
         \   "commands": ["Unite", "UniteWithBufferDir"]
         \ }}
-  " }}}
 
-  " unite-outline {{{
-  NeoBundleLazy 'h1mesuke/unite-outline', {
-        \ "autoload": {
-        \   "unite_sources": ["outline"],
-        \ }}
   nnoremap [unite] <Nop>
   nmap ,u [unite]
   nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -684,6 +679,15 @@ else
   endfunction
   " }}}
 
+  " unite-outline {{{
+  " https://github.com/h1mesuke/unite-outline/wiki
+  NeoBundleLazy 'h1mesuke/unite-outline', {
+        \ "autoload": {
+        \   "unite_sources": ["outline"],
+        \ }}
+  nnoremap <silent> <Space>uo   :<C-u>Unite -no-quit -vertical -winwidth=30 outline<CR>
+  " }}}
+
   "vimfiler {{{
   NeoBundleLazy "Shougo/vimfiler", {
         \ "depends": ["Shougo/unite.vim"],
@@ -692,6 +696,7 @@ else
         \   "mappings": ['<Plug>(vimfiler_switch)'],
         \   "explorer": 1,
         \ }}
+
   nnoremap <Leader>e :VimFilerExplorer<CR>
   " close vimfiler automatically when there are only vimfiler open
   autocmd MyAutoCmd BufEnter * if (winnr('$') == 1 && &filetype ==# 'vimfiler') | q | endif
@@ -727,6 +732,8 @@ else
         \   'mappings' : ['<Plug>(vimshell_']
         \ }}
   " }}}
+
+  NeoBundle 'scrooloose/nerdtree'
 
   " }}}
 
