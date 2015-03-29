@@ -880,7 +880,7 @@ else
 
   " 編集補助 {{{
 
-  " caw コメントアウト {{{
+  " caw : コメントアウト {{{
   " https://github.com/tyru/caw.vim/
   " gcc コメントアウト
   " gci 文の頭からコメントアウト
@@ -901,25 +901,23 @@ else
   NeoBundle 'vim-scripts/YankRing.vim'
   " }}}
 
-  " switch {{{
-  "true/false切り替え (+/-)
+  " switch : true/false切り替え (+/-) {{{
+  " https://github.com/AndrewRadev/switch.vim
   NeoBundleLazy 'AndrewRadev/switch.vim', {
         \ "autoload" : {
         \   "commands" : "Switch",
         \ }}
   " }}}
 
-  " surround {{{
+  " surround : 囲まれているものの編集補助 {{{
   " https://github.com/tpope/vim-surround
-  " 囲まれているものの編集補助
   " ヴィジュアルモードで^^間を選択すると
   " This is ^a selected text^.  S@    This is @a selected text@.
   NeoBundle 'tpope/vim-surround'
   " }}}
 
-  " clever-f {{{
+  " clever-f : f@でカーソルから次の@まで移動できる {{{
   " https://github.com/rhysd/clever-f.vim
-  " f@でカーソルから次の@まで移動できる
   " その後はf連打で文字移動
   NeoBundleLazy 'rhysd/clever-f.vim', {
         \ "autoload" : {
@@ -935,19 +933,6 @@ else
   "       \   "mappings": ['<Plug>TaskList'],
   "       \}}
   " nmap <Leader>T <plug>TaskList
-  " }}}
-
-  " tagbar {{{
-  " https://github.com/majutsushi/tagbar
-  " クラスアウトライン
-  NeoBundleLazy 'majutsushi/tagbar', {
-        \ "autload": {
-        \   "commands": ["TagbarToggle"],
-        \ },
-        \ "build": {
-        \   "mac": "brew install ctags",
-        \ }}
-  nmap <Leader>t :TagbarToggle<CR>
   " }}}
 
   " GundoToggle {{{
@@ -1014,9 +999,8 @@ else
 
   " }}}
 
-  " quickhl {{{
+  " quickhl : 任意の単語をハイライトにする {{{
   " https://github.com/t9md/vim-quickhl
-  " 任意の単語をハイライトにする
   " <Space>m でカーソル下の単語、もしくは選択した範囲のハイライトを行う
   " 再度 <Space>m を行うとカーソル下のハイライトを解除する
   " これは複数の単語のハイライトを行う事もできる
@@ -1031,9 +1015,8 @@ else
   xmap <Space>M <Plug>(quickhl-manual-reset)
   " }}}
 
-  " quickrun {{{
+  " quickrun : vim上で実行 {{{
   " https://github.com/thinca/vim-quickrun
-  " vim上で実行
   " :QuickRun or \r
   " 新規画面を右に出し、結果表示
   NeoBundleLazy "thinca/vim-quickrun", {
@@ -1072,9 +1055,8 @@ else
   " let g:memolist_vimfiler=1
   " }}}
 
-  " open-browser {{{
+  " open-browser : URLを開いたり、ググったり出来る {{{
   " https://github.com/tyru/open-browser.vim
-  " URLを開いたり、ググったり出来る
   NeoBundleLazy "tyru/open-browser.vim", {
         \   'autoload' : {
         \       'functions' : "OpenBrowser",
@@ -1167,9 +1149,8 @@ else
 
   " python関係 {{{
 
-  " pyflakes {{{
+  " pyflakes : pythonの構文エラーの検出 {{{
   " https://github.com/kevinw/pyflakes-vim
-  " pythonの構文エラーの検出
   NeoBundleLazy "kevinw/pyflakes-vim", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
@@ -1177,9 +1158,8 @@ else
   let g:pyflakes_use_quickfix=0
   " }}}
 
-  " flake8 {{{
+  " flake8 : pythonのコーディング規約チェック {{{
   " https://github.com/nvie/vim-flake8
-  " pythonのコーディング規約チェック
   NeoBundleLazy "nvie/vim-flake8", {
         \ "autoload": {
         \ "filetypes": ["python", "python3"]
@@ -1194,7 +1174,7 @@ else
   " autocmd BufWritePost *.py call Flake8()
   " }}}
 
-  " pythonの自動修正 {{{
+  " vim-autopep8 : pythonの自動修正 {{{
   " NeoBundleLazy "tell-k/vim-autopep8", {
   "       \ "autoload": {
   "       \ "filetypes": ["python", "python3"]
@@ -1204,27 +1184,24 @@ else
   " autocmd FileType python map <buffer> <F3> :call Autopep8()<CR>
   " }}}
 
-  " Django {{{
+  " vim-django-support : Djangoを正しくVimで読み込めるようにする {{{
   " https://github.com/lambdalisue/vim-django-support
-  " Djangoを正しくVimで読み込めるようにする
   NeoBundleLazy "lambdalisue/vim-django-support", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   " }}}
 
-  " virtualenv {{{
+  " vim-virtualenv : Vimで正しくvirtualenvを処理できるようにする {{{
   " https://github.com/jmcantrell/vim-virtualenv
-  " Vimで正しくvirtualenvを処理できるようにする
   NeoBundleLazy "jmcantrell/vim-virtualenv", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"]
         \ }}
   " }}}
 
-  " jedi {{{
+  " jedi-vim : python補完プラグイン {{{
   " https://github.com/davidhalter/jedi-vim
-  " python補完プラグイン
   NeoBundleLazy "davidhalter/jedi-vim", {
         \ "autoload": {
         \   "filetypes": ["python", "python3", "djangohtml"],
@@ -1244,11 +1221,13 @@ else
     let g:jedi#goto_assigments_command = '<Leader>G'
   endfunction
   " }}}
+
   " }}}
 
   " Ruby & Rails 関係 {{{
 
   " vim-rails {{{
+  " https://github.com/tpope/vim-rails
   " Rails向けのコマンド
   NeoBundleLazy "tpope/vim-rails", {
         \ "autoload": {
@@ -1256,13 +1235,15 @@ else
         \ }}
   " }}}
 
-  " Ruby向けにendを自動挿入 {{{
+  " vim-endwise : Ruby向けにendを自動挿入 {{{
+  " https://github.com/tpope/vim-endwise
   NeoBundleLazy 'alpaca-tc/vim-endwise.git', {
         \ 'autoload' : {
         \ "filetypes": ["haml", "ruby", "eruby"],
         \ }}
   let g:endwise_no_mappings=1
   " }}}
+
   " }}}
 
   " カラースキーム {{{
@@ -1288,13 +1269,17 @@ else
   colorscheme railscasts
   " }}}
 
-  " ステータスライン表示 {{{
+  " lightline : ステータスライン表示 {{{
+  " https://github.com/itchyny/lightline.vim
+  " https://github.com/osyo-manga/vim-anzu
+  " https://github.com/majutsushi/tagbar
+  " https://github.com/airblade/vim-gitgutter
   NeoBundle 'itchyny/lightline.vim'
   NeoBundle 'osyo-manga/vim-anzu'
   NeoBundle 'majutsushi/tagbar'
   NeoBundle 'airblade/vim-gitgutter'
 
-  " git表示関連"{{{
+  " ステータスライン表示関連"{{{
   let g:gitgutter_sign_added = '✚'
   let g:gitgutter_sign_modified = '➜'
   let g:gitgutter_sign_removed = '✘'
@@ -1411,7 +1396,11 @@ else
 
   " その他"{{{
 
-  " Twitter {{{
+  " TweetVim {{{
+  " https://github.com/basyura/TweetVim
+  " https://github.com/mattn/webapi-vim
+  " https://github.com/basyura/twibill.vim
+  " https://github.com/basyura/bitly.vim
   NeoBundle 'basyura/TweetVim'
   NeoBundle 'mattn/webapi-vim'
   NeoBundle 'basyura/twibill.vim'
@@ -1467,7 +1456,9 @@ else
   " let g:ref_phpmanual_path=$HOME.'~/refs/php-chunked-xhtml'
   " }}}
 
-  " バッファ一覧を表示し、ショートカットを開ける {{{
+  " EasyBuffer : バッファ一覧を表示し、ショートカットを開ける {{{
+  " https://github.com/troydm/easybuffer.vim
+  " バッファ一覧を表示し、ショートカットを開ける
   " :EasyBuffer
   NeoBundleLazy 'troydm/easybuffer.vim', {
         \ 'autoload': {
@@ -1476,6 +1467,7 @@ else
   " }}}
 
   " scouter : vimmerの戦闘力(vimrcの行数)を計測する {{{
+  " https://github.com/thinca/vim-scouter
   "   100行以下  : 初心者
   "   500行以下  : 初級者
   "   1000行以下 : 中級者
@@ -1500,5 +1492,6 @@ endif
 " ファイルタイププラグインおよびインデントを有効化
 syntax on
 filetype plugin indent on
+
 " }}}
 "--------------------
