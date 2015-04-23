@@ -18,7 +18,7 @@ dotfiles
 3. Neobundle install  
 
 		$ mkdir -p ~/.vim/bundle  
-		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bunedle/neobundle.vim
+		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 		
     >http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310  
     >https://github.com/Shougo/neobundle.vim  
