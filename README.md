@@ -1,4 +1,4 @@
-dotfiles
+dotfiles(Mac OS)
 -------------
 
 **If you don't install brew, zsh, and git, you should install them.**  
@@ -15,7 +15,7 @@ dotfiles
 	Next, you install zsh and git.  
 	`$ brew install zsh git`
 
-3. Neobundle install  
+3. Install Neobundle  
 
 		$ mkdir -p ~/.vim/bundle  
 		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
