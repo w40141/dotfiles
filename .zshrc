@@ -1,7 +1,7 @@
 # -------------------------------------
 # 環境変数
 # -------------------------------------
-
+# hogehoge
 # {{{
 # SSHで接続した先で日本語が使えるようにする
 export LC_CTYPE=en_US.UTF-8
@@ -151,14 +151,15 @@ export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:./.pyenv/versions/2.7.
 # -------------------------------------
 
 # {{{
-if [ -e /usr/local/share/zsh-completions ]; then
-    fpath=(/usr/local/share/zsh-completions $fpath)
-fi
+# if [ -e /usr/local/share/zsh-completions ]; then
+#     fpath=(/usr/local/share/zsh-completions $fpath)
+# fi
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+# fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit
 compinit -u
+zstyle ':completion:*:default' menu select=2
 
 # ファイル名の展開でディレクトリにマッチした場合末尾に/を付加
 setopt mark_dirs
@@ -177,8 +178,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 bindkey "^I" menu-complete
 
-zstyle ':completion:*:default' menu select=2
-
 # セパレータを設定する
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
@@ -188,6 +187,26 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*:warnings' format 'No matches for: %d'
 zstyle ':completion:*' group-name ''
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+
+# マッチ種別を別々に表示
+zstyle ':completion:*' group-name ''
+
+# 名前で色を付けるようにする
+autoload colors
+colors
+
+# LS_COLORSを設定しておく
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+# ファイル補完候補に色を付ける
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # }}}
 
 # -------------------------------------
@@ -195,15 +214,17 @@ zstyle ':completion:*' group-name ''
 # -------------------------------------
 
 # {{{
-# プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+
+# プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
 setopt prompt_subst
 
 autoload -U promptinit; promptinit
 autoload -Uz colors; colors
 autoload -Uz vcs_info
 autoload -Uz is-at-least
+# }}}
 
-# vcs_info 設定
+# vcs_info 設定 {{{
 
 RPROMPT=""
 
@@ -236,8 +257,9 @@ if is-at-least 4.3.10; then
     zstyle ':vcs_info:git:*' stagedstr "+"    # %c で表示する文字列
     zstyle ':vcs_info:git:*' unstagedstr "-"  # %u で表示する文字列
 fi
+# }}}
 
-# hooks 設定
+# hooks 設定 {{{
 if is-at-least 4.3.11; then
     # git のときはフック関数を設定する
 
@@ -264,8 +286,9 @@ if is-at-least 4.3.11; then
 
     return 0
 }
+# }}}
 
-# untracked フィアル表示
+# untracked フィアル表示 {{{
 #
 # untracked ファイル(バージョン管理されていないファイル)がある場合は
 # unstaged (%u) に ? を表示
@@ -310,8 +333,9 @@ hook_com[unstaged]+='?'
         hook_com[misc]+="(p${ahead})"
     fi
 }
+# }}}
 
-# マージしていない件数表示
+# マージしていない件数表示 {{{
 #
 # master 以外のブランチにいる場合に、
 # 現在のブランチ上でまだ master にマージしていないコミットの件数を
@@ -380,8 +404,9 @@ fi
 RPROMPT="$prompt"
 }
 add-zsh-hook precmd _update_vcs_info_msg
+# }}}
 
-# プロンプト指定
+# プロンプト指定 {{{
 PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(Φ ω Φ )ﾅﾆｶﾞｼﾀｲﾝｼﾞｬ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
 
@@ -390,6 +415,8 @@ PROMPT2='[%n]> '
 
 # もしかして時のプロンプト指定
 SPROMPT="%{$fg[red]%}%{$suggest%}ξ (・∀ ・)ξ %B%r%b %{$fg[red]%}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
+# }}}
+
 # }}}
 
 # -------------------------------------
