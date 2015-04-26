@@ -6,7 +6,8 @@ dotfiles(Mac OS)
 How to install
 ----
 
-####1. Install brew
+1. Install brew
+
     Past this command.  
 
     ```
