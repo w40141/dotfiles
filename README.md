@@ -7,14 +7,13 @@ How to install
 ----
 
 ####1. Install brew  
+	Past this command.  
+	`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
-Past this command.  
-`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+	>[homebrew](http://brew.sh/index_ja.html)
 
->[homebrew](http://brew.sh/index_ja.html)
-
-You command `brew doctor` after installing brew.  
-If there are some errors, you must fix the errors.
+	You command `brew doctor` after installing brew.  
+	If there are some errors, you must fix the errors.
 
 ####2. Install zsh and git  
 	Next, you install zsh and git.  
