@@ -7,8 +7,9 @@ How to install
 ----
 
 ###1. Install brew  
+
 	Past this command.  
-`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+\`$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 	>[homebrew](http://brew.sh/index_ja.html)
 
 	You command `brew doctor` after installing brew.  
