@@ -59,21 +59,19 @@ setopt auto_pushd
 
 # ディレクトリ名を入力するだけでcdできるようにする
 setopt auto_cd
-
 setopt autopushd
 
 # 同じディレクトリは追加しない
 setopt pushd_ignore_dups
 
-# zsh 用の設定
-# . /usr/local/etc/autojump.zsh
+# autojump.zsh
+. /usr/local/etc/autojump.zsh
 
-# cd 時の仕掛け
 function precmd () {
-pwd=`pwd`
-echo "[^[[35m$pwd^[[m]"
-autojump -a $pwd
-echo $pwd > ~/.curdir
+    pwd=`pwd`
+    echo "[^[[35m$pwd^[[m]"
+    autojump -a $pwd
+    echo $pwd > ~/.curdir
 }
 
 function exists { which $1 &> /dev/null }
@@ -460,9 +458,9 @@ alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
 bindkey -e
 
 function cdup() {
-echo
-cd ..
-zle reset-prompt
+    echo
+    cd ..
+    zle reset-prompt
 }
 zle -N cdup
 bindkey '^K' cdup
@@ -478,15 +476,6 @@ bindkey "^R" history-incremental-search-backward
 # cdしたあとで、自動的に ls する
 function chpwd() { ls -a }
 
-# ^で"cd .."をする
-# function cdup(){     
-#     echo             
-#     cd ..            
-#     zle reset-prompt 
-# }                    
-# zle -N cdup          
-# bindkey "" cdup      
-
 # ターミナルのタイトルをカレントディレクトリにする
 case "${TERM}" in
     kterm*|xterm*)
@@ -497,14 +486,12 @@ case "${TERM}" in
 esac
 
 export LSCOLORS=exfxcxdxbxegedabagacad
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
 zstyle ':completion:*' list-colors \
     'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 # .zshrc.mineファイルの内容を読み込む
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
-
-# source ~/.zshrc.antigen
 
 # pyenv設定
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -512,5 +499,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # rbenv設定
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+cd `cat ~/.curdir`
+
 # }}}
-#
+
