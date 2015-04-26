@@ -6,7 +6,7 @@ dotfiles(Mac OS)
 How to install
 ----
 
-###1. Install brew  
+####1. Install brew  
 
 	Past this command.  
 `$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
@@ -16,11 +16,11 @@ How to install
 	You command `brew doctor` after installing brew.  
 	If there are some errors, you must fix the errors.
 
-###2. Install zsh and git  
+#####2. Install zsh and git  
 	Next, you install zsh and git.  
 	`$ brew install zsh git`
 
-###3. Install Neobundle  
+######3. Install Neobundle  
 
 		$ mkdir -p ~/.vim/bundle  
 		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -31,6 +31,6 @@ How to install
 ###4. git clone dotfiles  
 
 		$ cd ~/ # if windows use this > cd %HOMEPATH%  
- 		$ git clone https://github.com/w40141/dotfiles.git  
+    	$ git clone https://github.com/w40141/dotfiles.git  
 		$ cd dotfiles  
 		$ sh dotfilesLink.sh # if windows use this > mklink.bat  
