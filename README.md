@@ -5,7 +5,7 @@ dotfiles(Mac OS)
 
 1. Install brew  
 	You past this command.  
-	`$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"`  
+    '$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'  
 	>[homebrew](http://brew.sh/index_ja.html)
 
 	You command `brew doctor` after installing brew.  
