@@ -17,6 +17,9 @@ local WHITE=$'%{^[[1;37m%}'$
 
 # zstyle ':completion:*:*:コマンド:*:タグ' スタイル
 
+#for zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
 autoload -Uz compinit
 compinit -u
 
@@ -70,10 +73,10 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:warnings' format $RED'No matches for:'$YELLOW' %d'$DEFAULT
-zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
-zstyle ':completion:*:descriptions' format $YELLOW'Completing %B%d%b'$DEFAULT
-zstyle ':completion:*:corrections' format $YELLOW'%B%d '$RED'(errors: %e)%b'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
+zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{YELLOW}Completing %B%d%b'$DEFAULT
+zstyle ':completion:*:corrections' format '%F{YELLOW}%B%d''%F{RED}(errors: %e)%b'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 
 # マッチ種別を別々に表示
@@ -170,26 +173,6 @@ REPORTTIME=2
 
 # WORDCHARSで単語の区切りにならない文字を指定
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-# }}}
-
-# -------------------------------------
-# パス
-# -------------------------------------
-
-# {{{
-
-# 重複する要素を自動的に削除
-typeset -U path cdpath fpath manpath
-
-# sudo用のpathを設定
-typeset -xT SUDO_PATH sudo_path
-typeset -U sudo_path
-sudo_path=({/usr/local,/usr,}/sbin(N-/))
-
-export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:./.pyenv/versions/2.7.6/lib/python2.7/site-packages:$PATH"
-
-# path=(~/bin(N-/) /usr/local/bin(N-/) /usr/local/sbin(N-/) /usr/bin(N-/) ${path})
-
 # }}}
 
 # -------------------------------------
@@ -391,7 +374,7 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # プロンプト指定 {{{
 PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-?!(＠￣￢￣%)ノ Aal Izz Well)%{${reset_color}%} "
 
 # 顔文字
 # (*'-') (Φ ω Φ ) 
