@@ -6,7 +6,7 @@ dotfiles(Mac OS)
 ###How to install
 
 1. Install brew  
-	Past this command.  
+	Paste this command.  
 
 		$ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -21,7 +21,7 @@ dotfiles(Mac OS)
     	$ brew install zsh git
 
 3. Install Neobundle  
-	Past these commands.
+	Paste these commands.
 
 		$ mkdir -p ~/.vim/bundle  
 		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
@@ -30,7 +30,7 @@ dotfiles(Mac OS)
 	>https://github.com/Shougo/neobundle.vim  
 
 4. git clone dotfiles  
-	Past these commands.
+	Paste these commands.
 
     	$ cd ~/
 		$ git clone https://github.com/w40141/dotfiles.git  

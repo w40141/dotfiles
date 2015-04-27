@@ -1,23 +1,4 @@
 # -------------------------------------
-# 環境変数
-# -------------------------------------
-
-# {{{
-
-# SSHで接続した先で日本語が使えるようにする
-export LC_CTYPE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# エディタ for vim
-export EDITOR=/usr/local/bin/vim
-
-# ページャ
-export PAGER=/usr/local/bin/vimpager
-export MANPAGER=/usr/local/bin/vimpager
-
-# }}}
-
-# -------------------------------------
 # 補完機能の強化
 # -------------------------------------
 
@@ -25,10 +6,12 @@ export MANPAGER=/usr/local/bin/vimpager
 
 autoload -Uz compinit
 compinit -u
-zstyle ':completion:*:default' menu select=2
 
-# 補完候補を詰めて表示
-setopt list_packed
+# 補完候補を
+zstyle ':completion:*:default' menu select=1
+
+# 補完候補の色づけ
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # ファイル名の展開でディレクトリにマッチした場合末尾に/を付加
 setopt mark_dirs
@@ -42,12 +25,26 @@ setopt auto_param_slash
 # 語の途中でもカーソル位置で補完
 setopt complete_in_word
 
+# =command を command のパス名に展開する
+setopt equals
+
+# --prefix=/usr などの = 以降も補完
+setopt magic_equal_subst
+
+# カッコの対応など自動的に補完
+setopt auto_param_keys
+
+# 補完候補を詰めて表示
+setopt list_packed
+
 # 大小文字を区別しないで補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # セパレータを設定する
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
+
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # 補完メッセージを読みやすくする
 zstyle ':completion:*' verbose yes
@@ -56,7 +53,6 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
 zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
 zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
-zstyle ':completion:*:descriptions' format '%F{YELLOW}completing %B%d%b'$DEFAULT
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 
@@ -87,33 +83,24 @@ setopt re_match_pcre
 # ビープを鳴らさない
 setopt nobeep
 
-# 色を使う
-setopt prompt_subst
-
 # ^Dでログアウトしない。
 setopt ignoreeof
 
 # バックグラウンドジョブが終了したらすぐに知らせる。
 setopt no_tify
 
+# cd関連 {{{
 # 'cd' なしで移動する
 setopt auto_cd
+
+# 自動的にpushdする
 setopt auto_pushd
 
-# 重複するディレクトリは記録しないようにする
+DIRSTACKSIZE=100
+# }}}
+
+# スペルチェック
 setopt correct
-
-# 入力しているコマンド名が間違っている場合にもしかして：を出す。
-setopt correct
-
-# cd -[tab]で過去のディレクトリにひとっ飛びできるようにする
-setopt auto_pushd
-
-# 'cd -' [Tab] で以前移動したディレクトリに移動する
-setopt pushd_ignore_dups
-
-# 同じディレクトリは追加しない
-setopt pushd_ignore_dups
 
 # autojump.zsh {{{
 # . /usr/local/bin/autojump
@@ -155,12 +142,14 @@ setopt hist_no_store
 setopt hist_expand
 # }}}
 
+# 同じディレクトリはpushdに追加しない
+setopt pushd_ignore_dups
+
 # 時間のかかる処理が終わったら通知する
 REPORTTIME=2
 
 # WORDCHARSで単語の区切りにならない文字を指定
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
-
 # }}}
 
 # -------------------------------------
@@ -382,7 +371,9 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # プロンプト指定 {{{
 PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(Φ ω Φ )ﾅﾆｶﾞｼﾀｲﾝｼﾞｬ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-')ﾅﾆｶﾞｼﾀｲﾉ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
+
+# %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(Φ ω Φ )ﾅﾆｶﾞｼﾀｲﾝｼﾞｬ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
 
 # プロンプト指定(コマンドの続き)
 PROMPT2='[%n]> '
@@ -390,41 +381,6 @@ PROMPT2='[%n]> '
 # もしかして時のプロンプト指定
 SPROMPT="%{$fg[red]%}%{$suggest%}ξ (・∀ ・)ξ %B%r%b %{$fg[red]%}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
 # }}}
-
-# }}}
-
-# -------------------------------------
-# エイリアス
-# -------------------------------------
-
-# {{{
-
-# -n 行数表示, -I バイナリファイル無視, svn関係のファイルを無視
-alias grep="grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
-
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
-# ls
-alias ls="ls -G" # color for darwin
-alias l="ls -la"
-alias la="ls -a"
-alias l1="ls -1"
-
-alias gls="gls --color"
-
-alias rm="rm -i"
-alias rmd="rm -ir"
-
-# tree
-alias tree="tree -NC" # N: 文字化け対策, C:色をつける
-
-alias szsh="source ~/.zshrc"
-
-alias memo=""
-
-# pyenvでbrew doctorした時にでるwarningsをなくす
-alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
 
 # }}}
 
@@ -437,7 +393,16 @@ alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
 # emaceのキーバインド
 bindkey -e
 
+# 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
 bindkey "^I" menu-complete
+
+# <C-n>, <C-p>履歴から補完を行う {{{
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+# }}}
 
 # <^>上のディレクトリに移動する {{{
 function cdup() {
@@ -474,6 +439,41 @@ function _kill-backward-blank-word() {
 zle -N _kill-backward-blank-word
 bindkey '^Y' _kill-backward-blank-word
 # }}}
+
+# }}}
+
+# -------------------------------------
+# エイリアス
+# -------------------------------------
+
+# {{{
+
+# -n 行数表示, -I バイナリファイル無視, svn関係のファイルを無視
+alias grep="grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
+
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+# ls
+alias ls="ls -G" # color for darwin
+alias l="ls -la"
+alias la="ls -a"
+alias l1="ls -1"
+
+alias gls="gls --color"
+
+alias rm="rm -i"
+alias rmd="rm -ir"
+
+# tree
+alias tree="tree -NC" # N: 文字化け対策, C:色をつける
+
+alias szsh="source ~/.zshrc"
+
+alias memo=""
+
+# pyenvでbrew doctorした時にでるwarningsをなくす
+alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
 
 # }}}
 
