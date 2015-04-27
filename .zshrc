@@ -4,11 +4,24 @@
 
 # {{{
 
+# 色の定義 {{{
+local DEFAULT=$'%{^[[m%}'$
+local RED=$'%{^[[1;31m%}'$
+local GREEN=$'%{^[[1;32m%}'$
+local YELLOW=$'%{^[[1;33m%}'$
+local BLUE=$'%{^[[1;34m%}'$
+local PURPLE=$'%{^[[1;35m%}'$
+local LIGHT_BLUE=$'%{^[[1;36m%}'$
+local WHITE=$'%{^[[1;37m%}'$
+# }}}
+
+# zstyle ':completion:*:*:コマンド:*:タグ' スタイル
+
 autoload -Uz compinit
 compinit -u
 
 # 補完候補を
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select=2
 
 # 補完候補の色づけ
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -31,6 +44,9 @@ setopt equals
 # --prefix=/usr などの = 以降も補完
 setopt magic_equal_subst
 
+# カーソル位置は保持したままファイル名一覧を順次その場で表示
+setopt always_last_prompt
+
 # カッコの対応など自動的に補完
 setopt auto_param_keys
 
@@ -44,16 +60,20 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 zstyle ':completion:*' list-separator '-->'
 zstyle ':completion:*:manuals' separate-sections true
 
+# cdは親ディレクトリからカレントディレクトリを選択しないので表示させないようにする
 zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
 
 # 補完メッセージを読みやすくする
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
-zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b%f'$DEFAULT
+zstyle ':completion:*:warnings' format $RED'No matches for:'$YELLOW' %d'$DEFAULT
+zstyle ':completion:*:messages' format $YELLOW'%d'$DEFAULT
+zstyle ':completion:*:descriptions' format $YELLOW'Completing %B%d%b'$DEFAULT
+zstyle ':completion:*:corrections' format $YELLOW'%B%d '$RED'(errors: %e)%b'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 
 # マッチ種別を別々に表示
@@ -371,9 +391,10 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # プロンプト指定 {{{
 PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(*'-')ﾅﾆｶﾞｼﾀｲﾉ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
 
-# %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!(Φ ω Φ )ﾅﾆｶﾞｼﾀｲﾝｼﾞｬ?<!(＠￣￢￣%)ノ Aal Izz Well<)%{${reset_color}%} "
+# 顔文字
+# (*'-') (Φ ω Φ ) 
 
 # プロンプト指定(コマンドの続き)
 PROMPT2='[%n]> '
