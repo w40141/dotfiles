@@ -4,6 +4,16 @@
 
 # {{{
 
+#for zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+autoload -Uz compinit
+compinit -u
+
+# 名前で色を付けるようにする
+autoload colors
+colors
+
 # 色の定義 {{{
 local DEFAULT=$'%{^[[m%}'$
 local RED=$'%{^[[1;31m%}'$
@@ -15,13 +25,13 @@ local LIGHT_BLUE=$'%{^[[1;36m%}'$
 local WHITE=$'%{^[[1;37m%}'$
 # }}}
 
+# LS_COLORSを設定しておく
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+
+# ファイル補完候補に色を付ける
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 # zstyle ':completion:*:*:コマンド:*:タグ' スタイル
-
-#for zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
-
-autoload -Uz compinit
-compinit -u
 
 # 補完候補を
 zstyle ':completion:*:default' menu select=2
@@ -81,16 +91,6 @@ zstyle ':completion:*:options' description 'yes'
 
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
-
-# 名前で色を付けるようにする
-autoload colors
-colors
-
-# LS_COLORSを設定しておく
-export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-
-# ファイル補完候補に色を付ける
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # }}}
 
@@ -373,11 +373,13 @@ add-zsh-hook precmd _update_vcs_info_msg
 # }}}
 
 # プロンプト指定 {{{
-PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-?!(＠￣￢￣%)ノ Aal Izz Well)%{${reset_color}%} "
+# プロンプト指定
+PROMPT="
+%{${fg[yellow]}%}%~%{${reset_color}%}
+%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)%{${reset_color}%} "
 
 # 顔文字
-# (*'-') (Φ ω Φ ) 
+# (*'-') (Φ ω Φ ) (＠￣￢￣%)ノ Aal Izz Well
 
 # プロンプト指定(コマンドの続き)
 PROMPT2='[%n]> '
