@@ -3,6 +3,7 @@
 # -------------------------------------
 
 # {{{
+export LANG=jp_JP.UTF-8
 
 # SSHで接続した先で日本語が使えるようにする
 export LC_CTYPE=en_US.UTF-8
