@@ -3,42 +3,130 @@
 # -------------------------------------
 
 # {{{
-
 #for zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 autoload -Uz compinit
 compinit -u
 
+# color# {{{
 # 名前で色を付けるようにする
 autoload -Uz colors
 colors
 
 # 色の定義 {{{
-local DEFAULT=$'%{^[[m%}'$
-local RED=$'%{^[[1;31m%}'$
-local GREEN=$'%{^[[1;32m%}'$
-local YELLOW=$'%{^[[1;33m%}'$
-local BLUE=$'%{^[[1;34m%}'$
-local PURPLE=$'%{^[[1;35m%}'$
-local LIGHT_BLUE=$'%{^[[1;36m%}'$
-local WHITE=$'%{^[[1;37m%}'$
+# local DEFAULT=$'%{^[[m%}'$
+# local RED=$'%{^[[1;31m%}'$
+# local GREEN=$'%{^[[1;32m%}'$
+# local YELLOW=$'%{^[[1;33m%}'$
+# local BLUE=$'%{^[[1;34m%}'$
+# local PURPLE=$'%{^[[1;35m%}'$
+# local LIGHT_BLUE=$'%{^[[1;36m%}'$
+# local WHITE=$'%{^[[1;37m%}'$
+local DEFAULT=$'%{e[m%}'$
+local RED=$'%{e[1;31m%}'$
+local GREEN=$'%{e[1;32m%}'$
+local YELLOW=$'%{e[1;33m%}'$
+local BLUE=$'%{e[1;34m%}'$
+local PURPLE=$'%{e[1;35m%}'$
+local LIGHT_BLUE=$'%{e[1;36m%}'$
+local WHITE=$'%{e[1;37m%}'$
 # }}}
 
-# zstyle ':completion:*:*:コマンド:*:タグ' スタイル
-
+# LSCOLORSの指定 {{{
+# {{{
+# 01: ディレクトリ前景色
+# 02: ディレクトリ背景色
+# 03: シンボリックリンク前景色
+# 04: シンボリックリンク背景色
+# 05: ソケットファイル前景色
+# 06: ソケットファイル背景色
+# 07: FIFOファイル前景色
+# 08: FIFOファイル背景色
+# 09: 実行ファイル前景色
+# 10: 実行ファイル背景色
+# 11: ブロックスペシャルファイル前景色
+# 12: ブロックスペシャルファイル背景色
+# 13: キャラクタスペシャルファイル前景色
+# 14: キャラクタスペシャルファイル背景色
+# 15: setuidつき実行ファイル前景色
+# 16: setuidつき実行ファイル背景色
+# 17: setgidつき実行ファイル前景色
+# 18: setgidつき実行ファイル背景色
+# 19: スティッキビットありother書き込み権限つきディレクトリ前景色
+# 20: スティッキビットありother書き込み権限つきディレクトリ背景色
+# 21: スティッキビットなしother書き込み権限つきディレクトリ前景色
+# 22: スティッキビットなしother書き込み権限つきディレクトリ背景色
+# a: 黒
+# b: 赤
+# c: 緑
+# d: 茶
+# e: 青
+# f: マゼンタ
+# g: シアン
+# h: 白
+# A: 黒(太字)
+# B: 赤(太字)
+# C: 緑(太字)
+# D: 茶(太字)
+# E: 青(太字)
+# F: マゼンタ(太字)
+# G: シアン(太字)
+# H: 白(太字)
+# x: デフォルト色
+# }}}
 export LSCOLORS=exfxcxdxbxegedabagacad
+# }}}
 
-# LS_COLORSの設定
+# LS_COLORSの設定 {{{
+# {{{
+# di: ディレクトリ
+# ln: シンボリックリンク
+# so: ソケットファイル
+# pi: FIFOファイル
+# ex: 実行ファイル
+# bd: ブロックスペシャルファイル
+# cd: キャラクタスペシャルファイル
+# su: setuidつき実行ファイル
+# sg: setgidつき実行ファイル
+# tw: スティッキビットありother書き込み権限つきディレクトリ
+# ow: スティッキビットなしother書き込み権限つきディレクトリ
+# 00: なにもしない
+# 01: 太字化
+# 04: 下線
+# 05: 点滅
+# 07: 前背色反転
+# 08: 表示しない
+# 22: ノーマル化
+# 24: 下線なし
+# 25: 点滅なし
+# 27: 前背色反転なし
+# 30: 黒(前景色)
+# 31: 赤(前景色)
+# 32: 緑(前景色)
+# 33: 茶(前景色)
+# 34: 青(前景色)
+# 35: マゼンタ(前景色)
+# 36: シアン(前景色)
+# 37: 白(前景色)
+# 39: デフォルト(前景色)
+# 40: 黒(背景色)
+# 41: 赤(背景色)
+# 42: 緑(背景色)
+# 43: 茶(背景色)
+# 44: 青(背景色)
+# 45: マゼンタ(背景色)
+# 46: シアン(背景色)
+# 47: 白(背景色)
+# 49: デフォルト(背景色)
+# }}}
 export LS_COLORS=\
         'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# }}}
 
-# 補完候補を
-zstyle ':completion:*:default' menu select=2
+# }}}
 
-# 補完候補の色づけ
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
+# オプション {{{
 # ファイル名の展開でディレクトリにマッチした場合末尾に/を付加
 setopt mark_dirs
 
@@ -72,6 +160,11 @@ setopt list_packed
 # 補完候補にファイルの種類を表示
 setopt list_types
 
+# }}}
+
+# zstyle {{{
+# zstyle ':completion:*:*:コマンド:*:タグ' スタイル
+
 # 大小文字を区別しないで補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -84,19 +177,28 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
 
+# 補完候補を
+zstyle ':completion:*:default' menu select=2
+
+# 補完候補の色づけ
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+
 # 補完メッセージを読みやすくする
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:warnings' format '%F{RED}No matches for:''%F{YELLOW} %d'$DEFAULT
-zstyle ':completion:*:messages' format '%F{YELLOW}%d'$DEFAULT
-zstyle ':completion:*:descriptions' format '%F{YELLOW}Completing %B%d%b'$DEFAULT
-zstyle ':completion:*:corrections' format '%F{YELLOW}%B%d''%F{RED}(errors: %e)%b'$DEFAULT
+zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yellow} %d'$default
+zstyle ':completion:*:messages' format '%F{yellow}%d'$DEFAULT
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$DEFAULT
+zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$DEFAULT
 zstyle ':completion:*:options' description 'yes'
 
 # マッチ種別を別々に表示
 zstyle ':completion:*' group-name ''
+
+# }}}
 
 # }}}
 
@@ -105,10 +207,6 @@ zstyle ':completion:*' group-name ''
 # -------------------------------------
 
 # {{{
-
-# PCRE 互換の正規表現を使う
-# setopt re_match_pcre
-
 # ビープを鳴らさない
 setopt nobeep
 
@@ -119,13 +217,18 @@ setopt ignoreeof
 setopt no_tify
 
 # cd関連 {{{
+
 # 'cd' なしで移動する
 setopt auto_cd
 
 # 自動的にpushdする
-setopt auto_pushd
+# setopt auto_pushd
+
+# 同じディレクトリはpushdに追加しない
+setopt pushd_ignore_dups
 
 DIRSTACKSIZE=100
+
 # }}}
 
 # スペルチェック
@@ -169,16 +272,15 @@ setopt hist_no_store
 
 # 補完時にヒストリを自動的に展開
 setopt hist_expand
-# }}}
 
-# 同じディレクトリはpushdに追加しない
-setopt pushd_ignore_dups
+# }}}
 
 # 時間のかかる処理が終わったら通知する
 REPORTTIME=2
 
 # WORDCHARSで単語の区切りにならない文字を指定
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
 # }}}
 
 # -------------------------------------
@@ -186,6 +288,8 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 # -------------------------------------
 
 # {{{
+
+# 右プロンプト(git)指定# {{{
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
 setopt prompt_subst
@@ -378,11 +482,20 @@ add-zsh-hook precmd _update_vcs_info_msg
 
 # }}}
 
-# プロンプト指定 {{{
-# プロンプト指定
-PROMPT="
-%{${fg[yellow]}%}%~%{${reset_color}%}
+# }}}
+
+# 左プロンプト指定 {{{
+# rootとその他で分ける
+case "$UID" in
+    0)
+PROMPT="%{${fg[purple]}%}%~%{${reset_color}%}
+%(?.%{$fg[yellow]%}.%{$fg[green]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)%{${reset_color}%} "
+        ;;
+    *)
+PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
 %(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)%{${reset_color}%} "
+        ;;
+esac
 
 # 顔文字
 # (*'-') (Φ ω Φ ) (＠￣￢￣%)ノ Aal Izz Well
@@ -390,8 +503,9 @@ PROMPT="
 # プロンプト指定(コマンドの続き)
 PROMPT2='[%n]> '
 
-# もしかして時のプロンプト指定
-SPROMPT="%{$fg[red]%}%{$suggest%}ξ (・∀ ・)ξ %B%r%b %{$fg[yellow]%}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
+# もしかしてのプロンプト指定
+SPROMPT="%{$fg[red]%}%{$suggest%}ξ (・∀ ・)ξ %B%r%b %{$fg[reb]%}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
+
 # }}}
 
 # }}}
