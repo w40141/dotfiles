@@ -121,7 +121,7 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 # 49: デフォルト(背景色)
 # }}}
 export LS_COLORS=\
-        'di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+        'di=35:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 # }}}
 
 # }}}
@@ -190,9 +190,9 @@ zstyle ':completion:*' format '%B%d%b'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
 zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yellow} %d'$default
-zstyle ':completion:*:messages' format '%F{yellow}%d'$DEFAULT
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$DEFAULT
-zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$DEFAULT
+zstyle ':completion:*:messages' format '%F{yellow}%d'$default
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$default
+zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$default
 zstyle ':completion:*:options' description 'yes'
 
 # マッチ種別を別々に表示
@@ -221,14 +221,29 @@ setopt no_tify
 # 'cd' なしで移動する
 setopt auto_cd
 
+# 訪問済みのディレクトリに戻る {{{
+# cd -<NUM>
+# dirs -vで表示
+DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+    dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+    [[ -d $dirstack[1] ]] && cd $dirstack[1]
+fi
+chpwd() {
+    ls -Ga && ${(u)dirstack} >$DIRSTACKFILE
+}
+
+DIRSTACKSIZE=20
+
 # 自動的にpushdする
-# setopt auto_pushd
+setopt autopushd pushdsilent pushdtohome
 
 # 同じディレクトリはpushdに追加しない
-setopt pushd_ignore_dups
+setopt pushdignoredups
 
-DIRSTACKSIZE=100
-
+## This reverts the +/- operators.
+setopt pushdminus
+# }}}
 # }}}
 
 # スペルチェック
@@ -280,6 +295,21 @@ REPORTTIME=2
 
 # WORDCHARSで単語の区切りにならない文字を指定
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+# man {{{
+export MANPAGER='less -R'
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;32m") \
+        LESS_TERMCAP_me=$(printf "\e[1;33m") \
+        LESS_TERMCAP_se=$(printf "\e[1;34m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;35m") \
+        LESS_TERMCAP_ue=$(printf "\e[1;36m") \
+        LESS_TERMCAP_us=$(printf "\e[1;37m") \
+        man "$@"
+}
+# }}}
 
 # }}}
 
@@ -608,9 +638,6 @@ alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
 # -------------------------------------
 
 # {{{
-
-# cdしたあとで、自動的に ls する
-function chpwd() { ls -a }
 
 # ターミナルのタイトルをカレントディレクトリにする {{{
 case "${TERM}" in
