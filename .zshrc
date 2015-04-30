@@ -34,29 +34,30 @@ local WHITE=$'%{e[1;37m%}'$
 # }}}
 
 # LSCOLORSの指定 {{{
+export LSCOLORS=exfxcxdxbxegedabagacad
 # {{{
-# 01: ディレクトリ前景色
-# 02: ディレクトリ背景色
-# 03: シンボリックリンク前景色
-# 04: シンボリックリンク背景色
-# 05: ソケットファイル前景色
-# 06: ソケットファイル背景色
-# 07: FIFOファイル前景色
-# 08: FIFOファイル背景色
-# 09: 実行ファイル前景色
-# 10: 実行ファイル背景色
-# 11: ブロックスペシャルファイル前景色
-# 12: ブロックスペシャルファイル背景色
-# 13: キャラクタスペシャルファイル前景色
-# 14: キャラクタスペシャルファイル背景色
-# 15: setuidつき実行ファイル前景色
-# 16: setuidつき実行ファイル背景色
-# 17: setgidつき実行ファイル前景色
-# 18: setgidつき実行ファイル背景色
-# 19: スティッキビットありother書き込み権限つきディレクトリ前景色
-# 20: スティッキビットありother書き込み権限つきディレクトリ背景色
-# 21: スティッキビットなしother書き込み権限つきディレクトリ前景色
-# 22: スティッキビットなしother書き込み権限つきディレクトリ背景色
+# 01:e ディレクトリ前景色
+# 02:x ディレクトリ背景色
+# 03:f シンボリックリンク前景色
+# 04:x シンボリックリンク背景色
+# 05:c ソケットファイル前景色
+# 06:x ソケットファイル背景色
+# 07:d FIFOファイル前景色
+# 08:x FIFOファイル背景色
+# 09:b 実行ファイル前景色
+# 10:x 実行ファイル背景色
+# 11:e ブロックスペシャルファイル前景色
+# 12:g ブロックスペシャルファイル背景色
+# 13:e キャラクタスペシャルファイル前景色
+# 14:d キャラクタスペシャルファイル背景色
+# 15:a setuidつき実行ファイル前景色
+# 16:b setuidつき実行ファイル背景色
+# 17:a setgidつき実行ファイル前景色
+# 18:g setgidつき実行ファイル背景色
+# 19:a スティッキビットありother書き込み権限つきディレクトリ前景色
+# 20:c スティッキビットありother書き込み権限つきディレクトリ背景色
+# 21:a スティッキビットなしother書き込み権限つきディレクトリ前景色
+# 22:d スティッキビットなしother書き込み権限つきディレクトリ背景色
 # a: 黒
 # b: 赤
 # c: 緑
@@ -75,10 +76,11 @@ local WHITE=$'%{e[1;37m%}'$
 # H: 白(太字)
 # x: デフォルト色
 # }}}
-export LSCOLORS=exfxcxdxbxegedabagacad
 # }}}
 
 # LS_COLORSの設定 {{{
+export LS_COLORS=\
+        'di=35:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 # {{{
 # di: ディレクトリ
 # ln: シンボリックリンク
@@ -120,9 +122,46 @@ export LSCOLORS=exfxcxdxbxegedabagacad
 # 47: 白(背景色)
 # 49: デフォルト(背景色)
 # }}}
-export LS_COLORS=\
-        'di=35:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 # }}}
+
+# }}}
+
+# zstyle {{{
+# zstyle ':completion:*:*:コマンド:*:タグ' スタイル
+
+# 大小文字を区別しないで補完
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# セパレータを設定する
+zstyle ':completion:*' list-separator '-->'
+# zstyle ':completion:*:manuals' separate-sections true
+
+# cdは親ディレクトリからカレントディレクトリを選択しないので表示させないようにする
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+
+# 補完してほしくないファイルの指定
+zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
+
+# 補完候補を
+zstyle ':completion:*:default' menu select=1
+
+# 補完候補の色づけ
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
+
+# 補完メッセージを読みやすくする
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*' format '%B%d%b'
+zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
+zstyle ':completion:*:messages' format '%F{yellow}%d'$default
+zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yellow} %d'$default
+zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$default
+# zstyle ':completion:*:descriptions' format $YELLOW'completing %B%d%b'$DEFAULT
+zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$default
+zstyle ':completion:*:options' description 'yes'
+
+# マッチ種別を別々に表示
+zstyle ':completion:*' group-name ''
 
 # }}}
 
@@ -159,44 +198,6 @@ setopt list_packed
 
 # 補完候補にファイルの種類を表示
 setopt list_types
-
-# }}}
-
-# zstyle {{{
-# zstyle ':completion:*:*:コマンド:*:タグ' スタイル
-
-# 大小文字を区別しないで補完
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-# セパレータを設定する
-zstyle ':completion:*' list-separator '-->'
-zstyle ':completion:*:manuals' separate-sections true
-
-# cdは親ディレクトリからカレントディレクトリを選択しないので表示させないようにする
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-
-zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
-
-# 補完候補を
-zstyle ':completion:*:default' menu select=2
-
-# 補完候補の色づけ
-# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*:default' list-colors ${(s.:.)LSCOLORS}
-
-# 補完メッセージを読みやすくする
-zstyle ':completion:*' verbose yes
-zstyle ':completion:*' format '%B%d%b'
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _list _history
-zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yellow} %d'$default
-zstyle ':completion:*:messages' format '%F{yellow}%d'$default
-zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$default
-zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$default
-zstyle ':completion:*:options' description 'yes'
-
-# マッチ種別を別々に表示
-zstyle ':completion:*' group-name ''
 
 # }}}
 
@@ -297,6 +298,8 @@ REPORTTIME=2
 WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # man {{{
+# manの補完をセクション番号別にする
+zstyle ':completion:*:manuals' separate-sections true
 export MANPAGER='less -R'
 man() {
     env \
@@ -518,12 +521,12 @@ add-zsh-hook precmd _update_vcs_info_msg
 # rootとその他で分ける
 case "$UID" in
     0)
-PROMPT="%{${fg[purple]}%}%~%{${reset_color}%}
-%(?.%{$fg[yellow]%}.%{$fg[green]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)%{${reset_color}%} "
+PROMPT="${fg[purple]}%~${reset_color}
+%(?.$fg[yellow].$fg[green])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
     *)
-PROMPT="%{${fg[yellow]}%}%~%{${reset_color}%}
-%(?.%{$fg[green]%}.%{$fg[blue]%})%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)%{${reset_color}%} "
+PROMPT="${fg[yellow]}%~${reset_color}
+%(?.$fg[green].$fg[blue])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
 esac
 
@@ -534,7 +537,7 @@ esac
 PROMPT2='[%n]> '
 
 # もしかしてのプロンプト指定
-SPROMPT="%{$fg[red]%}%{$suggest%}ξ (・∀ ・)ξ %B%r%b %{$fg[reb]%}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
+SPROMPT="${fg[red]}%{$suggest%}ξ (・∀ ・)ξ %B%r%b ${fg[red]}ﾃﾞｽﾉ? [そう!(y), 違う!(n),a,e]:${reset_color} "
 
 # }}}
 
