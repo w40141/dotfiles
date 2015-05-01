@@ -9,10 +9,11 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -Uz compinit
 compinit -u
 
-# color# {{{
-# 名前で色を付けるようにする
 autoload -Uz colors
 colors
+
+# color {{{
+# 名前で色を付けるようにする
 
 # 色の定義 {{{
 # local DEFAULT=$'%{^[[m%}'$
@@ -156,7 +157,6 @@ zstyle ':completion:*' completer _expand _complete _match _prefix _approximate _
 zstyle ':completion:*:messages' format '%F{yellow}%d'$default
 zstyle ':completion:*:warnings' format '%F{red}No matches for:''%F{yellow} %d'$default
 zstyle ':completion:*:descriptions' format '%F{yellow}Completing %B%d%b'$default
-# zstyle ':completion:*:descriptions' format $YELLOW'completing %B%d%b'$DEFAULT
 zstyle ':completion:*:corrections' format '%F{yellow}%B%d''%F{red}(errors: %e)%b'$default
 zstyle ':completion:*:options' description 'yes'
 
@@ -322,7 +322,7 @@ man() {
 
 # {{{
 
-# 右プロンプト(git)指定# {{{
+# 右プロンプト(git)指定 {{{
 
 # プロンプトが表示されるたびにプロンプト文字列を評価、置換する {{{
 setopt prompt_subst
@@ -365,8 +365,8 @@ fi
 
 # hooks 設定 {{{
 
-# git のときはフック関数を設定する {{{
-if is-at-least 4.3.11; then
+if is-at-least 4.3.11; then #{{{
+    # git のときはフック関数を設定する
     # formats '(%s)-[%b]' '%c%u %m' , actionformats '(%s)-[%b]' '%c%u %m' '<!%a>'
     # のメッセージを設定する直前のフック関数
     # 今回の設定の場合はformat の時は2つ, actionformats の時は3つメッセージがあるので
@@ -378,24 +378,22 @@ if is-at-least 4.3.11; then
         git-nomerge-branch \
         git-stash-count
 
-# フックの最初の関数 {{{
-    # git の作業コピーのあるディレクトリのみフック関数を呼び出すようにする
-    # (.git ディレクトリ内にいるときは呼び出さない)
-    # .git ディレクトリ内では git status --porcelain などがエラーになるため
-    function +vi-git-hook-begin() {
+    function +vi-git-hook-begin() { #{{{
+        # フックの最初の関数
+        # git の作業コピーのあるディレクトリのみフック関数を呼び出すようにする
+        # (.git ディレクトリ内にいるときは呼び出さない)
+        # .git ディレクトリ内では git status --porcelain などがエラーになるため
         if [[ $(command git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
             # 0以外を返すとそれ以降のフック関数は呼び出されない
             return 1
         fi
-
         return 0
-        }
-# }}}
+    } # }}}
 
-# untracked フィアル表示 {{{
-    # untracked ファイル(バージョン管理されていないファイル)がある場合は
-    # unstaged (%u) に ? を表示
-    function +vi-git-untracked() {
+    function +vi-git-untracked() { # {{{
+        # untracked フィアル表示
+        # untracked ファイル(バージョン管理されていないファイル)がある場合は
+        # unstaged (%u) に ? を表示
         # zstyle formats, actionformats の2番目のメッセージのみ対象にする
         if [[ "$1" != "1" ]]; then
             return 0
@@ -404,17 +402,15 @@ if is-at-least 4.3.11; then
         if command git status --porcelain 2> /dev/null \
             | awk '{print $1}' \
             | command grep -F '??' > /dev/null 2>&1 ; then
-
             # unstaged (%u) に追加
             hook_com[unstaged]+='?'
         fi
-    }
-# }}}
+    } # }}}
 
-# pushしていないコミットの件数表示 {{{
-    # リモートリポジトリに push していないコミットの件数を
-    # pN という形式で misc (%m) に表示する
-    function +vi-git-push-status() {
+    function +vi-git-push-status() { #{{{
+        # pushしていないコミットの件数表示
+        # リモートリポジトリに push していないコミットの件数を
+        # pN という形式で misc (%m) に表示する
         # zstyle formats, actionformats の2番目のメッセージのみ対象にする
         if [[ "$1" != "1" ]]; then
             return 0
@@ -435,14 +431,13 @@ if is-at-least 4.3.11; then
             # misc (%m) に追加
             hook_com[misc]+="(p${ahead})"
         fi
-    }
-# }}}
+    } # }}}
 
-# マージしていない件数表示 {{{
-    # master 以外のブランチにいる場合に、
-    # 現在のブランチ上でまだ master にマージしていないコミットの件数を
-    # (mN) という形式で misc (%m) に表示
-    function +vi-git-nomerge-branch() {
+    function +vi-git-nomerge-branch() { #{{{
+        # マージしていない件数表示
+        # master 以外のブランチにいる場合に、
+        # 現在のブランチ上でまだ master にマージしていないコミットの件数を
+        # (mN) という形式で misc (%m) に表示
         # zstyle formats, actionformats の2番目のメッセージのみ対象にする
         if [[ "$1" != "1" ]]; then
             return 0
@@ -462,12 +457,11 @@ if is-at-least 4.3.11; then
             # misc (%m) に追加
             hook_com[misc]+="(m${nomerged})"
         fi
-    }
-# }}}
+    } # }}}
 
-# stash 件数表示 {{{
-    # stash している場合は :SN という形式で misc (%m) に表示
-    function +vi-git-stash-count() {
+    function +vi-git-stash-count() { #{{{
+        # stash 件数表示
+        # stash している場合は :SN という形式で misc (%m) に表示
         # zstyle formats, actionformats の2番目のメッセージのみ対象にする
         if [[ "$1" != "1" ]]; then
             return 0
@@ -479,14 +473,11 @@ if is-at-least 4.3.11; then
             # misc (%m) に追加
             hook_com[misc]+=":S${stash}"
         fi
-    }
-# }}}
+    } # }}}
 
-fi
-# }}}
+fi # }}}
 
-# update_vcs_info_msg {{{
-function _update_vcs_info_msg() {
+function _update_vcs_info_msg() { #{{{
     local -a messages
     local prompt
 
@@ -508,9 +499,11 @@ function _update_vcs_info_msg() {
     fi
 
     RPROMPT="$prompt"
-}
-# }}}
+} # }}}
 
+# hook関数
+# precmd--プロンプトを表示する直前
+# http://qiita.com/mollifier/items/558712f1a93ee07e22e2
 add-zsh-hook precmd _update_vcs_info_msg
 
 # }}}
@@ -520,12 +513,14 @@ add-zsh-hook precmd _update_vcs_info_msg
 # 左プロンプト指定 {{{
 # rootとその他で分ける
 case "$UID" in
+    # root
     0)
-PROMPT="${fg[purple]}%~${reset_color}
+    PROMPT="${fg[purple]}%~${reset_color}
 %(?.$fg[yellow].$fg[green])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
+    # その他
     *)
-PROMPT="${fg[yellow]}%~${reset_color}
+    PROMPT="${fg[yellow]}%~${reset_color}
 %(?.$fg[green].$fg[blue])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
 esac
@@ -573,7 +568,7 @@ zle -N cdup
 bindkey '^\^' cdup
 # }}}
 
-# <C-r>でコマンド履歴検索# {{{
+# <C-r>でコマンド履歴検索 {{{
 function exists { which $1 &> /dev/null }
 if exists percol; then
     function percol_select_history() {
