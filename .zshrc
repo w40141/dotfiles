@@ -12,26 +12,62 @@ compinit -u
 autoload -Uz colors
 colors
 
-# color {{{
-# 名前で色を付けるようにする
+# 色設定ファイル {{{
 
-# 色の定義 {{{
-# local DEFAULT=$'%{^[[m%}'$
-# local RED=$'%{^[[1;31m%}'$
-# local GREEN=$'%{^[[1;32m%}'$
-# local YELLOW=$'%{^[[1;33m%}'$
-# local BLUE=$'%{^[[1;34m%}'$
-# local PURPLE=$'%{^[[1;35m%}'$
-# local LIGHT_BLUE=$'%{^[[1;36m%}'$
-# local WHITE=$'%{^[[1;37m%}'$
-local DEFAULT=$'%{e[m%}'$
-local RED=$'%{e[1;31m%}'$
-local GREEN=$'%{e[1;32m%}'$
-local YELLOW=$'%{e[1;33m%}'$
-local BLUE=$'%{e[1;34m%}'$
-local PURPLE=$'%{e[1;35m%}'$
-local LIGHT_BLUE=$'%{e[1;36m%}'$
-local WHITE=$'%{e[1;37m%}'$
+# 色定義{{{
+# 属性
+#  00:通常, 01:太字, 04:下線, 07:前/背景色の反転, 08:非表示
+# 色
+#  前景色
+#   30:黒, 31:赤, 32:緑, 33:黄, 34:青, 35:紫, 36:シアン,
+#   37:灰, 38:詳細指定(後述), 39:デフォルト
+#  背景色
+#   40:黒, 41:赤, 42:緑, 43:黄, 44:青, 45:紫, 46:シアン,
+#   47:灰, 48:詳細指定(後述), 49:デフォルト
+#
+# 記述方法-------- その1 ---------
+#  '\e[属性;前景色;背景色m'と'\e[m'で文字を囲む
+# 例: 太字、赤字+青背景
+#   echo '\e[1;31;44mここの色が変わる\e[m'
+#
+# 記述方法-------- その2 ---------
+#  '\e[属性;38;5;詳細前景色コードm'と'\e[m'で文字を囲む
+# 例:echo '\e[1;38;5;197mここの色が変わる\e[m'
+#  同様に、48と詳細背景色コードで、背景色を指定できる
+# 例: echo '\e[1;48;5;123mここの色が変わる\e[m'
+#  同様に、前背景ともに詳細コードで指定できる
+# 例: echo '\e[1;38;5;197;48;5;123mここの色が変わる\e[m'
+#
+# 詳細コードは、016から255までのRGB3桁で指定
+# 一覧は以下の関数で表示可能
+
+mycolSt='\e[0;'
+mycolEd='\e[m'
+
+typeset -A mycol
+mycol=(
+ 'RED'      '38;5;161'
+ 'PINK'     '38;5;207'
+ 'BLUE'     '38;5;033'
+ 'ORANGE'   '38;5;208'
+ 'PURPLE'   '38;5;129'
+ 'GREEN'    '38;5;034'
+ 'YELLOW'   '38;5;247'
+ 'GLAY'     '38;5;238'
+ 'LGLAY'    '38;5;245' )
+
+typeset -A mycolbg
+mycolbg=(
+ 'RED'      '48;5;161'
+ 'PINK'     '48;5;207'
+ 'BLUE'     '48;5;033'
+ 'ORANGE'   '48;5;208'
+ 'PURPLE'   '48;5;129'
+ 'GREEN'    '48;5;034'
+ 'YELLOW'   '48;5;247'
+ 'GLAY'     '48;5;238'
+ 'LGLAY'    '48;5;245' )
+
 # }}}
 
 # LSCOLORSの指定 {{{
@@ -312,6 +348,19 @@ man() {
         LESS_TERMCAP_us=$(printf "\e[1;37m") \
         man "$@"
 }
+
+# xport MANPAGER='less -R'
+# man() {
+#     env \
+#         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+#         LESS_TERMCAP_md=$(printf "\e[1;31m") \
+#         LESS_TERMCAP_me=$(printf "\e[0m") \
+#         LESS_TERMCAP_se=$(printf "\e[0m") \
+#         LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+#         LESS_TERMCAP_ue=$(printf "\e[0m") \
+#         LESS_TERMCAP_us=$(printf "\e[1;32m") \
+#         man "$@"
+# }
 # }}}
 
 # }}}
@@ -515,12 +564,12 @@ add-zsh-hook precmd _update_vcs_info_msg
 case "$UID" in
     # root
     0)
-    PROMPT="${fg[purple]}%~${reset_color}
+PROMPT="${fg[purple]}%~${reset_color}
 %(?.$fg[yellow].$fg[green])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
     # その他
     *)
-    PROMPT="${fg[yellow]}%~${reset_color}
+PROMPT="${fg[yellow]}%~${reset_color}
 %(?.$fg[green].$fg[blue])%(?!ヾ(｡>﹏<｡)ﾉﾞ✧ *。ﾅﾆｶﾞｼﾀｲﾉ-? <! (๑¯Δ ¯๑%)/にゃんぱすー <)${reset_color} "
         ;;
 esac
