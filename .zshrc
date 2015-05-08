@@ -1,4 +1,44 @@
 # -------------------------------------
+# 環境変数
+# -------------------------------------
+
+# {{{
+export LANG=jp_JP.UTF-8
+
+# SSHで接続した先で日本語が使えるようにする
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# エディタ for vim
+export EDITOR=/usr/local/bin/vim
+
+# ページャ
+export PAGER=/usr/local/bin/vimpager
+export MANPAGER=/usr/local/bin/vimpager
+
+# }}}
+
+# -------------------------------------
+# パス
+# -------------------------------------
+
+# {{{
+
+# 重複する要素を自動的に削除
+typeset -U path cdpath fpath manpath
+
+# sudo用のpathを設定
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
+
+export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:./.pyenv/versions/2.7.6/lib/python2.7/site-packages:$PATH"
+
+# path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+path=(/usr/local/sbin(N-/) /usr/local/bin(N-/) /usr/bin(N-/) /bin(N-/) /usr/sbin(N-/) /sbin(N-/) /opt/X11/bin(N-/))
+# }}}
+
+# -------------------------------------
 # 補完機能の強化
 # -------------------------------------
 
@@ -13,6 +53,9 @@ autoload -Uz colors
 colors
 
 # 色設定ファイル {{{
+
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # 色定義{{{
 # 属性
@@ -206,7 +249,7 @@ zstyle ':completion:*' group-name ''
 setopt mark_dirs
 
 # 補完キー連打で順に補完候補を自動的に補完
-setopt auto_menu
+# setopt auto_menu
 
 # 補完候補を一覧で表示
 setopt auto_list
@@ -258,17 +301,20 @@ setopt no_tify
 # 'cd' なしで移動する
 setopt auto_cd
 
+chpwd() {
+    ls -Ga
+}
 # 訪問済みのディレクトリに戻る {{{
 # cd -<NUM>
 # dirs -vで表示
-DIRSTACKFILE="$HOME/.cache/zsh/dirs"
-if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
-    dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-    [[ -d $dirstack[1] ]] && cd $dirstack[1]
-fi
-chpwd() {
-    ls -Ga && ${(u)dirstack} >$DIRSTACKFILE
-}
+# DIRSTACKFILE="$HOME/.cache/zsh/dirs"
+# if [[ -f $DIRSTACKFILE ]] && [[ $#dirstack -eq 0 ]]; then
+#     dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
+#     [[ -d $dirstack[1] ]] && cd $dirstack[1]
+# fi
+# chpwd() {
+#     ls -Ga && ${(u)dirstack} >$DIRSTACKFILE
+# }
 
 DIRSTACKSIZE=20
 
@@ -658,12 +704,12 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 
 # ls
-alias ls="ls -G" # color for darwin
+# alias ls="ls -G" # color for darwin
+alias ls="gls --color"
 alias l="ls -la"
 alias la="ls -a"
 alias l1="ls -1"
 
-alias gls="gls --color"
 
 alias rm="rm -i"
 alias rmd="rm -ir"

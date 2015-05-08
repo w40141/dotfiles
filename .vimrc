@@ -56,15 +56,8 @@ set visualbell t_vb=0
 "エラーメッセージの表示時にビープを鳴らさない
 set noerrorbells
 
-" backup(~/.vim/backup)
-" set backup
-" set backupdir=~/.vim/backup
-" set noswapfile
-" set viminfo+=n~/.vim/.viminfo
-
-" <Leader>キーを変更 (default: \)
-" <LocalLeader>キーを変更
 let g:mapleader=','
+
 " }}}
 "--------------------
 
@@ -89,6 +82,7 @@ set incsearch
 " grep検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
+
 " }}}
 "--------------------
 

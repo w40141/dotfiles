@@ -34,7 +34,7 @@ sudo_path=({/usr/local,/usr,}/sbin(N-/))
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr:/usr/bin:./.pyenv/versions/2.7.6/lib/python2.7/site-packages:$PATH"
 
-path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
-
+# path=(~/bin(N-/) /usr/local/bin(N-/) ${path})
+path=(/usr/local/sbin(N-/) /usr/local/bin(N-/) /usr/bin(N-/) /bin(N-/) /usr/sbin(N-/) /sbin(N-/) /opt/X11/bin(N-/))
 # }}}
 
