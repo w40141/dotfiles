@@ -317,18 +317,6 @@ augroup END
   autocmd BufNewFile *.php  0r ~/.vim/template/php.txt
 " }}}
 
-" Texの設定 {{{
-filetype indent plugin on
-let tex_flavor = 'latex'
-set grepprg=grep\ -nH\ $*
-set shellslash
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_CompileRule_dvi = 'platex --interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
-let g:Tex_FormatDependency_pdf = 'dvi,pdf'
-let g:Tex_ViewRule_pdf = 'open -a Preview.app'
-" }}}
-
 " phpの設定 {{{
 " 文字列中のSQLをハイライト
 let php_sql_query = 1
@@ -629,11 +617,13 @@ else
   " }}}
 
   " NeoBundle自身をNeoBundleで管理させる {{{
-  call neobundle#begin(s:bundle_root)
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
+  " call neobundle#begin(s:bundle_root)
+  " NeoBundleFetch 'Shougo/neobundle.vim'
+  " call neobundle#end()
   " }}}
-
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
   " }}}
 
@@ -949,6 +939,51 @@ else
         \ }}
   nnoremap <Leader>g :GundoToggle<CR>
   " }}}
+
+"   " vim-latex {{{
+"   " https://github.com/lervag/vimtex
+"   " NeoBundleLazy 'lervag/vimtex', {
+"   "       \ "autoload": {
+"   "       \ "filetypes": [tex]
+"   "       \ }}
+"   NeoBundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+" "{{{
+"   filetype plugin on
+"   filetype indent on
+"   set grepprg=grep\ -nH\ $*
+"   let g:tex_flavor='latex'
+"   let g:TeX_AutoFolding = 0
+"   let g:Tex_Folding = 0
+"   let g:Imap_UsePlaceHolders = 1
+"   let g:Imap_DeleteEmptyPlaceHolders = 1
+"   let g:Imap_StickyPlaceHolders = 0
+"   let g:Tex_DefaultTargetFormat = 'pdf'
+"   let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+"   let g:Tex_FormatDependency_ps = 'dvi,ps'
+"   let g:Tex_MultipleCompileFormats = 'pdf'
+"   let g:Tex_CompileRule_dvi =
+"         \'uplatex -synctex=1 -interaction=nonstopmode -file-line-error-style $*'
+"   let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
+"   let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+"   let g:Tex_BibtexFlavor = 'upbibtex'
+"   let g:Tex_MakeIndexFlavor = 'mendex -U $*.idx'
+"   let g:Tex_UseEditorSettingInDVIViewer = 1
+"   let g:Tex_ViewRule_pdf = 'open -a Preview.app'
+"   let g:Tex_ViewRule_ps = 'open'
+"   let g:Tex_ViewRule_dvi = 'open'
+"   let g:Tex_IgnoreLevel = 9
+"   let g:Tex_IgnoredWarnings =
+"         \"Underfull\n".
+"         \"Overfull\n".
+"         \"specifier changed to\n".
+"         \"You have requested\n".
+"         \"Missing number, treated as zero.\n".
+"         \"There were undefined references\n".
+"         \"Citation %.%# undefined\n".
+"         \"LaTeX Font Warning: Font shape `%s' undefined\n".
+"         \"LaTeX Font Warning: Some font shapes were not available, defaults substituted."
+"   " }}}
+"   " }}}
 
   " git関連 {{{
 
