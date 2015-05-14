@@ -20,6 +20,10 @@ let s:is_mac = !s:is_windows && !s:is_cygwin
       \ || (!executable('xdg-open') && system('uname') =~? '^darwin'))
 " }}}
 
+set encoding=utf-8
+
+scriptencoding utf-8
+
 " エンコード {{{
 if s:is_windows
   " For Windows.
