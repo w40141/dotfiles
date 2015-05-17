@@ -123,7 +123,7 @@ set laststatus=2
 set showcmd
 
 " ステータスラインの色
-highlight StatusLine term=bold cterm=bold ctermfg=black ctermbg=white
+" highlight StatusLine term=bold cterm=bold ctermfg=black ctermbg=white
 
 " ルーラー(右下に行・列)を表示
 set ruler
@@ -141,7 +141,7 @@ set expandtab
 set cindent
 
 " 行頭での<tab>の幅
-set shiftwidth=4 tabstop=4 softtabstop=4
+set shiftwidth=4 softtabstop=4 tabstop=4
 
 "カレントウィンドウのみにカーソル行をハイライト {{{
 augroup cch
