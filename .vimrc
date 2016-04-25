@@ -126,7 +126,7 @@ set showcmd
 " highlight StatusLine term=bold cterm=bold ctermfg=black ctermbg=white
 
 " ルーラー(右下に行・列)を表示
-set ruler
+" set ruler
 
 "999 行, 888 文字" の代わりに "999L, 888C" を表示。
 set shortmess+=I
