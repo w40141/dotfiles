@@ -7,3 +7,6 @@
 [submodule "dot_fish"]
 	path = dot_fish
 	url = git://github.com/w40141/dot_fish.git
+[submodule "iTerm/iterm_dracula"]
+	path = iTerm/iterm_dracula
+	url = https://github.com/dracula/iterm.git
