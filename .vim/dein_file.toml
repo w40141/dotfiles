@@ -113,16 +113,8 @@ let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
 '''
 
-# [[plugins]]
-# repo = 'kannokanno/previm'
-# on_ft = ['markdown']
-# hook_source = '''
-# nnoremap <silent><Space><Space>p :PrevimOpen<CR>
-# '''
-
 [[plugins]]
 repo = 'kazuph/previm'	
-# rev = 'feature/add-plantuml-plugin'
 on_ft = ['markdown']
 hook_source = '''
 nnoremap <silent><Space><Space>p :PrevimOpen<CR>
