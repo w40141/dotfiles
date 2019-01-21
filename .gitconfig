@@ -1,0 +1,10 @@
+# This is Git's per-user configuration file.
+[user]
+	email = w.40141@gmail.com
+	name = daisuke oku
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+  graph = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
