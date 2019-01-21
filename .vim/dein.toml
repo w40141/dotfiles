@@ -1,0 +1,98 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+hook_post_update = 'source $XDG_CONFIG_HOME/nvim/plugins/vimproc.rc.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/lightline.rc.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+on_cmd = ['NERDTree', 'NERDTreeToggle']
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
+
+[[plugins]]
+repo = 'vim-jp/autofmt'
+
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = [['n', '<Plug>']]
+on_cmd = 'OpenBrowserSearch'
+hook_add = '''
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/yankround.rc.vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'vimtaku/hl_matchit.vim.git'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# [[plugins]]
+# repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'thinca/vim-themis'
+
+[[plugins]]
+repo = 'vim-jp/syntax-vim-ex'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/anzu.rc.vim'
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/expand-region.rc.vim'
+
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
+hook_add = 'let g:loaded_matchparen = 1'
+
+[[plugins]]
+repo = 'itchyny/vim-cursorword'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+

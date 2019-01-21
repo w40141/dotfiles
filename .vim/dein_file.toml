@@ -1,0 +1,209 @@
+# [[plugins]]
+# repo = 'vim-jp/cpp-vim'
+# on_ft = 'cpp'
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_source = '''
+	autocmd FileType c		setlocal completeopt-=preview
+	autocmd filetype cpp	setlocal completeopt-=preview
+	let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/6.0.0/lib/libclang.dylib'
+	let g:deoplete#sources#clang#clang_header = '/usr/local/opt/llvm/lib/clang'
+'''
+on_i = 1
+on_ft = ['c', 'cpp', 'cmake']
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+on_i = 1
+on_ft = ['c', 'cpp', 'cmake']
+
+[[plugins]]
+repo = 'JesseKPhillips/d.vim'
+on_ft = 'd'
+
+[[plugins]]
+repo = 'thinca/vim-ft-diff_fold'
+on_ft = 'diff'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go' 
+
+[[plugins]]
+repo = 'nsf/gocode'
+rtp = 'vim'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'zchee/deoplete-go'
+hook_source = '''
+	" let g:deoplete#sources#go#gocode_binary		=
+	let g:deoplete#sources#go#sort_class			= ['package', 'func', 'type', 'var', 'const']
+'''
+on_i = 1
+on_ft = 'go'
+
+[[plugins]]
+repo = 'kana/vim-filetype-haskell'
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'itchyny/vim-haskell-indent'
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+on_ft = 'help'
+
+[[plugins]]
+repo  = 'othree/html5.vim'
+on_ft = 'html'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = ['html', 'html5']
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/css3-syntax.rc.vim'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ["html", "html5"]
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim'
+
+# [[plugins]]
+# repo = 'jelera/vim-javascript-syntax'
+# on_ft = 'javascript'
+
+[[plugins]]
+repo = 'othree/yajs'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = 'javascript'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-jsx-pretty.rc.vim'
+
+[[plugins]]
+repo = 'jiangmiao/simple-javascript-indenter'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'marijnh/tern_for_vim'
+on_ft = 'javascript'
+build = 'npm install'
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = 'tex'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim'
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown', 'mkd']
+hook_add = '''
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+'''
+
+# [[plugins]]
+# repo = 'kannokanno/previm'
+# on_ft = ['markdown']
+# hook_source = '''
+# nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+# '''
+
+[[plugins]]
+repo = 'kazuph/previm'	
+# rev = 'feature/add-plantuml-plugin'
+on_ft = ['markdown']
+hook_source = '''
+nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+'''
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = ['uml', 'pu', 'plantuml']
+hook_source = '''
+let g:plantuml_executable_script = '~/dot_nvim/.vim/plugins/plantuml'
+'''
+# :make でUMLのpngファイルができる
+
+[[plugins]]
+repo = 'shawncplus/phpcomplete.vim'
+on_ft = 'php'
+
+# [[plugins]]
+# repo = 'lambdalisue/vim-django-support'
+# on_ft = ['python', 'python3', 'djangohtml']
+#
+# [[plugins]]
+# repo = 'jmcantrell/vim-virtualenv'
+# on_ft = ['python', 'python3', 'djangohtml']
+
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = ['python', 'python3']
+
+[[plugins]]
+repo = 'fisadev/vim-isort'
+on_ft = ['python', 'python3']
+hook_add = '''
+let g:vim_isort_map = '<C-i>'
+let g:vim_isort_python_version = 'python3'
+'''
+
+[[plugins]]
+repo = 'Integralist/vim-mypy'
+on_ft = ['python', 'python3']
+
+#[[plugins]]
+#repo = 'kevinw/pyflakes-vim'
+#on_ft = ['python', 'python3']
+#hook_add = '''
+#  let g:pyflakes_use_quickfix=0
+#'''
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+depens = 'deoplete.nvim'
+on_ft = ['python', 'python3']
+hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete-jedi.rc.vim'
+
+# [[plugins]]
+# repo = 'davidhalter/jedi-vim'
+# on_ft = [ 'python', 'python3', 'djangohtml']
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/jedi-vim.rc.vim'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['haml', 'ruby', 'eruby']
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['haml', 'ruby', 'eruby']
+hook_add = 'let g:endwise_no_mappings=1'
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'yomi322/vim-gitcomplete'
+on_ft = 'vimshell'
+
+[[plugins]]
+repo = 'ujihisa/vimshell-ssh'
+on_ft = 'vimshell'
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+on_ft = 'vim'
+
