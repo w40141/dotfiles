@@ -1,38 +1,20 @@
-dotfiles(Mac OS)
-----
+dotfilesによるバックアップ復元
+===
 
-**If you don't install brew, zsh, and git, you should install them.**  
+### 1. Safari でiterm をダウンロードする.  
 
-###How to install
+> https://www.iterm2.com/
 
-1. Install brew  
-	Paste this command.  
+### 2. Homebrew をインストールする.  
 
-		$ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+1. 以下のコマンドをコピペする.  
+
+		$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 	>[homebrew](http://brew.sh/index_ja.html)
 
-	You command `brew doctor` after installing brew.  
-	If there are some errors, you must fix the errors.
+2. 以下のコマンドでエラーを確認する.  
 
-2. Install zsh and git  
-	Next, you install zsh and git.
+		$ brew doctor  
 
-    	$ brew install zsh git
-
-3. Install Neobundle  
-	Paste these commands.
-
-		$ mkdir -p ~/.vim/bundle  
-		$ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
-
-    >http://qiita.com/Kuchitama/items/68b6b5d5ed40f6f96310  
-    >https://github.com/Shougo/neobundle.vim  
-
-4. git clone dotfiles  
-	Paste these commands.
-
-    	$ cd ~/
-		$ git clone https://github.com/w40141/dotfiles.git  
-		$ cd dotfiles  
-		$ sh dotfilesLink.sh # if windows use this > mklink.bat  
+### 3. [toDo] 以下の手順を書く
