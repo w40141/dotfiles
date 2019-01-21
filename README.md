@@ -18,3 +18,6 @@ dotfilesによるバックアップ復元
 		$ brew doctor  
 
 ### 3. [toDo] 以下の手順を書く
+
++ brew bundle
++ ln -s
