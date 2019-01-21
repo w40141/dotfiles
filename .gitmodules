@@ -1,6 +1,3 @@
 [submodule "iTerm/iterm_dracula"]
 	path = iTerm/iterm_dracula
 	url = https://github.com/dracula/iterm.git
-[submodule "iterm_dracula"]
-	path = iterm_dracula
-	url = https://github.com/dracula/iterm.git
