@@ -4,6 +4,7 @@
 
 noremap <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeGlyphReadOnly = "\uF23E "
 " let g:NERDTreeDirArrowExpandable = '▸'
 " let g:NERDTreeDirArrowCollapsible = '▾'
 augroup MyAutoCmd
