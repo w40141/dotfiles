@@ -1,0 +1,17 @@
+configparser==3.5.0
+dnet==1.12
+enum34==1.1.6
+futures==3.2.0
+greenlet==0.4.13
+mccabe==0.6.1
+msgpack==0.5.6
+neovim==0.3.1
+numpy==1.15.4
+packaging==18.0
+pbr==4.0.3
+pycairo==1.18.0
+pynvim==0.3.1
+pyparsing==2.3.0
+six==1.11.0
+tqdm==4.23.4
+trollius==2.2
