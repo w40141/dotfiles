@@ -16,6 +16,15 @@ on_cmd = ['NERDTree', 'NERDTreeToggle']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
 
 [[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['nerdtree']
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim'
+
+[[plugins]]
+depends = ['nerdtree']
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+[[plugins]]
 repo = 'vim-jp/autofmt'
 
 [[plugins]]
@@ -95,4 +104,7 @@ repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
-
+hook_add = '''
+" フォルダアイコンの表示をON
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+'''
