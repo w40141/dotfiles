@@ -14,3 +14,4 @@ set -g fish_user_paths "/usr/local/opt/apr-util/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
