@@ -1,1 +1,1 @@
-/Users/daisuke.oku/dotfiles/.vimrc
+/Users/daisukeoku/dotfiles/.vimrc
