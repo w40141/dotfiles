@@ -16,6 +16,10 @@ on_cmd = ['NERDTree', 'NERDTreeToggle']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
 
 [[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-indent-guides.rc.vim'
+
+[[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['nerdtree']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim'
@@ -38,9 +42,9 @@ repo = 'tyru/open-browser.vim'
 on_map = [['n', '<Plug>']]
 on_cmd = 'OpenBrowserSearch'
 hook_add = '''
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
+	let g:netrw_nogx = 1 " disable netrw's gx mapping.
+	nmap gx <Plug>(openbrowser-smart-search)
+	vmap gx <Plug>(openbrowser-smart-search)
 '''
 
 [[plugins]]

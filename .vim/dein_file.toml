@@ -109,22 +109,22 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim'
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd']
 hook_add = '''
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
+	let g:vim_markdown_frontmatter = 1
+	let g:vim_markdown_math = 1
 '''
 
 [[plugins]]
 repo = 'kazuph/previm'	
 on_ft = ['markdown']
 hook_source = '''
-nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+	nnoremap <silent><Space><Space>p :PrevimOpen<CR>
 '''
 
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
 on_ft = ['uml', 'pu', 'plantuml']
 hook_source = '''
-let g:plantuml_executable_script = '~/dot_nvim/.vim/plugins/plantuml'
+	let g:plantuml_executable_script = '~/dot_nvim/.vim/plugins/plantuml'
 '''
 # :make でUMLのpngファイルができる
 
@@ -198,4 +198,3 @@ on_ft = 'vimshell'
 [[plugins]]
 repo = 'Shougo/neco-vim'
 on_ft = 'vim'
-

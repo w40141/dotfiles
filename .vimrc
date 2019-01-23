@@ -124,7 +124,6 @@
 	set foldenable
 	set foldmethod=indent
 	set foldcolumn=1
-	set foldignore
 
 	"deleteでインデントを削除可能にする
 	set backspace=indent,eol,start
