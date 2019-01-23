@@ -96,8 +96,6 @@ else
 # }}}
     alias ls='ls -G'
 fi
-source $(dirname $(gem which colorls))/tab_complete.sh
-alias lc='colorls'
 
 # エディタ for vim
 export EDITOR=nvim
