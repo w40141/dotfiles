@@ -1,5 +1,5 @@
 balias la 'ls -a'
-balias lla 'ls -la'
+balias lal 'la -l'
 
 # -n 行数表示, -I バイナリファイル無視, svn関係のファイルを無視
 balias grep "grep --color -n -I --exclude='*.svn-*' --exclude='entries' --exclude='*/cache/*'"
