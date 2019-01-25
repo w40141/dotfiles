@@ -15,9 +15,9 @@ repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree', 'NERDTreeToggle']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
 
-[[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-indent-guides.rc.vim'
+# [[plugins]]
+# repo = 'nathanaelkane/vim-indent-guides'
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-indent-guides.rc.vim'
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
