@@ -21,3 +21,4 @@ end
 # set -g theme_show_exit_status yes
 # # Gitのahead情報を細かく表示する
 # set -g theme_display_git_ahead_verbose yes
+set -g fish_user_paths "/usr/local/opt/tcl-tk/bin" $fish_user_paths
