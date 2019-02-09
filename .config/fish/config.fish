@@ -22,3 +22,5 @@ end
 # # Gitのahead情報を細かく表示する
 # set -g theme_display_git_ahead_verbose yes
 set -g fish_user_paths "/usr/local/opt/tcl-tk/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
