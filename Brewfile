@@ -1,6 +1,5 @@
 tap "argon/mas"
 tap "brona/iproute2mac"
-tap "homebrew/boneyard"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
