@@ -21,7 +21,7 @@
 	set hidden
 
 	" スペルチェック
-	" set spelllang=en,cjk
+	set spelllang=en,cjk
 	" set spell
 	" hi clear SpellBad
 	" hi SpellBad cterm=underline
@@ -339,6 +339,9 @@
 		cnoremap <C-f> <right>
 		cnoremap <C-n> <down>
 		cnoremap <C-p> <up>
+
+		" 辞書
+		nnoremap <Leader>? :!open dict://<cword><CR>
 
 		" 矢印キー無効
 		noremap <up> <nop>
