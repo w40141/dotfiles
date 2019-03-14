@@ -28,4 +28,8 @@ dotfilesによるバックアップ復元
 		$ cd dotfiles
 		$ ./init.sh
 
-### 4. neovim, fish などを整える.
+### 4. neovim, fish, pip などを整える.
+
+1. pipの一括インストール
+
+		$ pip install -r ./.pip3requirements
