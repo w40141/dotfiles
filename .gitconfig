@@ -3,10 +3,7 @@
 # Please adapt and uncomment the following lines:
 name = daisuke.oku
 email = w.40141@gmail.com
-[color]
-	diff = auto
-	status = auto
-	branch = auto
+
 [alias]
     a = add
     b = branch

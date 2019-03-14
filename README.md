@@ -17,7 +17,15 @@ dotfilesによるバックアップ復元
 
 		$ brew doctor  
 
-### 3. [toDo] 以下の手順を書く
+### 3. dotfilesをgitからcloneする.  
 
-+ brew bundle
-+ ln -s
+1. 以下のコマンドをコピペする.  
+		
+		$ git clone https://github.com/w40141/dotfiles.git
+
+2. シンボリックリンクを貼る.  
+
+		$ cd dotfiles
+		$ ./init.sh
+
+### 4. neovim, fish などを整える.
