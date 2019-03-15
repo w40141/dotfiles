@@ -17,7 +17,6 @@ ipykernel==5.1.0
 ipython==7.3.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
--e git+git@lab-gitlab:ising/IsingLib.git@aa7be7b96e98e312327062d52ccaa15bd144cb1d#egg=IsingLib
 jedi==0.13.3
 Jinja2==2.10
 jsonschema==3.0.1
