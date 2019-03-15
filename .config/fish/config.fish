@@ -7,5 +7,5 @@ alias lal='la -l'
 functions --copy cd standard_cd
 
 function cd
-	standard_cd $argv; and li
+	standard_cd $argv; and la
 end
