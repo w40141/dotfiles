@@ -36,5 +36,30 @@ set -g theme_show_exit_status no
 set -g fish_prompt_pwd_dir_length 1
 # set -g theme_project_dir_length 0
 set -g theme_newline_cursor yes
+
+# set
+set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
+set -gx LDFLAGS "-L/usr/local/opt/sqlite/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/sqlite/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/sqlite/lib/pkgconfig"
+set -gx LDFLAGS "-L/usr/local/opt/liblwgeom/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/liblwgeom/include"
+set -gx LDFLAGS "-L/usr/local/opt/qt/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/qt/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/qt/lib/pkgconfig"
+set -gx LDFLAGS "-L/usr/local/opt/nss/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/nss/include"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/nss/lib/pkgconfig"
+set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
+
+# PATH
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
