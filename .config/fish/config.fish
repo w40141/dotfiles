@@ -10,6 +10,8 @@ function cd
 	standard_cd $argv; and la
 end
 
+# set fish_plugins theme git rbenv rails brew bundler gem osx pbcopy better-alias gi peco z tmux
+
 # theme-bobthefish
 set -g theme_color_scheme solarized-dark
 set -g theme_display_git yes
@@ -38,29 +40,53 @@ set -g fish_prompt_pwd_dir_length 1
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt \uF558'  '
 
+# set_tmp
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/openssl/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/sqlite/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/liblwgeom/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/qt/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/nss/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/curl/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/curl-openssl/include"
+# set -gx CPPFLAGS $CPPFLAGS "-I/usr/local/opt/llvm/include"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/sqlite/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/nss/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/curl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/curl-openssl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH $PKG_CONFIG_PATH "/usr/local/opt/qt/lib/pkgconfig"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/openssl/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/sqlite/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/liblwgeom/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/qt/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/nss/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/llvm/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/curl/lib"
+# set -gx LDFLAGS $LDFLAGS "-L/usr/local/opt/curl-openssl/lib"
+
 # set
-set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/sqlite/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/sqlite/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/sqlite/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/liblwgeom/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/liblwgeom/include"
-set -gx LDFLAGS "-L/usr/local/opt/qt/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/qt/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/qt/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/nss/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/nss/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/nss/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
-set -gx LDFLAGS "-L/usr/local/opt/curl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/curl/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/curl/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/curl-openssl/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/curl-openssl/include"
-set -gx PKG_CONFIG_PATH "/usr/local/opt/curl-openssl/lib/pkgconfig"
+# set -gx CPPFLAGS "-I/usr/local/opt/openssl/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/sqlite/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/liblwgeom/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/qt/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/nss/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/curl/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/curl-openssl/include"
+# set -gx CPPFLAGS "-I/usr/local/opt/llvm/include"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/openssl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/sqlite/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/nss/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/curl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/curl-openssl/lib/pkgconfig"
+# set -gx PKG_CONFIG_PATH "/usr/local/opt/qt/lib/pkgconfig"
+# set -gx LDFLAGS "-L/usr/local/opt/openssl/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/sqlite/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/liblwgeom/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/qt/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/nss/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/llvm/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/curl/lib"
+# set -gx LDFLAGS "-L/usr/local/opt/curl-openssl/lib"
 
 # PATH
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
