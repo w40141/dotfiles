@@ -12,7 +12,6 @@ blueqat==0.3.7
 certifi==2019.3.9
 chainer==5.3.0
 chardet==3.0.4
-cimsdk==0.1.1
 colorama==0.4.1
 coverage==4.5.3
 cvxopt==1.2.3
@@ -58,7 +57,6 @@ mccabe==0.6.1
 mistune==0.8.4
 more-itertools==6.0.0
 msgpack==0.6.1
-mypy==0.670+dev.7300f6822fd89d99272467728aab53a7a950cc37
 mypy-extensions==0.4.1
 nbconvert==5.4.1
 nbformat==4.4.0

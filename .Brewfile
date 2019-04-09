@@ -53,6 +53,7 @@ brew "lame"
 brew "little-cms2"
 brew "openjpeg"
 brew "webp"
+brew "libbluray"
 brew "libvorbis"
 brew "libvpx"
 brew "opus"
@@ -206,6 +207,7 @@ cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "gtkwave"
+cask "iterm2"
 cask "julia"
 cask "kindle"
 cask "mactex"
@@ -222,14 +224,14 @@ cask "vivaldi"
 cask "wordpresscom"
 cask "xampp"
 cask "xquartz"
+mas "com.apple.dt.Xcode", id: 497799835
+mas "com.apple.garageband10", id: 682658836
+mas "com.apple.iMovieApp", id: 408981434
+mas "com.apple.iWork.Keynote", id: 409183694
+mas "com.apple.iWork.Numbers", id: 409203825
+mas "com.apple.iWork.Pages", id: 409201541
 mas "com.axe1lyze.NanoBrowser", id: 1440590513
 mas "com.crowdcafe.windowmagnet", id: 441258766
-mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
-mas "Keynote", id: 409183694
-mas "LINE", id: 539883307
-mas "Mathpix Snipping Tool", id: 1349670778
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "TweetDeck", id: 485812721
-mas "Xcode", id: 497799835
+mas "com.mathpix.snipping-tool", id: 1349670778
+mas "com.twitter.TweetDeck", id: 485812721
+mas "jp.naver.line.mac", id: 539883307
