@@ -164,7 +164,8 @@ on_ft = ['python', 'python3']
 #'''
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
+# repo = 'zchee/deoplete-jedi'
+repo = 'deoplete-plugins/deoplete-jedi'
 depens = 'deoplete.nvim'
 on_ft = ['python', 'python3']
 hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete-jedi.rc.vim'

@@ -1,7 +1,6 @@
 "---------------------------------------------------------------------------
 " vimtex.vim
 "
-
 let g:tex_flavor = "latex"
 
 let g:vimtex_latexmk_enabled = 1
@@ -45,4 +44,3 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 let g:neocomplete#sources#omni#input_patterns.tex = '\\ref{\s*[0-9A-Za-z_:]*'
 let g:neocomplete#sources#omni#input_patterns.tex = '\\cite{\s*[0-9A-Za-z_:]*\|\\ref{\s*[0-9A-Za-z_:]*'
-

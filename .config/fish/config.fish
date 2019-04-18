@@ -103,3 +103,4 @@ set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
