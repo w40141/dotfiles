@@ -39,3 +39,5 @@ email = w.40141@gmail.com
     wip = commit -a -m \"[ci skip] WIP WIP WIP WIP WIP\"
     amend = commit --amend --no-edit
     shallow = clone --depth 1 = checkout
+[fetch]
+	prune = true
