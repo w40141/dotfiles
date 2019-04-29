@@ -13,6 +13,7 @@ blueqat==0.3.7
 certifi==2019.3.9
 chainer==5.4.0
 chardet==3.0.4
+cimsdk==0.1.1
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
@@ -21,10 +22,10 @@ cycler==0.10.0
 Cython==0.29.7
 decorator==4.4.0
 defusedxml==0.6.0
-dimod==0.8.10
+dimod==0.8.11
 dwave-cloud-client==0.5.4
 dwave-hybrid==0.2.0
-dwave-neal==0.4.5
+dwave-neal==0.4.6
 dwave-networkx==0.7.1
 dwave-ocean-sdk==1.3.0
 dwave-qbsolv==0.2.10
@@ -46,13 +47,14 @@ homebase==1.0.1
 html5lib==1.0.1
 idna==2.8
 ipykernel==5.1.0
-ipython==7.4.0
+ipython==7.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
+-e git+git@lab-gitlab:ising/IsingLib@df32a97d9b62f1a263b7cf0ebc9ea6ff14d044cd#egg=IsingLib
 isort==4.3.17
 jedi==0.13.3
 Jinja2==2.10.1
-jsonschema==3.0.1
+jsonschema==2.6.0
 jupyter==1.0.0
 jupyter-client==5.2.4
 jupyter-console==6.0.0
@@ -60,7 +62,7 @@ jupyter-core==4.4.0
 Keras==2.2.4
 Keras-Applications==1.0.7
 Keras-Preprocessing==1.0.9
-kiwisolver==1.0.1
+kiwisolver==1.1.0
 kmeans==1.0.2
 llvmlite==0.28.0
 lxml==4.3.3
@@ -74,13 +76,13 @@ more-itertools==7.0.0
 msgpack==0.6.1
 mypy==0.701
 mypy-extensions==0.4.1
-nbconvert==5.4.1
+nbconvert==5.5.0
 nbformat==4.4.0
 neovim==0.3.1
 networkx==2.3
 notebook==5.7.8
 numba==0.43.1
-numpy==1.16.3
+numpy==1.15.4
 ortools==7.0.6546
 packaging==19.0
 pandas==0.24.2
@@ -88,7 +90,7 @@ pandocfilters==1.4.2
 parso==0.4.0
 penaltymodel==0.16.2
 penaltymodel-cache==0.4.0
-penaltymodel-mip==0.2.0
+penaltymodel-mip==0.2.1
 pep8==1.7.1
 peppercorn==0.6
 pexpect==4.7.0
@@ -100,7 +102,7 @@ pluggy==0.9.0
 prometheus-client==0.6.0
 prompt-toolkit==2.0.9
 protobuf==3.7.1
-psutil==5.6.1
+psutil==5.6.2
 ptyprocess==0.6.0
 py==1.8.0
 pycodestyle==2.5.0
@@ -109,7 +111,8 @@ Pygments==2.3.1
 pynvim==0.3.2
 pyparsing==2.4.0
 pyqubo==0.3.0
-pyrsistent==0.14.11
+pyrsistent==0.15.1
+PySnooper==0.0.23
 PySocks==1.6.8
 pytest==4.4.1
 pytest-cov==2.6.1
@@ -138,11 +141,11 @@ Theano==1.0.4
 toml==0.10.0
 tornado==6.0.2
 traitlets==4.3.2
-typed-ast==1.3.4
+typed-ast==1.3.5
 typeshed==0.0.1
-urllib3==1.25
+urllib3==1.25.1
 vim-vint==0.3.19
-virtualenv==16.4.3
+virtualenv==16.5.0
 wcwidth==0.1.7
 webencodings==0.5.1
 widgetsnbextension==3.4.2
