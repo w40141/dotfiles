@@ -13,7 +13,6 @@ blueqat==0.3.7
 certifi==2019.3.9
 chainer==5.4.0
 chardet==3.0.4
-cimsdk==0.1.1
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
@@ -50,7 +49,6 @@ ipykernel==5.1.0
 ipython==7.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
--e git+git@lab-gitlab:ising/IsingLib@df32a97d9b62f1a263b7cf0ebc9ea6ff14d044cd#egg=IsingLib
 isort==4.3.17
 jedi==0.13.3
 Jinja2==2.10.1

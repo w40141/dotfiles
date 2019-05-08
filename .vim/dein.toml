@@ -82,9 +82,9 @@ repo = 'Shougo/context_filetype.vim'
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/anzu.rc.vim'
+# [[plugins]]
+# repo = 'osyo-manga/vim-anzu'
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/anzu.rc.vim'
 
 [[plugins]]
 repo = 'majutsushi/tagbar'

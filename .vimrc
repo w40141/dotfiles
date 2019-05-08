@@ -61,6 +61,9 @@
 	" インクリメンタルサーチを行う
 	set incsearch
 
+	" 検索位置が何番目のマッチ場所か
+	set shortmess-=S
+
 	" grep 検索を設定する
 	set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 	set grepprg=grep\ -nh
