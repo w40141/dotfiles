@@ -62,6 +62,7 @@
 	set incsearch
 
 	" 検索位置が何番目のマッチ場所か
+	set shortmess=s
 	set shortmess-=S
 
 	" grep 検索を設定する

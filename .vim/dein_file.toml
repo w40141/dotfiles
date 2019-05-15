@@ -107,17 +107,25 @@ hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim'
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
-on_ft = ['markdown', 'mkd']
+on_ft = ['markdown', 'mkd', 'md']
 hook_add = '''
 	let g:vim_markdown_frontmatter = 1
 	let g:vim_markdown_math = 1
+	let g:vim_markdown_conceal = 0
 '''
 
 [[plugins]]
 repo = 'kazuph/previm'	
-on_ft = ['markdown']
+on_ft = ['markdown', 'mkd', 'md']
 hook_source = '''
 	nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+'''
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = ['markdown']
+hook_add = '''
+	let g:table_mode_corner = '|'
 '''
 
 [[plugins]]
