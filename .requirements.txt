@@ -13,7 +13,7 @@ blessings==1.7
 blueqat==0.3.7
 bpython==0.18
 certifi==2019.3.9
-chainer==5.4.0
+chainer==6.0.0
 chardet==3.0.4
 cimsdk==0.8.0
 Click==7.0
@@ -50,11 +50,11 @@ h5py==2.9.0
 homebase==1.0.1
 html5lib==1.0.1
 idna==2.8
-ipykernel==5.1.0
+ipykernel==5.1.1
 ipython==7.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
--e git+git@togawa-gitlab:ising/IsingLib.git@8e419195899a8c526bb04bc95cb3b30e8e7916c3#egg=IsingLib
+-e git+git@togawa-gitlab:ising/IsingLib.git@80cb5422facbceee525cc6f64e604a4ac25d1f70#egg=IsingLib
 isort==4.3.20
 jedi==0.13.3
 Jinja2==2.10.1
@@ -95,6 +95,8 @@ networkx==2.3
 notebook==5.7.8
 numba==0.43.1
 numpy==1.16.3
+opencv-contrib-python==4.1.0.25
+opencv-python==4.1.0.25
 openjij==0.0.4
 ortools==7.1.6720
 packaging==19.0
@@ -137,9 +139,9 @@ PyYAML==5.1
 pyzmq==18.0.1
 qtconsole==4.4.4
 radon==3.0.1
-requests==2.21.0
+requests==2.22.0
 sampleproject==1.2.0
-scikit-learn==0.21.0
+scikit-learn==0.21.1
 scipy==1.2.1
 Send2Trash==1.5.0
 simplegeneric==0.8.1
@@ -157,11 +159,13 @@ traitlets==4.3.2
 typed-ast==1.3.5
 typeshed==0.0.1
 typing==3.6.6
-urllib3==1.24.3
-vim-vint==0.3.19
-virtualenv==16.5.0
+typing-extensions==3.7.2
+urllib3==1.25.2
+vim-vint==0.3.21
+virtualenv==16.6.0
 wcwidth==0.1.7
 webencodings==0.5.1
 widgetsnbextension==3.4.2
 wildqat==1.1.9
 xenon==0.5.5
+yellowbrick==0.9.1
