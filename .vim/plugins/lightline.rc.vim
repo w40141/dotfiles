@@ -2,7 +2,6 @@
 " lightline.vim
 "
 
-"{{{
 "colorscheme -> default, wombat, jellybeans, solarized dark, solarized light, 
 "								PaperColor light, seoul256, one, landscape
 let g:lightline = {
@@ -42,16 +41,14 @@ let g:lightline = {
 			\ 'separator'       : { 'left': "\uE0B0", 'right': "\uE0B2" }, 
 			\ 'subseparator'    : { 'left': "\uE0B1", 'right': "\uE0B3" }
 			\ }
-"}}}
 
-" left {{{
-" MyMode {{{
+" left
+" MyMode
 function! MyMode()
-	return winwidth(0) > 120 ? lightline#mode() : ''
+	return winwidth(0) > 100 ? lightline#mode() : ''
 endfunction
-"}}}
 
-" MyFugitive {{{
+" MyFugitive
 function! MyFugitive()
 	if winwidth(0) < 100
 		return ''
@@ -65,9 +62,8 @@ function! MyFugitive()
 	endtry
 	return ''
 endfunction
-"}}}
 
-" MyFilename {{{
+" MyFilename
 function! MyFilename()
 	if winwidth(0) < 100
 		return ''
@@ -80,21 +76,18 @@ function! MyFilename()
 					\	 ('' != MyModified() ? '' . MyModified() : '')
 endfunction
 
-" MyReadonly {{{
+" MyReadonly
 function! MyReadonly()
 	return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? "\uF23E " : ''
 endfunction
-"}}}
 
-" MyModified {{{
+" MyModified
 function! MyModified()
 	return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? " \uF040" : &modifiable ? '' : '-'
 endfunction
-"}}}
 
-"}}}
 
-" MyGitGutter {{{
+" MyGitGutter
 let g:gitgutter_sign_added = "\uF067"
 let g:gitgutter_sign_modified = "\uF061"
 let g:gitgutter_sign_removed = "\uF00D"
@@ -118,18 +111,14 @@ function! MyGitGutter()
 	endfor
 	return join(l:ret, ' ')
 endfunction
-"}}}
 
-" MyAnzu {{{
+" MyAnzu
 function! MyAnzu()
 	return ('' != anzu#search_status() ? '' . anzu#search_status() : '')
 endfunction
-"}}}
 
-"}}}
-
-" right{{{
-" MyCharCode{{{
+" right
+" MyCharCode
 function! MyCharCode()
 	if winwidth('.') <= 120
 		return ''
@@ -149,33 +138,27 @@ function! MyCharCode()
 	let nr = printf(nrformat, nr)
 	return char . " " . nr . ''
 endfunction
-"}}}
 
-" MyFileformat{{{
+" MyFileformat
 function! MyFileformat()
 	return winwidth(0) > 120 ? &fileformat . 
 				\	 (exists('*WebDevIconsGetFileFormatSymbol()') ? ' ' . 
 				\		WebDevIconsGetFileFormatSymbol() : '') : ''
 endfunction
-"}}}
 
-" MyFiletype {{{
+" MyFiletype
 function! MyFiletype()
 	return winwidth(0) > 120 ? (strlen(&filetype) ? &filetype . 
 				\	 (exists('*WebDevIconsGetFileTypeSymbol()') ? ' ' . 
 				\		WebDevIconsGetFileTypeSymbol() : '') : 'no ft') : ''
 endfunction
-"}}}
 
-" MyFileencoding {{{
+" MyFileencoding
 function! MyFileencoding()
-	return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc . '' : &enc) : ''
+	return winwidth(0) > 120 ? (strlen(&fenc) ? &fenc . '' : &enc) : ''
 endfunction
-"}}}
 
-"}}}
-
-" ale {{{
+" ale
 function! s:ale_string(mode)
   if !exists('g:ale_buffer_info')
     return ''
@@ -196,7 +179,7 @@ function! s:ale_string(mode)
   return l:counts.total ? '' : l:no_errors
 endfunction
 
-" MyAleFunc{{{
+" MyAleFunc
 function! MyAleError()
 	return winwidth(0) > 70 ? s:ale_string(0) : ''
 endfunction
@@ -210,6 +193,3 @@ function! MyAleOk()
 endfunction
 
 autocmd MyAutoCmd User ALELintPost call lightline#update()
-"}}}
-
-"}}}
