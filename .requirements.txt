@@ -15,7 +15,6 @@ bpython==0.18
 certifi==2019.3.9
 chainer==6.0.0
 chardet==3.0.4
-cimsdk==0.1.1
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
@@ -55,7 +54,6 @@ ipykernel==5.1.1
 ipython==7.5.0
 ipython-genutils==0.2.0
 ipywidgets==7.4.2
--e git+git@lab-gitlab:ising/IsingLib@df32a97d9b62f1a263b7cf0ebc9ea6ff14d044cd#egg=IsingLib
 isort==4.3.20
 jedi==0.13.3
 Jinja2==2.10.1
@@ -98,6 +96,7 @@ numba==0.43.1
 numpy==1.16.3
 opencv-contrib-python==4.1.0.25
 opencv-python==4.1.0.25
+openjij==0.0.5
 ortools==7.1.6720
 packaging==19.0
 pandas==0.24.2
