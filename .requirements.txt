@@ -50,6 +50,7 @@ h5py==2.9.0
 homebase==1.0.1
 html5lib==1.0.1
 idna==2.8
+importlib-metadata==0.17
 ipykernel==5.1.1
 ipython==7.5.0
 ipython-genutils==0.2.0
@@ -124,6 +125,7 @@ py==1.8.0
 pycodestyle==2.5.0
 pyflakes==2.1.1
 Pygments==2.4.0
+pygraphviz==1.5
 pynvim==0.3.2
 pyparsing==2.4.0
 pyqubo==0.3.0
@@ -172,3 +174,4 @@ widgetsnbextension==3.4.2
 wildqat==1.1.9
 xenon==0.5.5
 yellowbrick==0.9.1
+zipp==0.5.1
