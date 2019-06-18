@@ -4,6 +4,13 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lal='la -l'
 
+# peco
+set fish_plugins theme peco
+
+function fish_user_key_bindings
+  bind \cr peco_select_history # Bind for prco history to Ctrl+r
+end
+
 functions --copy cd standard_cd
 
 function cd

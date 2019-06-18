@@ -3,3 +3,6 @@ jethrokuan/z
 jethrokuan/fzf
 oh-my-fish/theme-bobthefish
 oh-my-fish/plugin-rbenv
+oh-my-fish/plugin-expand
+oh-my-fish/plugin-extract
+oh-my-fish/plugin-peco
