@@ -15,7 +15,7 @@ bpython==0.18
 certifi==2019.6.16
 chainer==6.0.0
 chardet==3.0.4
-cimsdk==0.1.1
+cimsdk==0.8.0
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
@@ -127,6 +127,7 @@ py==1.8.0
 pycodestyle==2.5.0
 pyflakes==2.1.1
 Pygments==2.4.2
+pygraphviz==1.5
 pynvim==0.3.2
 pyparsing==2.4.0
 pyqubo==0.3.0
@@ -167,6 +168,7 @@ typeshed==0.0.1
 typing==3.6.6
 typing-extensions==3.7.2
 urllib3==1.25.3
+vcopt==1.5.0
 vim-vint==0.3.21
 virtualenv==16.6.1
 wcwidth==0.1.7
