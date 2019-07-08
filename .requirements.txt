@@ -17,13 +17,14 @@ bpython==0.18
 certifi==2019.6.16
 chainer==6.1.0
 chardet==3.0.4
+cimsdk==0.1.1
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
 curtsies==0.3.0
 cvxopt==1.2.3
 cycler==0.10.0
-Cython==0.29.11
+Cython==0.29.12
 decorator==4.4.0
 defusedxml==0.6.0
 dimod==0.8.14
@@ -56,18 +57,18 @@ idna==2.8
 imagesize==1.1.0
 importlib-metadata==0.18
 ipykernel==5.1.1
-ipython==7.6.0
+ipython==7.6.1
 ipython-genutils==0.2.0
-ipywidgets==7.4.2
--e git+git@togawa-gitlab:ising/IsingLib.git@30c089d8b56ee8d3ffc6284ceb154717cf520625#egg=IsingLib
+ipywidgets==7.5.0
+-e git+git@togawa-gitlab:ising/IsingLib.git@4bae125850100b8acc04511599ec87278caa1e16#egg=IsingLib
 isort==4.3.21
 jedi==0.14.0
 Jinja2==2.10.1
 joblib==0.13.2
-json5==0.8.4
+json5==0.8.5
 jsonschema==3.0.1
 jupyter==1.0.0
-jupyter-client==5.2.4
+jupyter-client==5.3.0
 jupyter-console==6.0.0
 jupyter-contrib-core==0.3.3
 jupyter-contrib-nbextensions==0.5.1
@@ -75,7 +76,7 @@ jupyter-core==4.5.0
 jupyter-highlight-selected-word==0.2.0
 jupyter-latex-envs==1.4.6
 jupyter-nbextensions-configurator==0.4.1
-jupyterlab==1.0.0
+jupyterlab==1.0.1
 jupyterlab-server==1.0.0
 Keras==2.2.4
 Keras-Applications==1.0.8
@@ -86,7 +87,7 @@ llvmlite==0.29.0
 lxml==4.3.4
 mando==0.6.4
 MarkupSafe==1.1.1
-matplotlib==3.1.0
+matplotlib==3.1.1
 mccabe==0.6.1
 minorminer==0.1.8
 mistune==0.8.4
@@ -104,7 +105,7 @@ numpy==1.16.4
 opencv-contrib-python==4.1.0.25
 opencv-python==4.1.0.25
 openjij==0.0.7
-ortools==7.1.6720
+ortools==7.2.6977
 packaging==19.0
 pandas==0.24.2
 pandocfilters==1.4.2
@@ -135,10 +136,10 @@ pygraphviz==1.5
 pynvim==0.3.2
 pyparsing==2.4.0
 pyqubo==0.3.0
-pyrsistent==0.15.2
+pyrsistent==0.15.3
 PySnooper==0.2.2
 PySocks==1.7.0
-pytest==5.0.0
+pytest==5.0.1
 pytest-cov==2.7.1
 pytest-forked==1.0.2
 pytest-xdist==1.29.0
@@ -185,8 +186,8 @@ vim-vint==0.3.21
 virtualenv==16.6.1
 wcwidth==0.1.7
 webencodings==0.5.1
-widgetsnbextension==3.4.2
+widgetsnbextension==3.5.0
 wildqat==1.1.9
 xenon==0.5.5
 yellowbrick==0.9.1
-zipp==0.5.1
+zipp==0.5.2

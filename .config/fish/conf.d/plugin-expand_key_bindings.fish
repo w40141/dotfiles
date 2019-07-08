@@ -9,3 +9,10 @@ bind --mode expand \t expand:choose-next
 
 # If the user enters any key other than Backspace, exit expand mode and passthrough keys to the default binding.
 bind --mode expand --sets-mode default '' ''
+
+# vi mode workaround
+# vi mode shall return to insert mode instead of the default mode
+bind --mode insert --sets-mode vi_expand \t expand:execute
+bind --mode vi_expand --sets-mode insert --key backspace expand:revert
+bind --mode vi_expand \t expand:choose-next
+bind --mode vi_expand --sets-mode insert '' ''
