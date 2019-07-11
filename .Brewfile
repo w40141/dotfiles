@@ -54,6 +54,7 @@ brew "lame"
 brew "little-cms2"
 brew "openjpeg"
 brew "webp"
+brew "libbluray"
 brew "libvorbis"
 brew "libvpx"
 brew "opus"
@@ -237,6 +238,7 @@ cask "vivaldi"
 cask "wordpresscom"
 cask "xampp"
 cask "xquartz"
+cask "caskroom/versions/sublime-text-dev"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
