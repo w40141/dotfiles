@@ -42,7 +42,7 @@ dwavebinarycsp==0.0.11
 entrypoints==0.3
 execnet==1.6.0
 filelock==3.0.12
-flake8==3.7.7
+flake8==3.7.8
 flake8-bugbear==19.3.0
 flake8-isort==2.7.0
 flake8-polyfill==1.0.2
@@ -60,15 +60,15 @@ ipykernel==5.1.1
 ipython==7.6.1
 ipython-genutils==0.2.0
 ipywidgets==7.5.0
--e git+git@togawa-gitlab:ising/IsingLib.git@4bae125850100b8acc04511599ec87278caa1e16#egg=IsingLib
+-e git+git@togawa-gitlab:ising/IsingLib.git@0986919d7af26ef0c2efefc1da2e8e78557d389b#egg=IsingLib
 isort==4.3.21
-jedi==0.14.0
+jedi==0.14.1
 Jinja2==2.10.1
 joblib==0.13.2
 json5==0.8.5
 jsonschema==3.0.1
 jupyter==1.0.0
-jupyter-client==5.3.0
+jupyter-client==5.3.1
 jupyter-console==6.0.0
 jupyter-contrib-core==0.3.3
 jupyter-contrib-nbextensions==0.5.1
@@ -76,7 +76,7 @@ jupyter-core==4.5.0
 jupyter-highlight-selected-word==0.2.0
 jupyter-latex-envs==1.4.6
 jupyter-nbextensions-configurator==0.4.1
-jupyterlab==1.0.1
+jupyterlab==1.0.2
 jupyterlab-server==1.0.0
 Keras==2.2.4
 Keras-Applications==1.0.8
@@ -93,7 +93,7 @@ minorminer==0.1.8
 mistune==0.8.4
 more-itertools==7.1.0
 msgpack==0.6.1
-mypy==0.711
+mypy==0.720
 mypy-extensions==0.4.1
 nbconvert==5.5.0
 nbformat==4.4.0
@@ -109,7 +109,7 @@ ortools==7.2.6977
 packaging==19.0
 pandas==0.24.2
 pandocfilters==1.4.2
-parso==0.5.0
+parso==0.5.1
 penaltymodel==0.16.2
 penaltymodel-cache==0.4.0
 penaltymodel-mip==0.2.1
@@ -124,7 +124,7 @@ pluggy==0.12.0
 post==2019.4.13
 prometheus-client==0.7.1
 prompt-toolkit==2.0.9
-protobuf==3.8.0
+protobuf==3.9.0
 psutil==5.6.3
 ptyprocess==0.6.0
 public==2019.4.13
@@ -144,6 +144,7 @@ pytest-cov==2.7.1
 pytest-forked==1.0.2
 pytest-xdist==1.29.0
 python-dateutil==2.8.0
+python-shogi==1.0.8
 pytz==2019.1
 PyYAML==5.1.1
 pyzmq==18.0.2
@@ -175,6 +176,7 @@ testpath==0.4.2
 Theano==1.0.4
 toml==0.10.0
 tornado==6.0.3
+tox==3.13.2
 traitlets==4.3.2
 typed-ast==1.4.0
 typeshed==0.0.1
@@ -183,7 +185,7 @@ typing-extensions==3.7.4
 urllib3==1.25.3
 vcopt==1.5.4
 vim-vint==0.3.21
-virtualenv==16.6.1
+virtualenv==16.6.2
 wcwidth==0.1.7
 webencodings==0.5.1
 widgetsnbextension==3.5.0
