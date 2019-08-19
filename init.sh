@@ -10,3 +10,5 @@ do
     echo "$f"
 	ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
+
+git submodule update -i
