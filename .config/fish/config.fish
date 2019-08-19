@@ -3,6 +3,14 @@ set -x XDG_CONFIG_HOME $HOME/.config
 alias la='ls -a'
 alias ll='ls -l'
 alias lal='la -l'
+alias grep='grep --color'
+alias cx 'chmod +x'
+
+alias cd.. 'cd ..'
+alias .. 'cd ..'
+alias ... 'cd ../..'
+alias .... 'cd ../../..'
+alias ..... 'cd ../../../..'
 
 # peco
 set fish_plugins theme peco
@@ -15,6 +23,10 @@ functions --copy cd standard_cd
 
 function cd
 	standard_cd $argv; and la
+end
+
+function reload
+  source ~/.config/fish/config.fish
 end
 
 # rbenv
