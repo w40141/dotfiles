@@ -17,6 +17,7 @@ bpython==0.18
 certifi==2019.6.16
 chainer==6.1.0
 chardet==3.0.4
+cimsdk==0.1.1
 Click==7.0
 colorama==0.4.1
 coverage==4.5.3
@@ -59,6 +60,7 @@ ipykernel==5.1.1
 ipython==7.6.1
 ipython-genutils==0.2.0
 ipywidgets==7.5.0
+-e git+git@togawa-gitlab:ising/IsingLib.git@8195c309d18cc10f3af08ad4d1bf50898d626dcb#egg=IsingLib
 isort==4.3.21
 jedi==0.14.1
 Jinja2==2.10.1
