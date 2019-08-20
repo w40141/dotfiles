@@ -2,8 +2,9 @@
 " NERDTree.vim
 "
 
-noremap <silent><C-n> :NERDTreeToggle<CR><C-r>
+noremap <silent><C-n> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
+let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeGlyphReadOnly = "\uF23E "
 augroup MyAutoCmd
 	" autocmd vimenter * nerdtree
