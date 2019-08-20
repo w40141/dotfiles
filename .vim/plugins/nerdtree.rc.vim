@@ -2,7 +2,7 @@
 " NERDTree.vim
 "
 
-noremap <silent><C-n> :NERDTreeToggle<CR>
+noremap <silent><C-n> :NERDTreeToggle<CR><C-r>
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeGlyphReadOnly = "\uF23E "
 augroup MyAutoCmd
