@@ -3,4 +3,3 @@
 .config/fisher
 .config/dot_zsh/.zcompdump
 .config/fish/fish_variables
-*.json
