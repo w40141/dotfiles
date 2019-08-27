@@ -16,7 +16,7 @@ blessings==1.7
 blueqat==0.3.9
 bpython==0.18
 certifi==2019.6.16
-chainer==6.2.0
+chainer==6.3.0
 chardet==3.0.4
 cimsdk==0.8.0
 Click==7.0
@@ -38,7 +38,7 @@ dwave-neal==0.5.1
 dwave-networkx==0.8.1
 dwave-ocean-sdk==1.4.0
 dwave-qbsolv==0.2.10
-dwave-system==0.7.5
+dwave-system==0.7.6
 dwave-tabu==0.2.0
 dwavebinarycsp==0.0.11
 entrypoints==0.3
@@ -52,7 +52,7 @@ flake8-pyi==19.3.0
 future==0.17.1
 get==2019.4.13
 gitdb2==2.0.5
-GitPython==3.0.1
+GitPython==3.0.2
 greenlet==0.4.15
 h5py==2.9.0
 homebase==1.0.1
@@ -64,7 +64,6 @@ ipykernel==5.1.2
 ipython==7.7.0
 ipython-genutils==0.2.0
 ipywidgets==7.5.1
--e git+git@togawa-gitlab:ising/IsingLib.git@55532fd756a538c80b1fafe38bd6624ab82fdffa#egg=IsingLib
 isort==4.3.21
 jedi==0.15.1
 Jinja2==2.10.1
@@ -80,10 +79,10 @@ jupyter-core==4.5.0
 jupyter-highlight-selected-word==0.2.0
 jupyter-latex-envs==1.4.6
 jupyter-nbextensions-configurator==0.4.1
-jupyterlab==1.0.6
+jupyterlab==1.0.9
 jupyterlab-git==0.8.1
-jupyterlab-server==1.0.4
-Keras==2.2.4
+jupyterlab-server==1.0.6
+Keras==2.2.5
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 kiwisolver==1.1.0
@@ -106,15 +105,15 @@ nbdime==1.1.0
 nbformat==4.4.0
 neovim==0.3.1
 networkx==2.3
-notebook==6.0.0
+notebook==6.0.1
 numba==0.45.1
-numpy==1.17.0
+numpy==1.17.1
 opencv-contrib-python==4.1.0.25
 opencv-python==4.1.0.25
 openjij==0.0.7
 ortools==7.3.7083
 packaging==19.1
-pandas==0.25.0
+pandas==0.25.1
 pandocfilters==1.4.2
 parso==0.5.1
 penaltymodel==0.16.2
@@ -148,7 +147,7 @@ pyqubo==0.4.0
 pyrsistent==0.15.4
 PySnooper==0.2.5
 PySocks==1.7.0
-pytest==5.1.0
+pytest==5.1.1
 pytest-cov==2.7.1
 pytest-forked==1.0.2
 pytest-xdist==1.29.0
@@ -157,7 +156,7 @@ python-shogi==1.0.9
 pytz==2019.2
 PyYAML==5.1.2
 pyzmq==18.1.0
-qtconsole==4.5.3
+qtconsole==4.5.4
 query-string==2019.4.13
 radon==3.0.3
 request==2019.4.13
@@ -190,12 +189,12 @@ tox==3.13.2
 traitlets==4.3.2
 typed-ast==1.4.0
 typeshed==0.0.1
-typing==3.7.4
+typing==3.7.4.1
 typing-extensions==3.7.4
 urllib3==1.25.3
 vcopt==1.5.4
 vim-vint==0.3.21
-virtualenv==16.7.3
+virtualenv==16.7.4
 wcwidth==0.1.7
 webencodings==0.5.1
 widgetsnbextension==3.5.1
@@ -204,4 +203,4 @@ wrapt==1.11.2
 xenon==0.5.5
 yapf==0.28.0
 yellowbrick==0.9.1
-zipp==0.5.2
+zipp==0.6.0
