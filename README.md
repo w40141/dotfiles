@@ -1,9 +1,7 @@
 dotfilesによるバックアップ復元
 ===
 
-### 1. Safari でiterm をダウンロードする.  
-
-> https://www.iterm2.com/
+### 1. ターミナルを開く.  
 
 ### 2. Homebrew をインストールする.  
 
