@@ -33,12 +33,6 @@ dotfilesによるバックアップ復元
 
 ### 4. neovim, fish, pip などを整える.
 
-1. neovimのインストール
-
-1. pipの一括インストール
-
-		$ pip install -r ./.requirements.txt
-
 2. fish の設定
 
 	1. fish のパスの確認する.  
@@ -58,9 +52,19 @@ dotfilesによるバックアップ復元
 			$ chsh -s /usr/local/bin/fish
 
 	5. fisher を導入する.  
+
+			$ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
 		>[fisher](https://github.com/jorgebucaran/fisher)  
 
-	writing
+		以下のコマンドを打つ.
+			$ fisher
+
+
+1. neovimのインストール
+
+1. pipの一括インストール
+
+		$ pip install -r ./.requirements.txt
 
 
 Mac のクリーンインストール方法
