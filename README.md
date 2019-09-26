@@ -28,6 +28,11 @@ dotfilesによるバックアップ復元
 		$ cd dotfiles
 		$ ./init.sh
 
+3. brew bundle でアプリを一括インストールする.  
+2回くらいやると大丈夫
+
+		$ brew bundle --global
+
 ### 4. neovim, fish, pip などを整える.
 
 1. neovimのインストール
@@ -52,9 +57,11 @@ dotfilesによるバックアップ復元
 	4. ログインシェルをfish に変更する.  
 
 			$ fish
-			> chsh -s /usr/local/bin/fish
+			$ chsh -s /usr/local/bin/fish
 
 	5. fisher を導入する.  
+		>[fisher](https://github.com/jorgebucaran/fisher)  
+
 	writing
 
 
