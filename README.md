@@ -30,6 +30,36 @@ dotfilesによるバックアップ復元
 
 ### 4. neovim, fish, pip などを整える.
 
+1. neovimのインストール
+
 1. pipの一括インストール
 
-		$ pip install -r ./.pip3requirements
+		$ pip install -r ./.requirements.txt
+
+2. fish の設定
+
+	1. fish のパスの確認する.  
+			$ which fish
+
+	2. シェルの変更する.  
+
+			$ sudo vi /etc/shells
+
+	3. 末尾にfishのパスを追加する.  
+
+			/usr/local/bin/fish
+
+	4. ログインシェルをfish に変更する.  
+
+			$ fish
+			> chsh -s /usr/local/bin/fish
+
+	5. fisher を導入する.  
+	writing
+
+
+===
+
+Mac のクリーンインストール方法
+===
+
