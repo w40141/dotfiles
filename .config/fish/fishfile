@@ -1,0 +1,13 @@
+if not functions -q fisher
+    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
+oh-my-fish/theme-agnoster
+jethrokuan/z
+jethrokuan/fzf
+oh-my-fish/theme-bobthefish
+oh-my-fish/plugin-rbenv
+oh-my-fish/plugin-expand
+oh-my-fish/plugin-extract
+oh-my-fish/plugin-peco

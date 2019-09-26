@@ -2,7 +2,7 @@
 /.config/vim
 /.config/fisher
 /.config/dot_zsh/.zcompdump
-/.config/fish
+/.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fishfile
 /.config/fisher/
