@@ -1,9 +1,9 @@
-dotfilesによるバックアップ復元
+クリーンインストールなどやること一覧
 ===
 
-### 1. ターミナルを開く.  
+## dotfilesによるバックアップ復元  
 
-### 2. Homebrew をインストールする.  
+### 1. Homebrew をインストールする.  
 
 1. 以下のコマンドをコピペする.  
 
@@ -67,8 +67,20 @@ dotfilesによるバックアップ復元
 		$ pip install -r ./.requirements.txt
 
 
-Mac のクリーンインストール方法
-===
+
+## SSHの設定
+
+1. for RSA 4096bit  
+
+		$ ssh-keygen -t rsa -b 4096
+
+2. for Ed25519  
+
+		$ ssh-keygen -t ed25519
+
+
+
+## Mac のクリーンインストール方法
 
 1. 電源シャットダウンする.  
 1. command + R + 電源 キー３つ長押しで、[ macOSユーティリティ ] 起動する.  
