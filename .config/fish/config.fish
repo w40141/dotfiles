@@ -1,34 +1,5 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+	# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
@@ -106,7 +77,7 @@ set -g theme_newline_cursor yes
 set -g theme_newline_prompt \uF558'  '
 
 # PATH
-set -U fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -U fish_user_paths "/usr/local/sbin"
 set -U fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
 set -U fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 set -U fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
