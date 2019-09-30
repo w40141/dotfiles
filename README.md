@@ -11,11 +11,11 @@
 
 	>[homebrew](http://brew.sh/index_ja.html)
 
-2. 以下のコマンドでエラーを確認する.  
+1. 以下のコマンドでエラーを確認する.  
 
 		$ brew doctor  
 
-### 3. dotfilesをgitからcloneする.  
+### 2. dotfilesをgitからcloneする.  
 
 1. 以下のコマンドをコピペする.  
 		
@@ -31,7 +31,7 @@
 
 		$ brew bundle --global
 
-### 4. neovim, fish, pip などを整える.
+### 3. neovim, fish, pip などを整える.
 
 2. fish の設定
 
@@ -89,4 +89,5 @@
 1. [ ディスクユーティリティ ] 終了し, [ macOSユーティリティ ] に戻る.  
 1. [ macOSを再インストール ] 選択する.  
 1. WiFi に接続する.  
-1. フルネームとアカウント名を同じにする.
+1. フルネームとアカウント名を同じにする. (例: daisuke.oku)
+
