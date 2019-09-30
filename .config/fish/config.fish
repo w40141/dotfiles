@@ -29,6 +29,20 @@ function reload
   source ~/.config/fish/config.fish
 end
 
+# for rbenv
+status --is-interactive; and source (rbenv init -|psub)
+fix_path
+
+function fix_path --description "Removes duplicate entries from \$PATH"
+  set -l NEWPATH
+  for p in $PATH
+    if not contains $NEWPATH $p
+      set NEWPATH $NEWPATH $p
+    end
+  end
+  set PATH $NEWPATH
+end
+
 # theme-bobthefish
 set -g theme_color_scheme solarized-dark
 set -g theme_display_git yes
