@@ -6,3 +6,6 @@ oh-my-fish/plugin-rbenv
 oh-my-fish/plugin-expand
 oh-my-fish/plugin-extract
 oh-my-fish/plugin-peco
+jorgebucaran/fish-nvm
+FabioAntunes/fish-nvm
+edc/bass
