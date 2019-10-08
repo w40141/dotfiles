@@ -1,16 +1,22 @@
+set -gx XDG_CONFIG_HOME $HOME/.config
+
 if not functions -q fisher
 	# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
     curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
     fish -c fisher
 end
 
-set -gx XDG_CONFIG_HOME $HOME/.config
-
 alias la='ls -a'
 alias ll='ls -l'
 alias lal='la -l'
 alias grep='grep --color'
 alias cx 'chmod +x'
+
+functions --copy cd standard_cd
+
+function cd
+	standard_cd $argv; and la
+end
 
 alias cd.. 'cd ..'
 alias .. 'cd ..'
@@ -24,42 +30,6 @@ set fish_plugins theme peco
 function fish_user_key_bindings
   bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
-
-functions --copy cd standard_cd
-
-function cd
-	standard_cd $argv; and la
-end
-
-function reload
-  source ~/.config/fish/config.fish
-end
-
-function fix_path --description "Removes duplicate entries from \$PATH"
-  set -l NEWPATH
-  for p in $PATH
-    if not contains $NEWPATH $p
-      set NEWPATH $NEWPATH $p
-    end
-  end
-  set PATH $NEWPATH
-end
-
-# for rbenv
-status --is-interactive; and source (rbenv init -|psub)
-fix_path
-
-
-
-# function fix_path --description "Removes duplicate entries from \$PATH"
-#   set -l NEWPATH
-#   for p in $PATH
-#     if not contains $NEWPATH $p
-#       set NEWPATH $NEWPATH $p
-#     end
-#   end
-#   set PATH $NEWPATH
-# end
 
 # theme-bobthefish
 set -g theme_color_scheme solarized-dark
@@ -88,6 +58,20 @@ set -g fish_prompt_pwd_dir_length 0
 # set -g theme_project_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uF558'  '
+
+# function fix_path --description "Removes duplicate entries from \$PATH"
+#   set -l NEWPATH
+#   for p in $PATH
+#     if not contains $NEWPATH $p
+#       set NEWPATH $NEWPATH $p
+#     end
+#   end
+#   set PATH $NEWPATH
+# end
+
+# for rbenv
+# status --is-interactive; and source (rbenv init -|psub)
+# fix_path
 
 # PATH
 set -U fish_user_paths "/usr/local/sbin"

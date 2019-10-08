@@ -544,12 +544,13 @@
 	" dein settings
 
 	"--------------------
-		let g:python_host_prog = '/usr/local/bin/python2'
-		let g:python3_host_prog = '/usr/local/bin/python3'
-		" let g:python_host_prog = system('echo -n $(which python2)')
-		" let g:python3_host_prog = system('echo -n $(which python3)')
+		if has('nvim')
+			let g:python_host_prog = '/usr/local/bin/python2'
+			let g:python3_host_prog = '/usr/local/bin/python3'
+			" let g:ruby_host_prog
+		endif
 
-		" dein自体の自動インストール
+			" dein自体の自動インストール
 		let s:cache_home		= empty($XDG_CACHE_HOME) ? expand('~/.cache') : $XDG_CACHE_HOME
 		let s:dein_dir			= s:cache_home . '/dein'
 		let s:dein_repo_dir	= s:dein_dir . '/repos/github.com/Shougo/dein.vim'
