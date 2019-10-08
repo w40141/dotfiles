@@ -66,6 +66,11 @@
 
 		$ pip install -r ./.requirements.txt
 
+1. 隠しファイルを表示する.  
+
+		$ defaults write com.apple.finder AppleShowAllFiles TRUE
+		$ defaults read com.apple.finder AppleShowAllFiles
+		$ killall Finder
 
 
 ## SSHの設定
