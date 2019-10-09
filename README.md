@@ -31,6 +31,8 @@
 
 		$ brew bundle --global
 
+1. `brew man` コマンドをするとなんだかうまくいく. 
+
 ### 3. neovim, fish, pip などを整える.
 
 1. fish の設定
