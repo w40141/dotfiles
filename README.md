@@ -33,56 +33,51 @@
 
 ### 3. neovim, fish, pip などを整える.
 
-2. fish の設定
+1. fish の設定
 
 	1. fish のパスの確認する.  
-			$ which fish
+
+			which fish
 
 	2. シェルの変更する.  
 
-			$ sudo vi /etc/shells
+			 sudo vi /etc/shells
 
-	3. 末尾にfishのパスを追加する.  
-
-			/usr/local/bin/fish
+	3. 末尾にfishのパス (/usr/local/bin/fish) を追加する.
 
 	4. ログインシェルをfish に変更する.  
 
-			$ fish
-			$ chsh -s /usr/local/bin/fish
-
-	5. fisher を導入する.  
-
-			$ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-		>[fisher](https://github.com/jorgebucaran/fisher)  
-
-		以下のコマンドを打つ.
-			$ fisher
-
+			fish
+			chsh -s /usr/local/bin/fish
 
 1. neovimのインストール
 
 1. pipの一括インストール
 
-		$ pip install -r ./.requirements.txt
+		pip install -r ./.requirements.txt
 
 1. 隠しファイルを表示する.  
 
-		$ defaults write com.apple.finder AppleShowAllFiles TRUE
-		$ defaults read com.apple.finder AppleShowAllFiles
-		$ killall Finder
+		defaults write com.apple.finder AppleShowAllFiles TRUE
+		defaults read com.apple.finder AppleShowAllFiles
+		killall Finder
 
 
 ## SSHの設定
 
-1. for RSA 4096bit  
+1. 秘密鍵と公開鍵を作る.  
 
-		$ ssh-keygen -t rsa -b 4096
+	1. RSA 4096bit  
 
-2. for Ed25519  
+			$ ssh-keygen -t rsa -b 4096
 
-		$ ssh-keygen -t ed25519
+	2. Ed25519  
 
+			$ ssh-keygen -t ed25519
+
+1. .ssh ディレクトリを作り,  config ファイルを書く. config ファイルはどこかから持ってくる. 
+
+1. github などにアクセスをして確認する. 
 
 ## Tex の文字の設定  
 
