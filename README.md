@@ -84,6 +84,10 @@
 		$ ssh-keygen -t ed25519
 
 
+## Tex の文字の設定  
+
+1. https://texwiki.texjp.org/?TeX%20Live%2FMac ここに従い, 設定する. 
+
 
 ## Mac のクリーンインストール方法
 

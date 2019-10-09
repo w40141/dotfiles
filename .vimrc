@@ -547,7 +547,7 @@
 		if has('nvim')
 			let g:python_host_prog = '/usr/local/bin/python2'
 			let g:python3_host_prog = '/usr/local/bin/python3'
-			" let g:ruby_host_prog
+			let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
 		endif
 
 			" dein自体の自動インストール

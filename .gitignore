@@ -7,3 +7,5 @@
 !/.config/fish/fishfile
 /.config/fisher/
 /.jupyter/lab/workspaces/*
+/.config/nvm/
+/.config/configstore/
