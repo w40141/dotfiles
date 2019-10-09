@@ -234,3 +234,14 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "wordpresscom"
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Magnet", id: 441258766
+mas "Mathpix Snipping Tool", id: 1349670778
+mas "NanoBrowser", id: 1440590513
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "TweetDeck", id: 485812721
+mas "Xcode", id: 497799835
