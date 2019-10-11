@@ -18,8 +18,6 @@ function cd
 	standard_cd $argv; and la
 end
 
-set -g -x EDITOR vim
-
 alias cd.. 'cd ..'
 alias .. 'cd ..'
 alias ... 'cd ../..'
