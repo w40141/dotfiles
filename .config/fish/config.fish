@@ -18,6 +18,8 @@ function cd
 	standard_cd $argv; and la
 end
 
+set -g -x EDITOR vim
+
 alias cd.. 'cd ..'
 alias .. 'cd ..'
 alias ... 'cd ../..'
@@ -75,3 +77,5 @@ set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+
+status --is-interactive; and source (rbenv init -|psub)
