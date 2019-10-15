@@ -60,7 +60,6 @@ set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uF558'  '
 
 # PATH
-set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
@@ -76,4 +75,8 @@ set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
+set -g fish_user_paths "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
+
+status --is-interactive; and source (nodenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
+set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
