@@ -77,6 +77,8 @@ set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 
 set -g fish_user_paths "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
 
+status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
+
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths

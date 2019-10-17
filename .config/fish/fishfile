@@ -5,7 +5,8 @@ oh-my-fish/theme-bobthefish
 oh-my-fish/plugin-expand
 oh-my-fish/plugin-extract
 oh-my-fish/plugin-peco
-jorgebucaran/fish-nvm
 FabioAntunes/fish-nvm
 edc/bass
 jorgebucaran/fnm
+sentriz/fish-pipenv
+daenney/pyenv
