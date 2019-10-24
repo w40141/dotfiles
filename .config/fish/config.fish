@@ -2,8 +2,8 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 
 if not functions -q fisher
 	# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
+	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+	fish -c fisher
 end
 
 alias la='ls -a'
@@ -28,7 +28,7 @@ alias ..... 'cd ../../../..'
 set fish_plugins theme peco
 
 function fish_user_key_bindings
-  bind \cr peco_select_history # Bind for prco history to Ctrl+r
+	bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
 
 # theme-bobthefish
@@ -62,21 +62,20 @@ set -g theme_newline_prompt (set_color green)\uF558'  '
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
 # PATH
-set -x fish_user_paths ""
-set -x fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/libpq/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
-set -x fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
-set -x fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/icu4c/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/icu4c/sbin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/libpq/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
+set -gx fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
+set -gx fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 
 set -x fish_user_paths "/usr/local/sbin" $fish_user_paths
 
