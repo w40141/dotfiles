@@ -156,12 +156,10 @@ PyDispatcher==2.0.5
 pydocstyle==4.0.1
 pyflakes==2.1.1
 Pygments==2.4.2
-pygraphviz==1.5
 PyHamcrest==1.9.0
 pylint==2.4.3
 pynvim==0.3.2
 pyOpenSSL==19.0.0
-pyparsing==2.4.2
 pyqubo==0.4.0
 pyrsistent==0.15.4
 PySnooper==0.2.8

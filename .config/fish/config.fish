@@ -79,5 +79,4 @@ set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 status --is-interactive; and source (pyenv init -|psub)
-status --is-interactive; and source (nodenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
