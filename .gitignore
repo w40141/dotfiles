@@ -9,3 +9,4 @@
 /.jupyter/lab/workspaces/*
 /.config/nvm/
 /.config/configstore/
+/.config/coc

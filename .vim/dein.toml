@@ -60,8 +60,8 @@ repo = 'kana/vim-operator-user'
 [[plugins]]
 repo = 'vimtaku/hl_matchit.vim.git'
 
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
 
 # [[plugins]]
 # repo = 'honza/vim-snippets'

@@ -123,7 +123,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
-on_ft = ['markdown']
+on_ft = ['markdown', 'txt']
 hook_add = '''
 	let g:table_mode_corner = '|'
 '''

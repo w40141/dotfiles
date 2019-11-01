@@ -1,27 +1,37 @@
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = '''has('nvim')'''
-on_event = 'InsertCharPre'
-depends = ['context_filetype.vim']
-hook_source = 'let g:deoplete#enable_at_startup = 1'
-hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'
+# [[plugins]]
+# repo = 'Shougo/deoplete.nvim'
+# if = '''has('nvim')'''
+# # on_event = 'InsertCharPre'
+# on_event = 'InsertEnter'
+# depends = ['context_filetype.vim']
+# hook_source = 'let g:deoplete#enable_at_startup = 1'
+# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'
 
 [[plugins]]
-repo = 'roxma/nvim-yarp'
-if = '''!has('nvim')'''
+repo = 'neoclide/coc.nvim'
+if = '''executable('node') && executable('yarn')'''
+# build = './install.sh nightly'
+build = 'coc#util"install()"'
+on_event = 'InsertEnter'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim'
+merged = '0'
 
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-if = '''!has('nvim')'''
+# [[plugins]]
+# repo = 'roxma/nvim-yarp'
+# if = '''!has('nvim')'''
 
-[[plugins]]
-repo = 'Shougo/neco-syntax'
+# [[plugins]]
+# repo = 'roxma/vim-hug-neovim-rpc'
+# if = '''!has('nvim')'''
 
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
-if = "!has('nvim')"
-on_i = 1
-hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neocomplete.rc.vim'
+# [[plugins]]
+# repo = 'Shougo/neco-syntax'
+
+# [[plugins]]
+# repo = 'Shougo/neocomplete.vim'
+# if = "!has('nvim')"
+# on_event = 'InsertEnter'
+# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neocomplete.rc.vim'
 
 [[plugins]]
 repo = 'tyru/caw.vim'
@@ -108,27 +118,27 @@ hook_add = 'nnoremap <Leader>g :GundoToggle<CR>'
 
 [[plugins]]
 repo = 'osyo-manga/shabadou.vim'
-on_i = 1
+on_event = 'InsertEnter'
 
 [[plugins]]
 repo = 'jceb/vim-hier'
-on_i = 1
+on_event = 'InsertEnter'
 
-[[plugins]]
-repo = 'w0rp/ale'
-on_i = 1
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.rc.vim'
+# [[plugins]]
+# repo = 'w0rp/ale'
+# on_event = 'InsertEnter'
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.rc.vim'
 
 # [[plugins]]
 # repo    = 'osyo-manga/vim-watchdogs'
 # depends = ['vim-qfsigns', 'vim-hier', 'vimproc.vim', 'shabadou.vim', 'vim-quickrun']
-# on_i = 1
+# on_event = 'InsertEnter'
 # hook_post_source = 'call watchdogs#setup(g:quickrun_config)'
 # hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/watchdogs.rc.vim'
 
 [[plugins]]
 repo = 'KazuakiM/vim-qfsigns'
-on_i = 1
+on_event = 'InsertEnter'
 hook_add = '''
 	" If syntax error, cursor is moved at line setting sign.
 	let g:qfsigns#AutoJump = 1
@@ -148,18 +158,25 @@ depends = ['tpope/vim-fugitive']
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
-on_i = 1
+on_event = 'InsertEnter'
+
+# [[plugins]]
+# repo = 'Shougo/neosnippet.vim'
+# depends = ['neosnippet-snippets', 'context_filetype.vim']
+# on_event = 'InsertEnter'
+# hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neosnippet.rc.vim'
+
+# [[plugins]]
+# repo = 'ujihisa/neco-look'
+# on_source = 'deoplete.nvim'
+# on_event = 'InsertEnter'
 
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = ['neosnippet-snippets', 'context_filetype.vim']
-on_i = 1
-hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neosnippet.rc.vim'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
-on_source = 'deoplete.nvim'
-on_i = 1
+repo = 'reireias/vim-cheatsheet'
+on_cmd = 'Cheat'
+hook_source = '''
+	let g:cheatsheet#cheat_file = './util/cheatsheet.md'
+'''
 
 # [[plugins]]
 # repo = 'kassio/neoterm'

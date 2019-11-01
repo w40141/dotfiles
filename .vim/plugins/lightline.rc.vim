@@ -7,11 +7,15 @@
 let g:lightline = {
 			\ 'colorscheme': 'one', 
 			\ 'active': {
-			\   'left': [['mode', 'paste'], 
-			\            ['fugitive', 'gitgutter', 'filename', 'anzu']], 
-			\  'right': [['percent', 'lineinfo'], 
-			\						 ['ale_error', 'ale_warning', 'ale_ok'], 
-			\            ['charcode', 'fileformat', 'fileencoding', 'filetype']]
+			\   'left': [
+			\						 ['mode', 'paste'], 
+			\            ['fugitive', 'gitgutter', 'filename', 'anzu'],
+			\						], 
+			\  'right': [
+			\						 ['percent', 'lineinfo'], 
+			\						 ['coc'],
+			\            ['charcode', 'fileformat', 'fileencoding', 'filetype'],
+			\						],
 			\ },
 			\ 'inactive': {}, 
 			\ 'component': {'lineinfo': '%3l[%L]:%-2v'}, 
@@ -27,6 +31,7 @@ let g:lightline = {
 			\   'fileformat'  : 'MyFileformat', 
 			\   'fileencoding': 'MyFileencoding', 
 			\   'filetype'    : 'MyFiletype', 
+			\		'coc'					: 'coc#status',
 			\ },
 			\	'component_expand': {
 			\		'ale_error'		:	'MyAleError',
@@ -65,7 +70,7 @@ endfunction
 
 " MyFilename
 function! MyFilename()
-	if winwidth(0) < 100
+	if winwidth(0) < 120
 		return ''
 	else
 		return ('' != MyReadonly() ? MyReadonly() . '' : '') .

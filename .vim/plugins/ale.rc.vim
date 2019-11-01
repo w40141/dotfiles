@@ -1,25 +1,26 @@
 "---------------------------------------------------------------------------
 " ale.vim
 "
+
 " エラー行に表示するマーク
 let g:ale_sign_error = "\uF490"
 let g:ale_sign_warning = "\uF4A3"
 let g:ale_sign_ok = "\uF4A1"
 let g:ale_statusline_format = [g:ale_sign_error, g:ale_sign_warning, g:ale_sign_ok]
+" エラー表示の列を常時表示
+let g:ale_sign_column_always = 1
 
 " エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" エラー表示の列を常時表示
-let g:ale_sign_column_always = 1
 
-" ファイルを開いたときにlint実行
-let g:ale_lint_on_enter = 1
-" ファイルを保存したときにlint実行
-let g:ale_lint_on_save = 1
-" 編集中のlintはしない
+" Write this in your vimrc file
 let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 1
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 0
