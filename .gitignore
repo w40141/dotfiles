@@ -1,5 +1,4 @@
 .DS_Store
-*.json
 /.config/vim
 /.config/dot_zsh/.zcompdump
 /.config/configstore
@@ -8,5 +7,6 @@
 !/.config/fish/config.fish
 !/.config/fish/fishfile
 /.jupyter
+/.config/coc/*
 /.config/coc/extensions/*
 !/.config/coc/extensions/package.json
