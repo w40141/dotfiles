@@ -8,4 +8,4 @@
 !/.config/fish/fishfile
 /.jupyter/lab/workspaces/*
 .config/coc/*
-!/.config/coc/extensions/package.json
+.config/coc/extensions/package.json
