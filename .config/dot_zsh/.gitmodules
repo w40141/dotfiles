@@ -1,0 +1,15 @@
+[submodule "extra_git/zsh-syntax-highlighting"]
+	path = extra_git/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "extra_git/completions"]
+	path = extra_git/completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "extra_git/dircolors"]
+	path = extra_git/dircolors
+	url = https://github.com/seebi/dircolors-solarized.git
+[submodule "extra_git/zsh-history-substring"]
+	path = extra_git/zsh-history-substring
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "extra_git/zsh-syntax"]
+	path = extra_git/zsh-syntax
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git

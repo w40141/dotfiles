@@ -1,0 +1,18 @@
+zstyle ':completion:*:manuals' separate-sections true
+# export MANPAGER='less -R'
+MANPAGER="col -b -x | vim -R -c 'set ft=man' - "
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+
+# 重複する要素を自動的に削除
+typeset -U sudo_path path cdpath fpath manpath
+

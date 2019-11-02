@@ -1,0 +1,118 @@
+typeset -xT SUDO_PATH sudo_path
+typeset -U sudo_path
+
+sudo_path=({/usr/local,/usr,}/sbin(N-/))
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+autoload -Uz compinit
+compinit -u
+
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+
+path=(	/usr/local/sbin 
+		/usr/local/bin
+		/usr/bin
+		/bin 
+		/usr/sbin
+		/sbin
+		/tmp
+		$path
+)
+
+# export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+# export PATH="/usr/local/opt/icu4c/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
+# export PATH="$PATH:/usr/local/opt/openssl/bin"
+# export PATH="$PATH:$HOME/.nodebrew/current/bin"
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# export PATH="/usr/local/opt/llvm/bin:$PATH"
+# export PATH="/usr/local/opt/llvm@5/bin:$PATH"
+# export PATH="$PATH:/usr/local/Cellar/llvm/HEAD-1d6becb/bin"
+# export PATH="~/Library/Python/3.6/bin:$PATH"
+# export PATH="/usr/local/opt/python@2/bin:$PATH"
+
+# java 文字コード
+alias javac="javac -J-Dfile.encoding=UTF-8"
+alias java="java -Dfile.encoding=UTF-8"
+
+# pyenvでbrew doctorした時にでるwarningsをなくす
+# alias brew="env PATH=${PATH/\/Users\/aisuke\/\.pyenv\/shims:?/} brew"
+
+if [ -d /usr/local/opt/coreutils/libexec/gnubin ] ; then
+    export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+    alias ls='ls --color=auto'
+else
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+# LSCOLORSの指定# {{{
+# 01:g ディレクトリ前景色
+# 02:x ディレクトリ背景色
+# 03:f シンボリックリンク前景色
+# 04:x シンボリックリンク背景色
+# 05:c ソケットファイル前景色
+# 06:x ソケットファイル背景色
+# 07:d FIFOファイル前景色
+# 08:x FIFOファイル背景色
+# 09:b 実行ファイル前景色
+# 10:x 実行ファイル背景色
+# 11:e ブロックスペシャルファイル前景色
+# 12:g ブロックスペシャルファイル背景色
+# 13:e キャラクタスペシャルファイル前景色
+# 14:d キャラクタスペシャルファイル背景色
+# 15:a setuidつき実行ファイル前景色
+# 16:b setuidつき実行ファイル背景色
+# 17:a setgidつき実行ファイル前景色
+# 18:g setgidつき実行ファイル背景色
+# 19:a スティッキビットありother書き込み権限つきディレクトリ前景色
+# 20:c スティッキビットありother書き込み権限つきディレクトリ背景色
+# 21:a スティッキビットなしother書き込み権限つきディレクトリ前景色
+# 22:d スティッキビットなしother書き込み権限つきディレクトリ背景色
+# a: 黒
+# b: 赤
+# c: 緑
+# d: 茶
+# e: 青
+# f: マゼンタ
+# g: シアン
+# h: 白
+# A: 黒(太字)
+# B: 赤(太字)
+# C: 緑(太字)
+# D: 茶(太字)
+# E: 青(太字)
+# F: マゼンタ(太字)
+# G: シアン(太字)
+# H: 白(太字)
+# x: デフォルト色
+# }}}
+    alias ls='ls -G'
+fi
+
+# エディタ for vim
+export EDITOR=nvim
+
+# brew install でインストールしたら自動でbrewfileを更新
+if [ -f $(brew --prefix)/etc/brew-wrap ];then
+  source $(brew --prefix)/etc/brew-wrap
+fi
+
+export LANG=jp_JP.UTF-8
+
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# export XDG_CACHE_HOME=$HOME/.cache
+# export NVIM_PYTHON_LOG_FILE=/tmp/log
+# export NVIM_PYTHON_LOG_LEVEL=DEBUG
+# export XDG_CONFIG_HOME=$HOME/.config
+# export NVM_DIR="$HOME/.nvm"
+#   . "/usr/local/opt/nvm/nvm.sh"
