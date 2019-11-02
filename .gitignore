@@ -3,9 +3,9 @@
 /.config/dot_zsh/.zcompdump
 /.config/configstore
 /.config/fisher
-/.config/fish
+/.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fishfile
 /.jupyter
-/.config/coc/
-#!/.config/coc/extensions/package.json
+/.config/coc/*
+!/.config/coc/extensions/package.json
