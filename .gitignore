@@ -7,8 +7,6 @@
 !/.config/fish/config.fish
 !/.config/fish/fishfile
 /.jupyter
-/.config/coc/mru
-/.config/coc/lists
 /.config/coc/*.json
 /.config/coc/extensions/*
 !/.config/coc/extensions/package.json
