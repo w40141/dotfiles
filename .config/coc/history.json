@@ -1,0 +1,18 @@
+{
+  "lists": {
+    "%2FUsers%2Fdaisuke": {
+      "oku%2Fprogram%2Flanguages": [
+        "ex"
+      ]
+    }
+  },
+  "extensions": {
+    "%2FUsers%2Fdaisuke": {
+      "oku%2Fdotfiles%2F": {
+        "config": [
+          "vi"
+        ]
+      }
+    }
+  }
+}
