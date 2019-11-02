@@ -10,11 +10,12 @@
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
-# build = './install.sh nightly'
-build = 'coc#util"install()"'
+rev = 'release'
+merged = '0'
 on_event = 'InsertEnter'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim'
-merged = '0'
+# build = './install.sh nightly'
+# build = 'call#util#install()'
 
 # [[plugins]]
 # repo = 'roxma/nvim-yarp'

@@ -76,7 +76,9 @@ set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
+set -g fish_user_paths "$HOME/.nodebrew/current/bin" $fish_user_paths
+
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
