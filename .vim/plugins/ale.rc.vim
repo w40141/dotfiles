@@ -11,8 +11,8 @@ let g:ale_statusline_format = [g:ale_sign_error, g:ale_sign_warning, g:ale_sign_
 let g:ale_sign_column_always = 1
 
 " エラー行にカーソルをあわせた際に表示されるメッセージフォーマット
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_error_str = "E"
+let g:ale_echo_msg_warning_str = "W"
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " Write this in your vimrc file

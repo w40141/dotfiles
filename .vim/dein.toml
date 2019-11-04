@@ -1,5 +1,5 @@
-[[plugins]]
-repo = 'Shougo/dein.vim'
+#[[plugins]]
+#repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -15,6 +15,13 @@ repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree', 'NERDTreeToggle']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
 
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+if = '''executable('node') && executable('yarn')'''
+rev = 'release'
+merged = '0'
+hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim'
+
 # [[plugins]]
 # repo = 'nathanaelkane/vim-indent-guides'
 # hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-indent-guides.rc.vim'
@@ -25,8 +32,8 @@ depends = ['nerdtree']
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim'
 
 [[plugins]]
-depends = ['nerdtree']
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+depends = ['nerdtree']
 
 [[plugins]]
 repo = 'vim-jp/autofmt'
@@ -59,12 +66,6 @@ repo = 'kana/vim-operator-user'
 
 [[plugins]]
 repo = 'vimtaku/hl_matchit.vim.git'
-
-# [[plugins]]
-# repo = 'Shougo/neosnippet-snippets'
-
-# [[plugins]]
-# repo = 'honza/vim-snippets'
 
 [[plugins]]
 repo = 'mattn/webapi-vim'
@@ -112,3 +113,27 @@ hook_add = '''
 " フォルダアイコンの表示をON
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
+
+[[plugins]]
+repo = 'dracula/vim'
+if = "has('nvim')"
+hook_add = '''
+	set background=dark
+	autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+	autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=80
+'''
+
+[[plugins]]
+repo = 'jpo/vim-railscasts-theme'
+if = "!has('nvim')"
+hook_add = '''
+	colorscheme railscasts
+	autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=80
+	set background=dark
+
+'''
+# [[plugins]]
+# repo = 'Shougo/neosnippet-snippets'
+
+# [[plugins]]
+# repo = 'honza/vim-snippets'

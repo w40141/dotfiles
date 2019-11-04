@@ -13,7 +13,7 @@ let g:lightline = {
 			\						], 
 			\  'right': [
 			\						 ['percent', 'lineinfo'], 
-			\						 ['coc'],
+			\						 ['ale_error', 'ale_warning', 'ale_ok'],
 			\            ['charcode', 'fileformat', 'fileencoding', 'filetype'],
 			\						],
 			\ },
