@@ -1,15 +1,14 @@
 {
+	"diagnostic.errorSign": "\uF490",
+	"diagnostic.warningSign": "\uF4A3",
 	"suggest.triggerAfterInsertEnter": true,
-	"suggest.noselect": false,
 	"suggest.minTriggerInputLength": 2,
 	"suggest.acceptSuggestionOnCommitCharacter": true,
 	"suggest.snippetIndicator": " ►",
 	"suggest.enablePreview": true,
-	"coc.preferences.hoverTarget": "float",
-	"list.autoResize": true,
-	"coc.preferences.diagnostic.displayByAle": true,
-	"suggest.noselect":false,
+	"suggest.noselect": false,
 	"suggest.preferCompleteThanJumpPlaceholder":true,
+	"coc.preferences.hoverTarget": "float",
 	"languageserver": {
 		"clangd": {
 			"command": "clangd",

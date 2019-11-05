@@ -1,10 +1,19 @@
-#[[plugins]]
-#repo = 'Shougo/dein.vim'
+[[plugins]]
+repo = 'Shougo/dein.vim'
+hook_add = 'let g:dein#auto_recache = 1'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 hook_post_update = 'source $XDG_CONFIG_HOME/nvim/plugins/vimproc.rc.vim'
+
+[[plugins]]
+repo = 'dracula/vim'
+if = "has('nvim')"
+hook_add = '''
+	set background=dark
+	autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+'''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -21,10 +30,6 @@ if = '''executable('node') && executable('yarn')'''
 rev = 'release'
 merged = '0'
 hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim'
-
-# [[plugins]]
-# repo = 'nathanaelkane/vim-indent-guides'
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-indent-guides.rc.vim'
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
@@ -76,12 +81,12 @@ repo = 'thinca/vim-themis'
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
 
-[[plugins]]
-repo = 'Shougo/context_filetype.vim'
+# [[plugins]]
+# repo = 'Shougo/context_filetype.vim'
 
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
+# [[plugins]]
+# repo = 'osyo-manga/vim-precious'
+# depends = ['context_filetype.vim']
 
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
@@ -115,22 +120,14 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]]
-repo = 'dracula/vim'
-if = "has('nvim')"
-hook_add = '''
-	set background=dark
-	autocmd MyAutoCmd VimEnter * nested colorscheme dracula
-	autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=80
-'''
+repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'jpo/vim-railscasts-theme'
 if = "!has('nvim')"
 hook_add = '''
-	colorscheme railscasts
-	autocmd MyAutoCmd ColorScheme * highlight LineNr ctermfg=80
 	set background=dark
-
+	colorscheme railscasts
 '''
 # [[plugins]]
 # repo = 'Shougo/neosnippet-snippets'

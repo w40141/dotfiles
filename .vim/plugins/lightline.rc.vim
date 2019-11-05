@@ -6,45 +6,56 @@
 "								PaperColor light, seoul256, one, landscape
 let g:lightline = {
 			\ 'colorscheme': 'one', 
-			\ 'active': {
-			\   'left': [
-			\						 ['mode', 'paste'], 
-			\            ['fugitive', 'gitgutter', 'filename', 'anzu'],
-			\						], 
-			\  'right': [
-			\						 ['percent', 'lineinfo'], 
-			\						 ['ale_error', 'ale_warning', 'ale_ok'],
-			\            ['charcode', 'fileformat', 'fileencoding', 'filetype'],
-			\						],
-			\ },
-			\ 'inactive': {}, 
-			\ 'component': {'lineinfo': '%3l[%L]:%-2v'}, 
+			\	'active': {
+			\			'left': [
+			\					['mode', 'paste'], 
+			\					['fugitive', 'gitgutter', 'filename', 'anzu'], 
+			\			], 
+			\			'right': [
+			\					['percent', 'lineinfo'], 
+			\					['coc'], 
+			\					['charcode', 'fileformat', 'fileencoding', 'filetype'], 
+			\			], 
+			\ }, 
+			\	'inactive': {
+			\			'left': [],
+			\			'right': [['ale_error', 'ale_warning', 'ale_ok']]
+			\	}, 
+			\	'component': {
+			\			'lineinfo': '%3l[%L]:%-2v'
+			\	},
 			\ 'component_function': {
-			\   'mode'        : 'MyMode', 
-			\   'fugitive'    : 'MyFugitive', 
-			\   'gitgutter'   : 'MyGitGutter', 
-			\   'filename'    : 'MyFilename', 
-			\		'modified'		: 'MyModified', 
-			\   'readonly'    : 'MyReadonly', 
-			\   'anzu'        : 'anzu#search_status', 
-			\		'charcode'		: 'MyCharCode', 
-			\   'fileformat'  : 'MyFileformat', 
-			\   'fileencoding': 'MyFileencoding', 
-			\   'filetype'    : 'MyFiletype', 
-			\		'coc'					: 'coc#status',
+			\			'mode'        : 'MyMode', 
+			\   	'fugitive'    : 'MyFugitive', 
+			\   	'gitgutter'   : 'MyGitGutter', 
+			\   	'filename'    : 'MyFilename', 
+			\			'modified'		: 'MyModified', 
+			\   	'readonly'    : 'MyReadonly', 
+			\   	'anzu'        : 'anzu#search_status', 
+			\			'charcode'		: 'MyCharCode', 
+			\   	'fileformat'  : 'MyFileformat', 
+			\   	'fileencoding': 'MyFileencoding', 
+			\   	'filetype'    : 'MyFiletype', 
+			\			'coc'					: 'MyCoc', 
 			\ },
 			\	'component_expand': {
-			\		'ale_error'		:	'MyAleError',
-			\   'ale_warning'	:	'MyAleWarning',
-			\   'ale_ok'			:	'MyAleOk',
+			\			'ale_error'		:	'MyAleError', 
+			\			'ale_warning'	:	'MyAleWarning', 
+			\			'ale_ok'			:	'MyAleOk', 
 			\ }, 
 			\ 'component_type': {
-			\   'ale_error'		:	'error',
-			\   'ale_warning'	:	'warning',
-			\   'ale_ok'			:	'ok',
+			\			'ale_error'		:	'error', 
+			\			'ale_warning'	:	'warning', 
+			\			'ale_ok'			:	'ok', 
 			\ }, 
-			\ 'separator'       : { 'left': "\uE0B0", 'right': "\uE0B2" }, 
-			\ 'subseparator'    : { 'left': "\uE0B1", 'right': "\uE0B3" }
+			\ 'separator'     : {
+			\			'left' : "\uE0B0", 
+			\			'right': "\uE0B2", 
+			\ }, 
+			\ 'subseparator'  : {
+			\			'left' : "\uE0B1", 
+			\			'right': "\uE0B3", 
+			\ }
 			\ }
 
 " left
@@ -91,7 +102,6 @@ function! MyModified()
 	return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? " \uF040" : &modifiable ? '' : '-'
 endfunction
 
-
 " MyGitGutter
 let g:gitgutter_sign_added = "\uF067"
 let g:gitgutter_sign_modified = "\uF061"
@@ -123,6 +133,11 @@ function! MyAnzu()
 endfunction
 
 " right
+" MyCoc
+function! MyCoc()
+	return winwidth(0) > 100 ? coc#status() : ''
+endfunction
+
 " MyCharCode
 function! MyCharCode()
 	if winwidth('.') <= 120

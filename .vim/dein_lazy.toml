@@ -156,10 +156,10 @@ hook_source = '''
 # on_event = 'InsertEnter'
 # hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neocomplete.rc.vim'
 
-[[plugins]]
-repo = 'w0rp/ale'
-on_event = 'InsertEnter'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.rc.vim'
+# [[plugins]]
+# repo = 'dense-analysis/ale'
+# on_event = 'InsertEnter'
+# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.rc.vim'
 
 # [[plugins]]
 # repo    = 'osyo-manga/vim-watchdogs'

@@ -41,4 +41,3 @@ map <C-k> [ale]
 " エラー行にジャンプ
 nmap <silent> [ale]<C-P> <Plug>(ale_previous_wrap)
 nmap <silent> [ale]<C-N> <Plug>(ale_next_wrap)
-

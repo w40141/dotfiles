@@ -558,13 +558,12 @@
 		call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 	endif
 	let &runtimepath		= s:dein_repo_dir .','. &runtimepath
+	let s:rc_dic			= expand('~/.config/nvim')
+	let s:toml				= s:rc_dic . '/dein.toml'
+	let s:toml_lazy		= s:rc_dic . '/dein_lazy.toml'
 	" プラグイン読み込み＆キャッシュ作成
 	if dein#load_state(s:dein_dir)
 		call dein#begin(s:dein_dir)
-		let s:rc_dic			= expand('~/.config/nvim')
-		let s:toml				= s:rc_dic . '/dein.toml'
-		let s:toml_lazy		= s:rc_dic . '/dein_lazy.toml'
-		call dein#add('Shougo/dein.vim')
 		call dein#load_toml(s:toml,       {'lazy':0})
 		call dein#load_toml(s:toml_lazy,  {'lazy':1})
 		call dein#end()

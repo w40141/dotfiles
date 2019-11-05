@@ -2,8 +2,8 @@
 " coc.nvim
 "
 
-let g:coc_status_error_sign = "\uF490"
-let g:coc_status_warning_sign = "\uF4A3"
+let g:coc_status_error_sign = "\uF490 "
+let g:coc_status_warning_sign = "\uF4A3 "
 
 " if hidden is not set, TextEdit might fail.
 set hidden
@@ -46,9 +46,9 @@ inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use `<C-k><C-p>` and `<C-k><C-n>` to navigate diagnostics
+nmap <silent> <C-k><C-p> <Plug>(coc-diagnostic-prev)
+nmap <silent> <C-k><C-n> <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
