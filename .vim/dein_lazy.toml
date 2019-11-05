@@ -1,17 +1,56 @@
 [[plugins]]
 repo = 'tyru/caw.vim'
 on_map = [['nx', '<Plug>']]
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/caw.rc.vim'
+hook_add = '''
+	" 行の最初の文字の前にコメント文字をトグル
+	nmap gcc <Plug>(caw:hatpos:toggle)
+	vmap gcc <Plug>(caw:hatpos:toggle)
+	" 行頭にコメントをトグル
+	nmap gc, <Plug>(caw:zeropos:toggle)
+	vmap gc, <Plug>(caw:zeropos:toggle)
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = [['nv', '<Plug>']]
+on_cmd = 'OpenBrowserSearch'
+hook_add = '''
+	" disable netrw's gx mapping.
+	let g:netrw_nogx = 1
+	nmap gx <Plug>(openbrowser-smart-search)
+	vmap gx <Plug>(openbrowser-smart-search)
+'''
 
 [[plugins]]
 repo = 'AndrewRadev/switch.vim'
 on_cmd = 'Switch'
 
 [[plugins]]
-repo = 'kana/vim-operator-replace'
-depends = ['vim-operator-user']
+repo = 'kien/ctrlp.vim'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
 on_map = [['nx', '<Plug>']]
-hook_add = 'xmap p <Plug>(operator-replace)'
+hook_add = '''
+	nmap p <Plug>(yankround-p)
+	xmap p <Plug>(yankround-p)
+	nmap P <Plug>(yankround-P)
+	nmap gp <Plug>(yankround-gp)
+	xmap gp <Plug>(yankround-gp)
+	nmap gP <Plug>(yankround-gP)
+	nmap <Leader>p <Plug>(yankround-prev)
+	nmap <Leader>n <Plug>(yankround-next)
+	"" 履歴取得数
+	let g:yankround_max_history = 50
+	""履歴一覧(kien/ctrlp.vim)
+	nnoremap <silent>g<C-c> :<C-u>CtrlPYankRound<CR>
+'''
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugin]]
+repo = 'osyo-manga/vim-textobj-multiblock'
 
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
@@ -24,27 +63,27 @@ hook_add = '''
 	nmap <silent>sd <Plug>(operator-surround-delete)
 	" sra"'
 	nmap <silent>sr <Plug>(operator-surround-replace)
+	" カーソル位置から一番近い括弧を削除する
+	nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
+	" カーソル位置から一番近い括弧を変更する
+	nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 '''
 
 [[plugins]]
-repo = 'osyo-manga/vim-jplus'
-on_map = [['n', '<Plug>']]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = ['python', 'python3']
+
+[[plugins]]
+repo = 'fisadev/vim-isort'
+on_ft = ['python', 'python3']
 hook_add = '''
-	nmap J <Plug>(jplus)
-	vmap J <Plug>(jplus)
+	let g:vim_isort_map = '<C-i>'
+	let g:vim_isort_python_version = 'python3'
 '''
 
 [[plugins]]
-repo = 'saihoooooooo/glowshi-ft.vim'
-on_map = [['nx', '<Plug>']]
-hook_add = '''
-	let g:glowshi_ft_no_default_key_mappings = 1
-	nmap f <Plug>(glowshi-ft-f)
-	xmap f <Plug>(glowshi-ft-f)
-	nmap F <Plug>(glowshi-ft-F)
-	xmap F <Plug>(glowshi-ft-F)
-	let g:glowshi_ft_timeoutlen = 1000
-'''
+repo = 'Integralist/vim-mypy'
+on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
@@ -64,7 +103,7 @@ hook_add = 'nnoremap buf :<C-u>EasyBuffer<CR>'
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 on_map = [['n', '<Plug>']]
-hook_add = 'nmap <Leader>r <Plug>(quickrun)'
+hook_add = 'nmap <Leader>qr <Plug>(quickrun)'
 hook_post_source = '''
 	let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
 	let g:quickrun_config={'*': {'split': 'vertical'}}
@@ -74,35 +113,28 @@ hook_post_source = '''
 [[plugins]]
 repo = 'sjl/gundo.vim'
 on_cmd = 'GundoToggle'
-hook_add = 'nnoremap <Leader>g :GundoToggle<CR>'
-
-[[plugins]]
-repo = 'osyo-manga/shabadou.vim'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'jceb/vim-hier'
-on_event = 'InsertEnter'
-
-[[plugins]]
-repo = 'KazuakiM/vim-qfsigns'
-on_event = 'InsertEnter'
 hook_add = '''
-	" If syntax error, cursor is moved at line setting sign.
-	let g:qfsigns#AutoJump = 1
-	" If syntax error,  view split and cursor is moved at line setting sign.
-	" let g:qfsigns#AutoJump = 2
+	nnoremap <Leader>g :GundoToggle<CR>
 '''
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
 
 [[plugins]]
 repo = 'mattn/gist-vim'
 on_cmd = 'Gist'
-depends = ['mattn/webapi-vim']
+depends = ['webapi-vim']
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'gregsexton/gitv'
 on_cmd = 'Gitv'
-depends = ['tpope/vim-fugitive']
+depends = ['vim-fugitive']
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
@@ -115,170 +147,12 @@ hook_source = '''
 	let g:cheatsheet#cheat_file = './util/cheatsheet.md'
 '''
 
-# [[plugins]]
-# repo = 'Shougo/neosnippet.vim'
-# depends = ['neosnippet-snippets', 'context_filetype.vim']
-# on_event = 'InsertEnter'
-# hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neosnippet.rc.vim'
-
-# [[plugins]]
-# repo = 'ujihisa/neco-look'
-# on_source = 'deoplete.nvim'
-# on_event = 'InsertEnter'
-
-# [[plugins]]
-# repo = 'kassio/neoterm'
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/neoterm.rc.vim'
-
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# if = '''has('nvim')'''
-# # on_event = 'InsertCharPre'
-# on_event = 'InsertEnter'
-# depends = ['context_filetype.vim']
-# hook_source = 'let g:deoplete#enable_at_startup = 1'
-# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'
-
-# [[plugins]]
-# repo = 'roxma/nvim-yarp'
-# if = '''!has('nvim')'''
-
-# [[plugins]]
-# repo = 'roxma/vim-hug-neovim-rpc'
-# if = '''!has('nvim')'''
-
-# [[plugins]]
-# repo = 'Shougo/neco-syntax'
-
-# [[plugins]]
-# repo = 'Shougo/neocomplete.vim'
-# if = "!has('nvim')"
-# on_event = 'InsertEnter'
-# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/neocomplete.rc.vim'
-
-# [[plugins]]
-# repo = 'dense-analysis/ale'
-# on_event = 'InsertEnter'
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/ale.rc.vim'
-
-# [[plugins]]
-# repo    = 'osyo-manga/vim-watchdogs'
-# depends = ['vim-qfsigns', 'vim-hier', 'vimproc.vim', 'shabadou.vim', 'vim-quickrun']
-# on_event = 'InsertEnter'
-# hook_post_source = 'call watchdogs#setup(g:quickrun_config)'
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/watchdogs.rc.vim'
-
-# [[plugins]]
-# repo = 'Lokaltog/vim-easymotion'
-# on_map = [['n', '<Plug>']]
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/easymotion.rc.vim'
-
-# [[plugins]]
-# repo = 'vim-jp/cpp-vim'
-# on_ft = 'cpp'
-
-# [[plugins]]
-# repo = 'zchee/deoplete-clang'
-# hook_source = '''
-# 	autocmd FileType c		setlocal completeopt-=preview
-# 	autocmd filetype cpp	setlocal completeopt-=preview
-# 	let g:deoplete#sources#clang#libclang_path = '/usr/local/Cellar/llvm/6.0.0/lib/libclang.dylib'
-# 	let g:deoplete#sources#clang#clang_header = '/usr/local/opt/llvm/lib/clang'
-# '''
-# on_i = 1
-# on_ft = ['c', 'cpp', 'cmake']
-
-# [[plugins]]
-# repo = 'Shougo/neoinclude.vim'
-# on_i = 1
-# on_ft = ['c', 'cpp', 'cmake']
-
-[[plugins]]
-repo = 'JesseKPhillips/d.vim'
-on_ft = 'd'
-
-[[plugins]]
-repo = 'thinca/vim-ft-diff_fold'
-on_ft = 'diff'
-
-# [[plugins]]
-# repo = 'fatih/vim-go'
-# on_ft = 'go' 
-
-# [[plugins]]
-# repo = 'nsf/gocode'
-# rtp = 'vim'
-# on_ft = 'go'
-
-# [[plugins]]
-# repo = 'zchee/deoplete-go'
-# hook_source = '''
-# 	" let g:deoplete#sources#go#gocode_binary		=
-# 	let g:deoplete#sources#go#sort_class			= ['package', 'func', 'type', 'var', 'const']
-# '''
-# on_i = 1
-# on_ft = 'go'
-
-[[plugins]]
-repo = 'kana/vim-filetype-haskell'
-on_ft = 'haskell'
-
-[[plugins]]
-repo = 'itchyny/vim-haskell-indent'
-on_ft = 'haskell'
-
-[[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
-
-# [[plugins]]
-# repo  = 'othree/html5.vim'
-# on_ft = 'html'
-
-# [[plugins]]
-# repo = 'hail2u/vim-css3-syntax'
-# on_ft = ['html', 'html5']
-# hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/css3-syntax.rc.vim'
-
-# [[plugins]]
-# repo = 'mattn/emmet-vim'
-# on_ft = ["html", "html5"]
-# hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim'
-
-# [[plugins]]
-# repo = 'jelera/vim-javascript-syntax'
-# on_ft = 'javascript'
-
-[[plugins]]
-repo = 'othree/yajs'
-on_ft = 'javascript'
-
-[[plugins]]
-repo = 'othree/es.next.syntax.vim'
-on_ft = 'javascript'
-
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
-on_ft = 'javascript'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vim-jsx-pretty.rc.vim'
-
-[[plugins]]
-repo = 'jiangmiao/simple-javascript-indenter'
-on_ft = 'javascript'
-
-[[plugins]]
-repo = 'marijnh/tern_for_vim'
-on_ft = 'javascript'
-build = 'npm install'
-
-[[plugins]]
-repo = 'elzr/vim-json'
-on_ft = 'json'
-
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim'
+hook_add = '''
+	source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+'''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
@@ -293,7 +167,7 @@ hook_add = '''
 repo = 'kazuph/previm'	
 on_ft = ['markdown', 'mkd', 'md']
 hook_source = '''
-	nnoremap <silent><Space><Space>p :PrevimOpen<CR>
+	nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
 '''
 
 [[plugins]]
@@ -304,83 +178,17 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'aklt/plantuml-syntax'
-on_ft = ['uml', 'pu', 'plantuml']
+repo = 'mattn/emmet-vim'
+on_ft = ["html", "html5"]
 hook_source = '''
-	let g:plantuml_executable_script = '~/dot_nvim/.vim/plugins/plantuml'
-'''
-# :make でUMLのpngファイルができる
-
-[[plugins]]
-repo = 'shawncplus/phpcomplete.vim'
-on_ft = 'php'
-
-# [[plugins]]
-# repo = 'lambdalisue/vim-django-support'
-# on_ft = ['python', 'python3', 'djangohtml']
-#
-# [[plugins]]
-# repo = 'jmcantrell/vim-virtualenv'
-# on_ft = ['python', 'python3', 'djangohtml']
-
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_ft = ['python', 'python3']
-
-[[plugins]]
-repo = 'fisadev/vim-isort'
-on_ft = ['python', 'python3']
-hook_add = '''
-let g:vim_isort_map = '<C-i>'
-let g:vim_isort_python_version = 'python3'
+	source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
 
-[[plugins]]
-repo = 'Integralist/vim-mypy'
-on_ft = ['python', 'python3']
-
-#[[plugins]]
-#repo = 'kevinw/pyflakes-vim'
-#on_ft = ['python', 'python3']
-#hook_add = '''
-#  let g:pyflakes_use_quickfix=0
-#'''
-
 # [[plugins]]
-# repo = 'deoplete-plugins/deoplete-jedi'
-# depens = 'deoplete.nvim'
-# on_ft = ['python', 'python3']
-# hook_add = '''
-# 	let g:deoplete#sources#jedi#python_path = '/usr/local/bin/python3'
-# '''
-# hook_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete-jedi.rc.vim'
-
-# [[plugins]]
-# repo = 'davidhalter/jedi-vim'
-# on_ft = [ 'python', 'python3', 'djangohtml']
-# hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/jedi-vim.rc.vim'
-
-[[plugins]]
-repo = 'tpope/vim-rails'
-on_ft = ['haml', 'ruby', 'eruby']
-
-[[plugins]]
-repo = 'tpope/vim-endwise'
-on_ft = ['haml', 'ruby', 'eruby']
-hook_add = 'let g:endwise_no_mappings=1'
-
-# [[plugins]]
-# repo = 'cespare/vim-toml'
-# on_ft = 'toml'
-
-[[plugins]]
-repo = 'yomi322/vim-gitcomplete'
-on_ft = 'vimshell'
-
-[[plugins]]
-repo = 'ujihisa/vimshell-ssh'
-on_ft = 'vimshell'
-
-# [[plugins]]
-# repo = 'Shougo/neco-vim'
-# on_ft = 'vim'
+# repo = 'Shougo/deoplete.nvim'
+# if = '''has('nvim')'''
+# # on_event = 'InsertCharPre'
+# on_event = 'InsertEnter'
+# depends = ['context_filetype.vim']
+# hook_source = 'let g:deoplete#enable_at_startup = 1'
+# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'

@@ -1,15 +1,28 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-hook_add = 'let g:dein#auto_recache = 1'
+hook_add = '''
+	" プラグインを自動で消す
+	let g:dein#auto_recache = 1
+'''
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
-hook_post_update = 'source $XDG_CONFIG_HOME/nvim/plugins/vimproc.rc.vim'
+hook_post_update = '''
+	if dein#util#_is_windows()
+		let cmd = 'tools\\update-dll-mingw'
+	elseif dein#util#_is_cygwin()
+		let cmd = 'make -f make_cygwin.mak'
+	elseif executable('gmake')
+		let cmd = 'gmake'
+	else
+		let cmd = 'make'
+	endif
+	let g:dein#plugin.build = cmd
+'''
 
 [[plugins]]
 repo = 'dracula/vim'
-if = "has('nvim')"
 hook_add = '''
 	set background=dark
 	autocmd MyAutoCmd VimEnter * nested colorscheme dracula
@@ -17,97 +30,75 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/lightline.rc.vim'
+hook_add = '''
+	source $XDG_CONFIG_HOME/nvim/plugins/lightline.rc.vim
+'''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree', 'NERDTreeToggle']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim'
+hook_add = '''
+	source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim
+'''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
 rev = 'release'
 merged = '0'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim'
+hook_add = '''
+	source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
+'''
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['nerdtree']
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim'
+hook_add = '''
+	source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim
+'''
 
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 depends = ['nerdtree']
 
 [[plugins]]
-repo = 'vim-jp/autofmt'
-
-[[plugins]]
-repo = 'roxma/nvim-yarp'
-
-[[plugins]]
-repo = 'roxma/vim-hug-neovim-rpc'
-
-[[plugins]]
-repo = 'tyru/open-browser.vim'
-on_map = [['n', '<Plug>']]
-on_cmd = 'OpenBrowserSearch'
-hook_add = '''
-	let g:netrw_nogx = 1 " disable netrw's gx mapping.
-	nmap gx <Plug>(openbrowser-smart-search)
-	vmap gx <Plug>(openbrowser-smart-search)
-'''
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'
-
-[[plugins]]
-repo = 'LeafCage/yankround.vim'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/yankround.rc.vim'
-
-[[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugins]]
 repo = 'vimtaku/hl_matchit.vim.git'
-
-[[plugins]]
-repo = 'mattn/webapi-vim'
-
-[[plugins]]
-repo = 'thinca/vim-themis'
 
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
 
-# [[plugins]]
-# repo = 'Shougo/context_filetype.vim'
-
-# [[plugins]]
-# repo = 'osyo-manga/vim-precious'
-# depends = ['context_filetype.vim']
-
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/anzu.rc.vim'
+hook_add = '''
+	nmap n nzz<Plug>(anzu-update-search-status)
+	nmap N Nzz<Plug>(anzu-update-search-status)
+	nmap * <Plug>(anzu-star-with-echo)
+	nmap # <Plug>(anzu-sharp-with-echo)
+	" clear status
+	nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+	" set statusline=%{anzu#search_status()}
+'''
 
+# toDo
 [[plugins]]
 repo = 'majutsushi/tagbar'
 
+# toDo
 [[plugins]]
-repo = 'airblade/vim-gitgutter'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
+repo = 'sheerun/vim-polyglot'
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
-hook_add = 'source $XDG_CONFIG_HOME/nvim/plugins/expand-region.rc.vim'
+hook_add = '''
+	vmap v <Plug>(expand_region_expand)
+	vmap <C-v> <Plug>(expand_region_shrink)
+'''
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
-hook_add = 'let g:loaded_matchparen = 1'
+hook_add = '''
+	let g:loaded_matchparen = 1
+'''
 
 [[plugins]]
 repo = 'itchyny/vim-cursorword'
@@ -115,22 +106,16 @@ repo = 'itchyny/vim-cursorword'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
-" フォルダアイコンの表示をON
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]]
-repo = 'sheerun/vim-polyglot'
+repo = 'vim-jp/vimdoc-ja'
+on_ft = 'help'
 
 [[plugins]]
-repo = 'jpo/vim-railscasts-theme'
-if = "!has('nvim')"
-hook_add = '''
-	set background=dark
-	colorscheme railscasts
-'''
-# [[plugins]]
-# repo = 'Shougo/neosnippet-snippets'
+repo = 'Shougo/context_filetype.vim'
 
-# [[plugins]]
-# repo = 'honza/vim-snippets'
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']

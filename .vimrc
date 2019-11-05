@@ -299,17 +299,6 @@
 		" tabにて対応ペアにジャンプ
 		nnoremap <tab> %
 		vnoremap <tab> %
-
-		" 括弧の編集
-		inoremap {{ {}<left>
-		inoremap [[ []<left>
-		inoremap (( ()<left>
-		inoremap "" ""<left>
-		inoremap '' ''<left>
-		inoremap << <><left>
-		inoremap ]]5 [%  %]<leFT><LEFT><LEFT>
-		inoremap }}5 {%  %}<leFT><LEFT><LEFT>
-		inoremap >>5 <%=  %><lEFT><LEFT><LEFT>
 	"--------------------
 
 	"--------------------

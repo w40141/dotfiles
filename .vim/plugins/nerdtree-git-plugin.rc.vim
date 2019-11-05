@@ -12,5 +12,5 @@ let g:NERDTreeIndicatorMapCustom = {
     	\ 'Dirty'     : '✗',
     	\ 'Clean'     : '✔︎',
     	\ 'Ignored'   : '☒',
-    	\ 'Unknown'   : '?'
-    	\ }
+    	\ 'Unknown'   : '?',
+			\ }
