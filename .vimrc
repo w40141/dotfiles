@@ -253,6 +253,7 @@
 		inoremap <C-h> <left>
 		inoremap <C-j> <down>
 		inoremap <C-l> <right>
+		inoremap <C-b> <BS>
 		inoremap <C-d> <delete>
 		inoremap jk <esc>
 	"--------------------

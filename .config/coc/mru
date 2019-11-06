@@ -1,8 +1,12 @@
+/Users/daisuke.oku/dotfiles/.vim/coc-settings.json
 /Users/daisuke.oku/dotfiles/.vim/plugins/coc.rc.vim
-/Users/daisuke.oku/dotfiles/.vim/dein_lazy.toml
 /Users/daisuke.oku/dotfiles/.vim/init.vim
-/Users/daisuke.oku/dotfiles/.vim/dein.toml
+/Users/daisuke.oku/.vimrc
 /Users/daisuke.oku/dotfiles/.vim/plugins/nerdtree.rc.vim
+/Users/daisuke.oku/dotfiles/.vim/util/cheatsheet.md
+/Users/daisuke.oku/dotfiles/.vim/plugins/lightline.rc.vim
+/Users/daisuke.oku/dotfiles/.vim/dein_lazy.toml
+/Users/daisuke.oku/dotfiles/.vim/dein.toml
 /Users/daisuke.oku/dotfiles/.vim/plugins/ale.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/neocomplete.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/neosnippet.rc.vim
@@ -10,7 +14,6 @@
 /Users/daisuke.oku/dotfiles/.vim/plugins/vimtex.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/sessions/default.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/neoterm.rc.vim
-/Users/daisuke.oku/dotfiles/.vim/plugins/lightline.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/jedi-vim.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/emmet.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/css3-syntax.rc.vim
@@ -22,7 +25,6 @@
 /Users/daisuke.oku/dotfiles/.vim/plugins/anzu.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/vimproc.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/vimshell.rc.vim
-/Users/daisuke.oku/dotfiles/.vim/util/cheatsheet.md
 /Users/daisuke.oku/dotfiles/.vim/dein_unite.toml
 /Users/daisuke.oku/yarn.lock
 /Users/daisuke.oku/.Brewfile
@@ -40,8 +42,6 @@
 /Users/daisuke.oku/dotfiles/.config/coc/commands
 /Users/daisuke.oku/program/languages/hello.py
 /Users/daisuke.oku/.local/share/nvim/rplugin.vim
-/Users/daisuke.oku/.vimrc
 /Users/daisuke.oku/dotfiles/.vim/plugins/easymotion.rc.vim
 /Users/daisuke.oku/dotfiles/.vim/plugins/deoplete.rc.vim
-/Users/daisuke.oku/dotfiles/.vim/coc-settings.json
 /Users/daisuke.oku/program/languages/hello

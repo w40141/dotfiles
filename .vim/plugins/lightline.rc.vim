@@ -5,7 +5,7 @@
 "colorscheme -> default, wombat, jellybeans, solarized dark, solarized light, 
 "								PaperColor light, seoul256, one, landscape
 let g:lightline = {
-			\ 'colorscheme': 'one', 
+			\ 'colorscheme': 'jellybeans',
 			\	'active': {
 			\			'left': [
 			\					['mode', 'paste'], 

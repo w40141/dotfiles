@@ -2,7 +2,7 @@
 " NERDTree.vim
 "
 
-noremap <silent><C-t> :NERDTreeToggle<CR>
+noremap <silent><C-e> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeGlyphReadOnly = "\uF23E "
