@@ -160,7 +160,7 @@
 	set virtualedit=block
 
 	" ペーストモード
-	set pastetoggle=<C-y>
+	set pastetoggle=<C-a>
 
 	" 新しく開く代わりにすでに開いてあるバッファを開く
 	set switchbuf=useopen

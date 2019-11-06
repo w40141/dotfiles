@@ -38,8 +38,8 @@ hook_add = '''
 	nmap gp <Plug>(yankround-gp)
 	xmap gp <Plug>(yankround-gp)
 	nmap gP <Plug>(yankround-gP)
-	nmap <Leader>p <Plug>(yankround-prev)
-	nmap <Leader>n <Plug>(yankround-next)
+	nmap yp <Plug>(yankround-prev)
+	nmap yn <Plug>(yankround-next)
 	"" 履歴取得数
 	let g:yankround_max_history = 50
 	""履歴一覧(kien/ctrlp.vim)
