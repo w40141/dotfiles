@@ -10,16 +10,10 @@ let g:coc_status_warning_sign = "\uF4A3 "
 " plugin.
 
 " Use <C-l> for trigger snippet expand.
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-t> <Plug>(coc-snippets-expand)
 
 " Use <C-s> for select text for visual placeholder of snippet.
 vmap <C-s> <Plug>(coc-snippets-select)
-
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<C-j>'
-
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<C-k>'
 
 " Use <C-g> for both expand and jump (make expand higher priority.)
 imap <C-g> <Plug>(coc-snippets-expand-jump)
@@ -35,18 +29,22 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
+" Use <TAB> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<TAB>'
+
+" Use <S-TAB> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<S-TAB>'
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <C-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Or use `complete_info` if your vim support it, like:
 " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Use `<C-k><C-p>` and `<C-k><C-n>` to navigate diagnostics
+" Use `[d` and `]d` to navigate diagnostics
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
@@ -66,9 +64,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
@@ -101,8 +96,8 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-" nmap <silent> <C-d> <Plug>(coc-range-select)
-" xmap <silent> <C-d> <Plug>(coc-range-select)
+" nmap <silent><C-r> <Plug>(coc-range-select)
+" xmap <silent><C-r> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
@@ -115,18 +110,19 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Using CocList
 " Show all diagnostics
-nnoremap <silent><space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><Leader>d  :<C-u>CocList diagnostics<CR>
 " Manage extensions
-nnoremap <silent><space>e  :<C-u>CocList extensions<cr>
+nnoremap <silent><Leader>e  :<C-u>CocList extensions<CR>
 " Show commands
-nnoremap <silent><space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><Leader>c  :<C-u>CocList commands<CR>
 " Find symbol of current document
-nnoremap <silent><space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><Leader>o  :<C-u>CocList outline<CR>
 " Search workspace symbols
-nnoremap <silent><space>s  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><space>j  :<C-u>CocNext<CR>
+nnoremap <silent><Leader>s  :<C-u>CocList -I symbols<CR>
+" Do default action for n
+" ext item.
+nnoremap <silent><Leader>n  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><space>k  :<C-u>CocPrev<CR>
+nnoremap <silent><Leader>p  :<C-u>CocPrev<CR>
 " Resume latest coc list
-nnoremap <silent><space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><Leader>r  :<C-u>CocListResume<CR>

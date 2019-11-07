@@ -13,7 +13,6 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 on_map = [['nv', '<Plug>']]
-on_cmd = 'OpenBrowserSearch'
 hook_add = '''
 	" disable netrw's gx mapping.
 	let g:netrw_nogx = 1
@@ -137,10 +136,6 @@ on_cmd = 'Gitv'
 depends = ['vim-fugitive']
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
-on_event = 'InsertEnter'
-
-[[plugins]]
 repo = 'reireias/vim-cheatsheet'
 on_cmd = 'Cheat'
 hook_source = '''
@@ -182,6 +177,15 @@ repo = 'mattn/emmet-vim'
 on_ft = ["html", "html5"]
 hook_source = '''
 	source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
+'''
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+on_event = 'InsertEnter'
+hook_source = '''
+  call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['latex', 'tex']})
+  call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': ['latex', 'tex']})
+  call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': ['latex', 'tex']})
 '''
 
 # [[plugins]]
