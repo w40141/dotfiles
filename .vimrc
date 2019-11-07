@@ -38,6 +38,8 @@
     " set t_vb=
     set noerrorbells
 
+    set updatetime=300
+
     " <Leader>キーを変更 (default: \)
     let g:mapleader=' '
     let g:maplocalleader=' '
@@ -62,7 +64,7 @@
 
     " 検索位置が何番目のマッチ場所か
     set shortmess=s
-    set shortmess-=S
+    " set shortmess-=S
 
     " grep 検索を設定する
     set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
@@ -74,7 +76,7 @@
 
     " 不可視文字を表示
     set list listchars=tab:▸\ ,trail:-,extends:»,precedes:«,eol:¬
-    set guifont=DroidSansMono_Nerd_Font:h11
+    set guifont=DroidSansMono\ Nerd\ Font:h11
 
     " 行番号を表示する
     set number
@@ -112,6 +114,8 @@
 
     " コマンドラインでmodeの表示をしない
     set noshowmode
+
+    set signcolumn=yes
 
     " 文字を隠す
     if has('conceal')
