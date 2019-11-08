@@ -5,16 +5,7 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 hook_post_update = '''
-if dein#util#_is_windows()
-  let cmd = 'tools\\update-dll-mingw'
-elseif dein#util#_is_cygwin()
-  let cmd = 'make -f make_cygwin.mak'
-elseif executable('gmake')
-  let cmd = 'gmake'
-else
-  let cmd = 'make'
-endif
-let g:dein#plugin.build = cmd
+let g:dein#plugin.build = 'make'
 '''
 
 [[plugins]]
@@ -48,20 +39,32 @@ repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
 rev = 'release'
 merged = '0'
-hook_add = '''
+hook_source = '''
 source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 '''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
 hook_add = '''
-" let g:UltiSnipsExpandTrigger='<c-j>'
-" let g:UltiSnipsJumpForwardTrigger="<c-b>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<C-g>'
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 '''
 
 [[plugins]]
 repo = 'honza/vim-snippets'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+on_map = [['nx', '<Plug>']]
+hook_add = '''
+" 行の最初の文字の前にコメント文字をトグル
+nmap gcc <Plug>(caw:hatpos:toggle)
+vmap gcc <Plug>(caw:hatpos:toggle)
+" 行頭にコメントをトグル
+nmap gc, <Plug>(caw:zeropos:toggle)
+vmap gc, <Plug>(caw:zeropos:toggle)
+'''
 
 [[plugins]]
 repo = 'mattn/webapi-vim'
@@ -103,10 +106,6 @@ repo = 'vim-jp/syntax-vim-ex'
 [[plugins]]
 repo = 'majutsushi/tagbar'
 
-# toDo
-[[plugins]]
-repo = 'sheerun/vim-polyglot'
-
 [[plugins]]
 repo = 'terryma/vim-expand-region'
 hook_add = '''
@@ -116,7 +115,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
-hook_add = '''
+hook_source = '''
 let g:loaded_matchparen = 1
 '''
 

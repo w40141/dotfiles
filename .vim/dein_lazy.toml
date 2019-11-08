@@ -1,16 +1,4 @@
 [[plugins]]
-repo = 'tyru/caw.vim'
-on_map = [['nx', '<Plug>']]
-hook_add = '''
-" 行の最初の文字の前にコメント文字をトグル
-nmap gcc <Plug>(caw:hatpos:toggle)
-vmap gcc <Plug>(caw:hatpos:toggle)
-" 行頭にコメントをトグル
-nmap gc, <Plug>(caw:zeropos:toggle)
-vmap gc, <Plug>(caw:zeropos:toggle)
-'''
-
-[[plugins]]
 repo = 'tyru/open-browser.vim'
 on_map = [['nv', '<Plug>']]
 hook_add = '''
@@ -136,12 +124,12 @@ hook_source = '''
 let g:cheatsheet#cheat_file = './util/cheatsheet.md'
 '''
 
-[[plugins]]
-repo = 'lervag/vimtex'
-on_ft = 'tex'
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
-'''
+# [[plugins]]
+# repo = 'lervag/vimtex'
+# on_ft = 'tex'
+# hook_add = '''
+# source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+# '''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
@@ -174,12 +162,10 @@ source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
 
 [[plugins]]
-repo = 'cohama/lexima.vim'
-on_event = 'InsertEnter'
-hook_source = '''
-call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': ['latex', 'tex']})
-call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': ['latex', 'tex']})
-call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': ['latex', 'tex']})
+repo = 'lervag/vimtex'
+on_ft = ["tex"]
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
 '''
 
 # [[plugins]]

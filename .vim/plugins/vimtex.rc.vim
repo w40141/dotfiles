@@ -36,11 +36,3 @@ let g:vimtex_latexmk_callback = 1
 
 let g:vimtex_toc_split_pos = "topleft"
 let g:vimtex_toc_width = 10
-
-
-" for neocomplete
-if !exists('g:neocomplete#sources#omni#input_patterns')
-  let g:neocomplete#sources#omni#input_patterns = {}
-endif
-let g:neocomplete#sources#omni#input_patterns.tex = '\\ref{\s*[0-9A-Za-z_:]*'
-let g:neocomplete#sources#omni#input_patterns.tex = '\\cite{\s*[0-9A-Za-z_:]*\|\\ref{\s*[0-9A-Za-z_:]*'

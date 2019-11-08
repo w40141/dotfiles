@@ -6,7 +6,6 @@
 	"suggest.acceptSuggestionOnCommitCharacter": true,
 	"suggest.snippetIndicator": " ►",
 	"suggest.enablePreview": true,
-	"suggest.noselect": false,
 	"suggest.preferCompleteThanJumpPlaceholder":true,
 	"coc.preferences.hoverTarget": "float",
 	"languageserver": {

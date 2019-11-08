@@ -88,8 +88,9 @@
     set wrap
 
     " 新しい行のインデントを現在行と同じにする
-    set autoindent
-    set smartindent
+    " set autoindent
+    " set smartindent
+    set cindent
 
     " コマンド行の長さ
     set cmdheight=2
@@ -99,9 +100,6 @@
 
     " ステータスラインにコマンドを表示
     set showcmd
-
-    " C言語のインデントに従って自動インデントを行う
-    set cindent
 
     " 1行が長くても全部表示
     set display=lastline
@@ -244,14 +242,10 @@
         nnoremap zh zH
 
         "挿入モードでの移動
-        " inoremap <C-k> <Up>
-        " inoremap <C-j> <Down>
-        " inoremap <C-h> <Left>
-        " inoremap <C-l> <Right>
-        inoremap <C-p> <Up>
-        inoremap <C-n> <Down>
-        inoremap <C-b> <Left>
-        inoremap <C-f> <Right>
+        inoremap <C-k> <Up>
+        inoremap <C-j> <Down>
+        inoremap <C-h> <Left>
+        inoremap <C-l> <Right>
 
         " 矢印キー無効
         inoremap <Up> <nop>
@@ -311,6 +305,12 @@
         vnoremap <tab> %
 
         inoremap << <><Left>
+        inoremap (( ()<Left>
+        inoremap [[ []<Left>
+        inoremap {{ {}<Left>
+        inoremap '' ''<Left>
+        inoremap "" ""<Left>
+        inoremap `` ``<Left>
     "--------------------
 
     "--------------------

@@ -4,6 +4,7 @@
 
 "colorscheme -> default, wombat, jellybeans, solarized dark, solarized light,
 "               PaperColor light, seoul256, one, landscape
+
 let g:lightline = {
       \ 'colorscheme': 'jellybeans',
       \	'active': {
@@ -61,7 +62,6 @@ let g:lightline = {
 " left
 " MyMode
 function! MyMode()
-  " return winwidth(0) > 50 ? lightline#mode() : ''
   return lightline#mode()
 endfunction
 
@@ -179,6 +179,7 @@ function! MyFiletype()
       return &filetype . ' ' . l:icon
     else
       return l:icon
+    endif
   else
     return ''
   endif
