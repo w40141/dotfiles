@@ -46,6 +46,19 @@ nnoremap <silent>g<C-c> :<C-u>CtrlPYankRound<CR>
 '''
 
 [[plugins]]
+repo = 'osyo-manga/vim-anzu'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+nmap n n<Plug>(anzu-update-search-status)
+nmap N N<Plug>(anzu-update-search-status)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+" clear status
+nmap <C-c><C-c> <C-h><Plug>(anzu-clear-search-status)
+" set statusline=%{anzu#search_status()}
+'''
+
+[[plugins]]
 repo = 'kana/vim-operator-user'
 
 [[plugin]]

@@ -53,6 +53,17 @@ source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 '''
 
 [[plugins]]
+repo = 'SirVer/ultisnips'
+hook_add = '''
+" let g:UltiSnipsExpandTrigger='<c-j>'
+" let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
 
 [[plugins]]
@@ -87,18 +98,6 @@ repo = 'vimtaku/hl_matchit.vim.git'
 
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
-
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-nmap n nzz<Plug>(anzu-update-search-status)
-nmap N Nzz<Plug>(anzu-update-search-status)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-" clear status
-nmap <C-c><C-c> <Plug>(anzu-clear-search-status) :<C-u>nohlsearch<cr><Esc>
-" set statusline=%{anzu#search_status()}
-'''
 
 # toDo
 [[plugins]]

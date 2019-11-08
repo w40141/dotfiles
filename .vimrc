@@ -151,7 +151,7 @@
     set wildmode=longest:full,full
 
     " カーソルを行頭、行末で止まらないようにする
-    set whichwrap+=b,s,<,>,[,]
+    set whichwrap+=b,s,<,>,[,],h,l
 
     " カーソルを常に画面の中央に表示させる
     set scrolloff=999
@@ -244,10 +244,14 @@
         nnoremap zh zH
 
         "挿入モードでの移動
-        inoremap <C-k> <Up>
-        inoremap <C-j> <Down>
-        inoremap <C-h> <Left>
-        inoremap <C-l> <Right>
+        " inoremap <C-k> <Up>
+        " inoremap <C-j> <Down>
+        " inoremap <C-h> <Left>
+        " inoremap <C-l> <Right>
+        inoremap <C-p> <Up>
+        inoremap <C-n> <Down>
+        inoremap <C-b> <Left>
+        inoremap <C-f> <Right>
 
         " 矢印キー無効
         inoremap <Up> <nop>
@@ -257,7 +261,7 @@
 
         inoremap <C-a> <Home>
         inoremap <C-e> <End>
-        inoremap <C-b> <BS>
+        inoremap <C-h> <BS>
         inoremap <C-d> <delete>
 
         inoremap jk <esc>
@@ -297,7 +301,7 @@
         nnoremap g# g#zz
 
         " 検索結果のハイライトをC-c連打でクリアする
-        nnoremap  <C-c><C-c> :<C-u>nohlsearch<cr><Esc>
+        nnoremap  <C-h> :<C-u>nohlsearch<cr><Esc>
 
         " vを二回で行末まで選択
         vnoremap v $h
@@ -305,6 +309,8 @@
         " tabにて対応ペアにジャンプ
         nnoremap <tab> %
         vnoremap <tab> %
+
+        inoremap << <><Left>
     "--------------------
 
     "--------------------
