@@ -13,3 +13,4 @@
 /.config/coc/extensions/*
 !/.config/coc/extensions/package.json
 sessions
+snippets
