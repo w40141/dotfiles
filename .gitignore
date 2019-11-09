@@ -9,6 +9,7 @@
 /.jupyter
 /.config/coc/*
 !/.config/coc/extensions
+!/.config/coc/ultisnips
 /.config/coc/extensions/*
 !/.config/coc/extensions/package.json
 sessions

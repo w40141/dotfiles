@@ -2,12 +2,12 @@
 repo = 'tyru/caw.vim'
 on_map = [['nx', '<Plug>']]
 hook_add = '''
-	" 行の最初の文字の前にコメント文字をトグル
-	nmap gcc <Plug>(caw:hatpos:toggle)
-	vmap gcc <Plug>(caw:hatpos:toggle)
-	" 行頭にコメントをトグル
-	nmap gc, <Plug>(caw:zeropos:toggle)
-	vmap gc, <Plug>(caw:zeropos:toggle)
+" 行の最初の文字の前にコメント文字をトグル
+nmap gcc <Plug>(caw:hatpos:toggle)
+vmap gcc <Plug>(caw:hatpos:toggle)
+" 行頭にコメントをトグル
+nmap gc, <Plug>(caw:zeropos:toggle)
+vmap gc, <Plug>(caw:zeropos:toggle)
 '''
 
 [[plugins]]
@@ -15,10 +15,10 @@ repo = 'tyru/open-browser.vim'
 on_map = [['nv', '<Plug>']]
 on_cmd = 'OpenBrowserSearch'
 hook_add = '''
-	" disable netrw's gx mapping.
-	let g:netrw_nogx = 1
-	nmap gx <Plug>(openbrowser-smart-search)
-	vmap gx <Plug>(openbrowser-smart-search)
+" disable netrw's gx mapping.
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
 '''
 
 [[plugins]]
@@ -32,18 +32,18 @@ repo = 'kien/ctrlp.vim'
 repo = 'LeafCage/yankround.vim'
 on_map = [['nx', '<Plug>']]
 hook_add = '''
-	nmap p <Plug>(yankround-p)
-	xmap p <Plug>(yankround-p)
-	nmap P <Plug>(yankround-P)
-	nmap gp <Plug>(yankround-gp)
-	xmap gp <Plug>(yankround-gp)
-	nmap gP <Plug>(yankround-gP)
-	nmap <Leader>p <Plug>(yankround-prev)
-	nmap <Leader>n <Plug>(yankround-next)
-	"" 履歴取得数
-	let g:yankround_max_history = 50
-	""履歴一覧(kien/ctrlp.vim)
-	nnoremap <silent>g<C-c> :<C-u>CtrlPYankRound<CR>
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap <Leader>p <Plug>(yankround-prev)
+nmap <Leader>n <Plug>(yankround-next)
+"" 履歴取得数
+let g:yankround_max_history = 50
+""履歴一覧(kien/ctrlp.vim)
+nnoremap <silent>g<C-c> :<C-u>CtrlPYankRound<CR>
 '''
 
 [[plugins]]
@@ -57,16 +57,16 @@ repo = 'rhysd/vim-operator-surround'
 depends = ['vim-operator-user']
 on_map = [['n', '<Plug>']]
 hook_add = '''
-	" saiw(
-	nmap <silent>sa <Plug>(operator-surround-append)
-	" sda(
-	nmap <silent>sd <Plug>(operator-surround-delete)
-	" sra"'
-	nmap <silent>sr <Plug>(operator-surround-replace)
-	" カーソル位置から一番近い括弧を削除する
-	nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
-	" カーソル位置から一番近い括弧を変更する
-	nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
+" saiw(
+nmap <silent>sa <Plug>(operator-surround-append)
+" sda(
+nmap <silent>sd <Plug>(operator-surround-delete)
+" sra"'
+nmap <silent>sr <Plug>(operator-surround-replace)
+" カーソル位置から一番近い括弧を削除する
+nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
+" カーソル位置から一番近い括弧を変更する
+nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 '''
 
 [[plugins]]
@@ -77,8 +77,8 @@ on_ft = ['python', 'python3']
 repo = 'fisadev/vim-isort'
 on_ft = ['python', 'python3']
 hook_add = '''
-	let g:vim_isort_map = '<C-i>'
-	let g:vim_isort_python_version = 'python3'
+let g:vim_isort_map = '<C-i>'
+let g:vim_isort_python_version = 'python3'
 '''
 
 [[plugins]]
@@ -89,10 +89,10 @@ on_ft = ['python', 'python3']
 repo = 't9md/vim-quickhl'
 on_map = [['n', '<Plug>']]
 hook_add = '''
-	nmap <Space>m <Plug>(quickhl-manual-this)
-	xmap <Space>m <Plug>(quickhl-manual-this)
-	nmap <Space>M <Plug>(quickhl-manual-reset)
-	xmap <Space>M <Plug>(quickhl-manual-reset)
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
 '''
 
 [[plugins]]
@@ -105,16 +105,16 @@ repo = 'thinca/vim-quickrun'
 on_map = [['n', '<Plug>']]
 hook_add = 'nmap <Leader>qr <Plug>(quickrun)'
 hook_post_source = '''
-	let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
-	let g:quickrun_config={'*': {'split': 'vertical'}}
-	set splitright
+let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
+let g:quickrun_config={'*': {'split': 'vertical'}}
+set splitright
 '''
 
 [[plugins]]
 repo = 'sjl/gundo.vim'
 on_cmd = 'GundoToggle'
 hook_add = '''
-	nnoremap <Leader>g :GundoToggle<CR>
+nnoremap <Leader>g :GundoToggle<CR>
 '''
 
 [[plugins]]
@@ -137,51 +137,56 @@ on_cmd = 'Gitv'
 depends = ['vim-fugitive']
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
+hook_add = '''
+call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
+call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
+call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
+'''
 
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
 on_cmd = 'Cheat'
 hook_source = '''
-	let g:cheatsheet#cheat_file = './util/cheatsheet.md'
+let g:cheatsheet#cheat_file = './util/cheatsheet.md'
 '''
 
 [[plugins]]
 repo = 'lervag/vimtex'
 on_ft = 'tex'
 hook_add = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
 '''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
 on_ft = ['markdown', 'mkd', 'md']
 hook_add = '''
-	let g:vim_markdown_frontmatter = 1
-	let g:vim_markdown_math = 1
-	let g:vim_markdown_conceal = 0
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal = 0
 '''
 
 [[plugins]]
 repo = 'kazuph/previm'	
 on_ft = ['markdown', 'mkd', 'md']
 hook_source = '''
-	nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
+nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
 '''
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown', 'txt']
 hook_add = '''
-	let g:table_mode_corner = '|'
+let g:table_mode_corner = '|'
 '''
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ["html", "html5"]
 hook_source = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
 
 # [[plugins]]

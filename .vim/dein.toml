@@ -1,44 +1,31 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-hook_add = '''
-	" プラグインを自動で消す
-	let g:dein#auto_recache = 1
-'''
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
 hook_post_update = '''
-	if dein#util#_is_windows()
-		let cmd = 'tools\\update-dll-mingw'
-	elseif dein#util#_is_cygwin()
-		let cmd = 'make -f make_cygwin.mak'
-	elseif executable('gmake')
-		let cmd = 'gmake'
-	else
-		let cmd = 'make'
-	endif
-	let g:dein#plugin.build = cmd
+let g:dein#plugin.build = 'make'
 '''
 
 [[plugins]]
 repo = 'dracula/vim'
 hook_add = '''
-	set background=dark
-	autocmd MyAutoCmd VimEnter * nested colorscheme dracula
+set background=dark
+autocmd MyAutoCmd VimEnter * nested colorscheme dracula
 '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/lightline.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/lightline.rc.vim
 '''
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 on_cmd = ['NERDTree', 'NERDTreeToggle']
 hook_add = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim
 '''
 
 [[plugins]]
@@ -47,14 +34,14 @@ if = '''executable('node') && executable('yarn')'''
 rev = 'release'
 merged = '0'
 hook_add = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 '''
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['nerdtree']
 hook_add = '''
-	source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim
+source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim
 '''
 
 [[plugins]]
@@ -70,34 +57,34 @@ repo = 'vim-jp/syntax-vim-ex'
 [[plugins]]
 repo = 'osyo-manga/vim-anzu'
 hook_add = '''
-	nmap n nzz<Plug>(anzu-update-search-status)
-	nmap N Nzz<Plug>(anzu-update-search-status)
-	nmap * <Plug>(anzu-star-with-echo)
-	nmap # <Plug>(anzu-sharp-with-echo)
-	" clear status
-	nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-	" set statusline=%{anzu#search_status()}
+nmap n nzz<Plug>(anzu-update-search-status)
+nmap N Nzz<Plug>(anzu-update-search-status)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+" clear status
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+" set statusline=%{anzu#search_status()}
 '''
 
 # toDo
 [[plugins]]
 repo = 'majutsushi/tagbar'
 
-# toDo
 [[plugins]]
-repo = 'sheerun/vim-polyglot'
+repo = 'tpope/vim-repeat'
+on_idle = 1
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
 hook_add = '''
-	vmap v <Plug>(expand_region_expand)
-	vmap <C-v> <Plug>(expand_region_shrink)
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 '''
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
 hook_add = '''
-	let g:loaded_matchparen = 1
+let g:loaded_matchparen = 1
 '''
 
 [[plugins]]
@@ -106,7 +93,7 @@ repo = 'itchyny/vim-cursorword'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
-	let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]]
@@ -115,6 +102,13 @@ on_ft = 'help'
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'
+
+# toDo
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:polyglot_disabled = ['latex']
+'''
 
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
