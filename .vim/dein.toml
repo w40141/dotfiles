@@ -1,17 +1,24 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_post_update = '''
+function s:dein_cleanup() abort
+	echo '[dein] Removing disabled plugins...'
+	call map(dein#check_clean(), "delete(v:val, 'rf')")
+	call dein#recache_runtimepath()
+	echohl WarningMsg
+	echo '[dein] Successfully removed disabled plugins'
+	echohl None
+endfunction
+command DeinCleanUp call s:dein_cleanup()
+	'''
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
-hook_post_update = '''
-let g:dein#plugin.build = 'make'
-'''
 
 [[plugins]]
 repo = 'dracula/vim'
 hook_add = '''
-set background=dark
 autocmd MyAutoCmd VimEnter * nested colorscheme dracula
 '''
 
@@ -40,9 +47,6 @@ source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['nerdtree']
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim
-'''
 
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -54,32 +58,9 @@ repo = 'vimtaku/hl_matchit.vim.git'
 [[plugins]]
 repo = 'vim-jp/syntax-vim-ex'
 
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''
-nmap n nzz<Plug>(anzu-update-search-status)
-nmap N Nzz<Plug>(anzu-update-search-status)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
-" clear status
-nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-" set statusline=%{anzu#search_status()}
-'''
-
 # toDo
 [[plugins]]
 repo = 'majutsushi/tagbar'
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-on_idle = 1
-
-[[plugins]]
-repo = 'terryma/vim-expand-region'
-hook_add = '''
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-'''
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
@@ -97,10 +78,6 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 [[plugins]]
-repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
-
-[[plugins]]
 repo = 'Shougo/context_filetype.vim'
 
 # toDo
@@ -113,3 +90,6 @@ let g:polyglot_disabled = ['latex']
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'

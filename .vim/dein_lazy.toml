@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'tyru/caw.vim'
-on_map = [['nx', '<Plug>']]
+on_map = {nx = '<Plug>'}
 hook_add = '''
 " 行の最初の文字の前にコメント文字をトグル
 nmap gcc <Plug>(caw:hatpos:toggle)
@@ -11,9 +11,29 @@ vmap gc, <Plug>(caw:zeropos:toggle)
 '''
 
 [[plugins]]
+repo = 'osyo-manga/vim-anzu'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap n nzz<Plug>(anzu-update-search-status)
+nmap N Nzz<Plug>(anzu-update-search-status)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
+'''
+
+[[plugins]]
+repo = 'deris/vim-gothrough-jk'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap ,j  <Plug>(gothrough-jk-j)
+nmap ,k  <Plug>(gothrough-jk-k)
+nmap ,gj <Plug>(gothrough-jk-gj)
+nmap ,gk <Plug>(gothrough-jk-gk)
+'''
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
-on_map = [['nv', '<Plug>']]
-on_cmd = 'OpenBrowserSearch'
+on_map = {nv = '<Plug>'}
 hook_add = '''
 " disable netrw's gx mapping.
 let g:netrw_nogx = 1
@@ -26,11 +46,11 @@ repo = 'AndrewRadev/switch.vim'
 on_cmd = 'Switch'
 
 [[plugins]]
-repo = 'kien/ctrlp.vim'
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
 repo = 'LeafCage/yankround.vim'
-on_map = [['nx', '<Plug>']]
+on_map = {nx = '<Plug>'}
 hook_add = '''
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
@@ -55,7 +75,7 @@ repo = 'osyo-manga/vim-textobj-multiblock'
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
 depends = ['vim-operator-user']
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = '''
 " saiw(
 nmap <silent>sa <Plug>(operator-surround-append)
@@ -87,7 +107,7 @@ on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = '''
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
@@ -98,11 +118,13 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 [[plugins]]
 repo = 'troydm/easybuffer.vim'
 on_cmd = 'EasyBuffer'
-hook_add = 'nnoremap buf :<C-u>EasyBuffer<CR>'
+hook_add = '''
+nnoremap buf :<C-u>EasyBuffer<CR>
+'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = 'nmap <Leader>qr <Plug>(quickrun)'
 hook_post_source = '''
 let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
@@ -139,7 +161,7 @@ depends = ['vim-fugitive']
 [[plugins]]
 repo = 'cohama/lexima.vim'
 on_event = 'InsertEnter'
-hook_add = '''
+hook_source = '''
 call lexima#add_rule({'char': '$', 'input_after': '$', 'filetype': 'latex'})
 call lexima#add_rule({'char': '$', 'at': '\%#\$', 'leave': 1, 'filetype': 'latex'})
 call lexima#add_rule({'char': '<BS>', 'at': '\$\%#\$', 'delete': 1, 'filetype': 'latex'})
@@ -189,11 +211,14 @@ hook_source = '''
 source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# if = '''has('nvim')'''
-# # on_event = 'InsertCharPre'
-# on_event = 'InsertEnter'
-# depends = ['context_filetype.vim']
-# hook_source = 'let g:deoplete#enable_at_startup = 1'
-# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'
+[[plugins]]
+repo = 'tpope/vim-repeat'
+on_event = ['FocusLost', 'CursorHold']
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+on_map = {v = '<Plug>'}
+hook_add = '''
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+'''
