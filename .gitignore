@@ -8,12 +8,8 @@
 !/.config/fish/fishfile
 /.jupyter
 /.config/coc/*
-<<<<<<< HEAD
-!/.config/coc/extensions/
-=======
 !/.config/coc/extensions
 !/.config/coc/ultisnips
->>>>>>> 4243d6f8bc925974eb012309276f6ddbaaed06a9
 /.config/coc/extensions/*
 !/.config/coc/extensions/package.json
 sessions
