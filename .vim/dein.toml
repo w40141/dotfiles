@@ -1,12 +1,19 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
+hook_post_update = '''
+function! s:deinClean()
+  if len(dein#check_clean())
+    call map(dein#check_clean(), 'delete(v:val, "rf")')
+  else
+    echo '[ERR] no disabled plugins'
+  endif
+endfunction
+command! DeinClean :call s:deinClean()
+'''
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
-hook_post_update = '''
-let g:dein#plugin.build = 'make'
-'''
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -17,7 +24,6 @@ let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 [[plugins]]
 repo = 'dracula/vim'
 hook_add = '''
-set background=dark
 autocmd MyAutoCmd VimEnter * nested colorscheme dracula
 '''
 
@@ -35,6 +41,14 @@ source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.rc.vim
 '''
 
 [[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['nerdtree']
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+depends = ['nerdtree']
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
 rev = 'release'
@@ -44,57 +58,13 @@ source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 '''
 
 [[plugins]]
-repo = 'SirVer/ultisnips'
-hook_add = '''
-let g:UltiSnipsExpandTrigger='<C-g>'
-let g:UltiSnipsJumpForwardTrigger="<C-f>"
-let g:UltiSnipsJumpBackwardTrigger="<C-b>"
-'''
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-
-[[plugins]]
-repo = 'tyru/caw.vim'
-on_map = [['nx', '<Plug>']]
-hook_add = '''
-" 行の最初の文字の前にコメント文字をトグル
-nmap gcc <Plug>(caw:hatpos:toggle)
-vmap gcc <Plug>(caw:hatpos:toggle)
-" 行頭にコメントをトグル
-nmap gc, <Plug>(caw:zeropos:toggle)
-vmap gc, <Plug>(caw:zeropos:toggle)
-'''
-
-[[plugins]]
 repo = 'mattn/webapi-vim'
-
-[[plugins]]
-repo = 'mattn/gist-vim'
-on_cmd = 'Gist'
-depends = ['webapi-vim']
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'gregsexton/gitv'
-on_cmd = 'Gitv'
-depends = ['vim-fugitive']
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-depends = ['nerdtree']
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/nerdtree-git-plugin.rc.vim
-'''
-
-[[plugins]]
-repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-depends = ['nerdtree']
 
 [[plugins]]
 repo = 'vimtaku/hl_matchit.vim.git'
@@ -107,15 +77,8 @@ repo = 'vim-jp/syntax-vim-ex'
 repo = 'majutsushi/tagbar'
 
 [[plugins]]
-repo = 'terryma/vim-expand-region'
-hook_add = '''
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-'''
-
-[[plugins]]
 repo = 'itchyny/vim-parenmatch'
-hook_source = '''
+hook_add = '''
 let g:loaded_matchparen = 1
 '''
 
@@ -124,7 +87,22 @@ repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
-on_ft = 'help'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugin]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+
+# toDo
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+let g:polyglot_disabled = ['latex']
+'''
 
 [[plugins]]
 repo = 'Shougo/context_filetype.vim'

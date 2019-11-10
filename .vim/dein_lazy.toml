@@ -1,6 +1,45 @@
 [[plugins]]
+repo = 'tyru/caw.vim'
+on_map = {nx = '<Plug>'}
+hook_add = '''
+" 行の最初の文字の前にコメント文字をトグル
+nmap gcc <Plug>(caw:hatpos:toggle)
+vmap gcc <Plug>(caw:hatpos:toggle)
+" 行頭にコメントをトグル
+nmap gc, <Plug>(caw:zeropos:toggle)
+vmap gc, <Plug>(caw:zeropos:toggle)
+'''
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+on_event = 'InsertEnter'
+hook_add = '''
+let g:UltiSnipsExpandTrigger='<C-g>'
+let g:UltiSnipsJumpForwardTrigger="<C-f>"
+let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'deris/vim-gothrough-jk'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap ,j  <Plug>(gothrough-jk-j)
+nmap ,k  <Plug>(gothrough-jk-k)
+nmap ,gj <Plug>(gothrough-jk-gj)
+nmap ,gk <Plug>(gothrough-jk-gk)
+'''
+
+[[plugins]]
 repo = 'tyru/open-browser.vim'
-on_map = [['nv', '<Plug>']]
+on_map = {nv = '<Plug>'}
 hook_add = '''
 " disable netrw's gx mapping.
 let g:netrw_nogx = 1
@@ -13,11 +52,8 @@ repo = 'AndrewRadev/switch.vim'
 on_cmd = 'Switch'
 
 [[plugins]]
-repo = 'kien/ctrlp.vim'
-
-[[plugins]]
 repo = 'LeafCage/yankround.vim'
-on_map = [['nx', '<Plug>']]
+on_map = {nx = '<Plug>'}
 hook_add = '''
 nmap p <Plug>(yankround-p)
 xmap p <Plug>(yankround-p)
@@ -42,20 +78,13 @@ nmap N N<Plug>(anzu-update-search-status)
 nmap * <Plug>(anzu-star-with-echo)
 nmap # <Plug>(anzu-sharp-with-echo)
 " clear status
-nmap <C-c><C-c> <C-h><Plug>(anzu-clear-search-status)
-" set statusline=%{anzu#search_status()}
+nmap <C-c><C-c> <C-h><C-h><Plug>(anzu-clear-search-status)
 '''
-
-[[plugins]]
-repo = 'kana/vim-operator-user'
-
-[[plugin]]
-repo = 'osyo-manga/vim-textobj-multiblock'
 
 [[plugins]]
 repo = 'rhysd/vim-operator-surround'
 depends = ['vim-operator-user']
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = '''
 " saiw(
 nmap <silent>sa <Plug>(operator-surround-append)
@@ -87,7 +116,7 @@ on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 't9md/vim-quickhl'
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = '''
 nmap <Space>m <Plug>(quickhl-manual-this)
 xmap <Space>m <Plug>(quickhl-manual-this)
@@ -98,11 +127,13 @@ xmap <Space>M <Plug>(quickhl-manual-reset)
 [[plugins]]
 repo = 'troydm/easybuffer.vim'
 on_cmd = 'EasyBuffer'
-hook_add = 'nnoremap buf :<C-u>EasyBuffer<CR>'
+hook_add = '''
+nnoremap buf :<C-u>EasyBuffer<CR>
+'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-on_map = [['n', '<Plug>']]
+on_map = {n = '<Plug>'}
 hook_add = 'nmap <Leader>qr <Plug>(quickrun)'
 hook_post_source = '''
 let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
@@ -118,18 +149,28 @@ nnoremap <Leader>g :GundoToggle<CR>
 '''
 
 [[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+depends = ['webapi-vim']
+
+[[plugins]]
+repo = 'gregsexton/gitv'
+on_cmd = 'Gitv'
+depends = ['vim-fugitive']
+
+[[plugins]]
 repo = 'reireias/vim-cheatsheet'
 on_cmd = 'Cheat'
 hook_source = '''
-let g:cheatsheet#cheat_file = './util/cheatsheet.md'
+let g:cheatsheet#cheat_file = '$HOME/.config/nvim/util/cheatsheet.md'
 '''
 
-# [[plugins]]
-# repo = 'lervag/vimtex'
-# on_ft = 'tex'
-# hook_add = '''
-# source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
-# '''
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ["tex"]
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+'''
 
 [[plugins]]
 repo = 'rcmdnk/vim-markdown'
@@ -149,7 +190,7 @@ nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
 
 [[plugins]]
 repo = 'dhruvasagar/vim-table-mode'
-on_ft = ['markdown', 'txt']
+on_ft = ['markdown', 'mkd', 'md', 'txt']
 hook_add = '''
 let g:table_mode_corner = '|'
 '''
@@ -162,17 +203,13 @@ source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
 
 [[plugins]]
-repo = 'lervag/vimtex'
-on_ft = ["tex"]
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
-'''
+repo = 'tpope/vim-repeat'
+on_event = ['FocusLost', 'CursorHold']
 
-# [[plugins]]
-# repo = 'Shougo/deoplete.nvim'
-# if = '''has('nvim')'''
-# # on_event = 'InsertCharPre'
-# on_event = 'InsertEnter'
-# depends = ['context_filetype.vim']
-# hook_source = 'let g:deoplete#enable_at_startup = 1'
-# hook_post_source = 'source $XDG_CONFIG_HOME/nvim/plugins/deoplete.rc.vim'
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+on_map = {v = '<Plug>'}
+hook_add = '''
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+'''
