@@ -1,9 +1,14 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
-hook_post_update = '''
+hook_add = '''
 function! s:deinClean()
   if len(dein#check_clean())
-    call map(dein#check_clean(), 'delete(v:val, "rf")')
+    echo '[dein] Removing disabled plugins...'
+    call map(dein#check_clean(), "delete(v:val, 'rf')")
+    call dein#recache_runtimepath()
+    echohl WarningMsg
+    echo '[dein] Successfully removed disabled plugins'
+    echohl None
   else
     echo '[ERR] no disabled plugins'
   endif
