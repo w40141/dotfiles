@@ -11,14 +11,23 @@ vmap gc, <Plug>(caw:zeropos:toggle)
 '''
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'neoclide/coc.nvim'
+if = '''executable('node') && executable('yarn')'''
 on_event = 'InsertEnter'
+rev = 'release'
+merged = '0'
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
+'''
+hook_post_source = '''
+source $XDG_CONFIG_HOME/nvim/plugins/coc_colorscheme.rc.vim
+'''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
 on_event = 'InsertEnter'
 hook_add = '''
-let g:UltiSnipsExpandTrigger='<C-g>'
+let g:UltiSnipsExpandTrigger='<C-e>'
 let g:UltiSnipsJumpForwardTrigger="<C-f>"
 let g:UltiSnipsJumpBackwardTrigger="<C-b>"
 '''
@@ -99,10 +108,6 @@ nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 '''
 
 [[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_ft = ['python', 'python3']
-
-[[plugins]]
 repo = 'fisadev/vim-isort'
 on_ft = ['python', 'python3']
 hook_add = '''
@@ -166,25 +171,9 @@ let g:cheatsheet#cheat_file = '$HOME/.config/nvim/util/cheatsheet.md'
 '''
 
 [[plugins]]
-repo = 'lervag/vimtex'
-on_ft = ["tex"]
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
-'''
-
-[[plugins]]
-repo = 'rcmdnk/vim-markdown'
-on_ft = ['markdown', 'mkd', 'md']
-hook_add = '''
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal = 0
-'''
-
-[[plugins]]
 repo = 'kazuph/previm'	
 on_ft = ['markdown', 'mkd', 'md']
-hook_source = '''
+hook_add = '''
 nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
 '''
 
@@ -198,13 +187,9 @@ let g:table_mode_corner = '|'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ["html", "html5"]
-hook_source = '''
+hook_add = '''
 source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 '''
-
-[[plugins]]
-repo = 'tpope/vim-repeat'
-on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'

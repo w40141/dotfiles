@@ -1,5 +1,4 @@
 " 基本設定
-
 " 文字コード
 set encoding=utf-8
 scriptencoding utf-8
@@ -43,7 +42,7 @@ set wrapscan
 " インクリメンタルサーチを行う
 set incsearch
 " 検索位置が何番目のマッチ場所か
-set shortmess=s
+set shortmess+=sSIFa
 " grep 検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
@@ -62,6 +61,8 @@ set wrap
 set smartindent
 " コマンド行の長さ
 set cmdheight=2
+" カラムを表示
+set signcolumn=yes
 " エディタウィンドウの末尾から2行目にステータスラインを常時表示させるための指定
 set laststatus=2
 " ステータスラインにコマンドを表示

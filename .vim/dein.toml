@@ -12,8 +12,7 @@ function! s:deinClean()
   else
     echo '[ERR] no disabled plugins'
   endif
-endfunction
-command! DeinClean :call s:deinClean()
+endfunction command! DeinClean :call s:deinClean()
 '''
 
 [[plugins]]
@@ -52,15 +51,6 @@ depends = ['nerdtree']
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 depends = ['nerdtree']
-
-[[plugins]]
-repo = 'neoclide/coc.nvim'
-if = '''executable('node') && executable('yarn')'''
-rev = 'release'
-merged = '0'
-hook_source = '''
-source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
-'''
 
 [[plugins]]
 repo = 'mattn/webapi-vim'
@@ -115,3 +105,31 @@ repo = 'Shougo/context_filetype.vim'
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'hynek/vim-python-pep8-indent'
+on_ft = ['python', 'python3']
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+'''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+on_event = ['FocusLost', 'CursorHold']
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown', 'mkd', 'md']
+hook_add = '''
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_conceal = 0
+'''
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+on_event = 'InsertEnter'

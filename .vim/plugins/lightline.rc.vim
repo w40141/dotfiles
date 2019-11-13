@@ -187,5 +187,22 @@ endfunction
 
 " MyCoc
 function! MyCoc()
-  return winwidth(0) >= 100 ? coc#status() : ''
+  " return winwidth(0) >= 80 ? coc#status() : ''
+  return winwidth(0) >= 80 ? StatusDiagnostic() : ''
+endfunction
+
+function! StatusDiagnostic() abort
+  let l:sign_error = "\uF490 "
+  let l:sign_warning = "\uF4A3 "
+  let l:sign_ok = "\uF4A1 "
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return l:sign_ok | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, l:sign_error . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, l:sign_warning . info['warning'])
+  endif
+  return join(msgs, ' ')
 endfunction
