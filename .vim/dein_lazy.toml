@@ -171,10 +171,12 @@ let g:cheatsheet#cheat_file = '$HOME/.config/nvim/util/cheatsheet.md'
 '''
 
 [[plugins]]
-repo = 'kazuph/previm'	
+repo = 'previm/previm'
 on_ft = ['markdown', 'mkd', 'md']
 hook_add = '''
-nnoremap <silent><Leader><Leader>o :PrevimOpen<CR>
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+nnoremap <silent> <Leader><Leader>o :PrevimOpen<CR>
+let g:previm_enable_realtime = 1
 '''
 
 [[plugins]]

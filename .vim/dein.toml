@@ -12,7 +12,8 @@ function! s:deinClean()
   else
     echo '[ERR] no disabled plugins'
   endif
-endfunction command! DeinClean :call s:deinClean()
+endfunction
+command! DeinClean :call s:deinClean()
 '''
 
 [[plugins]]
@@ -83,6 +84,7 @@ repo = 'itchyny/vim-cursorword'
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
+# toDo
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
@@ -122,12 +124,11 @@ repo = 'tpope/vim-repeat'
 on_event = ['FocusLost', 'CursorHold']
 
 [[plugins]]
-repo = 'rcmdnk/vim-markdown'
+repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown', 'mkd', 'md']
 hook_add = '''
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_math = 1
-let g:vim_markdown_conceal = 0
+let g:vim_markdown_folding_disabled = 0
+let g:vim_markdown_folding_style_pythonic = 1
 '''
 
 [[plugins]]
