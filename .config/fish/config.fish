@@ -1,4 +1,5 @@
 set -gx XDG_CONFIG_HOME $HOME/.config
+set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
 if not functions -q fisher
 	# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config

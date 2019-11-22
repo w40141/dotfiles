@@ -4,6 +4,16 @@
 let g:tex_flavor = "latex"
 
 let g:vimtex_compiler_progname = 'nvr'
+let g:vimtex_compiler_latexmk = {
+\ 'options' : [
+\   '-pdf',
+\   '-pdflatex="xelatex -synctex=1 \%S \%O"',
+\   '-verbose',
+\   '-file-line-error',
+\   '-synctex=1',
+\   '-interaction=nonstopmode',
+\ ],
+\}
 let g:vimtex_latexmk_enabled = 1
 let g:vimtex_latexmk_options = '-pdfdvi'
 let g:vimtex_view_method = 'general'

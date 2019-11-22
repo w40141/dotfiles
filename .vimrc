@@ -401,8 +401,12 @@ augroup END
 
 " dein settings
 if has('nvim')
-	let g:python_host_prog = '/usr/local/bin/python'
-	let g:python3_host_prog = '/usr/local/bin/python3'
+	" let g:python_host_prog = '/usr/local/bin/python'
+	" let g:python3_host_prog = '/usr/local/bin/python3'
+	" let g:python_host_prog = '$HOME/.pyenv/shims/python'
+	" let g:python3_host_prog = '$HOME/.pyenv/shims/python3'
+	let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
+	let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 	let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
 	let g:node_host_prog = '/usr/local/bin/neovim-node-host'
 endif
