@@ -54,9 +54,19 @@
 
 1. neovimのインストール
 
-1. pipの一括インストール
+    1. pyenv の設定
 
-		pip install -r ./.requirements.txt
+		    pyenv install lastest python2
+            pyenv install lastest python3
+
+    1. NeoVim 専用のvirtualenv を作り, neovimをインストール
+
+            pyenv virtualenv python2-lst neovim2
+            pyenv shell neovim2
+            pip install neovim
+            pyenv virtualenv python3-lst neovim3
+            pyenv shell neovim3
+            pip install neovim
 
 1. 隠しファイルを表示する.  
 
