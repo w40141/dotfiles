@@ -19,6 +19,15 @@ function cd
 	standard_cd $argv; and la
 end
 
+function brew
+    set -xl PATH $PATH # Protect global PATH by local PATH
+    if type -q pyenv; and contains (pyenv root)/shims $PATH
+        set -e PATH[(contains -i (pyenv root)/shims $PATH)]
+    end
+
+    command brew $argv
+end
+
 alias cd.. 'cd ..'
 alias .. 'cd ..'
 alias ... 'cd ../..'
