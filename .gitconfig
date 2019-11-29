@@ -13,7 +13,6 @@
 	g = reflog
 	l = log
 	m = merge
-	p = pull
 	r = rebase
 	s = status
 	t = tag
@@ -28,6 +27,7 @@
 	du = difftool @{upstream}
 	mm = merge origin/master
 	pf = push -f
+	pu = pull
 	re = reset --soft HEAD~
 	rh = reset --hard
 	ri = rebase -i
