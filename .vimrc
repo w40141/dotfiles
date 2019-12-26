@@ -219,7 +219,7 @@ vnoremap v $h
 nnoremap <tab> %
 vnoremap <tab> %
 " カッコ
-inoremap << <><Left>
+" inoremap << <><Left>
 
 " 補助系
 " ctrl-v で insert/command モードで貼り付け
