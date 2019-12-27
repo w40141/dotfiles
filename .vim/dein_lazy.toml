@@ -200,3 +200,12 @@ hook_add = '''
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 '''
+
+[[plugins]]
+repo = 'vim-scripts/a.vim'
+on_ft = ['c', 'cpp']
+hook_source = '''
+nmap <silent> <leader>aa :A<CR>
+nmap <silent> <leader>at :AT<CR>
+nmap <silent> <leader>av :AV<CR>
+'''
