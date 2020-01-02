@@ -24,19 +24,6 @@ source $XDG_CONFIG_HOME/nvim/plugins/coc_colorscheme.rc.vim
 '''
 
 [[plugins]]
-repo = 'SirVer/ultisnips'
-on_event = 'InsertEnter'
-hook_add = '''
-let g:UltiSnipsExpandTrigger='<C-e>'
-let g:UltiSnipsJumpForwardTrigger="<C-f>"
-let g:UltiSnipsJumpBackwardTrigger="<C-b>"
-'''
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-on_event = 'InsertEnter'
-
-[[plugins]]
 repo = 'deris/vim-gothrough-jk'
 on_map = {n = '<Plug>'}
 hook_add = '''

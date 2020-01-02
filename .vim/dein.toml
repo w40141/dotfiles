@@ -142,3 +142,15 @@ let g:vim_markdown_folding_style_pythonic = 1
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 on_event = 'InsertEnter'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_event = 'InsertEnter'
+
+# [[plugins]]
+# repo = 'SirVer/ultisnips'
+# hook_add = '''
+# let g:UltiSnipsExpandTrigger='<C-e>'
+# let g:UltiSnipsJumpForwardTrigger="<C-f>"
+# let g:UltiSnipsJumpBackwardTrigger="<C-b>"
+# '''
