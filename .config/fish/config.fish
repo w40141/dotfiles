@@ -13,6 +13,15 @@ alias lal='la -l'
 alias grep='grep --color'
 alias cx 'chmod +x'
 
+function brew
+    set -xl PATH $PATH # Protect global PATH by local PATH
+    if type -q pyenv; and contains (pyenv root)/shims $PATH
+        set -e PATH[(contains -i (pyenv root)/shims $PATH)]
+    end
+
+    command brew $argv
+end
+
 functions --copy cd standard_cd
 
 function cd
@@ -83,12 +92,3 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
-
-function brew
-    set -xl PATH $PATH # Protect global PATH by local PATH
-    if type -q pyenv; and contains (pyenv root)/shims $PATH
-        set -e PATH[(contains -i (pyenv root)/shims $PATH)]
-    end
-
-    command brew $argv
-end
