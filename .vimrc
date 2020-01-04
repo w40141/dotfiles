@@ -178,14 +178,14 @@ nnoremap k gk
 nnoremap zl zL
 nnoremap zh zH
 "挿入モードでの移動
-" inoremap <C-k> <Up>
-" inoremap <C-h> <Left>
-" inoremap <C-j> <Down>
-" inoremap <C-l> <Right>
-" inoremap <C-b> <BS>
-" inoremap <C-d> <delete>
-" inoremap <C-a> <Home>
-" inoremap <C-e> <End>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-l> <Right>
+inoremap <C-b> <BS>
+inoremap <C-d> <delete>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 inoremap jk <esc>
 " 編集系
 " ;と:を入れ替
@@ -401,10 +401,6 @@ augroup END
 
 " dein settings
 if has('nvim')
-	" let g:python_host_prog = '/usr/local/bin/python'
-	" let g:python3_host_prog = '/usr/local/bin/python3'
-	" let g:python_host_prog = '$HOME/.pyenv/shims/python'
-	" let g:python3_host_prog = '$HOME/.pyenv/shims/python3'
 	let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 	let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
 	let g:ruby_host_prog = '/usr/local/bin/neovim-ruby-host'
