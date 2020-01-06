@@ -8,5 +8,13 @@
     "suggest.enablePreview": true,
     "suggest.preferCompleteThanJumpPlaceholder":true,
     "suggest.noselect": true,
-    "coc.preferences.hoverTarget": "float", "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "coc.preferences.hoverTarget": "float",
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+    "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
+  }
 }

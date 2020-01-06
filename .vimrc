@@ -120,7 +120,7 @@ set shiftround
 " 補完時に大文字小文字を区別しない
 set infercase
 " 対応括弧に'<'と'>'のペアを追加
-set matchpairs& matchpairs+=<:>
+" set matchpairs& matchpairs+=<:>
 set nowritebackup
 set noswapfile
 set nobackup
