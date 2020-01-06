@@ -8,13 +8,14 @@
     "suggest.enablePreview": true,
     "suggest.preferCompleteThanJumpPlaceholder":true,
     "suggest.noselect": true,
+    "python.jediEnabled": false,
     "coc.preferences.hoverTarget": "float",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
+        "clangd": {
+            "command": "clangd",
+            "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["c", "cpp", "objc", "objcpp"]
+        }
     }
-  }
 }
