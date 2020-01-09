@@ -2,7 +2,7 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
 if not functions -q fisher
-	# set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
+	set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
 	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
 	fish -c fisher
 end
@@ -90,5 +90,5 @@ set -g fish_user_paths "$HOME/.nodebrew/current/bin" $fish_user_paths
 
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
-# status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
