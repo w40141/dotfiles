@@ -7,29 +7,29 @@
 
 1. 以下のコマンドをコピペする.  
 
-		$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-	>[homebrew](http://brew.sh/index_ja.html)
+    >[homebrew](http://brew.sh/index_ja.html)
 
 1. 以下のコマンドでエラーを確認する.  
 
-		$ brew doctor  
+        $ brew doctor  
 
 ### 2. dotfilesをgitからcloneする.  
 
 1. 以下のコマンドをコピペする.  
-		
-		$ git clone https://github.com/w40141/dotfiles.git
+
+        $ git clone https://github.com/w40141/dotfiles.git
 
 2. シンボリックリンクを貼る.  
 
-		$ cd dotfiles
-		$ ./init.sh
+        $ cd dotfiles
+        $ ./init.sh
 
 3. brew bundle でアプリを一括インストールする.  
 2回くらいやると大丈夫
 
-		$ brew bundle --global
+        $ brew bundle --global
 
 1. `brew man` コマンドをするとなんだかうまくいく. 
 
@@ -37,26 +37,26 @@
 
 1. fish の設定
 
-	1. fish のパスの確認する.  
+    1. fish のパスの確認する.  
 
-			which fish
+            which fish
 
-	2. シェルの変更する.  
+    2. シェルの変更する.  
 
-			 sudo vi /etc/shells
+            sudo vi /etc/shells
 
-	3. 末尾にfishのパス (/usr/local/bin/fish) を追加する.
+    3. 末尾にfishのパス (/usr/local/bin/fish) を追加する.
 
-	4. ログインシェルをfish に変更する.  
+    4. ログインシェルをfish に変更する.  
 
-			fish
-			chsh -s /usr/local/bin/fish
+            fish
+            chsh -s /usr/local/bin/fish
 
 1. neovimのインストール
 
     1. pyenv の設定
 
-		    pyenv install lastest python2
+            pyenv install lastest python2
             pyenv install lastest python3
 
     1. NeoVim 専用のvirtualenv を作り, neovimをインストール
@@ -67,6 +67,21 @@
             pyenv virtualenv python3-lst neovim3
             pyenv shell neovim3
             pip install neovim
+
+    1. rbenv の設定
+
+            rbenv init
+            rbenv install version
+            rbenv global version
+            rbenv rehash
+            sudo gem install neovim
+
+    1. node の設定
+
+            curl -L git.io/nodebrew | perl - setup
+            nodebrew install latest
+            nodebrew use latest
+            npm -g install neovim yarn
 
 1. 隠しファイルを表示する.  
 
