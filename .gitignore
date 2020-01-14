@@ -3,6 +3,7 @@
 /.config/dot_zsh/.zcompdump
 /.config/configstore
 /.config/fisher
+/.config/yarn
 /.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fishfile

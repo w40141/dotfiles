@@ -74,14 +74,14 @@
             rbenv install version
             rbenv global version
             rbenv rehash
-            sudo gem install neovim
+            gem install neovim
 
     1. node の設定
 
-            curl -L git.io/nodebrew | perl - setup
+            nodebrew setup
             nodebrew install latest
             nodebrew use latest
-            npm -g install neovim yarn
+            yarn global add neovim
 
 1. 隠しファイルを表示する.  
 

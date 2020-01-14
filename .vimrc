@@ -403,9 +403,8 @@ augroup END
 if has('nvim')
 	let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
 	let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
-  " now rbenv gloval 2.6.5
 	let g:ruby_host_prog = $HOME.'/.rbenv/shims/neovim-ruby-host'
-	let g:node_host_prog = $HOME.'/.nodebrew/current/bin/neovim-node-host'
+	let g:node_host_prog = $HOME.'/usr/local/bin/neovim-node-host'
 endif
 
 " dein自体の自動インストール
