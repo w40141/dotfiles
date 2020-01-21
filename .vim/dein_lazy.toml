@@ -199,3 +199,10 @@ nmap <silent> <leader>aa :A<CR>
 nmap <silent> <leader>at :AT<CR>
 nmap <silent> <leader>av :AV<CR>
 '''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+'''

@@ -121,13 +121,6 @@ repo = 'hynek/vim-python-pep8-indent'
 on_ft = ['python', 'python3']
 
 [[plugins]]
-repo = 'lervag/vimtex'
-on_ft = ['tex']
-hook_add = '''
-source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
-'''
-
-[[plugins]]
 repo = 'tpope/vim-repeat'
 on_event = ['FocusLost', 'CursorHold']
 
@@ -139,9 +132,9 @@ let g:vim_markdown_folding_disabled = 0
 let g:vim_markdown_folding_style_pythonic = 1
 '''
 
-[[plugins]]
-repo = 'jiangmiao/auto-pairs'
-hook_add = 'let g:AutoPairsMapCh = 0'
+# [[plugins]]
+# repo = 'jiangmiao/auto-pairs'
+# hook_add = 'let g:AutoPairsMapCh = 0'
 
 [[plugins]]
 repo = 'honza/vim-snippets'
