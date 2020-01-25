@@ -4,7 +4,7 @@
 /.config/configstore
 /.config/fisher
 /.config/yarn/
-!/.config/yarn/package.json
+!/.config/yarn/global/package.json
 /.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fishfile
