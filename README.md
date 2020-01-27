@@ -63,10 +63,10 @@
 
             pyenv virtualenv python2-lst neovim2
             pyenv shell neovim2
-            pip install neovim
+            pip install pynvim
             pyenv virtualenv python3-lst neovim3
             pyenv shell neovim3
-            pip install neovim
+            pip install pynvim
 
     1. rbenv の設定
 
