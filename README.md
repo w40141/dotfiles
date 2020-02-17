@@ -106,6 +106,8 @@
 
 1. github などにアクセスをして確認する. 
 
+        $ ssh -T git@github.com
+
 ## Tex の文字の設定  
 
 1. https://texwiki.texjp.org/?TeX%20Live%2FMac ここに従い, 設定する. 
