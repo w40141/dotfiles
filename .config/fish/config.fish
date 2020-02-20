@@ -58,7 +58,7 @@ set -g theme_show_exit_status no
 set -g fish_prompt_pwd_dir_length 0
 # set -g theme_project_dir_length 0
 set -g theme_newline_cursor yes
-set -g theme_newline_prompt (set_color green)\uF558'  '
+set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 

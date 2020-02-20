@@ -50,12 +50,12 @@ let g:lightline = {
       \			'ale_ok'			:	'ok', 
       \ }, 
       \ 'separator'     : {
-      \			'left' : "\uE0B0", 
-      \			'right': "\uE0B2", 
+      \			'left' : "\ue0c0 ", 
+      \			'right': " \ue0c2", 
       \ }, 
       \ 'subseparator'  : {
-      \			'left' : "\uE0B1", 
-      \			'right': "\uE0B3", 
+      \			'left' : "\ue0c1 ", 
+      \			'right': " \ue0c3 ", 
       \ }
       \ }
 
@@ -88,6 +88,7 @@ function! MyGitGutter()
   let l:gitgutter_sign_added = "\uF067 "
   let l:gitgutter_sign_modified = "\uF061 "
   let l:gitgutter_sign_removed = "\uF00D "
+
   let l:symbols = [
         \ l:gitgutter_sign_added,
         \ l:gitgutter_sign_modified,
