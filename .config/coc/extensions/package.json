@@ -4,7 +4,7 @@
     "coc-dictionary": ">=1.2.2",
     "coc-eslint": ">=1.2.6",
     "coc-fish": ">=1.0.10",
-    "coc-git": ">=1.7.2",
+    "coc-git": ">=1.7.4",
     "coc-gitignore": ">=0.0.4",
     "coc-highlight": ">=1.2.5",
     "coc-html": ">=1.2.3",

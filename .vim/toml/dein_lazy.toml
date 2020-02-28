@@ -157,7 +157,7 @@ depends = ['vim-fugitive']
 repo = 'reireias/vim-cheatsheet'
 on_cmd = 'Cheat'
 hook_source = '''
-let g:cheatsheet#cheat_file = '$HOME/.config/nvim/util/cheatsheet.md'
+let g:cheatsheet#cheat_file = '$HOME/.config/nvim/plugins/util/cheatsheet.md'
 '''
 
 [[plugins]]

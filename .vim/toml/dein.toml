@@ -90,6 +90,12 @@ let g:loaded_matchparen = 1
 repo = 'itchyny/vim-cursorword'
 
 [[plugins]]
+repo = 'andymass/vim-matchup'
+hook_add = '''
+let g:loaded_matchit = 1
+'''
+
+[[plugins]]
 repo = 'vim-jp/vimdoc-ja'
 
 # toDo
