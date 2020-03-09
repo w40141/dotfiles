@@ -110,6 +110,10 @@ repo = 'Integralist/vim-mypy'
 on_ft = ['python', 'python3']
 
 [[plugins]]
+repo = 'psf/black'
+on_ft = ['python', 'python3']
+
+[[plugins]]
 repo = 't9md/vim-quickhl'
 on_map = {n = '<Plug>'}
 hook_add = '''
