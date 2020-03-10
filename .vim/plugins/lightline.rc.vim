@@ -50,12 +50,12 @@ let g:lightline = {
       \			'ale_ok'			:	'ok', 
       \ }, 
       \ 'separator'     : {
-      \			'left' : "\ue0c0 ", 
-      \			'right': " \ue0c2", 
+      \			'left' : "\ue0c0 ",
+      \			'right': "\ue0c2 ",
       \ }, 
       \ 'subseparator'  : {
       \			'left' : "\ue0c1 ", 
-      \			'right': " \ue0c3 ", 
+      \			'right': "\ue0c3 ",
       \ }
       \ }
 
