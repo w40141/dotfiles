@@ -111,6 +111,7 @@ brew "gtk-mac-integration"
 brew "hping"
 brew "hugo"
 brew "icarus-verilog"
+brew "libusbmuxd"
 brew "libxml2"
 brew "libimobiledevice", args: ["HEAD"]
 brew "ideviceinstaller"
@@ -133,7 +134,6 @@ brew "libpq"
 brew "libspatialite"
 brew "unibilium"
 brew "libtermkey"
-brew "libusbmuxd", args: ["HEAD"]
 brew "libuv"
 brew "libvterm"
 brew "luajit"
@@ -236,6 +236,7 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "wordpresscom"
+cask "zoomus"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
