@@ -14,6 +14,8 @@
 	<string>manual</string>
 	<key>CheckTestRelease</key>
 	<true/>
+	<key>Command</key>
+	<string></string>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>Dracula</key>
@@ -501,11 +503,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>240 246 799 448 0 0 1280 777 </string>
+	<string>320 321 799 448 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>330 288 620 392 0 0 1280 777 </string>
+	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 8 1280 769 0 0 1280 777 </string>
+	<string>0 198 1440 679 0 0 1440 877 </string>
+	<key>NeverWarnAboutShortLivedSessions_2B99FAF2-E7DA-4F4B-A133-2C8FF0169C58</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_2B99FAF2-E7DA-4F4B-A133-2C8FF0169C58_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -707,7 +713,7 @@
 			<key>Columns</key>
 			<integer>40</integer>
 			<key>Command</key>
-			<string></string>
+			<string>/bin/bash</string>
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1319,34 +1325,35 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
+		<string>3.3.6</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.7beta3</string>
+		<string>3.3.8beta5</string>
+		<string>3.3.7beta2</string>
+		<string>3.3.8beta4</string>
+		<string>3.3.7beta1</string>
+		<string>3.3.8beta3</string>
 		<string>3.3.10beta2</string>
 		<string>3.3.10beta1</string>
-		<string>3.3.8beta4</string>
-		<string>3.3.7</string>
-		<string>3.3.9beta1</string>
-		<string>3.3.8beta5</string>
-	</array>
-	<key>NoSyncBFPRecents</key>
-	<array>
-		<string>Cica</string>
+		<string>3.3.8beta1</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1280, 800}}</string>
+		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{326, 652}</string>
+		<string>{398, 728}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
-	<string>F323C540-ED84-412C-B57E-3BE8E04C6722</string>
+	<string>95B0A472-588C-48D3-95A6-7856992DF809</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>27</integer>
+	<integer>47</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>600398131.453161</real>
+	<real>593355617.88669205</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
 	<key>NoSyncPermissionToShowTip</key>
@@ -2082,7 +2089,7 @@
 		</array>
 	</dict>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
-	<real>600072285.84267199</real>
+	<real>592472569.30063498</real>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -2126,20 +2133,20 @@
 	<string>/Users/daisuke.oku/dotfiles/iTerm/note</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing_new.xml?shard=20</string>
+	<string>https://iterm2.com/appcasts/testing_new.xml?shard=56</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-14T04:01:17Z</date>
+	<date>2020-03-28T04:48:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>SUUpdateGroupIdentifier</key>
-	<integer>3585289019</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SoundForEsc</key>
