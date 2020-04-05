@@ -46,3 +46,5 @@ let g:loaded_netrw             = 1
 let g:loaded_netrwPlugin       = 1
 let g:loaded_netrwSettings     = 0
 let g:loaded_netrwFileHandlers = 0
+
+set rtp+=/usr/local/opt/fzf
