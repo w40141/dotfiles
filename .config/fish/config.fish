@@ -79,7 +79,7 @@ set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/.nodebrew/current/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
-
+set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 status --is-interactive; and source (pyenv init -|psub)
