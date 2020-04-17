@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "coc-css": ">=1.2.2",
+    "coc-css": ">=1.2.3",
     "coc-dictionary": ">=1.2.2",
     "coc-eslint": ">=1.2.6",
     "coc-fish": ">=1.0.10",
@@ -15,9 +15,9 @@
     "coc-phpls": ">=2.1.8",
     "coc-python": ">=1.2.9",
     "coc-rls": ">=1.1.4",
-    "coc-snippets": ">=2.1.24",
+    "coc-snippets": ">=2.1.25",
     "coc-solargraph": ">=1.1.6",
-    "coc-tsserver": ">=1.4.13",
+    "coc-tsserver": ">=1.4.15",
     "coc-vimlsp": ">=0.5.1",
     "coc-vimtex": ">=1.0.3",
     "coc-word": ">=1.2.2"
