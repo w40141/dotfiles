@@ -6,5 +6,5 @@ oh-my-fish/plugin-expand
 oh-my-fish/plugin-extract
 oh-my-fish/plugin-peco
 edc/bass
-sentriz/fish-pipenv
 daenney/pyenv
+ryoppippi/fish-poetry

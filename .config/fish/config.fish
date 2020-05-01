@@ -25,6 +25,15 @@ alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../..'
 
+alias po='poetry run'
+alias pp='poetry run python'
+
+function pdev
+    poetry add -D black flake8 mypy pytest
+end
+
+register-python-argcomplete --shell fish pipx | .
+
 # peco
 set fish_plugins theme peco
 
@@ -74,7 +83,6 @@ set -g fish_user_paths "/usr/local/opt/llvm/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/nss/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/.nodebrew/current/bin" $fish_user_paths
@@ -87,3 +95,6 @@ set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
+
+# Created by `userpath` on 2020-05-01 04:40:57
+set PATH $PATH /Users/daisuke.oku/.local/bin
