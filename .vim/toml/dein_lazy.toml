@@ -19,9 +19,6 @@ merged = '0'
 hook_add = '''
 source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
 '''
-# hook_source = '''
-# source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
-# '''
 hook_post_source = '''
 source $XDG_CONFIG_HOME/nvim/plugins/coc_colorscheme.rc.vim
 '''

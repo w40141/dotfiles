@@ -1,9 +1,6 @@
 " dein settings
 if has('nvim')
-	let g:python_host_prog = $PYENV_ROOT.'/versions/neovim2/bin/python'
-	let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim3/bin/python'
-	" let g:ruby_host_prog = $HOME.'/.rbenv/shims/neovim-ruby-host'
-	" let g:node_host_prog = $HOME.'/usr/local/bin/neovim-node-host'
+	let g:python3_host_prog = $XDG_CONFIG_HOME.'/nvim/neovim3/.venv/bin/python'
 endif
 
 " dein自体の自動インストール

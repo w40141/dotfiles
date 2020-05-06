@@ -11,8 +11,11 @@
     "python.jediEnabled": false,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.local/bin/black",
-    "python.linting.flake8Path": "~/.local/bin/flake8",
     "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "~/.local/bin/flake8",
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": "~/.local/bin/mypy",
+    "python.sortImports.path": "isort",
     "coc.preferences.hoverTarget": "float",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "languageserver": {

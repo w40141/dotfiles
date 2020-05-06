@@ -85,16 +85,19 @@ set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
-set -g fish_user_paths "$HOME/.nodebrew/current/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
-
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
+set -g fish_user_paths "$HOME/.rbenv/bin" $fish_user_paths
+set -gx PYENV_ROOT $HOME/.pyenv
+set -g fish_user_paths "$PYENV_ROOT/bin" $fish_user_paths
+set -g fish_user_paths "$HOME/.nodenv/bin" $fish_user_paths
 
-status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (nodenv init -|psub)
 
 # Created by `userpath` on 2020-05-01 04:40:57
-set PATH $PATH /Users/daisuke.oku/.local/bin
+set -g fish_user_paths "$HOME/.local/bin" $fish_user_paths
