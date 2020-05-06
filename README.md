@@ -56,31 +56,30 @@
 
     1. pyenv の設定
 
+            pyenv init
             pyenv install lastest python2
             pyenv install lastest python3
 
     1. NeoVim 専用のvirtualenv を作り, neovimをインストール
 
-            pyenv virtualenv python2-lst neovim2
-            pyenv shell neovim2
-            pip install pynvim
-            pyenv virtualenv python3-lst neovim3
-            pyenv shell neovim3
-            pip install pynvim
+            cd ~/.config/nvim/neovim3
+            pyenv local lastest python3
+            poetry install
 
     1. rbenv の設定
 
             rbenv init
-            rbenv install version
-            rbenv global version
+            rbenv install lastest
+            rbenv global lastest
             rbenv rehash
             gem install neovim
 
     1. node の設定
 
-            nodebrew setup
-            nodebrew install latest
-            nodebrew use latest
+            nodenv init
+            nodenv install lastest
+            nodenv global lastest
+            nodenv rehash
             yarn global add neovim
 
 1. 隠しファイルを表示する.  
