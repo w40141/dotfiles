@@ -14,6 +14,7 @@ function! s:deinClean()
   endif
 endfunction
 command! DeinClean :call s:deinClean()
+command! DeinUpdate :call dein#update()
 '''
 
 [[plugins]]
