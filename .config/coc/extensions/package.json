@@ -4,7 +4,7 @@
     "coc-dictionary": ">=1.2.2",
     "coc-eslint": ">=1.2.6",
     "coc-fish": ">=1.0.11",
-    "coc-git": ">=1.7.11",
+    "coc-git": ">=1.7.12",
     "coc-gitignore": ">=0.0.4",
     "coc-highlight": ">=1.2.5",
     "coc-html": ">=1.2.4",
@@ -18,7 +18,7 @@
     "coc-snippets": ">=2.1.26",
     "coc-solargraph": ">=1.1.6",
     "coc-tsserver": ">=1.5.1",
-    "coc-vimlsp": ">=0.5.2",
+    "coc-vimlsp": ">=0.6.0",
     "coc-vimtex": ">=1.0.3",
     "coc-word": ">=1.2.2"
   }

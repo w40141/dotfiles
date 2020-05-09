@@ -34,6 +34,15 @@ end
 
 register-python-argcomplete --shell fish pipx | .
 
+function brew
+    set -xl PATH $PATH # Protect global PATH by local PATH
+    if type -q pyenv; and contains (pyenv root)/shims $PATH
+        set -e PATH[(contains -i (pyenv root)/shims $PATH)]
+    end
+
+    command brew $argv
+end
+
 # peco
 set fish_plugins theme peco
 
@@ -90,10 +99,7 @@ set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-set -g fish_user_paths "$HOME/.rbenv/bin" $fish_user_paths
 set -gx PYENV_ROOT $HOME/.pyenv
-set -g fish_user_paths "$PYENV_ROOT/bin" $fish_user_paths
-set -g fish_user_paths "$HOME/.nodenv/bin" $fish_user_paths
 
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (pyenv init -|psub)
