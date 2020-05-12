@@ -108,6 +108,7 @@ on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 'psf/black'
+rev = 'stable'
 on_ft = ['python', 'python3']
 
 [[plugins]]
