@@ -2,26 +2,24 @@
 " coc.nvim
 "
 
-" Use <C-i> for trigger snippet expand.
-imap <C-i> <Plug>(coc-snippets-expand)
+" Use <C-l> for trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
 
-" Use <C-f> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-f>'
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
 
-" Use <C-b> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-b>'
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
 
-" Use <C-t> for both expand and jump (make expand higher priority.)
-imap <C-t> <Plug>(coc-snippets-expand-jump)
-
-let g:coc_status_error_sign = "\uF490 "
-let g:coc_status_warning_sign ="\uF4A3 "
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
@@ -30,7 +28,34 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:coc_snippet_next = '<tab>'
+
+" " Use <C-i> for trigger snippet expand.
+" imap <C-i> <Plug>(coc-snippets-expand)
+" 
+" " Use <C-j> for select text for visual placeholder of snippet.
+" vmap <C-j> <Plug>(coc-snippets-select)
+" 
+" " Use <C-f> for jump to next placeholder, it's default of coc.nvim
+" let g:coc_snippet_next = '<c-f>'
+" 
+" " Use <C-b> for jump to previous placeholder, it's default of coc.nvim
+" let g:coc_snippet_prev = '<c-b>'
+" 
+" " Use <C-t> for both expand and jump (make expand higher priority.)
+" imap <C-t> <Plug>(coc-snippets-expand-jump)
+" 
+" inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+" 
+" function! s:check_back_space() abort
+"   let col = col('.') - 1
+"   return !col || getline('.')[col - 1]  =~# '\s'
+" endfunction
+" 
+" inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
@@ -41,6 +66,9 @@ inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use <c-space> to trigger completion.
 inoremap <silent> <expr> <C-space> coc#refresh()
+
+let g:coc_status_error_sign = "\uF490 "
+let g:coc_status_warning_sign ="\uF4A3 "
 
 " Use `[d` and `]d` to navigate diagnostics
 nmap <silent> [d <Plug>(coc-diagnostic-prev)

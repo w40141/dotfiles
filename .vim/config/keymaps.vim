@@ -34,10 +34,10 @@ nnoremap k gk
 nnoremap zl zL
 nnoremap zh zH
 "挿入モードでの移動
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-l> <Right>
+" inoremap <C-k> <Up>
+" inoremap <C-h> <Left>
+" inoremap <C-j> <Down>
+" inoremap <C-l> <Right>
 inoremap <C-b> <BS>
 inoremap <C-d> <delete>
 inoremap <C-a> <Home>

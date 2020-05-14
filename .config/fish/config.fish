@@ -99,10 +99,11 @@ set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
-set -gx PYENV_ROOT $HOME/.pyenv
+set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
 
-status --is-interactive; and source (rbenv init -|psub)
+set -gx PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
 
 # Created by `userpath` on 2020-05-01 04:40:57
