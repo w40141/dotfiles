@@ -1,16 +1,4 @@
 [[plugins]]
-repo = 'tyru/caw.vim'
-on_map = {nx = '<Plug>'}
-hook_add = '''
-" 行の最初の文字の前にコメント文字をトグル
-nmap gcc <Plug>(caw:hatpos:toggle)
-vmap gcc <Plug>(caw:hatpos:toggle)
-" 行頭にコメントをトグル
-nmap gc, <Plug>(caw:zeropos:toggle)
-vmap gc, <Plug>(caw:zeropos:toggle)
-'''
-
-[[plugins]]
 repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
 on_event = 'InsertEnter'

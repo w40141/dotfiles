@@ -38,7 +38,8 @@ nnoremap zh zH
 " inoremap <C-h> <Left>
 " inoremap <C-j> <Down>
 " inoremap <C-l> <Right>
-inoremap <C-b> <BS>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 inoremap <C-d> <delete>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
@@ -59,7 +60,7 @@ nnoremap <Leader>w :w<CR>
 " ビジュアルラインモード 
 nmap <Leader><Leader> V
 " コンマの後に自動的にスペースを挿入
-inoremap , ,<space>
+" inoremap , ,<space>
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
 nnoremap N Nzz
