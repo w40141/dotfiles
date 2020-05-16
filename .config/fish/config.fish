@@ -7,6 +7,11 @@ if not functions -q fisher
 	fish -c fisher
 end
 
+alias buud='brew update && brew upgrade && brew doctor'
+alias bbc="brew bundle --global --force clean"
+alias bbd="brew bundle --global --force dump"
+alias bbi="brew bundle --global --force install"
+
 alias la='ls -a'
 alias ll='ls -l'
 alias lal='la -l'
