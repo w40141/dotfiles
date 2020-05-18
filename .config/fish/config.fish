@@ -8,7 +8,7 @@ if not functions -q fisher
 end
 
 alias buud='brew update && brew upgrade && brew doctor'
-alias bbc="brew bundle --global --force clean"
+alias bbc="brew bundle --global --force cleanup"
 alias bbd="brew bundle --global --force dump"
 alias bbi="brew bundle --global --force install"
 
@@ -85,6 +85,8 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
+# set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
+set -g PATH "/usr/local/opt/python@3.8/bin" $PATH
 # PATH
 set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
@@ -99,12 +101,12 @@ set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -g fish_user_paths "$HOME/.poetry/bin" $fish_user_paths
 
 set -gx PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)

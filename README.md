@@ -41,16 +41,20 @@
 
             which fish
 
-    2. シェルの変更する.  
+    1. シェルの変更する.  
 
             sudo vi /etc/shells
 
-    3. 末尾にfishのパス (/usr/local/bin/fish) を追加する.
+    1. 末尾にfishのパス (/usr/local/bin/fish) を追加する.
 
-    4. ログインシェルをfish に変更する.  
+    1. ログインシェルをfish に変更する.  
 
             fish
             chsh -s /usr/local/bin/fish
+
+    1. poetryの補完
+
+            poetry completions fish > ~/.config/fish/completions/poetry.fish
 
 1. neovimのインストール
 
@@ -59,11 +63,7 @@
             pyenv init
             pyenv install lastest python2
             pyenv install lastest python3
-
-    1. NeoVim 専用のvirtualenv を作り, neovimをインストール
-
             cd ~/.config/nvim/neovim3
-            pyenv local lastest python3
             poetry install
 
     1. rbenv の設定
