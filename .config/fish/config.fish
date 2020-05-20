@@ -85,8 +85,7 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
-export RUBY_CONFIGURE_OPTS="--with-openssl-dir=(brew --prefix openssl@1.1)"
-
+set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 # set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
 set -g PATH "/usr/local/opt/python@3.8/bin" $PATH
 # PATH
