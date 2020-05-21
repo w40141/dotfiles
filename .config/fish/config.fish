@@ -85,11 +85,7 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
-set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
-# set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
-set -g PATH "/usr/local/opt/python@3.8/bin" $PATH
 # PATH
-set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/apr/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/curl-openssl/bin" $fish_user_paths
@@ -108,7 +104,12 @@ set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/.poetry/bin" $fish_user_paths
+# set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
+set -g PATH "/usr/local/opt/python@3.8/bin" $PATH
+# set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
+set -g PATH "/usr/local/opt/ruby/bin" $PATH
 
+set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 set -gx PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
