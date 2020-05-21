@@ -1,7 +1,7 @@
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 if = '''executable('node') && executable('yarn')'''
-on_event = 'InsertEnter'
+on_event = "InsertEnter"
 rev = 'release'
 merged = '0'
 hook_add = '''
@@ -85,6 +85,7 @@ nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 [[plugins]]
 repo = 'fisadev/vim-isort'
 on_ft = ['python', 'python3']
+on_event = "InsertEnter"
 hook_add = '''
 let g:vim_isort_map = '<C-i>'
 let g:vim_isort_python_version = 'python3'
@@ -92,10 +93,12 @@ let g:vim_isort_python_version = 'python3'
 
 [[plugins]]
 repo = 'Integralist/vim-mypy'
+on_event = "InsertEnter"
 on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 'psf/black'
+on_event = "InsertEnter"
 rev = 'stable'
 on_ft = ['python', 'python3']
 
