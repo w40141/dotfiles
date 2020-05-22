@@ -2,7 +2,7 @@
   "dependencies": {
     "coc-css": ">=1.2.3",
     "coc-dictionary": ">=1.2.2",
-    "coc-eslint": ">=1.2.6",
+    "coc-eslint": ">=1.2.7",
     "coc-fish": ">=1.0.11",
     "coc-git": ">=1.7.13",
     "coc-gitignore": ">=0.0.4",
