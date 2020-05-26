@@ -9,4 +9,4 @@ runtime! display.vim
 runtime! editor.vim
 runtime! keymaps.vim
 runtime! language.vim
-runtime! plugin.vim
+runtime! dein.vim

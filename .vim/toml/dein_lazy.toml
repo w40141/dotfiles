@@ -96,11 +96,11 @@ repo = 'Integralist/vim-mypy'
 on_event = "InsertEnter"
 on_ft = ['python', 'python3']
 
-[[plugins]]
-repo = 'psf/black'
-on_event = "InsertEnter"
-rev = 'stable'
-on_ft = ['python', 'python3']
+# [[plugins]]
+# repo = 'psf/black'
+# on_event = "InsertEnter"
+# rev = 'stable'
+# on_ft = ['python', 'python3']
 
 [[plugins]]
 repo = 't9md/vim-quickhl'

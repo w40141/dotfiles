@@ -1,10 +1,10 @@
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
-if not functions -q fisher
-	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-	fish -c fisher
-end
+# if not functions -q fisher
+# 	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+# 	fish -c fisher
+# end
 
 alias la='ls -a'
 alias ll='ls -l'
@@ -42,7 +42,7 @@ alias bbd="brew bundle --global --force dump"
 alias bbi="brew bundle --global --force install"
 
 # peco
-set fish_plugins theme peco
+set -x fish_plugins theme peco
 
 function fish_user_key_bindings
 	bind \cr peco_select_history # Bind for prco history to Ctrl+r
@@ -79,7 +79,7 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 # set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
 # PATH
-set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
+# set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 set -gx PYENV_ROOT $HOME/.pyenv
 
 status --is-interactive; and source (pyenv init -|psub)
