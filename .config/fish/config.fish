@@ -1,10 +1,10 @@
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
-# if not functions -q fisher
-# 	curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-# 	fish -c fisher
-# end
+if not functions -q fisher
+    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+    fish -c fisher
+end
 
 alias la='ls -a'
 alias ll='ls -l'
@@ -15,7 +15,7 @@ alias cx 'chmod +x'
 functions --copy cd standard_cd
 
 function cd
-	standard_cd $argv; and la
+    standard_cd $argv; and la
 end
 
 alias cd.. 'cd ..'
@@ -45,7 +45,7 @@ alias bbi="brew bundle --global --force install"
 set -x fish_plugins theme peco
 
 function fish_user_key_bindings
-	bind \cr peco_select_history # Bind for prco history to Ctrl+r
+    bind \cr peco_select_history # Bind for prco history to Ctrl+r
 end
 
 # theme-bobthefish
