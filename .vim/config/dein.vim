@@ -1,5 +1,6 @@
 " dein settings
 if has('nvim')
+  let g:python_host_prog = $XDG_CONFIG_HOME.'/nvim/neovim2/.venv/bin/python'
   let g:python3_host_prog = $XDG_CONFIG_HOME.'/nvim/neovim3/.venv/bin/python'
   let g:ruby_host_prog = $HOME.'/.rbenv/shims/neovim-ruby-host'
 endif
