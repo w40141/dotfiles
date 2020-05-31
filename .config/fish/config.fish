@@ -85,3 +85,6 @@ set -gx PYENV_ROOT $HOME/.pyenv
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
+
+register-python-argcomplete --shell fish pipx | .
+set -g fish_user_paths $HOME/.local/bin $fish_user_paths
