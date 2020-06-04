@@ -36,7 +36,7 @@ function brew
     command brew $argv
 end
 
-alias buud='brew update && brew upgrade && brew doctor'
+alias bud='brew update && brew upgrade && brew cask upgrade && brew doctor'
 alias bbc="brew bundle --global --force cleanup"
 alias bbd="brew bundle --global --force dump"
 alias bbi="brew bundle --global --force install"
