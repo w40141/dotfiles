@@ -49,10 +49,10 @@ inoremap jk <esc>
 noremap ; :
 noremap : ;
 " キー置換
-noremap <space>h ^
-noremap <space>l $
-noremap <space>m %
-nnoremap <space>/ *
+noremap ,h ^
+noremap ,l $
+noremap ,m %
+nnoremap ,/ *
 " ノーマルモードでも改行可能
 noremap <cr> i<cr><esc>
 " 保存
@@ -68,7 +68,7 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
-" 検索結果のハイライトをC-c連打でクリアする
+" 検索結果のハイライトをC-h連打でクリアする
 nnoremap  <C-h><C-h> :<C-u>nohlsearch<cr><Esc>
 " vを二回で行末まで選択
 vnoremap v $h

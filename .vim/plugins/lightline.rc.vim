@@ -6,7 +6,7 @@
 "               PaperColor light, seoul256, one, landscape
 
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'dracula',
       \	'active': {
       \			'left': [
       \					['mode', 'paste'], 

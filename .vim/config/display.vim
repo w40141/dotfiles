@@ -36,3 +36,5 @@ if has('conceal')
 	set conceallevel=1
 	set concealcursor=c
 endif
+
+autocmd ColorScheme * highlight Visual ctermbg=225

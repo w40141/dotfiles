@@ -180,8 +180,8 @@ source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
 repo = 'terryma/vim-expand-region'
 on_map = {v = '<Plug>'}
 hook_add = '''
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
 '''
 
 [[plugins]]

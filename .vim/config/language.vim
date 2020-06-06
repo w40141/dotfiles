@@ -58,7 +58,5 @@ augroup MyAutoCmd
 				\ setlocal nofoldenable nomodeline foldcolumn=0 foldlevel=0
 	autocmd BufNewFile,BufRead .{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 	autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-	" pip install yapf
-	autocmd FileType python nnoremap <leader>y :0,$!yapf<Cr>
 augroup END
 

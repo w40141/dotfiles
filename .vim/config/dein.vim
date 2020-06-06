@@ -42,3 +42,4 @@ endif
 
 filetype plugin indent on
 syntax on
+highlight Visual ctermbg=211
