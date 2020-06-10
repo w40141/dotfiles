@@ -16,6 +16,7 @@
     "python.linting.mypyEnabled": true,
     "python.linting.mypyPath": "~/.local/bin/mypy",
     "python.sortImports.path": "isort",
+    "codeLens.enable": true,
     "coc.preferences.hoverTarget": "float",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "languageserver": {
