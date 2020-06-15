@@ -107,3 +107,4 @@ set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
 set -g fish_user_paths $HOME/.local/bin $fish_user_paths
+set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
