@@ -441,8 +441,12 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>2B99FAF2-E7DA-4F4B-A133-2C8FF0169C58</string>
+	<key>EnableDivisionView</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideTab</key>
 	<false/>
 	<key>Hotkey</key>
@@ -509,7 +513,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>410 363 620 392 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1270 877 0 0 1440 877 </string>
+	<string>0 0 1250 877 0 0 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_2B99FAF2-E7DA-4F4B-A133-2C8FF0169C58</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_2B99FAF2-E7DA-4F4B-A133-2C8FF0169C58_selection</key>
@@ -521,6 +525,8 @@
 			<true/>
 			<key>ASCII Ligatures</key>
 			<true/>
+			<key>Allow Title Reporting</key>
+			<false/>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -1082,13 +1088,13 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>HackNerdFontComplete-Regular 14</string>
+			<string>Cica-Regular 17</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>FiraCode-Retina 14</string>
+			<string>Cica-Regular 17</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
@@ -1329,23 +1335,31 @@
 	<array>
 		<string>3.3.9</string>
 		<string>3.3.10beta2</string>
+		<string>3.3.10</string>
 		<string>3.3.10beta4</string>
 		<string>3.3.11beta1</string>
 		<string>3.3.10beta3</string>
+		<string>3.3.11</string>
+	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Hack Nerd Font</string>
+		<string>Cica</string>
+		<string>Fira Code</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{510, 877}</string>
+		<string>{425, 846}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>BA6F5FB3-AAD5-4706-8060-DC02A56AB202</string>
 	<key>NoSyncLastTipTime</key>
 	<real>607564387.31896806</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>50</integer>
+	<integer>55</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1810,6 +1824,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentTab.titleOverrideFormat</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentTab.currentSession.tty</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -1851,11 +1873,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>currentSession.terminalWindowName</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -2021,6 +2043,14 @@
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
+				<string>currentSession.terminalWindowName</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
 				<string>currentSession.hostname</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
@@ -2056,14 +2086,6 @@
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
-			</dict>
-			<dict>
-				<key>isTerminal</key>
-				<false/>
-				<key>name</key>
-				<string>currentSession</string>
-				<key>nonterminalContext</key>
-				<integer>1</integer>
 			</dict>
 		</array>
 		<key>4</key>
@@ -2156,21 +2178,25 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-31T04:27:08Z</date>
+	<date>2020-06-18T00:53:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
 	<integer>3280355419</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
+	<key>ShowNewOutputIndicator</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>TabStyleWithAutomaticOption</key>
+	<integer>4</integer>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.3.11beta1</string>
+	<string>3.3.11</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
