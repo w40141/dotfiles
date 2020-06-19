@@ -55,8 +55,15 @@ set -g theme_color_scheme dracula
 set -g theme_display_git yes
 set -g theme_display_git_untracked yes
 set -g theme_display_git_ahead_verbose yes
+set -g theme_display_cmd_duration no
 set -g theme_display_vagrant yes
-set -g theme_display_cmd_duration yes
+set -g theme_display_docker_machine yes
+set -g theme_display_k8s_context yes
+set -g theme_display_k8s_namespace no
+set -g theme_display_hg no
+set -g theme_display_nix no
+set -g theme_display_ruby yes
+set -g theme_display_nvm yes
 set -g theme_display_virtualenv yes
 set -g theme_title_display_process no
 set -g theme_title_display_path yes
