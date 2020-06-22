@@ -82,19 +82,19 @@ nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
 nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
 '''
 
-[[plugins]]
-repo = 'fisadev/vim-isort'
-on_ft = ['python', 'python3']
-on_event = "InsertEnter"
-hook_add = '''
-let g:vim_isort_map = '<C-i>'
-let g:vim_isort_python_version = 'python3'
-'''
+# [[plugins]]
+# repo = 'fisadev/vim-isort'
+# on_ft = ['python', 'python3']
+# on_event = "InsertEnter"
+# hook_add = '''
+# let g:vim_isort_map = '<C-i>'
+# let g:vim_isort_python_version = 'python3'
+# '''
 
-[[plugins]]
-repo = 'Integralist/vim-mypy'
-on_event = "InsertEnter"
-on_ft = ['python', 'python3']
+# [[plugins]]
+# repo = 'Integralist/vim-mypy'
+# on_event = "InsertEnter"
+# on_ft = ['python', 'python3']
 
 # [[plugins]]
 # repo = 'psf/black'

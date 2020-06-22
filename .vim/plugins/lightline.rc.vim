@@ -9,18 +9,20 @@ let g:lightline = {
       \ 'colorscheme': 'dracula',
       \	'active': {
       \			'left': [
-      \					['mode', 'paste'], 
-      \					['fugitive', 'gitgutter', 'filename', 'anzu'], 
-      \			], 
+      \					['mode', 'paste'],
+      \					['filename', 'fugitive', 'gitgutter', 'anzu'],
+      \			],
       \			'right': [
       \					['percent', 'lineinfo'], 
       \					['coc'], 
-      \					['charcode', 'fileformat', 'fileencoding', 'filetype'], 
+      \					['charcode', 'filetype'], 
       \			], 
       \ }, 
       \	'inactive': {
       \			'left': [],
-      \			'right': [['ale_error', 'ale_warning', 'ale_ok']]
+      \			'right': [['ale_error', 'ale_warning', 'ale_ok'],
+      \               ['charcode', 'fileformat', 'fileencoding', 'filetype']
+      \              ],
       \	}, 
       \	'component': {
       \			'lineinfo': '%3l[%L]:%-2v'
@@ -50,12 +52,12 @@ let g:lightline = {
       \			'ale_ok'			:	'ok', 
       \ }, 
       \ 'separator'     : {
-      \			'left' : "\ue0c0 ",
-      \			'right': "\ue0c2 ",
+      \			'left' : "\ue0b4",
+      \			'right': "\ue0b6",
       \ }, 
       \ 'subseparator'  : {
-      \			'left' : "\ue0c1 ", 
-      \			'right': "\ue0c3 ",
+      \			'left' : "\ue0b5", 
+      \			'right': "\ue0b7",
       \ }
       \ }
 
@@ -175,7 +177,7 @@ endfunction
 function! MyFiletype()
   if strlen(&filetype) 
     let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
-        \ WebDevIconsGetFileTypeSymbol() : ''
+          \ WebDevIconsGetFileTypeSymbol() : ''
     if winwidth(0) >= 100
       return &filetype . ' ' . l:icon
     else
