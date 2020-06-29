@@ -42,6 +42,7 @@
 	wip = commit -a -m \"[ci skip] WIP WIP WIP WIP WIP\"
 	amend = commit --amend --no-edit
 	shallow = clone --depth 1 = checkout
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
 
 [fetch]
 	prune = true
