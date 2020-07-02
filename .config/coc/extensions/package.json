@@ -19,7 +19,7 @@
     "coc-solargraph": ">=1.1.6",
     "coc-texlab": ">=2.1.0",
     "coc-tsserver": ">=1.5.2",
-    "coc-vimlsp": ">=0.8.0",
+    "coc-vimlsp": ">=0.9.1",
     "coc-word": ">=1.2.2"
   }
 }
