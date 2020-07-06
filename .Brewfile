@@ -235,6 +235,7 @@ cask "uhk-agent"
 cask "vagrant"
 cask "visual-studio-code"
 cask "vivaldi"
+cask "vlc"
 cask "zoomus"
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
