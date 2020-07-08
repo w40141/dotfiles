@@ -237,6 +237,7 @@ cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
 cask "zoomus"
+mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
