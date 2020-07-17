@@ -33,7 +33,7 @@
 
 1. `brew man` コマンドをするとなんだかうまくいく. 
 
-### 3. neovim, fish, pip などを整える.
+### 3. fish, neovim, pipx などを整える.
 
 1. fish の設定
 
@@ -81,6 +81,19 @@
             nodenv global lastest
             nodenv rehash
             yarn global add neovim
+
+1. pipxをインストールする
+
+    1. [pyenvのglobalにpipxをインストールする.](https://pipxproject.github.io/pipx/installation/)  
+
+            pip install pipx
+
+    1. 必要なモジュールをインストールする.  
+
+            pipx install flake8
+            pipx install black
+            pipx install isort
+            pipx install mypy
 
 1. 隠しファイルを表示する.  
 
