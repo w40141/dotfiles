@@ -83,7 +83,6 @@ status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
 
-register-python-argcomplete --shell fish pipx | .
 set -g fish_user_paths "/usr/local/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openssl@1.1/bin" $fish_user_paths
 # set -g fish_user_paths "/usr/local/opt/ruby/bin" $fish_user_paths
@@ -103,10 +102,13 @@ set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
-set -g fish_user_paths $HOME/.local/bin $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sphinx-doc/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
 
+
+# Created by `userpath` on 2020-07-17 06:10:12
+set PATH $PATH $HOME/.local/bin
+register-python-argcomplete --shell fish pipx | .
