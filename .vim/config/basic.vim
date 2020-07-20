@@ -25,7 +25,7 @@ set visualbell
 " set t_vb=
 set noerrorbells
 " 自動更新の時間
-set updatetime=300
+set updatetime=100
 " <Leader>キーを変更 (default: \)
 let g:mapleader=' '
 let g:maplocalleader=' '

@@ -61,6 +61,7 @@ let g:lightline = {
       \ }
       \ }
 
+
 " left
 " MyMode
 function! MyMode()

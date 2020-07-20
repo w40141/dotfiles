@@ -25,5 +25,7 @@
             "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
             "filetypes": ["c", "cpp", "objc", "objcpp"]
         }
-    }
+    },
+    "git.enableGutters": false,
+    "git.gitlab.hosts": ["https://www.togawa.cs.waseda.ac.jp/gitlab", "gitlab.com"]
 }
