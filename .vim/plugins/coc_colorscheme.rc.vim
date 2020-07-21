@@ -27,3 +27,18 @@ highlight default link      CocHintLine           CocHintSign
 
 highlight default link      CocCursorRange        Search
 highlight default link      CocHoverRange         Search
+
+highlight GitGutterAdd          ctermfg=76    ctermbg=NONE guibg=NONE
+highlight GitGutterChange       ctermfg=166   ctermbg=NONE guibg=NONE
+highlight GitGutterDelete       ctermfg=124   ctermbg=NONE guibg=NONE
+highlight link GitGutterChangeDelete GitGutterDelete
+
+highlight link GitGutterAddLine           GitGutterAdd
+highlight link GitGutterChangeLine        GitGutterChange
+highlight link GitGutterDeleteLine        GitGutterDelete
+highlight link GitGutterChangeDeleteLine  GitGutterChangeDelete
+
+highlight link GitGutterAddLineNr          GitGutterAdd
+highlight link GitGutterChangeLineNr       GitGutterChange
+highlight link GitGutterDeleteLineNr       GitGutterDelete
+highlight link GitGutterChangeDeleteLineNr GitGutterChangeDelete
