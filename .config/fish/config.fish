@@ -79,10 +79,6 @@ set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 # PATH
 set -gx PYENV_ROOT $HOME/.pyenv
 
-# Created by `userpath` on 2020-07-17 06:10:12
-set PATH $PATH $HOME/.local/bin
-register-python-argcomplete --shell fish pipx | .
-
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
@@ -111,3 +107,7 @@ set -g fish_user_paths "/usr/local/opt/openldap/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+
+# Created by `userpath` on 2020-07-21 01:25:03
+set PATH $PATH $HOME/.local/bin
+register-python-argcomplete --shell fish pipx | .
