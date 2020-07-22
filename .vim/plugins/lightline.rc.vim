@@ -74,13 +74,13 @@ function! MyFugitive()
     return ''
   endif
   try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+    if &ft !~? 'vimfiler\|gundo' && exists('*FugitiveHead')
       let l:_ = g:fugitive#head()
       return strlen(l:_) ? "\uE0A0" . l:_ : ''
     endif
   catch
   endtry
-  return ''
+  return 'ab'
 endfunction
 
 " MyGitGutter
@@ -207,6 +207,9 @@ function! StatusDiagnostic() abort
   endif
   if get(info, 'warning', 0)
     call add(msgs, l:sign_warning . info['warning'])
+  endif
+  if msgs == []
+    call add(msgs, l:sign_ok)
   endif
   return join(msgs, ' ')
 endfunction

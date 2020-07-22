@@ -26,7 +26,7 @@ set backspace=2
 "C-vの矩形選択で行末より後ろもカーソルを置ける
 set virtualedit=block
 " ペーストモード
-set pastetoggle=<C-y>
+set pastetoggle=<C-s>
 " 新しく開く代わりにすでに開いてあるバッファを開く
 set switchbuf=useopen
 " '<'や'>'でインデントする際に'shiftwidth'の倍数に丸める

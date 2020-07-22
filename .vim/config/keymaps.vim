@@ -83,7 +83,7 @@ vnoremap <tab> %
 inoremap <C-v> <esc>"*pa
 cnoremap <C-v> <C-r>+
 " insert モードで保存
-inoremap <C-s> <Esc>:w<CR>i
+" inoremap <C-s> <Esc>:w<CR>i
 " Yで行末までヤンク
 nnoremap Y y$
 " カーソル位置の単語をyankする
