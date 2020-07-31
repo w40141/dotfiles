@@ -1,3 +1,5 @@
+
+
 set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 

@@ -1,4 +1,5 @@
 tap "argon/mas"
+
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
 tap "delphinus/sfmono-square"
