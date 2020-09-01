@@ -12,7 +12,7 @@ augroup MyAutoCmd
         \ && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
 			\ 'Modified'  : '✹',
 			\ 'Staged'    : '✚',
     	\ 'Untracked' : '✭',
