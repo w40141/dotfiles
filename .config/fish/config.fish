@@ -99,7 +99,6 @@ set -g fish_user_paths "/usr/local/opt/openssl/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/qt/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/sqlite/bin" $fish_user_paths
 set -g fish_user_paths "$HOME/development/flutter/bin" $fish_user_paths
-set -g fish_user_paths "/usr/local/opt/python@3.8/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/libxml2/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/krb5/sbin" $fish_user_paths
@@ -109,6 +108,7 @@ set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
 
+set -g PATH $PATH /usr/local/opt/python@3.8/bin
 # Created by `userpath` on 2020-07-21 01:25:03
-set PATH $PATH $HOME/.local/bin
+set -g PATH $PATH $HOME/.local/bin
 register-python-argcomplete --shell fish pipx | .
