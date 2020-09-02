@@ -15,6 +15,7 @@
 !/.config/coc/extensions/package.json
 sessions
 snippets
+.config/amplify
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
