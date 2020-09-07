@@ -14,13 +14,22 @@ let g:vimtex_compiler_latexmk = {
 \   '-interaction=nonstopmode',
 \ ],
 \}
-let g:vimtex_latexmk_enabled = 1
-let g:vimtex_latexmk_options = '-pdfdvi'
-let g:vimtex_view_method = 'general'
-let g:vimtex_view_general_viewer
+
+let g:vimtex_compiler_enabled = 1
+let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
+" let g:vimtex_latexmk_background = 1
+" let g:vimtex_latexmk_callback = 1
+" let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
+" let g:vimtex_latexmk_continuous = 1
+" let g:vimtex_latexmk_enabled = 1
+" let g:vimtex_latexmk_options = '-pdfdvi'
+" let g:vimtex_toc_split_pos = "topleft"
+" let g:vimtex_toc_width = 10
       \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
-let g:vimtex_latexmk_callback_hooks = ['UpdateSkim']
+let g:vimtex_view_general_viewer
+let g:vimtex_view_method = 'general'
+
 function! UpdateSkim(status)
   if !a:status | return | endif
 
@@ -38,11 +47,3 @@ function! UpdateSkim(status)
     call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
   endif
 endfunction
-
-
-let g:vimtex_latexmk_continuous = 1
-let g:vimtex_latexmk_background = 1
-let g:vimtex_latexmk_callback = 1
-
-let g:vimtex_toc_split_pos = "topleft"
-let g:vimtex_toc_width = 10
