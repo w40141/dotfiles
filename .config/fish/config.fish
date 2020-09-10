@@ -41,7 +41,7 @@ end
 alias bud='brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
 alias bci='brew install --cask'
 alias bbc="brew bundle --global --force cleanup"
-alias bbd="brew bundle --global --force dump"
+alias bbd="brew bundle dump --global --force --describe"
 alias bbi="brew bundle --global --force install"
 
 # peco
