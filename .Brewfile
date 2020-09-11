@@ -110,10 +110,10 @@ brew "nettle"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Smart font renderer for non-Roman scripts
-brew "graphite2"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
+# Smart font renderer for non-Roman scripts
+brew "graphite2"
 # OpenType text shaping engine
 brew "harfbuzz"
 # High quality MPEG Audio Layer III (MP3) encoder
@@ -302,8 +302,6 @@ brew "perl"
 brew "php"
 # Draw UML diagrams
 brew "plantuml"
-# Python package management tool
-brew "poetry"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Python 2 bindings for the Cairo graphics library
