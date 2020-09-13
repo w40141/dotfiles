@@ -107,6 +107,7 @@ set -g fish_user_paths "/usr/local/opt/openldap/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openldap/sbin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths
 set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
+set -g fish_user_paths "$HOME/.poetry/bin" $fish_user_paths
 
 set -g PATH $PATH /usr/local/opt/python@3.8/bin
 # Created by `userpath` on 2020-07-21 01:25:03
