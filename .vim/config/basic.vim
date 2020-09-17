@@ -1,4 +1,5 @@
 " 基本設定
+
 " 文字コード
 set encoding=utf-8
 scriptencoding utf-8
