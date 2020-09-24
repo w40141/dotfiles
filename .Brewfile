@@ -288,6 +288,8 @@ brew "nspr"
 brew "nss"
 # General purpose programming language in the ML family
 brew "ocaml"
+# Development kit for the Java programming language
+brew "openjdk"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Learn vim commands via a game
@@ -346,7 +348,7 @@ brew "yarn"
 brew "z"
 # High-performance, asynchronous messaging library
 brew "zeromq"
-# The next-generation plugin manager for zsh
+# Next-generation plugin manager for zsh
 brew "zplug"
 # UNIX shell (command interpreter)
 brew "zsh"
