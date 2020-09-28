@@ -1,6 +1,21 @@
 クリーンインストールなどやること一覧
 ===
 
+## Macの設定
+
+### 1. 隠しファイルを表示する.  
+
+	defaults write com.apple.finder AppleShowAllFiles TRUE
+	defaults read com.apple.finder AppleShowAllFiles
+	killall Finder
+
+
+### 1. .DS_Storeを作成しないようにする.  
+
+    defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+
 ## dotfilesによるバックアップ復元  
 
 ### 1. Homebrew をインストールする.  
@@ -33,7 +48,7 @@
 
 1. `brew man` コマンドをするとなんだかうまくいく. 
 
-### 3. fish, neovim, pipx などを整える.
+### 3. fish, neovim, pipx, poetryを整える.
 
 1. fish の設定
 
@@ -82,7 +97,7 @@
             nodenv rehash
             yarn global add neovim
 
-1. pipxをインストールする
+1. python周りをインストールする
 
     1. [pyenvのglobalにpipxをインストールする.](https://pipxproject.github.io/pipx/installation/)  
 
@@ -95,11 +110,9 @@
             pipx install isort
             pipx install mypy
 
-1. 隠しファイルを表示する.  
+    1. [poetryをインストールする](https://python-poetry.org/docs/)
 
-		defaults write com.apple.finder AppleShowAllFiles TRUE
-		defaults read com.apple.finder AppleShowAllFiles
-		killall Finder
+            curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 
 
 ## SSHの設定
