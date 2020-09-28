@@ -3,14 +3,14 @@
 
 ## Macの設定
 
-### 1. 隠しファイルを表示する.  
+1. 隠しファイルを表示する.  
 
 	defaults write com.apple.finder AppleShowAllFiles TRUE
 	defaults read com.apple.finder AppleShowAllFiles
 	killall Finder
 
 
-### 1. DS_Storeを作成しないようにする.  
+1. DS_Storeを作成しないようにする.  
 
     defaults write com.apple.desktopservices DSDontWriteNetworkStores true
     defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
