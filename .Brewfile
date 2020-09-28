@@ -34,6 +34,8 @@ brew "atk"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Garbage collector for C and C++
 brew "bdw-gc"
 # C/C++ and Java libraries for Unicode and globalization
@@ -84,8 +86,12 @@ brew "rtmpdump"
 brew "dash"
 # C++ template library for linear algebra
 brew "eigen"
+# Modern replacement for 'ls'
+brew "exa"
 # ISO AAC audio encoder
 brew "faac"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Standalone library of the Fraunhofer FDK AAC code from Android
 brew "fdk-aac"
 # Ogg Bitstream Library
@@ -296,6 +302,8 @@ brew "p7zip"
 brew "pacvim"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Command-line tool to generate, analyze, convert and manipulate colors
+brew "pastel"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
@@ -359,6 +367,7 @@ cask "alfred"
 cask "android-studio"
 cask "anki"
 cask "atom"
+cask "balenaetcher"
 cask "boostnote"
 cask "box-drive"
 cask "cakebrew"
@@ -398,6 +407,7 @@ cask "macvim"
 cask "microsoft-office"
 cask "music-manager"
 cask "notion"
+cask "openinterminal"
 cask "skim"
 cask "skype"
 cask "slack"
