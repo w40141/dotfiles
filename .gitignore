@@ -7,7 +7,7 @@
 /.config/fish/*
 !/.config/fish/config.fish
 !/.config/fish/fishfile
-/.config/fish/conf.d/abbr.fish
+!/.config/fish/conf.d/abbr.fish
 /.jupyter
 /.config/coc/*
 !/.config/coc/extensions
