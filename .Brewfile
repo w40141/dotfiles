@@ -66,8 +66,6 @@ brew "cloog"
 brew "cmake"
 # Console Matrix
 brew "cmatrix"
-# Dependency manager for Cocoa projects
-brew "cocoapods"
 # Dependency Manager for PHP
 brew "composer"
 # Filename encoding conversion tool
