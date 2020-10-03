@@ -57,13 +57,13 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
 
 # PATH
-set -gx PYENV_ROOT $HOME/.pyenv
+set -g PYENV_ROOT $HOME/.pyenv
 
 status --is-interactive; and source (pyenv init -|psub)
 status --is-interactive; and source (rbenv init -|psub)
 status --is-interactive; and source (nodenv init -|psub)
 
-register-python-argcomplete --shell fish pipx | source
-
 # Created by `userpath` on 2020-10-02 03:59:27
-set PATH $PATH /Users/daisuke.oku/.local/bin
+set PATH $PATH $HOME/.local/bin
+
+register-python-argcomplete --shell fish pipx | source
