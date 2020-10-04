@@ -318,6 +318,8 @@ brew "py2cairo"
 brew "pyenv"
 # Ruby version manager
 brew "rbenv"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Provides fake name and address data
 brew "rig"
 # Powerful, clean, object-oriented scripting language
