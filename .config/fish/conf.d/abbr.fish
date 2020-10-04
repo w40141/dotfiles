@@ -33,8 +33,6 @@ abbr -a ..... 'cd ../../../..'
 abbr -a po 'poetry run'
 abbr -a pp 'poetry run python'
 
-abbr -a rm 'rm -i'
-
 abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
 abbr -a abs 'source ~/.config/fish/config_abbr.fish'
 

@@ -1,4 +1,4 @@
-let s:base_dir = expand('~/.config/nvim/config')
+let s:base_dir = expand('$XDG_CONFIG_HOME/nvim/config/')
 
 " runtimepathに追加
 execute 'set runtimepath+=' . fnamemodify(s:base_dir, ':p')
