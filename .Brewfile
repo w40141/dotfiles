@@ -14,6 +14,8 @@ tap "neovim/neovim"
 cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
+# All in one for **env
+brew "anyenv"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Spell checker with better logic than ispell
@@ -284,8 +286,6 @@ brew "neovim"
 brew "nkf"
 # Platform built on V8 to build network applications
 brew "node"
-# Manage multiple NodeJS versions
-brew "nodenv"
 # Platform-neutral API for system-level and libc-like functions
 brew "nspr"
 # Libraries for security-enabled client and server applications
@@ -308,22 +308,22 @@ brew "peco"
 brew "perl"
 # General-purpose scripting language
 brew "php"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
 # Draw UML diagrams
 brew "plantuml"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
-# Python version management
-brew "pyenv"
-# Ruby version manager
-brew "rbenv"
 # Persistent key-value database, with built-in net interface
 brew "redis"
 # Provides fake name and address data
 brew "rig"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Install various Ruby versions and implementations
+brew "ruby-build"
 # Safe, concurrent, practical language
 brew "rust"
 # SWF manipulation and generation tools

@@ -56,15 +56,18 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
-set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
-
 # PATH
 set -g PYENV_ROOT $HOME/.pyenv
 
-status --is-interactive; and source (pyenv init -|psub)
-status --is-interactive; and source (rbenv init -|psub)
-status --is-interactive; and source (nodenv init -|psub)
+# export RUBY_CONFIGURE_OPTS="--with-openssl-dir=(brew --prefix openssl@1.1)"
+set -x RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 
+set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
+
+# status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (rbenv init -|psub)
+# status --is-interactive; and source (nodenv init -|psub)
+status --is-interactive; and source (anyenv init -|psub)
 # Created by `userpath` on 2020-10-02 03:59:27
 set PATH $PATH $HOME/.local/bin
 
