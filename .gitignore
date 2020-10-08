@@ -3,7 +3,7 @@
 /.config/dot_zsh/.zcompdump
 /.config/configstore
 /.config/fisher
-/.config/yarn/
+/.config/yarn
 !.config/yarn/global
 /.config/yarn/global/*
 !/.config/yarn/global/package.json
