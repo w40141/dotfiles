@@ -1,8 +1,5 @@
 .DS_Store
-/config/vim
 /config/dot_zsh/.zcompdump
-/config/configstore
-/config/fisher
 /config/yarn/*
 !config/yarn/global
 /config/yarn/global/*
