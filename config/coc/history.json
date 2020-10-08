@@ -1,0 +1,103 @@
+{
+  "lists": {
+    "%2FUsers%2Fdaisuke": {
+      "oku": [
+        "comma",
+        "e"
+      ],
+      "oku%2FGoogleDrive%2Flab%2Fzemi%2FD3%2F0_%E5%8D%9A%E5%A3%AB%E8%AB%96%E6%96%87%2Fdissertation%2F20200608": [
+        "ex",
+        "e"
+      ],
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2Fisinglib%2Fcore": [
+        "ex"
+      ]
+    }
+  },
+  "actions": {
+    "%2FUsers%2Fdaisuke": {
+      "oku%2Fprogram%2Fpython_work": [
+        "black",
+        "Sort",
+        "sor"
+      ],
+      "oku%2Fprogram%2FDjango%2Ftutorial%2Fpolls": [
+        "asfa"
+      ],
+      "oku%2Fprogram%2Fwork%2Fpython3": {
+        "8": [
+          "sor",
+          "so"
+        ]
+      },
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2Fisinglib%2Fresponse": [
+        "so"
+      ],
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2Fisinglib": [
+        "r",
+        "sor",
+        "s"
+      ]
+    }
+  },
+  "commands": {
+    "%2FUsers%2Fdaisuke": {
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2Fisinglib%2Fcore": [
+        "isort",
+        "python.is",
+        "python.im",
+        "python.impo",
+        "python.sor",
+        "pythonsort",
+        "sor",
+        "python.",
+        "python",
+        "sort"
+      ],
+      "oku%2Fprogram%2FDjango%2Ftutorial%2Fpolls": [
+        "python.",
+        "python",
+        "sor"
+      ],
+      "oku": [
+        "sor"
+      ],
+      "oku%2Fprogram%2FMyApp%2Ftamatebako%2Fsrc%2Ftamatebako": [
+        "ru",
+        "impor"
+      ],
+      "oku%2Fprogram%2FMyApp%2Ftamatebako": [
+        "ru",
+        "set",
+        "run"
+      ],
+      "oku%2Fprogram%2FMyApp%2Fclitw": [
+        "python."
+      ],
+      "oku%2Fprogram%2FMyApp%2Fclitw%2Fsrc": [
+        "formatter?"
+      ],
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2FIsingLib%2Fcore": [
+        "sor"
+      ],
+      "oku%2Fprogram%2Fwork%2Fpython3": {
+        "8": [
+          "q"
+        ]
+      },
+      "oku%2Fprogram%2Fisinglib%2Fsrc%2Fisinglib": [
+        "sor"
+      ]
+    }
+  },
+  "extensions": {
+    "%2FUsers%2Fdaisuke": {
+      "oku%2FGoogleDrive%2Flab%2Fzemi%2FD3%2F0_%E5%8D%9A%E5%A3%AB%E8%AB%96%E6%96%87%2Fdissertation%2F20200608": [
+        "te"
+      ],
+      "oku": [
+        "so"
+      ]
+    }
+  }
+}

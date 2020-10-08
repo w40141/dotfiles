@@ -1,0 +1,9 @@
+python.sortImports
+editor.action.organizeImport
+python.enableLinting
+python.runLinting
+python.setLinter
+python.startREPL
+python.enableSourceMapSupport
+python.upgradePythonLanguageServer
+extensions.forceUpdateAll

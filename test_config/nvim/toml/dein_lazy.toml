@@ -1,0 +1,201 @@
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+if = '''executable('node') && executable('yarn')'''
+on_event = "InsertEnter"
+rev = 'release'
+merged = '0'
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/coc.rc.vim
+'''
+hook_post_source = '''
+source $XDG_CONFIG_HOME/nvim/plugins/coc_colorscheme.rc.vim
+'''
+
+[[plugins]]
+repo = 'deris/vim-gothrough-jk'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap ,j  <Plug>(gothrough-jk-j)
+nmap ,k  <Plug>(gothrough-jk-k)
+nmap ,gj <Plug>(gothrough-jk-gj)
+nmap ,gk <Plug>(gothrough-jk-gk)
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_map = {nv = '<Plug>'}
+hook_add = '''
+" disable netrw's gx mapping.
+let g:netrw_nogx = 1
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+'''
+
+[[plugins]]
+repo = 'AndrewRadev/switch.vim'
+on_cmd = 'Switch'
+
+[[plugins]]
+repo = 'LeafCage/yankround.vim'
+on_map = {nx = '<Plug>'}
+hook_add = '''
+nmap p <Plug>(yankround-p)
+xmap p <Plug>(yankround-p)
+nmap P <Plug>(yankround-P)
+nmap gp <Plug>(yankround-gp)
+xmap gp <Plug>(yankround-gp)
+nmap gP <Plug>(yankround-gP)
+nmap yp <Plug>(yankround-prev)
+nmap yn <Plug>(yankround-next)
+"" 履歴取得数
+let g:yankround_max_history = 50
+""履歴一覧(kien/ctrlp.vim)
+nnoremap <silent>g<C-c> :<C-u>CtrlPYankRound<CR>
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+on_map = [['n', '<Plug>']]
+hook_add = '''
+nmap n n<Plug>(anzu-update-search-status)
+nmap N N<Plug>(anzu-update-search-status)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+" clear status
+nmap <C-c><C-c> <C-h><C-h><Plug>(anzu-clear-search-status)
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+depends = ['vim-operator-user']
+on_map = {n = '<Plug>'}
+hook_add = '''
+" saiw(
+nmap <silent>sa <Plug>(operator-surround-append)
+" sda(
+nmap <silent>sd <Plug>(operator-surround-delete)
+" sra"'
+nmap <silent>sr <Plug>(operator-surround-replace)
+" カーソル位置から一番近い括弧を削除する
+nmap <silent>sdd <Plug>(operator-surround-delete)<Plug>(textobj-multiblock-a)
+" カーソル位置から一番近い括弧を変更する
+nmap <silent>srr <Plug>(operator-surround-replace)<Plug>(textobj-multiblock-a)
+'''
+
+# [[plugins]]
+# repo = 'fisadev/vim-isort'
+# on_ft = ['python', 'python3']
+# on_event = "InsertEnter"
+# hook_add = '''
+# let g:vim_isort_map = '<C-i>'
+# let g:vim_isort_python_version = 'python3'
+# '''
+
+# [[plugins]]
+# repo = 'Integralist/vim-mypy'
+# on_event = "InsertEnter"
+# on_ft = ['python', 'python3']
+
+# [[plugins]]
+# repo = 'psf/black'
+# on_event = "InsertEnter"
+# rev = 'stable'
+# on_ft = ['python', 'python3']
+
+[[plugins]]
+repo = 't9md/vim-quickhl'
+on_map = {n = '<Plug>'}
+hook_add = '''
+nmap <Space>m <Plug>(quickhl-manual-this)
+xmap <Space>m <Plug>(quickhl-manual-this)
+nmap <Space>M <Plug>(quickhl-manual-reset)
+xmap <Space>M <Plug>(quickhl-manual-reset)
+'''
+
+[[plugins]]
+repo = 'troydm/easybuffer.vim'
+on_cmd = 'EasyBuffer'
+hook_add = '''
+nnoremap buf :<C-u>EasyBuffer<CR>
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+on_map = {n = '<Plug>'}
+hook_add = 'nmap <Leader>qr <Plug>(quickrun)'
+hook_post_source = '''
+let g:quickrun_config = {'*': {'runner': 'remote/vimproc'}, }
+let g:quickrun_config={'*': {'split': 'vertical'}}
+set splitright
+'''
+
+[[plugins]]
+repo = 'sjl/gundo.vim'
+on_cmd = 'GundoToggle'
+hook_add = '''
+nnoremap <Leader>g :GundoToggle<CR>
+'''
+
+[[plugins]]
+repo = 'mattn/gist-vim'
+on_cmd = 'Gist'
+depends = ['webapi-vim']
+
+[[plugins]]
+repo = 'gregsexton/gitv'
+on_cmd = 'Gitv'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+on_cmd = 'Cheat'
+hook_source = '''
+let g:cheatsheet#cheat_file = '$HOME/.config/nvim/plugins/util/cheatsheet.md'
+'''
+
+[[plugins]]
+repo = 'previm/previm'
+on_ft = ['markdown', 'mkd', 'md']
+hook_add = '''
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+nnoremap <silent> <Leader><Leader>o :PrevimOpen<CR>
+let g:previm_enable_realtime = 1
+'''
+
+[[plugins]]
+repo = 'dhruvasagar/vim-table-mode'
+on_ft = ['markdown', 'mkd', 'md', 'txt']
+hook_add = '''
+let g:table_mode_corner = '|'
+'''
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ["html", "html5"]
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/emmet.rc.vim
+'''
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+on_map = {v = '<Plug>'}
+hook_add = '''
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)
+'''
+
+[[plugins]]
+repo = 'vim-scripts/a.vim'
+on_ft = ['c', 'cpp']
+hook_source = '''
+nmap <silent> <leader>aa :A<CR>
+nmap <silent> <leader>at :AT<CR>
+nmap <silent> <leader>av :AV<CR>
+'''
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+source $XDG_CONFIG_HOME/nvim/plugins/vimtex.rc.vim
+'''
