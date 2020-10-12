@@ -14,28 +14,36 @@ tap "neovim/neovim"
 cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
-# All in one for **env
-brew "anyenv"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Automatic configure script builder
+brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Generic library support script
+brew "libtool"
+# YAML Parser
+brew "libyaml"
+# Library for command-line editing
+brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Portable Foreign Function Interface library
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Library for command-line editing
-brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Core application library for C
 brew "glib"
 # GNOME accessibility toolkit
 brew "atk"
-# Automatic configure script builder
-brew "autoconf"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Garbage collector for C and C++
@@ -100,8 +108,6 @@ brew "libogg"
 brew "fribidi"
 # Library and utilities for processing GIFs
 brew "giflib"
-# Generic library support script
-brew "libtool"
 # C string library for manipulating Unicode strings
 brew "libunistring"
 # Manage compile and link flags for libraries
@@ -238,6 +244,8 @@ brew "openexr"
 brew "imagemagick"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Regular expressions library
@@ -270,6 +278,8 @@ brew "libtermkey"
 brew "libuv"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# C XSLT library for GNOME
+brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
 # Mac App Store command-line interface
@@ -308,8 +318,6 @@ brew "peco"
 brew "perl"
 # General-purpose scripting language
 brew "php"
-# Execute binaries from Python packages in isolated environments
-brew "pipx"
 # Draw UML diagrams
 brew "plantuml"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -324,8 +332,6 @@ brew "rig"
 brew "ruby"
 # Install various Ruby versions and implementations
 brew "ruby-build"
-# Safe, concurrent, practical language
-brew "rust"
 # SWF manipulation and generation tools
 brew "swftools"
 # Rich and complete approach to parallelism in C++
@@ -342,6 +348,8 @@ brew "tor"
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Extraction utility for .zip compressed archives
+brew "unzip"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Use ViM as PAGER
@@ -405,7 +413,6 @@ cask "kindle"
 cask "logitech-options"
 cask "mactex-no-gui"
 cask "macvim"
-cask "microsoft-office"
 cask "music-manager"
 cask "notion"
 cask "openinterminal"

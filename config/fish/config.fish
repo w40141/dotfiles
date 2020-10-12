@@ -19,8 +19,8 @@ end
 
 function brew
     set -xl PATH $PATH # Protect global PATH by local PATH
-    if type -q pyenv; and contains (pyenv root)/shims $PATH
-        set -e PATH[(contains -i (pyenv root)/shims $PATH)]
+    if type -q asdf; and contains $HOME/.asdf/shims $PATH
+        set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
     end
 
     command brew $argv
@@ -45,8 +45,8 @@ set -g theme_display_k8s_context yes
 set -g theme_display_k8s_namespace no
 set -g theme_display_hg no
 set -g theme_display_nix no
-set -g theme_display_ruby yes
-set -g theme_display_nvm yes
+set -g theme_display_ruby no
+set -g theme_display_nvm no
 set -g theme_display_virtualenv yes
 set -g theme_title_display_process no
 set -g theme_title_display_path yes
@@ -57,7 +57,7 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
-status --is-interactive; and source (anyenv init -|psub)
+# status --is-interactive; and source (anyenv init -|psub)
 
 # set -gx RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
 
