@@ -1,4 +1,5 @@
 tap "argon/mas"
+tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
 tap "delphinus/sfmono-square"
@@ -202,8 +203,6 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # Graph visualization software from AT&T and Bell Labs
@@ -282,6 +281,10 @@ brew "libvterm"
 brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# GUI for vim, made for macOS
+brew "macvim"
 # Mac App Store command-line interface
 brew "mas"
 # Library for a binary-based efficient data interchange format
@@ -300,8 +303,6 @@ brew "node"
 brew "nspr"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# General purpose programming language in the ML family
-brew "ocaml"
 # Development kit for the Java programming language
 brew "openjdk"
 # 7-Zip (high compression file archiver) implementation
@@ -316,20 +317,14 @@ brew "pastel"
 brew "peco"
 # Highly capable, feature-rich programming language
 brew "perl"
-# General-purpose scripting language
-brew "php"
 # Draw UML diagrams
 brew "plantuml"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Provides fake name and address data
 brew "rig"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Install various Ruby versions and implementations
 brew "ruby-build"
 # SWF manipulation and generation tools
@@ -408,11 +403,12 @@ cask "google-photos-backup-and-sync"
 cask "grammarly"
 cask "iterm2"
 cask "java"
-cask "julia"
 cask "kindle"
 cask "logitech-options"
 cask "mactex-no-gui"
 cask "macvim"
+cask "microsoft-auto-update"
+cask "microsoft-office"
 cask "music-manager"
 cask "notion"
 cask "openinterminal"

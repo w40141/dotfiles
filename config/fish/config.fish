@@ -93,3 +93,5 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 set -x PATH $PATH $HOME/.local/bin
 
 register-python-argcomplete --shell fish pipx | source
+
+# source (brew --prefix asdf)"/asdf.fish"
