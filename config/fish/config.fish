@@ -90,3 +90,6 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 # set -U fish_user_paths /usr/local/opt/gnu-getopt/bin $fish_user_paths
 
 # source (brew --prefix asdf)"/asdf.fish"
+
+# Created by `userpath` on 2020-10-15 04:47:34
+set PATH $PATH /Users/daisuke.oku/.local/bin
