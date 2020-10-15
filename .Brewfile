@@ -1,4 +1,5 @@
 tap "argon/mas"
+tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
 tap "delphinus/sfmono-square"
@@ -14,26 +15,32 @@ tap "neovim/neovim"
 cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
+# Automatic configure script builder
+brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Generic library support script
+brew "libtool"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Library for command-line editing
+brew "readline"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
 # Spell checker with better logic than ispell
 brew "aspell"
 # Portable Foreign Function Interface library
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Library for command-line editing
-brew "readline"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
 # Core application library for C
 brew "glib"
 # GNOME accessibility toolkit
 brew "atk"
-# Automatic configure script builder
-brew "autoconf"
-# Tool for generating GNU Standards-compliant Makefiles
-brew "automake"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Garbage collector for C and C++
@@ -74,12 +81,6 @@ brew "convmv"
 brew "ctags"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
-# Asynchronous event library
-brew "libevent"
-# Tool for downloading RTMP streaming media
-brew "rtmpdump"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
 # C++ template library for linear algebra
@@ -98,12 +99,12 @@ brew "libogg"
 brew "fribidi"
 # Library and utilities for processing GIFs
 brew "giflib"
-# Generic library support script
-brew "libtool"
 # C string library for manipulating Unicode strings
 brew "libunistring"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Asynchronous event library
+brew "libevent"
 # International domain name library (IDNA2008, Punycode and TR46)
 brew "libidn2"
 # ASN.1 structure parser library
@@ -136,6 +137,8 @@ brew "libvorbis"
 brew "opus"
 # VP8/VP9 video codec
 brew "libvpx"
+# Tool for downloading RTMP streaming media
+brew "rtmpdump"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl2"
 # Compression/decompression library aiming for high speed
@@ -194,8 +197,6 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # Graph visualization software from AT&T and Bell Labs
@@ -238,6 +239,8 @@ brew "imagemagick"
 brew "ios-deploy"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
+# Implementation of malloc emphasizing fragmentation avoidance
+brew "jemalloc"
 # Regular expressions library
 brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
@@ -268,8 +271,14 @@ brew "libtermkey"
 brew "libuv"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# C XSLT library for GNOME
+brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
+# GUI for vim, made for macOS
+brew "macvim"
 # Mac App Store command-line interface
 brew "mas"
 # Library for a binary-based efficient data interchange format
@@ -284,14 +293,10 @@ brew "neovim"
 brew "nkf"
 # Platform built on V8 to build network applications
 brew "node"
-# Manage multiple NodeJS versions
-brew "nodenv"
 # Platform-neutral API for system-level and libc-like functions
 brew "nspr"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# General purpose programming language in the ML family
-brew "ocaml"
 # Development kit for the Java programming language
 brew "openjdk"
 # 7-Zip (high compression file archiver) implementation
@@ -306,26 +311,14 @@ brew "pastel"
 brew "peco"
 # Highly capable, feature-rich programming language
 brew "perl"
-# General-purpose scripting language
-brew "php"
 # Draw UML diagrams
 brew "plantuml"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
-# Python version management
-brew "pyenv"
-# Ruby version manager
-brew "rbenv"
-# Persistent key-value database, with built-in net interface
-brew "redis"
 # Provides fake name and address data
 brew "rig"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
-# Safe, concurrent, practical language
-brew "rust"
 # SWF manipulation and generation tools
 brew "swftools"
 # Rich and complete approach to parallelism in C++
@@ -342,6 +335,8 @@ brew "tor"
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Extraction utility for .zip compressed archives
+brew "unzip"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Use ViM as PAGER
@@ -400,11 +395,11 @@ cask "google-photos-backup-and-sync"
 cask "grammarly"
 cask "iterm2"
 cask "java"
-cask "julia"
 cask "kindle"
 cask "logitech-options"
 cask "mactex-no-gui"
 cask "macvim"
+cask "microsoft-auto-update"
 cask "microsoft-office"
 cask "music-manager"
 cask "notion"
