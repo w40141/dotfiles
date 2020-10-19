@@ -11,7 +11,9 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
+tap "muesli/tap"
 tap "neovim/neovim"
+tap "tgotwig/linux-dust"
 cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
@@ -23,10 +25,14 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -83,6 +89,8 @@ brew "ctags"
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
+# More intuitive version of du in rust
+brew "dust"
 # C++ template library for linear algebra
 brew "eigen"
 # Modern replacement for 'ls'
@@ -213,6 +221,8 @@ brew "libepoxy"
 brew "gtk+3"
 # Integrates GTK macOS applications with the Mac desktop
 brew "gtk-mac-integration"
+# Command-line hex viewer
+brew "hexyl"
 # Command-line oriented TCP/IP packet assembler/analyzer
 brew "hping"
 # Configurable static site generator
@@ -237,6 +247,8 @@ brew "openexr"
 brew "imagemagick"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Implementation of malloc emphasizing fragmentation avoidance
@@ -315,10 +327,14 @@ brew "perl"
 brew "plantuml"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Modern replacement for ps written by Rust
+brew "procs"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
 # Provides fake name and address data
 brew "rig"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # SWF manipulation and generation tools
 brew "swftools"
 # Rich and complete approach to parallelism in C++
@@ -357,6 +373,8 @@ brew "zplug"
 brew "zsh"
 # Additional completion definitions for zsh
 brew "zsh-completions"
+# Disk Usage/Free Utility
+brew "muesli/tap/duf"
 cask "0xed"
 cask "alfred"
 cask "android-studio"
