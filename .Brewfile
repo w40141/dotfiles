@@ -25,14 +25,10 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# YAML Parser
-brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -247,8 +243,6 @@ brew "openexr"
 brew "imagemagick"
 # Install and debug iPhone apps from the command-line
 brew "ios-deploy"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Implementation of malloc emphasizing fragmentation avoidance
@@ -303,8 +297,6 @@ brew "ncurses"
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
-# Platform built on V8 to build network applications
-brew "node"
 # Platform-neutral API for system-level and libc-like functions
 brew "nspr"
 # Libraries for security-enabled client and server applications
@@ -361,8 +353,6 @@ brew "vimpager"
 brew "w3m"
 # Internet file retriever
 brew "wget"
-# JavaScript package manager
-brew "yarn"
 # Tracks most-used directories to make cd smarter
 brew "z"
 # High-performance, asynchronous messaging library
