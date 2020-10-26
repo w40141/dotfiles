@@ -37,10 +37,10 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Core application library for C
 brew "glib"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # GNOME accessibility toolkit
 brew "atk"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -281,10 +281,6 @@ brew "libvterm"
 brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
-# GUI for vim, made for macOS
-brew "macvim"
 # Mac App Store command-line interface
 brew "mas"
 # Library for a binary-based efficient data interchange format
@@ -327,6 +323,8 @@ brew "py2cairo"
 brew "rig"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # SWF manipulation and generation tools
 brew "swftools"
 # Rich and complete approach to parallelism in C++
@@ -406,7 +404,6 @@ cask "java"
 cask "kindle"
 cask "logitech-options"
 cask "mactex-no-gui"
-cask "macvim"
 cask "microsoft-auto-update"
 cask "microsoft-office"
 cask "music-manager"
