@@ -40,7 +40,7 @@ brew "pcre"
 # Core application library for C
 brew "glib"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
+brew "python@3.8", link: true
 # GNOME accessibility toolkit
 brew "atk"
 # Clone of cat(1) with syntax highlighting and Git integration
