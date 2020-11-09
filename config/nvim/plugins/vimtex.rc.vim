@@ -41,7 +41,7 @@ elseif (g:os == "Darwin")
   let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
   " This adds a callback hook that updates Skim after compilation
-  let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
+  " let g:vimtex_compiler_callback_hooks = ['UpdateSkim']
   function! UpdateSkim(status)
     if !a:status | return | endif
 

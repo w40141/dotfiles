@@ -14,7 +14,6 @@ tap "homebrew/test-bot"
 tap "muesli/tap"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
-cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Automatic configure script builder
@@ -417,6 +416,7 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
+cask "xquartz"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
