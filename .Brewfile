@@ -25,10 +25,14 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -37,10 +41,10 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Core application library for C
 brew "glib"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # GNOME accessibility toolkit
 brew "atk"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -59,6 +63,8 @@ brew "freetype"
 brew "fontconfig"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Next-gen compiler infrastructure
@@ -423,6 +429,7 @@ mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Levelator", id: 1493326487
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Mathpix Snipping Tool", id: 1349670778
