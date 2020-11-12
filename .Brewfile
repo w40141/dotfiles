@@ -37,8 +37,6 @@ brew "libffi"
 brew "pcre"
 # Core application library for C
 brew "glib"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8", link: true
 # GNOME accessibility toolkit
 brew "atk"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -225,8 +223,6 @@ brew "hugo"
 brew "icarus-verilog"
 # USB multiplexor library for iOS devices
 brew "libusbmuxd"
-# GNOME XML library
-brew "libxml2"
 # Library to communicate with iOS devices natively
 brew "libimobiledevice", args: ["HEAD"]
 # Tool for managing apps on iOS devices
@@ -265,6 +261,8 @@ brew "libgeotiff"
 brew "liblwgeom"
 # Postgres C API library
 brew "libpq"
+# GNOME XML library
+brew "libxml2"
 # Adds spatial SQL capabilities to SQLite
 brew "libspatialite"
 # Very basic terminfo library
