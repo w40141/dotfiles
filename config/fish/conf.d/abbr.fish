@@ -41,4 +41,4 @@ abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor &
 abbr -a bci 'brew install --cask'
 abbr -a bbc 'brew bundle --global --force cleanup'
 abbr -a bbd 'brew bundle dump --global --force --describe'
-abbr -a bbi 'brew bundle --global --force install'
+abbr -a bbi 'brew bundle --global --force'
