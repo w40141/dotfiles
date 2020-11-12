@@ -35,6 +35,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Core application library for C
 brew "glib"
 # GNOME accessibility toolkit
