@@ -13,7 +13,6 @@ tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
-cask "xquartz"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Automatic configure script builder
@@ -366,7 +365,6 @@ brew "zplug"
 brew "zsh"
 # Additional completion definitions for zsh
 brew "zsh-completions"
-# Disk Usage/Free Utility
 cask "0xed"
 cask "alfred"
 cask "android-studio"
@@ -422,6 +420,7 @@ cask "vagrant"
 cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
+cask "xquartz"
 cask "zoomus"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
