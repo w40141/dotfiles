@@ -11,7 +11,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
-tap "muesli/tap"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
 # C/C++ resolver library and DNS resolver utilities
