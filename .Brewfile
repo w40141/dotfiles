@@ -250,8 +250,6 @@ brew "oniguruma"
 brew "jq"
 # JSON parser for C
 brew "json-c"
-# Audio and video processing tools
-brew "libav"
 # Convert pixel information into colored ASCII art
 brew "libcaca"
 # Portable low-level networking library
