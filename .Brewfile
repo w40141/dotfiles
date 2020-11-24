@@ -215,8 +215,6 @@ brew "libepoxy"
 brew "gtk+3"
 # Integrates GTK macOS applications with the Mac desktop
 brew "gtk-mac-integration"
-# GNU Ubiquitous Intelligent Language for Extensions
-brew "guile@2"
 # Command-line hex viewer
 brew "hexyl"
 # Command-line oriented TCP/IP packet assembler/analyzer
@@ -244,7 +242,6 @@ brew "ios-deploy"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
 # Integer Set Library for the polyhedral model
-brew "isl@0.18"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # Regular expressions library
