@@ -79,6 +79,16 @@ brew "composer"
 brew "convmv"
 # Reimplementation of ctags(1)
 brew "ctags"
+# Implementation of malloc emphasizing fragmentation avoidance
+brew "jemalloc"
+# Asynchronous event library
+brew "libevent"
+# C string library for manipulating Unicode strings
+brew "libunistring"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+# Tool for downloading RTMP streaming media
+brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
@@ -101,14 +111,8 @@ brew "libogg"
 brew "fribidi"
 # Library and utilities for processing GIFs
 brew "giflib"
-# C string library for manipulating Unicode strings
-brew "libunistring"
 # Manage compile and link flags for libraries
 brew "pkg-config"
-# Asynchronous event library
-brew "libevent"
-# International domain name library (IDNA2008, Punycode and TR46)
-brew "libidn2"
 # ASN.1 structure parser library
 brew "libtasn1"
 # Low-level cryptographic library
@@ -139,8 +143,6 @@ brew "libvorbis"
 brew "opus"
 # VP8/VP9 video codec
 brew "libvpx"
-# Tool for downloading RTMP streaming media
-brew "rtmpdump"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl2"
 # Compression/decompression library aiming for high speed
@@ -241,9 +243,6 @@ brew "imagemagick"
 brew "ios-deploy"
 # CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
-# Integer Set Library for the polyhedral model
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
 # Regular expressions library
 brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
@@ -258,8 +257,6 @@ brew "libdnet"
 brew "proj"
 # Library and tools for dealing with GeoTIFF
 brew "libgeotiff"
-# Allows SpatiaLite to support ST_MakeValid() like PostGIS
-brew "liblwgeom"
 # Postgres C API library
 brew "libpq"
 # GNOME XML library
@@ -413,7 +410,7 @@ cask "visual-studio-code"
 cask "vivaldi"
 cask "vlc"
 cask "xquartz"
-cask "zoomus"
+cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
