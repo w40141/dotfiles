@@ -42,3 +42,6 @@ abbr -a bci 'brew install --cask'
 abbr -a bbc 'brew bundle --global --force cleanup'
 abbr -a bbd 'brew bundle dump --global --force --describe'
 abbr -a bbi 'brew bundle --global --force'
+
+abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
+abbr -a echop 'echo $PATH | tr " " "\n" | nl'
