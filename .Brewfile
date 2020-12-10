@@ -81,8 +81,6 @@ brew "convmv"
 brew "ctags"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
-# Asynchronous event library
-brew "libevent"
 # C string library for manipulating Unicode strings
 brew "libunistring"
 # International domain name library (IDNA2008, Punycode and TR46)
@@ -113,6 +111,8 @@ brew "fribidi"
 brew "giflib"
 # Manage compile and link flags for libraries
 brew "pkg-config"
+# Asynchronous event library
+brew "libevent"
 # ASN.1 structure parser library
 brew "libtasn1"
 # Low-level cryptographic library
@@ -388,9 +388,9 @@ cask "font-source-han-sans"
 cask "font-source-han-serif"
 cask "fontforge"
 cask "gog-galaxy"
+cask "google-backup-and-sync"
 cask "google-chrome"
 cask "google-japanese-ime"
-cask "google-photos-backup-and-sync"
 cask "grammarly"
 cask "iterm2"
 cask "kindle"
