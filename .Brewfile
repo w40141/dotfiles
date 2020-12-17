@@ -357,7 +357,6 @@ brew "zplug"
 brew "zsh"
 # Additional completion definitions for zsh
 brew "zsh-completions"
-cask "0xed"
 cask "alfred"
 cask "android-studio"
 cask "anki"
