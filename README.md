@@ -133,11 +133,11 @@
 
 	1. RSA 4096bit  
 
-	    ssh-keygen -t rsa -b 4096
+            ssh-keygen -t rsa -b 4096
 
 	2. Ed25519  
 
-	    ssh-keygen -t ed25519
+	        ssh-keygen -t ed25519
 
 1. .ssh ディレクトリを作り,  config ファイルを書く. config ファイルはどこかから持ってくる. 
 
