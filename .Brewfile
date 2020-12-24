@@ -225,12 +225,6 @@ brew "hping"
 brew "hugo"
 # Verilog simulation and synthesis tool
 brew "icarus-verilog"
-# USB multiplexor library for iOS devices
-brew "libusbmuxd"
-# Library to communicate with iOS devices natively
-brew "libimobiledevice", args: ["HEAD"]
-# Tool for managing apps on iOS devices
-brew "ideviceinstaller"
 # OpenEXR ILM Base libraries (high dynamic-range image file format)
 brew "ilmbase"
 # Database of common MIME types
@@ -239,10 +233,6 @@ brew "shared-mime-info"
 brew "openexr"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Install and debug iPhone apps from the command-line
-brew "ios-deploy"
-# CLI wrapper for basic network utilities on macOS - ip command
-brew "iproute2mac"
 # Regular expressions library
 brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
