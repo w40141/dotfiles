@@ -75,6 +75,11 @@
 
             fish
             chsh -s /usr/local/bin/fish
+	    
+    1. fisherをインストールする.
+
+            curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+            fisher update
 
 
 1. asdf のインストール
@@ -128,17 +133,17 @@
 
 	1. RSA 4096bit  
 
-			$ ssh-keygen -t rsa -b 4096
+	    ssh-keygen -t rsa -b 4096
 
 	2. Ed25519  
 
-			$ ssh-keygen -t ed25519
+	    ssh-keygen -t ed25519
 
 1. .ssh ディレクトリを作り,  config ファイルを書く. config ファイルはどこかから持ってくる. 
 
 1. github などにアクセスをして確認する. 
 
-        $ ssh -T git@github.com
+        ssh -T git@github.com
 
 ## Tex の文字の設定  
 
