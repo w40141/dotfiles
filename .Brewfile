@@ -153,6 +153,8 @@ brew "theora"
 brew "x265"
 # High-performance, high-quality MPEG-4 video library
 brew "xvid"
+# High-performance, asynchronous messaging library
+brew "zeromq"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 # Perl compatible regular expressions library with a new API
@@ -339,8 +341,6 @@ brew "wget"
 brew "xinput"
 # Tracks most-used directories to make cd smarter
 brew "z"
-# High-performance, asynchronous messaging library
-brew "zeromq"
 # Next-generation plugin manager for zsh
 brew "zplug"
 # UNIX shell (command interpreter)
@@ -349,7 +349,6 @@ brew "zsh"
 brew "zsh-completions"
 cask "alfred"
 cask "android-studio"
-cask "anki"
 cask "atom"
 cask "balenaetcher"
 cask "boostnote"

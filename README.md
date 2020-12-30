@@ -96,6 +96,7 @@
     1. poetryの補完
 
             poetry completions fish > ~/.config/fish/completions/poetry.fish
+            poetry config virtualenvs.in-project true
 
 
 1. python周りをインストールする
@@ -126,6 +127,7 @@
     1. node の設定
 
             yarn global add neovim
+            yarn global add coc
 
 ## SSHの設定
 
