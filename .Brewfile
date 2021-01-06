@@ -311,6 +311,8 @@ brew "rig"
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+# SOund eXchange: universal sound sample translator
+brew "sox"
 # SWF manipulation and generation tools
 brew "swftools"
 # Rich and complete approach to parallelism in C++
