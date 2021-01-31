@@ -14,3 +14,4 @@ set shortmess+=sSIFac
 " grep 検索を設定する
 set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
 set grepprg=grep\ -nh
+set rtp+=/usr/local/opt/fzf
