@@ -45,3 +45,7 @@ abbr -a bbi 'brew bundle --global --force'
 
 abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
 abbr -a echop 'echo $PATH | tr " " "\n" | nl'
+
+abbr -a ghci 'stack ghci'
+abbr -a ghc 'stack ghc --'
+abbr -a runghc 'stack runghc --'

@@ -12,7 +12,7 @@
 " modeline : モードラインを有効
 
 " 行頭での<tab>の幅
-set shiftwidth=4 tabstop=4 softtabstop=4
+set shiftwidth=4 softtabstop=4 tabstop=4
 " 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 set smarttab
 " タブを空白入力に置換
@@ -33,6 +33,7 @@ augroup MyAutoCmd
 	autocmd filetype gitcommit  setlocal sw=4 sts=4 ts=4
 	autocmd filetype gitconfig  setlocal sw=2 sts=2 ts=2
 	autocmd filetype haml       setlocal sw=2 sts=2 ts=2
+  autocmd filetype haskell    setlocal sw=4 sts=4 ts=4
 	autocmd filetype html       setlocal sw=2 sts=2 ts=2
 	autocmd filetype java       setlocal sw=4 sts=4 ts=4
 	autocmd filetype javascript setlocal sw=2 sts=2 ts=2

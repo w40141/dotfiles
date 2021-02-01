@@ -89,5 +89,5 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 # set -U fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/gnu-getopt/bin $fish_user_paths
 
-# Created by `userpath` on 2020-12-28 06:37:06
-set PATH $PATH /Users/daisuke.oku/.local/bin
+# Created by `userpath` on 2021-01-12 01:37:09
+set PATH $PATH /home/daisuke/.local/bin
