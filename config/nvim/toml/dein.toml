@@ -156,3 +156,6 @@ repo = 'honza/vim-snippets'
 
 [[plugins]]
 repo = 'tyru/caw.vim'
+
+[[plugins]]
+repo = 'mileszs/ack.vim'

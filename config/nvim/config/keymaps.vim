@@ -33,7 +33,7 @@ nnoremap k gk
 " 水平方向の移動を簡単にする
 nnoremap zl zL
 nnoremap zh zH
-"挿入モードでの移動
+""挿入モードでの移動
 " inoremap <C-k> <Up>
 " inoremap <C-h> <Left>
 " inoremap <C-j> <Down>
@@ -132,7 +132,7 @@ nnoremap sq :<C-u>q<cr>
 
 " タブ
 " 新規タブ
-nnoremap st :<C-u>tabnew<CR>
+nnoremap st :<C-u>tabnew<C右>
 " 次のタブに切り替え
 nnoremap <C-l> gt
 " 前のタブに切り替え

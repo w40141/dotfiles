@@ -20,7 +20,7 @@ set spelllang=en,cjk
 " 内容が変更されたら自動的に再読み込み
 set autoread
 " クリップボードをWindowsと連携する
-set clipboard=unnamed
+set clipboard=unnamed,unnamedplus
 " ビープ音すべてを無効にする
 set visualbell
 " set t_vb=

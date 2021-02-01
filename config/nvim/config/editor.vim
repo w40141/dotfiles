@@ -1,9 +1,9 @@
 " 編集設定
 " 折りたたみ機能を使う
-" set foldenable
-" set foldmethod=expr
+set foldenable
+set foldmethod=indent
 " set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
-" set foldcolumn=1
+set foldcolumn=1
 " set foldlevel=1
 "deleteでインデントを削除可能にする
 set backspace=indent,eol,start
@@ -16,7 +16,8 @@ set history=10000
 " vimのコマンドライン補完
 set wildmenu
 " vimのコマンドライン
-set wildmode=longest:full,full
+set wildmode=list:longest,full
+" set wildmode=longest:full,full
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap+=b,s,h,l,<,>,[,]
 " カーソルを常に画面の中央に表示させる
