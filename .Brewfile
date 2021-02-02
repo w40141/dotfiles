@@ -23,10 +23,14 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -35,6 +39,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# Tool Command Language
+brew "tcl-tk"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -207,6 +213,8 @@ brew "gnupg"
 brew "pango"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
 # Fallback theme for FreeDesktop.org icon themes
@@ -317,8 +325,6 @@ brew "sox"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Terminal multiplexer
 brew "tmux"
 # Color-based alternative to figlet (uses libcaca)
@@ -349,21 +355,32 @@ brew "zplug"
 brew "zsh"
 # Additional completion definitions for zsh
 brew "zsh-completions"
+# Application launcher and productivity software
 cask "alfred"
+# Tools for building Android applications
 cask "android-studio"
+# Text editor
 cask "atom"
+# Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
+# Markdown editor for developers
 cask "boostnote"
+# GUI app for Homebrew
 cask "cakebrew"
+# Clipboard extension app
 cask "clipy"
 cask "color-oracle"
+# API documentation browser and code snippet manager
 cask "dash"
+# Draw.io is free online diagram software
 cask "drawio"
 cask "emacs"
+# Web browser
 cask "firefox"
 cask "font-cica"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
+# Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen"
 cask "font-inconsolata"
 cask "font-input"
@@ -372,33 +389,57 @@ cask "font-myrica"
 cask "font-noto-sans-cjk"
 cask "font-noto-serif-cjk"
 cask "font-source-han-code-jp"
+# Pan-CJK version of Source Han Code JP
 cask "font-source-han-mono"
+# OpenType/CFF Pan-CJK fonts
 cask "font-source-han-sans"
+# OpenType/CFF Pan-CJK fonts
 cask "font-source-han-serif"
+# Font editor and converter for outline and bitmap fonts
 cask "fontforge"
+# Game client
 cask "gog-galaxy"
 cask "google-backup-and-sync"
+# Web browser
 cask "google-chrome"
 cask "google-japanese-ime"
+# Utility to fix grammar errors and style issues in text
 cask "grammarly"
+# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Interface for reading and syncing eBooks
 cask "kindle"
+# Software for Logitech devices
 cask "logitech-options"
+# Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
+# Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 cask "microsoft-office"
+# App to write, plan, collaborate, and get organized
 cask "notion"
+# Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
+# PDF reader and note-taking application
 cask "skim"
+# Video chat, voice call and instant messaging application
 cask "skype"
+# Team communication and collaboration software
 cask "slack"
+# Text editor for code, markup and prose
 cask "sublime-text-dev"
 cask "uhk-agent"
+# Development environment
 cask "vagrant"
+# Open-source code editor
 cask "visual-studio-code"
+# Web browser focusing on customization and control
 cask "vivaldi"
+# Multimedia player
 cask "vlc"
+# Open-source version of the X.Org X Window System
 cask "xquartz"
+# Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
