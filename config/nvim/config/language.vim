@@ -15,6 +15,8 @@
 set shiftwidth=4 softtabstop=4 tabstop=4
 " 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 set smarttab
+" cプログラムの自動インデント
+set cindent
 " タブを空白入力に置換
 set expandtab
 

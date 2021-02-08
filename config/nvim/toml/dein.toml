@@ -159,3 +159,6 @@ repo = 'tyru/caw.vim'
 
 [[plugins]]
 repo = 'mileszs/ack.vim'
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
