@@ -23,10 +23,14 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -97,6 +101,20 @@ brew "dash"
 brew "dust"
 # C++ template library for linear algebra
 brew "eigen"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Asynchronous event library
+brew "libevent"
+# ASN.1 structure parser library
+brew "libtasn1"
+# Low-level cryptographic library
+brew "nettle"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Emacs text editor
+brew "emacs"
 # Modern replacement for 'ls'
 brew "exa"
 # ISO AAC audio encoder
@@ -111,18 +129,6 @@ brew "libogg"
 brew "fribidi"
 # Library and utilities for processing GIFs
 brew "giflib"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# Asynchronous event library
-brew "libevent"
-# ASN.1 structure parser library
-brew "libtasn1"
-# Low-level cryptographic library
-brew "nettle"
-# Library to load and enumerate PKCS#11 modules
-brew "p11-kit"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Smart font renderer for non-Roman scripts
@@ -209,6 +215,8 @@ brew "gnupg"
 brew "pango"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
 # Fallback theme for FreeDesktop.org icon themes
@@ -307,8 +315,6 @@ brew "poppler"
 brew "procs"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher
@@ -370,7 +376,6 @@ cask "color-oracle"
 cask "dash"
 # Draw.io is free online diagram software
 cask "drawio"
-cask "emacs"
 # Web browser
 cask "firefox"
 cask "font-cica"
