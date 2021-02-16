@@ -271,6 +271,8 @@ brew "libuv"
 brew "libvterm"
 # C XSLT library for GNOME
 brew "libxslt"
+# Next-gen compiler infrastructure
+brew "llvm@9"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit"
 # Mac App Store command-line interface

@@ -14,10 +14,10 @@ set nostartofline
 " コマンドライン履歴保存
 set history=10000
 " vimのコマンドライン補完
-set wildmenu
+" set wildmenu
 " vimのコマンドライン
-set wildmode=list:longest,full
-" set wildmode=longest:full,full
+" set wildmode=list:longest,full
+set wildmode=longest:full,full
 " カーソルを行頭、行末で止まらないようにする
 set whichwrap+=b,s,h,l,<,>,[,]
 " カーソルを常に画面の中央に表示させる
