@@ -26,12 +26,34 @@ function brew
     command brew $argv
 end
 
-# for peco
-set -g fish_plugins theme peco
+# for fzf
+set -U FZF_LEGACY_KEYBINDINGS 0
+set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
+set -g GHQ_SELECTOR fzf
+set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
+
+
+function ghq_fzf_repo -d 'Repository search'
+  ghq list --full-path | fzf --reverse --height=100% | read select
+  [ -n "$select" ]; and cd "$select"
+  echo " $select "
+  commandline -f repaint
+end
 
 function fish_user_key_bindings
-    bind \cr peco_select_history # Bind for prco history to Ctrl+r
+  bind \cg ghq_fzf_repo
 end
+
+# for develop
+set -x GOPATH $HOME/dev
+set -x PATH $PATH $GOPATH/bin
+# for peco
+# set -g fish_plugins theme peco
+# 
+# function fish_user_key_bindings
+#   bind \cs 'peco_select_history (commandline -b)'
+#   bind \c] peco_select_ghq_repository
+# end
 
 # theme-bobthefish
 set -g theme_color_scheme dracula
@@ -88,3 +110,4 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 # set -U fish_user_paths /usr/local/opt/openldap/sbin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/gnu-getopt/bin $fish_user_paths
+# set GHQ_SELECTOR peco

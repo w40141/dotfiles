@@ -1,6 +1,8 @@
 #!/bin/bash
 
-DOTPATH=$HOME/dotfiles
+# DOTPATH=$HOME/dotfiles
+DOTPATH=$(pwd)
+echo $DOTPATH
 
 for f in .??*
 do

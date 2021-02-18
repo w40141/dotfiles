@@ -50,3 +50,5 @@
 	rebase = false
 [core]
 	ignorecase = false
+[ghq]
+	root = /Users/daisuke.oku/go/src
