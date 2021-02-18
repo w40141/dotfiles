@@ -5,25 +5,26 @@ set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
 if not functions -q fisher
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
+  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+  # curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+  fish -c fisher
 end
 
 functions --copy cd standard_cd
 
 function cd
-    standard_cd $argv; and exa -a --icons
-    set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
-    echo -ne '\033]0;$p\007'
+  standard_cd $argv; and exa -a --icons
+  set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
+  echo -ne '\033]0;$p\007'
 end
 
 function brew
-    set -xl PATH $PATH # Protect global PATH by local PATH
-    if type -q asdf; and contains $HOME/.asdf/shims $PATH
-        set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
-    end
+  set -xl PATH $PATH # Protect global PATH by local PATH
+  if type -q asdf; and contains $HOME/.asdf/shims $PATH
+    set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
+  end
 
-    command brew $argv
+  command brew $argv
 end
 
 # for fzf
@@ -31,7 +32,6 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 set -U FZF_REVERSE_ISEARCH_OPTS "--reverse --height=100%"
 set -g GHQ_SELECTOR fzf
 set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
-
 
 function ghq_fzf_repo -d 'Repository search'
   ghq list --full-path | fzf --reverse --height=100% | read select

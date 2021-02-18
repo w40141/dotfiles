@@ -51,4 +51,4 @@
 [core]
 	ignorecase = false
 [ghq]
-	root = /Users/daisuke.oku/go/src
+	root = /Users/daisuke.oku/dev/src
