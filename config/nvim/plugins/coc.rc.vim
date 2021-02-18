@@ -2,7 +2,25 @@
 " coc.nvim
 "
 
-let g:coc_global_extensions = ['coc-solargraph']
+let g:coc_global_extensions = [
+      \  'coc-css'
+      \, 'coc-dictionary'
+      \, 'coc-fish'
+      \, 'coc-go'
+      \, 'coc-highlight'
+      \, 'coc-json'
+      \, 'coc-lists'
+      \, 'coc-omni'
+      \, 'coc-pairs'
+      \, 'coc-pyright'
+      \, 'coc-rls'
+      \, 'coc-snippets'
+      \, 'coc-texlab'
+      \, 'coc-tsserver'
+      \, 'coc-vimlsp'
+      \, 'coc-word'
+      \, 'coc-solargraph'
+      \ ]
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -125,3 +143,9 @@ nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
 nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
+
+" For golang
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
+autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
+autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>

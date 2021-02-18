@@ -223,8 +223,6 @@ brew "libepoxy"
 brew "gtk+3"
 # Integrates GTK macOS applications with the Mac desktop
 brew "gtk-mac-integration"
-# Cross-platform program for developing Haskell projects
-brew "haskell-stack"
 # Command-line hex viewer
 brew "hexyl"
 # Command-line oriented TCP/IP packet assembler/analyzer
