@@ -429,6 +429,8 @@ cask "skim"
 cask "skype"
 # Team communication and collaboration software
 cask "slack"
+# Video game digital distribution service
+cask "steam"
 # Text editor for code, markup and prose
 cask "sublime-text-dev"
 cask "uhk-agent"
