@@ -54,6 +54,18 @@ depends = ['nerdtree']
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
 depends = ['nerdtree']
 
+# [[plugins]]
+# repo = 'ms-jpq/chadtree'
+# rev = 'chad'
+# hook_add = '''
+# let g:chadtree_settings = { 'ignore.dog': 'scratch, stratch' }
+# 
+# " let g:chadtree_settings = {
+# "   "chadtree_settings.theme.text_colour_set": "nord",
+# "   "chadtree_settings.theme.icon_glyph_set": "ascii"
+# " }
+# '''
+
 [[plugins]]
 repo = 'mattn/webapi-vim'
 
