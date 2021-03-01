@@ -2,7 +2,7 @@
 " NERDTree.vim
 "
 
-let g:NERDTreeGitStatusIndicatorMapCustom = {
+let g:NERDTreeIndicatorMapCustom = {
   \ "Modified"  : "➤",
   \ "Staged"    : "✚",
   \ "Untracked" : "✭",

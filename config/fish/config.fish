@@ -4,11 +4,11 @@ set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 
-if not functions -q fisher
-  curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-  # curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-  fish -c fisher
-end
+# if not functions -q fisher
+#   curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+#   # curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
+#   fish -c fisher
+# end
 
 functions --copy cd standard_cd
 
@@ -47,13 +47,6 @@ end
 # for develop
 set -x GOPATH $HOME/dev
 set -x PATH $PATH $GOPATH/bin
-# for peco
-# set -g fish_plugins theme peco
-# 
-# function fish_user_key_bindings
-#   bind \cs 'peco_select_history (commandline -b)'
-#   bind \c] peco_select_ghq_repository
-# end
 
 # theme-bobthefish
 set -g theme_color_scheme dracula
@@ -79,15 +72,10 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
-# status --is-interactive; and source (anyenv init -|psub)
-
-# set -gx RUBY_CONFIGURE_OPTS --with-openssl-dir=(brew --prefix openssl@1.1)
-
-# set -gx SDKROOT (xcrun --sdk macosx --show-sdk-path)
-
-# status --is-interactive; and source (pyenv init -|psub)
-# status --is-interactive; and source (rbenv init -|psub)
-# status --is-interactive; and source (nodenv init -|psub)
+# for asdf
+# source (brew --prefix asdf)"/asdf.fish"
+# for pipx
+# set PATH $PATH /Users/daisuke.oku/.local/bin
 
 # set -U fish_user_paths /usr/local/sbin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/openssl@1.1/bin $fish_user_paths
