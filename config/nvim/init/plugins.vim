@@ -1,3 +1,10 @@
+" dein settings
+let g:home = expand($HOME)
+let g:config_dir = empty($XDG_CONFIG_HOME) ? g:home . "/.config" : expand($XDG_CONFIG_HOME)
+if has('nvim')
+  let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -12,6 +19,8 @@ Plug 'preservim/nerdtree' |
 Plug 'airblade/vim-gitgutter'
 
 Plug 'vimtaku/hl_matchit.vim'
+
+Plug 'honza/vim-snippets'
 
 Plug 'majutsushi/tagbar'
 
