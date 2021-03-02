@@ -57,6 +57,8 @@ brew "libpng"
 brew "freetype"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
 # Vector graphics library with cross-device output support
@@ -97,8 +99,6 @@ brew "dash"
 brew "dust"
 # C++ template library for linear algebra
 brew "eigen"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Asynchronous event library
 brew "libevent"
 # ASN.1 structure parser library
@@ -315,8 +315,6 @@ brew "poppler"
 brew "procs"
 # Python 2 bindings for the Cairo graphics library
 brew "py2cairo"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher
