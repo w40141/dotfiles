@@ -1,6 +1,4 @@
-"---------------------------------------------------------------------------
-" NERDTree.vim
-"
+UsePlugin 'nerdtree'
 
 noremap <silent><C-e> :NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1

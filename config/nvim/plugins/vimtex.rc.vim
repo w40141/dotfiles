@@ -1,6 +1,4 @@
-"---------------------------------------------------------------------------
-" vimtex.vim
-"
+UsePlugin 'vimtex'
 
 if !exists("g:os")
   if has("win64") || has("win32") || has("win16") || has('win32unix')

@@ -1,6 +1,4 @@
-"---------------------------------------------------------------------------
-" coc.nvim
-"
+UsePlugin 'coc.nvim'
 
 let g:coc_global_extensions = [
      \  'coc-css'

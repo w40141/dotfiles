@@ -1,6 +1,4 @@
-"---------------------------------------------------------------------------
-" NERDTree.vim
-"
+UsePlugin 'nerdtree-git-plugin'
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
   \ "Modified"  : "➤",

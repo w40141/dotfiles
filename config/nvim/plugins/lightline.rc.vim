@@ -1,6 +1,4 @@
-"---------------------------------------------------------------------------
-" lightline.vim
-"
+UsePlugin 'lightline.vim'
 
 "colorscheme -> default, wombat, jellybeans, solarized dark, solarized light,
 "               PaperColor light, seoul256, one, landscape
