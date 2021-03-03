@@ -1,3 +1,3 @@
 UsePlugin 'tagbar'
 
-nnoremap <C-t> :<C-u>TagbarToggle<CR>
+noremap <silent>><C-t> :<C-u>TagbarToggle<CR>

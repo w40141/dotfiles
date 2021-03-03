@@ -1,3 +1,3 @@
 UsePlugin 'easybuffer.vim'
 
-nnoremap buf :<C-u>EasyBuffer<CR>
+nnoremap <silent><leader>b :<C-u>EasyBuffer<CR>

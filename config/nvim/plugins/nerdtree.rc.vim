@@ -1,6 +1,6 @@
 UsePlugin 'nerdtree'
 
-noremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-e> :<C-u>NERDTreeToggle<CR>
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeGlyphReadOnly = "\uF23E "

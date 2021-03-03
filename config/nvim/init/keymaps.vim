@@ -54,7 +54,7 @@ noremap ,l $
 noremap ,m %
 nnoremap ,/ *
 " ノーマルモードでも改行可能
-noremap <cr> i<cr><esc>
+noremap <CR> i<CR><esc>
 " 保存
 nnoremap <Leader>w :w<CR>
 " ビジュアルラインモード 
@@ -69,7 +69,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 " 検索結果のハイライトをC-h連打でクリアする
-nnoremap  <C-h><C-h> :<C-u>nohlsearch<cr><Esc>
+nnoremap  <ESC><ESC> :<C-u>nohlsearch<CR>
 " vを二回で行末まで選択
 vnoremap v $h
 " tabにて対応ペアにジャンプ
@@ -114,8 +114,8 @@ inoremap <right> <nop>
 
 " ウィンドウ
 " ウィンドウを分割
-nnoremap sp :<C-u>sp<cR>
-nnoremap vs :<C-u>vs<cR>
+nnoremap sp :<C-u>sp<CR>
+nnoremap vs :<C-u>vs<CR>
 " 分割したウィンドウ間を移動
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -126,13 +126,13 @@ nnoremap sr <C-w>r
 " カレントウィンドウの大きさを変える
 nnoremap so <C-w>_<C-w>|
 nnoremap s= <C-w>=
-nnoremap sn :<C-u>bn<cR>
+nnoremap sn :<C-u>bn<RR>
 " ウィンドウを閉じる
-nnoremap sq :<C-u>q<cr>
+nnoremap sq :<C-u>q<CR>
 
 " タブ
 " 新規タブ
-nnoremap st :<C-u>tabnew<C右>
+nnoremap st :<C-u>tabnew<CR>
 " 次のタブに切り替え
 nnoremap <C-l> gt
 " 前のタブに切り替え
@@ -140,21 +140,21 @@ nnoremap <C-h> gT
 
 " バッファ
 " バッファを閉じる
-nnoremap bq :<C-u>bd<cR>
-" バッファリストの1つ前のバッファを開く
-nnoremap <silent>bp :bprevious<CR>
-" バッファリストの次のバッファを開く
-nnoremap <silent>bn :bnext<CR>
-" 直前のバッファを開く
-nnoremap <silent>bb :b#<CR>
-" バッファリストの先頭を開く
-nnoremap <silent>bf :bf<CR>
-" バッファリストの最後を開く
-nnoremap <silent>bl :bl<CR>
-" 変更中の次のバッファへ移動
-nnoremap <silent>bm :bm<CR>
-" カレントのバッファを閉じてバッファリストから削除
-nnoremap <silent>bd :bdelete<CR>
+" nnoremap bq :<C-u>bd<CR>
+" " バッファリストの1つ前のバッファを開く
+" nnoremap <silent>bp :bprevious<CR>
+" " バッファリストの次のバッファを開く
+" nnoremap <silent>bn :bnext<CR>
+" " 直前のバッファを開く
+" nnoremap <silent>bb :b#<CR>
+" " バッファリストの先頭を開く
+" nnoremap <silent>bf :bf<CR>
+" " バッファリストの最後を開く
+" nnoremap <silent>bl :bl<CR>
+" " 変更中の次のバッファへ移動
+" nnoremap <silent>bm :bm<CR>
+" " カレントのバッファを閉じてバッファリストから削除
+" nnoremap <silent>bd :bdelete<CR>
 
 " neovim terminal mapping
 if has('nvim')

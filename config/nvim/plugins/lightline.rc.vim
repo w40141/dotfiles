@@ -48,7 +48,7 @@ let g:lightline = {
       \			'ale_error'		:	'error', 
       \			'ale_warning'	:	'warning', 
       \			'ale_ok'			:	'ok', 
-      \ }, 
+      \ },
       \ 'separator'     : {
       \			'left' : "\ue0b4",
       \			'right': "\ue0b6",
@@ -74,7 +74,7 @@ function! MyFugitive()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*FugitiveHead')
       let l:_ = g:fugitive#head()
-      return strlen(l:_) ? "\uE0A0" . l:_ : ''
+      return strlen(l:_) ? "\uE0A0 " . l:_ : ''
     endif
   catch
   endtry
