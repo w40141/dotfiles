@@ -15,7 +15,7 @@
     "coc-omni": ">=1.2.4",
     "coc-pairs": ">=1.2.23",
     "coc-phpls": ">=2.2.0",
-    "coc-pyright": ">=1.1.116",
+    "coc-pyright": ">=1.1.117",
     "coc-rls": ">=1.1.6",
     "coc-snippets": ">=2.4.1",
     "coc-solargraph": ">=1.2.0",

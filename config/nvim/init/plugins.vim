@@ -8,12 +8,18 @@ if empty(glob(s:plugvim))
 endif
 
 filetype plugin indent on
+syntax on
+
 call plug#begin('~/.vim/plugged')
-
-Plug 'preservim/nerdtree', {'on': 'NERDTreeToggle'}
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'kristijanhusak/defx-icons'
+Plug 'kristijanhusak/defx-git'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'itchyny/lightline.vim'
 Plug 'osyo-manga/vim-anzu'
@@ -70,5 +76,4 @@ command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 runtime! plugins/*.vim
 
-syntax on
 colorscheme dracula
