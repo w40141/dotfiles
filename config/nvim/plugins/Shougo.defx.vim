@@ -12,7 +12,7 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> p
                 \ defx#do_action('paste')
     nnoremap <silent><buffer><expr> l
-                \ defx#do_action('open')
+                \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> t
                 \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> E
@@ -82,5 +82,5 @@ call defx#custom#option('_', {
 autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
 
-autocmd VimEnter * execute 'Defx'
+" autocmd VimEnter * execute 'Defx'
 nnoremap <silent><C-e> :<C-u>Defx<CR>
