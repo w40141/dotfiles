@@ -5,7 +5,7 @@
     "coc-eslint": ">=1.4.5",
     "coc-explorer": ">=0.15.6",
     "coc-fish": ">=1.0.11",
-    "coc-git": ">=2.2.2",
+    "coc-git": ">=2.3.1",
     "coc-gitignore": ">=0.0.4",
     "coc-go": ">=0.13.3",
     "coc-highlight": ">=1.2.7",
@@ -15,14 +15,14 @@
     "coc-omni": ">=1.2.4",
     "coc-pairs": ">=1.2.23",
     "coc-phpls": ">=2.2.0",
-    "coc-pyright": ">=1.1.117",
+    "coc-pyright": ">=1.1.120",
     "coc-rls": ">=1.1.6",
     "coc-snippets": ">=2.4.1",
     "coc-solargraph": ">=1.2.0",
     "coc-texlab": ">=2.3.0",
     "coc-toml": ">=1.0.4",
     "coc-tsserver": ">=1.6.8",
-    "coc-vimlsp": ">=0.11.0",
+    "coc-vimlsp": ">=0.11.1",
     "coc-word": ">=1.2.2"
   }
 }

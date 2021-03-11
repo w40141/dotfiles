@@ -6,3 +6,6 @@ rust 1.48.0
 yarn 1.22.10
 haskell 8.10.4
 golang 1.15.8
+elixir 1.11.3
+erlang 23.2.7
+dart 2.12.1
