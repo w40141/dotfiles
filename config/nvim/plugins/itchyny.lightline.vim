@@ -201,7 +201,6 @@ function! StatusDiagnostic() abort
   let l:sign_warning = "\uF4A3 "
   let l:sign_ok = "\uF4A1 "
   let l:sign_hint = "\uF685 "
-  let l:sign_info = "\uF129 "
   let info = get(b:, 'coc_diagnostic_info', {})
   if empty(info) | return l:sign_ok | endif
   let msgs = []
@@ -210,9 +209,6 @@ function! StatusDiagnostic() abort
   endif
   if get(info, 'warning', 0)
     call add(msgs, l:sign_warning . info['warning'])
-  endif
-  if get(info, 'information', 0)
-    call add(msgs, l:sign_info . info['info'])
   endif
   if get(info, 'hint', 0)
     call add(msgs, l:sign_hint . info['hint'])
