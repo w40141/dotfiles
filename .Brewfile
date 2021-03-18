@@ -313,8 +313,6 @@ brew "plantuml"
 brew "poppler"
 # Modern replacement for ps written by Rust
 brew "procs"
-# Python 2 bindings for the Cairo graphics library
-brew "py2cairo"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher
@@ -427,6 +425,8 @@ cask "skim"
 cask "skype"
 # Team communication and collaboration software
 cask "slack"
+# Music streaming service
+cask "spotify"
 # Video game digital distribution service
 cask "steam"
 # Text editor for code, markup and prose
