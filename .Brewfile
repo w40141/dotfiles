@@ -348,11 +348,11 @@ brew "xinput"
 # Tracks most-used directories to make cd smarter
 brew "z"
 # Next-generation plugin manager for zsh
-brew "zplug"
+# brew "zplug"
 # UNIX shell (command interpreter)
-brew "zsh"
+# brew "zsh"
 # Additional completion definitions for zsh
-brew "zsh-completions"
+# brew "zsh-completions"
 # Application launcher and productivity software
 cask "alfred"
 # Tools for building Android applications
