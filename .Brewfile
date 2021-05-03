@@ -23,10 +23,12 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+# YAML Parser
+brew "libyaml"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -35,8 +37,6 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Tool Command Language
-brew "tcl-tk"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -61,6 +61,8 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Next-gen compiler infrastructure
@@ -233,14 +235,6 @@ brew "hping"
 brew "hugo"
 # Verilog simulation and synthesis tool
 brew "icarus-verilog"
-# OpenEXR ILM Base libraries (high dynamic-range image file format)
-brew "ilmbase"
-# Database of common MIME types
-brew "shared-mime-info"
-# High dynamic-range image file format
-brew "openexr"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick"
 # Regular expressions library
 brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
@@ -255,6 +249,10 @@ brew "libdnet"
 brew "proj"
 # Library and tools for dealing with GeoTIFF
 brew "libgeotiff"
+# Database of common MIME types
+brew "shared-mime-info"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Postgres C API library
 brew "libpq"
 # GNOME XML library
@@ -431,6 +429,7 @@ cask "spotify"
 cask "steam"
 # Text editor for code, markup and prose
 cask "sublime-text-dev"
+# Configuration application for the Ultimate Hacking Keyboard
 cask "uhk-agent"
 # Development environment
 cask "vagrant"
