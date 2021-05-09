@@ -427,8 +427,6 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# Text editor for code, markup and prose
-cask "sublime-text-dev"
 # Configuration application for the Ultimate Hacking Keyboard
 cask "uhk-agent"
 # Development environment
