@@ -98,4 +98,26 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 # set -U fish_user_paths /usr/local/opt/openldap/sbin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/openjdk/bin $fish_user_paths
 # set -U fish_user_paths /usr/local/opt/gnu-getopt/bin $fish_user_paths
-# set GHQ_SELECTOR peco
+
+fish_add_path /usr/local/sbin
+fish_add_path /usr/local/opt/openssl@1.1/bin
+fish_add_path /usr/local/opt/apr/bin
+fish_add_path /usr/local/opt/curl/bin
+fish_add_path /usr/local/opt/curl-openssl/bin
+fish_add_path /usr/local/opt/icu4c/bin
+fish_add_path /usr/local/opt/icu4c/sbin
+fish_add_path /usr/local/opt/libpq/bin
+fish_add_path /usr/local/opt/llvm/bin
+fish_add_path /usr/local/opt/nss/bin
+fish_add_path /usr/local/opt/openssl/bin
+fish_add_path /usr/local/opt/qt/bin
+fish_add_path /usr/local/opt/sqlite/bin
+fish_add_path /usr/local/opt/libxml2/bin
+fish_add_path /usr/local/opt/krb5/bin
+fish_add_path /usr/local/opt/krb5/sbin
+fish_add_path /usr/local/opt/sphinx-doc/bin
+fish_add_path /usr/local/opt/openldap/bin
+fish_add_path /usr/local/opt/openldap/sbin
+fish_add_path /usr/local/opt/openjdk/bin
+fish_add_path /usr/local/opt/gnu-getopt/bin
+fish_add_path $HOME/.asdf/installs/poetry/1.1.6/bin
