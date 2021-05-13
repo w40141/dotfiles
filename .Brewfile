@@ -163,6 +163,8 @@ brew "xvid"
 brew "zeromq"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Text-based UI library
+brew "ncurses"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
@@ -249,10 +251,6 @@ brew "libdnet"
 brew "proj"
 # Library and tools for dealing with GeoTIFF
 brew "libgeotiff"
-# Database of common MIME types
-brew "shared-mime-info"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
 # Postgres C API library
 brew "libpq"
 # GNOME XML library
@@ -279,8 +277,6 @@ brew "mas"
 brew "msgpack"
 # Open source relational database management system
 brew "mysql"
-# Text-based UI library
-brew "ncurses"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -311,12 +307,16 @@ brew "plantuml"
 brew "poppler"
 # Modern replacement for ps written by Rust
 brew "procs"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Database of common MIME types
+brew "shared-mime-info"
 # SOund eXchange: universal sound sample translator
 brew "sox"
 # SWF manipulation and generation tools
@@ -347,12 +347,6 @@ brew "wget"
 brew "xinput"
 # Tracks most-used directories to make cd smarter
 brew "z"
-# Next-generation plugin manager for zsh
-# brew "zplug"
-# UNIX shell (command interpreter)
-# brew "zsh"
-# Additional completion definitions for zsh
-# brew "zsh-completions"
 # Application launcher and productivity software
 cask "alfred"
 # Tools for building Android applications
@@ -410,9 +404,6 @@ cask "kindle"
 cask "logitech-options"
 # Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-cask "microsoft-office"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Finder Toolbar app to open the current directory in Terminal or Editor
