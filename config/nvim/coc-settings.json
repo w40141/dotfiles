@@ -17,7 +17,6 @@
     "python.linting.pydocstyleEnabled": true,
     "python.analysis.useLibraryCodeForTypes": false,
     "codeLens.enable": true,
-    "coc.preferences.hoverTarget": "float",
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "languageserver": {
         "clangd": {
