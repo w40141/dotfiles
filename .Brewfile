@@ -23,10 +23,14 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -245,8 +249,6 @@ brew "json-c"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Cartographic Projections Library
-brew "proj"
 # Library and tools for dealing with GeoTIFF
 brew "libgeotiff"
 # Postgres C API library
@@ -305,8 +307,8 @@ brew "plantuml"
 brew "poppler"
 # Modern replacement for ps written by Rust
 brew "procs"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
+# Cartographic Projections Library
+brew "proj"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher

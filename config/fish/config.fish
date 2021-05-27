@@ -121,3 +121,4 @@ fish_add_path /usr/local/opt/openldap/sbin
 fish_add_path /usr/local/opt/openjdk/bin
 fish_add_path /usr/local/opt/gnu-getopt/bin
 fish_add_path $HOME/.asdf/installs/poetry/1.1.6/bin
+fish_add_path /usr/local/opt/libxslt/bin
