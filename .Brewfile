@@ -249,14 +249,8 @@ brew "json-c"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Library and tools for dealing with GeoTIFF
-brew "libgeotiff"
 # Postgres C API library
 brew "libpq"
-# GNOME XML library
-brew "libxml2"
-# Adds spatial SQL capabilities to SQLite
-brew "libspatialite"
 # Very basic terminfo library
 brew "unibilium"
 # Library for processing keyboard entry from the terminal
@@ -265,6 +259,8 @@ brew "libtermkey"
 brew "libuv"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# GNOME XML library
+brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Next-gen compiler infrastructure
@@ -364,10 +360,14 @@ cask "clipy"
 cask "color-oracle"
 # API documentation browser and code snippet manager
 cask "dash"
+# Voice and text chat software
+cask "discord"
 # Draw.io is free online diagram software
 cask "drawio"
 # Web browser
 cask "firefox"
+# Build apps and clock faces for Fitbit
+cask "fitbit-os-simulator"
 cask "font-cica"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
@@ -390,6 +390,7 @@ cask "font-source-han-serif"
 cask "fontforge"
 # Game client
 cask "gog-galaxy"
+# Back up and sync files with Google Drive
 cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
@@ -404,6 +405,10 @@ cask "kindle"
 cask "logitech-options"
 # Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Office suite
+cask "microsoft-office"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Finder Toolbar app to open the current directory in Terminal or Editor
