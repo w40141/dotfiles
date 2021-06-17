@@ -23,14 +23,10 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# YAML Parser
-brew "libyaml"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Library for command-line editing
 brew "readline"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -249,14 +245,8 @@ brew "json-c"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Library and tools for dealing with GeoTIFF
-brew "libgeotiff"
 # Postgres C API library
 brew "libpq"
-# GNOME XML library
-brew "libxml2"
-# Adds spatial SQL capabilities to SQLite
-brew "libspatialite"
 # Very basic terminfo library
 brew "unibilium"
 # Library for processing keyboard entry from the terminal
@@ -390,6 +380,7 @@ cask "font-source-han-serif"
 cask "fontforge"
 # Game client
 cask "gog-galaxy"
+# Back up and sync files with Google Drive
 cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
