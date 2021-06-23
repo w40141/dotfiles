@@ -2,6 +2,7 @@ tap "argon/mas"
 tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
+tap "cjbassi/ytop"
 tap "delphinus/sfmono-square"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -255,8 +256,6 @@ brew "libtermkey"
 brew "libuv"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
-# GNOME XML library
-brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Next-gen compiler infrastructure
@@ -339,6 +338,8 @@ brew "wget"
 brew "xinput"
 # Tracks most-used directories to make cd smarter
 brew "z"
+# A TUI system monitor written in Rust
+brew "cjbassi/ytop/ytop"
 # Application launcher and productivity software
 cask "alfred"
 # Tools for building Android applications
@@ -356,14 +357,10 @@ cask "clipy"
 cask "color-oracle"
 # API documentation browser and code snippet manager
 cask "dash"
-# Voice and text chat software
-cask "discord"
 # Draw.io is free online diagram software
 cask "drawio"
 # Web browser
 cask "firefox"
-# Build apps and clock faces for Fitbit
-cask "fitbit-os-simulator"
 cask "font-cica"
 cask "font-fira-code"
 cask "font-hack-nerd-font"
@@ -401,10 +398,6 @@ cask "kindle"
 cask "logitech-options"
 # Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
-# Provides updates to various Microsoft products
-cask "microsoft-auto-update"
-# Office suite
-cask "microsoft-office"
 # App to write, plan, collaborate, and get organized
 cask "notion"
 # Finder Toolbar app to open the current directory in Terminal or Editor
