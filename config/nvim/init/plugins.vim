@@ -63,6 +63,7 @@ Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
 Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'tyru/eskk.vim'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'

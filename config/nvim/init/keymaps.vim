@@ -43,7 +43,7 @@ inoremap <C-b> <Left>
 inoremap <C-d> <delete>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap jk <esc>
+inoremap jj <esc>
 " 編集系
 " ;と:を入れ替
 noremap ; :

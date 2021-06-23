@@ -19,3 +19,4 @@
 sessions
 snippets
 *.lock
+/config/eskk
