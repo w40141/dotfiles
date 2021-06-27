@@ -240,6 +240,10 @@ brew "hping"
 brew "hugo"
 # Verilog simulation and synthesis tool
 brew "icarus-verilog"
+# Database of common MIME types
+brew "shared-mime-info"
+# Tools and libraries to manipulate images in many formats
+brew "imagemagick"
 # Regular expressions library
 brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
@@ -312,8 +316,6 @@ brew "rig"
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
-# Database of common MIME types
-brew "shared-mime-info"
 # SOund eXchange: universal sound sample translator
 brew "sox"
 # SWF manipulation and generation tools
