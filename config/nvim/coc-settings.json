@@ -16,6 +16,9 @@
     "python.linting.mypyPath": "~/.local/bin/mypy",
     "python.linting.pydocstyleEnabled": true,
     "python.analysis.useLibraryCodeForTypes": false,
+    "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+    "eslint.packageManager": "yarn",
+    "eslint.nodePath": ".yarn/sdks",
     "codeLens.enable": true,
     "coc.preferences.currentFunctionSymbolAutoUpdate": true,
     "languageserver": {

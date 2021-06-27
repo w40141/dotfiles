@@ -64,6 +64,8 @@ Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'tyru/eskk.vim'
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }
+Plug 'tpope/vim-endwise'
 " fzf
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
