@@ -29,15 +29,6 @@ function! s:markdown_eskk() abort
   endif
 endfunction
 
-" function! s:markdown_eskk_toggle() abort
-"   let g:toggle_markdown_eskk = g:toggle_markdown_eskk == 1 ? 0 : 1
-"   if g:toggle_markdown_eskk ==# 1
-"     echomsg 'Markdown日本語入力モードON'
-"   else
-"     echomsg 'Markdown日本語入力モードOFF'
-"   endif
-" endfunction
-
 augroup vimrc_eskk
   autocmd!
   autocmd User eskk-enable-post lmap <buffer> l <Plug>(eskk:disable)

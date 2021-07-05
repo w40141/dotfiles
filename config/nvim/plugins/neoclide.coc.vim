@@ -51,9 +51,9 @@ endfunction
 
 let g:coc_snippet_next = '<tab>'
 
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Use <CR> to confirm completion, `<C-g>u` means break undo chain at current position.
 " Coc only does snippet and additional edit on confirm.
-inoremap <expr><cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Use <c-space> to trigger completion.
 inoremap <silent> <expr> <C-space> coc#refresh()
@@ -129,15 +129,15 @@ command! -nargs=0 OR :call     CocAction('runCommand', 'editor.action.organizeIm
 
 " Mappings using CoCList:
 " Show all diagnostics.
-nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<CR>
 " Manage extensions.
-" nnoremap <silent> <leader>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
 " Show commands.
-nnoremap <silent> <leader>c  :<C-u>CocList commands<cr>
+nnoremap <silent> <leader>c  :<C-u>CocList commands<CR>
 " Find symbol of current document.
-nnoremap <silent> <leader>o  :<C-u>CocList outline<cr>
+nnoremap <silent> <leader>o  :<C-u>CocList outline<CR>
 " Search workspace symbols.
-nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<CR>
 " Do default action for next item.
 nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -147,6 +147,6 @@ nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
 
 " For golang
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd FileType go nmap gtj :CocCommand go.tags.add json<cr>
-autocmd FileType go nmap gty :CocCommand go.tags.add yaml<cr>
-autocmd FileType go nmap gtx :CocCommand go.tags.clear<cr>
+autocmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
+autocmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
+autocmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
