@@ -1,0 +1,54 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = w40141
+	email = w.40141@gmail.com
+
+[alias]
+	a = add
+	b = branch
+	c = commit
+	d = diff
+	f = fetch
+	g = reflog
+	l = log
+	m = merge
+	r = rebase
+	s = status
+	t = tag
+	w = show
+	aa = commit --amend -a --no-edit
+	bd = branch -D
+	bl = branch -a
+	cm = checkout master
+	co = checkout
+	cp = cherry-pick
+	df = difftool
+	du = difftool @{upstream}
+	mm = merge origin/master
+	pf = push -f
+	pu = pull
+	re = reset --soft HEAD~
+	rh = reset --hard
+	ri = rebase -i
+	rs = reset --soft
+	sc = switch -c
+	sl = stash list
+	st = stash
+	su = submodule update
+	sw = switch
+	sm = switch master
+	pop = stash pop
+	wip = commit -a -m \"[ci skip] WIP WIP WIP WIP WIP\"
+	amend = commit --amend --no-edit
+	shallow = clone --depth 1 = checkout
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
+
+[fetch]
+	prune = true
+[pull]
+	rebase = false
+[core]
+	ignorecase = false
+[ghq]
+	root = ~/dev/src

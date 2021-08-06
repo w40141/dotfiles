@@ -1,0 +1,3 @@
+[submodule "iTerm/iterm_dracula"]
+	path = iTerm/iterm_dracula
+	url = https://github.com/dracula/iterm.git

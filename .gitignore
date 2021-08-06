@@ -1,0 +1,22 @@
+.DS_Store
+/config/dot_zsh/.zcompdump
+/config/yarn/*
+!config/yarn/global
+/config/yarn/global/*
+!/config/yarn/global/package.json
+/config/fish/*
+!/config/fish/config.fish
+!/config/fish/fish_plugins
+# !/config/fish/conf.d
+# /config/fish/conf.d/*
+# !/config/fish/conf.d/abbr.fish
+/.jupyter
+/config/coc/*
+!/config/coc/extensions
+!/config/coc/ultisnips
+/config/coc/extensions/*
+!/config/coc/extensions/package.json
+sessions
+snippets
+*.lock
+/config/eskk
