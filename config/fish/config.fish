@@ -58,7 +58,7 @@ abbr -a runghc 'stack runghc --'
 
 functions --copy cd standard_cd
 
-function cd_ls
+function cd
   standard_cd $argv; and exa -a --icons
   set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
   echo -ne '\033]0;$p\007'
@@ -76,7 +76,7 @@ end
 # for fzf
 set -x FZF_DEFAULT_OPTS '--color=fg+:10 --height 40% --reverse --select-1 --exit-0 --multi'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/*"'
-set -x FZF_LEGACY_KEYBINDINGS 0
+# set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_COMPLETE 1
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 if command -s bat > /dev/null
@@ -85,38 +85,13 @@ if command -s bat > /dev/null
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
 
+set -g GHQ_SELECTOR fzf
+set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
 function ghq_fzf_repo -d 'Repository search'
-  ghq list --full-path | fzf --reverse --height=100% | read select
+  ghq list --full-path | fzf | read select
   [ -n "$select" ]; and cd "$select"
   echo " $select "
   commandline -f repaint
-end
-
-function fzf-branch-checkout -d 'Checkout git branch'
-  local branches branch
-  branches (git --no-pager branch -vv) &&
-  branch (echo "$branches" | fzf +m) &&
-  git checkout (echo "$branch" | awk '{print $1}' | sed "s/.* //")
-end
-
-function fzf-branch-remote -d 'checkout git branch (including remote branches)'
-  local branches branch
-  branches=$(git branch --all | grep -v HEAD) &&
-  branch=$(echo "$branches" |
-           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-end
-
-# fshow - git commit browser
-function fzf-commit-show -d 'git commit browser'
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-      --bind "ctrl-m:execute:
-                (grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-                {}
-FZF-EOF"
 end
 
 function fzf-checkout-branch -d "Fuzzy-find and checkout a branch"
@@ -152,44 +127,39 @@ function fzf-view-all-unmerged -d "View all unmerged commits across all local br
     --ansi --preview="$viewUnmergedCommits"
 end
 
-# # Select a docker image or images to remove
-# function drmi() {
-#   docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
-# }
-# 
-# # Select a docker image or images to remove
-# function drmi() {
-#   docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
-# }
-# 
-# # Select a docker container to start and attach to
-# function da() {
-#   local cid
-#   cid=$(docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
-# 
-#   [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
-# }
-# 
-# # Select a running docker container to stop
-# function ds() {
-#   local cid
-#   cid=$(docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
-# 
-#   [ -n "$cid" ] && docker stop "$cid"
-# }
-# 
-# # Select a docker container to remove
-# function drm() {
-#   local cid
-#   cid=$(docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
-# 
-#   [ -n "$cid" ] && docker rm "$cid"
-# }
+# Select a docker image or images to remove
+function docker-select-image
+  docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
+end
+
+# Select a docker container to start and attach to
+function docker-start-container
+  local cid
+  cid (docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker start "$cid" && docker attach "$cid"
+end
+
+# Select a running docker container to stop
+function docker-stop-container
+  local cid
+  cid (docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker stop "$cid"
+end
+
+# Select a docker container to remove
+function docker-remove-container
+  local cid
+  cid (docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
+
+  [ -n "$cid" ] && docker rm "$cid"
+end
 
 # Same as above, but allows multi selection:
-# function drm() {
-#   docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
-# }
+function docker-remove-multi-container
+  docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
+end
 
 function fish_user_key_bindings
   bind \cg ghq_fzf_repo
