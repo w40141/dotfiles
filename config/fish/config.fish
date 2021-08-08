@@ -76,7 +76,7 @@ end
 # for fzf
 set -x FZF_DEFAULT_OPTS '--color=fg+:10 --height 40% --reverse --select-1 --exit-0 --multi'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/*"'
-# set -x FZF_LEGACY_KEYBINDINGS 0
+set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_COMPLETE 1
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 if command -s bat > /dev/null
@@ -107,7 +107,7 @@ function fzf-checkout-commit -d "Fuzzy-find and checkout a commit"
   git log --pretty=oneline --abbrev-commit --reverse | fzf --tac +s -e | awk '{print $1;}' | read -l result; and git checkout "$result"
 end
 
-function fzf-files-branch -d "Pick desired files from a chosen branch"
+function fzf-pick-branch -d "Pick desired files from a chosen branch"
   # use fzf to choose source branch to snag files FROM
   set branch (git for-each-ref --format='%(refname:short)' refs/heads | fzf --height 20% --layout=reverse --border)
   # avoid doing work if branch isn't set
