@@ -78,8 +78,7 @@
 	    
     1. fisherをインストールする.
 
-            curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-            fisher update
+            curl -sL https://git.io/fisher | source && fisher update
 
 
 1. asdf のインストール
