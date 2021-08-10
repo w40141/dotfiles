@@ -74,14 +74,17 @@ function brew
 end
 
 # for fzf
-set -x FZF_DEFAULT_OPTS '--color=fg+:10 --height 40% --reverse --select-1 --exit-0 --multi'
+set -x FZF_DEFAULT_OPTS '--border --color=fg+:10 --height 40% --reverse --select-1 --exit-0'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/*" 2> /dev/null'
 set -x FZF_LEGACY_KEYBINDINGS 0
-set -x FZF_COMPLETE 1
+set -x FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
+set -x FZF_COMPLETE 0
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 if command -s bat > /dev/null
-  # set -gx FZF_PREVIEW_FILE_CMD "bat --color=always --style=grid "
   set -x FZF_PREVIEW_FILE_CMD "bat --color=always --style=numbers --line-range :500"
+end
+if command -s exa > /dev/null
+  set -x FZF_PREVIEW_DIR_CMD "exa"
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
 
