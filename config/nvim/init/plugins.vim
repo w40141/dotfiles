@@ -69,7 +69,11 @@ Plug 'tyru/eskk.vim'
 Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 Plug 'tpope/vim-endwise'
 Plug 'mechatroner/rainbow_csv'
+" https://wonderwall.hatenablog.com/entry/2017/10/07/220000
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" https://qiita.com/arwtyxouymz0110/items/b09ef1ed7a2f7bf1c5e6
+" Plug 'rhysd/clever-f.vim'
+" Plug 'unblevable/quick-scope'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
