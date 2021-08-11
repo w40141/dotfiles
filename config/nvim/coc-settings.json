@@ -16,6 +16,12 @@
     "python.linting.mypyPath": "~/.local/bin/mypy",
     "python.linting.pydocstyleEnabled": true,
     "python.analysis.useLibraryCodeForTypes": false,
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/Users/daisuke_oku/.asdf/shims/java"
+        }
+    ],
     "tsserver.tsdk": ".yarn/sdks/typescript/lib",
     "eslint.packageManager": "yarn",
     "eslint.nodePath": ".yarn/sdks",
@@ -76,4 +82,4 @@
         "https://www.togawa.cs.waseda.ac.jp/gitlab",
         "gitlab.com"
     ]
-}
+        }
