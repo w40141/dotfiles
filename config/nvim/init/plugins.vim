@@ -74,6 +74,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " https://qiita.com/arwtyxouymz0110/items/b09ef1ed7a2f7bf1c5e6
 " Plug 'rhysd/clever-f.vim'
 " Plug 'unblevable/quick-scope'
+" Plug 'vim-test/vim-test'
+
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
