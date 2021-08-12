@@ -3,6 +3,8 @@
 " 文字コード
 set encoding=utf-8
 scriptencoding utf-8
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
 " 256色設定にする
 if !has('gui_running')
 	set t_Co=256

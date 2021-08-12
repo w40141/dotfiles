@@ -18,63 +18,64 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'kristijanhusak/defx-icons'
-Plug 'kristijanhusak/defx-git'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'itchyny/lightline.vim'
-Plug 'osyo-manga/vim-anzu'
-Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-fugitive'
-Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
-Plug 'itchyny/vim-cursorword'
 Plug 'andymass/vim-matchup'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'tyru/caw.vim'
-Plug 'sheerun/vim-polyglot'
-Plug 'osyo-manga/vim-precious'
-Plug 'Shougo/context_filetype.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'osyo-manga/vim-textobj-multiblock'
-Plug 'thinca/vim-textobj-between'
-Plug 'osyo-manga/vim-textobj-blockwise'
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-replace'
-Plug 'LeafCage/yankround.vim'
-Plug 'skanehira/translate.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'skanehira/translate.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown', 'txt'] }
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'honza/vim-snippets'
-Plug 'tyru/open-browser.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-cursorword'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'kana/vim-operator-replace'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-textobj-user'
+Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-icons'
+Plug 'LeafCage/yankround.vim'
+Plug 'lervag/vimtex', { 'for': 'tex' }
+Plug 'mechatroner/rainbow_csv'
+Plug 'mileszs/ack.vim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'osyo-manga/vim-anzu'
+Plug 'osyo-manga/vim-precious'
+Plug 'osyo-manga/vim-textobj-blockwise'
+Plug 'osyo-manga/vim-textobj-multiblock'
+Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
+" todo
+Plug 'mkalinski/vim-lightline_tagbar' | Plug 'preservim/tagbar'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'previm/previm', { 'for': ['markdown'] }
+Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
+Plug 'rhysd/clever-f.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'sheerun/vim-polyglot'
+Plug 'Shougo/context_filetype.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'skanehira/translate.vim'
+Plug 'skanehira/translate.vim'
 Plug 't9md/vim-quickhl'
 Plug 'terryma/vim-expand-region'
-Plug 'troydm/easybuffer.vim', { 'on': 'EasyBuffer' }
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'thinca/vim-quickrun'
-Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
-Plug 'wenlongche/SrcExpl'
-Plug 'mkalinski/vim-lightline_tagbar' | Plug 'preservim/tagbar'
-Plug 'previm/previm', { 'for': ['markdown'] }
-Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
-Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown', 'txt'] }
-Plug 'lervag/vimtex', { 'for': 'tex' }
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'tpope/vim-unimpaired'
+Plug 'thinca/vim-textobj-between'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails', { 'for': ['ruby'] }
 Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
 Plug 'tpope/vim-surround'
-Plug 'mileszs/ack.vim'
-Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
+Plug 'tpope/vim-unimpaired'
+Plug 'troydm/easybuffer.vim', { 'on': 'EasyBuffer' }
+Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
+Plug 'tyru/caw.vim'
 Plug 'tyru/eskk.vim'
-Plug 'tpope/vim-rails', { 'for': ['ruby'] }
-Plug 'tpope/vim-endwise'
-Plug 'mechatroner/rainbow_csv'
+Plug 'tyru/open-browser.vim'
+Plug 'unblevable/quick-scope'
+Plug 'vim-jp/vimdoc-ja'
+Plug 'vim-test/vim-test'
+Plug 'wenlongche/SrcExpl'
 " https://wonderwall.hatenablog.com/entry/2017/10/07/220000
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" https://qiita.com/arwtyxouymz0110/items/b09ef1ed7a2f7bf1c5e6
-" Plug 'rhysd/clever-f.vim'
-" Plug 'unblevable/quick-scope'
-" Plug 'vim-test/vim-test'
 
 call plug#end()
 

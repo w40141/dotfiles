@@ -35,7 +35,7 @@ let g:lightline = {
       \   	'filename'    : 'MyFilename', 
       \		'modified'	  : 'MyModified', 
       \   	'readonly'    : 'MyReadonly', 
-      \     'tagbar'      : 'lightline_tagbar#component',
+      \     'tagbar'      : 'MyTagbar',
       \   	'anzu'        : 'anzu#search_status', 
       \		'charcode'	  : 'MyCharCode', 
       \   	'fileformat'  : 'MyFileformat', 
@@ -136,15 +136,9 @@ function! MyModified()
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? " \uF040" : &modifiable ? '' : '-'
 endfunction
 
-function! MyTagbar(current, sort, fname, flags, ...) abort
-  let colour = a:current ? '%#StatusLine#' : '%#StatusLineNC#'
-  let flagstr = join(a:flags, '')
-  if flagstr != ''
-    let flagstr = '[' . flagstr . '] '
-  endif
-  return colour . '[' . a:sort . '] ' . flagstr . a:fname
+function! MyTagbar()
+	return tagbar#currenttag('%s', '', '')
 endfunction
-        " let g:tagbar_status_func = 'TagbarStatusFunc'
 
 " " MyAnzu
 " function! MyAnzu()
