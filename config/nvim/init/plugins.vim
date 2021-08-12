@@ -33,7 +33,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 Plug 'LeafCage/yankround.vim'
-Plug 'lervag/vimtex', { 'for': 'tex' }
 Plug 'mechatroner/rainbow_csv'
 Plug 'mileszs/ack.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -41,9 +40,7 @@ Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
-Plug 'preservim/tagbar', { 'on': 'TagbarToggle' }
-" todo
-Plug 'mkalinski/vim-lightline_tagbar' | Plug 'preservim/tagbar'
+Plug 'preservim/tagbar'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }

@@ -1,3 +1,6 @@
+" The dark powered file explorer implementation
+" https://github.com/Shougo/defx.nvim
+
 UsePlugin 'defx.nvim'
 
 autocmd FileType defx call s:defx_my_settings()

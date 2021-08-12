@@ -1,3 +1,6 @@
+" Filetype icons for defx.nvim
+" https://github.com/kristijanhusak/defx-icons
+
 UsePlugin 'defx-icons'
 
 let g:defx_icons_enable_syntax_highlight = 1

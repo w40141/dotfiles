@@ -1,3 +1,8 @@
+" eskk is pure Vim script implementation of input method engine SKK
+" https://github.com/tyru/eskk.vim
+
+UsePlugin 'eskk.vim'
+
 let g:eskk#directory = "~/.config/eskk"
 let g:eskk#dictionary = { 'path': "~/.config/eskk/my_jisyo", 'sorted': 1, 'encoding': 'utf-8',}
 let g:eskk#large_dictionary = {'path': "~/.config/eskk/SKK-JISYO.L", 'sorted': 1, 'encoding': 'euc-jp',}

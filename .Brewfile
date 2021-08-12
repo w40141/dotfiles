@@ -15,6 +15,7 @@ tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
+tap "universal-ctags/universal-ctags"
 tap "wfxr/csview"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
@@ -74,8 +75,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Next-gen compiler infrastructure
@@ -96,8 +95,6 @@ brew "cmatrix"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# Reimplementation of ctags(1)
-brew "ctags"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # C string library for manipulating Unicode strings
@@ -116,6 +113,8 @@ brew "delta"
 brew "dog"
 # More intuitive version of du in rust
 brew "dust"
+# General purpose Language Server
+brew "efm-langserver"
 # C++ template library for linear algebra
 brew "eigen"
 # Asynchronous event library
@@ -129,7 +128,7 @@ brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Emacs text editor
-brew "emacs"
+brew "emacs", restart_service: true
 # Modern replacement for 'ls'
 brew "exa"
 # ISO AAC audio encoder
@@ -188,8 +187,6 @@ brew "giflib"
 brew "git"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
-# Source code tag system
-brew "global"
 # Common error values for all GnuPG components
 brew "libgpg-error"
 # Assuan IPC Library
@@ -291,7 +288,7 @@ brew "mas"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
-brew "mysql"
+brew "mysql", restart_service: true
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -344,6 +341,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
@@ -355,7 +354,7 @@ brew "toilet"
 # Program that allows you to count code, quickly
 brew "tokei"
 # Anonymizing overlay network for TCP
-brew "tor"
+brew "tor", restart_service: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats
@@ -384,9 +383,10 @@ brew "z"
 brew "zeromq"
 # McFly
 brew "cantino/mcfly/mcfly"
-# A TUI system monitor written in Rust
 # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
 brew "clementtsang/bottom/bottom"
+# Maintained ctags implementation
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # A high performance csv viewer with cjk/emoji support.
 brew "wfxr/csview/csview"
 # Application launcher and productivity software
@@ -462,7 +462,6 @@ cask "google-chrome"
 cask "google-japanese-ime"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
-# Java IDE by JetBrains
 cask "intellij-idea"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
