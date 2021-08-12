@@ -3,6 +3,7 @@
 
 UsePlugin 'coc.nvim'
 
+" If the following plugins dont install, the plugins are installed automatic when neovim starts.
 let g:coc_global_extensions = [
      \  'coc-css'
      \, 'coc-dictionary'
@@ -49,19 +50,14 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" let g:coc_snippet_next = '<tab>'
-
-" Use <CR> to confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-" inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 " Use <c-space> to trigger completion.
-inoremap <silent> <expr> <C-space> coc#refresh()
+inoremap <silent> <expr> <C-,> coc#refresh()
 
 let g:coc_status_error_sign = "\uF490 "
 let g:coc_status_warning_sign ="\uF4A3 "
 
 " Use `[d` and `]d` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
@@ -120,6 +116,8 @@ xmap <silent> <Leader>rs <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
@@ -131,7 +129,7 @@ command! -nargs=0 OR :call     CocAction('runCommand', 'editor.action.organizeIm
 " Show all diagnostics.
 nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<CR>
 " Manage extensions.
-" nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
+nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
 " Show commands.
 nnoremap <silent> <leader>c  :<C-u>CocList commands<CR>
 " Find symbol of current document.
