@@ -137,7 +137,7 @@ function! MyModified()
 endfunction
 
 function! MyTagbar()
-	" return tagbar#currenttag('%s', '')
+	return tagbar#currenttag('%s', '')
 endfunction
 
 " " MyAnzu

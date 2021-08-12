@@ -41,7 +41,7 @@ Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'preservim/tagbar'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+" Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'rhysd/clever-f.vim'
