@@ -11,7 +11,7 @@ set title
 " ウィンドウ幅より長い行は折り返して、次の行に続けて表示する
 set wrap
 " 新しい行のインデントを現在行と同じにする
-set smartindent
+" set smartindent
 " コマンド行の長さ
 set cmdheight=2
 " カラムを表示

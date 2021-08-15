@@ -23,13 +23,18 @@
 
 " キーマッピング設定
 
+" <Leader>キーを変更 (default: \)
+let g:mapleader=' '
+let g:maplocalleader=' '
 " 移動系
 "行頭と行末への移動
-noremap 1 0
 noremap 0 $
+noremap 1 0
 "表示上の移動を可能にする
 nnoremap j gj
 nnoremap k gk
+nnoremap gj j
+nnoremap gk k
 " 水平方向の移動を簡単にする
 nnoremap zl zL
 nnoremap zh zH
@@ -77,7 +82,6 @@ nnoremap <tab> %
 vnoremap <tab> %
 " カッコ
 " inoremap << <><Left>
-
 " 補助系
 " ctrl-v で insert/command モードで貼り付け
 inoremap <C-v> <esc>"*pa
@@ -102,20 +106,11 @@ cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 " 辞書
 nnoremap <Leader>? :!open dict://<cword><CR>
-" 矢印キー無効
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " ウィンドウ
 " ウィンドウを分割
 nnoremap sp :<C-u>sp<CR>
-nnoremap vs :<C-u>vs<CR>
+nnoremap sv :<C-u>vs<CR>
 " 分割したウィンドウ間を移動
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -124,9 +119,9 @@ nnoremap sh <C-w>h
 nnoremap sw <C-w>w
 nnoremap sr <C-w>r
 " カレントウィンドウの大きさを変える
-nnoremap so <C-w>_<C-w>|
-nnoremap s= <C-w>=
-nnoremap sn :<C-u>bn<RR>
+" nnoremap so <C-w>_<C-w>|
+" nnoremap s= <C-w>=
+" nnoremap sn :<C-u>bn<RR>
 " ウィンドウを閉じる
 nnoremap sq :<C-u>q<CR>
 
@@ -180,8 +175,6 @@ vnoremap [ "zdi^v[<C-r>z]<ESC>
 vnoremap ( "zdi^v(<C-r>z)<ESC>
 vnoremap " "zdi^v"<C-r>z^V"<ESC>
 vnoremap ' "zdi'<C-r>z'<ESC>
-nnoremap zz <nop>
-nnoremap zq <nop>
 nnoremap q gq
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
@@ -191,3 +184,16 @@ function! s:mkdir(dir, force)
 	endif
 endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
+
+" 保存して閉じる、保存せずに閉じるを無効
+nnoremap ZZ <nop>
+nnoremap ZQ <nop>
+" 矢印キー無効
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>

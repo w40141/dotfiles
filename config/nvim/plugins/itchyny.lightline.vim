@@ -1,10 +1,10 @@
 " PowerLine
 " https://github.com/itchyny/lightline.vim
+" Colorscheme
+" default, wombat, jellybeans, solarized dark, solarized light, PaperColor light, seoul256, one, landscape
+
 
 UsePlugin 'lightline.vim'
-
-"colorscheme -> default, wombat, jellybeans, solarized dark, solarized light,
-"               PaperColor light, seoul256, one, landscape
 
 let g:lightline = {
       \ 'colorscheme': 'dracula',
@@ -140,11 +140,6 @@ function! MyTagbar()
 	return tagbar#currenttag('%s', '')
 endfunction
 
-" " MyAnzu
-" function! MyAnzu()
-"   return ('' != anzu#search_status() ? '' . anzu#search_status() : '')
-" endfunction
-
 " right
 " MyCharCode
 function! MyCharCode()
@@ -197,7 +192,6 @@ endfunction
 
 " MyCoc
 function! MyCoc()
-  " return winwidth(0) >= 80 ? coc#status() : ''
   return winwidth(0) >= 80 ? StatusDiagnostic() : ''
 endfunction
 
