@@ -19,8 +19,7 @@ call plug#begin('~/.vim/plugged')
 "   Plug 'roxma/vim-hug-neovim-rpc'
 " endif
 Plug 'airblade/vim-gitgutter'
-" ToDo
-" Plug 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 Plug 'andymass/vim-matchup'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -28,7 +27,8 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" ToDo
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/vim-easy-align'
 Plug 'LeafCage/yankround.vim'
@@ -46,14 +46,12 @@ Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'preservim/tagbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
-" ToDo
-" Plug 'rhysd/clever-f.vim'
+Plug 'rhysd/clever-f.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'sjl/gundo.vim', {'on': 'GundoToggle'}
 Plug 'skanehira/translate.vim'
 Plug 't9md/vim-quickhl'
 Plug 'terryma/vim-expand-region'
@@ -70,9 +68,10 @@ Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'unblevable/quick-scope'
 Plug 'vim-jp/vimdoc-ja'
-Plug 'vim-test/vim-test'
 " ToDo
-" Plug 'wenlongche/SrcExpl'
+" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+Plug 'wenlongche/SrcExpl'
 
 call plug#end()
 

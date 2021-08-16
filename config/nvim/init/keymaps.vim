@@ -39,10 +39,6 @@ nnoremap gk k
 nnoremap zl zL
 nnoremap zh zH
 ""挿入モードでの移動
-" inoremap <C-k> <Up>
-" inoremap <C-h> <Left>
-" inoremap <C-j> <Down>
-" inoremap <C-l> <Right>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 inoremap <C-d> <delete>
@@ -64,8 +60,6 @@ noremap <CR> i<CR><esc>
 nnoremap <Leader>w :w<CR>
 " ビジュアルラインモード 
 nmap <Leader><Leader> V
-" コンマの後に自動的にスペースを挿入
-" inoremap , ,<space>
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
 nnoremap N Nzz
@@ -116,14 +110,15 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
-nnoremap sw <C-w>w
-nnoremap sr <C-w>r
 " カレントウィンドウの大きさを変える
 " nnoremap so <C-w>_<C-w>|
 " nnoremap s= <C-w>=
 " nnoremap sn :<C-u>bn<RR>
 " ウィンドウを閉じる
+nnoremap sc <C-w>c
+nnoremap so <C-w>o
 nnoremap sq :<C-u>q<CR>
+nnoremap ss :<C-u>w<CR>
 
 " タブ
 " 新規タブ
@@ -170,11 +165,11 @@ endif
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
-vnoremap { "zdi^v{<C-r>z}<ESC>
-vnoremap [ "zdi^v[<C-r>z]<ESC>
-vnoremap ( "zdi^v(<C-r>z)<ESC>
-vnoremap " "zdi^v"<C-r>z^V"<ESC>
-vnoremap ' "zdi'<C-r>z'<ESC>
+" vnoremap { "zdi{<C-r>z}<ESC>
+" vnoremap [ "zdi[<C-r>z]<ESC>
+" vnoremap ( "zdi(<C-r>z)<ESC>
+" vnoremap " "zdi"<C-r>z^V"<ESC>
+" vnoremap ' "zdi'<C-r>z'<ESC>
 nnoremap q gq
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)

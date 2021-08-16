@@ -1,5 +1,8 @@
 " eskk is pure Vim script implementation of input method engine SKK
 " https://github.com/tyru/eskk.vim
+"
+" https://zenn.dev/kouta/articles/87947515bff4da
+" https://hakasenote.hnishi.com/2021/20210105-vim-eskk/
 
 UsePlugin 'eskk.vim'
 

@@ -1,3 +1,4 @@
+UsePlugin 'fzf'
 set rtp+=/usr/local/opt/fzf
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '30%' }
