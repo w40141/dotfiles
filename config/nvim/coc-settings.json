@@ -27,7 +27,7 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-11",
-      "path": "/Users/daisuke_oku/.asdf/shims/java"
+      "path": "~/.asdf/installs/java/corretto-11.0.12.7.2"
     }
   ],
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
