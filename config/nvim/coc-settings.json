@@ -39,7 +39,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "vue"
+    "vue",
+    "react"
   ],
   "codeLens.enable": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,

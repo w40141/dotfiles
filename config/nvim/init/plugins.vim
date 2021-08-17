@@ -11,6 +11,11 @@ filetype plugin indent on
 syntax on
 
 call plug#begin('~/.vim/plugged')
+" ToDo
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'nathanaelkane/vim-indent-guides'
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'andymass/vim-matchup'
@@ -20,16 +25,14 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
-" ToDo
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/vim-easy-align'
-Plug 'LeafCage/yankround.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+Plug 'LeafCage/yankround.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'osyo-manga/vim-anzu'
@@ -61,10 +64,8 @@ Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'unblevable/quick-scope'
 Plug 'vim-jp/vimdoc-ja'
-" ToDo
-" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
-" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'wenlongche/SrcExpl'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
