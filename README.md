@@ -139,6 +139,22 @@
 
         ssh -T git@github.com
 
+## eskk の設定
+
+1.  [eskk の辞書ファイル](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)をダウンロードする.
+
+    1.  SKK-JISYO.S と SKK-JISYO.L をダウンロードする。
+    2.  SKK-JISYO.S を my-jisyo にリネームする。
+    3.  上記 2 ファイルを以下のディレクトリへ移動する。
+
+             mv my-jisyo SKK-JISYO.L ~/.config/eskk
+
+1.  使い方は以下を参考にする。
+
+    - https://qiita.com/jan_pali_1212/items/363a0b78408dcb2ec6d7
+    - https://blog.manj.io/entry/20181221/1545318000
+    - http://quruli.ivory.ne.jp/document/ddskk_14.2/skk_3.html#g_t_00e5_0085_00a5_00e5_008a_009b_00e3_0083_00a2_00e3_0083_00bc_00e3_0083_0089
+
 ## Tex の文字の設定
 
 1. https://texwiki.texjp.org/?TeX%20Live%2FMac ここに従い, 設定する.

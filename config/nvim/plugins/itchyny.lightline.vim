@@ -16,7 +16,7 @@ let g:lightline = {
       \			'right': [
       \					['percent', 'lineinfo'], 
       \					['coc'], 
-      \					['charcode', 'filetype'], 
+      \					['eskk', 'charcode', 'filetype'], 
       \			], 
       \ }, 
       \	'inactive': {
@@ -42,6 +42,7 @@ let g:lightline = {
       \   	'fileencoding': 'MyFileencoding', 
       \   	'filetype'    : 'MyFiletype', 
       \		'coc'		  : 'MyCoc', 
+      \     'eskk'        : 'eskk#statusline',
       \ },
       \	'component_expand': {
       \			'ale_error'	  : 'MyAleError', 
