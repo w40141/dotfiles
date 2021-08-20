@@ -1,7 +1,6 @@
 " 表示設定
 " 不可視文字を表示
-set list listchars=tab:▸\ ,trail:-,extends:»,precedes:«,eol:¬
-set guifont=DroidSansMono_Nerd_Font:h11
+set list listchars=tab:▸\ ,trail:-,extends:»,precedes:«,eol:↲,nbsp:%
 " 行番号を表示する
 set number
 " 行番号を相対表示にする
