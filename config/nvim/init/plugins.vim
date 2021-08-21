@@ -12,20 +12,19 @@ syntax on
 
 call plug#begin('~/.vim/plugged')
 " ToDo
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'andymass/vim-matchup'
+Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
-Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
@@ -33,6 +32,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 Plug 'LeafCage/yankround.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'osyo-manga/vim-anzu'
@@ -42,7 +42,6 @@ Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'preservim/tagbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
-Plug 'rhysd/clever-f.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/context_filetype.vim'
@@ -62,9 +61,8 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'tyru/caw.vim'
 Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
-Plug 'unblevable/quick-scope'
 Plug 'vim-jp/vimdoc-ja'
-Plug 'wenlongche/SrcExpl'
+" Plug 'wenlongche/SrcExpl'
 Plug 'Yggdroot/indentLine'
 
 call plug#end()

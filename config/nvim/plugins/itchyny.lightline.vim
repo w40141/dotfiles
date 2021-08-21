@@ -42,7 +42,7 @@ let g:lightline = {
       \   	'fileencoding': 'MyFileencoding', 
       \   	'filetype'    : 'MyFiletype', 
       \		'coc'		  : 'MyCoc', 
-      \     'eskk'        : 'eskk#statusline',
+      \     'eskk'        : 'MyEskk',
       \ },
       \	'component_expand': {
       \			'ale_error'	  : 'MyAleError', 
@@ -217,4 +217,12 @@ function! StatusDiagnostic() abort
     call add(msgs, l:sign_ok)
   endif
   return join(msgs, ' ')
+endfunction
+
+function! MyEskk()
+    if (mode() == 'i') && eskk#is_enabled()
+        return g:eskk#statusline()
+    else
+        return ''
+    endif
 endfunction

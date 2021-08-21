@@ -44,7 +44,7 @@ inoremap <C-b> <Left>
 inoremap <C-d> <delete>
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
-inoremap jj <esc>
+inoremap <silent> jj <ESC>:<C-u>w<CR>
 " 編集系
 " ;と:を入れ替
 noremap ; :
@@ -58,7 +58,7 @@ noremap : ;
 noremap <CR> i<CR><esc>
 " 保存
 nnoremap <Leader>w :w<CR>
-" ビジュアルラインモード 
+" ビジュアルラインモード
 nmap <Leader><Leader> V
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
@@ -110,10 +110,6 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
-" カレントウィンドウの大きさを変える
-" nnoremap so <C-w>_<C-w>|
-" nnoremap s= <C-w>=
-" nnoremap sn :<C-u>bn<RR>
 " ウィンドウを閉じる
 nnoremap sc <C-w>c
 nnoremap so <C-w>o

@@ -22,7 +22,11 @@ else
 end
 
 # for grep
-abbr -a grep 'rg --color'
+if command -s rg > /dev/null
+  abbr -a grep 'rg --color'
+else
+  abbr -a grep 'grep --color'
+end
 
 abbr -a cx 'chmod +x'
 
@@ -76,7 +80,7 @@ end
 # for fzf
 set -x FZF_DEFAULT_OPTS '--border --color=fg+:10 --height 40% --reverse --select-1 --exit-0'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/*" 2> /dev/null'
-set -x FZF_LEGACY_KEYBINDINGS 0
+# set -x FZF_LEGACY_KEYBINDINGS 0
 set -x FZF_CTRL_R_OPTS "--preview 'echo {}' --preview-window down:3:hidden:wrap --bind '?:toggle-preview'"
 set -x FZF_COMPLETE 0
 set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
@@ -87,15 +91,6 @@ if command -s exa > /dev/null
   set -x FZF_PREVIEW_DIR_CMD "exa"
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
-
-set -g GHQ_SELECTOR fzf
-set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
-function ghq_fzf_repo -d 'Repository search'
-  ghq list --full-path | fzf | read select
-  [ -n "$select" ]; and cd "$select"
-  echo " $select "
-  commandline -f repaint
-end
 
 function fzf-checkout-branch -d "Fuzzy-find and checkout a branch"
   git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
@@ -164,6 +159,15 @@ function docker-remove-multi-container
   docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
 end
 
+set -g GHQ_SELECTOR fzf
+set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
+function ghq_fzf_repo -d 'Repository search'
+  ghq list --full-path | fzf | read select
+  [ -n "$select" ]; and cd "$select"
+  echo " $select "
+  commandline -f repaint
+end
+ 
 function fish_user_key_bindings
   bind \cg ghq_fzf_repo
 end
