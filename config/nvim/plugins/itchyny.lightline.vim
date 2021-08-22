@@ -11,12 +11,13 @@ let g:lightline = {
       \	'active': {
       \			'left': [
       \					['mode', 'paste'],
-      \					['filename', 'fugitive', 'gitgutter', 'anzu', 'tagbar'],
+      \					['filename', 'fugitive', 'gitgutter'],
+      \                 ['anzu', 'vista'],
       \			],
       \			'right': [
-      \					['percent', 'lineinfo'], 
-      \					['coc'], 
-      \					['eskk', 'charcode', 'filetype'], 
+      \					 ['percent', 'lineinfo'], 
+      \					 ['coc'], 
+      \					 ['eskk', 'filetype'], 
       \			], 
       \ }, 
       \	'inactive': {
@@ -35,14 +36,14 @@ let g:lightline = {
       \   	'filename'    : 'MyFilename', 
       \		'modified'	  : 'MyModified', 
       \   	'readonly'    : 'MyReadonly', 
-      \     'tagbar'      : 'MyTagbar',
-      \   	'anzu'        : 'anzu#search_status', 
+      \   	'anzu'        : 'anzu#search_status',
       \		'charcode'	  : 'MyCharCode', 
       \   	'fileformat'  : 'MyFileformat', 
       \   	'fileencoding': 'MyFileencoding', 
       \   	'filetype'    : 'MyFiletype', 
       \		'coc'		  : 'MyCoc', 
       \     'eskk'        : 'MyEskk',
+      \     'vista'       : 'MyVista',
       \ },
       \	'component_expand': {
       \			'ale_error'	  : 'MyAleError', 
@@ -67,12 +68,12 @@ let g:lightline = {
 
 " left
 " MyMode
-function! MyMode()
+function! MyMode() abort
   return lightline#mode()
 endfunction
 
 " MyFugitive
-function! MyFugitive()
+function! MyFugitive() abort
   if winwidth(0) < 100
     return ''
   endif
@@ -87,7 +88,7 @@ function! MyFugitive()
 endfunction
 
 " MyGitGutter
-function! MyGitGutter()
+function! MyGitGutter() abort
   if winwidth(0) < 100
     return ''
   endif
@@ -116,7 +117,7 @@ function! MyGitGutter()
 endfunction
 
 " MyFilename
-function! MyFilename()
+function! MyFilename() abort
   if winwidth(0) >= 75
     return ('' != MyReadonly() ? MyReadonly() . '' : '') .
           \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
@@ -128,22 +129,18 @@ function! MyFilename()
 endfunction
 
 " MyReadonly
-function! MyReadonly()
+function! MyReadonly() abort
   return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? "\uF23E " : ''
 endfunction
 
 " MyModified
-function! MyModified()
+function! MyModified() abort
   return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? " \uF040" : &modifiable ? '' : '-'
-endfunction
-
-function! MyTagbar()
-	return tagbar#currenttag('%s', '')
 endfunction
 
 " right
 " MyCharCode
-function! MyCharCode()
+function! MyCharCode() abort
   if winwidth('.') >= 150
     redir => ascii
     silent! ascii
@@ -165,34 +162,36 @@ function! MyCharCode()
 endfunction
 
 " MyFileformat
-function! MyFileformat()
+function! MyFileformat() abort
   let l:icon = exists('*WebDevIconsGetFileFormatSymbol()') ?
         \ ' ' . WebDevIconsGetFileFormatSymbol() : ''
   return winwidth(0) >= 150 ? &fileformat . l:icon : ''
 endfunction
 
 " MyFileencoding
-function! MyFileencoding()
+function! MyFileencoding() abort
   return winwidth(0) >= 150 ? (strlen(&fenc) ? &fenc . '' : &enc) : ''
 endfunction
 
 " MyFiletype
-function! MyFiletype()
+function! MyFiletype() abort
   if strlen(&filetype) 
-    let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
+    return exists('*WebDevIconsGetFileTypeSymbol()') ?
           \ WebDevIconsGetFileTypeSymbol() : ''
-    if winwidth(0) >= 100
-      return &filetype . ' ' . l:icon
-    else
-      return l:icon
-    endif
+    " let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
+    "      \ WebDevIconsGetFileTypeSymbol() : ''
+    " if winwidth(0) >= 100
+    "   return &filetype . ' ' . l:icon
+    " else
+      " return l:icon
+    " endif
   else
     return ''
   endif
 endfunction
 
 " MyCoc
-function! MyCoc()
+function! MyCoc() abort
   return winwidth(0) >= 80 ? StatusDiagnostic() : ''
 endfunction
 
@@ -219,10 +218,14 @@ function! StatusDiagnostic() abort
   return join(msgs, ' ')
 endfunction
 
-function! MyEskk()
+function! MyEskk() abort
     if (mode() == 'i') && eskk#is_enabled()
         return g:eskk#statusline()
     else
         return ''
     endif
+endfunction
+
+function! MyVista() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
 endfunction

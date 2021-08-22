@@ -9,7 +9,7 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> <CR>
                 \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> c
-                \ defx#do_action('copy')
+                \ defx#do_action('close_tree')
     nnoremap <silent><buffer><expr> m
                 \ defx#do_action('move')
     nnoremap <silent><buffer><expr> p
@@ -31,8 +31,7 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> M
                 \ defx#do_action('new_multiple_files')
     nnoremap <silent><buffer><expr> C
-                \ defx#do_action('toggle_columns',
-                \                'mark:indent:icon:filename:type:size:time')
+                \ defx#do_action('copy')
     nnoremap <silent><buffer><expr> S
                 \ defx#do_action('toggle_sort', 'time')
     nnoremap <silent><buffer><expr> d
@@ -72,7 +71,7 @@ function! s:defx_my_settings() abort
 endfunction
 
 call defx#custom#option('_', {
-            \ 'winwidth': 30,
+            \ 'winwidth': 40,
             \ 'split': 'vertical',
             \ 'direction': 'topleft',
             \ 'show_ignored_files': 1,

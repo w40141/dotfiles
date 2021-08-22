@@ -1,4 +1,8 @@
-UsePlugin 'fzf'
+" fzf vim
+" https://github.com/junegunn/fzf.vim
+
+UsePlugin 'fzf.vim'
+
 set rtp+=/usr/local/opt/fzf
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '30%' }

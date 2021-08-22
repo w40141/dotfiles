@@ -57,9 +57,9 @@ noremap : ;
 " ノーマルモードでも改行可能
 noremap <CR> i<CR><esc>
 " 保存
-nnoremap <Leader>w :w<CR>
+nnoremap ,w :w<CR>
 " ビジュアルラインモード
-nmap <Leader><Leader> V
+" nmap ,, V
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
 nnoremap n nzz
 nnoremap N Nzz
@@ -99,7 +99,7 @@ cnoremap <C-f> <right>
 cnoremap <C-n> <down>
 cnoremap <C-p> <up>
 " 辞書
-nnoremap <Leader>? :!open dict://<cword><CR>
+nnoremap ,? :!open dict://<cword><CR>
 
 " ウィンドウ
 " ウィンドウを分割

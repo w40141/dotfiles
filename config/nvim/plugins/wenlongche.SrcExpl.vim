@@ -1,6 +1,8 @@
 " A (G)Vim plugin for exploring the source code definition(s) and contextual lines with a split window.
 " https://github.com/wenlongche/SrcExpl
 
+UsePlugin 'SrcExpl'
+
 " // The switch of the Source Explorer 
 nmap <F8> :SrcExplToggle<CR> 
 
