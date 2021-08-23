@@ -69,11 +69,11 @@ nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> rn <Plug>(coc-rename)
+nmap <silent> <leader>df <Plug>(coc-definition)
+nmap <silent> <leader>td <Plug>(coc-type-definition)
+nmap <silent> <leader>im <Plug>(coc-implementation)
+nmap <silent> <leader>rf <Plug>(coc-references)
+nmap <silent> <leader>rm <Plug>(coc-rename)
 
 " Use H to show documentation in preview window
 nmap <silent> H :call <SID>show_documentation()<CR>
@@ -127,28 +127,28 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 
 " Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
-command! -nargs=0 OR :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " Mappings using CoCList:
-" Show all diagnostics.
-nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<CR>
-" Manage extensions.
-nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
-" Show commands.
-nnoremap <silent> <leader>c  :<C-u>CocList commands<CR>
-" Find symbol of current document.
-nnoremap <silent> <leader>o  :<C-u>CocList outline<CR>
-" Search workspace symbols.
-nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<CR>
-" Do default action for next item.
-nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
+" " Show all diagnostics.
+" nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<CR>
+" " Manage extensions.
+" nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
+" " Show commands.
+" nnoremap <silent> <leader>c  :<C-u>CocList commands<CR>
+" " Find symbol of current document.
+" nnoremap <silent> <leader>o  :<C-u>CocList outline<CR>
+" " Search workspace symbols.
+" nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<CR>
+" " Do default action for next item.
+" nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
+" " Do default action for previous item.
+" nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
+" " Resume latest coc list.
+" nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
 
 " For golang
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
@@ -156,46 +156,5 @@ autocmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
 autocmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
 autocmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
 
-" grep word under cursor
-command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
-
-function! s:GrepArgs(...)
-  let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
-        \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
-  return join(list, "\n")
-endfunction
-
-" Keymapping for grep word under cursor with interactive mode
-nnoremap <silent> <Leader>cf :exe 'CocList -I --input='.expand('<cword>').' grep'<CR>
-vnoremap <leader>g :<C-u>call <SID>GrepFromSelected(visualmode())<CR>
-nnoremap <leader>g :<C-u>set operatorfunc=<SID>GrepFromSelected<CR>g@
-
-function! s:GrepFromSelected(type)
-  let saved_unnamed_register = @@
-  if a:type ==# 'v'
-    normal! `<v`>y
-  elseif a:type ==# 'char'
-    normal! `[v`]y
-  else
-    return
-  endif
-  let word = substitute(@@, '\n$', '', 'g')
-  let word = escape(word, '| ')
-  let @@ = saved_unnamed_register
-  execute 'CocList grep '.word
-endfunction
-
-nnoremap <silent> <space>w  :exe 'CocList -I --normal --input='.expand('<cword>').' words'<CR>
-
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Remap <C-f> and <C-b> for scroll float windows/popups.
-if has('nvim-0.4.0') || has('patch-8.2.0750')
-  nnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  nnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-  inoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-  inoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-  vnoremap <silent><nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
-  vnoremap <silent><nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
-endif

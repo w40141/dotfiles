@@ -17,6 +17,9 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 
+" fzf settings
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
 " Default fzf layout
 " - Popup window (center of the screen)
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
@@ -35,14 +38,10 @@ let g:fzf_action = {
 " let g:fzf_layout = { 'window': '-tabnew' }
 " let g:fzf_layout = { 'window': '10new' }
 
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Comment'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
@@ -54,7 +53,8 @@ let g:fzf_colors =
   \ 'pointer': ['fg', 'Exception'],
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+  \ 'header':  ['fg', 'Comment'],
+  \ }
 
 " Enable per-command history
 " - History files will be stored in the specified directory
@@ -65,9 +65,29 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_buffers_jump = 1
 
 augroup vimrc_fzf
-    autocmd!
-    autocmd FileType fzf tnoremap <buffer> <leader>z <Esc>
+  autocmd!
+  autocmd FileType fzf tnoremap <buffer> <C-q> <Esc>
+  autocmd FileType fzf tnoremap <buffer> <C-p> <UP>
+  autocmd FileType fzf tnoremap <buffer> <C-k> <UP>
+  autocmd FileType fzf tnoremap <buffer> <C-n> <DOWN>
+  autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
+  autocmd FileType fzf set laststatus=0 noshowmode noruler
+        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
+
+" Filesコマンドにもプレビューを出す
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 "" fzf.vim
 " <C-p>でファイル検索を開く
@@ -80,37 +100,41 @@ fun! FzfOmniFiles()
     :GFiles
   endif
 endfun
-nnoremap <C-p> :call FzfOmniFiles()<CR>
 
-" <C-g>で文字列検索を開く
-" <S-?>でプレビューを表示/非表示する
-command! -bang -nargs=* Rg
-\ call fzf#vim#grep(
-\ 'rg --column --line-number --hidden --ignore-case --no-heading --color=always '.shellescape(<q-args>), 1,
-\ <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 3..'}, 'up:60%')
-\ : fzf#vim#with_preview({'options': '--exact --delimiter : --nth 3..'}, 'right:50%:hidden', '?'),
-\ <bang>0)
-nnoremap <C-g> :Rg<CR>
+" fzf
+nnoremap <silent> <C-F>f :call FzfOmniFiles()<CR>
+nnoremap <silent> <C-F>F :Files<CR>
+" nnoremap <silent> <C-f>g :GFiles<CR>
+nnoremap <silent> <C-F>G :GFiles?<CR>
+nnoremap <silent> <C-F>b :Buffers<CR>
+
+" nnoremap <silent> <C-f>r :Rg<CR>
+nnoremap <silent> <C-F>g :RG<CR>
 
 " frでカーソル位置の単語をファイル検索する
-nnoremap fr vawy:Rg <C-R>"<CR>
+nnoremap <C-F>r vawy:Rg <C-R>"<CR>
 " frで選択した単語をファイル検索する
-xnoremap fr y:Rg <C-R>"<CR>
+xnoremap <C-F>r y:Rg <C-R>"<CR>
 
-" fbでバッファ検索を開く
-nnoremap fb :Buffers<CR>
-" fpでバッファの中で1つ前に開いたファイルを開く
-nnoremap fp :Buffers<CR><CR>
 " flで開いているファイルの文字列検索を開く
-nnoremap fl :BLines<CR>
+nnoremap <C-F>l :BLines<CR>
 " fmでマーク検索を開く
-nnoremap fm :Marks<CR>
+nnoremap <C-F>m :Marks<CR>
 " fhでファイル閲覧履歴検索を開く
-nnoremap fh :History<CR>
+nnoremap <C-F>h :History<CR>
 " fcでコミット履歴検索を開く
-nnoremap fc :Commits<CR>
+nnoremap <C-F>c :Commits<CR>
 
-nnoremap <silent> ff :<C-u>Ag<CR>
-nnoremap <silent> ft :<C-u>call fzf#vim#tags(expand('<cword>'))<CR>
-nnoremap <silent> fgs :<C-u>GFiles?<CR>
-nnoremap <silent> fgf :<C-u>GFiles<CR>
+" Path completion with custom source command
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
+
+" Word completion with custom spec with popup layout option
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
+" Insert mode completion
+imap <c-x><c-w> <plug>(fzf-complete-word)
+imap <c-x><c-p> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+nnoremap <silent><C-F>t :<C-u>call<C-F>zf#vim#tags(expand('<cword>'))<CR>

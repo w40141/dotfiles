@@ -4,8 +4,7 @@
 UsePlugin 'vista.vim'
 
 nnoremap <silent> <C-t> :<C-U>Vista!!<CR>
-nnoremap <silent> <Leader>v :<C-U>Vista coc<CR>
-nnoremap <silent> <Leader>vf :<C-U>Vista finder coc<CR>
+nnoremap <silent> <Leader>t :<C-U>Vista finder coc<CR>
 
 " Position to open the vista sidebar. On the right by default.
 " Change to 'vertical topleft' to open on the left.
