@@ -42,23 +42,8 @@ imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet
 xmap <leader>x  <Plug>(coc-convert-snippet)
 
-" inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? coc#_select_confirm() :
-"      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-" 
-" function! s:check_back_space() abort
-"   let col = col('.') - 1
-"   return !col || getline('.')[col - 1]  =~# '\s'
-" endfunction
-
 " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+inoremap <silent><expr> <c-@> coc#refresh()
 
 let g:coc_status_error_sign = "\uF490 "
 let g:coc_status_warning_sign ="\uF4A3 "
@@ -87,8 +72,8 @@ function! s:show_documentation()
 endfunction
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>cf  <Plug>(coc-format-selected)
+nmap <leader>cf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -118,12 +103,14 @@ xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <Leader>rs <Plug>(coc-range-select)
-xmap <silent> <Leader>rs <Plug>(coc-range-select)
+nmap <silent> <Leader>d <Plug>(coc-range-select)
+xmap <silent> <Leader>d <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+nnoremap <silent> <Leader>f :<C-U>Format<CR>
 
 
 " Use `:Fold` to fold current buffer
@@ -131,24 +118,6 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
-" Mappings using CoCList:
-" " Show all diagnostics.
-" nnoremap <silent> <leader>a  :<C-u>CocList diagnostics<CR>
-" " Manage extensions.
-" nnoremap <silent> <leader>e  :<C-u>CocList extensions<CR>
-" " Show commands.
-" nnoremap <silent> <leader>c  :<C-u>CocList commands<CR>
-" " Find symbol of current document.
-" nnoremap <silent> <leader>o  :<C-u>CocList outline<CR>
-" " Search workspace symbols.
-" nnoremap <silent> <leader>s  :<C-u>CocList -I symbols<CR>
-" " Do default action for next item.
-" nnoremap <silent> <leader>j  :<C-u>CocNext<CR>
-" " Do default action for previous item.
-" nnoremap <silent> <leader>k  :<C-u>CocPrev<CR>
-" " Resume latest coc list.
-" nnoremap <silent> <leader>p  :<C-u>CocListResume<CR>
 
 " For golang
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')

@@ -18,7 +18,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 
 " fzf settings
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+" let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 " Default fzf layout
 " - Popup window (center of the screen)
@@ -102,17 +102,17 @@ fun! FzfOmniFiles()
 endfun
 
 " fzf
-nnoremap <silent> <C-F>f :call FzfOmniFiles()<CR>
-nnoremap <silent> <C-F>F :Files<CR>
+nnoremap <silent> <leader>o :call FzfOmniFiles()<CR>
+nnoremap <silent> <leader>F :Files<CR>
 " nnoremap <silent> <C-f>g :GFiles<CR>
-nnoremap <silent> <C-F>G :GFiles?<CR>
-nnoremap <silent> <C-F>b :Buffers<CR>
+nnoremap <silent> <leader>G :GFiles?<CR>
+nnoremap <silent> <leader>b :Buffers<CR>
 
 " nnoremap <silent> <C-f>r :Rg<CR>
-nnoremap <silent> <C-F>g :RG<CR>
+nnoremap <silent> <leader>g :RG<CR>
 
 " frでカーソル位置の単語をファイル検索する
-nnoremap <C-F>r vawy:Rg <C-R>"<CR>
+nnoremap <leader>r vawy:Rg <C-R>"<CR>
 " frで選択した単語をファイル検索する
 xnoremap <C-F>r y:Rg <C-R>"<CR>
 
