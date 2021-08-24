@@ -7,7 +7,7 @@
 UsePlugin 'lightline.vim'
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'PaperColor',
       \	'active': {
       \			'left': [
       \					['mode', 'paste'],

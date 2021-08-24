@@ -71,8 +71,8 @@ augroup vimrc_fzf
   autocmd FileType fzf tnoremap <buffer> <C-k> <UP>
   autocmd FileType fzf tnoremap <buffer> <C-n> <DOWN>
   autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
-  autocmd FileType fzf set laststatus=0 noshowmode noruler
-        \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+  " autocmd FileType fzf set laststatus=0 noshowmode noruler
+  "      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
 
 " Filesコマンドにもプレビューを出す
@@ -102,19 +102,19 @@ fun! FzfOmniFiles()
 endfun
 
 " fzf
-nnoremap <silent> <leader>o :call FzfOmniFiles()<CR>
+nnoremap <silent> <C-o> :call FzfOmniFiles()<CR>
 nnoremap <silent> <leader>F :Files<CR>
 " nnoremap <silent> <C-f>g :GFiles<CR>
-nnoremap <silent> <leader>G :GFiles?<CR>
-nnoremap <silent> <leader>b :Buffers<CR>
+nnoremap <silent> <C-F>G :GFiles?<CR>
+nnoremap <silent> <C-B> :Buffers<CR>
 
-" nnoremap <silent> <C-f>r :Rg<CR>
+
+" カーソル位置の単語をファイル検索する
+nnoremap <C-g> vawy:Rg <C-R>"<CR>
+" 単語検索を開く
 nnoremap <silent> <leader>g :RG<CR>
-
-" frでカーソル位置の単語をファイル検索する
-nnoremap <leader>r vawy:Rg <C-R>"<CR>
-" frで選択した単語をファイル検索する
-xnoremap <C-F>r y:Rg <C-R>"<CR>
+" 選択した単語をファイル検索する
+xnoremap <C-F>g y:Rg <C-R>"<CR>
 
 " flで開いているファイルの文字列検索を開く
 nnoremap <C-F>l :BLines<CR>
