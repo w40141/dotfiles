@@ -90,7 +90,6 @@ endfunction
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 "" fzf.vim
-" <C-p>でファイル検索を開く
 " git管理されていれば:GFiles、そうでなければ:Filesを実行する
 fun! FzfOmniFiles()
   let is_git = system('git status')
@@ -103,7 +102,7 @@ endfun
 
 " fzf
 nnoremap <silent> <C-o> :call FzfOmniFiles()<CR>
-nnoremap <silent> <leader>F :Files<CR>
+nnoremap <silent> <C-f>f :Files<CR>
 " nnoremap <silent> <C-f>g :GFiles<CR>
 nnoremap <silent> <C-F>G :GFiles?<CR>
 nnoremap <silent> <C-B> :Buffers<CR>
@@ -112,9 +111,9 @@ nnoremap <silent> <C-B> :Buffers<CR>
 " カーソル位置の単語をファイル検索する
 nnoremap <C-g> vawy:Rg <C-R>"<CR>
 " 単語検索を開く
-nnoremap <silent> <leader>g :RG<CR>
+nnoremap <silent> <C-F>r :RG<CR>
 " 選択した単語をファイル検索する
-xnoremap <C-F>g y:Rg <C-R>"<CR>
+xnoremap <C-F>w y:Rg <C-R>"<CR>
 
 " flで開いているファイルの文字列検索を開く
 nnoremap <C-F>l :BLines<CR>

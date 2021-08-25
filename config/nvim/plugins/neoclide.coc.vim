@@ -54,11 +54,11 @@ nmap <silent> [d <Plug>(coc-diagnostic-prev)
 nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
-nmap <silent> <leader>df <Plug>(coc-definition)
-nmap <silent> <leader>td <Plug>(coc-type-definition)
-nmap <silent> <leader>im <Plug>(coc-implementation)
-nmap <silent> <leader>rf <Plug>(coc-references)
-nmap <silent> <leader>rm <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gn <Plug>(coc-rename)
 
 " Use H to show documentation in preview window
 nmap <silent> H :call <SID>show_documentation()<CR>
@@ -72,8 +72,8 @@ function! s:show_documentation()
 endfunction
 
 " Remap for format selected region
-xmap <leader>cf  <Plug>(coc-format-selected)
-nmap <leader>cf  <Plug>(coc-format-selected)
+xmap <leader>fs  <Plug>(coc-format-selected)
+nmap <leader>fs  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -90,7 +90,7 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap for do codeAction of current line
 nmap <leader>ca  <Plug>(coc-codeaction)
 " Fix autofix problem of current line
-nmap <leader>fc  <Plug>(coc-fix-current)
+nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Create mappings for function text object, requires document symbols feature of languageserver.
 xmap if <Plug>(coc-funcobj-i)
@@ -106,12 +106,11 @@ omap ac <Plug>(coc-classobj-a)
 nmap <silent> <Leader>d <Plug>(coc-range-select)
 xmap <silent> <Leader>d <Plug>(coc-range-select)
 
+nnoremap <silent> <Leader>f :<C-U>Format<CR>
+
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-nnoremap <silent> <Leader>f :<C-U>Format<CR>
-
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
