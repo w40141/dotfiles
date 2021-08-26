@@ -75,8 +75,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Next-gen compiler infrastructure
@@ -343,6 +341,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
@@ -401,6 +401,8 @@ cask "atom"
 cask "balenaetcher"
 # Markdown editor for developers
 cask "boostnote"
+# Web browser focusing on privacy
+cask "brave-browser"
 # GUI app for Homebrew
 cask "cakebrew"
 # Clipboard extension app
