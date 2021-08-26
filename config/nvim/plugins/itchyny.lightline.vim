@@ -12,7 +12,7 @@ let g:lightline = {
       \			'left': [
       \					['mode', 'paste'],
       \					['filename', 'fugitive', 'gitgutter'],
-      \                 ['anzu', 'vista'],
+      \                 ['anzu'],
       \			],
       \			'right': [
       \					 ['percent', 'lineinfo'], 
@@ -21,7 +21,7 @@ let g:lightline = {
       \			], 
       \ }, 
       \	'inactive': {
-      \			'left': [],
+      \			'left': [['vista']],
       \			'right': [['ale_error', 'ale_warning', 'ale_ok'],
       \               ['charcode', 'fileformat', 'fileencoding']
       \              ],
