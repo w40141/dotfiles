@@ -7,7 +7,7 @@ set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
 set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
 
 set -gx EDITOR nvim
-set -gx BROWSER google-chrome
+set -x BROWSER open
 
 # for ls or exa
 if command -s exa > /dev/null
