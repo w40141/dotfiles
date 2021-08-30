@@ -2,7 +2,6 @@ tap "argon/mas"
 tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
-tap "cantino/mcfly"
 tap "clementtsang/bottom"
 tap "delphinus/sfmono-square"
 tap "homebrew/bundle"
@@ -381,8 +380,6 @@ brew "xvid"
 brew "z"
 # High-performance, asynchronous messaging library
 brew "zeromq"
-# McFly
-brew "cantino/mcfly/mcfly"
 # A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
 brew "clementtsang/bottom/bottom"
 # Maintained ctags implementation
