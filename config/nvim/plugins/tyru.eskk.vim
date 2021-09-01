@@ -43,7 +43,7 @@ augroup vimrc_eskk
   autocmd!
 augroup END
 
-imap jk <Plug>(eskk:toggle)
-cmap jk <Plug>(eskk:toggle)
+imap <C-k> <Plug>(eskk:toggle)
+cmap <C-k> <Plug>(eskk:toggle)
 
 inoremap <silent><expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()
