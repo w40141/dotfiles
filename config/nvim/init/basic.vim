@@ -18,7 +18,8 @@ set mouse=a
 " 変更中のファイルでも、保存しないで他のファイルを表示する
 set hidden
 " スペルチェック
-set spelllang=en,cjk
+" set spelllang=en,cjk
+set nospell
 " 内容が変更されたら自動的に再読み込み
 set autoread
 " クリップボードをWindowsと連携する

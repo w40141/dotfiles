@@ -17,7 +17,7 @@ let g:vista_sidebar_width = 30
 let g:vista_echo_cursor = 1
 
 " Time delay for showing detailed symbol info at current cursor.
-let g:vista_cursor_delay = 400
+let g:vista_cursor_delay = 200
 
 " Close the vista window automatically close when you jump to a symbol.
 let g:vista_close_on_jump = 0

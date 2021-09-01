@@ -1,5 +1,6 @@
 " LSP Complement
 " https://github.com/neoclide/coc.nvim
+"
 
 UsePlugin 'coc.nvim'
 
