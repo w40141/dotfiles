@@ -40,7 +40,7 @@ Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
@@ -62,7 +62,7 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
-Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
+" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'Yggdroot/indentLine'
 " Plug 'wenlongche/SrcExpl'
 

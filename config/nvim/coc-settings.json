@@ -37,9 +37,11 @@
     }
   ],
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
+  "tsserver.enableJavascript": false,
   "eslint.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
   "eslint.autoFixOnSave": true,
+  "eslint.autoFix": true,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
@@ -88,6 +90,15 @@
       // custom config path
       // "args": ["-c", "/path/to/your/config.yaml"],
       "filetypes": ["vim", "eruby", "markdown", "yaml"]
+    },
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["javascript", "javascriptreact"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
     }
   },
   "git.enableGutters": false,
