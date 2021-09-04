@@ -18,8 +18,6 @@ tap "universal-ctags/universal-ctags"
 tap "wfxr/csview"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -28,12 +26,8 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# YAML Parser
-brew "libyaml"
 # Library for command-line editing
 brew "readline"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -42,8 +36,6 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -74,16 +66,38 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
+# GNU multiple precision arithmetic library
+brew "gmp"
+# C string library for manipulating Unicode strings
+brew "libunistring"
+# Implementation of malloc emphasizing fragmentation avoidance
+brew "jemalloc"
+# Asynchronous event library
+brew "libevent"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+# ASN.1 structure parser library
+brew "libtasn1"
+# Low-level cryptographic library
+brew "nettle"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Emacs text editor
+brew "emacs", restart_service: true
+# Emacs dependency management
+brew "cask"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
 brew "ccls"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
-# GNU multiple precision arithmetic library
-brew "gmp"
 # Generate code for scanning Z-polyhedra
 brew "cloog"
 # Cross-platform make
@@ -94,12 +108,8 @@ brew "cmatrix"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
-# C string library for manipulating Unicode strings
-brew "libunistring"
-# International domain name library (IDNA2008, Punycode and TR46)
-brew "libidn2"
+# C library implementing the SSH2 protocol
+brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -116,18 +126,6 @@ brew "dust"
 brew "efm-langserver"
 # C++ template library for linear algebra
 brew "eigen"
-# Asynchronous event library
-brew "libevent"
-# ASN.1 structure parser library
-brew "libtasn1"
-# Low-level cryptographic library
-brew "nettle"
-# Library to load and enumerate PKCS#11 modules
-brew "p11-kit"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# GNU Emacs text editor
-brew "emacs", restart_service: true
 # Modern replacement for 'ls'
 brew "exa"
 # ISO AAC audio encoder
@@ -274,8 +272,6 @@ brew "libuv"
 brew "libvpx"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
-# GNOME XML library
-brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Next-gen compiler infrastructure
@@ -312,6 +308,8 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Cross-platform application and UI framework
+brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Modern replacement for ps written by Rust
@@ -340,8 +338,6 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
@@ -456,10 +452,10 @@ cask "font-yomogi"
 cask "fontforge"
 # Git client focusing on productivity
 cask "gitkraken"
-# Back up and sync files with Google Drive
-cask "google-backup-and-sync"
 # Web browser
 cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
 cask "google-japanese-ime"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"

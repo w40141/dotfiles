@@ -227,3 +227,6 @@ fish_add_path $HOME/.asdf/installs/poetry/1.1.7/bin
 source /usr/local/opt/asdf/libexec/asdf.fish
 # Created by `pipx` on 2021-07-29 07:31:47
 set PATH $PATH /Users/daisuke_oku/.local/bin
+
+# Created by `pipx` on 2021-09-04 04:43:36
+set PATH $PATH /Users/daisuke.oku/.local/bin
