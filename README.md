@@ -71,9 +71,9 @@
             fish
             chsh -s /usr/local/bin/fish
 
-    1.  fisher をインストールする.
+    1.  [fisher](https://github.com/jorgebucaran/fisher) をインストールする.
 
-            curl -sL https://git.io/fisher | source && fisher update
+            curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 1.  asdf のインストール
 
@@ -81,11 +81,11 @@
 
     1.  各種プログラミング言語をインストールする.
 
-            asdf plugin-add python
-            asdf plugin-add ruby
-            asdf plugin-add node
-            asdf plugin-add yarn
-            asdf plugin-add poetry
+            asdf plugin-add danhper/asdf-python
+            asdf plugin-add asdf-vm/asdf-ruby
+            asdf plugin-add asdf-vm/asdf-nodejs
+            asdf plugin-add twuni/asdf-yarn
+            asdf plugin-add asdf-community/asdf-poetry
 
     1.  poetry の補完
 
