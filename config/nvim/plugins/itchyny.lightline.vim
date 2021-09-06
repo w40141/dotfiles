@@ -9,22 +9,25 @@ UsePlugin 'lightline.vim'
 let g:lightline = {
       \ 'colorscheme': 'PaperColor',
       \	'active': {
-      \			'left': [
-      \					['mode', 'paste'],
-      \					['filename', 'fugitive', 'gitgutter'],
-      \                 ['anzu'],
+      \			'left':  [
+      \					  ['mode', 'paste', ],
+      \					  ['filename', 'fugitive', 'gitgutter', ],
+      \                   ['vista', 'anzu', ],
       \			],
       \			'right': [
-      \					 ['percent', 'lineinfo'], 
-      \					 ['coc'], 
-      \					 ['eskk', 'filetype'], 
-      \			], 
-      \ }, 
+      \					  ['percent', 'lineinfo'], 
+      \					  ['filetype', ], 
+      \					  ['eskk', 'coc', ], 
+      \			],
+      \ },
       \	'inactive': {
-      \			'left': [['vista']],
-      \			'right': [['ale_error', 'ale_warning', 'ale_ok'],
-      \               ['charcode', 'fileformat', 'fileencoding']
-      \              ],
+      \			'left':  [
+      \                   []
+      \         ],
+      \			'right': [
+      \                   [],
+      \                   ['charcode', 'fileformat', 'fileencoding'],
+      \         ],
       \	}, 
       \	'component': {
       \			'lineinfo': '%3l[%L]:%-2v'
@@ -45,16 +48,8 @@ let g:lightline = {
       \     'eskk'        : 'MyEskk',
       \     'vista'       : 'MyVista',
       \ },
-      \	'component_expand': {
-      \			'ale_error'	  : 'MyAleError', 
-      \			'ale_warning' : 'MyAleWarning', 
-      \			'ale_ok'	  : 'MyAleOk', 
-      \ }, 
-      \ 'component_type': {
-      \			'ale_error'	  : 'error', 
-      \			'ale_warning' : 'warning', 
-      \			'ale_ok'	  : 'ok', 
-      \ },
+      \	'component_expand': {},
+      \ 'component_type': {},
       \ 'separator'     : {
       \			'left' : "\ue0b4",
       \			'right': "\ue0b6",
@@ -74,7 +69,7 @@ endfunction
 
 " MyFugitive
 function! MyFugitive() abort
-  if winwidth(0) < 100
+  if winwidth(0) < 200
     return ''
   endif
   try
@@ -84,12 +79,12 @@ function! MyFugitive() abort
     endif
   catch
   endtry
-  return 'ab'
+  return ''
 endfunction
 
 " MyGitGutter
 function! MyGitGutter() abort
-  if winwidth(0) < 100
+  if winwidth(0) < 150
     return ''
   endif
   let l:gitgutter_sign_added = "\uF067 "
@@ -118,12 +113,12 @@ endfunction
 
 " MyFilename
 function! MyFilename() abort
-  if winwidth(0) >= 75
+  if winwidth(0) < 65
     return ('' != MyReadonly() ? MyReadonly() . '' : '') .
-          \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
           \ ('' != MyModified() ? '' . MyModified() : '')
   else
     return ('' != MyReadonly() ? MyReadonly() . '' : '') .
+          \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
           \ ('' != MyModified() ? '' . MyModified() : '')
   endif
 endfunction
@@ -141,7 +136,9 @@ endfunction
 " right
 " MyCharCode
 function! MyCharCode() abort
-  if winwidth('.') >= 150
+  if winwidth('.') < 150
+    return ''
+  else
     redir => ascii
     silent! ascii
     redir END
@@ -156,8 +153,6 @@ function! MyCharCode() abort
     let [str, char, nr; rest] = matchlist(ascii, '\v\<(.{-1,})\>\s*([0-9]+)')
     let nr = printf(nrformat, nr)
     return char . " " . nr . ''
-  else
-    return ''
   endif
 endfunction
 
@@ -176,15 +171,15 @@ endfunction
 " MyFiletype
 function! MyFiletype() abort
   if strlen(&filetype) 
-    return exists('*WebDevIconsGetFileTypeSymbol()') ?
-          \ WebDevIconsGetFileTypeSymbol() : ''
-    " let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
+    " return exists('*WebDevIconsGetFileTypeSymbol()') ?
     "      \ WebDevIconsGetFileTypeSymbol() : ''
-    " if winwidth(0) >= 100
-    "   return &filetype . ' ' . l:icon
-    " else
-      " return l:icon
-    " endif
+    let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
+         \ WebDevIconsGetFileTypeSymbol() : ''
+    if winwidth(0) < 150
+      return l:icon
+    else
+      return &filetype . ' ' . l:icon
+    endif
   else
     return ''
   endif
@@ -192,7 +187,7 @@ endfunction
 
 " MyCoc
 function! MyCoc() abort
-  return winwidth(0) >= 80 ? StatusDiagnostic() : ''
+  return winwidth(0) < 80 ? '' : StatusDiagnostic()
 endfunction
 
 function! StatusDiagnostic() abort
@@ -227,5 +222,5 @@ function! MyEskk() abort
 endfunction
 
 function! MyVista() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
+  return winwidth(0) < 150 ? '' : get(b:, 'vista_nearest_method_or_function', '')
 endfunction
