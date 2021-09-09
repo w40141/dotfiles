@@ -1,8 +1,7 @@
 {
   "diagnostic.errorSign": "\uF490",
   "diagnostic.warningSign": "\uF4A3",
-  "snippets.expands": 
-  {
+  "snippets.expands": {
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
@@ -15,6 +14,7 @@
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "suggest.noselect": true,
   "coc.preferences.formatOnSaveFiletypes": [
+    "java",
     "css",
     "markdown",
     "javascript",
@@ -33,9 +33,13 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-11",
-      "path": "~/.asdf/installs/java/corretto-11.0.12.7.2"
+      "path": "~/.asdf/installs/java/corretto-11.0.12.7.2",
+      "default": true
     }
   ],
+  "java.format.enable": true,
+  "java.format.settings.profile": "GoogleStyle",
+  "java.saveActions.organizeImports": true,
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
   "tsserver.enableJavascript": false,
   "eslint.packageManager": "yarn",

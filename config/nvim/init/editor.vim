@@ -1,9 +1,10 @@
 " 編集設定
 " 折りたたみ機能を使う
-set foldenable
-set foldmethod=indent
+" set foldenable
+
+" set foldmethod=indent
 " set foldexpr=getline(v:lnum)=~'^\\s*$'&&getline(v:lnum+1)=~'\\S'?'<1':1
-set foldcolumn=1
+" set foldcolumn=1
 " set foldlevel=1
 "deleteでインデントを削除可能にする
 set backspace=indent,eol,start
