@@ -18,6 +18,8 @@ tap "universal-ctags/universal-ctags"
 tap "wfxr/csview"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -26,8 +28,12 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -36,6 +42,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -66,8 +74,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # GNU multiple precision arithmetic library
@@ -108,8 +114,6 @@ brew "cmatrix"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# C library implementing the SSH2 protocol
-brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -272,6 +276,8 @@ brew "libuv"
 brew "libvpx"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# GNOME XML library
+brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Next-gen compiler infrastructure
@@ -308,8 +314,6 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Cross-platform application and UI framework
-brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Modern replacement for ps written by Rust
@@ -338,6 +342,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
@@ -477,6 +483,8 @@ cask "microsoft-office"
 cask "notion"
 # Finder Toolbar app to open the current directory in Terminal or Editor
 cask "openinterminal"
+# Collaboration platform for API development
+cask "postman"
 # MySQL/MariaDB database management
 cask "sequel-ace"
 # PDF reader and note-taking application
