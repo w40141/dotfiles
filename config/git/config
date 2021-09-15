@@ -27,7 +27,7 @@
 	du = difftool @{upstream}
 	mm = merge origin/master
 	pf = push --force-with-lease
-	pu = pull
+	pl = pull
 	re = reset --soft HEAD~
 	rh = reset --hard
 	ri = rebase -i
