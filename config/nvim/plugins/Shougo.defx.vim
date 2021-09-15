@@ -18,7 +18,7 @@ function! s:defx_my_settings() abort
                 \ defx#do_action('drop')
     nnoremap <silent><buffer><expr> t
                 \ defx#do_action('open','tabnew')
-    nnoremap <silent><buffer><expr> E
+    nnoremap <silent><buffer><expr> v
                 \ defx#do_action('open', 'vsplit')
     nnoremap <silent><buffer><expr> P
                 \ defx#do_action('preview')
