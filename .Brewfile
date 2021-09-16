@@ -328,6 +328,10 @@ brew "rig"
 brew "ripgrep"
 # Powerful, clean, object-oriented scripting language
 brew "ruby"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+# Rust toolchain installer
+brew "rustup-init"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
 brew "sdl2"
 # Create beautiful image of your source code
