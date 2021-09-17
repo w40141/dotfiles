@@ -3,8 +3,6 @@
 set list listchars=tab:▸\ ,trail:-,extends:»,precedes:«,eol:↲,nbsp:%
 " 行番号を表示する
 set number
-" 行番号を相対表示にする
-set relativenumber
 " タイトルをウィンドウ枠に表示する
 set title
 " ウィンドウ幅より長い行は折り返して、次の行に続けて表示する
