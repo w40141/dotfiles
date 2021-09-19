@@ -1,11 +1,9 @@
 python 3.9.0
 poetry 1.1.7
 ruby 2.7.4
-nodejs 16.5.0
-rust 1.48.0
+nodejs 16.9.1
 yarn 1.22.11
-haskell 8.10.4
-golang 1.15.8
+golang 1.17.1
 elixir 1.12.2-otp-24
 erlang 24.0.3
 dart 2.12.1
