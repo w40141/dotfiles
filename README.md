@@ -48,78 +48,110 @@
 3.  brew bundle でアプリを一括インストールする.  
     2 回くらいやると大丈夫
 
-            brew bundle --global
+        brew bundle --global
 
 4.  インストールできないものは都度変更する.
 
-### 3. fish, neovim, pipx, poetry を整える.
+## 開発環境を整える.
 
-1.  fish の設定
+### 1. fish の設定
 
-    1.  fish のパスの確認する.
+1.  fish のパスの確認する.
 
-            which fish
+        which fish
 
-    1.  シェルの変更する.
+1.  シェルの変更する.
 
-            sudo vi /etc/shells
+        sudo vi /etc/shells
 
-    1.  末尾に fish のパス (/usr/local/bin/fish) を追加する.
+1.  末尾に fish のパス (/usr/local/bin/fish) を追加する.
 
-    1.  ログインシェルを fish に変更する.
+1.  ログインシェルを fish に変更する.
 
-            fish
-            chsh -s /usr/local/bin/fish
+        fish
+        chsh -s /usr/local/bin/fish
 
-    1.  [fisher](https://github.com/jorgebucaran/fisher) をインストールする.
+1.  [fisher](https://github.com/jorgebucaran/fisher) をインストールする.
 
-            curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+        curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
-1.  asdf のインストール
+1.  fisher プラグインを入れる.
 
-    1.  [asdf](https://asdf-vm.com/#/core-manage-asdf) に従いインストールする.
+        fisher update
 
-    1.  各種プログラミング言語をインストールする.
+### 2. asdf のインストール
 
-            asdf plugin-add danhper/asdf-python
-            asdf plugin-add asdf-vm/asdf-ruby
-            asdf plugin-add asdf-vm/asdf-nodejs
-            asdf plugin-add twuni/asdf-yarn
-            asdf plugin-add asdf-community/asdf-poetry
+1.  [asdf](https://asdf-vm.com/#/core-manage-asdf) に従いインストールする.
 
-    1.  poetry の補完
+        echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
 
-            poetry completions fish > ~/.config/fish/completions/poetry.fish
-            poetry config virtualenvs.in-project true
+1.  各種プログラミング言語をインストールする.
 
-1.  python 周りをインストールする
+        asdf plugin-add danhper/asdf-python
+        asdf plugin-add asdf-vm/asdf-ruby
+        asdf plugin-add asdf-vm/asdf-nodejs
+        asdf plugin-add twuni/asdf-yarn
+        asdf plugin-add asdf-community/asdf-poetry
 
-    0.  [pipx をインストールする（Homebrew でしてある）.](https://pipxproject.github.io/pipx/installation/)
+1.  各種プログラミング言語のバージョンをインストールする.
 
-            pipx ensurepath
+        asdf install python 3.9.0
+        asdf install nodejs latest
+        asdf install ruby 2.7.4
 
-    1.  必要なモジュールをインストールする.
+1.  各種プログラミング言語のバージョンを global で指定する.
 
-            pipx install flake8
-            pipx install black
-            pipx install isort
-            pipx install mypy
+        asdf global python 3.9.0
+        asdf global nodejs latest
+        asdf global ruby 2.7.4
 
-1.  neovim のインストール
+1.  poetry の補完
 
-    1.  python の設定
+        poetry completions fish > ~/.config/fish/completions/poetry.fish
+        poetry config virtualenvs.in-project true
 
-            cd ~/.config/nvim/neovim3
-            poetry install
+### 3. python 周りをインストールする
 
-    1.  ruby の設定
+0.  [pipx をインストールする（Homebrew でしてある）.](https://pipxproject.github.io/pipx/installation/)
 
-            gem install neovim
+        pipx ensurepath
 
-    1.  node の設定
+1.  必要なモジュールをインストールする.
 
-            yarn global add neovim
-            yarn global add coc
+        pipx install flake8
+        pipx install black
+        pipx install isort
+        pipx install mypy
+
+### 4. neovim のインストール
+
+1.  python の設定
+
+        cd ~/.config/nvim/neovim3
+        poetry install
+
+1.  ruby の設定
+
+        gem install neovim
+
+1.  node の設定
+
+        yarn global add neovim
+        yarn global add coc
+
+### 5. Rust のインストール
+
+1.  rustup でインストール (Homebrew でインストール済)
+
+        rustup-init
+
+1.  Rust Language Server のインストール
+
+        rustup component add rls rust-analysis rust-src
+
+1.  cargo-edit のインストール
+
+        cargo install cargo-edit
 
 ## SSH の設定
 

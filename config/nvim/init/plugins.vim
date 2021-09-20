@@ -1,6 +1,5 @@
 let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
 let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
-
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
 if empty(glob(s:plugvim))
       execute "!sh -c 'curl -fLo " . s:plugvim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
