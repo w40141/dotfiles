@@ -18,6 +18,8 @@ tap "universal-ctags/universal-ctags"
 tap "wfxr/csview"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -26,8 +28,12 @@ brew "automake"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
 # Library for command-line editing
 brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -36,6 +42,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -272,6 +280,8 @@ brew "libuv"
 brew "libvpx"
 # C99 library which implements a VT220 or xterm terminal emulator
 brew "libvterm"
+# GNOME XML library
+brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Next-gen compiler infrastructure
@@ -308,8 +318,6 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Cross-platform application and UI framework
-brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Modern replacement for ps written by Rust
