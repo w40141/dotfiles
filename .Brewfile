@@ -74,8 +74,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # GNU multiple precision arithmetic library
@@ -116,8 +114,6 @@ brew "cmatrix"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# C library implementing the SSH2 protocol
-brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -208,8 +204,6 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Ping, but with a graph
@@ -348,6 +342,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
