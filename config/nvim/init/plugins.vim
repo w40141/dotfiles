@@ -14,7 +14,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
@@ -63,8 +62,13 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 " Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'Yggdroot/indentLine'
-" Plug 'wenlongche/SrcExpl'
 
+Plug 'ntk148v/vim-horizon'
+Plug 'arcticicestudio/nord-vim'
+Plug 'haishanh/night-owl.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'wadackel/vim-dogrun'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
@@ -75,4 +79,9 @@ command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 runtime! plugins/*.vim
 
-colorscheme dracula
+" colorscheme elly
+" colorscheme nord
+" colorscheme dracula
+" colorscheme dogrun
+" colorscheme onedark
+colorscheme night-owl

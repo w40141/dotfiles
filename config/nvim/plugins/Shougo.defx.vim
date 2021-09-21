@@ -71,7 +71,7 @@ function! s:defx_my_settings() abort
 endfunction
 
 call defx#custom#option('_', {
-            \ 'winwidth': 40,
+            \ 'winwidth': 35,
             \ 'split': 'vertical',
             \ 'direction': 'topleft',
             \ 'show_ignored_files': 1,

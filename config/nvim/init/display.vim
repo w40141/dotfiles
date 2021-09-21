@@ -25,6 +25,8 @@ set pumheight=30
 set cursorline
 " コマンドラインでmodeの表示をしない
 set noshowmode
+" ターミナルカラー
+set termguicolors
 " 日本語help
 set helplang=ja
 set background=dark
