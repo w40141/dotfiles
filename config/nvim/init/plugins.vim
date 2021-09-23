@@ -7,13 +7,15 @@ if empty(glob(s:plugvim))
 endif
 
 filetype plugin indent on
-syntax on
 
 call plug#begin('~/.vim/plugged')
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
@@ -38,7 +40,6 @@ Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
-" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
@@ -60,15 +61,7 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
-" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
 Plug 'Yggdroot/indentLine'
-
-Plug 'ntk148v/vim-horizon'
-Plug 'arcticicestudio/nord-vim'
-Plug 'haishanh/night-owl.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'wadackel/vim-dogrun'
-Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
@@ -79,9 +72,14 @@ command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 runtime! plugins/*.vim
 
-" colorscheme elly
-" colorscheme nord
-" colorscheme dracula
-" colorscheme dogrun
-" colorscheme onedark
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+""""" enable the theme
+
+syntax enable
 colorscheme night-owl

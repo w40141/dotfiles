@@ -7,7 +7,7 @@
 UsePlugin 'lightline.vim'
 
 let g:lightline = {
-      \ 'colorscheme': 'PaperColor',
+      \ 'colorscheme': 'nightowl',
       \	'active': {
       \			'left':  [
       \					  ['mode', 'paste', ],
@@ -50,14 +50,6 @@ let g:lightline = {
       \ },
       \	'component_expand': {},
       \ 'component_type': {},
-      \ 'separator'     : {
-      \			'left' : "\ue0b4",
-      \			'right': "\ue0b6",
-      \ }, 
-      \ 'subseparator'  : {
-      \			'left' : "\ue0b5", 
-      \			'right': "\ue0b7",
-      \ }
       \ }
 
 

@@ -24,7 +24,7 @@
 " キーマッピング設定
 
 " ペーストモード
-set pastetoggle=<C-c>
+set pastetoggle=<C-i>
 " <Leader>キーを変更 (default: \)
 let g:mapleader=' '
 let g:maplocalleader=' '

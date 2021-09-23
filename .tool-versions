@@ -11,3 +11,4 @@ java corretto-11.0.12.7.2
 sbt 1.5.5
 elm 0.19.1
 gradle 6.6.1
+stack 2.7.3
