@@ -24,7 +24,8 @@
 " キーマッピング設定
 
 " ペーストモード
-set pastetoggle=<C-i>
+" set pastetoggle=<C-p>
+
 " <Leader>キーを変更 (default: \)
 let g:mapleader=' '
 let g:maplocalleader=' '
@@ -149,7 +150,8 @@ if has('nvim')
 	" terminal mapping
 	" 新しいタブでターミナルを起動
 	nnoremap @T :tabe<CR>:terminal<CR>
-	nnoremap @t :split<CR><C-w>j:terminal<CR>
+	nnoremap @p :split<CR><C-w>j:terminal<CR>
+	nnoremap @v :vsplit<CR><C-w>l:terminal<CR>
 	" Ctrl + q でターミナルを終了
 	tnoremap <C-q> <C-\><C-n>:q<CR>
 	" <C-j>でターミナルモードからノーマルモードへ
