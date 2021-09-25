@@ -469,8 +469,8 @@ cask "google-drive"
 cask "google-japanese-ime"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
-# Java IDE by JetBrains
-cask "intellij-idea"
+# IDE for Java development - community edition
+cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Interface for reading and syncing eBooks
