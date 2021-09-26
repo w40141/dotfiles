@@ -396,8 +396,6 @@ cask "appcleaner"
 cask "atom"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
-# Markdown editor for developers
-cask "boostnote"
 # Web browser focusing on privacy
 cask "brave-browser"
 # GUI app for Homebrew
