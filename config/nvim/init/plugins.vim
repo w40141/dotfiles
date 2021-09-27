@@ -24,7 +24,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kamykn/popup-menu.nvim'
 Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
@@ -35,6 +34,7 @@ Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
@@ -42,7 +42,7 @@ Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -71,15 +71,3 @@ endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 runtime! plugins/*.vim
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
-" For Neovim 0.1.3 and 0.1.4
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-""""" enable the theme
-
-syntax enable
-colorscheme night-owl

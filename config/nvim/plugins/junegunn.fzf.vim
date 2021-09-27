@@ -109,19 +109,21 @@ nnoremap <silent> <C-B> :Buffers<CR>
 
 
 " カーソル位置の単語をファイル検索する
-nnoremap <C-g> vawy:Rg <C-R>"<CR>
+nnoremap <C-g> vawy:RG <C-R>"<CR>
 " 単語検索を開く
 nnoremap <silent> <leader>g :RG<CR>
 " 選択した単語をファイル検索する
-xnoremap <C-F>w y:Rg <C-R>"<CR>
+xnoremap <C-F>w y:RG <C-R>"<CR>
 
-" flで開いているファイルの文字列検索を開く
-nnoremap <C-F>l :BLines<CR>
-" fmでマーク検索を開く
+" <C-F>lでバッファ内の文字列検索を開く
+nnoremap <C-F>l :Lines<CR>
+" <C-F>bで開いているファイルの文字列検索を開く
+nnoremap <C-F>b :BLines<CR>
+" <C-F>mでマーク検索を開く
 nnoremap <C-F>m :Marks<CR>
-" fhでファイル閲覧履歴検索を開く
+" <C-F>hでファイル閲覧履歴検索を開く
 nnoremap <C-F>h :History<CR>
-" fcでコミット履歴検索を開く
+" <C-F>cでコミット履歴検索を開く
 nnoremap <C-F>c :Commits<CR>
 
 " Path completion with custom source command
