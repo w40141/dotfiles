@@ -398,8 +398,6 @@ cask "alfred"
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
-# Text editor
-cask "atom"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web browser focusing on privacy
