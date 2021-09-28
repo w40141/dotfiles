@@ -3,20 +3,6 @@
 
 UsePlugin 'fzf.vim'
 
-" set rtp+=/usr/local/opt/fzf
-" An action can be a reference to a function that processes selected lines
-function! s:build_quickfix_list(lines)
-  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-  copen
-  cc
-endfunction
-
-let g:fzf_action = {
-  \ 'ctrl-q': function('s:build_quickfix_list'),
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
 " fzf settings
 " let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
@@ -41,20 +27,20 @@ let g:fzf_action = {
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors = {
-  \ 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'],
-  \ }
+            \ 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'],
+            \ }
 
 " Enable per-command history
 " - History files will be stored in the specified directory
@@ -65,66 +51,94 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_buffers_jump = 1
 
 augroup vimrc_fzf
-  autocmd!
-  autocmd FileType fzf tnoremap <buffer> <C-q> <Esc>
-  autocmd FileType fzf tnoremap <buffer> <C-p> <UP>
-  autocmd FileType fzf tnoremap <buffer> <C-k> <UP>
-  autocmd FileType fzf tnoremap <buffer> <C-n> <DOWN>
-  autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
-  " autocmd FileType fzf set laststatus=0 noshowmode noruler
-  "      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+    autocmd!
+    autocmd FileType fzf tnoremap <buffer> <C-q> <Esc>
+    autocmd FileType fzf tnoremap <buffer> <C-p> <UP>
+    autocmd FileType fzf tnoremap <buffer> <C-k> <UP>
+    autocmd FileType fzf tnoremap <buffer> <C-n> <DOWN>
+    autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
 augroup END
+
+" An action can be a reference to a function that processes selected lines
+function! s:build_quickfix_list(lines)
+    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+    copen
+    cc
+endfunction
+
+function! s:build_location_list(lines)
+    call setloclist(win_getid(), map(copy(a:lines), '{ "filename": v:val }'))
+    lopen
+    cc
+endfunction
+
+function! s:list_buffers()
+  redir => list
+  silent ls
+  redir END
+  return split(list, "\n")
+endfunction
+
+function! s:delete_buffers(lines)
+  execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
+endfunction
+
+command! BD call fzf#run(fzf#wrap({
+  \ 'source': s:list_buffers(),
+  \ 'sink*': { lines -> s:delete_buffers(lines) },
+  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
+\ }))
 
 " Filesコマンドにもプレビューを出す
 command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+            \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 
 command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 "" fzf.vim
 " git管理されていれば:GFiles、そうでなければ:Filesを実行する
-fun! FzfOmniFiles()
-  let is_git = system('git status')
-  if v:shell_error
-    :Files
-  else
-    :GFiles
-  endif
-endfun
+function! FzfOmniFiles()
+    let is_git = system('git status')
+    if v:shell_error
+        :Files
+    else
+        :GFiles
+    endif
+endfunction
 
 " fzf
 nnoremap <silent> <C-o> :call FzfOmniFiles()<CR>
-nnoremap <silent> <C-f>f :Files<CR>
-nnoremap <silent> <C-f>g :GFiles<CR>
-nnoremap <silent> <C-F>G :GFiles?<CR>
-nnoremap <silent> <C-B> :Buffers<CR>
-
-
+nnoremap <silent> <C-b> :Buffers<CR>
 " カーソル位置の単語をファイル検索する
-nnoremap <C-g> vawy:RG <C-R>"<CR>
+nnoremap <silent> <C-g> vawy:RG<C-r>"<CR>
 " 単語検索を開く
 nnoremap <silent> <leader>g :RG<CR>
-" 選択した単語をファイル検索する
-xnoremap <C-F>w y:RG <C-R>"<CR>
+" バッファ内の文字列検索を開く
+nnoremap <silent> <leader>l :Lines<CR>
 
-" <C-F>lでバッファ内の文字列検索を開く
-nnoremap <C-F>l :Lines<CR>
+nnoremap <silent> <C-f>f :Files<CR>
+nnoremap <silent> <C-f>g :GFiles<CR>
+nnoremap <silent> <C-f>G :GFiles?<CR>
+" 選択した単語をファイル検索する
+xnoremap <C-f>w y:RG <C-r>"<CR>
 " <C-F>bで開いているファイルの文字列検索を開く
-nnoremap <C-F>b :BLines<CR>
+nnoremap <C-f>b :BLines<CR>
 " <C-F>mでマーク検索を開く
-nnoremap <C-F>m :Marks<CR>
+nnoremap <C-f>m :Marks<CR>
 " <C-F>hでファイル閲覧履歴検索を開く
-nnoremap <C-F>h :History<CR>
+nnoremap <C-f>h :History<CR>
 " <C-F>cでコミット履歴検索を開く
-nnoremap <C-F>c :Commits<CR>
+nnoremap <C-f>c :Commits<CR>
+" <C-F>dでバッファ内のファイルを消す
+nnoremap <C-f>d :BD<CR>
 
 " Path completion with custom source command
 inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
