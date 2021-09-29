@@ -13,14 +13,7 @@
   "suggest.enablePreview": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "suggest.noselect": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "javascript",
-    "typescript",
-    "json",
-    "javascriptreact"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json"],
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.linting.flake8Enabled": true,
@@ -38,10 +31,12 @@
   ],
   "java.format.enable": true,
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  /* "java.format.settings.profile": "GoogleStyle", */
   "java.saveActions.organizeImports": false,
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
   "tsserver.enableJavascript": false,
+  "workspace.workspaceFolderCheckCwd": false,
+  "elixirLS.mixEnv": "dev",
+  "elixirLS.mixTarget": "test",
   "eslint.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
   "eslint.autoFixOnSave": true,
@@ -91,8 +86,6 @@
     "efm": {
       "command": "efm-langserver",
       "args": [],
-      // custom config path
-      // "args": ["-c", "/path/to/your/config.yaml"],
       "filetypes": ["vim", "eruby", "markdown", "yaml"]
     },
     "flow": {
