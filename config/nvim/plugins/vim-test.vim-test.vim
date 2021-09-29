@@ -10,3 +10,11 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
+let g:test#strategy = 'neoterm'
+let g:test#preserve_screen = 1
+let g:test#python#runner = 'pytest'
+let g:test#java#runner = 'gradletest'
+let g:test#go#runner = 'ginkgo'
+" Runners available are 'gotest', 'ginkgo', 'richgo', 'delve'
+
+

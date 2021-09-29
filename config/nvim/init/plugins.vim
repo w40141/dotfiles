@@ -9,8 +9,7 @@ endif
 filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
-" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-" Plug 'vim-test/vim-test' | Plug 'kassio/neoterm'
+" Plug 'sheerun/vim-polyglot'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim'
@@ -28,6 +27,7 @@ Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
+Plug 'kassio/neoterm'
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 Plug 'LeafCage/yankround.vim'
@@ -40,9 +40,9 @@ Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
+Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons'
-" Plug 'sheerun/vim-polyglot'
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
@@ -61,6 +61,7 @@ Plug 'tyru/caw.vim'
 Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
+Plug 'vim-test/vim-test'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
