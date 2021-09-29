@@ -158,8 +158,6 @@ if has('nvim')
 	tnoremap <C-j> <C-\><C-n>
 	" ターミナルモードでのタブ移動
 	tnoremap <C-l> <C-\><C-n>gt
-    tnoremap <C-h> <C-\><C-n>gT
-    tnoremap <silent> <ESC> <C-\><C-n><C-w>
     nnoremap <silent> <C-e> V:TREPLSendLine<cr>j^
     vnoremap <silent> <C-e> V:TREPLSendSelection<cr>'>j^
 endif
