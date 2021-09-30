@@ -4,8 +4,8 @@ ruby 2.7.4
 nodejs 16.9.1
 yarn 1.22.11
 golang 1.17.1
-elixir 1.12.2-otp-24
-erlang 24.0.3
+elixir 1.11.4-otp-23
+erlang 23.3.3
 dart 2.12.1
 java corretto-11.0.12.7.2
 sbt 1.5.5

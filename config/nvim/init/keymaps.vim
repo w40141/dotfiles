@@ -75,8 +75,8 @@ nnoremap  <ESC><ESC> :<C-u>nohlsearch<CR>
 " vを二回で行末まで選択
 vnoremap v $h
 " tabにて対応ペアにジャンプ
-nnoremap <tab> %
-vnoremap <tab> %
+nnoremap <TAB> %
+vnoremap <TAB> %
 " カッコ
 " inoremap << <><Left>
 " 補助系
@@ -106,8 +106,8 @@ nnoremap ,? :!open dict://<cword><CR>
 
 " ウィンドウ
 " ウィンドウを分割
-nnoremap sp :<C-u>sp<CR>
-nnoremap sv :<C-u>vs<CR>
+nnoremap <silent> sp :<C-u>sp<CR>
+nnoremap <silent> sv :<C-u>vs<CR>
 " 分割したウィンドウ間を移動
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
@@ -121,7 +121,7 @@ nnoremap ss :<C-u>w<CR>
 
 " タブ
 " 新規タブ
-nnoremap st :<C-u>tabnew<CR>
+nnoremap <silent> st :<C-u>tabnew<CR>
 " 次のタブに切り替え
 nnoremap <C-l> gt
 " 前のタブに切り替え
@@ -131,36 +131,22 @@ nnoremap <C-h> gT
 " バッファを閉じる
 nnoremap bq :<C-u>bd<CR>
 " バッファリストの1つ前のバッファを開く
-nnoremap <silent>bp :bprevious<CR>
+nnoremap <silent> bp :bprevious<CR>
 " バッファリストの次のバッファを開く
-nnoremap <silent>bn :bnext<CR>
+nnoremap <silent> bn :bnext<CR>
 " 直前のバッファを開く
-nnoremap <silent>bb :b#<CR>
+nnoremap <silent> bb :b#<CR>
 " バッファリストの先頭を開く
-nnoremap <silent>bf :bf<CR>
+nnoremap <silent> bf :bf<CR>
 " バッファリストの最後を開く
-nnoremap <silent>bl :bl<CR>
+nnoremap <silent> bl :bl<CR>
 " 変更中の次のバッファへ移動
-nnoremap <silent>bm :bm<CR>
+nnoremap <silent> bm :bm<CR>
 " カレントのバッファを閉じてバッファリストから削除
-nnoremap <silent>bd :bdelete<CR>
+nnoremap <silent> bd :bdelete<CR>
 
-" neovim terminal mapping
-if has('nvim')
-	" terminal mapping
-	" 新しいタブでターミナルを起動
-	nnoremap @T :tabe<CR>:terminal<CR>
-	nnoremap @p :split<CR><C-w>j:terminal<CR>
-	nnoremap @v :vsplit<CR><C-w>l:terminal<CR>
-	" Ctrl + q でターミナルを終了
-	tnoremap <C-q> <C-\><C-n>:q<CR>
-	" <C-j>でターミナルモードからノーマルモードへ
-	tnoremap <C-j> <C-\><C-n>
-	" ターミナルモードでのタブ移動
-	tnoremap <C-l> <C-\><C-n>gt
-    nnoremap <silent> <C-e> V:TREPLSendLine<cr>j^
-    vnoremap <silent> <C-e> V:TREPLSendSelection<cr>'>j^
-endif
+
+nnoremap <silent> <leader><leader> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
 
 " その他
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
