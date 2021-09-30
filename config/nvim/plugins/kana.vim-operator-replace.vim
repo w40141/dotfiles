@@ -3,4 +3,4 @@
 "
 UsePlugin 'vim-operator-replace'
 
-map _ <Plug>(operator-replace)
+map _ <plug>(operator-replace)

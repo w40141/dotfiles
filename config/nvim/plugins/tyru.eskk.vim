@@ -28,8 +28,8 @@ augroup vimrc_eskk
   "markdownは日本語を打つ前提
   autocmd InsertEnter * call s:markdown_eskk()
   autocmd InsertEnter *.md if g:toggle_markdown_eskk | call eskk#enable() | endif
-  autocmd Filetype markdown nnoremap <buffer><silent> <F1> :call <SID>markdown_eskk_toggle()<CR>
-  autocmd User eskk-enable-post lmap <buffer> l <Plug>(eskk:disable)
+  autocmd Filetype markdown nnoremap <buffer> <silent> <F1> :call <SID>markdown_eskk_toggle()<CR>
+  autocmd User eskk-enable-post lmap <buffer> l <plug>(eskk:disable)
 augroup END
 
 let g:toggle_markdown_eskk = 1
@@ -43,7 +43,7 @@ augroup vimrc_eskk
   autocmd!
 augroup END
 
-imap jk <Plug>(eskk:toggle)
-cmap jk <Plug>(eskk:toggle)
+imap jk <plug>(eskk:toggle)
+cmap jk <plug>(eskk:toggle)
 
-inoremap <silent><expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()
+inoremap <silent> <expr> ;; pumvisible() ? coc#_select_confirm() : coc#refresh()

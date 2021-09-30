@@ -30,14 +30,12 @@ endfunction
 nnoremap <silent> <C-t><C-t> :Ttoggle<CR>
 tnoremap <silent> <C-t><C-t> <C-\><C-n>:Ttoggle<CR>
 
-nnoremap <silent> <c-t><c-h> :call NTermHolizontalSplit()<CR>
-nnoremap <silent> <c-t><c-v> :call NTermVerticalSplit()<CR>
+nnoremap <silent> <C-t><C-h> :call NTermHolizontalSplit()<CR>
+nnoremap <silent> <C-t><C-v> :call NTermVerticalSplit()<CR>
 
 " terminal mapping
 " 新しいタブでターミナルを起動
 nnoremap @T :tabe<CR>:terminal<CR>
-nnoremap @p :split<CR><C-w>j:terminal<CR>
-nnoremap @v :vsplit<CR><C-w>l:terminal<CR>
 " Ctrl + q でターミナルを終了
 tnoremap <C-q> <C-\><C-n>:q<CR>
 " <C-j>でターミナルモードからノーマルモードへ

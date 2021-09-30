@@ -128,17 +128,17 @@ nnoremap <silent> <C-f>f :Files <CR>
 nnoremap <silent> <C-f>g :GFiles <CR>
 nnoremap <silent> <C-f>G :GFiles? <CR>
 " 選択した単語をファイル検索する
-xnoremap <C-f>w y:RG <C-r>"<CR>
+xnoremap <silent> <C-f>w y:RG <C-r>"<CR>
 " <C-F>bで開いているファイルの文字列検索を開く
-nnoremap <C-f>b :BLines <CR>
+nnoremap <silent> <C-f>b :BLines <CR>
 " <C-F>mでマーク検索を開く
-nnoremap <C-f>m :Marks <CR>
+nnoremap <silent> <C-f>m :Marks <CR>
 " <C-F>hでファイル閲覧履歴検索を開く
-nnoremap <C-f>h :History <CR>
+nnoremap <silent> <C-f>h :History <CR>
 " <C-F>cでコミット履歴検索を開く
-nnoremap <C-f>c :Commits <CR>
+nnoremap <silent> <C-f>c :Commits <CR>
 " <C-F>dでバッファ内のファイルを消す
-nnoremap <C-f>d :BD <CR>
+nnoremap <silent> <C-f>d :BD <CR>
 
 " Path completion with custom source command
 inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
@@ -151,5 +151,3 @@ imap <c-x><c-w> <plug>(fzf-complete-word)
 imap <c-x><c-p> <plug>(fzf-complete-path)
 imap <c-x><c-j> <plug>(fzf-complete-file-ag)
 imap <c-x><c-l> <plug>(fzf-complete-line)
-
-nnoremap <silent><C-F>t :<C-u>call<C-F>zf#vim#tags(expand('<cword>'))<CR>

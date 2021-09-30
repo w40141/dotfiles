@@ -20,13 +20,14 @@
 " map は再帰的に定義する。
 " 詳しくは→ http://cocopon.me/blog/?p=3871
 " 確認する場合:map
+" <C-lower>, <TAB>, <leader>
 
 " キーマッピング設定
 
 " ペーストモード
 " set pastetoggle=<C-p>
 
-" <Leader>キーを変更 (default: \)
+" <leader>キーを変更 (default: \)
 let g:mapleader=' '
 let g:maplocalleader=' '
 " 移動系
@@ -42,11 +43,11 @@ nnoremap gk k
 nnoremap zl zL
 nnoremap zh zH
 ""挿入モードでの移動
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
-inoremap <C-d> <delete>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
+inoremap <C-f> <RIGHT>
+inoremap <C-b> <LEFT>
+inoremap <C-d> <DELETE>
+inoremap <C-a> <HOME>
+inoremap <C-e> <END>
 inoremap <silent> jj <ESC>:<C-u>w<CR>
 " 編集系
 " ;と:を入れ替
@@ -58,7 +59,7 @@ noremap : ;
 " noremap ,m %
 " nnoremap ,/ *
 " ノーマルモードでも改行可能
-noremap <CR> i<CR><esc>
+noremap <CR> i<CR><ESC>
 " 保存
 nnoremap ,w :w<CR>
 " ビジュアルラインモード
@@ -81,7 +82,7 @@ vnoremap <TAB> %
 " inoremap << <><Left>
 " 補助系
 " ctrl-v で insert/command モードで貼り付け
-inoremap <C-v> <esc>"*pa
+inoremap <C-v> <eSC>"*pa
 cnoremap <C-v> <C-r>+
 " insert モードで保存
 " inoremap <C-s> <Esc>:w<CR>i
@@ -116,8 +117,8 @@ nnoremap sh <C-w>h
 " ウィンドウを閉じる
 nnoremap sc <C-w>c
 nnoremap so <C-w>o
-nnoremap sq :<C-u>q<CR>
-nnoremap ss :<C-u>w<CR>
+nnoremap <silent> sq :<C-u>q<CR>
+nnoremap <silent> ss :<C-u>w<CR>
 
 " タブ
 " 新規タブ
@@ -146,8 +147,6 @@ nnoremap <silent> bm :bm<CR>
 nnoremap <silent> bd :bdelete<CR>
 
 
-nnoremap <silent> <leader><leader> :let @/ = '\<' . expand('<cword>') . '\>'<CR>:set hlsearch<CR>
-
 " その他
 " バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
@@ -168,14 +167,14 @@ endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
 
 " 保存して閉じる、保存せずに閉じるを無効
-nnoremap ZZ <nop>
-nnoremap ZQ <nop>
+nnoremap ZZ <NOP>
+nnoremap ZQ <NOP>
 " 矢印キー無効
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+noremap <UP> <NOP>
+noremap <DOWN> <NOP>
+noremap <LEFT> <NOP>
+noremap <RIGHT> <NOP>
+inoremap <UP> <NOP>
+inoremap <DOWN> <NOP>
+inoremap <LEFT> <NOP>
+inoremap <RIGHT> <NOP>

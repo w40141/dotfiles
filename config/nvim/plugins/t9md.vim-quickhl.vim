@@ -3,7 +3,7 @@
 
 UsePlugin 'vim-quickhl'
 
-nmap <Leader>m <Plug>(quickhl-manual-this)
-xmap <Leader>m <Plug>(quickhl-manual-this)
-nmap <Leader>M <Plug>(quickhl-manual-reset)
-xmap <Leader>M <Plug>(quickhl-manual-reset)
+nmap <leader>m <plug>(quickhl-manual-this)
+xmap <leader>m <plug>(quickhl-manual-this)
+nmap <leader>M <plug>(quickhl-manual-reset)
+xmap <leader>M <plug>(quickhl-manual-reset)
