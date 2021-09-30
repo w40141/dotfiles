@@ -61,7 +61,7 @@ noremap : ;
 " ノーマルモードでも改行可能
 noremap <CR> i<CR><ESC>
 " 保存
-nnoremap ,w :w<CR>
+nnoremap <silent> ,w :w<CR>
 " ビジュアルラインモード
 " nmap ,, V
 " 検索後にジャンプした際に検索単語を画面中央に持ってくる
@@ -72,7 +72,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 " 検索結果のハイライトをC-h連打でクリアする
-nnoremap  <ESC><ESC> :<C-u>nohlsearch<CR>
+nnoremap  <silent> <ESC><ESC> :<C-u>nohlsearch<CR>
 " vを二回で行末まで選択
 vnoremap v $h
 " tabにて対応ペアにジャンプ
