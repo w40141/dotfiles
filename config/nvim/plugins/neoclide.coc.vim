@@ -126,10 +126,7 @@ omap ac <plug>(coc-classobj-a)
 nmap <silent> <Leader>d <plug>(coc-range-select)
 xmap <silent> <Leader>d <plug>(coc-range-select)
 
-" nnoremap <silent> <Leader>f :<C-U>Format<CR>
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
+nnoremap <silent> <Leader>f :<C-U>Format<CR>
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
