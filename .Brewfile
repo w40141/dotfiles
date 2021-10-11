@@ -80,8 +80,6 @@ brew "pixman"
 brew "cairo"
 # C string library for manipulating Unicode strings
 brew "libunistring"
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
 # Asynchronous event library
 brew "libevent"
 # International domain name library (IDNA2008, Punycode and TR46)
@@ -94,6 +92,8 @@ brew "nettle"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Implementation of malloc emphasizing fragmentation avoidance
+brew "jemalloc"
 # GNU Emacs text editor
 brew "emacs", restart_service: true
 # Emacs dependency management
@@ -417,6 +417,8 @@ cask "discord"
 cask "docker"
 # Draw.io is free online diagram software
 cask "drawio"
+# Collaborative team software
+cask "figma"
 # Web browser
 cask "firefox"
 # Build apps and clock faces for Fitbit
