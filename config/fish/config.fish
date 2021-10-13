@@ -23,9 +23,14 @@ end
 
 # for grep
 if command -s rg > /dev/null
-  abbr -a grep 'rg --color'
+  abbr -a grep 'rg'
 else
   abbr -a grep 'grep --color'
+end
+
+# for find
+if command -s fd > /dev/null
+    abbr -a find 'fd'
 end
 
 abbr -a cx 'chmod +x'
