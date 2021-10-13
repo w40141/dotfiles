@@ -2,7 +2,6 @@ tap "argon/mas"
 tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
-tap "clementtsang/bottom"
 tap "delphinus/sfmono-square"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -386,8 +385,6 @@ brew "xvid"
 brew "z"
 # High-performance, asynchronous messaging library
 brew "zeromq"
-# A cross-platform graphical process/system monitor with a customizable interface and a multitude of features.
-brew "clementtsang/bottom/bottom"
 # Maintained ctags implementation
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # A high performance csv viewer with cjk/emoji support.
