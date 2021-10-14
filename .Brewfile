@@ -79,6 +79,8 @@ brew "pixman"
 brew "cairo"
 # C string library for manipulating Unicode strings
 brew "libunistring"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
 # Asynchronous event library
 brew "libevent"
 # International domain name library (IDNA2008, Punycode and TR46)
