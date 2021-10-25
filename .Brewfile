@@ -17,6 +17,12 @@ tap "universal-ctags/universal-ctags"
 tap "wfxr/csview"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
+# Library and utilities for processing GIFs
+brew "giflib"
+# Library for manipulating PNG images
+brew "libpng"
+# Image format providing lossless and lossy compression for web images
+brew "webp"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -65,8 +71,6 @@ brew "icu4c"
 brew "boost"
 # New way to see and navigate directory trees
 brew "broot"
-# Library for manipulating PNG images
-brew "libpng"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
@@ -122,7 +126,7 @@ brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
 # Programmatically minimize files to isolate features of interest
-brew "delta"
+brew "delta", link: false
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Command-line DNS client
@@ -165,8 +169,6 @@ brew "isl"
 brew "libmpc"
 # GNU compiler collection
 brew "gcc"
-# Image format providing lossless and lossy compression for web images
-brew "webp"
 # Graphics library to dynamically manipulate images
 brew "gd"
 # Toolkit for image loading and pixel buffer manipulation
@@ -185,10 +187,10 @@ brew "ghostscript"
 brew "ghq"
 # Access GitHub's .gitignore boilerplates
 brew "gibo"
-# Library and utilities for processing GIFs
-brew "giflib"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
 # Common error values for all GnuPG components
