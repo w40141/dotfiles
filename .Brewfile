@@ -127,8 +127,6 @@ brew "rtmpdump"
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
-# Programmatically minimize files to isolate features of interest
-brew "delta", link: false
 # Pack, ship and run any application as a lightweight container
 brew "docker"
 # Command-line DNS client
