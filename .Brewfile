@@ -79,12 +79,12 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # C string library for manipulating Unicode strings
 brew "libunistring"
+# GNU Ubiquitous Intelligent Language for Extensions
+brew "guile"
 # Asynchronous event library
 brew "libevent"
 # International domain name library (IDNA2008, Punycode and TR46)
@@ -119,8 +119,6 @@ brew "cmatrix"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# C library implementing the SSH2 protocol
-brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -284,7 +282,7 @@ brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
-brew "luajit"
+brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
 # Library for a binary-based efficient data interchange format
@@ -294,7 +292,7 @@ brew "mysql", restart_service: true
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
 # Platform-neutral API for system-level and libc-like functions
@@ -347,6 +345,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Open video compression format
 brew "theora"
 # Simplified and community-driven man pages
