@@ -59,19 +59,6 @@ augroup vimrc_fzf
     autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
 augroup END
 
-" An action can be a reference to a function that processes selected lines
-function! s:build_quickfix_list(lines)
-    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-    copen
-    cc
-endfunction
-
-function! s:build_location_list(lines)
-    call setloclist(win_getid(), map(copy(a:lines), '{ "filename": v:val }'))
-    lopen
-    cc
-endfunction
-
 function! s:list_buffers()
   redir => list
   silent ls
