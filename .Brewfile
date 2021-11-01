@@ -101,8 +101,6 @@ brew "llvm"
 brew "ccls"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
-# Generate code for scanning Z-polyhedra
-brew "cloog"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
