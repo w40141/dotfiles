@@ -73,14 +73,14 @@ brew "bingrep"
 brew "icu4c"
 # Collection of portable C++ source libraries
 brew "boost"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # New way to see and navigate directory trees
 brew "broot"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
-# Manage compile and link flags for libraries
-brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
 # Vector graphics library with cross-device output support
