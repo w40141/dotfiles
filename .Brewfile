@@ -113,6 +113,8 @@ brew "llvm"
 brew "ccls"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
+# Enables you to reproduce the CircleCI environment locally
+brew "circleci"
 # Cross-platform make
 brew "cmake"
 # Console Matrix
