@@ -14,6 +14,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -43,6 +44,7 @@ Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons'
+Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }

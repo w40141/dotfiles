@@ -7,7 +7,7 @@
     "coc-fish": ">=1.0.11",
     "coc-git": ">=2.4.3",
     "coc-gitignore": ">=0.0.4",
-    "coc-go": ">=0.13.3",
+    "coc-go": ">=1.0.0",
     "coc-highlight": ">=1.2.8",
     "coc-html": ">=1.4.1",
     "coc-java": ">=1.5.4",
