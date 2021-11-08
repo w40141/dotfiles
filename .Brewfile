@@ -410,8 +410,6 @@ cask "cakebrew"
 # Clipboard extension app
 cask "clipy"
 cask "color-oracle"
-# OpenJDK distribution from Amazon
-cask "corretto11"
 # API documentation browser and code snippet manager
 cask "dash"
 # Voice and text chat software

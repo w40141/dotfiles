@@ -20,6 +20,10 @@ Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" TODO Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+" TODO Plug 'machakann/vim-sandwich'
+" TODO Plug 'lambdalisue/gina.vim'
+" TODO Plug 'thinca/vim-qfreplace'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim'
