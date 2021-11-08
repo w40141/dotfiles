@@ -410,6 +410,8 @@ cask "cakebrew"
 # Clipboard extension app
 cask "clipy"
 cask "color-oracle"
+# OpenJDK distribution from Amazon
+cask "corretto11"
 # API documentation browser and code snippet manager
 cask "dash"
 # Voice and text chat software
@@ -491,8 +493,6 @@ cask "notion"
 cask "openinterminal"
 # Collaboration platform for API development
 cask "postman"
-# MySQL/MariaDB database management
-cask "sequel-ace"
 # PDF reader and note-taking application
 cask "skim"
 # Video chat, voice call and instant messaging application

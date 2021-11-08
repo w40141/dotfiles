@@ -25,7 +25,7 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-11",
-      "path": "~/.asdf/installs/java/corretto-11.0.12.7.2",
+      "path": "$JAVA_HOME",
       "default": true
     }
   ],
