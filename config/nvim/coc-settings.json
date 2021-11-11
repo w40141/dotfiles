@@ -25,12 +25,12 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-11",
-      "path": "$JAVA_HOME",
+      "path": "~/.asdf/installs/java/corretto-11.0.13.8.1",
       "default": true
     }
   ],
   "java.format.enable": true,
-  "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.profile": "google-java-format",
   "java.saveActions.organizeImports": false,
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
   "tsserver.enableJavascript": false,
