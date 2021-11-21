@@ -14,7 +14,7 @@ set nostartofline
 " コマンドライン履歴保存
 set history=10000
 " vimのコマンドライン補完
-" set wildmenu
+set wildmenu
 " vimのコマンドライン
 " set wildmode=list:longest,full
 set wildmode=longest:full,full

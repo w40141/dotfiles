@@ -52,6 +52,7 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'simeji/winresizer'
 Plug 'skanehira/translate.vim'
 Plug 't9md/vim-quickhl'
 Plug 'terryma/vim-expand-region'

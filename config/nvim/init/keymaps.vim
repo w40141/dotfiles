@@ -45,7 +45,6 @@ nnoremap zh zH
 ""挿入モードでの移動
 inoremap <C-f> <RIGHT>
 inoremap <C-b> <LEFT>
-inoremap <C-d> <DELETE>
 inoremap <C-a> <HOME>
 inoremap <C-e> <END>
 inoremap <silent> jj <ESC>:<C-u>w<CR>
@@ -178,3 +177,18 @@ inoremap <UP> <NOP>
 inoremap <DOWN> <NOP>
 inoremap <LEFT> <NOP>
 inoremap <RIGHT> <NOP>
+
+" オペレーター待機モードのマッピング
+onoremap 2 i"
+onoremap 7 i'
+onoremap 8 i(
+onoremap @ i`
+onoremap [ i[
+onoremap { i{
+
+onoremap a2 a"
+onoremap a7 a'
+onoremap a8 a(
+onoremap a@ a`
+onoremap a[ a[
+onoremap a{ a{
