@@ -8,14 +8,15 @@ let &runtimepath.=',~/.vim/bundle/neoterm'
 
 filetype plugin on
 
-let g:neoterm_default_mod='belowright'
-let g:neoterm_size=10
+let g:neoterm_default_mod='vertical'
+let g:neoterm_size=50
+let g:neoterm_autoinsert = 1
 let g:neoterm_autoscroll=1
 let g:neoterm_shell = '$SHELL -l'
 
 function! NTermHolizontalSplit()
     let l:tmp = g:neoterm_default_mod
-    let g:neoterm_default_mod = "aboveleft"
+    let g:neoterm_default_mod = "belowright"
     Tnew
     let g:neoterm_default_mod = l:tmp
 endfunction
