@@ -189,8 +189,8 @@ set -g theme_display_git_ahead_verbose yes
 set -g theme_display_cmd_duration no
 set -g theme_display_vagrant yes
 set -g theme_display_docker_machine yes
-set -g theme_display_k8s_context yes
-set -g theme_display_k8s_namespace no
+set -g theme_display_k8s_context no
+set -g theme_display_k8s_namespace yes
 set -g theme_display_hg no
 set -g theme_display_nix no
 set -g theme_display_ruby no
