@@ -16,7 +16,7 @@ let g:coc_global_extensions = [
      \, 'coc-omni'
      \, 'coc-pairs'
      \, 'coc-pyright'
-     \, 'coc-rls'
+     \, 'coc-rust-analyzer'
      \, 'coc-snippets'
      \, 'coc-texlab'
      \, 'coc-tsserver'
