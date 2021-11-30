@@ -81,29 +81,21 @@ nmap <silent> gr <plug>(coc-references)
 nmap <silent> gn <plug>(coc-rename)
 
 " Use H to show documentation in preview window
-" nmap <silent> H :call <SID>show_documentation()<CR>
-" 
-" function! s:show_documentation()
-"   if (index(['vim','help'], &filetype) >= 0)
-"     execute 'h '.expand('<cword>')
-"   else
-"     call CocAction('doHover')
-"   endif
-" endfunction
 nnoremap <silent> H :call CocAction('doHover')<CR>
 
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
-
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
+" カーソルを動かさないとHover
+" function! ShowDocIfNoDiagnostic(timer_id)
+"   if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
+"     silent call CocActionAsync('doHover')
+"   endif
+" endfunction
+"
+" function! s:show_hover_doc()
+"   call timer_start(1000, 'ShowDocIfNoDiagnostic')
+" endfunction
+" 
+" autocmd CursorHoldI * :call <SID>show_hover_doc()
+" autocmd CursorHold * :call <SID>show_hover_doc()
 
 " Remap for format selected region
 xmap <leader>fs  <plug>(coc-format-selected)

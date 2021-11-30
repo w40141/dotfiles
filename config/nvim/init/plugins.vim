@@ -30,26 +30,24 @@ Plug 'junegunn/vim-easy-align'
 Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
-Plug 'kana/vim-textobj-user', { 'on': [] }
+Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
 Plug 'kevinhwang91/nvim-hlslens'
-Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-git', { 'on': [] }
 Plug 'kristijanhusak/defx-icons', { 'on': [] }
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
-Plug 'mechatroner/rainbow_csv'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate'}
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
-Plug 'osyo-manga/vim-textobj-blockwise', { 'on': [] }
-Plug 'osyo-manga/vim-textobj-multiblock', { 'on': [] }
+Plug 'osyo-manga/vim-textobj-blockwise'
+Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'ryanoasis/vim-devicons', { 'on': [] }
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
-" TODO
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,7 +57,7 @@ Plug 'skanehira/translate.vim'
 Plug 't9md/vim-quickhl'
 Plug 'terryma/vim-expand-region'
 Plug 'thinca/vim-quickrun'
-Plug 'thinca/vim-textobj-between', { 'on': [] }
+Plug 'thinca/vim-textobj-between'
 Plug 'tpope/vim-fugitive', { 'on': [] }
 Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
 Plug 'tpope/vim-surround', { 'on': [] }
@@ -80,28 +78,26 @@ augroup load_us_insert
     autocmd InsertEnter * call plug#load(
                 \ 'lexima.vim',
                 \ 'eskk.vim',
-                \ 'vim-surround'
                 \ )| autocmd! load_us_insert
 augroup END
 
 " Load Event
 function! s:load_plug(timer)
     call plug#load(
-                \ 'vim-test',
+                \ 'vim-gitgutter',
+                \ 'fzf',
+                \ 'fzf.vim',
+                \ 'neoterm',
+                \ 'defx-git',
+                \ 'defx-icons',
+                \ 'vim-precious',
+                \ 'vim-devicons',
+                \ 'vim-unimpaired',
+                \ 'vim-fugitive',
+                \ 'vim-surround',
                 \ 'vim-unimpaired',
                 \ 'caw.vim',
-                \ 'neoterm',
-                \ 'vim-fugitive',
-                \ 'vim-gitgutter',
-                \ 'vim-precious',
-                \ 'vim-textobj-user',
-                \ 'vim-textobj-blockwise',
-                \ 'vim-textobj-multiblock',
-                \ 'vim-textobj-between',
-                \ 'vim-devicons',
-                \ 'defx-icons',
-                \ 'fzf.vim',
-                \ 'fzf',
+                \ 'vim-test',
                 \ )
 endfunction
 
