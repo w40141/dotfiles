@@ -405,6 +405,8 @@ cask "alfred"
 cask "android-studio"
 # Application uninstaller
 cask "appcleaner"
+# Control and Loop-back Mixer
+cask "audient-evo"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Web browser focusing on privacy
@@ -482,6 +484,8 @@ cask "intellij-idea-ce"
 cask "iterm2"
 # Interface for reading and syncing eBooks
 cask "kindle"
+# Kubernetes IDE
+cask "lens"
 # Software for Logitech devices
 cask "logitech-options"
 # Full TeX Live distribution without GUI applications
@@ -530,6 +534,7 @@ mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Levelator", id: 1493326487
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Mathpix Snipping Tool", id: 1349670778
