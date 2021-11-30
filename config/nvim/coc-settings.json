@@ -1,6 +1,10 @@
 {
   "diagnostic.errorSign": "\uF490",
   "diagnostic.warningSign": "\uF4A3",
+  "diagnostic.floatConfig": {
+    "border": true,
+    "highlight": "CocSuggestFloating"
+  },
   "snippets.expands": {
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
@@ -13,6 +17,14 @@
   "suggest.enablePreview": true,
   "suggest.preferCompleteThanJumpPlaceholder": true,
   "suggest.noselect": true,
+  "suggest.floatConfig": {
+    "border": true,
+    "highlight": "CocSuggestFloating"
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "highlight": "CocSuggestFloating"
+  },
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json"],
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
