@@ -2,13 +2,14 @@ let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand
 let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
 if empty(glob(s:plugvim))
-      execute "!sh -c 'curl -fLo " . s:plugvim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
-      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    execute "!sh -c 'curl -fLo " . s:plugvim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-filetype plugin indent on
+" filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
+Plug '4513ECHO/vim-readme-viewer', { 'on': [] }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim', { 'on': [] }
@@ -25,20 +26,21 @@ Plug 'junegunn/fzf', { 'on': [], 'do': { -> fzf#install() } }
 " TODO Plug 'thinca/vim-qfreplace'
 Plug 'junegunn/fzf.vim', { 'on': [] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
+Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses' }
 Plug 'junegunn/vim-easy-align'
+Plug 'kamykn/popup-menu.nvim'
 Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
-Plug 'kevinhwang91/nvim-hlslens'
-Plug 'kristijanhusak/defx-git', { 'on': [] }
-Plug 'kristijanhusak/defx-icons', { 'on': [] }
+" Plug 'kevinhwang91/nvim-hlslens'
+Plug 'kristijanhusak/defx-git'
+Plug 'kristijanhusak/defx-icons'
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'osyo-manga/vim-textobj-blockwise'
@@ -84,12 +86,11 @@ augroup END
 " Load Event
 function! s:load_plug(timer)
     call plug#load(
+                \ 'vim-readme-viewer',
                 \ 'vim-gitgutter',
                 \ 'fzf',
                 \ 'fzf.vim',
                 \ 'neoterm',
-                \ 'defx-git',
-                \ 'defx-icons',
                 \ 'vim-precious',
                 \ 'vim-devicons',
                 \ 'vim-unimpaired',
@@ -102,11 +103,11 @@ function! s:load_plug(timer)
 endfunction
 
 " 500ミリ秒後にプラグインを読み込む
-call timer_start(300, function("s:load_plug"))
+call timer_start(500, function("s:load_plug"))
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
-      return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
