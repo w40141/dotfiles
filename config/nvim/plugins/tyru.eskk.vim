@@ -39,10 +39,6 @@ function! s:markdown_eskk() abort
   endif
 endfunction
 
-augroup vimrc_eskk
-  autocmd!
-augroup END
-
 imap jk <plug>(eskk:toggle)
 cmap jk <plug>(eskk:toggle)
 

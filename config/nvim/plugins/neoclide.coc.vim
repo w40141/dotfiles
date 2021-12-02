@@ -101,7 +101,7 @@ nnoremap <silent> H :call CocAction('doHover')<CR>
 xmap <leader>fs  <plug>(coc-format-selected)
 nmap <leader>fs  <plug>(coc-format-selected)
 
-augroup mygroup
+augroup MyAutoCmd
   autocmd!
   " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
@@ -145,10 +145,10 @@ command! -nargs=? Fold :call CocAction('fold', <f-args>)
 command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
 
 " For golang
-autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
-autocmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
-autocmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
+autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
+autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
+autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
+autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
 
 " Highlight the symbol and its references when holding the cursor.
 " autocmd CursorHold * silent call CocActionAsync('highlight')

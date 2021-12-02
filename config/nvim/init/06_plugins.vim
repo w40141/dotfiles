@@ -3,7 +3,7 @@ let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
 if empty(glob(s:plugvim))
     execute "!sh -c 'curl -fLo " . s:plugvim . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " filetype plugin indent on
@@ -29,7 +29,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses' }
 Plug 'junegunn/vim-easy-align'
 Plug 'kamykn/popup-menu.nvim'
-Plug 'kamykn/spelunker.vim'
+Plug 'kamykn/spelunker.vim', { 'on': [] }
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
@@ -54,11 +54,11 @@ Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'simeji/winresizer'
-Plug 'skanehira/translate.vim'
+Plug 'simeji/winresizer', { 'on': [] }
+Plug 'skanehira/translate.vim', { 'on': [] }
 Plug 't9md/vim-quickhl'
-Plug 'terryma/vim-expand-region'
-Plug 'thinca/vim-quickrun'
+Plug 'terryma/vim-expand-region', { 'on': [] }
+Plug 'thinca/vim-quickrun', { 'on': [] }
 Plug 'thinca/vim-textobj-between'
 Plug 'tpope/vim-fugitive', { 'on': [] }
 Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
@@ -88,12 +88,17 @@ function! s:load_plug(timer)
     call plug#load(
                 \ 'vim-readme-viewer',
                 \ 'vim-gitgutter',
+                \ 'wilder.nvim',
                 \ 'fzf',
                 \ 'fzf.vim',
+                \ 'spelunker.vim',
                 \ 'neoterm',
                 \ 'vim-precious',
                 \ 'vim-devicons',
+                \ 'translate.vim',
+                \ 'vim-expand-region',
                 \ 'vim-unimpaired',
+                \ 'vim-quickrun',
                 \ 'vim-fugitive',
                 \ 'vim-surround',
                 \ 'vim-unimpaired',

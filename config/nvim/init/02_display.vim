@@ -36,4 +36,4 @@ if has('conceal')
 	set concealcursor=c
 endif
 
-autocmd ColorScheme * highlight Visual ctermbg=225
+autocmd MyAutoCmd ColorScheme * highlight Visual ctermbg=225

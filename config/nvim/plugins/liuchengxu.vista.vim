@@ -62,4 +62,4 @@ let g:vista#renderer#icons = {
             \   "function": "\uf794",
             \   "variable": "\uf71b",
             \  }
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+autocmd MyAutoCmd VimEnter * call vista#RunForNearestMethodOrFunction()

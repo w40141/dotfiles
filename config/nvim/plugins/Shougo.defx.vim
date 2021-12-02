@@ -3,7 +3,7 @@
 
 UsePlugin 'defx.nvim'
 
-autocmd FileType defx call s:defx_my_settings()
+autocmd MyAutoCmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
     " Define mappings
     nnoremap <silent> <buffer> <expr> <CR>      defx#do_action('drop')
@@ -50,8 +50,8 @@ call defx#custom#option('_', {
             \ 'columns': 'indent:git:icons:filename:mark',
             \ })
 
-autocmd BufWritePost * call defx#redraw()
-autocmd BufEnter * call defx#redraw()
+autocmd MyAutoCmd BufWritePost * call defx#redraw()
+autocmd MyAutoCmd BufEnter * call defx#redraw()
 
 " autocmd VimEnter * execute 'Defx'
 nnoremap <silent> <C-e> :<C-u>Defx<CR>
