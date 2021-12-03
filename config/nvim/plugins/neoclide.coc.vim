@@ -151,4 +151,4 @@ autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
 autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
 
 " Highlight the symbol and its references when holding the cursor.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
+autocmd CursorHold * silent call CocActionAsync('highlight')
