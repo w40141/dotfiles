@@ -10,7 +10,6 @@ let g:coc_global_extensions = [
      \, 'coc-dictionary'
      \, 'coc-fish'
      \, 'coc-go'
-     \, 'coc-highlight'
      \, 'coc-json'
      \, 'coc-lists'
      \, 'coc-omni'
@@ -93,7 +92,7 @@ nnoremap <silent> H :call CocAction('doHover')<CR>
 " function! s:show_hover_doc()
 "   call timer_start(1000, 'ShowDocIfNoDiagnostic')
 " endfunction
-" 
+"
 " autocmd CursorHoldI * :call <SID>show_hover_doc()
 " autocmd CursorHold * :call <SID>show_hover_doc()
 
@@ -149,6 +148,3 @@ autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.
 autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
 autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
 autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')

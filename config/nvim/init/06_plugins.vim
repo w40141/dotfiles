@@ -9,6 +9,7 @@ endif
 " filetype plugin indent on
 
 call plug#begin('~/.vim/plugged')
+Plug 'lambdalisue/gina.vim'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
@@ -19,10 +20,8 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
-" Plug 'itchyny/vim-cursorword'
+Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/fzf', { 'on': [], 'do': { -> fzf#install() } }
-" TODO Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
-" TODO Plug 'lambdalisue/gina.vim'
 Plug 'junegunn/fzf.vim', { 'on': [] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses' }
@@ -47,8 +46,8 @@ Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
-Plug 'ryanoasis/vim-devicons', { 'on': [] }
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
+Plug 'ryanoasis/vim-devicons', { 'on': [] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -57,6 +56,7 @@ Plug 'simeji/winresizer', { 'on': 'WinResizerStartResize' }
 Plug 'skanehira/translate.vim', { 'on': [] }
 Plug 't9md/vim-quickhl', { 'on': ['<plug>(quickhl-manual-this)', '<plug>(quickhl-manual-reset)'] }
 Plug 'terryma/vim-expand-region', { 'on': '<plug>(expand_region_' }
+Plug 'thinca/vim-qfreplace', { 'on': [] }
 Plug 'thinca/vim-quickrun', { 'on': [] }
 Plug 'thinca/vim-textobj-between'
 Plug 'tpope/vim-fugitive', { 'on': [] }
@@ -67,6 +67,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test', { 'on': [] }
 Plug 'Yggdroot/indentLine'
+" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 call plug#end()
 
 " Load Event
@@ -82,8 +83,6 @@ augroup END
 function! s:load_plug(timer)
     call plug#load(
                 \ 'vim-gitgutter',
-                \ 'fzf',
-                \ 'fzf.vim',
                 \ 'neoterm',
                 \ 'coc.nvim',
                 \ 'vim-precious',
@@ -94,6 +93,10 @@ function! s:load_plug(timer)
                 \ 'vim-quickrun',
                 \ 'vim-fugitive',
                 \ 'vim-test',
+                \ 'fzf',
+                \ 'fzf.vim',
+                \ 'vim-fugitive',
+                \ 'vim-qfreplace',
                 \ )
 endfunction
 

@@ -5,7 +5,7 @@ set list listchars=tab:▸\ ,trail:-,extends:»,precedes:«,eol:↲,nbsp:%
 set number
 " タイトルをウィンドウ枠に表示する
 set title
-" ウィンドウ幅より長い行は折り返して、次の行に続けて表示する
+" ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 set wrap
 " 新しい行のインデントを現在行と同じにする
 set smartindent
@@ -26,7 +26,7 @@ set cursorline
 " コマンドラインでmodeの表示をしない
 set noshowmode
 " ターミナルカラー
-set termguicolors
+" set termguicolors
 " 日本語help
 set helplang=ja
 set background=dark
