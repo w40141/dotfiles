@@ -4,21 +4,21 @@
 UsePlugin 'fzf.vim'
 
 " fzf settings
-" let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
 " Default fzf layout
 " - Popup window (center of the screen)
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-" 
+"
 " " - Popup window (center of the current window)
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true } }
-" 
+"
 " " - Popup window (anchored to the bottom of the current window)
 " let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
-" 
+"
 " " - down / up / left / right
 " let g:fzf_layout = { 'down': '40%' }
-" 
+"
 " " - Window using a Vim command
 " let g:fzf_layout = { 'window': 'enew' }
 " let g:fzf_layout = { 'window': '-tabnew' }
@@ -27,20 +27,20 @@ UsePlugin 'fzf.vim'
 " Customize fzf colors to match your color scheme
 " - fzf#wrap translates this to a set of `--color` options
 let g:fzf_colors = {
-            \ 'fg':      ['fg', 'Normal'],
-            \ 'bg':      ['bg', 'Normal'],
-            \ 'hl':      ['fg', 'Comment'],
-            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-            \ 'hl+':     ['fg', 'Statement'],
-            \ 'info':    ['fg', 'PreProc'],
-            \ 'border':  ['fg', 'Ignore'],
-            \ 'prompt':  ['fg', 'Conditional'],
-            \ 'pointer': ['fg', 'Exception'],
-            \ 'marker':  ['fg', 'Keyword'],
-            \ 'spinner': ['fg', 'Label'],
-            \ 'header':  ['fg', 'Comment'],
-            \ }
+  \ 'fg':         ['fg', 'Normal'],
+  \ 'bg':         ['bg', 'Normal'],
+  \ 'preview-bg': ['bg', 'NormalFloat'],
+  \ 'hl':         ['fg', 'Comment'],
+  \ 'fg+':        ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':        ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':        ['fg', 'Statement'],
+  \ 'info':       ['fg', 'PreProc'],
+  \ 'border':     ['fg', 'Ignore'],
+  \ 'prompt':     ['fg', 'Conditional'],
+  \ 'pointer':    ['fg', 'Exception'],
+  \ 'marker':     ['fg', 'Keyword'],
+  \ 'spinner':    ['fg', 'Label'],
+  \ 'header':     ['fg', 'Comment'] }
 
 " Enable per-command history
 " - History files will be stored in the specified directory
@@ -54,9 +54,7 @@ augroup vimrc_fzf
     autocmd!
     autocmd FileType fzf tnoremap <buffer> <C-q> <Esc>
     autocmd FileType fzf tnoremap <buffer> <C-p> <UP>
-    autocmd FileType fzf tnoremap <buffer> <C-k> <UP>
     autocmd FileType fzf tnoremap <buffer> <C-n> <DOWN>
-    autocmd FileType fzf tnoremap <buffer> <C-j> <DOWN>
 augroup END
 
 function! s:list_buffers()
@@ -66,6 +64,12 @@ function! s:list_buffers()
   return split(list, "\n")
 endfunction
 
+" fzf settings
+let $FZF_DEFAULT_OPTS="--layout=reverse"
+let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
+
+let mapleader = "\<Space>"
 function! s:delete_buffers(lines)
   execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
 endfunction

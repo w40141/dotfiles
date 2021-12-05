@@ -11,13 +11,13 @@ let g:lightline = {
       \	'active': {
       \			'left':  [
       \					  ['mode', 'paste', ],
-      \					  ['filename', 'fugitive', 'gitgutter', ],
-      \                   ['vista', 'anzu', ],
+      \					  ['filename', 'branch', 'status', ],
+      \                   ['tags', 'search', ],
       \			],
       \			'right': [
-      \					  ['percent', 'lineinfo'], 
-      \					  ['filetype', ], 
-      \					  ['eskk', 'coc', ], 
+      \					  ['percent', 'lineinfo'],
+      \					  ['filetype', ],
+      \					  ['eskk', 'coc', ],
       \			],
       \ },
       \	'inactive': {
@@ -28,25 +28,25 @@ let g:lightline = {
       \                   [],
       \                   ['charcode', 'fileformat', 'fileencoding'],
       \         ],
-      \	}, 
+      \	},
       \	'component': {
       \			'lineinfo': '%3l[%L]:%-2v'
       \	},
       \ 'component_function': {
-      \		'mode'        : 'MyMode', 
-      \   	'fugitive'    : 'MyFugitive', 
-      \   	'gitgutter'   : 'MyGitGutter', 
-      \   	'filename'    : 'MyFilename', 
-      \		'modified'	  : 'MyModified', 
-      \   	'readonly'    : 'MyReadonly', 
-      \   	'anzu'        : 'anzu#search_status',
-      \		'charcode'	  : 'MyCharCode', 
-      \   	'fileformat'  : 'MyFileformat', 
-      \   	'fileencoding': 'MyFileencoding', 
-      \   	'filetype'    : 'MyFiletype', 
-      \		'coc'		  : 'MyCoc', 
+      \		'mode'        : 'MyMode',
+      \   	'branch'      : 'FugitiveHead',
+      \   	'status'      : 'MyStatus',
+      \   	'filename'    : 'MyFilename',
+      \		'modified'	  : 'MyModified',
+      \   	'readonly'    : 'MyReadonly',
+      \   	'search'      : 'anzu#search_status',
+      \		'charcode'	  : 'MyCharCode',
+      \   	'fileformat'  : 'MyFileformat',
+      \   	'fileencoding': 'MyFileencoding',
+      \   	'filetype'    : 'MyFiletype',
+      \		'coc'		  : 'MyCoc',
       \     'eskk'        : 'MyEskk',
-      \     'vista'       : 'MyVista',
+      \     'tags'        : 'MyTags',
       \ },
       \	'component_expand': {},
       \ 'component_type': {},
@@ -59,8 +59,8 @@ function! MyMode() abort
   return lightline#mode()
 endfunction
 
-" MyFugitive
-function! MyFugitive() abort
+" MyBranch
+function! MyBranch() abort
   if winwidth(0) < 200
     return ''
   endif
@@ -70,12 +70,12 @@ function! MyFugitive() abort
       return strlen(l:_) ? "\uE0A0 " . l:_ : ''
     endif
   catch
+    return ''
   endtry
-  return ''
 endfunction
 
-" MyGitGutter
-function! MyGitGutter() abort
+" MyStatus
+function! MyStatus() abort
   if winwidth(0) < 150
     return ''
   endif
@@ -162,9 +162,7 @@ endfunction
 
 " MyFiletype
 function! MyFiletype() abort
-  if strlen(&filetype) 
-    " return exists('*WebDevIconsGetFileTypeSymbol()') ?
-    "      \ WebDevIconsGetFileTypeSymbol() : ''
+  if strlen(&filetype)
     let l:icon = exists('*WebDevIconsGetFileTypeSymbol()') ?
          \ WebDevIconsGetFileTypeSymbol() : ''
     if winwidth(0) < 150
@@ -213,6 +211,6 @@ function! MyEskk() abort
     endif
 endfunction
 
-function! MyVista() abort
+function! MyTags() abort
   return winwidth(0) < 150 ? '' : get(b:, 'vista_nearest_method_or_function', '')
 endfunction

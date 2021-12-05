@@ -6,10 +6,17 @@ if empty(glob(s:plugvim))
     autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" filetype plugin indent on
+filetype plugin indent on
 
+" https://github.com/rockerBOO/awesome-neovim
 call plug#begin('~/.vim/plugged')
-Plug 'lambdalisue/gina.vim'
+" Plug 'glidenote/memolist.vim'
+" Plug 'MattesGroeger/vim-bookmarks'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'folke/todo-comments.nvim'
+" Plug 'nvim-lualine/lualine.nvim'
+" Plug 'datwaft/bubbly.nvim'
+" Plug 'NTBBloodbath/galaxyline.nvim'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
@@ -21,12 +28,11 @@ Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-cursorword'
-Plug 'junegunn/fzf', { 'on': [], 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim', { 'on': [] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses' }
 Plug 'junegunn/vim-easy-align'
-Plug 'kamykn/popup-menu.nvim'
 Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
@@ -34,6 +40,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+Plug 'kyazdani42/nvim-web-devicons', { 'on': [] }
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
@@ -47,7 +54,6 @@ Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
-Plug 'ryanoasis/vim-devicons', { 'on': [] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -59,7 +65,7 @@ Plug 'terryma/vim-expand-region', { 'on': '<plug>(expand_region_' }
 Plug 'thinca/vim-qfreplace', { 'on': [] }
 Plug 'thinca/vim-quickrun', { 'on': [] }
 Plug 'thinca/vim-textobj-between'
-Plug 'tpope/vim-fugitive', { 'on': [] }
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'tyru/eskk.vim', { 'on': [] }
@@ -67,7 +73,6 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test', { 'on': [] }
 Plug 'Yggdroot/indentLine'
-" Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 call plug#end()
 
 " Load Event
@@ -86,16 +91,13 @@ function! s:load_plug(timer)
                 \ 'neoterm',
                 \ 'coc.nvim',
                 \ 'vim-precious',
-                \ 'vim-devicons',
+                \ 'nvim-web-devicons',
                 \ 'winresizer',
                 \ 'translate.vim',
                 \ 'vim-expand-region',
                 \ 'vim-quickrun',
-                \ 'vim-fugitive',
                 \ 'vim-test',
-                \ 'fzf',
                 \ 'fzf.vim',
-                \ 'vim-fugitive',
                 \ 'vim-qfreplace',
                 \ )
 endfunction
