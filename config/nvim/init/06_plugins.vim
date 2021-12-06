@@ -20,6 +20,10 @@ call plug#begin('~/.vim/plugged')
 " TODO tabline
 " https://github.com/akinsho/bufferline.nvim
 " https://github.com/noib3/cokeline.nvim
+" TODO terminal
+" https://github.com/akinsho/toggleterm.nvim
+" TODO starter
+" Plug 'goolord/alpha-nvim'
 " TODO misc
 " Plug 'glidenote/memolist.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
@@ -34,7 +38,6 @@ Plug 'cohama/lexima.vim', { 'on': [] }
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'echasnovski/mini.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'goolord/alpha-nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -120,7 +123,7 @@ function! s:load_plug(timer)
 endfunction
 
 " 500ミリ秒後にプラグインを読み込む
-call timer_start(300, function("s:load_plug"))
+call timer_start(200, function("s:load_plug"))
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
