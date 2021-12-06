@@ -7,13 +7,6 @@
 UsePlugin 'mini.nvim'
 
 lua << EOF
-require('mini.bufremove').setup()
-require('mini.comment').setup()
-require('mini.surround').setup()
-require('mini.trailspace').setup()
 require('mini.tabline').setup()
 require('mini.starter').setup()
-require('mini.misc').setup({
-  make_global = { 'put', 'put_text', 'zoom' }
-})
 EOF

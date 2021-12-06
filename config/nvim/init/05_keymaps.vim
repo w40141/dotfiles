@@ -109,13 +109,13 @@ nnoremap ,? :!open dict://<cword><CR>
 nnoremap <silent> sp :<C-u>sp<CR>
 nnoremap <silent> sv :<C-u>vs<CR>
 " 分割したウィンドウ間を移動
-nnoremap tj <C-w>j
-nnoremap tk <C-w>k
-nnoremap tl <C-w>l
-nnoremap th <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
 " ウィンドウを閉じる
-nnoremap tc <C-w>c
-nnoremap to <C-w>o
+nnoremap sc <C-w>c
+nnoremap so <C-w>o
 nnoremap <silent> tq :<C-u>q<CR>
 nnoremap <silent> ts :<C-u>w<CR>
 

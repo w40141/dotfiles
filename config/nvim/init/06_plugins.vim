@@ -9,14 +9,24 @@ endif
 filetype plugin indent on
 
 " https://github.com/rockerBOO/awesome-neovim
+" https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 call plug#begin('~/.vim/plugged')
+" TODO plugin manager
+" https://github.com/wbthomason/packer.nvim
+" TODO statusline
+" Plug 'nvim-lualine/lualine.nvim'
+" Plug 'datwaft/bubbly.nvim'
+" Plug 'NTBBloodbath/galaxyline.nvim'
+" TODO tabline
+" https://github.com/akinsho/bufferline.nvim
+" https://github.com/noib3/cokeline.nvim
+" TODO misc
 " Plug 'glidenote/memolist.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'nvim-lua/plenary.nvim'
 " Plug 'folke/todo-comments.nvim'
-" Plug 'nvim-lualine/lualine.nvim'
-" Plug 'datwaft/bubbly.nvim'
-" Plug 'NTBBloodbath/galaxyline.nvim'
+" Plug 'numToStr/Comment.nvim', { 'on': [] }
+" Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
@@ -24,6 +34,7 @@ Plug 'cohama/lexima.vim', { 'on': [] }
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'echasnovski/mini.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'goolord/alpha-nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -43,7 +54,10 @@ Plug 'kristijanhusak/defx-icons'
 Plug 'kyazdani42/nvim-web-devicons', { 'on': [] }
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
+Plug 'machakann/vim-sandwich'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'osyo-manga/vim-anzu'
@@ -51,7 +65,6 @@ Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
 Plug 'previm/previm', { 'for': ['markdown'] }
-Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
@@ -65,13 +78,15 @@ Plug 'terryma/vim-expand-region', { 'on': '<plug>(expand_region_' }
 Plug 'thinca/vim-qfreplace', { 'on': [] }
 Plug 'thinca/vim-quickrun', { 'on': [] }
 Plug 'thinca/vim-textobj-between'
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', { 'on': [] }
 Plug 'tpope/vim-repeat', { 'on': ['FocusLost', 'CursorHold'] }
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
+Plug 'tyru/caw.vim', { 'on': [] }
 Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test', { 'on': [] }
+Plug 'windwp/nvim-autopairs'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
@@ -99,6 +114,8 @@ function! s:load_plug(timer)
                 \ 'vim-test',
                 \ 'fzf.vim',
                 \ 'vim-qfreplace',
+                \ 'vim-fugitive',
+                \ 'caw.vim',
                 \ )
 endfunction
 
