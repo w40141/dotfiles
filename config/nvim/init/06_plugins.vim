@@ -58,7 +58,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
-Plug 'kyazdani42/nvim-web-devicons', { 'on': [] }
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-sandwich'
@@ -114,7 +114,6 @@ function! s:load_plug(timer)
                 \ 'neoterm',
                 \ 'coc.nvim',
                 \ 'vim-precious',
-                \ 'nvim-web-devicons',
                 \ 'winresizer',
                 \ 'translate.vim',
                 \ 'vim-expand-region',

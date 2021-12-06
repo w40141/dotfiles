@@ -4,78 +4,34 @@
 UsePlugin 'galaxyline.nvim'
 
 lua << EOF
-
----- source provider functions
--- Code diagnostics
-local diagnostic = require("galaxyline.providers.diagnostic")
--- Version control
-local vcs = require("galaxyline.providers.vcs")
--- Core files information
+local condition = require("galaxyline.condition")
+local colors = require("galaxyline.themes.colors").gruvbox
 local fileinfo = require("galaxyline.providers.fileinfo")
--- Extensions, aka plugins
-local extension = require("galaxyline.providers.extensions")
--- Neovim highlighting
-local colors = require("galaxyline.highlighting")
--- Buffer information, e.g. corresponding icon
-local buffer = require("galaxyline.providers.buffer")
--- Search results
-local search = require("galaxyline.providers.search")
--- Spacing
-local whitespace = require("galaxyline.providers.whitespace")
--- Active language server information
-local lspclient = require("galaxyline.providers.lsp")
+FileIcon = fileinfo.get_file_icon
+FileName = fileinfo.get_current_file_name
 
----- Providers
--- BufferIcon  = buffer.get_buffer_type_icon
--- BufferNumber = buffer.get_buffer_number
--- FileTypeName = buffer.get_buffer_filetype
--- Git Provider
--- GitBranch = vcs.get_git_branch
--- DiffAdd = vcs.diff_add
--- DiffModified = vcs.diff_modified
--- DiffRemove = vcs.diff_remove
--- Search Provider
--- SearchResults = search.get_results,
--- File Provider
--- LineColumn = fileinfo.line_column
--- FileFormat = fileinfo.get_file_format
--- FileEncode = fileinfo.get_file_encode
--- FileSize = fileinfo.get_file_size
--- FileIcon = fileinfo.get_file_icon
--- FileName = fileinfo.get_current_file_name
--- LinePercent = fileinfo.current_line_percent
--- ScrollBar = extension.scrollbar_instance
--- VistaPlugin = extension.vista_nearest
--- Whitespace
--- Whitespace = whitespace.get_item
--- Diagnostic Provider
--- DiagnosticError = diagnostic.get_diagnostic_error
--- DiagnosticWarn = diagnostic.get_diagnostic_warn
--- DiagnosticHint = diagnostic.get_diagnostic_hint
--- DiagnosticInfo = diagnostic.get_diagnostic_info
--- LSP
--- GetLspClient = lspclient.get_lsp_client
+local mode_color = function()
+    local mode_colors = {
+        [110] = colors.green,
+        [105] = colors.blue,
+        [99] = colors.green,
+        [116] = colors.blue,
+        [118] = colors.purple,
+        [22] = colors.purple,
+        [86] = colors.purple,
+        [82] = colors.red1,
+        [115] = colors.red1,
+        [83] = colors.red1
+    }
 
----- Public libs
--- Get file icon color
--- require("galaxyline.providers.fileinfo").get_file_icon_color
--- Custom file icon with color
--- local my_icons = require("galaxyline.providers.fileinfo").define_file_icon()
--- my_icons['your file type here'] = { color code, icon}
--- If your filetype does is not defined in neovim  you can use file extensions
--- my_icons['your file ext  in here'] = { color code, icon}
+    mode_color = mode_colors[vim.fn.mode():byte()]
+    if mode_color ~= nil then
+        return mode_color
+    else
+        return colors.purple
+    end
+end
 
----- built-in conditions
--- local condition = require("galaxyline.condition")
--- if buffer not empty return true else false
--- condition.buffer_not_empty
--- if winwidth(0)/ 2 > 40 true else false
--- condition.hide_in_width
--- find git root, you can use this to check if the project is a git workspace
--- condition.check_git_workspace()
-
----- built-in theme
--- local colors = require("galaxyline.themes.colors").gruvbox
 
 local gl = require('galaxyline')
 local gls = gl.section
@@ -90,6 +46,29 @@ local buffer_not_empty = function()
 
 gls.left[1] = {
     ViMode = {
+        -- provider = function()
+ --            local aliases = {
+ --                [110] = 'NORMAL',
+ --                [105] = 'INSERT',
+ --                [99] = 'COMMAND',
+ --                [116] = 'TERMINAL',
+ --                [118] = 'VISUAL',
+ --                [22] = 'V-BLOCK',
+ --                [86] = 'V-LINE',
+ --                [82] = 'REPLACE',
+ --                [115] = 'SELECT',
+ --                [83] = 'S-LINE'
+ --            }
+ --            vim.api.nvim_command('hi GalaxyViMode guibg=' .. mode_color())
+ --            alias = aliases[vim.fn.mode():byte()]
+ --            if alias ~= nil then
+ --                return '  ' .. alias .. ' '
+ --            else
+ --                return '  ' .. vim.fn.mode():byte() .. ' '
+ --            end
+ --        end,
+	-- highlight = {colors.bg, colors.bg, 'bold'},
+
         provider = function()
             -- auto change color according the vim mode
             local mode_color = {n = colors.magenta, i = colors.green, v = colors.blue,
@@ -103,75 +82,77 @@ gls.left[1] = {
             return '▋   '
         end,
         highlight = {colors.red, colors.line_bg, 'bold'},
+        separator = '',
+        separator_highlight = {colors.blue,colors.line_bg},
     },
 }
 
--- gls.left[2] ={
---     FileIcon = {
---         provider = 'FileIcon',
---         condition = buffer_not_empty,
---         highlight = fileinfo.get_file_icon_color, colors.line_bg},
---     },
--- }
+gls.left[2] = {
+    FileIcon = {
+        provider = 'FileIcon',
+        condition = buffer_not_empty,
+        highlight = {fileinfo.get_file_icon_color, colors.line_bg},
+    },
+}
 
--- gls.left[3] = {
---     FileName = {
---         provider = 'FileName',
---         condition = buffer_not_empty,
---         highlight = {colors.fg, colors.line_bg, 'bold'}
---     }
--- }
+gls.left[3] = {
+    FileName = {
+        provider = 'FileName',
+        condition = buffer_not_empty,
+        highlight = {colors.fg, colors.line_bg, 'bold'},
+    },
+}
 
--- gls.left[4] = {
---     GitIcon = {
---         provider = function() return '  ' end,
---         condition = condition.check_git_workspace(),
---         highlight = {colors.orange, colors.line_bg},
---     }
--- }
+gls.left[4] = {
+    GitIcon = {
+        provider = function() return " " end,
+        condition = condition.check_git_workspace,
+        highlight = {colors.orange, colors.line_bg},
+    },
+}
 
--- gls.left[5] = {
---     GitBranch = {
---         provider = 'GitBranch',
---         condition = condition.check_git_workspace(),
---         highlight = {'#8FBCBB', colors.line_bg, 'bold'},
---     }
--- }
+gls.left[5] = {
+    GitBranch = {
+        provider = 'GitBranch',
+        condition = condition.check_git_workspace,
+        highlight = {'#8FBCBB', colors.line_bg, 'bold'},
+    },
+}
 
--- local checkwidth = function()
---     local squeeze_width  = vim.fn.winwidth(0) / 2
---     if squeeze_width > 40 then
---         return true
---     end
---         return false
---     end
+local checkwidth = function()
+    local squeeze_width  = vim.fn.winwidth(0) / 2
+    if squeeze_width > 40 then
+        return true
+    end
+        return false
+    end
 
--- gls.left[7] = {
---     DiffAdd = {
---         provider = 'DiffAdd',
---         condition = checkwidth,
---         icon = ' ',
---         highlight = {colors.green,colors.line_bg},
---     }
--- }
+gls.left[6] = {
+    DiffAdd = {
+        provider = 'DiffAdd',
+        condition = checkwidth,
+        icon = ' ',
+        highlight = {colors.green,colors.line_bg},
+    }
+}
 
--- gls.left[8] = {
---     DiffModified = {
---         provider = 'DiffModified',
---         condition = checkwidth,
---         icon = ' ',
---         highlight = {colors.orange,colors.line_bg},
---     }
--- }
+gls.left[7] = {
+    DiffModified = {
+        provider = 'DiffModified',
+        condition = checkwidth,
+        icon = ' ',
+        highlight = {colors.orange,colors.line_bg},
+    }
+}
 
--- gls.left[9] = {
---     DiffRemove = {
---         provider = 'DiffRemove',
---         condition = checkwidth,
---         icon = ' ',
---         highlight = {colors.red,colors.line_bg},
---     }
--- }
+gls.left[9] = {
+    DiffRemove = {
+        provider = 'DiffRemove',
+        condition = checkwidth,
+        icon = ' ',
+        highlight = {colors.red,colors.line_bg},
+    }
+}
 
 -- gls.left[10] = {
 --     LeftEnd = {
@@ -187,12 +168,6 @@ gls.left[1] = {
 --         provider = 'DiagnosticError',
 --         icon = '  ',
 --         highlight = {colors.red,colors.bg}
---     }
--- }
-
--- gls.left[12] = {
---     Space = {
---         provider = function () return ' ' end
 --     }
 -- }
 
@@ -238,22 +213,22 @@ gls.left[1] = {
 --     }
 -- }
 -- 
--- gls.short_line_left[1] = {
---     BufferType = {
---         provider = 'FileTypeName',
---         separator = ' | ',
---         separator_highlight = {colors.purple,colors.bg},
---         highlight = {colors.fg,colors.purple}
---     }
--- }
--- 
--- gls.short_line_right[1] = {
---     BufferIcon = {
---         provider= 'BufferIcon',
---         separator = ' | ',
---         separator_highlight = {colors.purple,colors.bg},
---         highlight = {colors.fg,colors.purple}
---     }
--- }
+gls.short_line_left[1] = {
+    BufferType = {
+        provider = 'FileTypeName',
+        separator = ' | ',
+        separator_highlight = {colors.purple, colors.bg},
+        highlight = {colors.fg, colors.purple}
+    }
+}
+
+gls.short_line_right[1] = {
+    BufferIcon = {
+        provider= 'BufferIcon',
+        separator = ' | ',
+        separator_highlight = {colors.purple, colors.bg},
+        highlight = {colors.fg, colors.purple}
+    }
+}
 
 EOF
