@@ -42,7 +42,7 @@ require'lualine'.setup {
     lualine_b = {
             modified,
             {
-                'filename', file_status = false, path = 1,
+                'filename', file_status = false, path = 0,
             },
     },
     lualine_c = {
