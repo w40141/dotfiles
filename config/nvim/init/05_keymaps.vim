@@ -116,24 +116,24 @@ nnoremap sh <C-w>h
 " ウィンドウを閉じる
 nnoremap sc <C-w>c
 nnoremap so <C-w>o
-nnoremap <silent> tq :<C-u>q<CR>
-nnoremap <silent> ts :<C-u>w<CR>
+nnoremap <silent> sq :<C-u>q<CR>
+nnoremap <silent> ss :<C-u>w<CR>
 
 " タブ
 " 新規タブ
-nnoremap <silent> st :<C-u>tabnew<CR>
-" 次のタブに切り替え
-nnoremap <C-l> gt
+nnoremap <silent> tn :<C-u>tabnew<CR>
 " 前のタブに切り替え
-nnoremap <C-h> gT
+nnoremap t[ gT
+" 次のタブに切り替え
+nnoremap t] gt
 
 " バッファ
 " バッファを閉じる
 nnoremap bq :<C-u>bd<CR>
 " バッファリストの1つ前のバッファを開く
-nnoremap <silent> bp :bprevious<CR>
+nnoremap <silent> b[ :bprevious<CR>
 " バッファリストの次のバッファを開く
-nnoremap <silent> bn :bnext<CR>
+nnoremap <silent> b] :bnext<CR>
 " 直前のバッファを開く
 nnoremap <silent> bb :b#<CR>
 " バッファリストの先頭を開く
@@ -156,6 +156,7 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 " vnoremap " "zdi"<C-r>z^V"<ESC>
 " vnoremap ' "zdi'<C-r>z'<ESC>
 nnoremap q gq
+
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
 	if !isdirectory(a:dir) && (a:force ||
@@ -168,6 +169,7 @@ autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
 " 保存して閉じる、保存せずに閉じるを無効
 nnoremap ZZ <NOP>
 nnoremap ZQ <NOP>
+
 " 矢印キー無効
 noremap <UP> <NOP>
 noremap <DOWN> <NOP>

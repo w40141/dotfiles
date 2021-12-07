@@ -1,4 +1,4 @@
-" Popup the number of search results 
+" Popup the number of search results
 " https://github.com/osyo-manga/vim-anzu
 
 UsePlugin 'vim-anzu'

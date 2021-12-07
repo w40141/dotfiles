@@ -1,6 +1,8 @@
 " Wrapper of some vim/neovim's :terminal functions.
 " https://github.com/kassio/neoterm
 
+UsePlugin 'neoterm'
+
 set nocompatible
 filetype off
 

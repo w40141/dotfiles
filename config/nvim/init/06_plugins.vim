@@ -1,6 +1,7 @@
 let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
 let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
+
 if empty(glob(s:plugvim))
     execute "!sh -c 'curl -fLo " .
         \ s:plugvim .
@@ -36,6 +37,8 @@ call plug#begin('~/.vim/plugged')
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " TODO hojo
 " Plug 'itchyny/lightline.vim'
+" Plug 'NTBBloodbath/galaxyline.nvim'
+" Plug 'osyo-manga/vim-anzu'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
@@ -56,6 +59,7 @@ Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
+Plug 'kevinhwang91/nvim-hlslens', { 'on': [] }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -64,11 +68,10 @@ Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-sandwich'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
-Plug 'NTBBloodbath/galaxyline.nvim'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'osyo-manga/vim-anzu'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
@@ -123,6 +126,7 @@ function! s:load_plug(timer)
                 \ 'vim-qfreplace',
                 \ 'vim-fugitive',
                 \ 'caw.vim',
+                \ 'nvim-hlslens',
                 \ )
 endfunction
 
