@@ -26,6 +26,17 @@ local function modified()
   return ''
 end
 
+local function eskk()
+    if (vim.fn.mode() == 'i') and vim.fn['eskk#is_enabled']() then
+        return vim.g['eskk#statusline']()
+    else
+        return ''
+    end
+end
+
+-- local function vista()
+-- end
+
 require'lualine'.setup {
   options = {
     icons_enabled = true,
@@ -37,7 +48,7 @@ require'lualine'.setup {
   },
   sections = {
     lualine_a = {
-        'mode',
+        'mode', eskk,
     },
     lualine_b = {
             modified,
@@ -76,8 +87,8 @@ require'lualine'.setup {
             always_visible = false,
         }
     },
-    lualine_y = {'filetype', 'location'},
-    lualine_z = {'progress'},
+    lualine_y = {'filetype',},
+    lualine_z = {'location', 'progress'},
   },
   inactive_sections = {
     lualine_a = {},
