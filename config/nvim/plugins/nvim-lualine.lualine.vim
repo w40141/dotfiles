@@ -17,25 +17,21 @@ local function search_result()
   return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
 end
 
-local function modified()
-  if vim.bo.modified then
-    return ' '
-  elseif vim.bo.modifiable == false or vim.bo.readonly == true then
-    return ' '
-  end
-  return ''
-end
-
 local function eskk()
     if (vim.fn.mode() == 'i') and vim.fn['eskk#is_enabled']() then
-        return vim.g['eskk#statusline']()
+        return vim.fn['eskk#statusline']()
     else
         return ''
     end
 end
 
--- local function vista()
--- end
+local function vista()
+    if vim.b['vista_nearest_method_or_function'] then
+        return vim.b['vista_nearest_method_or_function']
+    else
+        return ''
+    end
+end
 
 require'lualine'.setup {
   options = {
@@ -51,16 +47,16 @@ require'lualine'.setup {
         'mode', eskk,
     },
     lualine_b = {
-            modified,
             {
-                'filename', file_status = false, path = 0,
+                'filename', file_status = true, path = 0,
+                symbols = { modified = '  ', readonly = '  ' }
             },
     },
     lualine_c = {
         'branch',
         {
             'diff',
-            colored = true, -- displays diff status in color if set to true
+            colored = true,
             diff_color = {
                 added    = 'DiffAdd',
                 modified = 'DiffChange',
@@ -71,6 +67,7 @@ require'lualine'.setup {
         search_result,
     },
     lualine_x = {
+        vista,
         {
             'diagnostics',
             sources={'coc'},
@@ -85,9 +82,9 @@ require'lualine'.setup {
             colored = true,
             update_in_insert = false,
             always_visible = false,
-        }
+        },
     },
-    lualine_y = {'filetype',},
+    lualine_y = {{'filetype', icon_only = true}},
     lualine_z = {'location', 'progress'},
   },
   inactive_sections = {

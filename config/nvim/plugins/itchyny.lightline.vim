@@ -3,7 +3,6 @@
 " Colorscheme
 " default, wombat, jellybeans, solarized dark, solarized light, PaperColor light, seoul256, one, landscape
 
-
 UsePlugin 'lightline.vim'
 
 let g:lightline = {

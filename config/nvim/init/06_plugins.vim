@@ -16,11 +16,6 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
-" Plug 'folke/todo-comments.nvim'
-" TODO plugin manager
-" https://github.com/wbthomason/packer.nvim
-" TODO fizzy finder
-" https://github.com/nvim-telescope/telescope.nvim
 " TODO tabline
 " https://github.com/akinsho/bufferline.nvim
 " https://github.com/noib3/cokeline.nvim
@@ -35,10 +30,6 @@ call plug#begin('~/.vim/plugged')
 " Plug 'folke/todo-comments.nvim'
 " Plug 'numToStr/Comment.nvim', { 'on': [] }
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
-" TODO hojo
-" Plug 'itchyny/lightline.vim'
-" Plug 'NTBBloodbath/galaxyline.nvim'
-" Plug 'osyo-manga/vim-anzu'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
@@ -95,9 +86,9 @@ Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'tyru/caw.vim', { 'on': [] }
 Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'tyru/open-browser.vim'
-Plug 'vim-jp/vimdoc-ja'
+Plug 'vim-jp/vimdoc-ja', { 'on': [] }
 Plug 'vim-test/vim-test', { 'on': [] }
-Plug 'windwp/nvim-autopairs'
+Plug 'windwp/nvim-autopairs', { 'on': [] }
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
@@ -107,6 +98,7 @@ augroup load_us_insert
     autocmd InsertEnter * call plug#load(
                 \ 'lexima.vim',
                 \ 'eskk.vim',
+                \ 'nvim-autopairs',
                 \ )| autocmd! load_us_insert
 augroup END
 
@@ -127,6 +119,7 @@ function! s:load_plug(timer)
                 \ 'vim-fugitive',
                 \ 'caw.vim',
                 \ 'nvim-hlslens',
+                \ 'vimdoc-ja',
                 \ )
 endfunction
 
