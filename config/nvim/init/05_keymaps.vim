@@ -27,6 +27,14 @@
 " ペーストモード
 " set pastetoggle=<C-p>
 
+" vim.api.nvim_set_keymap('n', '<Leader><Space>', ':set hlsearch!<CR>', { noremap = true, silent = true })
+" -- :nnoremap <silent> <Leader><Space> :set hlsearch<CR>
+" vim.api.nvim_set_keymap('n', '<Leader>tegf',  [[<Cmd>lua require('telescope.builtin').git_files()<CR>]], { noremap = true, silent = true })
+" -- :nnoremap <silent> <Leader>tegf <Cmd>lua require('telescope.builtin').git_files()<CR>
+"
+" vim.api.nvim_buf_set_keymap(0, '', 'cc', 'line(".") == 1 ? "cc" : "ggcc"', { noremap = true, expr = true })
+" -- :noremap <buffer> <expr> cc line('.') == 1 ? 'cc' : 'ggcc'
+"
 " <leader>キーを変更 (default: \)
 let g:mapleader=' '
 let g:maplocalleader=' '
