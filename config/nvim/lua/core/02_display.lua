@@ -18,7 +18,6 @@ set.smartindent = true
 set.cmdheight = 2
 -- カラムを表示
 set.signcolumn = 'yes'
--- set signcolumn=yes
 -- エディタウィンドウの末尾から2行目にステータスラインを常時表示させるための指定
 set.laststatus = 2
 -- ステータスラインにコマンドを表示

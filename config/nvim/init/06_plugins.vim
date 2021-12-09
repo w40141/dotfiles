@@ -9,8 +9,6 @@ if empty(glob(s:plugvim))
     autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-filetype plugin indent on
-
 " https://github.com/rockerBOO/awesome-neovim
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 " TODO package manager

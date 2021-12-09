@@ -13,6 +13,8 @@ function! s:mkdir(dir, force)
 endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
 
+filetype plugin indent on
+
 lua << EOF
 require('core.01_basic')
 require('core.02_display')
