@@ -6,7 +6,7 @@ UsePlugin 'nvim-treesitter'
 
 
 lua <<EOF
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter.configs').setup{
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   highlight = {
@@ -31,6 +31,15 @@ require('nvim-treesitter.configs').setup({
         ["ib"] = "@block.inner",
       },
     },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.inner",
+      },
+    },
     move = {
       enable = true,
       set_jumps = true, -- whether to set jumps in the jumplist
@@ -52,5 +61,5 @@ require('nvim-treesitter.configs').setup({
       },
     },
   },
-})
+}
 EOF

@@ -13,7 +13,6 @@ filetype plugin indent on
 
 " https://github.com/rockerBOO/awesome-neovim
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
-call plug#begin('~/.vim/plugged')
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
 " TODO tabline
@@ -26,17 +25,28 @@ call plug#begin('~/.vim/plugged')
 " TODO misc
 " Plug 'glidenote/memolist.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
-" Plug 'nvim-lua/plenary.nvim'
 " Plug 'folke/todo-comments.nvim'
 " Plug 'numToStr/Comment.nvim', { 'on': [] }
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+call plug#begin('~/.vim/plugged')
+" Lua plugin
+Plug 'echasnovski/mini.nvim'
+Plug 'kevinhwang91/nvim-hlslens', { 'on': [] }
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'windwp/nvim-autopairs', { 'on': [] }
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" Vim Script plugin
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
-Plug 'airblade/vim-gitgutter', { 'on': [] }
 Plug 'airblade/vim-rooter'
 Plug 'cohama/lexima.vim', { 'on': [] }
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-Plug 'echasnovski/mini.nvim'
-Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
@@ -50,19 +60,14 @@ Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kassio/neoterm', { 'on': [] }
-Plug 'kevinhwang91/nvim-hlslens', { 'on': [] }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'machakann/vim-sandwich'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara' }
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
@@ -88,8 +93,7 @@ Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja', { 'on': [] }
 Plug 'vim-test/vim-test', { 'on': [] }
-Plug 'windwp/nvim-autopairs', { 'on': [] }
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Load Event
@@ -105,7 +109,6 @@ augroup END
 " Load Event
 function! s:load_plug(timer)
     call plug#load(
-                \ 'vim-gitgutter',
                 \ 'neoterm',
                 \ 'coc.nvim',
                 \ 'vim-precious',

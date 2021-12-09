@@ -7,7 +7,9 @@ vim.o.number = true
 vim.o.title = true
 -- 不可視文字を表示
 vim.o.list = true
-vim.opt.listchars = { tab = '▸ ', extends = '»', trail = '-', precedes = '«', eol = '↲', nbsp = '%' }
+vim.opt.listchars = {
+    tab = '▸ ', extends = '»', trail = '-', precedes = '«', eol = '↲', nbsp = '%', space = '.'
+}
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 vim.o.wrap = true
 -- 新しい行のインデントを現在行と同じにする
