@@ -15,13 +15,6 @@ filetype plugin indent on
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
-" TODO tabline
-" https://github.com/akinsho/bufferline.nvim
-" https://github.com/noib3/cokeline.nvim
-" TODO terminal
-" https://github.com/akinsho/toggleterm.nvim
-" TODO starter
-" Plug 'goolord/alpha-nvim'
 " TODO misc
 " Plug 'glidenote/memolist.vim'
 " Plug 'MattesGroeger/vim-bookmarks'
@@ -30,6 +23,17 @@ filetype plugin indent on
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 call plug#begin('~/.vim/plugged')
 " Lua plugin
+" yank
+" https://github.com/bfredl/nvim-miniyank
+" explore
+" https://github.com/kyazdani42/nvim-tree.lua
+" tabline
+" https://github.com/akinsho/bufferline.nvim
+" https://github.com/noib3/cokeline.nvim
+" terminal
+" https://github.com/akinsho/toggleterm.nvim
+" starter
+" Plug 'goolord/alpha-nvim'
 Plug 'echasnovski/mini.nvim'
 Plug 'kevinhwang91/nvim-hlslens', { 'on': [] }
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -93,7 +97,6 @@ Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja', { 'on': [] }
 Plug 'vim-test/vim-test', { 'on': [] }
-" Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " Load Event
