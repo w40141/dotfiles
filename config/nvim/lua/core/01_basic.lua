@@ -36,7 +36,6 @@ g.loaded_getscript          = 1
 g.loaded_getscriptPlugin    = 1
 g.loaded_man                = 1
 g.loaded_matchit            = 1
-g.loaded_matchparen         = 1
 g.loaded_netrw              = 1
 g.loaded_netrwFileHandlers  = 1
 g.loaded_netrwPlugin        = 1

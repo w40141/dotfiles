@@ -127,7 +127,7 @@ api.nvim_set_keymap('n', 't]', 'gt', { noremap = true, silent = true })
 -- バッファを閉じる
 api.nvim_set_keymap('n', 'bq', ':<c-u>bd<cr>', { noremap = true, silent = true })
 -- バッファリストの1つ前のバッファを開く
-api.nvim_set_keymap('n', 'b]', ':bprevious<cr>', { noremap = true, silent = true })
+api.nvim_set_keymap('n', 'b[', ':bprevious<cr>', { noremap = true, silent = true })
 -- バッファリストの次のバッファを開く
 api.nvim_set_keymap('n', 'b]', ':bnext<cr>', { noremap = true, silent = true })
 -- 直前のバッファを開く

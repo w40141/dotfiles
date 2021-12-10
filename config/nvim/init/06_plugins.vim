@@ -32,6 +32,8 @@ call plug#begin('~/.vim/plugged')
 " https://github.com/akinsho/toggleterm.nvim
 " starter
 " Plug 'goolord/alpha-nvim'
+" buffer delete
+" https://github.com/ojroques/nvim-bufdel
 Plug 'echasnovski/mini.nvim'
 Plug 'kevinhwang91/nvim-hlslens', { 'on': [] }
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -128,7 +130,7 @@ function! s:load_plug(timer)
 endfunction
 
 " 500ミリ秒後にプラグインを読み込む
-call timer_start(200, function("s:load_plug"))
+call timer_start(300, function("s:load_plug"))
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
 function! FindPlugin(name) abort
