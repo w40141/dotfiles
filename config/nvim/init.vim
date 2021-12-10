@@ -1,8 +1,9 @@
-augroup MyAutoCmd
-	autocmd!
-augroup end
+lua << EOF
+require('config')
+EOF
 
-autocmd MyAutoCmd ColorScheme * highlight Visual ctermbg=225
+let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
+let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
@@ -12,15 +13,4 @@ function! s:mkdir(dir, force)
 	endif
 endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
-
-filetype plugin indent on
-
-lua << EOF
-require('core.01_basic')
-require('core.02_display')
-require('core.03_editor')
-require('core.04_search')
-require('core.05_keymaps')
-EOF
-
-runtime! init/06_plugins.vim
+runtime! plugin.vim

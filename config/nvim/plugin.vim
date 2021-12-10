@@ -1,5 +1,3 @@
-let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
-let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
 
 if empty(glob(s:plugvim))
@@ -137,5 +135,3 @@ function! FindPlugin(name) abort
     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
-
-runtime! plugins/*.vim
