@@ -90,13 +90,13 @@ api.nvim_set_keymap('n', 'vp', 'viwpviwy', { noremap = true, silent = true })
 -- カーソル下の単語を * で検索
 api.nvim_set_keymap('v', '*', [["vy/\V<C-r>=substitute(escape(@v, '\/'), "\n", '\\n', 'g')<CR><CR>]], { noremap = true, silent = true })
 -- コマンドモード時のカーソル移動
-api.nvim_set_keymap('c', '<c-a>', '<home>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-b>', '<left>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-d>', '<delete>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-e>', '<end>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-f>', '<right>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-n>', '<down>', { noremap = true, silent = true })
-api.nvim_set_keymap('c', '<c-p>', '<up>', { noremap = true, silent = true })
+api.nvim_set_keymap('c', '<c-a>', '<home>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-b>', '<left>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-d>', '<delete>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-e>', '<end>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-f>', '<right>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-n>', '<down>', { noremap = true, silent = false })
+api.nvim_set_keymap('c', '<c-p>', '<up>', { noremap = true, silent = false })
 -- 辞書
 api.nvim_set_keymap('n', ',?', ':!open dict://<cword><cr>', { noremap = true, silent = true })
 
