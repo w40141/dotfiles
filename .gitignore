@@ -1,5 +1,7 @@
 .DS_Store
-/config/dot_zsh/.zcompdump
+/config/zsh/.zcompdump
+/config/zsh/.zsh_sessions
+/config/zsh/.zsh_history
 /config/yarn/*
 !config/yarn/global
 /config/yarn/global/*
@@ -20,3 +22,4 @@ sessions
 snippets
 *.lock
 /config/eskk
+/config/gh/hosts.yml

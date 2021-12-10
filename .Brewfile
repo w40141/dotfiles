@@ -283,8 +283,6 @@ brew "libtermkey"
 brew "libuv"
 # VP8/VP9 video codec
 brew "libvpx"
-# C99 library which implements a VT220 or xterm terminal emulator
-brew "libvterm"
 # GNOME XML library
 brew "libxml2"
 # C XSLT library for GNOME
@@ -296,13 +294,15 @@ brew "mas"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
-brew "mysql"
+brew "mysql", restart_service: true
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim", args: ["HEAD"]
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
+# Fish-like, POSIX-compatible shell
+brew "nsh"
 # Platform-neutral API for system-level and libc-like functions
 brew "nspr"
 # Libraries for security-enabled client and server applications
@@ -478,12 +478,16 @@ cask "google-japanese-ime"
 cask "grammarly"
 # Screenshot and screen recording tool
 cask "gyazo"
+# Desktop automation application
+cask "hammerspoon"
 # IDE for Java development - community edition
 cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Interface for reading and syncing eBooks
 cask "kindle"
+# GPU-based terminal emulator
+cask "kitty"
 # Kubernetes IDE
 cask "lens"
 # Software for Logitech devices
