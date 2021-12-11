@@ -7,12 +7,6 @@ if empty(glob(s:plugvim))
     autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
-function! FindPlugin(name) abort
-    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
-endfunction
-command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
-
 " https://github.com/rockerBOO/awesome-neovim
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 " TODO package manager
@@ -28,13 +22,10 @@ call plug#begin('~/.vim/plugged')
 " tabline
 " https://github.com/akinsho/bufferline.nvim
 " https://github.com/noib3/cokeline.nvim
-" terminal
-" https://github.com/akinsho/toggleterm.nvim
+Plug 'akinsho/toggleterm.nvim'
 Plug 'blackcauldron7/surround.nvim'
 Plug 'echasnovski/mini.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
-Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'glidenote/memolist.vim'
 Plug 'goolord/alpha-nvim'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -53,6 +44,8 @@ Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
 Plug 'andymass/vim-matchup'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'glidenote/memolist.vim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
@@ -65,7 +58,6 @@ Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
-Plug 'kassio/neoterm'
 Plug 'LeafCage/yankround.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
@@ -94,3 +86,9 @@ Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test'
 call plug#end()
+
+let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+function! FindPlugin(name) abort
+    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+endfunction
+command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif

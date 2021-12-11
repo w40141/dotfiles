@@ -87,7 +87,7 @@ require'nvim-tree'.setup {
                 { key = "g?",           cb = tree_cb("toggle_help") },
             }
         },
-        number = true,
+        number = false,
         relativenumber = false
     },
     trash = {
