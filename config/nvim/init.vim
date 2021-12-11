@@ -7,11 +7,12 @@ let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
-	if !isdirectory(a:dir) && (a:force ||
- 			\ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
-		call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-	endif
+    if !isdirectory(a:dir) && (a:force ||
+        \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+        call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
 endfunction
+
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
 
 let s:plugvim  = expand($XDG_DATA_HOME) . "/nvim/site/autoload/plug.vim"
@@ -25,6 +26,7 @@ endif
 
 " https://github.com/rockerBOO/awesome-neovim
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
+" https://zenn.dev/kawarimidoll/articles/8172a4c29a6653
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
 " TODO misc
@@ -32,36 +34,20 @@ endif
 " Plug 'folke/todo-comments.nvim'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 call plug#begin('~/.vim/plugged')
-" Lua plugin
-" yank
-" https://github.com/bfredl/nvim-miniyank
 " tabline
 " https://github.com/akinsho/bufferline.nvim
 " https://github.com/noib3/cokeline.nvim
-Plug 'akinsho/toggleterm.nvim'
-Plug 'blackcauldron7/surround.nvim'
-Plug 'echasnovski/mini.nvim'
-Plug 'kevinhwang91/nvim-hlslens'
-Plug 'goolord/alpha-nvim'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'numToStr/Comment.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lualine/lualine.nvim'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'ojroques/nvim-bufdel'
-Plug 'windwp/nvim-autopairs'
-Plug 'lukas-reineke/indent-blankline.nvim'
-
-" Vim Script plugin
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
+Plug 'akinsho/toggleterm.nvim'
 Plug 'andymass/vim-matchup'
+Plug 'blackcauldron7/surround.nvim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
+Plug 'echasnovski/mini.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'glidenote/memolist.vim'
+Plug 'goolord/alpha-nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
@@ -74,10 +60,20 @@ Plug 'kamykn/spelunker.vim'
 Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
-Plug 'LeafCage/yankround.vim'
+Plug 'kevinhwang91/nvim-hlslens'
+Plug 'kyazdani42/nvim-tree.lua'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'lewis6991/gitsigns.nvim'
 Plug 'liuchengxu/vista.vim'
-Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
+Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'numToStr/Comment.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'ojroques/nvim-bufdel'
 Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'
@@ -101,6 +97,7 @@ Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test'
+Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
@@ -108,4 +105,3 @@ function! FindPlugin(name) abort
     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
-" runtime! plugin.vim

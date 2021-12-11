@@ -2,7 +2,7 @@
 " https://github.com/neoclide/coc.nvim
 "
 
-" UsePlugin 'coc.nvim'
+UsePlugin 'coc.nvim'
 
 " If the following plugins dont install, the plugins are installed automatic when neovim starts.
 let g:coc_global_extensions = [
