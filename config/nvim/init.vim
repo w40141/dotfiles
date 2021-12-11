@@ -13,4 +13,5 @@ function! s:mkdir(dir, force)
 	endif
 endfunction
 autocmd MyAutoCmd BufWritePre * call s:mkdir(expand('<afile>:p:h'), v:cmdbang)
+
 runtime! plugin.vim

@@ -1,9 +1,7 @@
-" A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-" https://github.com/nvim-lualine/lualine.nvim
+-- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
+-- https://github.com/nvim-lualine/lualine.nvim
 
-UsePlugin 'lualine.nvim'
-
-lua << EOF
+-- vim.cmd([[UsePlugin 'lualine.nvim']])
 
 local function search_result()
   if vim.v.hlsearch == 0 then
@@ -98,5 +96,3 @@ require'lualine'.setup {
   tabline = {},
   extensions = {'quickfix', 'fzf'}
 }
-
-EOF

@@ -1,11 +1,10 @@
-" Nvim Treesitter configurations and abstraction layer
-" https://github.com/nvim-treesitter/nvim-treesitter
-" https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+-- Nvim Treesitter configurations and abstraction layer
+-- https://github.com/nvim-treesitter/nvim-treesitter
+-- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
 
-UsePlugin 'nvim-treesitter'
+-- vim.cmd([[UsePlugin 'nvim-treesitter']])
 
 
-lua <<EOF
 require('nvim-treesitter.configs').setup{
   ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
@@ -62,4 +61,3 @@ require('nvim-treesitter.configs').setup{
     },
   },
 }
-EOF
