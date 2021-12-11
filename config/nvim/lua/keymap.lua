@@ -119,17 +119,17 @@ api.nvim_set_keymap('n', 'ss', ':<c-u>w<cr>', { noremap = true, silent = true })
 -- 新規タブ
 api.nvim_set_keymap('n', 'tn', ':<c-u>tabnew<cr>', { noremap = true, silent = true })
 -- 前のタブに切り替え
-api.nvim_set_keymap('n', 't[', 'gT', { noremap = true, silent = true })
+api.nvim_set_keymap('n', '[t', 'gT', { noremap = true, silent = true })
 -- 次のタブに切り替え
-api.nvim_set_keymap('n', 't]', 'gt', { noremap = true, silent = true })
+api.nvim_set_keymap('n', ']t', 'gt', { noremap = true, silent = true })
 
 -- バッファ
 -- バッファを閉じる
 api.nvim_set_keymap('n', 'bq', ':<c-u>bd<cr>', { noremap = true, silent = true })
 -- バッファリストの1つ前のバッファを開く
-api.nvim_set_keymap('n', 'b[', ':bprevious<cr>', { noremap = true, silent = true })
+-- api.nvim_set_keymap('n', 'b[', ':bprevious<cr>', { noremap = true, silent = true })
 -- バッファリストの次のバッファを開く
-api.nvim_set_keymap('n', 'b]', ':bnext<cr>', { noremap = true, silent = true })
+-- api.nvim_set_keymap('n', 'b]', ':bnext<cr>', { noremap = true, silent = true })
 -- 直前のバッファを開く
 api.nvim_set_keymap('n', 'bb', ':b#<cr>', { noremap = true, silent = true })
 -- バッファリストの先頭を開く
