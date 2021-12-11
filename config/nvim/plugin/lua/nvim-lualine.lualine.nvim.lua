@@ -76,7 +76,7 @@ require'lualine'.setup {
                 info  = 'DiagnosticInfo',
                 hint  = 'DiagnosticHint',
             },
-            symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+            symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
             colored = true,
             update_in_insert = false,
             always_visible = false,

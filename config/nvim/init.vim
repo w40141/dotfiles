@@ -31,23 +31,21 @@ endif
 " https://github.com/wbthomason/packer.nvim
 " TODO misc
 " Plug 'MattesGroeger/vim-bookmarks'
-" Plug 'folke/todo-comments.nvim'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 call plug#begin('~/.vim/plugged')
-" tabline
-" https://github.com/akinsho/bufferline.nvim
-" https://github.com/noib3/cokeline.nvim
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
+Plug 'akinsho/bufferline.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'andymass/vim-matchup'
 Plug 'blackcauldron7/surround.nvim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'echasnovski/mini.nvim'
+Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'gennaro-tedesco/nvim-peekup'
 Plug 'glidenote/memolist.vim'
 Plug 'goolord/alpha-nvim'
+Plug 'famiu/bufdelete.nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
@@ -73,7 +71,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'ojroques/nvim-bufdel'
+" Plug 'ojroques/nvim-bufdel'
 Plug 'osyo-manga/vim-precious'
 Plug 'osyo-manga/vim-textobj-blockwise'
 Plug 'osyo-manga/vim-textobj-multiblock'

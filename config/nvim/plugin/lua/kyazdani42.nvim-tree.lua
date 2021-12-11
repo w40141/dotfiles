@@ -9,7 +9,7 @@ require'nvim-tree'.setup {
     open_on_setup       = false,
     ignore_ft_on_setup  = {},
     auto_close          = true,
-    open_on_tab         = false,
+    open_on_tab         = true,
     hijack_cursor       = true,
     update_cwd          = false,
     update_to_buf_dir   = {

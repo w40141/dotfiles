@@ -6,5 +6,5 @@
 
 -- vim.cmd([[UsePlugin 'mini.nvim']])
 
-require('mini.tabline').setup()
+-- require('mini.tabline').setup()
 -- require('mini.starter').setup()
