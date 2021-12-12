@@ -8,3 +8,4 @@
 
 -- require('mini.tabline').setup()
 require('mini.starter').setup()
+-- require('mini.pairs').setup()

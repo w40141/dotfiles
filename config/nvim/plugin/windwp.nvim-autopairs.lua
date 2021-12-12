@@ -1,7 +1,6 @@
 -- autopairs for neovim written by lua
 -- https://github.com/windwp/nvim-autopairs
 
--- vim.cmd([[UsePlugin 'nvim-autopairs']])
 require('nvim-autopairs').setup{}
 
 -- local npairs = require("nvim-autopairs")
