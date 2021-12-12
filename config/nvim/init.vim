@@ -44,7 +44,7 @@ Plug 'echasnovski/mini.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'glidenote/memolist.vim'
-Plug 'goolord/alpha-nvim'
+" Plug 'goolord/alpha-nvim'
 Plug 'famiu/bufdelete.nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
