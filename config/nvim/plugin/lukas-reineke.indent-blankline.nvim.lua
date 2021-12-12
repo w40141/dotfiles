@@ -12,5 +12,5 @@ require('indent_blankline').setup{
 
 -- let g:indent_blankline_filetype_exclude = ['alpha']
 vim.g.indent_blankline_filetype_exclude = {
-    'help', 'mini', 'starter'
+    'help', 'mini', 'starter', 'terminal'
 }

@@ -32,9 +32,11 @@ endif
 " TODO misc
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
+" https://github.com/phaazon/hop.nvim
 call plug#begin('~/.vim/plugged')
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
+Plug 'windwp/nvim-ts-autotag'
 Plug 'akinsho/bufferline.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'andymass/vim-matchup'
