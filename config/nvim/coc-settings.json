@@ -26,6 +26,7 @@
     "highlight": "CocSuggestFloating"
   },
   "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json"],
+  "coc.preferences.formatOnType": true,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "python.linting.flake8Enabled": true,

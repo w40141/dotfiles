@@ -39,8 +39,8 @@ endfunction
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <cr> pumvisible() ?
+            \ coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <C-l> for trigger snippet expand.
 imap <C-l> <plug>(coc-snippets-expand)
@@ -79,22 +79,31 @@ nmap <silent> gi <plug>(coc-implementation)
 nmap <silent> gr <plug>(coc-references)
 nmap <silent> gn <plug>(coc-rename)
 
+" [
+        " \ {"text": "(n)ew", "value": "new"},
+        " \ {"text": "(e)dit", "value": "edit"}
+" ]
+" NOTE: text must contains '()' to detect input and its must be 1 character
+function! ChoseAction(actions) abort
+  echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
+  let result = getcharstr()
+  let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
+  return len(result) ? result[0].value : ""
+endfunction
+
+function! CocJumpAction() abort
+  let actions = [
+        \ {"text": "(s)plit", "value": "split"},
+        \ {"text": "(v)slit", "value": "vsplit"},
+        \ {"text": "(t)ab", "value": "tabedit"},
+        \ ]
+  return ChoseAction(actions)
+endfunction
+
+nnoremap <silent> gt :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
+
 " Use H to show documentation in preview window
 nnoremap <silent> H :call CocAction('doHover')<CR>
-
-" カーソルを動かさないとHover
-" function! ShowDocIfNoDiagnostic(timer_id)
-"   if (coc#float#has_float() == 0 && CocHasProvider('hover') == 1)
-"     silent call CocActionAsync('doHover')
-"   endif
-" endfunction
-"
-" function! s:show_hover_doc()
-"   call timer_start(1000, 'ShowDocIfNoDiagnostic')
-" endfunction
-"
-" autocmd CursorHoldI * :call <SID>show_hover_doc()
-" autocmd CursorHold * :call <SID>show_hover_doc()
 
 " Remap for format selected region
 xmap <leader>fs  <plug>(coc-format-selected)
