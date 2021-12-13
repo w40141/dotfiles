@@ -96,7 +96,7 @@ Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test'
-Plug 'windwp/nvim-autopairs'
+" Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
