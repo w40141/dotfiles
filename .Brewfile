@@ -391,6 +391,8 @@ brew "xsv"
 brew "xvid"
 # Tracks most-used directories to make cd smarter
 brew "z"
+# Pluggable terminal workspace, with terminal multiplexer as the base feature
+brew "zellij"
 # High-performance, asynchronous messaging library
 brew "zeromq"
 # Maintained ctags implementation
