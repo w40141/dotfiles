@@ -72,6 +72,7 @@ nmap <silent> [d <plug>(coc-diagnostic-prev)
 nmap <silent> ]d <plug>(coc-diagnostic-next)
 
 " Remap keys for gotos
+" TODO: jump-coc-definition <leader>t
 nmap <silent> gd <plug>(coc-definition)
 nmap <silent> gy <plug>(coc-type-definition)
 nmap <silent> gi <plug>(coc-implementation)
@@ -126,9 +127,10 @@ omap ic <plug>(coc-classobj-i)
 xmap ac <plug>(coc-classobj-a)
 omap ac <plug>(coc-classobj-a)
 
+" NOTE:
 " Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <Leader>d <plug>(coc-range-select)
-xmap <silent> <Leader>d <plug>(coc-range-select)
+" nmap <silent> <Leader>d <plug>(coc-range-select)
+" xmap <silent> <Leader>d <plug>(coc-range-select)
 
 nnoremap <silent> <Leader>f :<C-U>Format<CR>
 
