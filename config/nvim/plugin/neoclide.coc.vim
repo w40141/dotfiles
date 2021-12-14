@@ -6,22 +6,37 @@ UsePlugin 'coc.nvim'
 
 " If the following plugins dont install, the plugins are installed automatic when neovim starts.
 let g:coc_global_extensions = [
-     \  'coc-css'
-     \, 'coc-dictionary'
-     \, 'coc-fish'
-     \, 'coc-go'
-     \, 'coc-json'
-     \, 'coc-lists'
-     \, 'coc-omni'
-     \, 'coc-pyright'
-     \, 'coc-rust-analyzer'
-     \, 'coc-snippets'
-     \, 'coc-texlab'
-     \, 'coc-tsserver'
-     \, 'coc-vimlsp'
-     \, 'coc-word'
-     \, 'coc-solargraph'
-     \ ]
+            \ 'coc-css',
+            \ 'coc-dictionary',
+            \ 'coc-elixir',
+            \ 'coc-eslint',
+            \ 'coc-fish',
+            \ 'coc-git',
+            \ 'coc-gitignore',
+            \ 'coc-go',
+            \ 'coc-html',
+            \ 'coc-java',
+            \ 'coc-java-debug',
+            \ 'coc-json',
+            \ 'coc-lists',
+            \ 'coc-lua',
+            \ 'coc-omni',
+            \ 'coc-pairs',
+            \ 'coc-phpls',
+            \ 'coc-prettier',
+            \ 'coc-pyright',
+            \ 'coc-rust-analyzer',
+            \ 'coc-snippets',
+            \ 'coc-solargraph',
+            \ 'coc-sql',
+            \ 'coc-texlab',
+            \ 'coc-toml',
+            \ 'coc-tsserver',
+            \ 'coc-vetur',
+            \ 'coc-vimlsp',
+            \ 'coc-word',
+            \ 'coc-yaml',
+            \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by

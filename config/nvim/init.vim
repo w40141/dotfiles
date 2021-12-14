@@ -29,6 +29,8 @@ endif
 " https://zenn.dev/kawarimidoll/articles/8172a4c29a6653
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
+" fzf
+" https://github.com/nvim-telescope/telescope.nvim
 " TODO misc
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
@@ -46,7 +48,6 @@ Plug 'echasnovski/mini.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'glidenote/memolist.vim'
-" Plug 'goolord/alpha-nvim'
 Plug 'famiu/bufdelete.nvim'
 Plug 'haishanh/night-owl.vim'
 Plug 'honza/vim-snippets'
@@ -96,7 +97,6 @@ Plug 'tyru/eskk.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'vim-jp/vimdoc-ja'
 Plug 'vim-test/vim-test'
-" Plug 'windwp/nvim-autopairs'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))

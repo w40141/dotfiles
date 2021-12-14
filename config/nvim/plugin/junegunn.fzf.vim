@@ -69,16 +69,9 @@ let $FZF_DEFAULT_OPTS="--layout=reverse"
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 
-let mapleader = "\<Space>"
 function! s:delete_buffers(lines)
   execute 'bwipeout' join(map(a:lines, {_, line -> split(line)[0]}))
 endfunction
-
-command! BD call fzf#run(fzf#wrap({
-  \ 'source': s:list_buffers(),
-  \ 'sink*': { lines -> s:delete_buffers(lines) },
-  \ 'options': '--multi --reverse --bind ctrl-a:select-all+accept'
-  \ }))
 
 " Filesコマンドにもプレビューを出す
 command! -bang -nargs=? -complete=dir Files
@@ -128,8 +121,6 @@ nnoremap <silent> <C-f>m :Marks <CR>
 nnoremap <silent> <C-f>h :History <CR>
 " <C-F>cでコミット履歴検索を開く
 nnoremap <silent> <C-f>c :Commits <CR>
-" <C-F>dでバッファ内のファイルを消す
-nnoremap <silent> <C-f>d :BD <CR>
 
 " Path completion with custom source command
 inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
