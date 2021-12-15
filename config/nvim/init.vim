@@ -27,11 +27,15 @@ endif
 " https://github.com/rockerBOO/awesome-neovim
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 " https://zenn.dev/kawarimidoll/articles/8172a4c29a6653
+" https://zenn.dev/monaqa/articles/2020-12-22-vim-abbrev
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
 " fzf
 " https://github.com/nvim-telescope/telescope.nvim
 " TODO misc
+" https://github.com/vim-skk/skkeleton
+" https://github.com/mopp/vim-operator-convert-case
+" https://github.com/folke/which-key.nvim
 " https://github.com/VonHeikemen/fine-cmdline.nvim
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
