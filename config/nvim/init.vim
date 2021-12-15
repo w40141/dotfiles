@@ -32,6 +32,7 @@ endif
 " fzf
 " https://github.com/nvim-telescope/telescope.nvim
 " TODO misc
+" https://github.com/VonHeikemen/fine-cmdline.nvim
 " Plug 'MattesGroeger/vim-bookmarks'
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " https://github.com/phaazon/hop.nvim

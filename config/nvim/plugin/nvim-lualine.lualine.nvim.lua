@@ -64,7 +64,8 @@ require'lualine'.setup {
         },
         search_result,
     },
-    lualine_x = {
+    lualine_x = {},
+    lualine_y = {
         vista,
         {
             'diagnostics',
@@ -82,7 +83,6 @@ require'lualine'.setup {
             always_visible = false,
         },
     },
-    lualine_y = {{'filetype', icon_only = true}},
     lualine_z = {'location', 'progress'},
   },
   inactive_sections = {
@@ -90,9 +90,9 @@ require'lualine'.setup {
     lualine_b = {},
     lualine_c = {},
     lualine_x = {},
-    lualine_y = {},
+    lualine_y = {{'filetype', icon_only = true}},
     lualine_z = {}
   },
   tabline = {},
-  extensions = {'quickfix', 'fzf'}
+  extensions = {'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
 }
