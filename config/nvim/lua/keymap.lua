@@ -139,7 +139,7 @@ api.nvim_set_keymap('n', 'bl', ':bl<cr>', { noremap = true, silent = true })
 --変更中の次のバッファへ移動
 api.nvim_set_keymap('n', 'bm', ':bm<cr>', { noremap = true, silent = true })
 -- カレントのバッファを閉じてバッファリストから削除
-api.nvim_set_keymap('n', 'bd', ':bdelete<cr>', { noremap = true, silent = true })
+-- api.nvim_set_keymap('n', 'bd', ':bdelete<cr>', { noremap = true, silent = true })
 
 
 -- その他

@@ -28,6 +28,7 @@ endif
 " https://zenn.dev/hituzi_no_sippo/articles/871c06cdbc45b53181e3
 " https://zenn.dev/kawarimidoll/articles/8172a4c29a6653
 " https://zenn.dev/monaqa/articles/2020-12-22-vim-abbrev
+" https://qiita.com/pink_bangbi/items/8d9041bb6bc3473dbd20
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
 " fzf
@@ -46,7 +47,7 @@ Plug 'airblade/vim-rooter'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'akinsho/bufferline.nvim'
 Plug 'akinsho/toggleterm.nvim'
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 Plug 'blackcauldron7/surround.nvim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'echasnovski/mini.nvim'
