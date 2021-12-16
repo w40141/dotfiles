@@ -23,13 +23,13 @@ local function eskk()
     end
 end
 
-local function vista()
-    if vim.b['vista_nearest_method_or_function'] then
-        return vim.b['vista_nearest_method_or_function']
-    else
-        return ''
-    end
-end
+-- local function vista()
+--     if vim.b['vista_nearest_method_or_function'] then
+--         return vim.b['vista_nearest_method_or_function']
+--     else
+--         return ''
+--     end
+-- end
 
 require'lualine'.setup {
   options = {
@@ -66,7 +66,7 @@ require'lualine'.setup {
     },
     lualine_x = {},
     lualine_y = {
-        vista,
+        -- vista,
         {
             'diagnostics',
             sources={'coc'},

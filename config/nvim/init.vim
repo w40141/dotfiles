@@ -29,6 +29,7 @@ endif
 " https://zenn.dev/kawarimidoll/articles/8172a4c29a6653
 " https://zenn.dev/monaqa/articles/2020-12-22-vim-abbrev
 " https://qiita.com/pink_bangbi/items/8d9041bb6bc3473dbd20
+" https://zenn.dev/tamago324/articles/2021-12-16-lir-nvim-introduction
 " TODO package manager
 " https://github.com/wbthomason/packer.nvim
 " fzf
@@ -42,6 +43,7 @@ endif
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " https://github.com/phaazon/hop.nvim
 call plug#begin('~/.vim/plugged')
+" Plug 'goolord/alpha-nvim'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
 Plug 'windwp/nvim-ts-autotag'
@@ -50,7 +52,7 @@ Plug 'akinsho/toggleterm.nvim'
 " Plug 'andymass/vim-matchup'
 Plug 'blackcauldron7/surround.nvim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-Plug 'echasnovski/mini.nvim'
+" Plug 'echasnovski/mini.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'glidenote/memolist.vim'

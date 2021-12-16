@@ -103,7 +103,7 @@ set.tabstop = 4
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 set.smarttab = true
 -- cプログラムの自動インデント
-set.cindent = true
+-- set.cindent = true
 -- タブを空白入力に置換
 set.expandtab = true
 -- 補完時に大文字小文字を区別しない
