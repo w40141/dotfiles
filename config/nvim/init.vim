@@ -43,16 +43,24 @@ endif
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " https://github.com/phaazon/hop.nvim
 call plug#begin('~/.vim/plugged')
+" Lua
+Plug 'MunifTanjim/nui.nvim'
+" Plug 'VonHeikemen/fine-cmdline.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'akinsho/bufferline.nvim'
+Plug 'akinsho/toggleterm.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'tamago324/lir.nvim'
+" VimScript
+" Disable
 " Plug 'goolord/alpha-nvim'
+" Plug 'andymass/vim-matchup'
+" Plug 'echasnovski/mini.nvim'
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter'
 Plug 'windwp/nvim-ts-autotag'
-Plug 'akinsho/bufferline.nvim'
-Plug 'akinsho/toggleterm.nvim'
-" Plug 'andymass/vim-matchup'
 Plug 'blackcauldron7/surround.nvim'
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-" Plug 'echasnovski/mini.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'glidenote/memolist.vim'
@@ -70,15 +78,13 @@ Plug 'kana/vim-operator-replace'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-textobj-user'
 Plug 'kevinhwang91/nvim-hlslens'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kyazdani42/nvim-web-devicons'
+" Plug 'kyazdani42/nvim-tree.lua'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'numToStr/Comment.nvim'
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
