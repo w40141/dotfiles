@@ -10,4 +10,4 @@ vim.cmd('syntax on')
 
 require('option')
 require('keymap')
-require('plugin')
+-- require('plugin')

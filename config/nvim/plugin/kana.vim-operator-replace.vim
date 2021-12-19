@@ -3,4 +3,6 @@
 "
 UsePlugin 'vim-operator-replace'
 
-map _ <plug>(operator-replace)
+lua << EOF
+vim.api.nvim_set_keymap('', '_', [[<plug>(operator-replace)]], { noremap = false, silent = true })
+EOF

@@ -127,6 +127,8 @@ api.nvim_set_keymap('i', '<c-a>', '<home>', { noremap = true, silent = true })
 api.nvim_set_keymap('i', '<c-b>', '<left>', { noremap = true, silent = true })
 api.nvim_set_keymap('i', '<c-e>', '<end>', { noremap = true, silent = true })
 api.nvim_set_keymap('i', '<c-f>', '<right>', { noremap = true, silent = true })
+-- 挿入モードでのesc
+api.nvim_set_keymap('i', 'jj', '<esc>', { noremap = true, silent = true })
 -- ctrl-v で insert モードで貼り付け
 api.nvim_set_keymap('i', '<c-v>', '<eSC>"*pa', { noremap = true, silent = true })
 -- 矢印キー無効
@@ -163,5 +165,5 @@ api.nvim_set_keymap('c', '<c-p>', '<up>', { noremap = true, silent = false })
 -- ctrl-v で command モードで貼り付け
 api.nvim_set_keymap('c', '<c-v>', '<C-r>+', { noremap = true, silent = true })
 -- バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
-api.nvim_set_keymap('c', [[/]], [[getcmdtype() == '/' ? '\/' : '/']], { noremap = true, silent = true, expr = true })
-api.nvim_set_keymap('c', [[?]], [[getcmdtype() == '?' ? '\?' : '?']], { noremap = true, silent = true, expr = true })
+api.nvim_set_keymap('c', [[/]], [[getcmdtype() == '/' ? '\/' : '/']], { noremap = true, silent = false, expr = true })
+api.nvim_set_keymap('c', [[?]], [[getcmdtype() == '?' ? '\?' : '?']], { noremap = true, silent = false, expr = true })
