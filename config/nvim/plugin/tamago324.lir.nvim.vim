@@ -20,13 +20,13 @@ require'lir'.setup {
         ['h'] = actions.up,
         ['q'] = actions.quit,
 
-        ['k'] = actions.mkdir,
+        ['K'] = actions.mkdir,
         ['n'] = actions.newfile,
         ['r'] = actions.rename,
         ['@'] = actions.cd,
         ['y'] = actions.yank_path,
         ['.'] = actions.toggle_show_hidden,
-        ['d'] = actions.delete,
+        ['D'] = actions.delete,
         ['J'] = function()
             mark_actions.toggle_mark()
             vim.cmd('normal! j')

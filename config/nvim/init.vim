@@ -28,7 +28,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'ntpeters/vim-better-whitespace', { 'on': [] }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'numToStr/Comment.nvim'
-Plug 'akinsho/bufferline.nvim', { 'on': 'BufferLine' }
+Plug 'akinsho/bufferline.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -38,14 +38,12 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'lewis6991/gitsigns.nvim'
 " TODO 設定周りを確認する
 Plug 'nvim-treesitter/nvim-treesitter'
+" TODO textobj周りを確認する
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tamago324/lir.nvim'
 
 " Disable
-" Plug 'goolord/alpha-nvim'
-" Plug 'echasnovski/mini.nvim'
 " Plug 'windwp/nvim-ts-autotag'
-" Plug 'famiu/bufdelete.nvim'
 " Plug 'MunifTanjim/nui.nvim'
 " Plug 'VonHeikemen/fine-cmdline.nvim'
 
@@ -87,11 +85,13 @@ Plug 'honza/vim-snippets'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-
+" TODO vim to lua
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf.vim', { 'on': [] }
+" TODO vim to lua
+Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
+" TODO vim to lua
+Plug 'tpope/vim-fugitive', { 'on': [] }
 "
 " Plug 'folke/todo-comments.nvim'
 
@@ -118,6 +118,8 @@ function! s:LazyLoadPlugs(timer) abort
                 \ 'vim-precious',
                 \ 'vim-qfreplace',
                 \ 'vim-rooter',
+                \ 'fzf.vim',
+                \ 'vim-fugitive',
                 \ )
 
 endfunction
@@ -127,6 +129,7 @@ augroup load_us_insert
     autocmd!
     autocmd InsertEnter * call plug#load(
                 \ 'eskk.vim',
+                \ 'coc.nvim',
                 \ )| autocmd! load_us_insert
 augroup END
 
