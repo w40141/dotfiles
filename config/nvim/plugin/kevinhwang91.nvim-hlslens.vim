@@ -1,6 +1,9 @@
--- Hlsearch Lens for Neovim
--- https://github.com/kevinhwang91/nvim-hlslens
+" Hlsearch Lens for Neovim
+" https://github.com/kevinhwang91/nvim-hlslens
 
+UsePlugin 'nvim-hlslens'
+
+lua << EOF
 require('hlslens').setup({
     -- calm_down = true,
     -- nearest_only = true,
@@ -23,3 +26,5 @@ api.nvim_set_keymap('', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], { n
 -- use : instead of <Cmd>
 -- noremap <silent><C-c> :<C-u>nohlsearch<CR>
 api.nvim_set_keymap('', '<c-c>', [[:<c-u>nohlsearch<cr>]], { noremap = true, silent = true })
+
+EOF

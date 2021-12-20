@@ -108,9 +108,9 @@ api.nvim_set_keymap('n', 'bm', ':bm<cr>', { noremap = true, silent = true })
 api.nvim_set_keymap('n', 'ZZ', '<nop>', { noremap = true, silent = true })
 api.nvim_set_keymap('n', 'ZQ', '<nop>', { noremap = true, silent = true })
 -- バッファリストの1つ前のバッファを開く
-api.nvim_set_keymap('n', '[b', ':bprevious<cr>', { noremap = true, silent = true })
+-- api.nvim_set_keymap('n', '[b', ':bprevious<cr>', { noremap = true, silent = true })
 -- バッファリストの次のバッファを開く
-api.nvim_set_keymap('n', ']b', ':bnext<cr>', { noremap = true, silent = true })
+-- api.nvim_set_keymap('n', ']b', ':bnext<cr>', { noremap = true, silent = true })
 -- 前のタブに切り替え
 api.nvim_set_keymap('n', '[t', 'gT', { noremap = true, silent = true })
 -- 次のタブに切り替え
