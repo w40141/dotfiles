@@ -52,7 +52,9 @@ Plug 'itchyny/vim-cursorword'
 Plug 'skanehira/translate.vim', { 'on': ['<plug>(Translate)', '<plug>(VTranslate)'] }
 Plug 'tyru/open-browser.vim', { 'on': ['<plug>(openbrowser-smart-search)'] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'haishanh/night-owl.vim'
+" Plug 'haishanh/night-owl.vim'
+" Plug 'sainnhe/gruvbox-material'
+Plug 'marko-cerovac/material.nvim'
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
 Plug 'kana/vim-operator-user', { 'on': [] }

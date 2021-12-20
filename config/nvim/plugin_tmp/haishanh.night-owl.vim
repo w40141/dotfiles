@@ -2,10 +2,3 @@
 " https://github.com/haishanh/night-owl.vim
 
 UsePlugin 'night-owl.vim'
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
-syntax enable
-colorscheme night-owl

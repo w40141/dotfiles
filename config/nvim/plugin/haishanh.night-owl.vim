@@ -3,9 +3,11 @@
 
 UsePlugin 'night-owl.vim'
 
-if (has("termguicolors"))
- set termguicolors
-endif
-
-syntax enable
-colorscheme night-owl
+lua << EOF
+if vim.fn.has("termguicolors") == true then
+    vim.opt.termguicolors = true
+end
+vim.cmd("syntax enable")
+vim.opt.background = "dark"
+vim.cmd("colorscheme night-owl")
+EOF
