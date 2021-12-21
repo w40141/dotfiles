@@ -5,6 +5,8 @@ UsePlugin 'fzf-preview.vim'
 
 let $BAT_THEME                     = 'gruvbox-dark'
 let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+set shell=/bin/zsh
+let $SHELL = "/bin/zsh"
 
 lua << EOF
 local key = vim.api.nvim_set_keymap
