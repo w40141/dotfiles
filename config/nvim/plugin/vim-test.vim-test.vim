@@ -5,11 +5,12 @@ UsePlugin 'vim-test'
 
 lua << EOF
 -- these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
-vim.api.nvim_set_keymap('n', 't<c-n>', [[:TestNeares<cr>]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 't<c-f>', [[:TestFile<cr>]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 't<c-s>', [[:TestSuite<cr>]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 't<c-l>', [[:TestLast<cr>]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('n', 't<c-g>', [[:TestVisit<cr>]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('n', 't<c-n>', [[:TestNeares<cr>]], { noremap = false, silent = true })
+key('n', 't<c-f>', [[:TestFile<cr>]], { noremap = false, silent = true })
+key('n', 't<c-s>', [[:TestSuite<cr>]], { noremap = false, silent = true })
+key('n', 't<c-l>', [[:TestLast<cr>]], { noremap = false, silent = true })
+key('n', 't<c-g>', [[:TestVisit<cr>]], { noremap = false, silent = true })
 vim.g["test#strategy"] = "neoterm"
 vim.g["test#preserve_screen"] = 1
 vim.g["test#python#runner"] = "pytest"

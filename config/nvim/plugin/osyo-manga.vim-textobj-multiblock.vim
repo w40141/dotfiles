@@ -4,8 +4,9 @@
 UsePlugin 'vim-textobj-multiblock'
 
 lua << EOF
-vim.api.nvim_set_keymap('o', 'ab', [[<Plug>(textobj-multiblock-a)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('o', 'ib', [[<Plug>(textobj-multiblock-i)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('v', 'ab', [[<Plug>(textobj-multiblock-a)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('v', 'ib', [[<Plug>(textobj-multiblock-i)]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('o', 'ab', [[<Plug>(textobj-multiblock-a)]], { noremap = false, silent = true })
+key('o', 'ib', [[<Plug>(textobj-multiblock-i)]], { noremap = false, silent = true })
+key('v', 'ab', [[<Plug>(textobj-multiblock-a)]], { noremap = false, silent = true })
+key('v', 'ib', [[<Plug>(textobj-multiblock-i)]], { noremap = false, silent = true })
 EOF

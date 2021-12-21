@@ -20,48 +20,48 @@ require('nvim-treesitter.configs').setup{
     additional_vim_regex_highlighting = { 'vim' },
   },
   indent = { enable = true },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true,
-      keymaps = {
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@conditional.outer",
-        ["ic"] = "@conditional.inner",
-        ["ab"] = "@block.outer",
-        ["ib"] = "@block.inner",
-      },
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ["<leader>a"] = "@parameter.inner",
-      },
-      swap_previous = {
-        ["<leader>A"] = "@parameter.inner",
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        ["]f"] = "@function.outer",
-        ["]c"] = "@conditional.outer",
-      },
-      goto_next_end = {
-        ["]F"] = "@function.outer",
-        ["]C"] = "@conditional.outer",
-      },
-      goto_previous_start = {
-        ["[f"] = "@function.outer",
-        ["[c"] = "@conditional.outer",
-      },
-      goto_previous_end = {
-        ["[F"] = "@function.outer",
-        ["[C"] = "@conditional.outer",
-      },
-    },
-  },
+  -- textobjects = {
+  --   select = {
+  --     enable = true,
+  --     lookahead = true,
+  --     keymaps = {
+  --       ["af"] = "@function.outer",
+  --       ["if"] = "@function.inner",
+  --       ["ac"] = "@conditional.outer",
+  --       ["ic"] = "@conditional.inner",
+  --       ["ab"] = "@block.outer",
+  --       ["ib"] = "@block.inner",
+  --     },
+  --   },
+  --   swap = {
+  --     enable = true,
+  --     swap_next = {
+  --       ["<leader>a"] = "@parameter.inner",
+  --     },
+  --     swap_previous = {
+  --       ["<leader>A"] = "@parameter.inner",
+  --     },
+  --   },
+  --   move = {
+  --     enable = true,
+  --     set_jumps = true, -- whether to set jumps in the jumplist
+  --     goto_next_start = {
+  --       ["]f"] = "@function.outer",
+  --       ["]c"] = "@conditional.outer",
+  --     },
+  --     goto_next_end = {
+  --       ["]F"] = "@function.outer",
+  --       ["]C"] = "@conditional.outer",
+  --     },
+  --     goto_previous_start = {
+  --       ["[f"] = "@function.outer",
+  --       ["[c"] = "@conditional.outer",
+  --     },
+  --     goto_previous_end = {
+  --       ["[F"] = "@function.outer",
+  --       ["[C"] = "@conditional.outer",
+  --     },
+  --   },
+  -- },
 }
 EOF

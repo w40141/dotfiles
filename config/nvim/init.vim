@@ -52,8 +52,6 @@ Plug 'itchyny/vim-cursorword'
 Plug 'skanehira/translate.vim', { 'on': ['<plug>(Translate)', '<plug>(VTranslate)'] }
 Plug 'tyru/open-browser.vim', { 'on': ['<plug>(openbrowser-smart-search)'] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-" Plug 'haishanh/night-owl.vim'
-" Plug 'sainnhe/gruvbox-material'
 Plug 'marko-cerovac/material.nvim'
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
@@ -76,7 +74,7 @@ Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'simeji/winresizer', { 'on': 'WinResizerStartResize' }
+Plug 'simeji/winresizer', { 'on': [] }
 Plug 'vim-test/vim-test', { 'on': [] }
 Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'osyo-manga/vim-precious', { 'on': [] }
@@ -87,17 +85,21 @@ Plug 'honza/vim-snippets'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
-" TODO vim to lua
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" TODO vim to lua
 Plug 'junegunn/fzf.vim', { 'on': [] }
+" Plug 'yuki-yano/fzf-preview.vim', { 'on': [], 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
 " TODO vim to lua
-Plug 'tpope/vim-fugitive', { 'on': [] }
-"
+Plug 'lambdalisue/gina.vim', { 'on': [] }
+
 " Plug 'folke/todo-comments.nvim'
 
 " Disable
+" Plug 'haishanh/night-owl.vim'
+" Plug 'sainnhe/gruvbox-material'
+" Plug 'tpope/vim-fugitive', { 'on': [] }
 " Plug 'liuchengxu/vista.vim'
 " Plug 'glidenote/memolist.vim'
 " Plug 'andymass/vim-matchup'
@@ -120,8 +122,9 @@ function! s:LazyLoadPlugs(timer) abort
                 \ 'vim-precious',
                 \ 'vim-qfreplace',
                 \ 'vim-rooter',
+                \ 'winresizer',
+                \ 'gina.vim',
                 \ 'fzf.vim',
-                \ 'vim-fugitive',
                 \ )
 
 endfunction

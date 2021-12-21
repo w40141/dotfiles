@@ -4,6 +4,7 @@
 UsePlugin 'vim-expand-region'
 
 lua << EOF
-vim.api.nvim_set_keymap('v', 'K', [[<plug>(expand_region_expand)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('v', 'J', [[<plug>(expand_region_shrink)]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('v', 'K', [[<plug>(expand_region_expand)]], { noremap = false, silent = true })
+key('v', 'J', [[<plug>(expand_region_shrink)]], { noremap = false, silent = true })
 EOF

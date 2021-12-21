@@ -5,5 +5,6 @@ UsePlugin 'vim-cheatsheet'
 
 let g:cheatsheet#cheat_file = g:config_dir . "/nvim/plugins/util/cheatsheet.md"
 lua << EOF
-vim.api.nvim_set_keymap('n', ',c', [[:Cheat]], { noremap = true, silent = true })
+local key = vim.api.nvim_set_keymap
+key('n', ',c', [[:Cheat]], { noremap = true, silent = true })
 EOF

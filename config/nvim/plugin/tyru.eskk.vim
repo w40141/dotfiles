@@ -45,7 +45,8 @@ vim.g["eskk#marker_henkan_select"] = "[選択]"
 vim.g["eskk#marker_okuri"] = "[送り]"
 vim.g["eskk#marker_jisyo_touroku"] = "[辞書]"
 
-vim.api.nvim_set_keymap('i', 'jk', [[<plug>(eskk:toggle)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('i', ';;', [[pumvisible() ? coc#_select_confirm() : coc#refresh()]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('c', 'jk', [[<plug>(eskk:toggle)]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('i', 'jk', [[<plug>(eskk:toggle)]], { noremap = false, silent = true })
+key('i', ';;', [[pumvisible() ? coc#_select_confirm() : coc#refresh()]], { noremap = true, silent = true })
+key('c', 'jk', [[<plug>(eskk:toggle)]], { noremap = false, silent = true })
 EOF

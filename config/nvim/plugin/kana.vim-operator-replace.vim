@@ -4,5 +4,6 @@
 UsePlugin 'vim-operator-replace'
 
 lua << EOF
-vim.api.nvim_set_keymap('', '_', [[<plug>(operator-replace)]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('', '_', [[<plug>(operator-replace)]], { noremap = false, silent = true })
 EOF

@@ -5,6 +5,7 @@ UsePlugin 'open-browser.vim'
 
 lua << EOF
 vim.g.netrw_nogx = 1
-vim.api.nvim_set_keymap('n', 'gx', [[<plug>(openbrowser-smart-search)]], { noremap = false, silent = true })
-vim.api.nvim_set_keymap('v', 'gx', [[<plug>(openbrowser-smart-search)]], { noremap = false, silent = true })
+local key = vim.api.nvim_set_keymap
+key('n', 'gx', [[<plug>(openbrowser-smart-search)]], { noremap = false, silent = true })
+key('v', 'gx', [[<plug>(openbrowser-smart-search)]], { noremap = false, silent = true })
 EOF

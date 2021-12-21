@@ -7,24 +7,25 @@ lua << EOF
 -- These commands will navigate through buffers in order regardless of which mode you are using
 -- e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 
-vim.api.nvim_set_keymap('n', '[b', [[:BufferLineCyclePrev<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', ']b', [[:BufferLineCycleNext<cr>]], { noremap = true, silent = true })
+local key = vim.api.nvim_set_keymap
+key('n', '[b', [[:BufferLineCyclePrev<cr>]], { noremap = true, silent = true })
+key('n', ']b', [[:BufferLineCycleNext<cr>]], { noremap = true, silent = true })
 
 -- These commands will sort buffers by directory, language, or a custom criteria
-vim.api.nvim_set_keymap('n', 'bE', [[:BufferLineSortByExtension<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'bD', [[:BufferLineSortByDirectory<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'bg', [[:BufferLinePick<cr>]], { noremap = true, silent = true })
+key('n', 'bE', [[:BufferLineSortByExtension<cr>]], { noremap = true, silent = true })
+key('n', 'bD', [[:BufferLineSortByDirectory<cr>]], { noremap = true, silent = true })
+key('n', 'bg', [[:BufferLinePick<cr>]], { noremap = true, silent = true })
 
 -- These commands will move the current buffer backwards or forwards in the bufferline
-vim.api.nvim_set_keymap('n', '<silent><leader>1', [[<Cmd>BufferLineGoToBuffer 1<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>2', [[<Cmd>BufferLineGoToBuffer 2<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>3', [[<Cmd>BufferLineGoToBuffer 3<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>4', [[<Cmd>BufferLineGoToBuffer 4<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>5', [[<Cmd>BufferLineGoToBuffer 5<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>6', [[<Cmd>BufferLineGoToBuffer 6<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>7', [[<Cmd>BufferLineGoToBuffer 7<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>8', [[<Cmd>BufferLineGoToBuffer 8<cr>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<silent><leader>9', [[<Cmd>BufferLineGoToBuffer 9<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>1', [[<Cmd>BufferLineGoToBuffer 1<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>2', [[<Cmd>BufferLineGoToBuffer 2<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>3', [[<Cmd>BufferLineGoToBuffer 3<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>4', [[<Cmd>BufferLineGoToBuffer 4<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>5', [[<Cmd>BufferLineGoToBuffer 5<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>6', [[<Cmd>BufferLineGoToBuffer 6<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>7', [[<Cmd>BufferLineGoToBuffer 7<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>8', [[<Cmd>BufferLineGoToBuffer 8<cr>]], { noremap = true, silent = true })
+key('n', '<silent><leader>9', [[<Cmd>BufferLineGoToBuffer 9<cr>]], { noremap = true, silent = true })
 
 vim.opt.termguicolors = true
 require('bufferline').setup {
