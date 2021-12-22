@@ -1,6 +1,8 @@
 {
-  "diagnostic.errorSign": "\uF490",
-  "diagnostic.warningSign": "\uF4A3",
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
   "diagnostic.floatConfig": {
     "border": true,
     "highlight": "CocSuggestFloating"

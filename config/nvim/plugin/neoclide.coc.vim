@@ -44,8 +44,10 @@ let g:coc_snippet_next = '<c-j>'
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
 
-let g:coc_status_error_sign = "\uF490 "
-let g:coc_status_warning_sign ="\uF4A3 "
+" let g:coc_status_error_sign = " "
+" let g:coc_status_warning_sign =" "
+" let g:coc_status_info_sign = " "
+" let g:coc_status_hint_sign = " "
 
 function! s:check_back_space() abort
   let col = col('.') - 1

@@ -5,15 +5,15 @@ UsePlugin 'lualine.nvim'
 
 lua << EOF
 local function search_result()
-  if vim.v.hlsearch == 0 then
-    return ''
-  end
-  local last_search = vim.fn.getreg '/'
-  if not last_search or last_search == '' then
-    return ''
-  end
-  local searchcount = vim.fn.searchcount { maxcount = 9999 }
-  return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
+    if vim.v.hlsearch == 0 then
+        return ''
+    end
+    local last_search = vim.fn.getreg '/'
+    if not last_search or last_search == '' then
+        return ''
+    end
+    local searchcount = vim.fn.searchcount { maxcount = 9999 }
+    return last_search .. '(' .. searchcount.current .. '/' .. searchcount.total .. ')'
 end
 
 local function eskk()
@@ -33,68 +33,66 @@ end
 -- end
 
 require'lualine'.setup {
-  options = {
-    icons_enabled = true,
-    theme = 'material-nvim',
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = {
-        'mode', eskk,
+    options = {
+        icons_enabled = true,
+        theme = 'material-nvim',
+        component_separators = { left = '', right = ''},
+        section_separators = { left = '', right = ''},
+        disabled_filetypes = {},
+        always_divide_middle = true,
     },
-    lualine_b = {
+    sections = {
+        lualine_a = {
+            'mode', eskk,
+        },
+        lualine_b = {
             {
                 'filename', file_status = true, path = 0,
                 symbols = { modified = '  ', readonly = '  ' }
             },
-    },
-    lualine_c = {
-        'branch',
-        {
-            'diff',
-            colored = true,
-            diff_color = {
-                added    = 'DiffAdd',
-                modified = 'DiffChange',
-                removed  = 'DiffDelete',
-            },
-            symbols = {added = ' ', modified = ' ', removed = ' '},
         },
-        search_result,
-    },
-    lualine_x = {},
-    lualine_y = {
-        -- vista,
-        {
-            'diagnostics',
-            sources={'coc'},
-            sections = {'error', 'warn', 'info', 'hint'},
-            diagnostics_color = {
-                error = 'DiagnosticError',
-                warn  = 'DiagnosticWarn',
-                info  = 'DiagnosticInfo',
-                hint  = 'DiagnosticHint',
+        lualine_c = {
+            {
+                'diagnostics',
+                sources={'coc'},
+                sections = {'error', 'warn', 'info', 'hint'},
+                diagnostics_color = {
+                    error = 'DiagnosticError',
+                    warn  = 'DiagnosticWarn',
+                    info  = 'DiagnosticInfo',
+                    hint  = 'DiagnosticHint',
+                },
+                symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+                colored = true,
             },
-            symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
-            colored = true,
-            update_in_insert = false,
-            always_visible = false,
+            search_result,
         },
+        lualine_x = {},
+        lualine_y = {
+            -- vista,
+            {
+                'diff',
+                colored = true,
+                diff_color = {
+                    added    = 'DiffAdd',
+                    modified = 'DiffChange',
+                    removed  = 'DiffDelete',
+                },
+                symbols = {added = ' ', modified = ' ', removed = ' '},
+            },
+            'branch',
+        },
+        lualine_z = {'location', 'progress'},
     },
-    lualine_z = {'location', 'progress'},
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {{'filetype', icon_only = true}},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = {'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {{'filetype', icon_only = true}},
+        lualine_z = {}
+    },
+    tabline = {},
+    extensions = {'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
 }
 EOF
