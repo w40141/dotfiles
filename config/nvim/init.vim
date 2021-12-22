@@ -25,7 +25,6 @@ if empty(glob(s:plugvim))
 endif
 call plug#begin('~/.vim/plugged')
 " Lua
-Plug 'ntpeters/vim-better-whitespace', { 'on': [] }
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'akinsho/bufferline.nvim'
@@ -48,6 +47,7 @@ Plug 'tamago324/lir.nvim'
 " Plug 'VonHeikemen/fine-cmdline.nvim'
 
 " VimScript
+Plug 'ntpeters/vim-better-whitespace', { 'on': 'StripWhitespace' }
 Plug 'itchyny/vim-cursorword'
 Plug 'skanehira/translate.vim', { 'on': ['<plug>(Translate)', '<plug>(VTranslate)'] }
 Plug 'tyru/open-browser.vim', { 'on': ['<plug>(openbrowser-smart-search)'] }
@@ -113,7 +113,6 @@ command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 function! s:LazyLoadPlugs(timer) abort
     call plug#load(
-                \ 'vim-better-whitespace',
                 \ 'vim-operator-user',
                 \ 'vim-textobj-user',
                 \ 'vim-textobj-blockwise',
