@@ -33,7 +33,7 @@ set.title = true
 -- 不可視文字を表示
 set.list = true
 set.listchars = {
-    tab = '▸ ', extends = '»', trail = '-', precedes = '«', eol = '↲', nbsp = '%', space = '.'
+    tab = '▸ ', extends = '»', trail = '-', precedes = '«', eol = '↲', nbsp = '%', space = '⋅'
 }
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 set.wrap = true

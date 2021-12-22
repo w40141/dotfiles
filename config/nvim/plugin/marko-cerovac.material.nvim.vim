@@ -12,7 +12,7 @@ require('material').setup({
     -- Enable borders between verticaly split windows
 	borders = false,
     -- Popup menu style ( can be: 'dark', 'light', 'colorful' or 'stealth' )
-	popup_menu = "dark",
+	popup_menu = "colorful",
 	italics = {
 		comments = false, -- Enable italic comments
 		keywords = false, -- Enable italic keywords
@@ -47,7 +47,6 @@ if vim.fn.has("termguicolors") == true then
     vim.opt.termguicolors = true
 end
 vim.cmd("syntax enable")
-vim.opt.background = "dark"
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "oceanic"
 vim.cmd("colorscheme material")
 EOF
