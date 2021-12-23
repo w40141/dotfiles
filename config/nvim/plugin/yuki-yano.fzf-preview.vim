@@ -3,13 +3,16 @@
 
 UsePlugin 'fzf-preview.vim'
 
-let $BAT_THEME                     = 'gruvbox-dark'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
 set shell=/bin/zsh
 let $SHELL = "/bin/zsh"
+let $BAT_THEME                     = 'gruvbox-dark'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+" fzf command default options
+let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
+let g:fzf_preview_command = 'bat --color=always --plain {-1}'
+let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Installed bat
 
 lua << EOF
-local key = vim.api.nvim_set_keymap
 key('n', '[ff]p', [[:<c-u>CocCommand fzf-preview.FromResources buffer project_mru project<cr>]], { noremap = true, silent = true })
 key('n', '[ff]s', [[:<c-u>CocCommand fzf-preview.GitStatus<cr>]], { noremap = true, silent = true } )
 key('n', '[ff]g', [[:<c-u>CocCommand fzf-preview.GitActions<cr>]], { noremap = true, silent = true } )

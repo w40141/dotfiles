@@ -1,3 +1,5 @@
+" A simple file explorer
+" https://github.com/tamago324/lir.nvim
 
 UsePlugin 'lir.nvim'
 

@@ -87,7 +87,7 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " TODO vim to lua
-Plug 'junegunn/fzf.vim', { 'on': [] }
+" Plug 'junegunn/fzf.vim', { 'on': [] }
 " Plug 'yuki-yano/fzf-preview.vim', { 'on': [], 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
@@ -123,7 +123,7 @@ function! s:LazyLoadPlugs(timer) abort
                 \ 'vim-rooter',
                 \ 'winresizer',
                 \ 'gina.vim',
-                \ 'fzf.vim',
+                \ 'coc.nvim',
                 \ )
 
 endfunction
@@ -133,7 +133,6 @@ augroup load_us_insert
     autocmd!
     autocmd InsertEnter * call plug#load(
                 \ 'eskk.vim',
-                \ 'coc.nvim',
                 \ )| autocmd! load_us_insert
 augroup END
 
