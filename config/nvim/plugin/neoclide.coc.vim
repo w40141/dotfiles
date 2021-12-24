@@ -105,24 +105,25 @@ let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Instal
 lua << EOF
 local key = vim.api.nvim_set_keymap
 
-key('i', '<tab>', [[pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
+key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
-key('i', '<cr>', [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
+-- key('i', '<cr>', [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
+key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
 
 key('i', '<c-l>', [[<plug>(coc-snippets-expand)]], { noremap = false, silent = true})
 key('v', '<c-j>', [[<plug>(coc-snippets-select)]], { noremap = false, silent = true})
 key('i', '<c-j>', [[<plug>(coc-snippets-expand-jump)]], { noremap = false, silent = true})
 key('x', '[dev]x', [[<plug>(coc-convert-snippet)]], { noremap = true, silent = true })
 key('i', '<c-@>', [[coc#refresh]], { noremap = true, silent = true })
-key('n', '[d', [[<plug>(coc-diagnostic-prev)]], { noremap = false, silent = true })
-key('n', ']d', [[<plug>(coc-diagnostic-next)]], { noremap = false, silent = true })
+key('n', 'H', [[:call CocAction('doHover')<cr>]], { noremap = true, silent = true })
+key('n', '[g', [[<plug>(coc-diagnostic-prev)]], { noremap = false, silent = true })
+key('n', ']g', [[<plug>(coc-diagnostic-next)]], { noremap = false, silent = true })
 key('n', '[dev]d', [[<plug>(coc-definition)]], { noremap = true, silent = true })
 key('n', '[dev]y', [[<plug>(coc-type-definition)]], { noremap = true, silent = true })
 key('n', '[dev]i', [[<plug>(coc-implementation)]], { noremap = true, silent = true })
 key('n', '[dev]r', [[<plug>(coc-references)]], { noremap = true, silent = true })
 key('n', '[dev]n', [[<plug>(coc-rename)]], { noremap = true, silent = true })
-key('n', '[dev]j', [[:<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>]], { noremap = true, silent = true })
-key('n', 'H', [[:call CocAction('doHover')<cr>]], { noremap = true, silent = true })
+key('n', '[dev]t', [[:<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>]], { noremap = true, silent = true })
 key('n', '[dev]fs', [[<plug>(coc-format-selected)]], { noremap = false })
 key('x', '[dev]fs', [[<plug>(coc-format-selected)]], { noremap = false })
 key('n', '[dev]a', [[<plug>(coc-codeaction-selected)iw]], { noremap = false })
@@ -145,66 +146,3 @@ key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { nore
 key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
 
 EOF
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-" inoremap <silent> <expr> <TAB>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-" inoremap <silent> <expr> <cr> pumvisible() ?
-            " \ coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" Use <C-l> for trigger snippet expand.
-" imap <C-l> <plug>(coc-snippets-expand)
-
-" Use <C-j> for select text for visual placeholder of snippet.
-" vmap <C-j> <plug>(coc-snippets-select)
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-" imap <C-j> <plug>(coc-snippets-expand-jump)
-
-" Use [dev]x for convert visual selected code to snippet
-" xmap [dev]x  <plug>(coc-convert-snippet)
-
-" Use <c-space> to trigger completion.
-" inoremap <silent> <expr> <c-@> coc#refresh()
-
-" Use `[d` and `]d` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-" nmap <silent> [d <plug>(coc-diagnostic-prev)
-" nmap <silent> ]d <plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-" TODO: jump-coc-definition [dev]t
-" nmap <silent> [dev]d <plug>(coc-definition)
-" nmap <silent> [dev]y <plug>(coc-type-definition)
-" nmap <silent> [dev]i <plug>(coc-implementation)
-" nmap <silent> [dev]r <plug>(coc-references)
-" nmap <silent> [dev]n <plug>(coc-rename)
-
-" nnoremap <silent> [dev]j :<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>
-"
-" Use H to show documentation in preview window
-" nnoremap <silent> H :call CocAction('doHover')<CR>
-"
-" Remap for format selected region
-" xmap [dev]fs <plug>(coc-format-selected)
-" nmap [dev]fs <plug>(coc-format-selected)
-
-" Remap for do codeAction of selected region, ex: `[dev]aap` for current paragraph
-" nmap [dev]a <Plug>(coc-codeaction-selected)iw
-" xmap [dev]a <Plug>(coc-codeaction-selected)iw
-
-" Remap for do codeAction of current line
-" nmap [dev]c <plug>(coc-codeaction)
-" Fix autofix problem of current line
-" nmap [dev]q <plug>(coc-fix-current)
-
-" nnoremap [dev]f :<C-U>Format<CR>
-

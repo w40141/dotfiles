@@ -80,6 +80,8 @@ set.incsearch = true
 -- 編集設定
 -- deleteでインデントを削除可能にする
 set.backspace = 'indent,eol,start'
+-- 
+set.completeopt = 'menuone,noinsert'
 -- 閉括弧が入力された時、対応する括弧を強調する
 set.showmatch = true
 -- 閉括弧が入力された時対応する括弧に一時的に移動
