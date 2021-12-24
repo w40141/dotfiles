@@ -41,6 +41,9 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tamago324/lir.nvim'
 
+" https://github.com/rockerBOO/awesome-neovim#colorscheme
+Plug 'marko-cerovac/material.nvim'
+
 " Disable
 " Plug 'windwp/nvim-ts-autotag'
 " Plug 'MunifTanjim/nui.nvim'
@@ -52,7 +55,6 @@ Plug 'itchyny/vim-cursorword'
 Plug 'skanehira/translate.vim', { 'on': ['<plug>(Translate)', '<plug>(VTranslate)'] }
 Plug 'tyru/open-browser.vim', { 'on': ['<plug>(openbrowser-smart-search)'] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug 'marko-cerovac/material.nvim'
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
 Plug 'kana/vim-operator-user', { 'on': [] }
