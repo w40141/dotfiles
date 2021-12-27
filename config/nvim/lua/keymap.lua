@@ -85,7 +85,7 @@ key('n', 'vp', 'viwpviwy', { noremap = true, silent = true })
 -- カーソル位置の単語をyankする
 key('n', 'vy', 'viwy', { noremap = true, silent = true })
 -- ノーマルモードでも改行可能
--- key('n', '<cr>', 'i<cr><esc>', { noremap = true, silent = true })
+key('n', '<cr>', 'i<cr><esc>', { noremap = true, silent = true })
 -- tabにて対応ペアにジャンプ
 key('n', '<tab>', '%', { noremap = true, silent = true })
 -- ウィンドウを分割
