@@ -294,7 +294,7 @@ brew "mas"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
-brew "mysql", restart_service: true
+brew "mysql", restart_service: false
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
