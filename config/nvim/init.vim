@@ -44,6 +44,8 @@ Plug 'tamago324/lir.nvim'
 " https://github.com/rockerBOO/awesome-neovim#colorscheme
 Plug 'marko-cerovac/material.nvim'
 
+Plug 'folke/todo-comments.nvim'
+
 " Disable
 " Plug 'windwp/nvim-ts-autotag'
 " Plug 'MunifTanjim/nui.nvim'
@@ -89,16 +91,13 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " TODO vim to lua
-" Plug 'junegunn/fzf.vim', { 'on': [] }
-" Plug 'yuki-yano/fzf-preview.vim', { 'on': [], 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
-" TODO vim to lua
 Plug 'lambdalisue/gina.vim', { 'on': [] }
 
-" Plug 'folke/todo-comments.nvim'
-
 " Disable
+" Plug 'junegunn/fzf.vim', { 'on': [] }
+" Plug 'yuki-yano/fzf-preview.vim', { 'on': [], 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 " Plug 'haishanh/night-owl.vim'
 " Plug 'sainnhe/gruvbox-material'
 " Plug 'tpope/vim-fugitive', { 'on': [] }

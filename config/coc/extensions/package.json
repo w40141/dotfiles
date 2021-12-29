@@ -30,6 +30,6 @@
     "coc-vetur": ">=1.2.5",
     "coc-vimlsp": ">=0.12.5",
     "coc-word": ">=1.2.2",
-    "coc-yaml": ">=1.6.0"
+    "coc-yaml": ">=1.6.1"
   }
 }
