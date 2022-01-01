@@ -41,8 +41,8 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tamago324/lir.nvim'
 
-" https://github.com/rockerBOO/awesome-neovim#colorscheme
-Plug 'marko-cerovac/material.nvim'
+" Plug 'marko-cerovac/material.nvim'
+Plug 'rebelot/kanagawa.nvim'
 
 " Disable
 " Plug 'windwp/nvim-ts-autotag'
@@ -57,14 +57,14 @@ Plug 'tyru/open-browser.vim', { 'on': ['<plug>(openbrowser-smart-search)'] }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'tweekmonster/startuptime.vim', { 'on': 'StartupTime' }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
-Plug 'kana/vim-operator-user', { 'on': [] }
-Plug 'kana/vim-operator-replace', { 'on': '<plug>(operator-replace)' }
-Plug 'kana/vim-textobj-user', { 'on': [] }
-Plug 'osyo-manga/vim-textobj-blockwise', { 'on': [] }
-Plug 'osyo-manga/vim-textobj-multiblock', { 'on': '<plug>(textobj-multiblock)' }
-Plug 'thinca/vim-textobj-between', { 'on': '<plug>(textobj-between' }
+" Plug 'kana/vim-operator-user', { 'on': [] }
+" Plug 'kana/vim-operator-replace', { 'on': '<plug>(operator-replace)' }
+" Plug 'kana/vim-textobj-user', { 'on': [] }
+" Plug 'osyo-manga/vim-textobj-blockwise', { 'on': [] }
+" Plug 'osyo-manga/vim-textobj-multiblock', { 'on': '<plug>(textobj-multiblock)' }
+" Plug 'thinca/vim-textobj-between', { 'on': '<plug>(textobj-between' }
+" Plug 'sgur/vim-textobj-parameter', { 'on': '<plug>(textobj-parameter)' }
 Plug 'terryma/vim-expand-region', { 'on': '<plug>(expand_region' }
-Plug 'sgur/vim-textobj-parameter', { 'on': '<plug>(textobj-parameter)' }
 Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'kamykn/spelunker.vim', { 'on': ['<plug>(spelunker-)', '<plug>(undo-)', '<plug>(add-)'] }
 Plug 'thinca/vim-quickrun', { 'on': ['<plug>(quickrun)'] }
@@ -83,6 +83,7 @@ Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'thinca/vim-qfreplace', { 'on': [] }
 Plug 'airblade/vim-rooter', { 'on': [] }
 Plug 'honza/vim-snippets'
+Plug 'deris/vim-duzzle', {'on': 'DuzzleStart'}
 " TODO vim to lua
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 " TODO vim to lua
@@ -113,11 +114,11 @@ function! FindPlugin(name) abort
 endfunction
 command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
+                " \ 'vim-operator-user',
+                " \ 'vim-textobj-user',
+                " \ 'vim-textobj-blockwise',
 function! s:LazyLoadPlugs(timer) abort
     call plug#load(
-                \ 'vim-operator-user',
-                \ 'vim-textobj-user',
-                \ 'vim-textobj-blockwise',
                 \ 'vim-test',
                 \ 'vim-precious',
                 \ 'vim-precious',
