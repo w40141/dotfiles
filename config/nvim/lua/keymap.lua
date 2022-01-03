@@ -155,12 +155,12 @@ key('v', 'v', '$h', { noremap = true, silent = true })
 -- key('v', 'x', '_x', { noremap = true, silent =true })
 -- key('v', 'X', '_X', { noremap = true, silent =true })
 -- 選択下を記号で囲う
-key('v', '{', [["zdi{<c-r>z}<esc>]], { noremap = true, silent = true })
-key('v', '[', [["zdi[<c-r>z]<esc>]], { noremap = true, silent = true })
-key('v', '(', [["zdi(<c-r>z)<esc>]], { noremap = true, silent = true })
-key('v', [[']], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
-key('v', [["]], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
-key('v', '--', [["zdi"<c-r>z^V"<esc>]], { noremap = true, silent = true })
+-- key('v', '{', [["zdi{<c-r>z}<esc>]], { noremap = true, silent = true })
+-- key('v', '[', [["zdi[<c-r>z]<esc>]], { noremap = true, silent = true })
+-- key('v', '(', [["zdi(<c-r>z)<esc>]], { noremap = true, silent = true })
+-- key('v', [[']], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
+-- key('v', [["]], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
+-- key('v', '--', [["zdi"<c-r>z^V"<esc>]], { noremap = true, silent = true })
 -- tabにて対応ペアにジャンプ
 key('v', '<tab>', '%', { noremap = true, silent = true })
 
