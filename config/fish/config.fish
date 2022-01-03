@@ -226,10 +226,6 @@ fish_add_path /usr/local/opt/libxslt/bin
 fish_add_path /usr/local/opt/openssl@1.1/bin
 fish_add_path /usr/local/opt/openssl@3/bin
 fish_add_path /usr/local/opt/ncurses/bin
-fish_add_path $HOME/.asdf/installs/poetry/1.1.12/bin
-
-# Created by `pipx` on 2021-09-04 03:41:50
-set PATH $PATH /Users/daisuke.oku/.local/bin
 
 . ~/.asdf/plugins/java/set-java-home.fish
 
