@@ -230,3 +230,6 @@ fish_add_path /usr/local/opt/ncurses/bin
 . ~/.asdf/plugins/java/set-java-home.fish
 
 source /usr/local/opt/asdf/libexec/asdf.fish
+
+# Created by `pipx` on 2022-01-03 14:25:46
+set PATH $PATH /Users/daisuke.oku/.local/bin
