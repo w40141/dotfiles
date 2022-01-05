@@ -11,6 +11,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
+tap "ktr0731/evans"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
 tap "universal-ctags/universal-ctags"
@@ -383,6 +384,8 @@ brew "z"
 brew "zellij"
 # High-performance, asynchronous messaging library
 brew "zeromq"
+# Evans: more expressive universal gRPC client
+brew "ktr0731/evans/evans"
 # Maintained ctags implementation
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # A high performance csv viewer with cjk/emoji support.
