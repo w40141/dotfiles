@@ -20,12 +20,12 @@
 	aa = commit --amend -a --no-edit
 	bd = branch -D
 	bl = branch -a
-	cm = checkout master
+	cm = checkout main
 	co = checkout
 	cp = cherry-pick
 	df = difftool
 	du = difftool @{upstream}
-	mm = merge origin/master
+	mm = merge origin/main
 	pf = push --force-with-lease
 	pl = pull
 	re = reset --soft HEAD~
@@ -37,7 +37,7 @@
 	st = stash
 	su = submodule update
 	sw = switch
-	sm = switch master
+	sm = switch main
 	pop = stash pop
 	wip = commit -a -m \"[ci skip] WIP WIP WIP WIP WIP\"
 	amend = commit --amend --no-edit
