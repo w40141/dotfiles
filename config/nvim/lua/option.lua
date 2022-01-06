@@ -117,10 +117,11 @@ set.backup = false
 
 -- 不要なデフォルトプラグイン
 local g = vim.g
+g.do_filetype_lua = 1
+g.did_load_filetypes = 0
 g.did_indent_on             = 1
 g.did_install_default_menus = 1
 g.did_install_syntax_menu   = 1
-g.did_load_filetypes        = 1
 g.loaded_2html_plugin       = 1
 g.loaded_gzip               = 1
 g.loaded_getscript          = 1
