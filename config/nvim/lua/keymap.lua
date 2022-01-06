@@ -29,6 +29,7 @@ local key = vim.api.nvim_set_keymap
 -- <leader>キーを変更 (default: \)
 g.mapleader = ' '
 g.maplocalleader = ' '
+
 key('n', '<leader>', '<nop>', { noremap = true, silent = true} )
 key('x', '<leader>', '<nop>', { noremap = true, silent = true} )
 key('n', '[dev]', '<nop>', { noremap = true, silent = true} )
