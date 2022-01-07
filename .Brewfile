@@ -421,41 +421,11 @@ cask "figma"
 cask "firefox"
 # Build apps and clock faces for Fitbit
 cask "fitbit-os-simulator"
-cask "font-cica"
-cask "font-fira-code"
-cask "font-genjyuugothic"
-# Weak-Rounded version of Gen Shin Gothic
-cask "font-genjyuugothic-l"
-cask "font-genjyuugothic-x"
 cask "font-genshingothic"
-cask "font-hack-nerd-font"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen-nerd"
-cask "font-ibm-plex-mono"
-cask "font-ibm-plex-sans"
-cask "font-inconsolata"
-cask "font-input"
-cask "font-ipafont"
-# Typeface for visualization of everyday and slang expressions
-cask "font-kiwi-maru"
-cask "font-klee-one"
-# Dailylife-styled round gothic font for electronic devices
-cask "font-mamelon"
-cask "font-migu-1m"
-cask "font-myrica"
-cask "font-noto-sans-cjk-jp"
-cask "font-noto-serif-cjk"
-# Monospaced variant of "San Francisco" by Apple
-cask "font-sf-mono"
-# Apple's SF Mono font patched with the Nerd Fonts patcher for Powerline support
-cask "font-sf-mono-for-powerline"
-cask "font-source-code-pro"
-cask "font-source-code-pro-for-powerline"
-cask "font-source-sans-pro"
-cask "font-source-serif-pro"
-cask "font-yomogi"
 # Font editor and converter for outline and bitmap fonts
 cask "fontforge"
 # Git client focusing on productivity
