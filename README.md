@@ -171,6 +171,10 @@
 
         ssh -T git@github.com
 
+1.  dotfiles を https から ssh へ変更する
+
+        git remote set-url origin git@github.com:w40141/dotfiles.git
+
 ## eskk の設定
 
 1.  [eskk の辞書ファイル](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)をダウンロードする.

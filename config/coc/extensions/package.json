@@ -8,7 +8,7 @@
     "coc-fzf-preview": ">=2.12.7",
     "coc-git": ">=2.4.4",
     "coc-gitignore": ">=0.0.4",
-    "coc-go": ">=1.0.0",
+    "coc-go": ">=1.1.0",
     "coc-html": ">=1.5.1",
     "coc-java": ">=1.5.4",
     "coc-java-debug": ">=0.1.8",
