@@ -19,7 +19,7 @@ require('nvim-treesitter.configs').setup{
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = { 'vim' },
     },
-    indent = { enable = true },
+    -- indent = { enable = true },
     textobjects = {
         select = {
             enable = true,
@@ -33,6 +33,8 @@ require('nvim-treesitter.configs').setup{
                 ["ib"] = "@block.inner",
                 ["al"] = "@loop.outer",
                 ["il"] = "@loop.inner",
+                ["aa"] = "@parameter.outer",
+                ["ia"] = "@parameter.inner",
             },
         },
         swap = {
@@ -48,21 +50,22 @@ require('nvim-treesitter.configs').setup{
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
             goto_next_start = {
-                ["]f"] = "@function.outer",
-                ["]c"] = "@class.outer",
+                ["]m"] = "@function.outer",
+                ["]]"] = "@class.outer",
             },
             goto_next_end = {
-                ["]F"] = "@function.outer",
-                ["]C"] = "@class.outer",
+                ["]M"] = "@function.outer",
+                ["]["] = "@class.outer",
             },
             goto_previous_start = {
-                ["[f"] = "@function.outer",
-                ["[c"] = "@class.outer",
+                ["[m"] = "@function.outer",
+                ["[["] = "@class.outer",
             },
             goto_previous_end = {
-                ["[F"] = "@function.outer", ["[C"] = "@class.outer",
+                ["[M"] = "@function.outer",
+                ["[]"] = "@class.outer",
             },
         },
-    },
+    }
 }
 EOF

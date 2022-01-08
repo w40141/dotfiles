@@ -121,8 +121,8 @@ function! s:LazyLoadPlugs(timer) abort
                 \ 'gina.vim',
                 \ 'coc.nvim',
                 \ )
-
 endfunction
+
 call timer_start(200, function("s:LazyLoadPlugs"))
 
 augroup load_us_insert
