@@ -24,6 +24,10 @@ brew "giflib"
 brew "libpng"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
+# New file format for still image compression
+brew "jpeg-xl"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -36,6 +40,12 @@ brew "gmp"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# YAML Parser
+brew "libyaml"
+# Library for command-line editing
+brew "readline"
+# ODBC 3 connectivity for UNIX
+brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -44,6 +54,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Core application library for C
@@ -72,8 +84,6 @@ brew "freetype"
 brew "fontconfig"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # C string library for manipulating Unicode strings
@@ -95,7 +105,7 @@ brew "gnutls"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # GNU Emacs text editor
-brew "emacs", restart_service: true
+brew "emacs", restart_service: false
 # Emacs dependency management
 brew "cask"
 # Next-gen compiler infrastructure
@@ -110,10 +120,10 @@ brew "circleci"
 brew "cmake"
 # Console Matrix
 brew "cmatrix"
-# C library implementing the SSH2 protocol
-brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # Graphics library to dynamically manipulate images
 brew "gd"
 # Postgres C API library
@@ -122,8 +132,6 @@ brew "libpq"
 brew "oniguruma"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# General-purpose scripting language
-brew "php", restart_service: true
 # Dependency Manager for PHP
 brew "composer"
 # Filename encoding conversion tool
@@ -248,8 +256,6 @@ brew "icarus-verilog"
 brew "shared-mime-info"
 # H.265/HEVC encoder
 brew "x265"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
@@ -278,6 +284,8 @@ brew "libtermkey"
 brew "libuv"
 # VP8/VP9 video codec
 brew "libvpx"
+# GNOME XML library
+brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # Just-In-Time Compiler (JIT) for the Lua programming language
@@ -286,10 +294,12 @@ brew "luajit", args: ["HEAD"]
 brew "mas"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
+# Open source relational database management system
+brew "mysql", restart_service: false
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
 # Fish-like, POSIX-compatible shell
@@ -298,8 +308,6 @@ brew "nsh"
 brew "nspr"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Learn vim commands via a game
@@ -314,8 +322,6 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Cross-platform application and UI framework
-brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Modern replacement for ps written by Rust
@@ -328,6 +334,8 @@ brew "reattach-to-user-namespace"
 brew "rig"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Rust toolchain installer
 brew "rustup-init"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics
@@ -344,6 +352,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -355,7 +365,7 @@ brew "toilet"
 # Program that allows you to count code, quickly
 brew "tokei"
 # Anonymizing overlay network for TCP
-brew "tor", restart_service: true
+brew "tor", restart_service: false
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats
