@@ -133,7 +133,11 @@ key('n', '[ff]g', [[:<c-u>CocCommand fzf-preview.GitActions<cr>]], { noremap = t
 key('n', '[ff]p', [[:<c-u>CocCommand fzf-preview.FromResources buffer project_mru project<cr>]], { noremap = true, silent = true })
 key('n', '[ff]b', [[:<c-u>CocCommand fzf-preview.Buffers<cr>]], { noremap = true, silent = true })
 key('n', '[ff]f', [[:<c-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<space>]], { noremap = true, silent = false })
+<<<<<<< HEAD
 key('x', '[ff]f', [["sy:<c-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<space>-F<space>"<c-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"]], { noremap = true, silent = false })
+=======
+key('x', '[ff]f', [["sy:<c-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<space>-F<space>"<c-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>]], { noremap = true, silent = false })
+>>>>>>> 1053de873a2bd01a5d5658cef3a7fa2b73297220
 
 key('n', '[ff]/', [[:<c-u>CocCommand fzf-preview.Lines --resume --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
 key('n', '[ff]*', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="<C-r>=expand('<cword>')<CR>"<CR>]], { noremap = true, silent = true })
