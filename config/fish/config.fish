@@ -38,6 +38,8 @@ abbr -a cx 'chmod +x'
 # for ghq
 abbr -a gg 'ghq get -p'
 abbr -a ggh 'ghq get'
+abbr -a gc 'ghq create'
+abbr -a gau 'ghq list | ghq get --update --parallel'
 
 abbr -a cd.. 'cd ..'
 abbr -a .. 'cd ..'
