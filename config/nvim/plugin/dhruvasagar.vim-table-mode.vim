@@ -4,7 +4,7 @@
 " Commans
 " :TableModeToggle
 
-UsePlugin 'vim-table-mode'
+" UsePlugin 'vim-table-mode'
 
 let g:table_mode_corner = '|'
 " let g:table_mode_corner_corner='+'

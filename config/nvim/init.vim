@@ -23,6 +23,7 @@ if empty(glob(s:plugvim))
         \ " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
     autocmd MyAutoCmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 " Lua
 Plug 'nvim-lualine/lualine.nvim'
@@ -104,16 +105,15 @@ Plug 'lambdalisue/gina.vim', { 'on': [] }
 " Plug 'andymass/vim-matchup'
 call plug#end()
 
-let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
-function! FindPlugin(name) abort
-    return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
-endfunction
-command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
+" let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))
+" function! FindPlugin(name) abort
+"     return has_key(s:plugs, a:name) ? isdirectory(s:plugs[a:name].dir) : 0
+" endfunction
+" command! -nargs=1 UsePlugin if !FindPlugin(<args>) | finish | endif
 
 function! s:LazyLoadPlugs(timer) abort
     call plug#load(
                 \ 'vim-test',
-                \ 'vim-precious',
                 \ 'vim-precious',
                 \ 'vim-qfreplace',
                 \ 'vim-rooter',
@@ -123,7 +123,7 @@ function! s:LazyLoadPlugs(timer) abort
                 \ )
 endfunction
 
-call timer_start(200, function("s:LazyLoadPlugs"))
+call timer_start(150, function("s:LazyLoadPlugs"))
 
 augroup load_us_insert
     autocmd!

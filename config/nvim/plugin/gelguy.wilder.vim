@@ -2,7 +2,7 @@
 " https://github.com/gelguy/wilder.nvim
 "
 
-UsePlugin 'wilder.nvim'
+" UsePlugin 'wilder.nvim'
 
 " Default keys
 call wilder#setup({

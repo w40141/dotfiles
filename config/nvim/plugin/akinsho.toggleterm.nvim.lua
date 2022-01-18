@@ -1,9 +1,10 @@
-" A neovim lua plugin to help easily manage multiple terminal windows
-" https://github.com/akinsho/toggleterm.nvim
 
-UsePlugin 'toggleterm.nvim'
+-- A neovim lua plugin to help easily manage multiple terminal windows
+-- https://github.com/akinsho/toggleterm.nvim
 
-lua << EOF
+-- UsePlugin 'toggleterm.nvim'
+--
+-- lua << EOF
 require("toggleterm").setup{
   -- size can be a number or function which is passed the current terminal
   size = function(term)
@@ -39,4 +40,4 @@ require("toggleterm").setup{
     }
   }
 }
-EOF
+-- EOF

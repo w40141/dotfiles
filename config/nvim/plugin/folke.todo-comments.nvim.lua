@@ -1,9 +1,9 @@
-" Highlight, list and search todo comments in your projects
-" https://github.com/folke/todo-comments.nvim
+-- Highlight, list and search todo comments in your projects
+-- https://github.com/folke/todo-comments.nvim
 
-UsePlugin 'todo-comments.nvim'
+-- UsePlugin 'todo-comments.nvim'
 
-lua << EOF
+-- lua << EOF
 require("todo-comments").setup {
     signs = true, -- show icons in the signs column
     sign_priority = 8, -- sign priority
@@ -59,4 +59,4 @@ require("todo-comments").setup {
         -- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
     },
 }
-EOF
+-- EOF

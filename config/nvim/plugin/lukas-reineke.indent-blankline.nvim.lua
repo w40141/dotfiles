@@ -1,9 +1,9 @@
-" Indent guides for Neovim
-" https://github.com/lukas-reineke/indent-blankline.nvim
+-- Indent guides for Neovim
+-- https://github.com/lukas-reineke/indent-blankline.nvim
 
-UsePlugin 'indent-blankline.nvim'
+-- UsePlugin 'indent-blankline.nvim'
 
-lua << EOF
+-- lua << EOF
 require('indent_blankline').setup{
     -- indent_blankline_use_treesitter = true,
     show_current_context = true,
@@ -13,4 +13,4 @@ require('indent_blankline').setup{
 vim.g.indent_blankline_filetype_exclude = {
     'help', 'mini', 'starter', 'terminal'
 }
-EOF
+-- EOF

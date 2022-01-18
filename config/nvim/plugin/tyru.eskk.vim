@@ -4,7 +4,7 @@
 " https://zenn.dev/kouta/articles/87947515bff4da
 " https://hakasenote.hnishi.com/2021/20210105-vim-eskk/
 
-UsePlugin 'eskk.vim'
+" UsePlugin 'eskk.vim'
 
 augroup vimrc_eskk
   autocmd!

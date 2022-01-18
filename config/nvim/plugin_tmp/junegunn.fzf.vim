@@ -98,38 +98,26 @@ function! FzfOmniFiles()
     endif
 endfunction
 
-" fzf
-nnoremap <silent> <C-o> :call FzfOmniFiles() <CR>
-nnoremap <silent> <C-b> :Buffers <CR>
-" カーソル位置の単語をファイル検索する
-nnoremap <silent> <C-g> vawy:RG <C-r>"<CR>
-" 単語検索を開く
-nnoremap <silent> <leader>g :RG <CR>
-" バッファ内の文字列検索を開く
-nnoremap <silent> <leader>l :Lines <CR>
+lua << EOF
+local key = vim.api.nvim_set_keymap
+key('n', '[ff]o', [[:call FzfOmniFiles()<cr>]], { noremap = true, silent = true })
+key('n', '[ff]f', [[:Files<cr>]], { noremap = true, silent = true })
+key('n', '[ff]g', [[:GFiles<cr>]], { noremap = true, silent = true })
+key('n', '[ff]G', [[:GFiles?<cr>]], { noremap = true, silent = true })
+key('n', '[ff]b', [[:Buffers<cr>]], { noremap = true, silent = true })
 
-nnoremap <silent> <C-f>f :Files <CR>
-nnoremap <silent> <C-f>g :GFiles <CR>
-nnoremap <silent> <C-f>G :GFiles? <CR>
-" 選択した単語をファイル検索する
-xnoremap <silent> <C-f>w y:RG <C-r>"<CR>
-" <C-F>bで開いているファイルの文字列検索を開く
-nnoremap <silent> <C-f>b :BLines <CR>
-" <C-F>mでマーク検索を開く
-nnoremap <silent> <C-f>m :Marks <CR>
-" <C-F>hでファイル閲覧履歴検索を開く
-nnoremap <silent> <C-f>h :History <CR>
-" <C-F>cでコミット履歴検索を開く
-nnoremap <silent> <C-f>c :Commits <CR>
+key('n', '[ff]w', [[vawy:RG <c-r>"<cr>]], { noremap = true, silent = true })
+key('n', '[ff]r', [[:RG<cr>]], { noremap = true, silent = true })
+key('n', '[ff]ll', [[:Lines<cr>]], { noremap = true, silent = true })
+key('x', '[ff]w', [[y:RG <c-r>"<cr>]], { noremap = true, silent = true })
+key('n', '[ff]lb', [[:BLines<cr>]], { noremap = true, silent = true })
+key('n', '[ff]m', [[:Marks<cr>]], { noremap = true, silent = true })
+key('n', '[ff]h', [[:History<cr>]], { noremap = true, silent = true })
 
-" Path completion with custom source command
-inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
-inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
-
-" Word completion with custom spec with popup layout option
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})
-" Insert mode completion
-imap <c-x><c-w> <plug>(fzf-complete-word)
-imap <c-x><c-p> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+key('i', '[ff]<c-f>', [[fzf#vim#complete#path('rg --files')]], { noremap = true, silent = true})
+key('i', '[ff]<c-k>', [[fzf#vim#complete#word({'window': { 'width': 0.2, 'height': 0.9, 'xoffset': 1 }})]], { noremap = true, silent = true})
+key('i', '[ff]<c-w>', [[<plug>(fzf-complete-word)]], { noremap = true, silent = true})
+key('i', '[ff]<c-p>', [[<plug>(fzf-complete-path)]], { noremap = true, silent = true})
+key('i', '[ff]<c-i>', [[<plug>(fzf-complete-file-ag)]], { noremap = true, silent = true})
+key('i', '[ff]<c-l>', [[<plug>(fzf-complete-line)]], { noremap = true, silent = true})
+EOF
