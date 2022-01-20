@@ -489,8 +489,6 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# Configuration application for the Ultimate Hacking Keyboard
-cask "uhk-agent"
 # Development environment
 cask "vagrant"
 # Open-source code editor
