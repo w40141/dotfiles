@@ -74,14 +74,12 @@ brew "bingrep"
 brew "icu4c"
 # Collection of portable C++ source libraries
 brew "boost"
-# Manage compile and link flags for libraries
-brew "pkg-config"
-# New way to see and navigate directory trees
-brew "broot"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
+# Manage compile and link flags for libraries
+brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
 # Vector graphics library with cross-device output support
@@ -346,6 +344,8 @@ brew "silicon"
 brew "snappy"
 # SOund eXchange: universal sound sample translator
 brew "sox"
+# Cross-shell prompt for astronauts
+brew "starship"
 # Version control system designed to be a better CVS
 brew "subversion"
 # SWF manipulation and generation tools

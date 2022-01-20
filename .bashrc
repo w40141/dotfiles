@@ -4,3 +4,5 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 source /Users/daisuke.oku/.config/broot/launcher/bash/br
 . "$HOME/.cargo/env"
+
+source /Users/daisuke_oku/.config/broot/launcher/bash/br
