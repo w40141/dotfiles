@@ -39,14 +39,13 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'tamago324/lir.nvim'
-" Plug 'folke/which-key.nvim'
-
-" Plug 'marko-cerovac/material.nvim'
+Plug 'famiu/bufdelete.nvim'
 Plug 'rebelot/kanagawa.nvim'
-
 Plug 'folke/todo-comments.nvim'
 
 " Disable
+" Plug 'folke/which-key.nvim'
+" Plug 'marko-cerovac/material.nvim'
 " Plug 'windwp/nvim-ts-autotag'
 " Plug 'MunifTanjim/nui.nvim'
 " Plug 'VonHeikemen/fine-cmdline.nvim'

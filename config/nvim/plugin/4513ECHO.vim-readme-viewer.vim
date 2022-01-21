@@ -13,4 +13,3 @@ command! FzReadme call fzf#run(fzf#wrap(#{
 function s:PlugReadmeFzf(name_and_path) abort
   execute 'PlugReadme' substitute(a:name_and_path, ' .*', '', '')
 endfunction
-
