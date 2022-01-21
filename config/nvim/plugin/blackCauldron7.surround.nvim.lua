@@ -5,6 +5,17 @@
 
 -- lua << EOF
 require('surround').setup{
-    mappings_style = "sandwich"
+    context_offset = 100,
+    load_autogroups = false,
+    mappings_style = "sandwich",
+    map_insert_mode = true,
+    quotes = {"'", '"'},
+    brackets = {"(", '{', '['},
+    space_on_closing_char = false,
+    pairs = {
+        nestable = {{"(", ")"}, {"[", "]"}, {"{", "}"}},
+        linear = {{"'", "'"}, {"`", "`"}, {'"', '"'}}
+    },
+    prefix = "s",
 }
 -- EOF

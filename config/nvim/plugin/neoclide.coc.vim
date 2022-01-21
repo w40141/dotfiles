@@ -90,7 +90,6 @@ function! CocJumpAction() abort
 endfunction
 
 set shell=/bin/zsh
-let $SHELL = "/bin/zsh"
 let $BAT_THEME                     = 'gruvbox-dark'
 let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
 " fzf command default options
