@@ -122,6 +122,7 @@
         pipx install black
         pipx install isort
         pipx install mypy
+        pipx install sphinx
 
 ### 4. neovim のインストール
 

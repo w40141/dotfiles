@@ -53,7 +53,7 @@ Plug 'folke/todo-comments.nvim'
 
 " fzf
 " https://github.com/nvim-telescope/telescope.nvim
-" TODO misc
+" TODO: misc
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " https://github.com/phaazon/hop.nvim
 " VimScript
@@ -84,12 +84,12 @@ Plug 'thinca/vim-qfreplace', { 'on': [] }
 Plug 'airblade/vim-rooter', { 'on': [] }
 Plug 'honza/vim-snippets'
 Plug 'deris/vim-duzzle', {'on': 'DuzzleStart'}
-" TODO vim to lua
+" TODO: vim to lua
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-" TODO vim to lua
+" TODO: vim to lua
 Plug 'dhruvasagar/vim-table-mode', { 'for': ['markdown'] }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" TODO vim to lua
+" TODO: vim to lua
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
 Plug 'lambdalisue/gina.vim', { 'on': [] }
 

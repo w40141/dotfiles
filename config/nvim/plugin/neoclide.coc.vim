@@ -50,7 +50,7 @@ endfunction
 
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call CocAction('fold', <f-args>)
@@ -88,8 +88,8 @@ function! CocJumpAction() abort
         \ ]
   return ChoseAction(actions)
 endfunction
-
 set shell=/bin/zsh
+let $SHELL = "/bin/zsh"
 let $BAT_THEME                     = 'gruvbox-dark'
 let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
 " fzf command default options
@@ -102,8 +102,8 @@ local key = vim.api.nvim_set_keymap
 
 key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
--- key('i', '<cr>', [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
-key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
+key('i', '<cr>', [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
+-- key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
 
 key('i', '<c-l>',   [[<plug>(coc-snippets-expand)]], { noremap = false, silent = false})
 key('v', '<c-j>',   [[<plug>(coc-snippets-select)]], { noremap = false, silent = false})
