@@ -246,6 +246,8 @@ brew "hexyl"
 brew "hping"
 # Viewer/editor/analyzer for executables
 brew "ht"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
 # Configurable static site generator
 brew "hugo"
 # Verilog simulation and synthesis tool
