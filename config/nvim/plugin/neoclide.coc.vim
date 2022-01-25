@@ -102,8 +102,7 @@ local key = vim.api.nvim_set_keymap
 
 key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
-key('i', '<cr>', [[pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
--- key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
+key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
 
 key('i', '<c-l>',   [[<plug>(coc-snippets-expand)]], { noremap = false, silent = false})
 key('v', '<c-j>',   [[<plug>(coc-snippets-select)]], { noremap = false, silent = false})
