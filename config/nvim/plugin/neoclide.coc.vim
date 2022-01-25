@@ -94,8 +94,6 @@ let $BAT_THEME                     = 'gruvbox-dark'
 let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
 " fzf command default options
 let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
-let g:fzf_preview_command = 'bat --color=always --plain {-1}'
-let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Installed bat
 
 lua << EOF
 local key = vim.api.nvim_set_keymap
