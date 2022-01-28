@@ -1,37 +1,43 @@
--- LSP Complement
--- https://github.com/neoclide/coc.nvim
-
--- If the following plugins dont install, the plugins are installed automatic when neovim starts.
--- Use `:Format` to format current buffer
-vim.cmd([[command! -nargs=0 Format :call CocAction('format')]])
--- command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
--- Use `:Fold` to fold current buffer
-vim.cmd([[command! -nargs=? Fold :call CocAction('fold', <f-args>)]])
-
--- use `:OR` for organize import of current buffer
-vim.cmd([[command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')]])
-
--- For golang
-vim.cmd([[autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')]])
-vim.cmd([[autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>]])
-vim.cmd([[autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>]])
-vim.cmd([[autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>]])
-
--- Setup formatexpr specified filetype(s).
--- Update signature help on jump placeholder
-vim.cmd([[augroup MyAutoCmd]])
-vim.cmd([[autocmd!]])
-vim.cmd([[autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')]])
-vim.cmd([[autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')]])
-vim.cmd([[augroup end]])
-
-vim.api.nvim_exec([[
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
+let $SHELL = "/bin/zsh"
+let $BAT_THEME                     = 'gruvbox-dark'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+
+lua << EOF
+-- LSP Complement
+-- https://github.com/neoclide/coc.nvim
+
+local cmd = vim.cmd
+-- If the following plugins dont install, the plugins are installed automatic when neovim starts.
+-- Use `:Format` to format current buffer
+cmd([[command! -nargs=0 Format :call CocAction('format')]])
+-- command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+-- Use `:Fold` to fold current buffer
+cmd([[command! -nargs=? Fold :call CocAction('fold', <f-args>)]])
+
+-- use `:OR` for organize import of current buffer
+cmd([[command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')]])
+
+-- For golang
+cmd([[autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')]])
+cmd([[autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>]])
+cmd([[autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>]])
+cmd([[autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>]])
+
+-- Setup formatexpr specified filetype(s).
+-- Update signature help on jump placeholder
+cmd([[augroup MyAutoCmd]])
+cmd([[autocmd!]])
+cmd([[autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')]])
+cmd([[autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')]])
+cmd([[augroup end]])
+
+cmd([[
 function! ChoseAction(actions) abort
   echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
   let result = getcharstr()
@@ -47,12 +53,9 @@ function! CocJumpAction() abort
         \ ]
   return ChoseAction(actions)
 endfunction
-]], true)
+]])
 
 vim.opt.shell='/bin/zsh'
-local SHELL = "/bin/zsh"
-local BAT_THEME                     = 'gruvbox-dark'
-local FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
 local g = vim.g
 g['coc_global_extensions'] = {
     'coc-css',
@@ -139,3 +142,4 @@ key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap 
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
+EOF

@@ -1,7 +1,7 @@
 -- A more adventurous wildmenu
 -- https://github.com/gelguy/wilder.nvim
 
-vim.api.nvim_exec([[
+vim.cmd([[
 call wilder#setup({
       \ 'modes': [':', '/', '?'],
       \ 'next_key': '<Tab>',
@@ -37,4 +37,4 @@ call wilder#set_option('pipeline', [
       \   ),
       \ ])
     \
-]],true)
+]])
