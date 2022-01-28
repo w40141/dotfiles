@@ -1,78 +1,37 @@
-" LSP Complement
-" https://github.com/neoclide/coc.nvim
+-- LSP Complement
+-- https://github.com/neoclide/coc.nvim
 
-" UsePlugin 'coc.nvim'
+-- If the following plugins dont install, the plugins are installed automatic when neovim starts.
+-- Use `:Format` to format current buffer
+vim.cmd([[command! -nargs=0 Format :call CocAction('format')]])
+-- command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" If the following plugins dont install, the plugins are installed automatic when neovim starts.
-let g:coc_global_extensions = [
-            \ 'coc-css',
-            \ 'coc-dictionary',
-            \ 'coc-elixir',
-            \ 'coc-eslint',
-            \ 'coc-fish',
-            \ 'coc-git',
-            \ 'coc-gitignore',
-            \ 'coc-go',
-            \ 'coc-html',
-            \ 'coc-java',
-            \ 'coc-java-debug',
-            \ 'coc-json',
-            \ 'coc-lists',
-            \ 'coc-lua',
-            \ 'coc-omni',
-            \ 'coc-pairs',
-            \ 'coc-phpls',
-            \ 'coc-prettier',
-            \ 'coc-pyright',
-            \ 'coc-rust-analyzer',
-            \ 'coc-snippets',
-            \ 'coc-solargraph',
-            \ 'coc-sql',
-            \ 'coc-texlab',
-            \ 'coc-toml',
-            \ 'coc-tsserver',
-            \ 'coc-vetur',
-            \ 'coc-vimlsp',
-            \ 'coc-word',
-            \ 'coc-yaml',
-            \ ]
+-- Use `:Fold` to fold current buffer
+vim.cmd([[command! -nargs=? Fold :call CocAction('fold', <f-args>)]])
 
-" Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+-- use `:OR` for organize import of current buffer
+vim.cmd([[command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')]])
 
-" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+-- For golang
+vim.cmd([[autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')]])
+vim.cmd([[autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>]])
+vim.cmd([[autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>]])
+vim.cmd([[autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>]])
 
+-- Setup formatexpr specified filetype(s).
+-- Update signature help on jump placeholder
+vim.cmd([[augroup MyAutoCmd]])
+vim.cmd([[autocmd!]])
+vim.cmd([[autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')]])
+vim.cmd([[autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')]])
+vim.cmd([[augroup end]])
+
+vim.api.nvim_exec([[
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
-" command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call CocAction('fold', <f-args>)
-
-" use `:OR` for organize import of current buffer
-command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')
-
-" For golang
-autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
-autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>
-autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>
-autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>
-
-augroup MyAutoCmd
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" NOTE: text must contains '()' to detect input and its must be 1 character
 function! ChoseAction(actions) abort
   echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
   let result = getcharstr()
@@ -88,14 +47,52 @@ function! CocJumpAction() abort
         \ ]
   return ChoseAction(actions)
 endfunction
-set shell=/bin/zsh
-let $SHELL = "/bin/zsh"
-let $BAT_THEME                     = 'gruvbox-dark'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
-" fzf command default options
-let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
+]], true)
 
-lua << EOF
+vim.opt.shell='/bin/zsh'
+local SHELL = "/bin/zsh"
+local BAT_THEME                     = 'gruvbox-dark'
+local FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
+local g = vim.g
+g['coc_global_extensions'] = {
+    'coc-css',
+    'coc-dictionary',
+    'coc-elixir',
+    'coc-eslint',
+    'coc-fish',
+    'coc-git',
+    'coc-gitignore',
+    'coc-go',
+    'coc-html',
+    'coc-java',
+    'coc-java-debug',
+    'coc-json',
+    'coc-lists',
+    'coc-lua',
+    'coc-omni',
+    'coc-pairs',
+    'coc-phpls',
+    'coc-prettier',
+    'coc-pyright',
+    'coc-rust-analyzer',
+    'coc-snippets',
+    'coc-solargraph',
+    'coc-sql',
+    'coc-texlab',
+    'coc-toml',
+    'coc-tsserver',
+    'coc-vetur',
+    'coc-vimlsp',
+    'coc-word',
+    'coc-yaml',
+}
+
+-- Use <C-j> for jump to next placeholder, it's default of coc.nvim
+g['coc_snippet_next'] = '<c-j>'
+
+-- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+g['coc_snippet_prev'] = '<c-k>'
+
 local key = vim.api.nvim_set_keymap
 
 key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
@@ -142,4 +139,3 @@ key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap 
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
-EOF

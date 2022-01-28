@@ -1,10 +1,7 @@
-" A more adventurous wildmenu
-" https://github.com/gelguy/wilder.nvim
-"
+-- A more adventurous wildmenu
+-- https://github.com/gelguy/wilder.nvim
 
-" UsePlugin 'wilder.nvim'
-
-" Default keys
+vim.api.nvim_exec([[
 call wilder#setup({
       \ 'modes': [':', '/', '?'],
       \ 'next_key': '<Tab>',
@@ -13,7 +10,6 @@ call wilder#setup({
       \ 'reject_key': '<Up>',
       \ })
 
-" Can also be passed to the 'highlights' option
 call wilder#set_option('renderer', wilder#popupmenu_renderer({
             \ 'highlighter': wilder#basic_highlighter(),
             \ 'highlights': {
@@ -27,14 +23,6 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
             \ ],
             \ }))
 
-" For Neovim or Vim with yarp
-" For wild#cmdline_pipeline():
-"   'language'   : set to 'python' to use python
-"   'fuzzy'      : set fuzzy searching
-" For wild#python_search_pipeline():
-"   'pattern'    : can be set to wilder#python_fuzzy_delimiter_pattern() for stricter fuzzy matching
-"   'sorter'     : omit to get results in the order they appear in the buffer
-"   'engine'     : can be set to 're2' for performance, requires pyre2 to be installed
 call wilder#set_option('pipeline', [
       \   wilder#branch(
       \     wilder#cmdline_pipeline({
@@ -48,3 +36,5 @@ call wilder#set_option('pipeline', [
       \     }),
       \   ),
       \ ])
+    \
+]],true)
