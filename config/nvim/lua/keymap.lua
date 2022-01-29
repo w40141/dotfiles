@@ -23,7 +23,6 @@
 -- キーマッピング設定
 
 local g = vim.g
-local api = vim.api
 local key = vim.api.nvim_set_keymap
 
 -- <leader>キーを変更 (default: \)

@@ -1,9 +1,11 @@
-vim.cmd('augroup MyAutoCmd')
-vim.cmd('autocmd!')
-vim.cmd('augroup END')
+local g = vim.g
+local cmd = vim.cmd
+
+cmd('augroup MyAutoCmd')
+cmd('autocmd!')
+cmd('augroup END')
 
 -- 不要なデフォルトプラグイン
-local g = vim.g
 g.do_filetype_lua = 1
 g.did_load_filetypes = 0
 g.did_indent_on             = 1
@@ -33,9 +35,3 @@ g.skip_loading_mswin        = 1
 
 require('option')
 require('keymap')
-
--- vim.cmd('filetype off')
--- vim.cmd('syntax off')
-
--- vim.cmd('filetype plugin indent on')
--- vim.cmd('syntax on')
