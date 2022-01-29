@@ -1,17 +1,24 @@
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-let $SHELL = "/bin/zsh"
-let $BAT_THEME                     = 'gruvbox-dark'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'gruvbox-dark'
-
-lua << EOF
 -- LSP Complement
 -- https://github.com/neoclide/coc.nvim
 
+local key = vim.api.nvim_set_keymap
+local g = vim.g
 local cmd = vim.cmd
+local fn = vim.fn
+
+g["$SHELL"] = "/bin/zsh"
+g["$BAT_THEME"] = 'gruvbox-dark'
+g["$FZF_PREVIEW_PREVIEW_BAT_THEME"] = 'gruvbox-dark'
+
+function _G.check_back_space()
+  local col = fn.col(".") - 1
+  if col == 0 or fn.getline("."):sub(col, col):match("%s") then
+    return true
+  else
+    return false
+  end
+end
+
 -- If the following plugins dont install, the plugins are installed automatic when neovim starts.
 -- Use `:Format` to format current buffer
 cmd([[command! -nargs=0 Format :call CocAction('format')]])
@@ -56,7 +63,6 @@ endfunction
 ]])
 
 vim.opt.shell='/bin/zsh'
-local g = vim.g
 g['coc_global_extensions'] = {
     'coc-css',
     'coc-dictionary',
@@ -96,9 +102,8 @@ g['coc_snippet_next'] = '<c-j>'
 -- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 g['coc_snippet_prev'] = '<c-k>'
 
-local key = vim.api.nvim_set_keymap
-
-key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
+-- key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
+key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
 key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
 
@@ -142,4 +147,3 @@ key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap 
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
-EOF
