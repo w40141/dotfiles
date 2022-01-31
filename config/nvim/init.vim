@@ -54,6 +54,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
+Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rebelot/kanagawa.nvim'
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }

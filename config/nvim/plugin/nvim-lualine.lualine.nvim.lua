@@ -1,9 +1,6 @@
 -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
 -- https://github.com/nvim-lualine/lualine.nvim
 
--- UsePlugin 'lualine.nvim'
-
--- lua << EOF
 local function search_result()
     if vim.v.hlsearch == 0 then
         return ''
@@ -24,20 +21,12 @@ local function eskk()
     end
 end
 
--- local function vista()
---     if vim.b['vista_nearest_method_or_function'] then
---         return vim.b['vista_nearest_method_or_function']
---     else
---         return ''
---     end
--- end
-
 require'lualine'.setup {
     options = {
         icons_enabled = true,
         theme = 'kanagawa',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {},
         always_divide_middle = true,
     },
@@ -46,30 +35,26 @@ require'lualine'.setup {
             'mode', eskk,
         },
         lualine_b = {
-            {
-                'filename', file_status = true, path = 0,
-                symbols = { modified = '  ', readonly = '  ' }
-            },
+            { 'filename', file_status = true, path = 0, symbols = { modified = '  ', readonly = '  ' } },
         },
         lualine_c = {
             {
                 'diagnostics',
-                sources={'coc'},
-                sections = {'error', 'warn', 'info', 'hint'},
+                sources={ 'coc' },
+                sections = { 'error', 'warn', 'info', 'hint' },
                 diagnostics_color = {
                     error = 'DiagnosticError',
                     warn  = 'DiagnosticWarn',
                     info  = 'DiagnosticInfo',
                     hint  = 'DiagnosticHint',
                 },
-                symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '},
+                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
                 colored = true,
             },
             search_result,
         },
         lualine_x = {},
         lualine_y = {
-            -- vista,
             {
                 'diff',
                 colored = true,
@@ -78,11 +63,11 @@ require'lualine'.setup {
                     modified = 'DiffChange',
                     removed  = 'DiffDelete',
                 },
-                symbols = {added = ' ', modified = ' ', removed = ' '},
+                symbols = { added = ' ', modified = ' ', removed = ' ' },
             },
             'branch',
         },
-        lualine_z = {'location', 'progress'},
+        lualine_z = { 'location', 'progress' },
     },
     inactive_sections = {
         lualine_a = {},
@@ -95,4 +80,3 @@ require'lualine'.setup {
     tabline = {},
     extensions = {'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
 }
--- EOF
