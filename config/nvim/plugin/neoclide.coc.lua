@@ -58,6 +58,18 @@ function! CocJumpAction() abort
 endfunction
 ]])
 
+-- function _G.ChoseAction()
+--     local actions = {
+--         {text = "(s)plit", value = "split"},
+--         {text = "(v)split", value = "vsplit"},
+--         {text = "(t)ab", value = "tab"},
+--     }
+--     print(fn.join(fn.map(fn.copy(actions), { _, v -> v[text] }), ", ") .. ": ")
+--     local result = fn.getcharstr()
+--     local result = fn.filter(actions, { _, v -> v[text]:match(".*\(%s\).*") =~# printf("", result)})
+--   return fn.len(result) ? result[0].value : ""
+-- end
+
 vim.opt.shell='/bin/zsh'
 cmd([[let $SHELL = "/bin/zsh"]])
 
@@ -100,7 +112,6 @@ g['coc_snippet_next'] = '<c-j>'
 -- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 g['coc_snippet_prev'] = '<c-k>'
 
--- key('i', '<tab>', [[pumvisible() ? "\<c-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
 key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], { expr = true, noremap = true, silent = true})
@@ -140,7 +151,7 @@ key('x', '[ff]*', [["sy:CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --a
 key('n', '[ff]n', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="<C-r>=substitute(@/, '\(^\\v\)\\|\\\(<\\|>\)', '', 'g')<CR>"<CR>]], { noremap = true, silent = true })
 key('n', '[ff]?', [[:<C-u>CocCommand fzf-preview.BufferLines --resume --add-fzf-arg=--no-sort<CR>]], { noremap = true, silent = true })
 
-key('n', '[ff]q', [[:<c-u>CocCommand fzf-preview.CocCurrentDiagnostics<cr>]], { noremap = true, silent = true })
+key('n', '[ff]q', [[:<c-u>CocCommand fzf-preview.CocDiagnostics<cr>]], { noremap = true, silent = true })
 key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap = true, silent = true })
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })

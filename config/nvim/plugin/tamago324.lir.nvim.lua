@@ -1,9 +1,6 @@
 -- A simple file explorer
 -- https://github.com/tamago324/lir.nvim
 
--- UsePlugin 'lir.nvim'
---
--- lua << EOF
 local actions = require'lir.actions'
 local mark_actions = require 'lir.mark.actions'
 local clipboard_actions = require'lir.clipboard.actions'
@@ -59,4 +56,3 @@ vim.cmd [[augroup lir-settings]]
 vim.cmd [[  autocmd!]]
 vim.cmd [[  autocmd Filetype lir :lua LirSettings()]]
 vim.cmd [[augroup END]]
--- EOF
