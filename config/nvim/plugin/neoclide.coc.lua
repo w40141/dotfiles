@@ -6,10 +6,6 @@ local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
 
-g["$SHELL"] = "/bin/zsh"
-g["$BAT_THEME"] = 'gruvbox-dark'
-g["$FZF_PREVIEW_PREVIEW_BAT_THEME"] = 'gruvbox-dark'
-
 function _G.check_back_space()
   local col = fn.col(".") - 1
   if col == 0 or fn.getline("."):sub(col, col):match("%s") then
@@ -63,6 +59,8 @@ endfunction
 ]])
 
 vim.opt.shell='/bin/zsh'
+cmd([[let $SHELL = "/bin/zsh"]])
+
 g['coc_global_extensions'] = {
     'coc-css',
     'coc-dictionary',
