@@ -117,5 +117,23 @@
   "git.gitlab.hosts": [
     "https://www.togawa.cs.waseda.ac.jp/gitlab",
     "gitlab.com"
+  ],
+  "cSpell.userWords": [
+    "Cinii",
+    "KAKEN",
+    "Prost",
+    "Researchmap",
+    "Untrusted",
+    "actix",
+    "automock",
+    "chrono",
+    "codegen",
+    "dotenv",
+    "getset",
+    "gprc",
+    "grpc",
+    "mockall",
+    "nanos",
+    "protobuf"
   ]
 }
