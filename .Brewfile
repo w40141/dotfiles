@@ -103,7 +103,7 @@ brew "gnutls"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # GNU Emacs text editor
-brew "emacs", restart_service: false
+brew "emacs"
 # Emacs dependency management
 brew "cask"
 # Next-gen compiler infrastructure
@@ -295,7 +295,7 @@ brew "mas"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
-brew "mysql", restart_service: false
+brew "mysql"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -367,7 +367,7 @@ brew "toilet"
 # Program that allows you to count code, quickly
 brew "tokei"
 # Anonymizing overlay network for TCP
-brew "tor", restart_service: false
+brew "tor"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats

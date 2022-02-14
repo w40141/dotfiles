@@ -120,20 +120,29 @@
   ],
   "cSpell.userWords": [
     "Cinii",
+    "Datetime",
     "KAKEN",
     "Prost",
     "Researchmap",
     "Untrusted",
+    "Varchar",
     "actix",
     "automock",
     "chrono",
     "codegen",
     "dotenv",
+    "eval",
     "getset",
     "gprc",
     "grpc",
+    "hashset",
+    "issn",
+    "jsps",
+    "miscs",
     "mockall",
     "nanos",
-    "protobuf"
+    "protobuf",
+    "thiserror",
+    "xorshift"
   ]
 }
