@@ -35,6 +35,7 @@ Plug 'deris/vim-duzzle', {'on': 'DuzzleStart'}
 Plug 'famiu/bufdelete.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug  'goolord/alpha-nvim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -45,6 +46,7 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lambdalisue/gina.vim', { 'on': [] }
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'liuchengxu/vista.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
 Plug 'ntpeters/vim-better-whitespace', { 'on': 'StripWhitespace' }
@@ -75,18 +77,14 @@ Plug 'tyru/open-browser.vim', { 'on': ['<Plug>(openbrowser-smart-search)'] }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
 Plug 'vim-test/vim-test', { 'on': [] }
 
-" Disable
+" TODO:
 " Plug 'folke/which-key.nvim'
-" Plug 'marko-cerovac/material.nvim'
+" Plug "mrjones2014/legendary.nvim"
+
+" Disable
 " Plug 'windwp/nvim-ts-autotag'
 " Plug 'MunifTanjim/nui.nvim'
 " Plug 'VonHeikemen/fine-cmdline.nvim'
-" Plug 'liuchengxu/vista.vim'
-" Plug 'junegunn/fzf.vim', { 'on': [] }
-" Plug 'yuki-yano/fzf-preview.vim', { 'on': [], 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
-" Plug 'haishanh/night-owl.vim'
-" Plug 'sainnhe/gruvbox-material'
-" Plug 'tpope/vim-fugitive', { 'on': [] }
 " Plug 'glidenote/memolist.vim'
 " Plug 'andymass/vim-matchup'
 
