@@ -112,9 +112,6 @@ key('n', 'bf', ':bf<cr>', { noremap = true, silent = true })
 key('n', 'bl', ':bl<cr>', { noremap = true, silent = true })
 --変更中の次のバッファへ移動
 key('n', 'bm', ':bm<cr>', { noremap = true, silent = true })
--- レジスタを汚さない削除
--- key('n', 'x', '_x', { noremap = true, silent =true })
--- key('n', 'X', '_X', { noremap = true, silent =true })
 -- 保存して閉じる、保存せずに閉じるを無効
 key('n', 'ZZ', '<nop>', { noremap = true, silent = true })
 key('n', 'ZQ', '<nop>', { noremap = true, silent = true })
@@ -152,8 +149,10 @@ key('i', '<right>', '<nop>', { noremap = true, silent = true })
 -- vを二回で行末まで選択
 key('v', 'v', '$h', { noremap = true, silent = true })
 -- レジスタを汚さない削除
--- key('v', 'x', '_x', { noremap = true, silent =true })
--- key('v', 'X', '_X', { noremap = true, silent =true })
+key('n', 'x', '_x', { noremap = true, silent =true })
+key('n', 'X', '_X', { noremap = true, silent =true })
+key('v', 'x', '_x', { noremap = true, silent =true })
+key('v', 'X', '_X', { noremap = true, silent =true })
 -- 選択下を記号で囲う
 -- key('v', '{', [["zdi{<c-r>z}<esc>]], { noremap = true, silent = true })
 -- key('v', '[', [["zdi[<c-r>z]<esc>]], { noremap = true, silent = true })
