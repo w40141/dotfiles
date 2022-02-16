@@ -30,12 +30,12 @@ Plug '4513ECHO/vim-readme-viewer', { 'on': 'PlugReadme' }
 Plug 'airblade/vim-rooter', { 'on': [] }
 Plug 'akinsho/bufferline.nvim'
 Plug 'akinsho/toggleterm.nvim'
-Plug 'blackcauldron7/surround.nvim'
 Plug 'deris/vim-duzzle', {'on': 'DuzzleStart'}
+Plug 'echasnovski/mini.nvim'
 Plug 'famiu/bufdelete.nvim'
 Plug 'folke/todo-comments.nvim'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug  'goolord/alpha-nvim'
+Plug 'goolord/alpha-nvim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
