@@ -438,6 +438,7 @@ cask "font-genshingothic"
 cask "font-hackgen"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen-nerd"
+cask "font-noto-sans-cjk"
 # Font editor and converter for outline and bitmap fonts
 cask "fontforge"
 # Git client focusing on productivity
