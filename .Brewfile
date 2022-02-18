@@ -134,6 +134,8 @@ brew "pcre2"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
+# High performance csv viewer for cli
+brew "csview"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
 # Pack, ship and run any application as a lightweight container
@@ -400,8 +402,6 @@ brew "zeromq"
 brew "ktr0731/evans/evans"
 # Maintained ctags implementation
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
-# A high performance csv viewer with cjk/emoji support.
-brew "wfxr/csview/csview"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
