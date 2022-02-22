@@ -138,8 +138,6 @@ brew "convmv"
 brew "csview"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
 # Command-line DNS client
 brew "dog"
 # More intuitive version of du in rust
