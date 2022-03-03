@@ -103,15 +103,15 @@ key('n', 'so', '<c-w>o<cr>', { noremap = true, silent = true })
 -- 新規タブ
 key('n', 'tn', ':<c-u>tabnew<cr>', { noremap = true, silent = true })
 -- バッファを閉じる
-key('n', 'bq', ':<c-u>bd<cr>', { noremap = true, silent = true })
+key('n', 'qb', ':<c-u>bd<cr>', { noremap = true, silent = true })
 -- 直前のバッファを開く
-key('n', 'bb', ':b#<cr>', { noremap = true, silent = true })
+-- key('n', 'bb', ':b#<cr>', { noremap = true, silent = true })
 -- バッファリストの先頭を開く
-key('n', 'bf', ':bf<cr>', { noremap = true, silent = true })
+-- key('n', 'bf', ':bf<cr>', { noremap = true, silent = true })
 -- バッファリストの最後を開く
-key('n', 'bl', ':bl<cr>', { noremap = true, silent = true })
+-- key('n', 'bl', ':bl<cr>', { noremap = true, silent = true })
 --変更中の次のバッファへ移動
-key('n', 'bm', ':bm<cr>', { noremap = true, silent = true })
+key('n', 'qm', ':<c-u>bm<cr>', { noremap = true, silent = true })
 -- 保存して閉じる、保存せずに閉じるを無効
 key('n', 'ZZ', '<nop>', { noremap = true, silent = true })
 key('n', 'ZQ', '<nop>', { noremap = true, silent = true })
