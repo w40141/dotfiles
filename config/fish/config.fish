@@ -228,6 +228,7 @@ fish_add_path /usr/local/opt/libxslt/bin
 fish_add_path /usr/local/opt/openssl@1.1/bin
 fish_add_path /usr/local/opt/openssl@3/bin
 fish_add_path /usr/local/opt/ncurses/bin
+fish_add_path /usr/local/opt/mysql-client/bin
 
 . ~/.asdf/plugins/java/set-java-home.fish
 
