@@ -1,6 +1,5 @@
 -- LSP Complement
 -- https://github.com/neoclide/coc.nvim
-
 local key = vim.api.nvim_set_keymap
 local g = vim.g
 local cmd = vim.cmd
@@ -156,3 +155,8 @@ key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap 
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })
 key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
+
+cmd([[hi! CocErrorSign guifg=#E82424]])
+cmd([[hi! CocWarninSign guifg=#FF9E3B]])
+cmd([[hi! CocInfoSign guifg=#6A9589]])
+cmd([[hi! CocHSign guifg=#658594]])
