@@ -97,15 +97,15 @@ set.switchbuf = 'useopen'
 -- <'や'>'でインデントする際に'shiftwidth'の倍数に丸める
 set.shiftround = true
 -- 行頭での<tab>の幅
--- set.shiftwidth = 4
--- set.softtabstop = 4
--- set.tabstop = 4
+set.shiftwidth = 4
+set.softtabstop = 4
+set.tabstop = 4
 -- 新しい行のインデントを現在行と同じにする
 -- set.smartindent = true
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
--- set.smarttab = true
+set.smarttab = true
 -- cプログラムの自動インデント
--- set.cindent = true
+set.cindent = true
 -- タブを空白入力に置換
 set.expandtab = true
 -- 補完時に大文字小文字を区別しない
