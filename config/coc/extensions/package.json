@@ -20,9 +20,9 @@
     "coc-phpls": ">=2.2.2",
     "coc-prettier": ">=9.2.3",
     "coc-prisma": ">=0.11.0",
-    "coc-pyright": ">=1.1.229",
-    "coc-rust-analyzer": ">=0.61.0",
-    "coc-snippets": ">=3.0.3",
+    "coc-pyright": ">=1.1.231",
+    "coc-rust-analyzer": ">=0.61.1",
+    "coc-snippets": ">=3.0.4",
     "coc-solargraph": ">=1.2.3",
     "coc-spell-checker": ">=1.2.0",
     "coc-sql": ">=0.9.0",
@@ -32,6 +32,6 @@
     "coc-vetur": ">=1.2.5",
     "coc-vimlsp": ">=0.12.5",
     "coc-word": ">=1.2.2",
-    "coc-yaml": ">=1.7.4"
+    "coc-yaml": ">=1.7.5"
   }
 }

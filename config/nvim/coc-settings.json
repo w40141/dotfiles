@@ -27,7 +27,12 @@
     "border": true,
     "highlight": "CocSuggestFloating"
   },
-  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "json"],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "json",
+    "prisma"
+  ],
   "coc.preferences.formatOnType": true,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
@@ -66,6 +71,7 @@
   ],
   "codeLens.enable": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "rust-analyzer.cargo.runBuildScripts": true,
   "languageserver": {
     "clangd": {
       "command": "clangd",
