@@ -7,7 +7,7 @@
     "border": true,
     "highlight": "CocSuggestFloating"
   },
-  "snippets.expands": {
+  "snippets.extends": {
     "cpp": ["c"],
     "javascriptreact": ["javascript"],
     "typescript": ["javascript"]
@@ -49,7 +49,7 @@
       "default": true
     }
   ],
-  "java.format.enable": true,
+  "java.format.enabled": true,
   "java.format.settings.profile": "google-java-format",
   "java.saveActions.organizeImports": false,
   "tsserver.tsdk": ".yarn/sdks/typescript/lib",
@@ -60,8 +60,7 @@
   "eslint.packageManager": "yarn",
   "eslint.nodePath": ".yarn/sdks",
   "eslint.autoFixOnSave": true,
-  "eslint.autoFix": true,
-  "eslint.filetypes": [
+  "eslint.probe": [
     "javascript",
     "javascriptreact",
     "typescript",
@@ -135,6 +134,7 @@
     "NOWCLIENT",
     "PARTTIME",
     "PLUSCLIENT",
+    "Pkcs",
     "Prost",
     "Researchmap",
     "Untrusted",
@@ -149,6 +149,7 @@
     "eval",
     "fuga",
     "fulltext",
+    "getrandom",
     "getset",
     "gprc",
     "grpc",
