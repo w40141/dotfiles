@@ -435,6 +435,8 @@ cask "figma"
 cask "firefox"
 # Build apps and clock faces for Fitbit
 cask "fitbit-os-simulator"
+cask "font-biz-udgothic"
+cask "font-biz-udmincho"
 cask "font-genshingothic"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen"
