@@ -54,6 +54,8 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# Command-line interface for SQLite
+brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Interpreted, interactive, object-oriented programming language
@@ -74,6 +76,8 @@ brew "bingrep"
 brew "icu4c"
 # Collection of portable C++ source libraries
 brew "boost"
+# Freely available high-quality data compressor
+brew "bzip2"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
@@ -100,8 +104,6 @@ brew "nettle"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
 # GNU Emacs text editor
 brew "emacs", restart_service: true
 # Emacs dependency management
@@ -126,6 +128,8 @@ brew "curl"
 brew "gd"
 # Postgres C API library
 brew "libpq"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
 # Regular expressions library
 brew "oniguruma"
 # Perl compatible regular expressions library with a new API
@@ -258,6 +262,8 @@ brew "shared-mime-info"
 brew "x265"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Implementation of malloc emphasizing fragmentation avoidance
+brew "jemalloc"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # JSON parser for C
@@ -272,6 +278,8 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
+# Conversion library
+brew "libiconv"
 # Vorbis General Audio Compression Codec
 brew "libvorbis"
 # Audio codec
@@ -398,6 +406,8 @@ brew "z"
 brew "zellij"
 # High-performance, asynchronous messaging library
 brew "zeromq"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
 # High-performance, schema-free, document-oriented database
