@@ -12,6 +12,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "ktr0731/evans"
+tap "michaeleisel/zld"
 tap "mongodb/brew"
 tap "neovim/neovim"
 tap "tgotwig/linux-dust"
@@ -410,6 +411,8 @@ brew "zeromq"
 brew "zlib"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
+# A faster version of ld, Apple's linker
+brew "michaeleisel/zld/zld"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # Maintained ctags implementation
@@ -433,6 +436,8 @@ cask "clipy"
 cask "color-oracle"
 # API documentation browser and code snippet manager
 cask "dash"
+# Trains AIs to understand and translate texts
+cask "deepl"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerized applications and microservices
