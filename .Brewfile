@@ -135,8 +135,6 @@ brew "libzip"
 brew "oniguruma"
 # Perl compatible regular expressions library with a new API
 brew "pcre2"
-# Dependency Manager for PHP
-brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
 # High performance csv viewer for cli
