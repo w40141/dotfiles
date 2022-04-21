@@ -171,6 +171,7 @@
     "signup",
     "singnout",
     "thiserror",
+    "vite",
     "xorshift"
   ]
 }
