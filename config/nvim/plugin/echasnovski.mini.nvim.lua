@@ -8,9 +8,20 @@ require('mini.surround').setup({
     -- Duration (in ms) of highlight when calling `MiniSurround.highlight()`
     highlight_duration = 500,
 
-    -- Pattern to match function name in 'function call' surrounding
-    -- By default it is a string of letters, '_' or '.'
-    funname_pattern = '[%w_%.]+',
+    custom_surroundings = {
+      -- Make `)` insert parts with spaces. `input` pattern stays the same.
+      [')'] = { output = { left = '( ', right = ' )' } },
+
+      -- Modify `f` (function call) to find functions with only alphanumeric
+      -- characters in its name.
+      f = { input = { find = '%f[%w]%w+%b()' } },
+
+      -- Create custom surrouding for Lua's block string `[[...]]`
+      s = {
+        input = { find = '%[%[.-%]%]', extract = '^(..).*(..)$' },
+        output = { left = '[[', right = ']]' },
+      },
+    },
 
     -- Module mappings. Use `''` (empty string) to disable one.
     mappings = {
