@@ -6,6 +6,7 @@ EOF
 let g:loaded_perl_provider = 0
 let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
 let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
+let g:node_host_prog = expand($HOME) . "/.asdf/installs/nodejs/16.9.1/.npm/bin/neovim-node-host"
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
     if !isdirectory(a:dir) && (a:force ||

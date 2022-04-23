@@ -236,3 +236,4 @@ source /usr/local/opt/asdf/libexec/asdf.fish
 
 # Created by `pipx` on 2022-01-03 14:25:46
 set PATH $PATH /Users/daisuke.oku/.local/bin
+set PATH $PATH (yarn global bin)
