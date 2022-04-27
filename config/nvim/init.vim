@@ -39,6 +39,7 @@ Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'goolord/alpha-nvim'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/vim-cursorword'
+Plug 'jsborjesson/vim-uppercase-sql', { 'for': ['sql'] }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/vim-easy-align', { 'on': '<Plug>(EasyAlign)'}
@@ -49,19 +50,21 @@ Plug 'lambdalisue/gina.vim', { 'on': [] }
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'liuchengxu/vista.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'm-demare/hlargs.nvim'
 Plug 'neoclide/coc.nvim', { 'on': [], 'branch': 'release' }
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'ntpeters/vim-better-whitespace', { 'on': 'StripWhitespace' }
 Plug 'numToStr/Comment.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'm-demare/hlargs.nvim'
 Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rebelot/kanagawa.nvim'
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
+Plug 'romgrk/nvim-treesitter-context'
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'Shougo/context_filetype.vim'
@@ -78,21 +81,19 @@ Plug 'tyru/eskk.vim', { 'on': [] }
 Plug 'tyru/open-browser.vim', { 'on': ['<Plug>(openbrowser-smart-search)'] }
 Plug 'vim-jp/vimdoc-ja', { 'on': 'help' }
 Plug 'vim-test/vim-test', { 'on': [] }
+Plug 'yioneko/nvim-yati'
 
 " TODO:
 " Plug 'folke/which-key.nvim'
 " Plug "mrjones2014/legendary.nvim"
-
-" Disable
 " Plug 'windwp/nvim-ts-autotag'
 " Plug 'MunifTanjim/nui.nvim'
 " Plug 'VonHeikemen/fine-cmdline.nvim'
 " Plug 'glidenote/memolist.vim'
 " Plug 'andymass/vim-matchup'
-
+" Plug 'klen/nvim-test'
 " fzf
 " https://github.com/nvim-telescope/telescope.nvim
-" TODO: misc
 " Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 " https://github.com/phaazon/hop.nvim
 call plug#end()
