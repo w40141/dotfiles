@@ -121,24 +121,14 @@ brew "circleci"
 brew "cmake"
 # Console Matrix
 brew "cmatrix"
-# Tool for downloading RTMP streaming media
-brew "rtmpdump"
-# Get a file from an HTTP, HTTPS or FTP server
-brew "curl"
-# Graphics library to dynamically manipulate images
-brew "gd"
-# Postgres C API library
-brew "libpq"
-# C library for reading, creating, and modifying zip archives
-brew "libzip"
-# Regular expressions library
-brew "oniguruma"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
 # Filename encoding conversion tool
 brew "convmv"
 # High performance csv viewer for cli
 brew "csview"
+# Tool for downloading RTMP streaming media
+brew "rtmpdump"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
 # Command-line DNS client
@@ -159,6 +149,8 @@ brew "fd"
 brew "fdk-aac"
 # Text-based UI library
 brew "ncurses"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Ogg Bitstream Library
@@ -179,6 +171,8 @@ brew "isl"
 brew "libmpc"
 # GNU compiler collection
 brew "gcc"
+# Graphics library to dynamically manipulate images
+brew "gd"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
 # Geometry Engine
@@ -263,6 +257,8 @@ brew "x265"
 brew "imagemagick"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
+# Regular expressions library
+brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # JSON parser for C
@@ -279,6 +275,8 @@ brew "libcaca"
 brew "libdnet"
 # Conversion library
 brew "libiconv"
+# Postgres C API library
+brew "libpq"
 # Vorbis General Audio Compression Codec
 brew "libvorbis"
 # Audio codec
@@ -295,6 +293,8 @@ brew "libvpx"
 brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
