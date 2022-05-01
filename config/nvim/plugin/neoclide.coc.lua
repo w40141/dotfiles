@@ -57,18 +57,6 @@ function! CocJumpAction() abort
 endfunction
 ]])
 
--- function _G.ChoseAction()
---     local actions = {
---         {text = "(s)plit", value = "split"},
---         {text = "(v)split", value = "vsplit"},
---         {text = "(t)ab", value = "tab"},
---     }
---     print(fn.join(fn.map(fn.copy(actions), { _, v -> v[text] }), ", ") .. ": ")
---     local result = fn.getcharstr()
---     local result = fn.filter(actions, { _, v -> v[text]:match(".*\(%s\).*") =~# printf("", result)})
---   return fn.len(result) ? result[0].value : ""
--- end
-
 vim.opt.shell='/bin/zsh'
 cmd([[let $SHELL = "/bin/zsh"]])
 
