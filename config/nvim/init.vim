@@ -59,7 +59,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-Plug 'osyo-manga/vim-precious', { 'on': [] }
+" Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rebelot/kanagawa.nvim'
@@ -67,8 +67,8 @@ Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
-Plug 'Shougo/context_filetype.vim'
-Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'Shougo/context_filetype.vim'
+" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'simeji/winresizer', { 'on': [] }
 Plug 'skanehira/translate.vim', { 'on': ['<Plug>(Translate)', '<Plug>(VTranslate)'] }
 Plug 't9md/vim-quickhl', { 'on': ['<Plug>(quickhl-manual-this)', '<Plug>(quickhl-manual-reset)'] }
@@ -101,7 +101,6 @@ call plug#end()
 function! s:LazyLoadPlugs(timer) abort
     call plug#load(
                 \ 'vim-test',
-                \ 'vim-precious',
                 \ 'vim-qfreplace',
                 \ 'vim-rooter',
                 \ 'winresizer',
@@ -110,7 +109,7 @@ function! s:LazyLoadPlugs(timer) abort
                 \ )
 endfunction
 
-call timer_start(150, function("s:LazyLoadPlugs"))
+call timer_start(100, function("s:LazyLoadPlugs"))
 
 augroup load_us_insert
     autocmd!
