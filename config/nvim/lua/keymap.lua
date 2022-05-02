@@ -136,7 +136,7 @@ key('i', '<c-b>', '<left>', { noremap = true, silent = true })
 key('i', '<c-e>', '<end>', { noremap = true, silent = true })
 key('i', '<c-f>', '<right>', { noremap = true, silent = true })
 -- 挿入モードでのesc
-key('i', 'jj', '<esc>', { noremap = true, silent = true })
+key('i', 'qq', '<esc>', { noremap = true, silent = true })
 -- ctrl-v で insert モードで貼り付け
 key('i', '<c-v>', '<eSC>"*pa', { noremap = true, silent = true })
 -- 矢印キー無効

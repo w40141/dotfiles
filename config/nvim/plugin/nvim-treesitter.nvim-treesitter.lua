@@ -1,6 +1,7 @@
 -- Nvim Treesitter configurations and abstraction layer
 -- https://github.com/nvim-treesitter/nvim-treesitter
 -- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+-- https://github.com/yioneko/nvim-yati
 
 require('nvim-treesitter.configs').setup{
     ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
@@ -63,5 +64,7 @@ require('nvim-treesitter.configs').setup{
                 ["[]"] = "@class.outer",
             },
         },
-    }
+    },
+    yati = { enable = true },
+
 }
