@@ -7,6 +7,7 @@ let g:loaded_perl_provider = 0
 let g:config_dir = empty($XDG_CONFIG_HOME) ? expand($HOME) . "/.config" : expand($XDG_CONFIG_HOME)
 let g:python3_host_prog = g:config_dir . "/nvim/neovim3/.venv/bin/python"
 let g:node_host_prog = expand($HOME) . "/.asdf/installs/nodejs/16.9.1/.npm/bin/neovim-node-host"
+
 " :e などでファイルを開く際にフォルダが存在しない場合は自動作成
 function! s:mkdir(dir, force)
     if !isdirectory(a:dir) && (a:force ||
@@ -59,7 +60,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'osyo-manga/vim-precious', { 'on': [] }
 Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rebelot/kanagawa.nvim'
@@ -67,8 +67,6 @@ Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'romgrk/nvim-treesitter-context'
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
-" Plug 'Shougo/context_filetype.vim'
-" Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'simeji/winresizer', { 'on': [] }
 Plug 'skanehira/translate.vim', { 'on': ['<Plug>(Translate)', '<Plug>(VTranslate)'] }
 Plug 't9md/vim-quickhl', { 'on': ['<Plug>(quickhl-manual-this)', '<Plug>(quickhl-manual-reset)'] }
