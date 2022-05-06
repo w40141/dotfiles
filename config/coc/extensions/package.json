@@ -28,7 +28,7 @@
     "coc-sql": ">=0.9.0",
     "coc-texlab": ">=3.2.0",
     "coc-toml": ">=1.2.5",
-    "coc-tsserver": ">=1.10.2",
+    "coc-tsserver": ">=1.10.3",
     "coc-vetur": ">=1.2.5",
     "coc-vimlsp": ">=0.12.8",
     "coc-word": ">=1.2.2",
