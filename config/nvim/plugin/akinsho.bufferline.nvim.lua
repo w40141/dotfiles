@@ -51,9 +51,9 @@ require('bufferline').setup {
                 return vim.fn.fnamemodify(buf.name, ':t:r')
             end
         end,
-        max_name_length = 18,
+        max_name_length = 15,
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-        tab_size = 18,
+        tab_size = 15,
         -- diagnostics = "coc",
         -- diagnostics_update_in_insert = false,
         -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -81,6 +81,7 @@ require('bufferline').setup {
         --     end
         -- end,
         offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "center"}},
+        color_icons = true, -- whether or not to add the filetype icon highlights
         show_buffer_icons = true, -- disable filetype icons for buffers
         show_buffer_close_icons = false,
         show_close_icon = false,
@@ -89,10 +90,21 @@ require('bufferline').setup {
         -- can also be a table containing 2 custom separators
         -- [focused and unfocused]. eg: { '|', '|' }
         -- separator_style = "slant" | "thick" | "thin" | { 'any', 'any' },
-        separator_style = "slant",
+        separator_style = "thin",
         enforce_regular_tabs = false,
         always_show_bufferline = true,
-        sort_by = 'id'
+        -- sort_by = 'insert_after_current'
+        --         | 'insert_at_end'
+        --         | 'id'
+        --         | 'extension'
+        --         | 'relative_directory'
+        --         | 'directory'
+        --         | 'tabs'
+        --         | function(buffer_a, buffer_b)
+        -- add custom logic
+        -- return buffer_a.modified > buffer_b.modified
+        -- end
+        sort_by = 'insert_at_end',
     }
 }
 -- EOF
