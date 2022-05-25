@@ -170,6 +170,7 @@
     "signup",
     "singnout",
     "thiserror",
+    "usecase",
     "vite",
     "xorshift"
   ]
