@@ -25,7 +25,7 @@
     "coc-snippets": ">=3.0.10",
     "coc-solargraph": ">=1.2.4",
     "coc-spell-checker": ">=1.2.0",
-    "coc-sql": ">=0.9.0",
+    "coc-sql": ">=0.10.3",
     "coc-texlab": ">=3.2.0",
     "coc-toml": ">=1.2.5",
     "coc-tsserver": ">=1.10.4",
