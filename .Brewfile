@@ -119,6 +119,8 @@ brew "cheat"
 brew "circleci"
 # Cross-platform make
 brew "cmake"
+# Documentation for CMake
+brew "cmake-docs"
 # Console Matrix
 brew "cmatrix"
 # Filename encoding conversion tool
@@ -264,7 +266,7 @@ brew "jq"
 # JSON parser for C
 brew "json-c"
 # Kubernetes command-line interface
-brew "kubernetes-cli"
+brew "kubernetes-cli", link: false
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Blu-Ray disc playback library for media players like VLC
@@ -497,6 +499,8 @@ cask "notion"
 cask "openinterminal"
 # Collaboration platform for API development
 cask "postman"
+# Imaging utility to install operating systems to a microSD card
+cask "raspberry-pi-imager"
 # MySQL/MariaDB database management
 cask "sequel-ace"
 # PDF reader and note-taking application
@@ -507,8 +511,6 @@ cask "skype"
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Video game digital distribution service
-cask "steam"
 # Development environment
 cask "vagrant"
 # Open-source code editor
