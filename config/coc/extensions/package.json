@@ -20,7 +20,7 @@
     "coc-phpls": ">=2.2.2",
     "coc-prettier": ">=9.3.0",
     "coc-prisma": ">=0.11.0",
-    "coc-pyright": ">=1.1.235",
+    "coc-pyright": ">=1.1.250",
     "coc-rust-analyzer": ">=0.62.1",
     "coc-snippets": ">=3.0.10",
     "coc-solargraph": ">=1.2.4",
