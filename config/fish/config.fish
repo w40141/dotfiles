@@ -213,7 +213,7 @@ fish_add_path /usr/local/opt/curl/bin
 fish_add_path /usr/local/opt/icu4c/bin
 fish_add_path /usr/local/opt/icu4c/sbin
 fish_add_path /usr/local/opt/libpq/bin
-fish_add_path /usr/local/opt/llvm/bin
+# fish_add_path /usr/local/opt/llvm/bin
 fish_add_path /usr/local/opt/nss/bin
 fish_add_path /usr/local/opt/qt/bin
 fish_add_path /usr/local/opt/sqlite/bin
@@ -226,7 +226,7 @@ fish_add_path /usr/local/opt/openldap/sbin
 fish_add_path /usr/local/opt/gnu-getopt/bin
 fish_add_path /usr/local/opt/libxslt/bin
 fish_add_path /usr/local/opt/openssl@1.1/bin
-fish_add_path /usr/local/opt/openssl@3/bin
+# fish_add_path /usr/local/opt/openssl@3/bin
 fish_add_path /usr/local/opt/ncurses/bin
 fish_add_path /usr/local/opt/mysql-client/bin
 
