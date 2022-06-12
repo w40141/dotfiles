@@ -147,6 +147,7 @@
     "consts",
     "dotenv",
     "eval",
+    "followee",
     "fuga",
     "fulltext",
     "getrandom",
