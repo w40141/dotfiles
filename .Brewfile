@@ -266,7 +266,7 @@ brew "jq"
 # JSON parser for C
 brew "json-c"
 # Kubernetes command-line interface
-brew "kubernetes-cli", link: false
+brew "kubernetes-cli"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Blu-Ray disc playback library for media players like VLC
@@ -484,7 +484,7 @@ cask "kitty"
 # Kubernetes IDE
 cask "lens"
 # Software for Logitech devices
-cask "logitech-options"
+cask "logi-options-plus"
 # Full TeX Live distribution without GUI applications
 cask "mactex-no-gui"
 # Provides updates to various Microsoft products
