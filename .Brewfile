@@ -308,7 +308,7 @@ brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
 # Fish-like, POSIX-compatible shell
