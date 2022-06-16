@@ -64,7 +64,6 @@ Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
 Plug 'rebelot/kanagawa.nvim'
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
-" Plug 'romgrk/nvim-treesitter-context'
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 Plug 'segeljakt/vim-silicon', { 'on': 'Silicon' }
 Plug 'simeji/winresizer', { 'on': [] }
@@ -82,6 +81,7 @@ Plug 'vim-test/vim-test', { 'on': [] }
 Plug 'yioneko/nvim-yati'
 
 " TODO:
+" Plug 'romgrk/nvim-treesitter-context'
 " Plug 'folke/which-key.nvim'
 " Plug "mrjones2014/legendary.nvim"
 " Plug 'windwp/nvim-ts-autotag'
