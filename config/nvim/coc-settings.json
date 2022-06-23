@@ -171,6 +171,7 @@
     "signout",
     "signup",
     "singnout",
+    "sqlx",
     "thiserror",
     "usecase",
     "vite",
