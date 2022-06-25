@@ -62,6 +62,7 @@ Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'previm/previm', { 'for': ['markdown'] }
+Plug 'rcarriga/nvim-notify'
 Plug 'rebelot/kanagawa.nvim'
 Plug 'reireias/vim-cheatsheet', { 'on': 'Cheat' }
 Plug 'rust-lang/rust.vim', { 'for': ['rust'] }

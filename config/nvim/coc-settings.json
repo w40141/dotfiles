@@ -51,13 +51,11 @@
   "java.format.enabled": true,
   "java.format.settings.profile": "google-java-format",
   "java.saveActions.organizeImports": false,
-  "tsserver.tsdk": ".yarn/sdks/typescript/lib",
   "tsserver.enableJavascript": true,
   "workspace.workspaceFolderCheckCwd": false,
   "elixirLS.mixEnv": "dev",
   "elixirLS.mixTarget": "test",
   "eslint.packageManager": "yarn",
-  "eslint.nodePath": ".yarn/sdks",
   "eslint.autoFixOnSave": true,
   "eslint.probe": [
     "javascript",
@@ -69,7 +67,9 @@
   ],
   "codeLens.enable": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  "rust-analyzer.cargo.runBuildScripts": true,
+  "rust-analyzer.cargo.buildScripts.enable": true,
+  "rust-analyzer.cargo.autoreload": true,
+  "rust-analyzer.checkOnSave.command": "clippy",
   "languageserver": {
     "clangd": {
       "command": "clangd",
