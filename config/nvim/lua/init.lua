@@ -35,4 +35,4 @@ g.skip_loading_mswin        = 1
 
 require('option')
 require('keymap')
--- require('plugin')
+require('plugin')

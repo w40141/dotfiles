@@ -21,7 +21,7 @@
     "coc-prettier": ">=9.3.1",
     "coc-prisma": ">=0.11.0",
     "coc-pyright": ">=1.1.255",
-    "coc-rust-analyzer": ">=0.64.0",
+    "coc-rust-analyzer": ">=0.64.1",
     "coc-snippets": ">=3.0.14",
     "coc-solargraph": ">=1.2.4",
     "coc-spell-checker": ">=1.2.0",

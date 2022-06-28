@@ -33,6 +33,6 @@ g.loaded_zip                = 1
 g.loaded_zipPlugin          = 1
 g.skip_loading_mswin        = 1
 
-require('rc.option')
-require('rc.keymap')
-require('rc.plugin')
+require('option')
+require('keymap')
+require('plugin')
