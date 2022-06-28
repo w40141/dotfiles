@@ -202,7 +202,15 @@ require("packer").startup(function(use)
             require("rc/toggleterm")
         end
     })
-    use({'honza/vim-snippets'})
+    -- use({'honza/vim-snippets'})
+ --    use({
+	-- 	"L3MON4D3/LuaSnip",
+	-- 	event = "VimEnter",
+	-- 	config = function()
+	-- 		require("rc.LuaSnip")
+	-- 	end,
+	-- })
+    use({ "rafamadriz/friendly-snippets", opt = true })
     use({
         'nvim-treesitter/nvim-treesitter',
         after = colorscheme,
@@ -223,6 +231,18 @@ require("packer").startup(function(use)
         'm-demare/hlargs.nvim',
         after = { 'nvim-treesitter' }
     })
+    use({
+        "p00f/nvim-ts-rainbow",
+        after = { "nvim-treesitter" }
+    })
+	use({
+        "haringsrob/nvim_context_vt",
+        after = { "nvim-treesitter", colorscheme }
+    })
+	use({
+		"romgrk/nvim-treesitter-context",
+		cmd = { "TSContextEnable" },
+	})
     use({'junegunn/fzf',})
     use({
         'neoclide/coc.nvim',
@@ -274,6 +294,9 @@ require("packer").startup(function(use)
     use({
         'gelguy/wilder.nvim',
         run = ":UpdateRemotePlugins",
+        config = function ()
+            require("rc.wilder")
+        end
     })
     if packer_bootstrap then
         require("packer").sync()

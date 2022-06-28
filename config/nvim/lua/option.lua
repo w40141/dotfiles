@@ -114,3 +114,5 @@ set.infercase = true
 set.writebackup = false
 set.swapfile = false
 set.backup = false
+
+set.termguicolors = true
