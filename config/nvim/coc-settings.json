@@ -69,7 +69,6 @@
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "rust-analyzer.cargo.buildScripts.enable": true,
   "rust-analyzer.cargo.autoreload": true,
-  "rust-analyzer.checkOnSave.command": "clippy",
   "languageserver": {
     "clangd": {
       "command": "clangd",

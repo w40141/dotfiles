@@ -202,15 +202,8 @@ require("packer").startup(function(use)
             require("rc/toggleterm")
         end
     })
-    -- use({'honza/vim-snippets'})
- --    use({
-	-- 	"L3MON4D3/LuaSnip",
-	-- 	event = "VimEnter",
-	-- 	config = function()
-	-- 		require("rc.LuaSnip")
-	-- 	end,
-	-- })
-    use({ "rafamadriz/friendly-snippets", opt = true })
+    use({'honza/vim-snippets'})
+    -- use({ "rafamadriz/friendly-snippets", opt = true })
     use({
         'nvim-treesitter/nvim-treesitter',
         after = colorscheme,
