@@ -34,7 +34,7 @@ dashboard.section.buttons.val = {
     dashboard.button('o', 'פּ Open explorer', ":lua require'lir.float'.toggle()<cr>"),
     dashboard.button('s', ' Settings', ':e $MYVIMRC<CR>'),
     dashboard.button('c', '﫵Check health', ':checkhealth<cr>'),
-    dashboard.button('u', ' Update plugins', ':PlugUpdate<CR>'),
+    dashboard.button('u', ' Update plugins', ':PackerSync<CR>'),
     dashboard.button('q', ' Quit', ':qa<CR>'),
 }
 

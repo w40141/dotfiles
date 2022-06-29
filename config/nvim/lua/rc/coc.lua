@@ -124,20 +124,6 @@ key('x', '[dev]a',  [[<plug>(coc-codeaction-selected)iw]], { noremap = false, si
 key('n', '[dev]q',  [[<plug>(coc-fix-current)]], { noremap = false, silent = false })
 key('n', '[dev]f',  [[:<c-u>Format<cr>]], { noremap = true })
 
-key('n', '[ff]s', [[:<c-u>CocCommand fzf-preview.GitStatus<cr>]], { noremap = true, silent = true } )
-key('n', '[ff]g', [[:<c-u>CocCommand fzf-preview.GitActions<cr>]], { noremap = true, silent = true } )
-
-key('n', '[ff]p', [[:<c-u>CocCommand fzf-preview.FromResources buffer project_mru project<cr>]], { noremap = true, silent = true })
-key('n', '[ff]b', [[:<c-u>CocCommand fzf-preview.Buffers<cr>]], { noremap = true, silent = true })
-key('n', '[ff]f', [[:<c-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<space>]], { noremap = true, silent = false })
-key('x', '[ff]f', [["sy:<c-u>CocCommand fzf-preview.ProjectGrep --add-fzf-arg=--exact --add-fzf-arg=--no-sort<space>-F<space>"<c-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<cr>"<cr>]], { noremap = true, silent = false })
-
-key('n', '[ff]/', [[:<c-u>CocCommand fzf-preview.Lines --resume --add-fzf-arg=--no-sort<cr>]], { noremap = true, silent = true })
-key('n', '[ff]*', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="<C-r>=expand('<cword>')<CR>"<CR>]], { noremap = true, silent = true })
-key('x', '[ff]*', [["sy:CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="<C-r>=substitute(@s, '\(^\\v\)\\|\\\(<\\|>\)', '', 'g')<CR>"<CR>]], { noremap = true, silent = true })
-key('n', '[ff]n', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="<C-r>=substitute(@/, '\(^\\v\)\\|\\\(<\\|>\)', '', 'g')<CR>"<CR>]], { noremap = true, silent = true })
-key('n', '[ff]?', [[:<C-u>CocCommand fzf-preview.BufferLines --resume --add-fzf-arg=--no-sort<CR>]], { noremap = true, silent = true })
-
 key('n', '[ff]q', [[:<c-u>CocCommand fzf-preview.CocDiagnostics<cr>]], { noremap = true, silent = true })
 key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap = true, silent = true })
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })

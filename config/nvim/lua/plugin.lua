@@ -6,7 +6,6 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- TODO:
--- Plug 'romgrk/nvim-treesitter-context'
 -- Plug 'folke/which-key.nvim'
 -- Plug "mrjones2014/legendary.nvim"
 -- Plug 'windwp/nvim-ts-autotag'
@@ -16,7 +15,6 @@ end
 -- Plug 'andymass/vim-matchup'
 -- Plug 'klen/nvim-test'
 -- fzf
--- https://github.com/nvim-telescope/telescope.nvim
 -- Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
 -- https://github.com/phaazon/hop.nvim
 require("packer").startup(function(use)
@@ -32,7 +30,10 @@ require("packer").startup(function(use)
             require("rc.vim-rooter")
         end
     })
-    use("nvim-lua/plenary.nvim")
+    use({ "nvim-lua/popup.nvim", module = "popup" })
+    use({ "nvim-lua/plenary.nvim" }) -- do not lazy load
+    use({ "tami5/sqlite.lua", module = "sqlite" })
+    use({ "MunifTanjim/nui.nvim", module = "nui" })
     use({
         'vim-jp/vimdoc-ja',
         opt = true,
@@ -221,14 +222,14 @@ require("packer").startup(function(use)
         "p00f/nvim-ts-rainbow",
         after = { "nvim-treesitter" }
     })
-	use({
+    use({
         "haringsrob/nvim_context_vt",
         after = { "nvim-treesitter", colorscheme }
     })
-	use({
-		"romgrk/nvim-treesitter-context",
-		cmd = { "TSContextEnable" },
-	})
+    use({
+        "romgrk/nvim-treesitter-context",
+        cmd = { "TSContextEnable" },
+    })
     use({'junegunn/fzf',})
     use({
         'neoclide/coc.nvim',
@@ -256,13 +257,13 @@ require("packer").startup(function(use)
     })
     use({'junegunn/vim-easy-align'})
     use({
-		"lewis6991/gitsigns.nvim",
-		requires = { "nvim-lua/plenary.nvim" },
-		event = "VimEnter",
-		config = function()
-			require("rc/gitsigns")
-		end,
-	})
+        "lewis6991/gitsigns.nvim",
+        requires = { "nvim-lua/plenary.nvim" },
+        event = "VimEnter",
+        config = function()
+            require("rc/gitsigns")
+        end,
+    })
     use({
         'norcalli/nvim-colorizer.lua',
         config = function()
@@ -284,6 +285,63 @@ require("packer").startup(function(use)
             require("rc.wilder")
         end
     })
+    use({
+        "nvim-telescope/telescope.nvim",
+        after = colorscheme ,
+        require = {'nvim-lua/plenary.nvim'},
+        config = function()
+        	require("rc.telescope-nvim")
+        end,
+    })
+    -- use {
+    --     "nvim-telescope/telescope-frecency.nvim",
+    --     config = function()
+    --         require"telescope".load_extension("frecency")
+    --     end,
+    --     requires = {"tami5/sqlite.lua"}
+    -- }
+    -- use({
+    --     "nvim-telescope/telescope-packer.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("packer")
+    --     end,
+    -- })
+    -- use({
+    --     "nvim-telescope/telescope-github.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("gh")
+    --     end,
+    -- })
+    -- use({
+    --     "nvim-telescope/telescope-ui-select.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("ui-select")
+    --     end,
+    -- })
+    -- use({
+    --     "crispgm/telescope-heading.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("heading")
+    --     end,
+    -- })
+    -- use({
+    --     "LinArcX/telescope-changes.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("changes")
+    --     end,
+    -- })
+    -- use({
+    --     "nvim-telescope/telescope-live-grep-args.nvim",
+    --     after = { "telescope.nvim" },
+    --     config = function()
+    --         require("telescope").load_extension("live_grep_args")
+    --     end,
+    -- })
     if packer_bootstrap then
         require("packer").sync()
     end
@@ -291,8 +349,8 @@ end)
 
 vim.cmd([[
   augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugin.lua source <afile> | PackerCompile
+  autocmd!
+  autocmd BufWritePost plugin.lua source <afile> | PackerCompile
   augroup end
 ]])
 
