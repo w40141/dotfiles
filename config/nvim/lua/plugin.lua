@@ -26,15 +26,8 @@ require("packer").startup(function(use)
         module = "notify"
     })
     use({
-        "4513ECHO/vim-readme-viewer",
-        opt = true,
-        cmd = "PackerReadme",
-        config = function()
-            vim.g['readme_viewer#plugin_manager'] = 'packer.nvim'
-        end
-    })
-    use({
         "airblade/vim-rooter",
+        event = "VimEnter",
         setup = function()
             require("rc.vim-rooter")
         end
