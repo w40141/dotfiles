@@ -1,15 +1,5 @@
 local actions = require("telescope.actions")
-local telescope_builtin = require("telescope.builtin")
 local action_layout = require("telescope.actions.layout")
-local config = require("telescope.config")
-local pickers = require("telescope.pickers")
-local finders = require("telescope.finders")
-local make_entry = require("telescope.make_entry")
-local previewers = require("telescope.previewers")
-local utils = require("telescope.utils")
-local conf = require("telescope.config").values
-local Path = require("plenary.path")
-
 local action_state = require("telescope.actions.state")
 local custom_actions = {}
 --
@@ -59,19 +49,18 @@ require("telescope").setup({
             "--column",
             "--smart-case",
         },
-        -- file_sorter = require("telescope.sorters").get_fuzzy_file,
-        -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
         path_display = { "truncate" },
         dynamic_preview_title = true,
         winblend = 0,
         color_devicons = true,
         use_less = true,
         scroll_strategy = "cycle",
-        set_env = { ["COLORTERM"] = "truecolor" }, -- default { }, currently unsupported for shells like cmd.exe / powershell.exe
-
+        set_env = { ["COLORTERM"] = "truecolor" },
         buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
         mappings = {
-            n = { ["<C-t>"] = action_layout.toggle_preview },
+            n = {
+                ["<C-t>"] = action_layout.toggle_preview
+            },
             i = {
                 ["<C-t>"] = action_layout.toggle_preview,
                 ["<C-x>"] = false,
@@ -83,41 +72,6 @@ require("telescope").setup({
         },
     },
     extensions = {
-        -- media_files = {
-        --     filetypes = { "png", "webp", "jpg", "jpeg" }, -- filetypes whitelist
-        --     find_cmd = "rg", -- find command
-        -- },
-        -- arecibo = {
-        --     ["selected_engine"] = "google",
-        --     ["url_open_command"] = "xdg-open",
-        --     ["show_http_headers"] = false,
-        --     ["show_domain_icons"] = false,
-        -- },
-        -- frecency = {
-        --     db_root = vim.fn.stdpath("state"),
-        --     ignore_patterns = { "*.git/*", "*/tmp/*", "*/node_modules/*" },
-        --     db_safe_mode = false,
-        --     auto_validate = true,
-        -- },
-        -- project = {
-        --     base_dirs = (function()
-        --         local dirs = {}
-        --         local function file_exists(fname)
-        --             local stat = vim.loop.fs_stat(vim.fn.expand(fname))
-        --             return (stat and stat.type) or false
-        --         end
-        --         if file_exists("~/.ghq") then
-        --             dirs[#dirs + 1] = { "~/.ghq", max_depth = 5 }
-        --         end
-        --         if file_exists("~/Workspace") then
-        --             dirs[#dirs + 1] = { "~/Workspace", max_depth = 3 }
-        --         end
-        --         if #dirs == 0 then
-        --             return nil
-        --         end
-        --         return dirs
-        --     end)(),
-        -- },
     },
 })
 

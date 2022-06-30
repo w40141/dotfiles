@@ -293,55 +293,6 @@ require("packer").startup(function(use)
         	require("rc.telescope-nvim")
         end,
     })
-    -- use {
-    --     "nvim-telescope/telescope-frecency.nvim",
-    --     config = function()
-    --         require"telescope".load_extension("frecency")
-    --     end,
-    --     requires = {"tami5/sqlite.lua"}
-    -- }
-    -- use({
-    --     "nvim-telescope/telescope-packer.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("packer")
-    --     end,
-    -- })
-    -- use({
-    --     "nvim-telescope/telescope-github.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("gh")
-    --     end,
-    -- })
-    -- use({
-    --     "nvim-telescope/telescope-ui-select.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("ui-select")
-    --     end,
-    -- })
-    -- use({
-    --     "crispgm/telescope-heading.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("heading")
-    --     end,
-    -- })
-    -- use({
-    --     "LinArcX/telescope-changes.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("changes")
-    --     end,
-    -- })
-    -- use({
-    --     "nvim-telescope/telescope-live-grep-args.nvim",
-    --     after = { "telescope.nvim" },
-    --     config = function()
-    --         require("telescope").load_extension("live_grep_args")
-    --     end,
-    -- })
     if packer_bootstrap then
         require("packer").sync()
     end
