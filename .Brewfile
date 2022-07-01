@@ -11,6 +11,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/test-bot"
+tap "k1low/tap"
 tap "ktr0731/evans"
 tap "michaeleisel/zld"
 tap "mongodb/brew"
@@ -415,6 +416,8 @@ brew "zellij"
 brew "zeromq"
 # General-purpose lossless data-compression library
 brew "zlib"
+# tbls is a CI-Friendly tool for document a database, written in Go.
+brew "k1low/tap/tbls"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
 # A faster version of ld, Apple's linker
@@ -442,6 +445,8 @@ cask "clipy"
 cask "color-oracle"
 # API documentation browser and code snippet manager
 cask "dash"
+# Universal database tool and SQL client
+cask "dbeaver-community"
 # Trains AIs to understand and translate texts
 cask "deepl"
 # Voice and text chat software

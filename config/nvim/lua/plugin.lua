@@ -48,6 +48,7 @@ require("packer").startup(function(use)
     })
     use({
         "echasnovski/mini.nvim",
+        event = "InsertEnter",
         config = function()
             require("rc.mini")
         end
@@ -72,7 +73,10 @@ require("packer").startup(function(use)
         opt = true,
         cmd = "Goyo"
     })
-    use({"famiu/bufdelete.nvim"})
+    use({
+        "famiu/bufdelete.nvim",
+        event = "VimEnter",
+    })
     use({
         'vim-test/vim-test',
         config = function()
@@ -87,6 +91,7 @@ require("packer").startup(function(use)
     })
     use({
         "terryma/vim-expand-region",
+        event = "VimEnter",
         setup = function()
             require("rc.vim-expand-region")
         end
@@ -104,6 +109,7 @@ require("packer").startup(function(use)
     })
     use({
         'tyru/open-browser.vim',
+        event = "VimEnter",
         setup = function()
             require("rc.open-browser")
         end
@@ -143,12 +149,14 @@ require("packer").startup(function(use)
     })
     use({
         "simeji/winresizer",
+        event = "VimEnter",
         setup = function()
             require("rc.winresizer")
         end
     })
     use({
         "numToStr/Comment.nvim",
+        event = "VimEnter",
         config = function()
             require('Comment').setup()
         end
@@ -166,7 +174,10 @@ require("packer").startup(function(use)
             require('rc.todo-comments')
         end
     })
-    use({ 'itchyny/vim-cursorword'})
+    use({
+        'itchyny/vim-cursorword',
+        event = "VimEnter",
+    })
     use({
         'akinsho/bufferline.nvim',
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -185,6 +196,7 @@ require("packer").startup(function(use)
     })
     use({
         'lukas-reineke/indent-blankline.nvim',
+        event = "VimEnter",
         config = function()
             require("rc/indent-blankline")
         end
@@ -251,6 +263,7 @@ require("packer").startup(function(use)
     })
     use({
         'skanehira/translate.vim',
+        event = "VimEnter",
         config = function()
             require("rc.translate")
         end
