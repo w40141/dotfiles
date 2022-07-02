@@ -202,12 +202,12 @@ require("packer").startup(function(use)
         end
     })
     use({
-        'akinsho/toggleterm.nvim',
-        event = "VimEnter",
-        config = function()
-            require("rc/toggleterm")
-        end
-    })
+		"akinsho/toggleterm.nvim",
+		event = "VimEnter",
+		config = function()
+			require("rc/toggleterm")
+		end,
+	})
     use({'honza/vim-snippets'})
     -- use({ "rafamadriz/friendly-snippets", opt = true })
     use({
