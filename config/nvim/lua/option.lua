@@ -1,4 +1,5 @@
 local set = vim.opt
+local fn = vim.fn
 
 -- 基本設定
 -- 文字コード
@@ -58,7 +59,7 @@ set.showmode = false
 set.helplang = 'ja'
 set.background = 'dark'
 -- 文字を隠す
-if vim.fn.has('conceal') == 1 then
+if fn.has('conceal') == 1 then
     set.conceallevel = 1
     set.concealcursor = 'c'
 end

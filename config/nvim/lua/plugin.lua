@@ -1,60 +1,61 @@
--- On ly required if you have packer in your `opt` pack
+local fn = vim.fn
+local cmd = vim.cmd
 
-local install_path = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    packer_bootstrap = vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
 end
 
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
-    -- Library
     use({ "nvim-lua/popup.nvim", module = "popup" })
     use({ "nvim-lua/plenary.nvim" }) -- do not lazy load
     use({ "tami5/sqlite.lua", module = "sqlite" })
     use({ "MunifTanjim/nui.nvim", module = "nui" })
+    use({ "honza/vim-snippets" })
     use({
-		"L3MON4D3/LuaSnip",
-		event = "VimEnter",
-		config = function()
-			require("rc/lua-snip")
-		end,
-	})
-    -- cmp and lsp
-	use({
-		"hrsh7th/nvim-cmp",
-		requires = {
-			{ "L3MON4D3/LuaSnip", opt = true, event = "VimEnter" },
-			{ "windwp/nvim-autopairs", opt = true, event = "VimEnter" },
-		},
-		after = { "LuaSnip", "nvim-autopairs" },
-		config = function()
-			require("rc/nvim-cmp")
-		end,
-	})
-	use({
-		"onsails/lspkind-nvim",
-		module = "lspkind",
-		config = function()
-			require("rc/lspkind-nvim")
-		end,
-	})
-	use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
-	use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-calc", after = "nvim-cmp" })
-	use({ "f3fora/cmp-spell", after = "nvim-cmp" })
-	use({ "yutkat/cmp-mocword", after = "nvim-cmp" })
-	use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
-	use({ "ray-x/cmp-treesitter", after = "nvim-cmp" })
-	use({ "lukas-reineke/cmp-rg", after = "nvim-cmp" })
-	use({ "lukas-reineke/cmp-under-comparator", module = "cmp-under-comparator" })
+        "windwp/nvim-autopairs",
+        event = "VimEnter",
+        config = function()
+            require("rc/nvim-autopairs")
+        end,
+    })
+    use({
+        "dcampos/nvim-snippy",
+        event = "VimEnter",
+        config = function()
+            require("rc/nvim-snippy")
+        end,
+    })
+    use({
+        "dcampos/cmp-snippy",
+        event = "VimEnter",
+    })
+    use({
+        "hrsh7th/nvim-cmp",
+        config = function()
+            require("rc/nvim-cmp")
+        end,
+    })
+    use({
+        "onsails/lspkind-nvim",
+        module = "lspkind",
+        config = function()
+            require("rc/lspkind-nvim")
+        end,
+    })
+    use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
+    use({ "f3fora/cmp-spell", after = "nvim-cmp" })
+    use({ "yutkat/cmp-mocword", after = "nvim-cmp" })
+    use({ "ray-x/cmp-treesitter", after = "nvim-cmp" })
     use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
-	use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp" })
     use({
         "neovim/nvim-lspconfig",
         config = function()
@@ -86,19 +87,12 @@ require("packer").startup(function(use)
     })
     use({
         "goolord/alpha-nvim",
-        require = { "kyazdani42/nvim-web-devicons" },
+        requires = { "kyazdani42/nvim-web-devicons" },
         config = function ()
             require("rc.alpha-nvim")
         end
     })
     -- edit
-    use({
-		"windwp/nvim-autopairs",
-		event = "VimEnter",
-		config = function()
-			require("rc/nvim-autopairs")
-		end,
-	})
     use({
         "echasnovski/mini.nvim",
         event = "InsertEnter",
@@ -249,14 +243,12 @@ require("packer").startup(function(use)
         end
     })
     use({
-		"akinsho/toggleterm.nvim",
-		event = "VimEnter",
-		config = function()
-			require("rc/toggleterm")
-		end,
-	})
-    -- use({'honza/vim-snippets'})
-    use({ "rafamadriz/friendly-snippets", opt = true })
+        "akinsho/toggleterm.nvim",
+        event = "VimEnter",
+        config = function()
+            require("rc/toggleterm")
+        end,
+    })
     use({
         'nvim-treesitter/nvim-treesitter',
         after = colorscheme,
@@ -328,9 +320,9 @@ require("packer").startup(function(use)
     use({
         "nvim-telescope/telescope.nvim",
         after = colorscheme ,
-        require = {'nvim-lua/plenary.nvim'},
+        requires = {'nvim-lua/plenary.nvim'},
         config = function()
-        	require("rc.telescope-nvim")
+            require("rc.telescope-nvim")
         end,
     })
     if packer_bootstrap then
@@ -338,15 +330,9 @@ require("packer").startup(function(use)
     end
 end)
 
-vim.cmd([[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugin.lua source <afile> | PackerCompile
-  augroup end
+cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugin.lua source <afile> | PackerCompile
+    augroup end
 ]])
-
-local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-end
