@@ -77,6 +77,10 @@ require("telescope").setup({
 
 local key = vim.api.nvim_set_keymap
 
+key('n', '[ff]', '<nop>', { noremap = true, silent = true} )
+key('x', '[ff]', '<nop>', { noremap = true, silent = true} )
+key('n', '<c-f>', '[ff]', { noremap = false, silent = true} )
+key('x', '<c-f>', '[ff]', { noremap = false, silent = true} )
 key("n", "[ff]P", "<Cmd>Telescope find_files<CR>", { noremap = true, silent = true })
 key("n", "[ff]p", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
 key("n", "[ff]g", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
