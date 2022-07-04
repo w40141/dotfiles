@@ -23,7 +23,8 @@
 -- キーマッピング設定
 
 local g = vim.g
-local key = vim.keymap.set
+-- local key = vim.keymap.set
+local key = vim.api.nvim_set_keymap
 
 -- <leader>キーを変更 (default: \)
 g.mapleader = ' '
@@ -31,6 +32,10 @@ g.maplocalleader = ' '
 
 key('n', '<leader>', '<nop>', { noremap = true, silent = true} )
 key('x', '<leader>', '<nop>', { noremap = true, silent = true} )
+key('n', '[ff]', '<nop>', { noremap = true, silent = true} )
+key('x', '[ff]', '<nop>', { noremap = true, silent = true} )
+key('n', '<c-f>', '[ff]', { noremap = false, silent = true} )
+key('x', '<c-f>', '[ff]', { noremap = false, silent = true} )
 key('n', '[dev]', '<nop>', { noremap = true, silent = true} )
 key('x', '[dev]', '<nop>', { noremap = true, silent = true} )
 key('n', 'm', '[dev]', { noremap = false, silent = true} )

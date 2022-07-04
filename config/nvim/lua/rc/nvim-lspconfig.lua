@@ -8,7 +8,7 @@ for type, icon in pairs(signs) do
 end
 
 local d = vim.diagnostic
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 key('n', '[dev]e', d.open_float, opts)
 key('n', '[d', d.goto_prev, opts)
 key('n', ']d', d.goto_next, opts)
@@ -18,10 +18,10 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local buf = vim.lsp.buf
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     key('n', '[dev]D', buf.declaration, bufopts)
     key('n', '[dev]d', buf.definition, bufopts)
-    key('n', 'K', buf.hover, bufopts)
+    key('n', 'H', buf.hover, bufopts)
     key('n', '[dev]i', buf.implementation, bufopts)
     key('n', '<C-k>', buf.signature_help, bufopts)
     key('n', '[dev]wa', buf.add_workspace_folder, bufopts)
@@ -29,9 +29,9 @@ local on_attach = function(client, bufnr)
     key('n', '[dev]wl', function()
         print(vim.inspect(buf.list_workspace_folders()))
     end, bufopts)
-    key('n', '[dev]D', buf.type_definition, bufopts)
-    key('n', '[dev]rn', buf.rename, bufopts)
-    key('n', '[dev]ca', buf.code_action, bufopts)
+    key('n', '[dev]t', buf.type_definition, bufopts)
+    key('n', '[dev]n', buf.rename, bufopts)
+    key('n', '[dev]a', buf.code_action, bufopts)
     key('n', '[dev]r', buf.references, bufopts)
     key('n', '[dev]f', buf.formatting, bufopts)
 end
@@ -60,10 +60,10 @@ local servers = {
     'sumneko_lua',
 }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    -- on_attach = my_custom_on_attach,
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = lsp_flags,
-  }
+    lspconfig[lsp].setup {
+        -- on_attach = my_custom_on_attach,
+        capabilities = capabilities,
+        on_attach = on_attach,
+        flags = lsp_flags,
+    }
 end

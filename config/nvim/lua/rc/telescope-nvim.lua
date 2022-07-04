@@ -2,7 +2,7 @@ local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
 local custom_actions = {}
---
+
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
     local picker = action_state.get_current_picker(prompt_bufnr)
     local num_selections = #picker:get_multi_selection()

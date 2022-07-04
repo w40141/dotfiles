@@ -68,6 +68,17 @@ require("packer").startup(function(use)
             require("rc/nvim-lsp-installer")
         end
     })
+    -- use 'hrsh7th/nvim-cmp'
+    -- use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' } }
+    -- use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
+    use({
+        'tyru/eskk.vim',
+        opt = true,
+        event = "InsertEnter",
+        config = function()
+            require("rc.eskk")
+        end
+    })
     -- Misc
     use({
         "rcarriga/nvim-notify",
@@ -141,14 +152,6 @@ require("packer").startup(function(use)
     })
     use({'thinca/vim-qfreplace'})
     use({'thinca/vim-quickrun'})
-    use({
-        'tyru/eskk.vim',
-        opt = true,
-        event = "InsertEnter",
-        config = function()
-            require("rc.eskk")
-        end
-    })
     use({
         'tyru/open-browser.vim',
         event = "VimEnter",

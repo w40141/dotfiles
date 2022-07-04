@@ -39,17 +39,20 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp", priority = 100 },
-        { name = "luasnip", priority = 20 }, -- For luasnip users.
         { name = "path", priority = 100 },
         { name = "emoji", insert = true, priority = 60 },
         { name = "nvim_lua", priority = 50 },
         { name = "nvim_lsp_signature_help", priority = 80 },
+        -- { name = "skkeleton", priority = 40 },
     }, {
         { name = "buffer", priority = 50 },
         { name = "omni", priority = 40 },
         { name = "spell", priority = 40 },
         { name = "treesitter", priority = 30 },
     }),
+    -- view = {
+    --     entries = 'native'
+    -- }
 })
 
 cmp.setup.cmdline("/", {
