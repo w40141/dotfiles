@@ -33,6 +33,10 @@ require("packer").startup(function(use)
     })
     use({
         "hrsh7th/nvim-cmp",
+		requires = {
+			{ "dcampos/nvim-snippy", opt = true, event = "VimEnter" },
+		},
+		after = { "nvim-snippy" },
         config = function()
             require("rc/nvim-cmp")
         end,
@@ -64,6 +68,7 @@ require("packer").startup(function(use)
     })
     use({
         "williamboman/nvim-lsp-installer",
+        after = { "nvim-lspconfig", "cmp-nvim-lsp" },
         config = function()
             require("rc/nvim-lsp-installer")
         end
