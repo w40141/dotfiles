@@ -1,24 +1,74 @@
--- On ly required if you have packer in your `opt` pack
+local fn = vim.fn
+local cmd = vim.cmd
 
-local install_path = vim.fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    packer_bootstrap = vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+if fn.empty(fn.glob(install_path)) > 0 then
+    packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
 end
 
--- TODO:
--- Plug 'folke/which-key.nvim'
--- Plug "mrjones2014/legendary.nvim"
--- Plug 'windwp/nvim-ts-autotag'
--- Plug 'MunifTanjim/nui.nvim'
--- Plug 'VonHeikemen/fine-cmdline.nvim'
--- Plug 'glidenote/memolist.vim'
--- Plug 'andymass/vim-matchup'
--- Plug 'klen/nvim-test'
--- fzf
--- Plug 'rcarriga/vim-ultest', { 'do': ':UpdateRemotePlugins' }
--- https://github.com/phaazon/hop.nvim
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
+    use({ "nvim-lua/popup.nvim", module = "popup" })
+    use({ "nvim-lua/plenary.nvim" }) -- do not lazy load
+    use({ "tami5/sqlite.lua", module = "sqlite" })
+    use({ "MunifTanjim/nui.nvim", module = "nui" })
+    use({ "honza/vim-snippets" })
+    use({
+        "windwp/nvim-autopairs",
+        event = "VimEnter",
+        config = function()
+            require("rc/nvim-autopairs")
+        end,
+    })
+    use({
+        "dcampos/nvim-snippy",
+        event = "VimEnter",
+        config = function()
+            require("rc/nvim-snippy")
+        end,
+    })
+    use({
+        "dcampos/cmp-snippy",
+        event = "VimEnter",
+    })
+    use({
+        "hrsh7th/nvim-cmp",
+        config = function()
+            require("rc/nvim-cmp")
+        end,
+    })
+    use({
+        "onsails/lspkind-nvim",
+        module = "lspkind",
+        config = function()
+            require("rc/lspkind-nvim")
+        end,
+    })
+    use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
+    use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
+    use({ "f3fora/cmp-spell", after = "nvim-cmp" })
+    use({ "yutkat/cmp-mocword", after = "nvim-cmp" })
+    use({ "ray-x/cmp-treesitter", after = "nvim-cmp" })
+    use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
+    use({
+        "neovim/nvim-lspconfig",
+        config = function()
+            require("rc/nvim-lspconfig")
+        end
+    })
+    use({
+        "williamboman/nvim-lsp-installer",
+        config = function()
+            require("rc/nvim-lsp-installer")
+        end
+    })
+    -- Misc
     use({
         "rcarriga/nvim-notify",
         module = "notify"
@@ -30,10 +80,6 @@ require("packer").startup(function(use)
             require("rc.vim-rooter")
         end
     })
-    use({ "nvim-lua/popup.nvim", module = "popup" })
-    use({ "nvim-lua/plenary.nvim" }) -- do not lazy load
-    use({ "tami5/sqlite.lua", module = "sqlite" })
-    use({ "MunifTanjim/nui.nvim", module = "nui" })
     use({
         'vim-jp/vimdoc-ja',
         opt = true,
@@ -41,11 +87,12 @@ require("packer").startup(function(use)
     })
     use({
         "goolord/alpha-nvim",
-        require = { "kyazdani42/nvim-web-devicons" },
+        requires = { "kyazdani42/nvim-web-devicons" },
         config = function ()
             require("rc.alpha-nvim")
         end
     })
+    -- edit
     use({
         "echasnovski/mini.nvim",
         event = "InsertEnter",
@@ -69,11 +116,6 @@ require("packer").startup(function(use)
         cmd = "StartupTime"
     })
     use({
-        "junegunn/goyo.vim",
-        opt = true,
-        cmd = "Goyo"
-    })
-    use({
         "famiu/bufdelete.nvim",
         event = "VimEnter",
     })
@@ -83,6 +125,7 @@ require("packer").startup(function(use)
             require("rc.vim-test")
         end
     })
+    -- filer
     use({
         "tamago324/lir.nvim",
         config = function()
@@ -95,7 +138,6 @@ require("packer").startup(function(use)
         setup = function()
             require("rc.vim-expand-region")
         end
-        --{ 'on': '<Plug>(expand_region' }
     })
     use({'thinca/vim-qfreplace'})
     use({'thinca/vim-quickrun'})
@@ -130,7 +172,6 @@ require("packer").startup(function(use)
     local colorscheme = kanagawa
     use({
         "rebelot/kanagawa.nvim",
-        -- event = { "VimEnter", "ColorSchemePre" },
         config = function()
             require("rc.kanagawa-nvim")
         end
@@ -202,14 +243,12 @@ require("packer").startup(function(use)
         end
     })
     use({
-        'akinsho/toggleterm.nvim',
+        "akinsho/toggleterm.nvim",
         event = "VimEnter",
         config = function()
             require("rc/toggleterm")
-        end
+        end,
     })
-    use({'honza/vim-snippets'})
-    -- use({ "rafamadriz/friendly-snippets", opt = true })
     use({
         'nvim-treesitter/nvim-treesitter',
         after = colorscheme,
@@ -242,25 +281,12 @@ require("packer").startup(function(use)
         "romgrk/nvim-treesitter-context",
         cmd = { "TSContextEnable" },
     })
-    use({'junegunn/fzf',})
-    use({
-        'neoclide/coc.nvim',
-        branch =  'release',
-        event = "VimEnter",
-        run = ":CocUpdate",
-        config = function()
-            require("rc.coc")
-        end
-    })
+    -- use({
+    --   'stevearc/aerial.nvim',
+    --   config = function() require('aerial').setup() end
+    -- })
     use({'kamykn/spelunker.vim'})
     use({'lambdalisue/gina.vim'})
-    use({
-        'liuchengxu/vista.vim',
-        event = "VimEnter",
-        config = function()
-            require("rc.vista")
-        end
-    })
     use({
         'skanehira/translate.vim',
         event = "VimEnter",
@@ -292,18 +318,11 @@ require("packer").startup(function(use)
         end
     })
     use({
-        'gelguy/wilder.nvim',
-        run = ":UpdateRemotePlugins",
-        config = function ()
-            require("rc.wilder")
-        end
-    })
-    use({
         "nvim-telescope/telescope.nvim",
         after = colorscheme ,
-        require = {'nvim-lua/plenary.nvim'},
+        requires = {'nvim-lua/plenary.nvim'},
         config = function()
-        	require("rc.telescope-nvim")
+            require("rc.telescope-nvim")
         end,
     })
     if packer_bootstrap then
@@ -311,15 +330,9 @@ require("packer").startup(function(use)
     end
 end)
 
-vim.cmd([[
-  augroup packer_user_config
-  autocmd!
-  autocmd BufWritePost plugin.lua source <afile> | PackerCompile
-  augroup end
+cmd([[
+    augroup packer_user_config
+        autocmd!
+        autocmd BufWritePost plugin.lua source <afile> | PackerCompile
+    augroup end
 ]])
-
-local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-end

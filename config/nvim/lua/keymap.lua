@@ -23,7 +23,7 @@
 -- キーマッピング設定
 
 local g = vim.g
-local key = vim.api.nvim_set_keymap
+local key = vim.keymap.set
 
 -- <leader>キーを変更 (default: \)
 g.mapleader = ' '
@@ -35,10 +35,6 @@ key('n', '[dev]', '<nop>', { noremap = true, silent = true} )
 key('x', '[dev]', '<nop>', { noremap = true, silent = true} )
 key('n', 'm', '[dev]', { noremap = false, silent = true} )
 key('x', 'm', '[dev]', { noremap = false, silent = true} )
-key('n', '[ff]', '<nop>', { noremap = true, silent = true} )
-key('x', '[ff]', '<nop>', { noremap = true, silent = true} )
-key('n', '<c-f>', '[ff]', { noremap = false, silent = true} )
-key('x', '<c-f>', '[ff]', { noremap = false, silent = true} )
 
 -- [nore]map
 -- 行頭と行末への移動
