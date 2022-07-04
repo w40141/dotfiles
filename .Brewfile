@@ -26,8 +26,6 @@ brew "giflib"
 brew "libpng"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# New file format for still image compression
-brew "jpeg-xl"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
 # Cryptography and SSL/TLS Toolkit
@@ -42,12 +40,8 @@ brew "gmp"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# YAML Parser
-brew "libyaml"
 # Library for command-line editing
 brew "readline"
-# ODBC 3 connectivity for UNIX
-brew "unixodbc"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
 # Spell checker with better logic than ispell
@@ -56,8 +50,6 @@ brew "aspell"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Command-line interface for SQLite
-brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Interpreted, interactive, object-oriented programming language
@@ -126,6 +118,8 @@ brew "cmatrix"
 brew "convmv"
 # High performance csv viewer for cli
 brew "csview"
+# C library implementing the SSH2 protocol
+brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
@@ -224,6 +218,8 @@ brew "graphite2"
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
 brew "pango"
+# Library to render SVG files using Cairo
+brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Command-line tool for generating regular expressions
@@ -256,6 +252,8 @@ brew "icarus-verilog"
 brew "shared-mime-info"
 # H.265/HEVC encoder
 brew "x265"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Implementation of malloc emphasizing fragmentation avoidance
@@ -292,8 +290,6 @@ brew "libtermkey"
 brew "libuv"
 # VP8/VP9 video codec
 brew "libvpx"
-# GNOME XML library
-brew "libxml2"
 # C XSLT library for GNOME
 brew "libxslt"
 # C library for reading, creating, and modifying zip archives
@@ -304,6 +300,8 @@ brew "llvm"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
@@ -336,6 +334,8 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
+# Cross-platform application and UI framework
+brew "qt"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Modern replacement for ps written by Rust
@@ -348,8 +348,6 @@ brew "reattach-to-user-namespace"
 brew "rig"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Rust toolchain installer
 brew "rustup-init"
 # Low-level access to audio, keyboard, mouse, joystick, and graphics

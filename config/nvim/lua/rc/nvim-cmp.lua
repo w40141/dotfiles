@@ -1,6 +1,6 @@
 vim.g.completeopt = "menu,menuone,noselect"
 
-local cmp = require'cmp'
+local cmp = require 'cmp'
 
 cmp.setup({
     formatting = {
@@ -38,17 +38,18 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
-        { name = "nvim_lsp", priority = 100 },
-        { name = "path", priority = 100 },
-        { name = "emoji", insert = true, priority = 60 },
-        { name = "nvim_lua", priority = 50 },
-        { name = "nvim_lsp_signature_help", priority = 80 },
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "emoji" },
+        { name = "nvim_lua" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "mocword" }
         -- { name = "skkeleton", priority = 40 },
     }, {
-        { name = "buffer", priority = 50 },
-        { name = "omni", priority = 40 },
-        { name = "spell", priority = 40 },
-        { name = "treesitter", priority = 30 },
+        { name = "buffer" },
+        { name = "omni" },
+        { name = "spell" },
+        { name = "treesitter" },
     }),
     -- view = {
     --     entries = 'native'
@@ -66,5 +67,5 @@ cmp.setup.cmdline("/", {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({{ name = 'path' }}, {{ name = 'cmdline' }})
+    sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } })
 })

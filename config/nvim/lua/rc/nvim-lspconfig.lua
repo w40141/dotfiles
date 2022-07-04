@@ -9,9 +9,9 @@ end
 
 local d = vim.diagnostic
 local opts = { noremap = true, silent = true }
-key('n', '[dev]e', d.open_float, opts)
-key('n', '[d', d.goto_prev, opts)
-key('n', ']d', d.goto_next, opts)
+key('n', '[dev]o', d.open_float, opts)
+key('n', '[g', d.goto_prev, opts)
+key('n', ']g', d.goto_next, opts)
 key('n', '[dev]q', d.setloclist, opts)
 
 local on_attach = function(client, bufnr)
@@ -21,9 +21,9 @@ local on_attach = function(client, bufnr)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     key('n', '[dev]D', buf.declaration, bufopts)
     key('n', '[dev]d', buf.definition, bufopts)
-    key('n', 'H', buf.hover, bufopts)
+    key('n', '[dev]h', buf.hover, bufopts)
     key('n', '[dev]i', buf.implementation, bufopts)
-    key('n', '<C-k>', buf.signature_help, bufopts)
+    key('n', '[dev]s', buf.signature_help, bufopts)
     key('n', '[dev]wa', buf.add_workspace_folder, bufopts)
     key('n', '[dev]wr', buf.remove_workspace_folder, bufopts)
     key('n', '[dev]wl', function()
@@ -58,6 +58,7 @@ local servers = {
     'jsonls',
     'jdtls',
     'sumneko_lua',
+    'grammarly',
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {

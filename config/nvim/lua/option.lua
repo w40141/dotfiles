@@ -5,7 +5,7 @@ local fn = vim.fn
 -- 文字コード
 set.encoding = 'utf-8'
 set.fileformats = 'unix,dos,mac'
-set.fileencodings='utf-8,sjis'
+set.fileencodings = 'utf-8,sjis'
 -- 256色設定にする
 -- if vim.fn.has('gui_running') == false then
 --     set.t_Co = 256
@@ -15,7 +15,8 @@ set.mouse = 'a'
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
 set.hidden = true
 -- スペルチェック
-set.spell = false
+set.spell = true
+set.spelllang = { 'en_us' }
 -- 内容が変更されたら自動的に再読み込み
 set.autoread = true
 -- クリップボードをWindowsと連携する

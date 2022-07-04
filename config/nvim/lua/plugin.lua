@@ -1,10 +1,13 @@
 local fn = vim.fn
 local cmd = vim.cmd
 
-local install_path = fn.stdpath("data").."/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
+    packer_bootstrap = fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
+        install_path })
 end
+
+-- I am a studnt.
 
 require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
@@ -12,7 +15,8 @@ require("packer").startup(function(use)
     use({ "nvim-lua/plenary.nvim" }) -- do not lazy load
     use({ "tami5/sqlite.lua", module = "sqlite" })
     use({ "MunifTanjim/nui.nvim", module = "nui" })
-    use({ "honza/vim-snippets" })
+    use({ "rafamadriz/friendly-snippets", opt = true })
+    -- use({ "honza/vim-snippets" })
     use({
         "windwp/nvim-autopairs",
         event = "VimEnter",
@@ -29,14 +33,14 @@ require("packer").startup(function(use)
     })
     use({
         "dcampos/cmp-snippy",
-        event = "VimEnter",
+        after = "nvim-cmp"
     })
     use({
         "hrsh7th/nvim-cmp",
-		requires = {
-			{ "dcampos/nvim-snippy", opt = true, event = "VimEnter" },
-		},
-		after = { "nvim-snippy" },
+        requires = {
+            { "dcampos/nvim-snippy", opt = true, event = "VimEnter" },
+        },
+        after = { "nvim-snippy" },
         config = function()
             require("rc/nvim-cmp")
         end,
@@ -73,9 +77,16 @@ require("packer").startup(function(use)
             require("rc/nvim-lsp-installer")
         end
     })
-    -- use 'hrsh7th/nvim-cmp'
-    -- use { 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' } }
-    -- use { 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } }
+    -- use({
+    --     "jose-elias-alvarez/null-ls.nvim",
+    --     after = "nvim-lsp-installer",
+    --     config = function()
+    --         require("rc/null-ls")
+    --     end,
+    -- })
+    -- use({ "vim-denops/denops.vim" })
+    -- use({ 'vim-skk/skkeleton', requires = { 'vim-denops/denops.vim' } })
+    -- use({ 'rinx/cmp-skkeleton', after = { 'nvim-cmp', 'skkeleton' } })
     use({
         'tyru/eskk.vim',
         opt = true,
@@ -104,7 +115,7 @@ require("packer").startup(function(use)
     use({
         "goolord/alpha-nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
-        config = function ()
+        config = function()
             require("rc.alpha-nvim")
         end
     })
@@ -118,7 +129,7 @@ require("packer").startup(function(use)
     })
     use({
         "jsborjesson/vim-uppercase-sql",
-        ft = {"sql"}
+        ft = { "sql" }
     })
     use({
         "kevinhwang91/nvim-hlslens",
@@ -155,8 +166,8 @@ require("packer").startup(function(use)
             require("rc.vim-expand-region")
         end
     })
-    use({'thinca/vim-qfreplace'})
-    use({'thinca/vim-quickrun'})
+    use({ 'thinca/vim-qfreplace' })
+    use({ 'thinca/vim-quickrun' })
     use({
         'tyru/open-browser.vim',
         event = "VimEnter",
@@ -172,7 +183,7 @@ require("packer").startup(function(use)
     })
     use({
         "previm/previm",
-        ft = {"markdown"},
+        ft = { "markdown" },
         setup = function()
             require("rc.previm")
         end
@@ -186,7 +197,7 @@ require("packer").startup(function(use)
     })
     use({
         "rust-lang/rust.vim",
-        ft = {"rust"},
+        ft = { "rust" },
         setup = function()
             require("rc.rust")
         end
@@ -267,11 +278,11 @@ require("packer").startup(function(use)
     })
     use({
         'nvim-treesitter/nvim-treesitter-textobjects',
-        after = {"nvim-treesitter"}
+        after = { "nvim-treesitter" }
     })
     use({
         "yioneko/nvim-yati",
-        after = {"nvim-treesitter"}
+        after = { "nvim-treesitter" }
     })
     use({
         'm-demare/hlargs.nvim',
@@ -289,12 +300,19 @@ require("packer").startup(function(use)
         "romgrk/nvim-treesitter-context",
         cmd = { "TSContextEnable" },
     })
+    use({
+        'lewis6991/spellsitter.nvim',
+        after = "nvim-treesitter",
+        config = function()
+            require('spellsitter').setup()
+        end
+    })
     -- use({
     --   'stevearc/aerial.nvim',
     --   config = function() require('aerial').setup() end
     -- })
-    use({'kamykn/spelunker.vim'})
-    use({'lambdalisue/gina.vim'})
+    use({ 'kamykn/spelunker.vim' })
+    use({ 'lambdalisue/gina.vim' })
     use({
         'skanehira/translate.vim',
         event = "VimEnter",
@@ -302,7 +320,7 @@ require("packer").startup(function(use)
             require("rc.translate")
         end
     })
-    use({'junegunn/vim-easy-align'})
+    use({ 'junegunn/vim-easy-align' })
     use({
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
@@ -320,15 +338,15 @@ require("packer").startup(function(use)
     use({
         'ntpeters/vim-better-whitespace',
         opt = true,
-        cmd = {'StripWhitespace' },
+        cmd = { 'StripWhitespace' },
         config = function()
             require("rc.vim-better-whitespace")
         end
     })
     use({
         "nvim-telescope/telescope.nvim",
-        after = colorscheme ,
-        requires = {'nvim-lua/plenary.nvim'},
+        after = colorscheme,
+        requires = { 'nvim-lua/plenary.nvim' },
         config = function()
             require("rc.telescope-nvim")
         end,
