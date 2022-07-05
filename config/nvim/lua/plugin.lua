@@ -21,14 +21,14 @@ require("packer").startup(function(use)
     -- Library
     -- https://github.com/nvim-lua/plenary.nvim
     use({ "nvim-lua/plenary.nvim" })
-    -- https://github.com/MunifTanjim/nui.nvim
-    use({ "MunifTanjim/nui.nvim", module = "nui" })
 
     -- Colorscheme
     -- https://github.com/rebelot/kanagawa.nvim
-    local colorscheme = kanagawa
+    local colorscheme = "kanagawa.nvim"
     use({
         "rebelot/kanagawa.nvim",
+        -- event = { "VimEnter", "ColorSchemePre" },
+        event = { "VimEnter", },
         config = function()
             require("rc.kanagawa-nvim")
         end
@@ -58,7 +58,7 @@ require("packer").startup(function(use)
         after = colorscheme,
         run = ":TSUpdate",
         config = function()
-            require("rc/treesitter")
+            require("rc.treesitter")
         end
     })
     use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
@@ -84,6 +84,7 @@ require("packer").startup(function(use)
     use({
         "goolord/alpha-nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
+        after = colorscheme,
         config = function()
             require("rc.alpha-nvim")
         end
@@ -96,7 +97,7 @@ require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         after = colorscheme,
         config = function()
-            require("rc/bufferline")
+            require("rc.bufferline")
         end,
     })
 
@@ -104,11 +105,21 @@ require("packer").startup(function(use)
     -- https://github.com/nvim-lualine/lualine.nvim
     use({
         "nvim-lualine/lualine.nvim",
-        after = colorscheme,
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
+        after = colorscheme,
         config = function()
-            require("rc/lualine")
+            require("rc.lualine")
         end,
+    })
+
+    -- Code outline
+    -- https://github.com/stevearc/aerial.nvim
+    use({
+        "stevearc/aerial.nvim",
+        event = "VimEnter",
+        config = function()
+            require("rc.aerial")
+        end
     })
 
     -- Indent guide
@@ -117,7 +128,7 @@ require("packer").startup(function(use)
         "lukas-reineke/indent-blankline.nvim",
         event = "VimEnter",
         config = function()
-            require("rc/indent-blankline")
+            require("rc.indent-blankline")
         end
     })
 
@@ -125,6 +136,7 @@ require("packer").startup(function(use)
     -- https://github.com/t9md/vim-quickhl
     use({
         "t9md/vim-quickhl",
+        event = "VimEnter",
         config = function()
             require("rc.vim-quickhl")
         end
@@ -135,6 +147,7 @@ require("packer").startup(function(use)
     use({
         "folke/todo-comments.nvim",
         event = "VimEnter",
+        after = colorscheme,
         config = function()
             require("rc.todo-comments")
         end
@@ -151,26 +164,24 @@ require("packer").startup(function(use)
     })
 
     -- edit
-    use({
-        "kylechui/nvim-surround",
+    -- A surround text object plugin for neovim written in lua.
+    -- https://github.com/ur4ltz/surround.nvim
+    use {
+        "ur4ltz/surround.nvim",
+        event = { "VimEnter", },
         config = function()
-            require("rc.nvim-surround")
+            require("rc.surround")
         end
-    })
+    }
+
+    -- Autopairs
     -- https://github.com/windwp/nvim-autopairs
     use({
         "windwp/nvim-autopairs",
         event = "VimEnter",
         config = function()
-            require("rc/nvim-autopairs")
+            require("rc.nvim-autopairs")
         end,
-    })
-    use({
-        "terryma/vim-expand-region",
-        event = "VimEnter",
-        setup = function()
-            require("rc.vim-expand-region")
-        end
     })
 
     -- Snippet
@@ -181,7 +192,7 @@ require("packer").startup(function(use)
         "dcampos/nvim-snippy",
         event = "VimEnter",
         config = function()
-            require("rc/nvim-snippy")
+            require("rc.nvim-snippy")
         end,
     })
 
@@ -195,7 +206,7 @@ require("packer").startup(function(use)
         },
         after = { "nvim-snippy", "nvim-autopairs" },
         config = function()
-            require("rc/nvim-cmp")
+            require("rc.nvim-cmp")
         end,
     })
     -- https://github.com/onsails/lspkind.nvim
@@ -203,7 +214,7 @@ require("packer").startup(function(use)
         "onsails/lspkind-nvim",
         module = "lspkind",
         config = function()
-            require("rc/lspkind-nvim")
+            require("rc.lspkind-nvim")
         end,
     })
     -- https://github.com/hrsh7th/cmp-nvim-lsp
@@ -238,7 +249,7 @@ require("packer").startup(function(use)
     use({
         "neovim/nvim-lspconfig",
         config = function()
-            require("rc/nvim-lspconfig")
+            require("rc.nvim-lspconfig")
         end
     })
     -- https://github.com/williamboman/nvim-lsp-installer
@@ -246,7 +257,7 @@ require("packer").startup(function(use)
         "williamboman/nvim-lsp-installer",
         after = { "nvim-lspconfig", "cmp-nvim-lsp" },
         config = function()
-            require("rc/nvim-lsp-installer")
+            require("rc.nvim-lsp-installer")
         end
     })
 
@@ -270,6 +281,8 @@ require("packer").startup(function(use)
     })
 
     -- Misc
+    -- A fancy, configurable, notification manager for NeoVim
+    -- https://github.com/rcarriga/nvim-notify
     use({
         "rcarriga/nvim-notify",
         module = "notify"
@@ -326,17 +339,27 @@ require("packer").startup(function(use)
         event = "VimEnter",
     })
 
-    -- filer
+    -- File finder
     -- https://github.com/tamago324/lir.nvim
     use({
         "tamago324/lir.nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        after = colorscheme,
         config = function()
             require("rc.lir")
         end
     })
 
+    -- Perform the replacement in quickfix
+    -- https://github.com/thinca/vim-qfreplace
     use({ "thinca/vim-qfreplace" })
+
+    -- Run commands quickly
+    -- https://github.com/thinca/vim-quickrun
     use({ "thinca/vim-quickrun" })
+
+    -- Open URI
+    -- https://github.com/tyru/open-browser.vim
     use({
         "tyru/open-browser.vim",
         event = "VimEnter",
@@ -352,6 +375,7 @@ require("packer").startup(function(use)
             require("rc.previm")
         end
     })
+
     use({
         "rust-lang/rust.vim",
         ft = { "rust" },
@@ -360,6 +384,8 @@ require("packer").startup(function(use)
         end
     })
 
+    -- Resizing of windows
+    -- https://github.com/simeji/winresizer
     use({
         "simeji/winresizer",
         event = "VimEnter",
@@ -367,6 +393,9 @@ require("packer").startup(function(use)
             require("rc.winresizer")
         end
     })
+
+    -- Comment out
+    -- https://github.com/numToStr/Comment.nvim
     use({
         "numToStr/Comment.nvim",
         event = "VimEnter",
@@ -374,21 +403,24 @@ require("packer").startup(function(use)
             require("Comment").setup()
         end
     })
+
+    -- Underlines the word under the cursor
+    -- https://github.com/itchyny/vim-cursorword
     use({
         "itchyny/vim-cursorword",
         event = "VimEnter",
     })
+
+    -- Terminal
+    -- https://github.com/akinsho/toggleterm.nvim
     use({
         "akinsho/toggleterm.nvim",
         event = "VimEnter",
         config = function()
-            require("rc/toggleterm")
+            require("rc.toggleterm")
         end,
     })
-    -- use({
-    --   "stevearc/aerial.nvim",
-    --   config = function() require("aerial").setup() end
-    -- })
+
     use({ "kamykn/spelunker.vim" })
     use({ "lambdalisue/gina.vim" })
     use({
@@ -398,21 +430,28 @@ require("packer").startup(function(use)
             require("rc.translate")
         end
     })
-    use({ "junegunn/vim-easy-align" })
+
     use({
         "lewis6991/gitsigns.nvim",
         requires = { "nvim-lua/plenary.nvim" },
         event = "VimEnter",
         config = function()
-            require("rc/gitsigns")
+            require("rc.gitsigns")
         end,
     })
+
+    -- Colorizer
+    -- https://github.com/norcalli/nvim-colorizer.lua
     use({
         "norcalli/nvim-colorizer.lua",
+        event = "VimEnter",
         config = function()
             require("rc.nvim-colorizer")
         end
     })
+
+    -- Whitespace highlighting
+    -- https://github.com/ntpeters/vim-better-whitespace
     use({
         "ntpeters/vim-better-whitespace",
         opt = true,
@@ -421,6 +460,7 @@ require("packer").startup(function(use)
             require("rc.vim-better-whitespace")
         end
     })
+
     if packer_bootstrap then
         require("packer").sync()
     end

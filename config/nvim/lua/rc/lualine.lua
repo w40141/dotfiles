@@ -1,6 +1,3 @@
--- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
--- https://github.com/nvim-lualine/lualine.nvim
-
 local function search_result()
     if vim.v.hlsearch == 0 then
         return ''
@@ -21,7 +18,7 @@ local function eskk()
     end
 end
 
-require'lualine'.setup {
+require 'lualine'.setup {
     options = {
         icons_enabled = true,
         theme = 'kanagawa',
@@ -40,7 +37,7 @@ require'lualine'.setup {
         lualine_c = {
             {
                 'diagnostics',
-                sources={ 'nvim_diagnostic' },
+                sources = { 'nvim_diagnostic' },
                 sections = { 'error', 'warn', 'info', 'hint' },
                 diagnostics_color = {
                     error = 'DiagnosticError',
@@ -74,9 +71,9 @@ require'lualine'.setup {
         lualine_b = {},
         lualine_c = {},
         lualine_x = {},
-        lualine_y = {{'filetype', icon_only = true}},
+        lualine_y = { { 'filetype', icon_only = true } },
         lualine_z = {}
     },
     tabline = {},
-    extensions = {'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
+    extensions = { 'quickfix', 'fzf', 'nvim-tree', 'toggleterm', }
 }

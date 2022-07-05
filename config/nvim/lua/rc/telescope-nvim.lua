@@ -28,15 +28,19 @@ end
 function custom_actions.multi_selection_open_vsplit(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "vsplit")
 end
+
 function custom_actions.multi_selection_open_split(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "split")
 end
+
 function custom_actions.multi_selection_open_tab(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "tabe")
 end
+
 function custom_actions.multi_selection_open(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "edit")
 end
+
 --
 require("telescope").setup({
     defaults = {
@@ -82,7 +86,8 @@ key("n", "[ff]f", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = tru
 key("n", "[ff]g", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
 key("n", "[ff]/", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
 key("n", "[ff]b", "<Cmd>Telescope buffers<CR>", { noremap = true, silent = true })
-key("n", "[ff]l", "<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", { noremap = true, silent = true })
+key("n", "[ff]l", "<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>",
+    { noremap = true, silent = true })
 
 key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", { noremap = true, silent = true })
 key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", { noremap = true, silent = true })

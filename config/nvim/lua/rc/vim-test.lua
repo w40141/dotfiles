@@ -1,7 +1,3 @@
--- Run your tests at the speed of thought
--- https://github.com/vim-test/vim-test
-
--- these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
 local key = vim.api.nvim_set_keymap
 key('n', 't<c-n>', [[:TestNeares<cr>]], { noremap = false, silent = true })
 key('n', 't<c-f>', [[:TestFile<cr>]], { noremap = false, silent = true })

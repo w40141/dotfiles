@@ -1,11 +1,8 @@
--- A simple file explorer
--- https://github.com/tamago324/lir.nvim
-
-local actions = require'lir.actions'
+local actions = require 'lir.actions'
 local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require'lir.clipboard.actions'
+local clipboard_actions = require 'lir.clipboard.actions'
 
-require'lir'.setup {
+require 'lir'.setup {
     show_hidden_files = true,
     devicons_enable = true,
     mappings = {
@@ -45,10 +42,11 @@ require'lir'.setup {
 
 -- use visual mode
 function _G.LirSettings()
-    vim.api.nvim_buf_set_keymap(0, 'x', 'J', [[:<c-u>lua require"lir.mark.actions".toggle_mark("v")<cr>]], {noremap = true, silent = true})
+    vim.api.nvim_buf_set_keymap(0, 'x', 'J', [[:<c-u>lua require"lir.mark.actions".toggle_mark("v")<cr>]],
+        { noremap = true, silent = true })
 
     -- echo cwd
-    vim.api.nvim_echo({{vim.fn.expand('%:p'), 'Normal'}}, false, {})
+    vim.api.nvim_echo({ { vim.fn.expand('%:p'), 'Normal' } }, false, {})
 end
 
 vim.api.nvim_set_keymap('n', '<leader>e', [[:lua require'lir.float'.toggle()<cr>]], { noremap = true, silent = false })

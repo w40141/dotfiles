@@ -1,6 +1,3 @@
--- Support highlight for words
--- https://github.com/t9md/vim-quickhl
-
 local key = vim.api.nvim_set_keymap
 key('n', '<leader>m', '<plug>(quickhl-manual-this)', { noremap = false, silent = true })
 key('x', '<leader>m', '<plug>(quickhl-manual-this)', { noremap = false, silent = true })

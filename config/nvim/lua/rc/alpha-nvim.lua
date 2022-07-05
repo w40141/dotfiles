@@ -1,6 +1,3 @@
--- a lua powered greeter like vim-startify / dashboard-nvim
--- https://github.com/goolord/alpha-nvim
-
 local alpha = require 'alpha'
 local dashboard = require 'alpha.themes.dashboard'
 

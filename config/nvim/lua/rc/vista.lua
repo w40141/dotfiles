@@ -1,6 +1,3 @@
--- Viewer & Finder for LSP symbols and tags
--- https://github.com/liuchengxu/vista.vim
-
 local key = vim.api.nvim_set_keymap
 local g = vim.g
 local cmd = vim.cmd
@@ -37,7 +34,7 @@ g.vista_default_executive = 'coc'
 -- Declare the command including the executable and options used to
 -- generate ctags output for some certain filetypes.
 -- The file path will be appened to your custom command.
-g.vista_ctags_cmd = {haskell='hasktags -o - -c'}
+g.vista_ctags_cmd = { haskell = 'hasktags -o - -c' }
 
 -- How each level is indented and what to prepend.
 -- This could make the display more compact or more spacious.

@@ -1,6 +1,3 @@
--- NeoVim dark colorscheme inspired by the colors of the famous painting by Katsushika Hokusai.
--- https://github.com/rebelot/kanagawa.nvim
-
 if vim.fn.has("termguicolors") == true then
     vim.opt.termguicolors = true
 end

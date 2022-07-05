@@ -1,6 +1,3 @@
--- Translate Language
--- https://github.com/skanehira/translate.vim
-
 local g = vim.g
 local key = vim.api.nvim_set_keymap
 g.translate_source = "en"

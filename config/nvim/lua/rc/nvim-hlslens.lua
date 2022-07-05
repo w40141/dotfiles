@@ -1,9 +1,3 @@
--- Hlsearch Lens for Neovim
--- https://github.com/kevinhwang91/nvim-hlslens
-
--- UsePlugin 'nvim-hlslens'
-
--- lua << EOF
 require('hlslens').setup({
     -- calm_down = true,
     -- nearest_only = true,
@@ -13,8 +7,9 @@ require('hlslens').setup({
 local key = vim.api.nvim_set_keymap
 
 -- noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>
-key('', 'n', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
- -- noremap * *<Cmd>lua require('hlslens').start()<CR>
+key('', 'n', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>]],
+    { noremap = true, silent = true })
+-- noremap * *<Cmd>lua require('hlslens').start()<CR>
 key('', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
 -- noremap # #<Cmd>lua require('hlslens').start()<CR>
 key('', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
@@ -26,5 +21,3 @@ key('', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, s
 -- use : instead of <Cmd>
 -- noremap <silent><C-c> :<C-u>nohlsearch<CR>
 key('', '<c-c>', [[:<c-u>nohlsearch<cr>]], { noremap = true, silent = true })
-
--- EOF
