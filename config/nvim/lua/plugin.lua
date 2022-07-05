@@ -27,8 +27,8 @@ require("packer").startup(function(use)
     local colorscheme = "kanagawa.nvim"
     use({
         "rebelot/kanagawa.nvim",
-        -- event = { "VimEnter", "ColorSchemePre" },
-        event = { "VimEnter", },
+        event = { "VimEnter", "ColorSchemePre" },
+        -- event = { "VimEnter", },
         config = function()
             require("rc.kanagawa-nvim")
         end
@@ -288,6 +288,14 @@ require("packer").startup(function(use)
         module = "notify"
     })
     use({
+        'yutkat/taskrun.nvim',
+        after = { "toggleterm.nvim", "nvim-notify" },
+		config = function()
+			require("rc/taskrun-nvim")
+		end,
+    })
+
+    use({
         "vim-jp/vimdoc-ja",
         opt = true,
         cmd = "help"
@@ -343,8 +351,8 @@ require("packer").startup(function(use)
     -- https://github.com/tamago324/lir.nvim
     use({
         "tamago324/lir.nvim",
-        requires = { "kyazdani42/nvim-web-devicons" },
-        after = colorscheme,
+        requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
+        after = { colorscheme, "nvim-web-devicons" },
         config = function()
             require("rc.lir")
         end
