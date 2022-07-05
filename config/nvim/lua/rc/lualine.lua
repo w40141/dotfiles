@@ -50,7 +50,10 @@ require 'lualine'.setup {
             },
             search_result,
         },
-        lualine_x = {},
+        lualine_x = {
+            "aerial",
+            depth = nil,
+        },
         lualine_y = {
             {
                 'diff',
