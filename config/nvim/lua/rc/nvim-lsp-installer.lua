@@ -1,6 +1,7 @@
 require("nvim-lsp-installer").setup({
     ensure_installed = {},
-    automatic_installation = true, -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    -- automatically detect which servers to install (based on which servers are set up via lspconfig)
+    automatic_installation = true,
     ui = {
         icons = {
             server_installed = "✓",
