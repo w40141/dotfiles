@@ -252,10 +252,18 @@ require("packer").startup(function(use)
             require("rc.nvim-lspconfig")
         end
     })
+    -- https://github.com/tamago324/nlsp-settings.nvim
+    use({
+        "tamago324/nlsp-settings.nvim",
+        after = { "nvim-lspconfig" },
+        config = function()
+            require("rc/nlsp-settings")
+        end,
+    })
     -- https://github.com/williamboman/nvim-lsp-installer
     use({
         "williamboman/nvim-lsp-installer",
-        after = { "nvim-lspconfig", "cmp-nvim-lsp" },
+        after = { "nvim-lspconfig", "cmp-nvim-lsp", "nlsp-settings.nvim" },
         config = function()
             require("rc.nvim-lsp-installer")
         end
@@ -287,13 +295,13 @@ require("packer").startup(function(use)
         "rcarriga/nvim-notify",
         module = "notify"
     })
-    use({
-        'yutkat/taskrun.nvim',
-        after = { "toggleterm.nvim", "nvim-notify" },
-		config = function()
-			require("rc/taskrun-nvim")
-		end,
-    })
+    -- use({
+    --     'yutkat/taskrun.nvim',
+    --     after = { "toggleterm.nvim", "nvim-notify" },
+    --     config = function()
+    --         require("rc/taskrun-nvim")
+    --     end,
+    -- })
 
     use({
         "vim-jp/vimdoc-ja",
