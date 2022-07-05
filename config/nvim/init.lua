@@ -1,10 +1,6 @@
 local g = vim.g
 local cmd = vim.cmd
 
-cmd('augroup MyAutoCmd')
-cmd('autocmd!')
-cmd('augroup END')
-
 g.did_indent_on             = 1
 g.did_install_default_menus = 1
 g.did_install_syntax_menu   = 1
