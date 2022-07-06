@@ -86,7 +86,6 @@ telescope.setup({
     },
 })
 
--- local key = vim.api.nvim_set_keymap
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
 key("n", "[ff]p", builtin.find_files, opts)
@@ -94,9 +93,8 @@ key("n", "[ff]f", builtin.git_files, opts)
 key("n", "[ff]g", builtin.live_grep, opts)
 key("n", "[ff]/", builtin.grep_string, opts)
 key("n", "[ff]b", builtin.buffers, opts)
-key("n", "[ff]l", "<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>",
-    { noremap = true, silent = true })
-key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", { noremap = true, silent = true })
+key("n", "[ff]l", builtin.current_buffer_fuzzy_find, opts)
+key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", opts)
 -- key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", { noremap = true, silent = true })
 key("n", "[ff]gs", builtin.git_status, opts)
 key("n", "[ff]gc", builtin.git_commits, opts)

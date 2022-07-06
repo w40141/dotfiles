@@ -133,6 +133,7 @@ require("packer").startup(function(use)
         end
     })
 
+    -- TODO:
     -- quickly highlight <cword> or visually selected word
     -- https://github.com/t9md/vim-quickhl
     use({
