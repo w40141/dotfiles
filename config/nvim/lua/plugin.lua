@@ -21,6 +21,9 @@ require("packer").startup(function(use)
     -- Library
     -- https://github.com/nvim-lua/plenary.nvim
     use({ "nvim-lua/plenary.nvim" })
+    use({ "nvim-lua/popup.nvim", module = "popup" })
+    use({ "kkharji/sqlite.lua", module = "sqlite" })
+    use({ "MunifTanjim/nui.nvim", module = "nui" })
 
     -- Colorscheme
     -- https://github.com/rebelot/kanagawa.nvim
@@ -313,7 +316,7 @@ require("packer").startup(function(use)
     use({
         "airblade/vim-rooter",
         event = "VimEnter",
-        setup = function()
+        config = function()
             require("rc.vim-rooter")
         end
     })
@@ -381,7 +384,7 @@ require("packer").startup(function(use)
     use({
         "tyru/open-browser.vim",
         event = "VimEnter",
-        setup = function()
+        config = function()
             require("rc.open-browser-vim")
         end
     })
@@ -389,7 +392,7 @@ require("packer").startup(function(use)
     use({
         "previm/previm",
         ft = { "markdown" },
-        setup = function()
+        config = function()
             require("rc.previm")
         end
     })
@@ -397,17 +400,24 @@ require("packer").startup(function(use)
     use({
         "rust-lang/rust.vim",
         ft = { "rust" },
-        setup = function()
+        config = function()
             require("rc.rust-vim")
         end
     })
+    -- use({
+    --     "simrat39/rust-tools.nvim",
+    --     ft = { "rust" },
+    --     config = function()
+    --         require("rc.rust-tools-nvim")
+    --     end
+    -- })
 
     -- Resizing of windows
     -- https://github.com/simeji/winresizer
     use({
         "simeji/winresizer",
         event = "VimEnter",
-        setup = function()
+        config = function()
             require("rc.winresizer")
         end
     })
