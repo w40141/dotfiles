@@ -28,7 +28,6 @@ require("packer").startup(function(use)
     use({
         "rebelot/kanagawa.nvim",
         event = { "VimEnter", "ColorSchemePre" },
-        -- event = { "VimEnter", },
         config = function()
             require("rc.kanagawa-nvim")
         end
@@ -53,6 +52,8 @@ require("packer").startup(function(use)
         end,
     })
 
+    -- Treesitter configurations
+    -- https://github.com/nvim-treesitter/nvim-treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         after = colorscheme,
@@ -66,7 +67,7 @@ require("packer").startup(function(use)
     use({ "m-demare/hlargs.nvim", after = { "nvim-treesitter" } })
     use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } })
     use({ "haringsrob/nvim_context_vt", after = { "nvim-treesitter", colorscheme } })
-    use({ "romgrk/nvim-treesitter-context", cmd = { "TSContextEnable" }, })
+    use({ "romgrk/nvim-treesitter-context", opt = true, cmd = { "TSContextEnable" } })
     use({
         "lewis6991/spellsitter.nvim",
         after = "nvim-treesitter",

@@ -1,6 +1,8 @@
+local telescope = require("telescope")
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
+local builtin = require("telescope.builtin")
 local custom_actions = {}
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
@@ -41,8 +43,7 @@ function custom_actions.multi_selection_open(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "edit")
 end
 
---
-require("telescope").setup({
+telescope.setup({
     defaults = {
         vimgrep_arguments = {
             "rg",
@@ -74,25 +75,30 @@ require("telescope").setup({
                 ["<C-g>"] = custom_actions.multi_selection_open,
             },
         },
+        extensions = {
+            aerial = {
+                -- Display symbols as <root>.<parent>.<symbol>
+                show_nesting = true
+            }
+        }
     },
     extensions = {
     },
 })
 
-local key = vim.api.nvim_set_keymap
-
-key("n", "[ff]p", "<Cmd>Telescope find_files<CR>", { noremap = true, silent = true })
-key("n", "[ff]f", "<Cmd>Telescope git_files<CR>", { noremap = true, silent = true })
-key("n", "[ff]g", "<Cmd>Telescope live_grep<CR>", { noremap = true, silent = true })
-key("n", "[ff]/", "<Cmd>Telescope grep_string<CR>", { noremap = true, silent = true })
-key("n", "[ff]b", "<Cmd>Telescope buffers<CR>", { noremap = true, silent = true })
+-- local key = vim.api.nvim_set_keymap
+local key = vim.keymap.set
+local opts = { noremap = true, silent = true }
+key("n", "[ff]p", builtin.find_files, opts)
+key("n", "[ff]f", builtin.git_files, opts)
+key("n", "[ff]g", builtin.live_grep, opts)
+key("n", "[ff]/", builtin.grep_string, opts)
+key("n", "[ff]b", builtin.buffers, opts)
 key("n", "[ff]l", "<Cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>",
     { noremap = true, silent = true })
-
 key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", { noremap = true, silent = true })
-key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", { noremap = true, silent = true })
-
-key("n", "[ff]gs", "<Cmd>lua require('telescope.builtin').git_status()<CR>", { noremap = true, silent = true })
-key("n", "[ff]gc", "<Cmd>lua require('telescope.builtin').git_commits()<CR>", { noremap = true, silent = true })
-key("n", "[ff]gC", "<Cmd>lua require('telescope.builtin').git_bcommits()<CR>", { noremap = true, silent = true })
-key("n", "[ff]gb", "<Cmd>lua require('telescope.builtin').git_branches()<CR>", { noremap = true, silent = true })
+-- key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", { noremap = true, silent = true })
+key("n", "[ff]gs", builtin.git_status, opts)
+key("n", "[ff]gc", builtin.git_commits, opts)
+key("n", "[ff]gC", builtin.git_bcommits, opts)
+key("n", "[ff]gb", builtin.git_branches, opts)
