@@ -36,6 +36,17 @@ require("packer").startup(function(use)
         end
     })
 
+    -- Greeter
+    -- https://github.com/goolord/alpha-nvim
+    use({
+        "goolord/alpha-nvim",
+        requires = { "kyazdani42/nvim-web-devicons" },
+        after = colorscheme,
+        config = function()
+            require("rc.alpha-nvim")
+        end
+    })
+
     -- Fzf finder
     -- https://github.com/nvim-telescope/telescope.nvim
     use({
@@ -82,17 +93,6 @@ require("packer").startup(function(use)
     -- Icons
     -- https://github.com/kyazdani42/nvim-web-devicons
     use({ "kyazdani42/nvim-web-devicons", after = colorscheme })
-
-    -- Greeter
-    -- https://github.com/goolord/alpha-nvim
-    use({
-        "goolord/alpha-nvim",
-        requires = { "kyazdani42/nvim-web-devicons" },
-        after = colorscheme,
-        config = function()
-            require("rc.alpha-nvim")
-        end
-    })
 
     -- Buffer line
     -- https://github.com/akinsho/bufferline.nvim
