@@ -47,6 +47,15 @@ require("packer").startup(function(use)
         end
     })
 
+    -- https://github.com/folke/trouble.nvim
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("rc.trouble-nvim")
+        end
+    }
+
     -- Fzf finder
     -- https://github.com/nvim-telescope/telescope.nvim
     use({
@@ -274,13 +283,6 @@ require("packer").startup(function(use)
         end
     })
 
-    -- use({
-    --     "jose-elias-alvarez/null-ls.nvim",
-    --     after = "nvim-lsp-installer",
-    --     config = function()
-    --         require("rc/null-ls")
-    --     end,
-    -- })
     -- use({ "vim-denops/denops.vim" })
     -- use({ "vim-skk/skkeleton", requires = { "vim-denops/denops.vim" } })
     -- use({ "rinx/cmp-skkeleton", after = { "nvim-cmp", "skkeleton" } })

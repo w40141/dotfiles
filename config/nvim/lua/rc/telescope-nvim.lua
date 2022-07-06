@@ -4,6 +4,7 @@ local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
 local builtin = require("telescope.builtin")
 local custom_actions = {}
+local trouble = require("trouble.providers.telescope")
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
     local picker = action_state.get_current_picker(prompt_bufnr)
@@ -64,9 +65,11 @@ telescope.setup({
         buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
         mappings = {
             n = {
-                ["<C-t>"] = action_layout.toggle_preview
+                ["<C-t>"] = action_layout.toggle_preview,
+                ["<c-o>"] = trouble.open_with_trouble,
             },
             i = {
+                ["<c-o>"] = trouble.open_with_trouble,
                 ["<C-t>"] = action_layout.toggle_preview,
                 ["<C-x>"] = false,
                 ["<Tab>"] = actions.toggle_selection + actions.move_selection_next,
