@@ -59,7 +59,7 @@ require("packer").startup(function(use)
         after = colorscheme,
         run = ":TSUpdate",
         config = function()
-            require("rc.treesitter")
+            require("rc.nvim-treesitter")
         end
     })
     use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
@@ -98,7 +98,7 @@ require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         after = colorscheme,
         config = function()
-            require("rc.bufferline")
+            require("rc.bufferline-nvim")
         end,
     })
 
@@ -109,7 +109,7 @@ require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true },
         after = colorscheme,
         config = function()
-            require("rc.lualine")
+            require("rc.lualine-nvim")
         end,
     })
 
@@ -119,7 +119,7 @@ require("packer").startup(function(use)
         "stevearc/aerial.nvim",
         event = "VimEnter",
         config = function()
-            require("rc.aerial")
+            require("rc.aerial-nvim")
         end
     })
 
@@ -129,7 +129,7 @@ require("packer").startup(function(use)
         "lukas-reineke/indent-blankline.nvim",
         event = "VimEnter",
         config = function()
-            require("rc.indent-blankline")
+            require("rc.indent-blankline-nvim")
         end
     })
 
@@ -151,7 +151,7 @@ require("packer").startup(function(use)
         event = "VimEnter",
         after = colorscheme,
         config = function()
-            require("rc.todo-comments")
+            require("rc.todo-comments-nvim")
         end
     })
 
@@ -161,7 +161,7 @@ require("packer").startup(function(use)
         "petertriho/nvim-scrollbar",
         event = "VimEnter",
         config = function()
-            require("scrollbar").setup()
+            require("rc.nvim-scrollbar")
         end
     })
 
@@ -172,7 +172,7 @@ require("packer").startup(function(use)
         "ur4ltz/surround.nvim",
         event = { "VimEnter", },
         config = function()
-            require("rc.surround")
+            require("rc.surround-nvim")
         end
     }
 
@@ -259,7 +259,7 @@ require("packer").startup(function(use)
         "tamago324/nlsp-settings.nvim",
         after = { "nvim-lspconfig" },
         config = function()
-            require("rc/nlsp-settings")
+            require("rc/nlsp-settings-nvim")
         end,
     })
     -- https://github.com/williamboman/nvim-lsp-installer
@@ -286,7 +286,7 @@ require("packer").startup(function(use)
         opt = true,
         event = "InsertEnter",
         config = function()
-            require("rc.eskk")
+            require("rc.eskk-vim")
         end
     })
 
@@ -364,7 +364,7 @@ require("packer").startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
         after = { colorscheme, "nvim-web-devicons" },
         config = function()
-            require("rc.lir")
+            require("rc.lir-nvim")
         end
     })
 
@@ -382,7 +382,7 @@ require("packer").startup(function(use)
         "tyru/open-browser.vim",
         event = "VimEnter",
         setup = function()
-            require("rc.open-browser")
+            require("rc.open-browser-vim")
         end
     })
 
@@ -398,7 +398,7 @@ require("packer").startup(function(use)
         "rust-lang/rust.vim",
         ft = { "rust" },
         setup = function()
-            require("rc.rust")
+            require("rc.rust-vim")
         end
     })
 
@@ -435,7 +435,7 @@ require("packer").startup(function(use)
         "akinsho/toggleterm.nvim",
         event = "VimEnter",
         config = function()
-            require("rc.toggleterm")
+            require("rc.toggleterm-nvim")
         end,
     })
 
@@ -445,7 +445,7 @@ require("packer").startup(function(use)
         "skanehira/translate.vim",
         event = "VimEnter",
         config = function()
-            require("rc.translate")
+            require("rc.translate-vim")
         end
     })
 
@@ -454,7 +454,7 @@ require("packer").startup(function(use)
         requires = { "nvim-lua/plenary.nvim" },
         event = "VimEnter",
         config = function()
-            require("rc.gitsigns")
+            require("rc.gitsigns-nvim")
         end,
     })
 
