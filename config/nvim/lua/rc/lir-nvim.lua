@@ -1,8 +1,8 @@
-local actions = require 'lir.actions'
-local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require 'lir.clipboard.actions'
+local actions = require('lir.actions')
+local mark_actions = require('lir.mark.actions')
+local clipboard_actions = require('lir.clipboard.actions')
 
-require 'lir'.setup {
+require('lir').setup {
     show_hidden_files = true,
     devicons_enable = true,
     mappings = {
@@ -40,17 +40,17 @@ require 'lir'.setup {
     hide_cursor = true,
 }
 
+local opts = { noremap = true, silent = true }
 -- use visual mode
 function _G.LirSettings()
-    vim.api.nvim_buf_set_keymap(0, 'x', 'J', [[:<c-u>lua require"lir.mark.actions".toggle_mark("v")<cr>]],
-        { noremap = true, silent = true })
-
+    vim.api.nvim_buf_set_keymap(0, 'x', 'J', [[:<c-u>lua require"lir.mark.actions".toggle_mark("v")<cr>]], opts)
     -- echo cwd
     vim.api.nvim_echo({ { vim.fn.expand('%:p'), 'Normal' } }, false, {})
 end
 
-vim.api.nvim_set_keymap('n', '<leader>e', [[:lua require'lir.float'.toggle()<cr>]], { noremap = true, silent = false })
-vim.cmd [[augroup lir-settings]]
-vim.cmd [[  autocmd!]]
-vim.cmd [[  autocmd Filetype lir :lua LirSettings()]]
-vim.cmd [[augroup END]]
+vim.keymap.set('n', '<leader>e', require('lir.float').toggle, opts)
+vim.cmd [[
+augroup lir-settings
+    autocmd!
+    autocmd Filetype lir :lua LirSettings()
+augroup END]]

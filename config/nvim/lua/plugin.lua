@@ -41,7 +41,7 @@ require("packer").startup(function(use)
     use({
         "goolord/alpha-nvim",
         requires = { "kyazdani42/nvim-web-devicons" },
-        after = colorscheme,
+        after = { colorscheme },
         config = function()
             require("rc.alpha-nvim")
         end
@@ -60,7 +60,7 @@ require("packer").startup(function(use)
     -- https://github.com/nvim-telescope/telescope.nvim
     use({
         "nvim-telescope/telescope.nvim",
-        after = colorscheme,
+        after = { colorscheme },
         requires = { "nvim-lua/plenary.nvim" },
         config = function()
             require("rc.telescope-nvim")
@@ -79,7 +79,7 @@ require("packer").startup(function(use)
     -- https://github.com/nvim-treesitter/nvim-treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
-        after = colorscheme,
+        after = { colorscheme },
         run = ":TSUpdate",
         config = function()
             require("rc.nvim-treesitter")
@@ -145,7 +145,6 @@ require("packer").startup(function(use)
         end
     })
 
-    -- TODO:
     -- quickly highlight <cword> or visually selected word
     -- https://github.com/t9md/vim-quickhl
     use({
@@ -215,10 +214,9 @@ require("packer").startup(function(use)
     use({
         "hrsh7th/nvim-cmp",
         requires = {
-            { "dcampos/nvim-snippy", opt = true, event = "VimEnter" },
             { "windwp/nvim-autopairs", opt = true, event = "VimEnter" },
         },
-        after = { "nvim-snippy", "nvim-autopairs" },
+        after = { "nvim-autopairs" },
         config = function()
             require("rc.nvim-cmp")
         end,
@@ -300,7 +298,15 @@ require("packer").startup(function(use)
     -- https://github.com/rcarriga/nvim-notify
     use({
         "rcarriga/nvim-notify",
-        module = "notify"
+        module = "notify",
+        config = function()
+            require("notify").setup {
+                stages = "slide",
+                background_colour = 'FloatShadow',
+                timeout = 1000,
+            }
+            vim.notify = require('notify')
+        end
     })
     -- use({
     --     'yutkat/taskrun.nvim',
@@ -315,6 +321,7 @@ require("packer").startup(function(use)
         opt = true,
         cmd = "help"
     })
+
     use({
         "airblade/vim-rooter",
         event = "VimEnter",
@@ -322,17 +329,20 @@ require("packer").startup(function(use)
             require("rc.vim-rooter")
         end
     })
+
     use({
         "tweekmonster/startuptime.vim",
         opt = true,
         cmd = "StartupTime"
     })
+
     use({
         "vim-test/vim-test",
         config = function()
             require("rc.vim-test")
         end
     })
+
     -- Generating images of source code using
     -- https://github.com/segeljakt/vim-silicon
     use({

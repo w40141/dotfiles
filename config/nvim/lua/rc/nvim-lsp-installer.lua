@@ -42,7 +42,8 @@ local on_attach = function(client, bufnr)
     key('n', '[dev]r', buf.references, bufopts)
     key('n', '[dev]f', buf.formatting, bufopts)
 end
-local lsp_flags = {
+
+local flags = {
     debounce_text_changes = 150,
 }
 
@@ -53,8 +54,8 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 local servers = installer.get_installed_servers()
 for _, server in ipairs(servers) do
-    -- local opts = { capabilities = capabilities, on_attach = on_attach, flags = lsp_flags }
-    local opts = { on_attach = on_attach, flags = lsp_flags }
-    require('lspconfig')[server.name].setup(opts)
+    -- require('lspconfig')[server.name].setup({ on_attach = on_attach, flags = lsp_flags })
+    local setopts = { capabilities = capabilities, on_attach= on_attach, flags = flags }
+    require('lspconfig')[server.name].setup(setopts)
     vim.cmd([[ do User LspAttachBuffers ]])
 end

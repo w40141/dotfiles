@@ -1,17 +1,8 @@
-local alpha = require 'alpha'
-local dashboard = require 'alpha.themes.dashboard'
-
--- Footer
-local function footer()
-    local version = vim.version()
-    local print_version = "v" .. version.major .. '.' .. version.minor .. '.' .. version.patch
-    local datetime = os.date('%Y/%m/%d %H:%M:%S')
-
-    return print_version .. ' ' .. datetime
-end
+local alpha = require('alpha')
+local dashboard = require('alpha.themes.dashboard')
 
 -- Banner
-local banner = {
+dashboard.section.header.val = {
     "                                                    ",
     " ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
     " ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
@@ -21,8 +12,6 @@ local banner = {
     " ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
     "                                                    ",
 }
-
-dashboard.section.header.val = banner
 
 -- Menu
 dashboard.section.buttons.val = {
@@ -36,6 +25,14 @@ dashboard.section.buttons.val = {
     dashboard.button('q', ' Quit', ':qa<CR>'),
 }
 
+-- Footer
+local function footer()
+    local version = vim.version()
+    local print_version = "v" .. version.major .. '.' .. version.minor .. '.' .. version.patch
+    local datetime = os.date('%Y/%m/%d %H:%M:%S')
+
+    return print_version .. ' ' .. datetime
+end
 dashboard.section.footer.val = footer()
 
 alpha.setup(dashboard.config)

@@ -2,9 +2,7 @@ local telescope = require("telescope")
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
-local builtin = require("telescope.builtin")
 local custom_actions = {}
-local trouble = require("trouble.providers.telescope")
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
     local picker = action_state.get_current_picker(prompt_bufnr)
@@ -44,6 +42,7 @@ function custom_actions.multi_selection_open(prompt_bufnr)
     custom_actions._multiopen(prompt_bufnr, "edit")
 end
 
+local trouble = require("trouble.providers.telescope")
 telescope.setup({
     defaults = {
         vimgrep_arguments = {
@@ -91,6 +90,7 @@ telescope.setup({
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local builtin = require("telescope.builtin")
 key("n", "[ff]p", builtin.find_files, opts)
 key("n", "[ff]f", builtin.git_files, opts)
 key("n", "[ff]g", builtin.live_grep, opts)
@@ -98,7 +98,7 @@ key("n", "[ff]/", builtin.grep_string, opts)
 key("n", "[ff]b", builtin.buffers, opts)
 key("n", "[ff]l", builtin.current_buffer_fuzzy_find, opts)
 key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", opts)
--- key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", { noremap = true, silent = true })
+key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", opts)
 key("n", "[ff]gs", builtin.git_status, opts)
 key("n", "[ff]gc", builtin.git_commits, opts)
 key("n", "[ff]gC", builtin.git_bcommits, opts)

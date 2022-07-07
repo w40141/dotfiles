@@ -4,20 +4,13 @@ require('hlslens').setup({
     -- nearest_float_when = 'always'
 })
 
-local key = vim.api.nvim_set_keymap
+-- local key = vim.api.nvim_set_keymap
 
--- noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>
-key('', 'n', [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>]],
-    { noremap = true, silent = true })
--- noremap * *<Cmd>lua require('hlslens').start()<CR>
-key('', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
--- noremap # #<Cmd>lua require('hlslens').start()<CR>
-key('', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
--- noremap g* g*<Cmd>lua require('hlslens').start()<CR>
-key('', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
--- noremap g# g#<Cmd>lua require('hlslens').start()<CR>
-key('', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], { noremap = true, silent = true })
-
--- use : instead of <Cmd>
--- noremap <silent><C-c> :<C-u>nohlsearch<CR>
-key('', '<c-c>', [[:<c-u>nohlsearch<cr>]], { noremap = true, silent = true })
+local key = vim.keymap.set
+local opts = { noremap = true, silent = true }
+key('', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>", opts)
+key('', '*', "*<Cmd>lua require('hlslens').start()<CR>", opts)
+key('', '#', "#<Cmd>lua require('hlslens').start()<CR>", opts)
+key('', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", opts)
+key('', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", opts)
+key('', '<c-c>', "<Cmd>nohlsearch<cr>", opts)

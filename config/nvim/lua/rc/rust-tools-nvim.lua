@@ -6,10 +6,10 @@ local opts = {
             use_telescope = true
         },
         inlay_hints = {
-            only_current_line = false,
+            only_current_line = true,
             only_current_line_autocmd = "CursorHold",
             show_parameter_hints = true,
-            show_variable_name = false,
+            show_variable_name = true,
             parameter_hints_prefix = "<- ",
             other_hints_prefix = "=> ",
             max_len_align = false,
