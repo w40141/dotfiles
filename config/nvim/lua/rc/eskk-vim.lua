@@ -5,11 +5,11 @@
 --  https://hakasenote.hnishi.com/2021/20210105-vim-eskk/
 
 
-local g =vim.g
+local g = vim.g
 g["toggle_markdown_eskk"] = 1
 g["eskk#directory"] = "~/.config/eskk"
-g["eskk#dictionary"] = { path = "~/.config/eskk/my_jisyo", sorted = 1, encoding = "utf-8"}
-g["eskk#large_dictionary"] = { path = "~/.config/eskk/SKK-JISYO.L", sorted = 1, encoding = "utf-8"}
+g["eskk#dictionary"] = { path = "~/.config/eskk/my_jisyo", sorted = 1, encoding = "utf-8" }
+g["eskk#large_dictionary"] = { path = "~/.config/eskk/SKK-JISYO.L", sorted = 1, encoding = "utf-8" }
 
 -- 漢字変換した時に候補が1つの場合、自動的に確定する
 g["eskk#kakutei_when_unique_candidate"] = 1

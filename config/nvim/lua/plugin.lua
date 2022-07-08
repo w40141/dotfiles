@@ -303,7 +303,7 @@ require("packer").startup(function(use)
             require("notify").setup {
                 stages = "slide",
                 background_colour = 'FloatShadow',
-                timeout = 1000,
+                timeout = 3000,
             }
             vim.notify = require('notify')
         end
@@ -351,10 +351,12 @@ require("packer").startup(function(use)
         cmd = "Silicon"
     })
 
-    use({
-        "jsborjesson/vim-uppercase-sql",
-        ft = { "sql" }
-    })
+    -- Automatically uppercase SQL keywords
+    -- https://github.com/jsborjesson/vim-uppercase-sql
+    -- use({
+    --     "jsborjesson/vim-uppercase-sql",
+    --     ft = { "sql" }
+    -- })
 
     -- Highlight length of search result
     -- https://github.com/kevinhwang91/nvim-hlslens
