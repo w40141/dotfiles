@@ -35,6 +35,7 @@ g.loaded_rrhelper           = 1
 g.loaded_ruby_provider      = 0
 g.loaded_shada_plugin       = 1
 g.loaded_spec               = 1
+g.loaded_sql_completion     = 0
 g.loaded_spellfile_plugin   = 1
 g.loaded_tar                = 1
 g.loaded_tarPlugin          = 1
