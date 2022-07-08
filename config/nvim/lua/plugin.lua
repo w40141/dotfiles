@@ -364,10 +364,10 @@ require("packer").startup(function(use)
 
     -- Automatically uppercase SQL keywords
     -- https://github.com/jsborjesson/vim-uppercase-sql
-    -- use({
-    --     "jsborjesson/vim-uppercase-sql",
-    --     ft = { "sql" }
-    -- })
+    use({
+        "jsborjesson/vim-uppercase-sql",
+        ft = { "sql" }
+    })
 
     -- Highlight length of search result
     -- https://github.com/kevinhwang91/nvim-hlslens
