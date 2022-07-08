@@ -99,6 +99,17 @@ require("packer").startup(function(use)
         end
     })
 
+    -- Annotation generator
+    -- https://github.com/danymat/neogen
+    use({
+        "danymat/neogen",
+        requires = "nvim-treesitter/nvim-treesitter",
+        after = { "nvim-treesitter" },
+        config = function()
+            require("rc/neogen")
+        end,
+    })
+
     -- Icons
     -- https://github.com/kyazdani42/nvim-web-devicons
     use({ "kyazdani42/nvim-web-devicons", after = colorscheme })

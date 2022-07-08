@@ -1,4 +1,4 @@
-local set = vim.opt
+local set = vim.o
 local fn = vim.fn
 
 -- 基本設定
@@ -6,17 +6,13 @@ local fn = vim.fn
 set.encoding = 'utf-8'
 set.fileformats = 'unix,dos,mac'
 set.fileencodings = 'utf-8,sjis'
--- 256色設定にする
--- if vim.fn.has('gui_running') == false then
---     set.t_Co = 256
--- end
 -- 全モードでマウスを有効化
 set.mouse = 'a'
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
 set.hidden = true
 -- スペルチェック
 set.spell = true
-set.spelllang = { 'en_us' }
+vim.opt.spelllang = { 'en_us' }
 -- 内容が変更されたら自動的に再読み込み
 set.autoread = true
 -- クリップボードをWindowsと連携する
@@ -34,7 +30,7 @@ set.number = true
 set.title = true
 -- 不可視文字を表示
 set.list = true
-set.listchars = {
+vim.opt.listchars = {
     tab = '▸ ', extends = '»', trail = '-', precedes = '«', eol = '↲', nbsp = '%', space = '⋅'
 }
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
@@ -89,7 +85,7 @@ set.startofline = false
 -- コマンドライン履歴保存
 set.history = 10000
 -- カーソルを行頭、行末で止まらないようにする
-set.whichwrap:append('b,s,h,l,<,>,[,]')
+vim.opt.whichwrap:append('b,s,h,l,<,>,[,]')
 -- カーソルを常に画面の中央に表示させる
 set.scrolloff = 999
 -- C-vの矩形選択で行末より後ろもカーソルを置ける
