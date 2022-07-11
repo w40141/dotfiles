@@ -30,7 +30,7 @@ require("trouble").setup {
     -- add an indent guide below the fold icons
     indent_lines = true,
     -- automatically open the list when you have diagnostics
-    auto_open = true,
+    auto_open = false,
     -- automatically close the list when you have no diagnostics
     auto_close = true,
     -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window

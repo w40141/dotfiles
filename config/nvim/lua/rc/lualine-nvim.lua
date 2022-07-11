@@ -45,7 +45,7 @@ require 'lualine'.setup {
                     info  = 'DiagnosticInfo',
                     hint  = 'DiagnosticHint',
                 },
-                symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+                symbols = { Error = "", Warn = "", Hint = "", Info = "" },
                 colored = true,
             },
             search_result,

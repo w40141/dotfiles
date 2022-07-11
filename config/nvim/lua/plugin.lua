@@ -210,7 +210,8 @@ require("packer").startup(function(use)
 
     -- Snippet
     -- https://github.com/rafamadriz/friendly-snippets
-    use({ "rafamadriz/friendly-snippets", opt = true })
+    use({ "rafamadriz/friendly-snippets" })
+
     -- https://github.com/dcampos/nvim-snippy
     use({
         "dcampos/nvim-snippy",

@@ -51,10 +51,8 @@ local flags = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-
 local servers = installer.get_installed_servers()
 for _, server in ipairs(servers) do
-    -- require('lspconfig')[server.name].setup({ on_attach = on_attach, flags = lsp_flags })
     local setopts = { capabilities = capabilities, on_attach= on_attach, flags = flags }
     require('lspconfig')[server.name].setup(setopts)
     vim.cmd([[ do User LspAttachBuffers ]])

@@ -41,19 +41,14 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "path" },
         { name = "emoji" },
-        { name = "nvim_lua" },
+        { name = "snippy" },
         { name = "nvim_lsp_signature_help" },
         { name = "mocword" },
-        -- { name = "skkeleton", priority = 40 },
-    }, {
         { name = "buffer" },
         { name = "omni" },
         { name = "spell" },
         { name = "treesitter" },
     }),
-    -- view = {
-    --     entries = 'native'
-    -- }
 })
 
 cmp.setup.cmdline("/", {
