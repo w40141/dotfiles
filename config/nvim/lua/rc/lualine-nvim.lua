@@ -26,6 +26,7 @@ require 'lualine'.setup {
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
         always_divide_middle = true,
+        globalstatus = true
     },
     sections = {
         lualine_a = {
@@ -65,7 +66,7 @@ require 'lualine'.setup {
                 },
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
             },
-            'branch',
+            -- 'branch',
         },
         lualine_z = { 'location', 'progress' },
     },

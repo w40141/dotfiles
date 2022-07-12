@@ -36,7 +36,7 @@ vim.opt.listchars = {
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 set.wrap = true
 -- コマンド行の長さ
-set.cmdheight = 2
+set.cmdheight = 1
 -- カラムを表示
 set.signcolumn = 'yes'
 -- エディタウィンドウの末尾から2行目にステータスラインを常時表示させるための指定
@@ -77,7 +77,8 @@ set.incsearch = true
 -- deleteでインデントを削除可能にする
 set.backspace = 'indent,eol,start'
 
-set.completeopt = 'menuone,noinsert'
+set.completeopt = "menu,menuone,noselect"
+
 -- 閉括弧が入力された時、対応する括弧を強調する
 set.showmatch = true
 -- 閉括弧が入力された時対応する括弧に一時的に移動
