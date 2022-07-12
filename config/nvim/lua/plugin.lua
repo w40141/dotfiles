@@ -397,14 +397,6 @@ require("packer").startup(function(use)
         end
     })
 
-    -- Perform the replacement in quickfix
-    -- https://github.com/thinca/vim-qfreplace
-    use({ "thinca/vim-qfreplace" })
-
-    -- Run commands quickly
-    -- https://github.com/thinca/vim-quickrun
-    use({ "thinca/vim-quickrun" })
-
     -- Open URI
     -- https://github.com/tyru/open-browser.vim
     use({

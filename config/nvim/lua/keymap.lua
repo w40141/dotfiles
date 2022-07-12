@@ -45,6 +45,10 @@ key('n', '[dev]', '<nop>', optstt)
 key('x', '[dev]', '<nop>', optstt)
 key('n', 'm', '[dev]', optsft)
 key('x', 'm', '[dev]', optsft)
+key('n', '[tl]', '<nop>', optstt)
+key('x', '[tl]', '<nop>', optstt)
+key('n', '<c-t>', '[tl]', optsft)
+key('x', '<c-t>', '[tl]', optsft)
 
 -- [nore]map
 -- 行頭と行末への移動
