@@ -30,151 +30,149 @@ local key = vim.api.nvim_set_keymap
 g.mapleader = ' '
 g.maplocalleader = ' '
 
-key('n', '<leader>', '<nop>', { noremap = true, silent = true} )
-key('x', '<leader>', '<nop>', { noremap = true, silent = true} )
-key('n', '[ff]', '<nop>', { noremap = true, silent = true} )
-key('x', '[ff]', '<nop>', { noremap = true, silent = true} )
-key('n', '<c-f>', '[ff]', { noremap = false, silent = true} )
-key('x', '<c-f>', '[ff]', { noremap = false, silent = true} )
-key('n', '[dev]', '<nop>', { noremap = true, silent = true} )
-key('x', '[dev]', '<nop>', { noremap = true, silent = true} )
-key('n', 'm', '[dev]', { noremap = false, silent = true} )
-key('x', 'm', '[dev]', { noremap = false, silent = true} )
+local optstt = { noremap = true, silent = true }
+local optsft = { noremap = false, silent = true }
+local optstf = { noremap = true, silent = false }
+local optsff = { noremap = false, silent = false }
+
+key('n', '<leader>', '<nop>', optstt)
+key('x', '<leader>', '<nop>', optstt)
+key('n', '[ff]', '<nop>', optstt)
+key('x', '[ff]', '<nop>', optstt)
+key('n', '<c-f>', '[ff]', optsft)
+key('x', '<c-f>', '[ff]', optsft)
+key('n', '[dev]', '<nop>', optstt)
+key('x', '[dev]', '<nop>', optstt)
+key('n', 'm', '[dev]', optsft)
+key('x', 'm', '[dev]', optsft)
 
 -- [nore]map
 -- 行頭と行末への移動
-key('', '0', '$', { noremap = true, silent = true })
-key('', '1', '0', { noremap = true, silent = true })
+key('', '0', '$', optstt)
+key('', '1', '0', optstt)
 -- ;と:を入れ替
-key('', ';', ':', { noremap = true, silent = false })
-key('', ':', ';', { noremap = true, silent = false })
+key('', ';', ':', optstf)
+key('', ':', ';', optstf)
 -- キー置換
-key('', ',h', '^', { noremap = true, silent = true })
-key('', ',l', '$', { noremap = true, silent = true })
-key('', ',m', '%', { noremap = true, silent = true })
+key('', ',h', '^', optstt)
+key('', ',l', '$', optstt)
+key('', ',p', '%', optstt)
 
 -- n[nore]map
 -- 表示上の移動を可能にする
-key('n', 'j', 'gj', { noremap = true, silent = true })
-key('n', 'k', 'gk', { noremap = true, silent = true })
-key('n', 'gj', 'j', { noremap = true, silent = true })
-key('n', 'gk', 'k', { noremap = true, silent = true })
+key('n', 'j', 'gj', optstt)
+key('n', 'k', 'gk', optstt)
+key('n', 'gj', 'j', optstt)
+key('n', 'gk', 'k', optstt)
 -- 水平方向の移動を簡単にする
-key('n', 'zl', 'zL', { noremap = true, silent = true })
-key('n', 'zh', 'zH', { noremap = true, silent = true })
+key('n', 'zl', 'zL', optstt)
+key('n', 'zh', 'zH', optstt)
 -- キー置換
--- key('n', ',/', ';', { noremap = true, silent = true })
+-- key('n', ',/', ';', optstt)
 -- カーソル下の単語を小文字にする
-key('n', ',u', [[mzg~iw`z<Cmd>delmarks z<CR>]], { noremap = true, silent = true })
+key('n', ',u', [[mzg~iw`z<Cmd>delmarks z<CR>]], optstt)
 -- カーソル下の単語を大文字にする
-key('n', ',U', [[mzlbg~l`z<Cmd>delmarks z<CR>]], { noremap = true, silent = true })
+key('n', ',U', [[mzlbg~l`z<Cmd>delmarks z<CR>]], optstt)
 -- 保存
-key('n', ',w', ':w<cr>', { noremap = true, silent = true })
+key('n', ',w', ':w<cr>', optstt)
 -- 検索結果のハイライトをC-h連打でクリアする
-key('n', ',n', ':<c-u>nohlsearch<cr>', { noremap = true, silent = true })
+key('n', ',n', ':<c-u>nohlsearch<cr>', optstt)
 -- 辞書
-key('n', ',?', ':!open dict://<cword><cr>', { noremap = true, silent = true })
+key('n', ',?', ':!open dict://<cword><cr>', optstt)
 -- 検索後にジャンプした際に検索単語を画面中央に持ってくる
-key('n', 'n', 'nzz', { noremap = true, silent = true })
-key('n', 'N', 'Nzz', { noremap = true, silent = true })
-key('n', '*', '*zz', { noremap = true, silent = true })
-key('n', '#', '#zz', { noremap = true, silent = true })
-key('n', 'g*', 'g*zz', { noremap = true, silent = true })
-key('n', 'g#', 'g#zz', { noremap = true, silent = true })
+key('n', 'n', 'nzz', optstt)
+key('n', 'N', 'Nzz', optstt)
+key('n', '*', '*zz', optstt)
+key('n', '#', '#zz', optstt)
+key('n', 'g*', 'g*zz', optstt)
+key('n', 'g#', 'g#zz', optstt)
 -- カーソル位置の単語をyankした文字に置き換える
-key('n', 'vp', 'viwpviwy', { noremap = true, silent = true })
+key('n', 'vp', 'viwpviwy', optstt)
 -- カーソル位置の単語をyankする
-key('n', 'vy', 'viwy', { noremap = true, silent = true })
+key('n', 'vy', 'viwy', optstt)
 -- ノーマルモードでも改行可能
-key('n', '<cr>', 'i<cr><esc>', { noremap = true, silent = true })
+key('n', '<cr>', 'i<cr><esc>', optstt)
 -- tabにて対応ペアにジャンプ
-key('n', '<tab>', '%', { noremap = true, silent = true })
+key('n', '<tab>', '%', optstt)
 -- ウィンドウを分割
-key('n', 'sp', ':<c-u>sp<cr>', { noremap = true, silent = true })
-key('n', 'sv', ':<c-u>vs<cr>', { noremap = true, silent = true })
+key('n', 'sp', ':<c-u>sp<cr>', optstt)
+key('n', 'sv', ':<c-u>vs<cr>', optstt)
 -- 分割したウィンドウ間を移動
-key('n', 'sj', '<c-w>j<cr>', { noremap = true, silent = true })
-key('n', 'sk', '<c-w>k<cr>', { noremap = true, silent = true })
-key('n', 'sl', '<c-w>l<cr>', { noremap = true, silent = true })
-key('n', 'sh', '<c-w>h<cr>', { noremap = true, silent = true })
+key('n', 'sj', '<c-w>j<cr>', optstt)
+key('n', 'sk', '<c-w>k<cr>', optstt)
+key('n', 'sl', '<c-w>l<cr>', optstt)
+key('n', 'sh', '<c-w>h<cr>', optstt)
 -- ウィンドウを閉じる
-key('n', 'sc', '<c-w>c<cr>', { noremap = true, silent = true })
+key('n', 'sc', '<c-w>c<cr>', optstt)
 -- 現在のウィンドウ以外のウィンドウを閉じる
-key('n', 'so', '<c-w>o<cr>', { noremap = true, silent = true })
+key('n', 'so', '<c-w>o<cr>', optstt)
 -- 新規タブ
-key('n', 'tn', ':<c-u>tabnew<cr>', { noremap = true, silent = true })
+key('n', 'tn', ':<c-u>tabnew<cr>', optstt)
 -- バッファを閉じる
-key('n', 'qb', ':<c-u>bd<cr>', { noremap = true, silent = true })
+key('n', 'qb', ':<c-u>bd<cr>', optstt)
 -- 直前のバッファを開く
--- key('n', 'bb', ':b#<cr>', { noremap = true, silent = true })
+-- key('n', 'bb', ':b#<cr>', optstt)
 -- バッファリストの先頭を開く
--- key('n', 'bf', ':bf<cr>', { noremap = true, silent = true })
+-- key('n', 'bf', ':bf<cr>', optstt)
 -- バッファリストの最後を開く
--- key('n', 'bl', ':bl<cr>', { noremap = true, silent = true })
+-- key('n', 'bl', ':bl<cr>', optstt)
 --変更中の次のバッファへ移動
-key('n', 'qm', ':<c-u>bm<cr>', { noremap = true, silent = true })
+key('n', 'qm', ':<c-u>bm<cr>', optstt)
 -- 保存して閉じる、保存せずに閉じるを無効
-key('n', 'ZZ', '<nop>', { noremap = true, silent = true })
-key('n', 'ZQ', '<nop>', { noremap = true, silent = true })
+key('n', 'ZZ', '<nop>', optstt)
+key('n', 'ZQ', '<nop>', optstt)
 -- バッファリストの1つ前のバッファを開く
--- key('n', '[b', ':bprevious<cr>', { noremap = true, silent = true })
+-- key('n', '[b', ':bprevious<cr>', optstt)
 -- バッファリストの次のバッファを開く
--- key('n', ']b', ':bnext<cr>', { noremap = true, silent = true })
+-- key('n', ']b', ':bnext<cr>', optstt)
 -- 前のタブに切り替え
-key('n', '[t', 'gT', { noremap = true, silent = true })
+key('n', '[t', 'gT', optstt)
 -- 次のタブに切り替え
-key('n', ']t', 'gt', { noremap = true, silent = true })
+key('n', ']t', 'gt', optstt)
 -- 矢印キー無効
-key('n', '<up>', '<nop>', { noremap = true, silent = true })
-key('n', '<down>', '<nop>', { noremap = true, silent = true })
-key('n', '<left>', '<nop>', { noremap = true, silent = true })
-key('n', '<right>', '<nop>', { noremap = true, silent = true })
+key('n', '<up>', '<nop>', optstt)
+key('n', '<down>', '<nop>', optstt)
+key('n', '<left>', '<nop>', optstt)
+key('n', '<right>', '<nop>', optstt)
 
 -- i[nore]map
 -- 挿入モードでの移動
-key('i', '<c-a>', '<home>', { noremap = true, silent = true })
-key('i', '<c-b>', '<left>', { noremap = true, silent = true })
-key('i', '<c-e>', '<end>', { noremap = true, silent = true })
-key('i', '<c-f>', '<right>', { noremap = true, silent = true })
+key('i', '<c-a>', '<home>', optstt)
+key('i', '<c-b>', '<left>', optstt)
+key('i', '<c-e>', '<end>', optstt)
+key('i', '<c-f>', '<right>', optstt)
 -- 挿入モードでのesc
-key('i', 'jj', '<esc>', { noremap = true, silent = true })
+key('i', 'jj', '<esc>', optstt)
 -- ctrl-v で insert モードで貼り付け
-key('i', '<c-v>', '<eSC>"*pa', { noremap = true, silent = true })
+key('i', '<c-v>', '<eSC>"*pa', optstt)
 -- 矢印キー無効
-key('i', '<up>', '<nop>', { noremap = true, silent = true })
-key('i', '<down>', '<nop>', { noremap = true, silent = true })
-key('i', '<left>', '<nop>', { noremap = true, silent = true })
-key('i', '<right>', '<nop>', { noremap = true, silent = true })
+key('i', '<up>', '<nop>', optstt)
+key('i', '<down>', '<nop>', optstt)
+key('i', '<left>', '<nop>', optstt)
+key('i', '<right>', '<nop>', optstt)
 
 -- v[nore]map
 -- vを二回で行末まで選択
-key('v', 'v', '$h', { noremap = true, silent = true })
+key('v', 'v', '$h', optstt)
 -- レジスタを汚さない削除
-key('n', 'x', '"_x', { noremap = true, silent =true })
-key('n', 'X', '"_X', { noremap = true, silent =true })
-key('v', 'x', '"_x', { noremap = true, silent =true })
-key('v', 'X', '"_X', { noremap = true, silent =true })
--- 選択下を記号で囲う
--- key('v', '{', [["zdi{<c-r>z}<esc>]], { noremap = true, silent = true })
--- key('v', '[', [["zdi[<c-r>z]<esc>]], { noremap = true, silent = true })
--- key('v', '(', [["zdi(<c-r>z)<esc>]], { noremap = true, silent = true })
--- key('v', [[']], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
--- key('v', [["]], [["zdi'<c-r>z'<esc>]], { noremap = true, silent = true })
--- key('v', '--', [["zdi"<c-r>z^V"<esc>]], { noremap = true, silent = true })
+key('n', 'x', '"_x', optstt)
+key('n', 'X', '"_X', optstt)
+key('v', 'x', '"_x', optstt)
+key('v', 'X', '"_X', optstt)
 -- tabにて対応ペアにジャンプ
-key('v', '<tab>', '%', { noremap = true, silent = true })
+key('v', '<tab>', '%', optstt)
 
 -- c[nore]map
 -- コマンドモード時のカーソル移動
-key('c', '<c-a>', '<home>', { noremap = true, silent = false })
-key('c', '<c-b>', '<left>', { noremap = true, silent = false })
-key('c', '<c-d>', '<delete>', { noremap = true, silent = false })
-key('c', '<c-e>', '<end>', { noremap = true, silent = false })
-key('c', '<c-f>', '<right>', { noremap = true, silent = false })
-key('c', '<c-n>', '<down>', { noremap = true, silent = false })
-key('c', '<c-p>', '<up>', { noremap = true, silent = false })
+key('c', '<c-a>', '<home>', optstf)
+key('c', '<c-b>', '<left>', optstf)
+key('c', '<c-d>', '<delete>', optstf)
+key('c', '<c-e>', '<end>', optstf)
+key('c', '<c-f>', '<right>', optstf)
+key('c', '<c-n>', '<down>', optstf)
+key('c', '<c-p>', '<up>', optstf)
 -- ctrl-v で command モードで貼り付け
-key('c', '<c-v>', '<C-r>+', { noremap = true, silent = true })
+key('c', '<c-v>', '<C-r>+', optstt)
 -- バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 key('c', [[/]], [[getcmdtype() == '/' ? '\/' : '/']], { noremap = true, silent = false, expr = true })
 key('c', [[?]], [[getcmdtype() == '?' ? '\?' : '?']], { noremap = true, silent = false, expr = true })

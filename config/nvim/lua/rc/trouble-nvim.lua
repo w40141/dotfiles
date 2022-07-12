@@ -36,7 +36,7 @@ require("trouble").setup {
     -- automatically preview the location of the diagnostic. <esc> to close preview and go back to last window
     auto_preview = true,
     -- automatically fold a file trouble list at creation
-    auto_fold = false,
+    auto_fold = true,
     -- for the given modes, automatically jump if there is only a single result
     auto_jump = { "lsp_definitions" },
     -- enabling this will use the signs defined in your lsp client
@@ -45,9 +45,9 @@ require("trouble").setup {
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
-key("n", "<leader>t", "<cmd>TroubleTggle<cr>", opts)
-key("n", "<leader>w", "<cmd>Trouble workspace_diagnostics<cr>", opts)
-key("n", "<leader>d", "<cmd>Trouble document_diagnostics<cr>", opts)
-key("n", "<leader>l", "<cmd>Trouble loclist<cr>", opts)
-key("n", "<leader>q", "<cmd>Trouble quickfix<cr>", opts)
-key("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+key("n", "<leader>t", "<cmd>TroubleToggle<cr>", opts)
+key("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+key("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+key("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+key("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+key("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", opts)
