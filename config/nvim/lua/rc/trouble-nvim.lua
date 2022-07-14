@@ -45,10 +45,11 @@ require("trouble").setup {
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
-key("n", "[tl]w", "<cmd>Trouble workspace_diagnostics<cr>", opts)
-key("n", "[tl]/", "<cmd>Trouble lsp_references<cr>", opts)
-key("n", "[tl]f", "<cmd>Trouble document_diagnostics<cr>", opts)
 key("n", "[tl]l", "<cmd>Trouble loclist<cr>", opts)
 key("n", "[tl]q", "<cmd>Trouble quickfix<cr>", opts)
+key("n", "[tl]/", "<cmd>Trouble lsp_references<cr>", opts)
 key("n", "[tl]d", "<cmd>Trouble lsp_definitions<cr>", opts)
+key("n", "[tl]i", "<cmd>Trouble lsp_implementations<cr>", opts)
+key("n", "[tl]f", "<cmd>Trouble document_diagnostics<cr>", opts)
 key("n", "[tl]t", "<cmd>Trouble lsp_type_definitions<cr>", opts)
+key("n", "[tl]w", "<cmd>Trouble workspace_diagnostics<cr>", opts)

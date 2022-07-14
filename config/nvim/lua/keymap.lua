@@ -99,17 +99,18 @@ key('n', '<cr>', 'i<cr><esc>', optstt)
 -- tabにて対応ペアにジャンプ
 key('n', '<tab>', '%', optstt)
 -- ウィンドウを分割
--- key('n', 'sp', ':<c-u>sp<cr>', optstt)
--- key('n', 'sv', ':<c-u>vs<cr>', optstt)
+key('n', 'sp', ':<c-u>sp<cr>', optstt)
+key('n', 'sv', ':<c-u>vs<cr>', optstt)
 -- 分割したウィンドウ間を移動
--- key('n', 'sj', '<c-w>j<cr>', optstt)
--- key('n', 'sk', '<c-w>k<cr>', optstt)
--- key('n', 'sl', '<c-w>l<cr>', optstt)
--- key('n', 'sh', '<c-w>h<cr>', optstt)
+key('n', 'sw', '<c-w>w<cr>', optstt)
+key('n', 'sj', '<c-w>j<cr>', optstt)
+key('n', 'sk', '<c-w>k<cr>', optstt)
+key('n', 'sl', '<c-w>l<cr>', optstt)
+key('n', 'sh', '<c-w>h<cr>', optstt)
 -- ウィンドウを閉じる
--- key('n', 'sc', '<c-w>c<cr>', optstt)
+key('n', 'sc', '<c-w>c<cr>', optstt)
 -- 現在のウィンドウ以外のウィンドウを閉じる
--- key('n', 'so', '<c-w>o<cr>', optstt)
+key('n', 'so', '<c-w>o<cr>', optstt)
 -- 新規タブ
 -- key('n', 'tn', ':<c-u>tabnew<cr>', optstt)
 -- バッファを閉じる
