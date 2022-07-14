@@ -33,7 +33,7 @@ require 'lualine'.setup {
             'mode', eskk,
         },
         lualine_b = {
-            { 'filename', file_status = true, path = 0, symbols = { modified = '  ', readonly = '  ' } },
+            { 'filename', file_status = true, path = 1, symbols = { modified = '  ', readonly = '  ' } },
         },
         lualine_c = {
             {
