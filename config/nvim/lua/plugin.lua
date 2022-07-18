@@ -200,13 +200,13 @@ require("packer").startup(function(use)
 
     -- Autopairs
     -- https://github.com/windwp/nvim-autopairs
-    use({
-        "windwp/nvim-autopairs",
-        event = "VimEnter",
-        config = function()
-            require("rc.nvim-autopairs")
-        end,
-    })
+    -- use({
+    --     "windwp/nvim-autopairs",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require("rc.nvim-autopairs")
+    --     end,
+    -- })
 
     -- Snippet
     -- https://github.com/honza/vim-snippets
@@ -304,9 +304,6 @@ require("packer").startup(function(use)
         end
     })
 
-    -- use({ "vim-denops/denops.vim" })
-    -- use({ "vim-skk/skkeleton", requires = { "vim-denops/denops.vim" } })
-    -- use({ "rinx/cmp-skkeleton", after = { "nvim-cmp", "skkeleton" } })
     use({
         "tyru/eskk.vim",
         opt = true,
@@ -517,6 +514,18 @@ require("packer").startup(function(use)
             require("rc.vim-better-whitespace")
         end
     })
+
+    -- A more adventurous wildmenu
+    -- https://github.com/gelguy/wilder.nvim
+    use({
+        'gelguy/wilder.nvim',
+        event = "CmdlineEnter",
+        run = ":UpdateRemotePlugins",
+        config = function()
+            require("rc.wilder-nvim")
+        end,
+    }
+    )
 
     if packer_bootstrap then
         require("packer").sync()

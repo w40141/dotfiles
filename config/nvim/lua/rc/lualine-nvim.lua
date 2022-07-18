@@ -38,7 +38,7 @@ require 'lualine'.setup {
         lualine_c = {
             {
                 'diagnostics',
-                sources = { 'nvim_diagnostic' },
+                sources = { 'coc' },
                 sections = { 'error', 'warn', 'info', 'hint' },
                 diagnostics_color = {
                     error = 'DiagnosticError',
