@@ -25,12 +25,6 @@ cmd([[command! -nargs=? Fold :call CocAction('fold', <f-args>)]])
 -- use `:OR` for organize import of current buffer
 cmd([[command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport')]])
 
--- For golang
-cmd([[autocmd MyAutoCmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')]])
-cmd([[autocmd MyAutoCmd FileType go nmap gtj :CocCommand go.tags.add json<CR>]])
-cmd([[autocmd MyAutoCmd FileType go nmap gty :CocCommand go.tags.add yaml<CR>]])
-cmd([[autocmd MyAutoCmd FileType go nmap gtx :CocCommand go.tags.clear<CR>]])
-
 -- Setup formatexpr specified filetype(s).
 -- Update signature help on jump placeholder
 cmd([[augroup MyAutoCmd]])

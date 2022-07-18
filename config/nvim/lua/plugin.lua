@@ -209,89 +209,98 @@ require("packer").startup(function(use)
     })
 
     -- Snippet
-    -- https://github.com/rafamadriz/friendly-snippets
-    -- use({ "rafamadriz/friendly-snippets" })
     -- https://github.com/honza/vim-snippets
     use({ "honza/vim-snippets" })
 
-    -- https://github.com/dcampos/nvim-snippy
+    -- -- https://github.com/dcampos/nvim-snippy
+    -- use({
+    --     "dcampos/nvim-snippy",
+    --     event = "VimEnter",
+    --     config = function()
+    --         require("rc.nvim-snippy")
+    --     end,
+    -- })
+    --
+    -- -- Cmp
+    -- -- https://github.com/hrsh7th/nvim-cmp
+    -- use({
+    --     "hrsh7th/nvim-cmp",
+    --     requires = {
+    --         { "windwp/nvim-autopairs", opt = true, event = "VimEnter" },
+    --     },
+    --     after = { "nvim-autopairs" },
+    --     config = function()
+    --         require("rc.nvim-cmp")
+    --     end,
+    -- })
+    -- -- https://github.com/onsails/lspkind.nvim
+    -- use({
+    --     "onsails/lspkind-nvim",
+    --     module = "lspkind",
+    --     config = function()
+    --         require("rc.lspkind-nvim")
+    --     end,
+    -- })
+    -- -- https://github.com/hrsh7th/cmp-nvim-lsp
+    -- use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
+    -- -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+    -- use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
+    -- use({ "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-buffer
+    -- use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-path
+    -- use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-omin
+    -- use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-nvim-lua
+    -- use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-emoji
+    -- use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
+    -- -- https://github.com/f3fora/cmp-spell
+    -- use({ "f3fora/cmp-spell", after = "nvim-cmp" })
+    -- -- https://github.com/yutkat/cmp-mocword
+    -- use({ "yutkat/cmp-mocword", after = "nvim-cmp" })
+    -- -- https://github.com/ray-x/cmp-treesitter
+    -- use({ "ray-x/cmp-treesitter", after = "nvim-cmp" })
+    -- -- https://github.com/hrsh7th/cmp-cmdline
+    -- use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
+    -- -- https://github.com/dcampos/cmp-snippy
+    -- use({ "dcampos/cmp-snippy", after = { "nvim-cmp" } })
+    --
+    -- -- LSP
+    -- -- https://github.com/neovim/nvim-lspconfig
+    -- use({
+    --     "neovim/nvim-lspconfig",
+    --     config = function()
+    --         require("rc.nvim-lspconfig")
+    --     end
+    -- })
+    -- -- https://github.com/tamago324/nlsp-settings.nvim
+    -- use({
+    --     "tamago324/nlsp-settings.nvim",
+    --     after = { "nvim-lspconfig" },
+    --     config = function()
+    --         require("rc/nlsp-settings-nvim")
+    --     end,
+    -- })
+    -- -- https://github.com/williamboman/nvim-lsp-installer
+    -- use({
+    --     "williamboman/nvim-lsp-installer",
+    --     after = { "nvim-lspconfig", "cmp-nvim-lsp", "nlsp-settings.nvim" },
+    --     config = function()
+    --         require("rc.nvim-lsp-installer")
+    --     end
+    -- })
+
+    -- https://github.com/neoclide/coc.nvim
     use({
-        "dcampos/nvim-snippy",
+        "neoclide/coc.nvim",
+        branch = "release",
+        run = "yarn install --frozen-lockfile",
         event = "VimEnter",
         config = function()
-            require("rc.nvim-snippy")
-        end,
-    })
-
-    -- Cmp
-    -- https://github.com/hrsh7th/nvim-cmp
-    use({
-        "hrsh7th/nvim-cmp",
-        requires = {
-            { "windwp/nvim-autopairs", opt = true, event = "VimEnter" },
-        },
-        after = { "nvim-autopairs" },
-        config = function()
-            require("rc.nvim-cmp")
-        end,
-    })
-    -- https://github.com/onsails/lspkind.nvim
-    use({
-        "onsails/lspkind-nvim",
-        module = "lspkind",
-        config = function()
-            require("rc.lspkind-nvim")
-        end,
-    })
-    -- https://github.com/hrsh7th/cmp-nvim-lsp
-    use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
-    -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
-    use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
-    use({ "hrsh7th/cmp-nvim-lsp-document-symbol", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-buffer
-    use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-path
-    use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-omin
-    use({ "hrsh7th/cmp-omni", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-nvim-lua
-    use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-emoji
-    use({ "hrsh7th/cmp-emoji", after = "nvim-cmp" })
-    -- https://github.com/f3fora/cmp-spell
-    use({ "f3fora/cmp-spell", after = "nvim-cmp" })
-    -- https://github.com/yutkat/cmp-mocword
-    use({ "yutkat/cmp-mocword", after = "nvim-cmp" })
-    -- https://github.com/ray-x/cmp-treesitter
-    use({ "ray-x/cmp-treesitter", after = "nvim-cmp" })
-    -- https://github.com/hrsh7th/cmp-cmdline
-    use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
-    -- https://github.com/dcampos/cmp-snippy
-    use({ "dcampos/cmp-snippy", after = { "nvim-cmp" } })
-
-    -- LSP
-    -- https://github.com/neovim/nvim-lspconfig
-    use({
-        "neovim/nvim-lspconfig",
-        config = function()
-            require("rc.nvim-lspconfig")
-        end
-    })
-    -- https://github.com/tamago324/nlsp-settings.nvim
-    use({
-        "tamago324/nlsp-settings.nvim",
-        after = { "nvim-lspconfig" },
-        config = function()
-            require("rc/nlsp-settings-nvim")
-        end,
-    })
-    -- https://github.com/williamboman/nvim-lsp-installer
-    use({
-        "williamboman/nvim-lsp-installer",
-        after = { "nvim-lspconfig", "cmp-nvim-lsp", "nlsp-settings.nvim" },
-        config = function()
-            require("rc.nvim-lsp-installer")
+            require("rc.coc-nvim")
         end
     })
 
