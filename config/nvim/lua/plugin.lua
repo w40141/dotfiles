@@ -234,13 +234,13 @@ require("packer").startup(function(use)
     --     end,
     -- })
     -- -- https://github.com/onsails/lspkind.nvim
-    -- use({
-    --     "onsails/lspkind-nvim",
-    --     module = "lspkind",
-    --     config = function()
-    --         require("rc.lspkind-nvim")
-    --     end,
-    -- })
+    use({
+        "onsails/lspkind-nvim",
+        module = "lspkind",
+        config = function()
+            require("rc.lspkind-nvim")
+        end,
+    })
     -- -- https://github.com/hrsh7th/cmp-nvim-lsp
     -- use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
     -- -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help

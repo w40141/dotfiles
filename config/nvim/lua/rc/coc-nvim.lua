@@ -121,6 +121,7 @@ key('x', '[dev]a', [[<plug>(coc-codeaction-selected)iw]], { noremap = false, sil
 key('n', '[dev]q', [[<plug>(coc-fix-current)]], { noremap = false, silent = false })
 key('n', '[dev]f', [[:<c-u>Format<cr>]], { noremap = true })
 
+-- TODO: fzf-previewは無い
 key('n', '[ff]q', [[:<c-u>CocCommand fzf-preview.CocDiagnostics<cr>]], { noremap = true, silent = true })
 key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap = true, silent = true })
 key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
