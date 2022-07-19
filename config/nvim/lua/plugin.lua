@@ -98,6 +98,7 @@ require("packer").startup(function(use)
             require("spellsitter").setup()
         end
     })
+    use { 'fannheyward/telescope-coc.nvim' }
 
     -- Annotation generator
     -- https://github.com/danymat/neogen

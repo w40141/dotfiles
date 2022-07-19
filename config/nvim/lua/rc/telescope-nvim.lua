@@ -85,8 +85,10 @@ telescope.setup({
         }
     },
     extensions = {
+        coc
     },
 })
+telescope.load_extension('coc')
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -103,3 +105,25 @@ key("n", "[ff]gs", builtin.git_status, opts)
 key("n", "[ff]gc", builtin.git_commits, opts)
 key("n", "[ff]gC", builtin.git_bcommits, opts)
 key("n", "[ff]gb", builtin.git_branches, opts)
+-- key('n', '[ff]q', [[:<c-u>CocCommand fzf-preview.CocDiagnostics<cr>]], { noremap = true, silent = true })
+-- key('n', '[ff]r', [[:<c-u>CocCommand fzf-preview.CocReferences<cr>]], { noremap = true, silent = true })
+-- key('n', '[ff]d', [[:<c-u>CocCommand fzf-preview.CocDefinition<cr>]], { noremap = true, silent = true })
+-- key('n', '[ff]t', [[:<c-u>CocCommand fzf-preview.CocTypeDefinition<cr>]], { noremap = true, silent = true })
+-- key('n', '[ff]o', [[:<c-u>CocCommand fzf-preview.CocOutline --add-fzf-arg=--exact --add-fzf-arg=--no-sort<cr>]],
+--     { noremap = true, silent = true })
+-- mru
+-- links
+-- commands
+-- locations
+-- references
+-- definitions
+-- declarations
+-- implementations
+-- type_definitions
+-- diagnostics
+-- code_actions
+-- line_code_actions
+-- file_code_actions
+-- document_symbols
+-- workspace_symbols
+-- workspace_diagnostics
