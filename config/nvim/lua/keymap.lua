@@ -114,7 +114,8 @@ key('n', 'so', '<c-w>o<cr>', optstt)
 -- 新規タブ
 -- key('n', 'tn', ':<c-u>tabnew<cr>', optstt)
 -- バッファを閉じる
-key('n', 'qb', ':<c-u>bd<cr>', optstt)
+key('n', 'qh', ':<c-u>bd<cr>', optstt)
+key('n', 'ql', ':<c-u>Bd<cr>', optstt)
 -- 直前のバッファを開く
 -- key('n', 'bb', ':b#<cr>', optstt)
 -- バッファリストの先頭を開く
@@ -134,11 +135,6 @@ key('n', 'ZQ', '<nop>', optstt)
 key('n', '[t', 'gT', optstt)
 -- 次のタブに切り替え
 key('n', ']t', 'gt', optstt)
--- 矢印キー無効
-key('n', '<up>', '<nop>', optstt)
-key('n', '<down>', '<nop>', optstt)
-key('n', '<left>', '<nop>', optstt)
-key('n', '<right>', '<nop>', optstt)
 
 -- i[nore]map
 -- 挿入モードでの移動
@@ -150,7 +146,12 @@ key('i', '<c-f>', '<right>', optstt)
 key('i', 'jj', '<esc>', optstt)
 -- ctrl-v で insert モードで貼り付け
 key('i', '<c-v>', '<eSC>"*pa', optstt)
+
 -- 矢印キー無効
+key('n', '<up>', '<nop>', optstt)
+key('n', '<down>', '<nop>', optstt)
+key('n', '<left>', '<nop>', optstt)
+key('n', '<right>', '<nop>', optstt)
 key('i', '<up>', '<nop>', optstt)
 key('i', '<down>', '<nop>', optstt)
 key('i', '<left>', '<nop>', optstt)

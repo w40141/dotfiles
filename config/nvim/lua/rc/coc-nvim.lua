@@ -1,6 +1,5 @@
 -- LSP Complement
 -- https://github.com/neoclide/coc.nvim
-local key = vim.api.nvim_set_keymap
 local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
@@ -93,6 +92,7 @@ g['coc_snippet_next'] = '<c-j>'
 -- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 g['coc_snippet_prev'] = '<c-k>'
 
+local key = vim.keymap.set
 key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]],
     { expr = true, noremap = true, silent = true })
 key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
@@ -101,26 +101,26 @@ key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\
 
 local ff = { noremap = false, silent = false }
 local tf = { noremap = true, silent = false }
-key('i', '<c-l>', [[<plug>(coc-snippets-expand)]], ff)
-key('v', '<c-j>', [[<plug>(coc-snippets-select)]], ff)
-key('i', '<c-j>', [[<plug>(coc-snippets-expand-jump)]], ff)
-key('x', '[dev]x', [[<plug>(coc-convert-snippet)]], tf)
-key('i', '<c-@>', [[coc#refresh]], tf)
-key('n', 'H', [[:call CocAction('doHover')<cr>]], tf)
-key('n', '[g', [[<plug>(coc-diagnostic-prev)]], ff)
-key('n', ']g', [[<plug>(coc-diagnostic-next)]], ff)
-key('n', '[dev]d', [[<plug>(coc-definition)]], ff)
-key('n', '[dev]y', [[<plug>(coc-type-definition)]], ff)
-key('n', '[dev]i', [[<plug>(coc-implementation)]], ff)
-key('n', '[dev]r', [[<plug>(coc-references)]], ff)
-key('n', '[dev]n', [[<plug>(coc-rename)]], ff)
-key('n', '[dev]t', [[:<C-u>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>]], tf)
-key('n', '[dev]fs', [[<plug>(coc-format-selected)]], ff)
-key('x', '[dev]fs', [[<plug>(coc-format-selected)]], ff)
-key('n', '[dev]a', [[<plug>(coc-codeaction-selected)iw]], ff)
-key('x', '[dev]a', [[<plug>(coc-codeaction-selected)iw]], ff)
-key('n', '[dev]q', [[<plug>(coc-fix-current)]], ff)
-key('n', '[dev]f', [[:<c-u>Format<cr>]], tf)
+key('i', '<c-l>', "<plug>(coc-snippets-expand)", ff)
+key('v', '<c-j>', "<plug>(coc-snippets-select)", ff)
+key('i', '<c-j>', "<plug>(coc-snippets-expand-jump)", ff)
+key('x', '[dev]x', "<plug>(coc-convert-snippet)", tf)
+key('i', '<c-@>', "coc#refresh", tf)
+key('n', 'H', "<cmd>call CocAction('doHover')<cr>", tf)
+key('n', '[g', "<plug>(coc-diagnostic-prev)", ff)
+key('n', ']g', "<plug>(coc-diagnostic-next)", ff)
+key('n', '[dev]d', "<plug>(coc-definition)", ff)
+key('n', '[dev]y', "<plug>(coc-type-definition)", ff)
+key('n', '[dev]i', "<plug>(coc-implementation)", ff)
+key('n', '[dev]r', "<plug>(coc-references)", ff)
+key('n', '[dev]n', "<plug>(coc-rename)", ff)
+key('n', '[dev]t', "<cmd>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>", tf)
+key('n', '[dev]fs', "<plug>(coc-format-selected)", ff)
+key('x', '[dev]fs', "<plug>(coc-format-selected)", ff)
+key('n', '[dev]a', "<plug>(coc-codeaction-selected)iw", ff)
+key('x', '[dev]a', "<plug>(coc-codeaction-selected)iw", ff)
+key('n', '[dev]q', "<plug>(coc-fix-current)", ff)
+key('n', '[dev]f', ":<c-u>Format<cr>", tf)
 
 cmd([[hi! CocErrorSign guifg=#E82424]])
 cmd([[hi! CocWarninSign guifg=#FF9E3B]])

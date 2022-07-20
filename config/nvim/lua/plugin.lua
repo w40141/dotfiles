@@ -528,6 +528,14 @@ require("packer").startup(function(use)
     }
     )
 
+    -- https://github.com/terryma/vim-expand-region
+    use {
+        'terryma/vim-expand-region',
+        config = function()
+            require("rc.vim-expand-region")
+        end
+    }
+
     if packer_bootstrap then
         require("packer").sync()
     end
