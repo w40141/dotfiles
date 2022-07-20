@@ -93,11 +93,10 @@ g['coc_snippet_next'] = '<c-j>'
 g['coc_snippet_prev'] = '<c-k>'
 
 local key = vim.keymap.set
-key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]],
-    { expr = true, noremap = true, silent = true })
-key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], { expr = true, noremap = true, silent = true })
-key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]],
-    { expr = true, noremap = true, silent = true })
+local ttt = { expr = true, noremap = true, silent = true }
+key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], ttt)
+key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], ttt)
+key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], ttt)
 
 local ff = { noremap = false, silent = false }
 local tf = { noremap = true, silent = false }
