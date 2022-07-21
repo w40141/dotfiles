@@ -1,10 +1,3 @@
---  eskk is pure Vim script implementation of input method engine SKK
---  https://github.com/tyru/eskk.vim
-
---  https://zenn.dev/kouta/articles/87947515bff4da
---  https://hakasenote.hnishi.com/2021/20210105-vim-eskk/
-
-
 local g = vim.g
 g["toggle_markdown_eskk"] = 1
 g["eskk#directory"] = "~/.config/eskk"
@@ -29,7 +22,7 @@ g["eskk#marker_henkan_select"] = "[選択]"
 g["eskk#marker_okuri"] = "[送り]"
 g["eskk#marker_jisyo_touroku"] = "[辞書]"
 
-local key = vim.api.nvim_set_keymap
-key('i', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = true })
+local key = vim.keymap.set
+key('i', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = false })
 key('i', ';;', "pumvisible() ? coc#_select_confirm() : coc#refresh()", { expr = true, noremap = true, silent = true })
-key('c', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = true })
+key('c', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = false })

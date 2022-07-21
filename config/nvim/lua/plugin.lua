@@ -138,6 +138,14 @@ require("packer").startup(function(use)
     })
 
     -- Code outline
+    -- -- https://github.com/onsails/lspkind.nvim
+    use({
+        "onsails/lspkind-nvim",
+        module = "lspkind",
+        config = function()
+            require("rc.lspkind-nvim")
+        end,
+    })
     -- https://github.com/stevearc/aerial.nvim
     use({
         "stevearc/aerial.nvim",
@@ -199,6 +207,21 @@ require("packer").startup(function(use)
         end
     }
 
+    -- Snippet
+    -- https://github.com/honza/vim-snippets
+    use({ "honza/vim-snippets" })
+
+    -- https://github.com/neoclide/coc.nvim
+    use({
+        "neoclide/coc.nvim",
+        branch = "release",
+        -- run = "yarn install --frozen-lockfile",
+        event = "VimEnter",
+        config = function()
+            require("rc.coc-nvim")
+        end
+    })
+
     -- Autopairs
     -- https://github.com/windwp/nvim-autopairs
     -- use({
@@ -208,10 +231,6 @@ require("packer").startup(function(use)
     --         require("rc.nvim-autopairs")
     --     end,
     -- })
-
-    -- Snippet
-    -- https://github.com/honza/vim-snippets
-    use({ "honza/vim-snippets" })
 
     -- -- https://github.com/dcampos/nvim-snippy
     -- use({
@@ -234,14 +253,6 @@ require("packer").startup(function(use)
     --         require("rc.nvim-cmp")
     --     end,
     -- })
-    -- -- https://github.com/onsails/lspkind.nvim
-    use({
-        "onsails/lspkind-nvim",
-        module = "lspkind",
-        config = function()
-            require("rc.lspkind-nvim")
-        end,
-    })
     -- -- https://github.com/hrsh7th/cmp-nvim-lsp
     -- use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
     -- -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
@@ -294,17 +305,8 @@ require("packer").startup(function(use)
     --     end
     -- })
 
-    -- https://github.com/neoclide/coc.nvim
-    use({
-        "neoclide/coc.nvim",
-        branch = "release",
-        run = "yarn install --frozen-lockfile",
-        event = "VimEnter",
-        config = function()
-            require("rc.coc-nvim")
-        end
-    })
-
+    --  engine SKK
+    --  https://github.com/tyru/eskk.vim
     use({
         "tyru/eskk.vim",
         opt = true,
@@ -329,13 +331,6 @@ require("packer").startup(function(use)
             vim.notify = require('notify')
         end
     })
-    -- use({
-    --     'yutkat/taskrun.nvim',
-    --     after = { "toggleterm.nvim", "nvim-notify" },
-    --     config = function()
-    --         require("rc/taskrun-nvim")
-    --     end,
-    -- })
 
     use({
         "vim-jp/vimdoc-ja",
