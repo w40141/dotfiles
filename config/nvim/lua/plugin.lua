@@ -524,10 +524,19 @@ require("packer").startup(function(use)
     )
 
     -- https://github.com/terryma/vim-expand-region
+    -- use {
+    --     'terryma/vim-expand-region',
+    --     config = function()
+    --         require("rc.vim-expand-region")
+    --     end
+    -- }
+
+    -- https://github.com/rapan931/lasterisk.nvim
     use {
-        'terryma/vim-expand-region',
+        'rapan931/lasterisk.nvim',
+        event = "VimEnter",
         config = function()
-            require("rc.vim-expand-region")
+            require("rc.lasterisk-nvim")
         end
     }
 
