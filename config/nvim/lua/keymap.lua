@@ -114,8 +114,8 @@ key('n', 'so', '<c-w>o<cr>', optstt)
 -- 新規タブ
 -- key('n', 'tn', ':<c-u>tabnew<cr>', optstt)
 -- バッファを閉じる
-key('n', 'qh', ':<c-u>bd<cr>', optstt)
-key('n', 'ql', ':<c-u>Bd<cr>', optstt)
+-- key('n', 'qh', ':<c-u>bd<cr>', optstt)
+-- key('n', 'ql', ':<c-u>Bd<cr>', optstt)
 -- 直前のバッファを開く
 -- key('n', 'bb', ':b#<cr>', optstt)
 -- バッファリストの先頭を開く

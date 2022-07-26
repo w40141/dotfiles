@@ -66,6 +66,7 @@ telescope.setup({
             n = {
                 ["<C-t>"] = action_layout.toggle_preview,
                 ["<c-o>"] = trouble.open_with_trouble,
+                ["<C-g>"] = custom_actions.multi_selection_open,
             },
             i = {
                 ["<c-o>"] = trouble.open_with_trouble,

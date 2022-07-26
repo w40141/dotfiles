@@ -388,6 +388,9 @@ require("packer").startup(function(use)
     use({
         "famiu/bufdelete.nvim",
         event = "VimEnter",
+        config = function()
+            require("rc.bufdelete-nvim")
+        end
     })
 
     -- File finder
