@@ -387,10 +387,7 @@ require("packer").startup(function(use)
     -- https://github.com/famiu/bufdelete.nvim
     use({
         "famiu/bufdelete.nvim",
-        event = "VimEnter",
-        config = function()
-            require("rc.bufdelete-nvim")
-        end
+        event = "CmdlineEnter",
     })
 
     -- File finder
