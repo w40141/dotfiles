@@ -201,5 +201,6 @@
     "usecase",
     "vite",
     "xorshift"
-  ]
+  ],
+  "Lua.telemetry.enable": true
 }

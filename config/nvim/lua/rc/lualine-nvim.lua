@@ -33,7 +33,9 @@ require 'lualine'.setup {
             'mode', eskk,
         },
         lualine_b = {
-            { 'filename', file_status = true, path = 1, symbols = { modified = '  ', readonly = '  ' } },
+            { 'filename', file_status = true, path = 3, shorting_target = 30,
+                symbols = { modified = '  ', readonly = '  ' } },
+            search_result,
         },
         lualine_c = {
             {
@@ -48,8 +50,7 @@ require 'lualine'.setup {
                 },
                 symbols = { Error = "", Warn = "", Hint = "", Info = "" },
                 colored = true,
-            },
-            search_result,
+            }
         },
         lualine_x = {
             "aerial",
@@ -66,7 +67,7 @@ require 'lualine'.setup {
                 },
                 symbols = { added = ' ', modified = ' ', removed = ' ' },
             },
-            -- 'branch',
+            'branch',
         },
         lualine_z = { 'location', 'progress' },
     },
