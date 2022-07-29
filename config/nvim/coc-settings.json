@@ -70,7 +70,7 @@
   "java.configuration.runtimes": [
     {
       "name": "JavaSE-11",
-      "path": "~/.asdf/installs/java/corretto-11.0.13.8.1",
+      "path": "~/.asdf/installs/java/corretto-11.0.16.8.1/bin",
       "default": true
     }
   ],
