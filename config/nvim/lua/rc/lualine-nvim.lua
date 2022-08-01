@@ -33,7 +33,7 @@ require 'lualine'.setup {
             'mode', eskk,
         },
         lualine_b = {
-            { 'filename', file_status = true, path = 3, shorting_target = 20,
+            { 'filename', file_status = true, path = 0,
                 symbols = { modified = '  ', readonly = '  ' } },
             search_result,
         },
