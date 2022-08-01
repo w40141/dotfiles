@@ -21,6 +21,7 @@ dashboard.section.buttons.val = {
     dashboard.button('s', ' Settings', ':e $MYVIMRC<CR>'),
     dashboard.button('c', '﫵Check health', ':checkhealth<cr>'),
     dashboard.button('u', ' Update plugins', ':PackerSync<CR>'),
+    dashboard.button('n', ' Update coc-plugins', ':CocUpdate<CR>'),
     dashboard.button('t', ' Measure time', ':StartupTime<CR>'),
     dashboard.button('q', ' Quit', ':qa<CR>'),
 }
