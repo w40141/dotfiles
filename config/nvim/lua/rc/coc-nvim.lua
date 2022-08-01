@@ -4,15 +4,6 @@ local g = vim.g
 local cmd = vim.cmd
 local fn = vim.fn
 
-function _G.check_back_space()
-    local col = fn.col(".") - 1
-    if col == 0 or fn.getline("."):sub(col, col):match("%s") then
-        return true
-    else
-        return false
-    end
-end
-
 -- If the following plugins dont install, the plugins are installed automatic when neovim starts.
 -- Use `:Format` to format current buffer
 cmd([[command! -nargs=0 Format :call CocAction('format')]])
@@ -93,11 +84,35 @@ g['coc_snippet_next'] = '<c-j>'
 -- Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 g['coc_snippet_prev'] = '<c-k>'
 
+function _G.check_back_space()
+    local col = fn.col(".") - 1
+    if col == 0 or fn.getline("."):sub(col, col):match("%s") then
+        return true
+    else
+        return false
+    end
+end
+
 local key = vim.keymap.set
 local ttt = { expr = true, noremap = true, silent = true }
-key('i', '<tab>', [[pumvisible() ? "\<c-n>" : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], ttt)
-key('i', '<s-tab>', [[pumvisible() ? "\<c-p>" : "\<c-h>"]], ttt)
-key('i', '<cr>', [[pumvisible() ? "\<c-y>" : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], ttt)
+key('i', '<tab>', [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], ttt)
+-- local coc = require('coc')
+-- key('i', '<tab>',
+--     function ()
+--         return coc.pum.visible() and coc.pum.next(1) or
+--             function()
+--                 local col = fn.col(".") - 1
+--                 if col == 0 or fn.getline("."):sub(col, col):match("%s") then
+--                     return "<TAB>"
+--                 else
+--                     return coc.refresh()
+--                 end
+--             end
+--     end,
+-- ttt)
+key('i', '<s-tab>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"]], ttt)
+-- key('i', '<cr>', [[coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], ttt)
+key('i', '<cr>', [[coc#pum#visible() ? coc#_select_confirm() : "\<CR>"]], ttt)
 
 local ff = { noremap = false, silent = false }
 local tf = { noremap = true, silent = false }
