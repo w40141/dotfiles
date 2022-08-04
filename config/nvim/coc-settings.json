@@ -105,7 +105,7 @@
         ".git/",
         ".hg/"
       ],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
+      "filetypes": ["c", "cpp", "objc", "objcpp", "proto"]
     },
     "haskell": {
       "command": "haskell-language-server-wrapper",
