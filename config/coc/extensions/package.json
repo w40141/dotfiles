@@ -22,7 +22,7 @@
     "coc-prisma": ">=0.11.0",
     "coc-pyright": ">=1.1.265",
     "coc-rust-analyzer": ">=0.64.1",
-    "coc-snippets": ">=3.1.0",
+    "coc-snippets": ">=3.1.1",
     "coc-solargraph": ">=1.2.4",
     "coc-spell-checker": ">=1.2.0",
     "coc-sql": ">=0.10.4",
