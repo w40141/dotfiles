@@ -67,13 +67,6 @@
   "python.linting.mypyPath": "~/.local/bin/mypy",
   "python.linting.pydocstyleEnabled": true,
   "python.analysis.useLibraryCodeForTypes": false,
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-11",
-      "path": "~/.asdf/installs/java/corretto-11.0.16.8.1/bin",
-      "default": true
-    }
-  ],
   "java.format.enabled": true,
   "java.format.settings.profile": "google-java-format",
   "java.saveActions.organizeImports": false,

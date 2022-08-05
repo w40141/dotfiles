@@ -54,7 +54,7 @@ telescope.setup({
             "--column",
             "--smart-case",
         },
-        path_display = { "truncate" },
+        path_display = { "shorten" },
         dynamic_preview_title = true,
         winblend = 0,
         color_devicons = true,
