@@ -54,13 +54,15 @@ telescope.setup({
             "--column",
             "--smart-case",
         },
-        path_display = { "shorten" },
+        find_command = { "fd", "-t=f", "-a" },
+        path_display = { shorten = { len = 5, exclude = { 5, -5 } } },
+        wrap_results = true,
         dynamic_preview_title = true,
         winblend = 0,
         color_devicons = true,
         use_less = true,
         scroll_strategy = "cycle",
-        set_env = { ["COLORTERM"] = "truecolor" },
+        set_env = { COLORTERM = "truecolor" },
         buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
         mappings = {
             n = {
