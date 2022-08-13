@@ -1,4 +1,4 @@
-python 3.9.13
+python 3.10.6
 ruby 3.0.2
 nodejs 16.9.1
 yarn 1.22.18
@@ -8,5 +8,5 @@ erlang 24.3.3
 java corretto-11.0.16.8.1
 elm 0.19.1
 stack 2.7.3
-poetry 1.1.12
+poetry 1.1.14
 kotlin 1.4.30
