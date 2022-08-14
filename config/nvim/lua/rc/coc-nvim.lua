@@ -96,22 +96,7 @@ end
 local key = vim.keymap.set
 local ttt = { expr = true, noremap = true, silent = true }
 key('i', '<tab>', [[coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "\<TAB>" : coc#refresh()]], ttt)
--- local coc = require('coc')
--- key('i', '<tab>',
---     function ()
---         return coc.pum.visible() and coc.pum.next(1) or
---             function()
---                 local col = fn.col(".") - 1
---                 if col == 0 or fn.getline("."):sub(col, col):match("%s") then
---                     return "<TAB>"
---                 else
---                     return coc.refresh()
---                 end
---             end
---     end,
--- ttt)
 key('i', '<s-tab>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"]], ttt)
--- key('i', '<cr>', [[coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], ttt)
 key('i', '<cr>', [[coc#pum#visible() ? coc#_select_confirm() : "\<CR>"]], ttt)
 
 local ff = { noremap = false, silent = false }

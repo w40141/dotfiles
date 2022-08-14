@@ -48,13 +48,13 @@ require("packer").startup(function(use)
     })
 
     -- https://github.com/folke/trouble.nvim
-    use {
+    use({
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require("rc.trouble-nvim")
         end
-    }
+    })
 
     -- Fzf finder
     -- https://github.com/nvim-telescope/telescope.nvim
@@ -520,25 +520,16 @@ require("packer").startup(function(use)
         config = function()
             require("rc.wilder-nvim")
         end,
-    }
-    )
-
-    -- https://github.com/terryma/vim-expand-region
-    -- use {
-    --     'terryma/vim-expand-region',
-    --     config = function()
-    --         require("rc.vim-expand-region")
-    --     end
-    -- }
+    })
 
     -- https://github.com/rapan931/lasterisk.nvim
-    use {
+    use({
         'rapan931/lasterisk.nvim',
         event = "VimEnter",
         config = function()
             require("rc.lasterisk-nvim")
         end
-    }
+    })
 
     if packer_bootstrap then
         require("packer").sync()
