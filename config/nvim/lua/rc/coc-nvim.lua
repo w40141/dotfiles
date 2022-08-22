@@ -23,24 +23,6 @@ cmd([[autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected
 cmd([[autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')]])
 cmd([[augroup end]])
 
-cmd([[
-function! ChoseAction(actions) abort
-  echo join(map(copy(a:actions), { _, v -> v.text }), ", ") .. ": "
-  let result = getcharstr()
-  let result = filter(a:actions, { _, v -> v.text =~# printf(".*\(%s\).*", result)})
-  return len(result) ? result[0].value : ""
-endfunction
-
-function! CocJumpAction() abort
-  let actions = [
-        \ {"text": "(s)plit", "value": "split"},
-        \ {"text": "(v)slit", "value": "vsplit"},
-        \ {"text": "(t)ab", "value": "tabedit"},
-        \ ]
-  return ChoseAction(actions)
-endfunction
-]])
-
 vim.opt.shell = '/bin/zsh'
 cmd([[let $SHELL = "/bin/zsh"]])
 
@@ -117,6 +99,7 @@ key('n', '[dev]n', "<plug>(coc-rename)", ff)
 key('n', '[dev]t', "<cmd>call CocActionAsync('jumpDefinition', CocJumpAction())<CR>", tf)
 key('n', '[dev]fs', "<plug>(coc-format-selected)", ff)
 key('x', '[dev]fs', "<plug>(coc-format-selected)", ff)
+key('x', '[dev]ac', "<plug>(coc-codeaction)", ff)
 key('n', '[dev]a', "<plug>(coc-codeaction-selected)iw", ff)
 key('x', '[dev]a', "<plug>(coc-codeaction-selected)iw", ff)
 key('n', '[dev]q', "<plug>(coc-fix-current)", ff)
