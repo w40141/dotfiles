@@ -2,7 +2,7 @@ python 3.10.6
 ruby 3.0.2
 nodejs 16.9.1
 yarn 1.22.18
-golang 1.17.13
+golang 1.17.1
 elixir 1.13.4-otp-25
 erlang 25.0.3
 java corretto-11.0.16.8.1
