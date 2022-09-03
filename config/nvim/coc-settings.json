@@ -156,6 +156,7 @@
     "Pkcs",
     "Prost",
     "Researchmap",
+    "Ulid",
     "Untrusted",
     "Varchar",
     "actix",
