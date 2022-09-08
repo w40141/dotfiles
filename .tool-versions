@@ -1,11 +1,11 @@
 python 3.10.6
 ruby 3.0.2
-nodejs 16.9.1
+nodejs 16.17.0
 yarn 1.22.18
 golang 1.17.1
 elixir 1.13.4-otp-25
 erlang 25.0.3
-java corretto-17.0.2.8.1
+java openjdk-17.0.2
 elm 0.19.1
 stack 2.7.3
 poetry 1.1.14
