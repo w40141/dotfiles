@@ -100,7 +100,7 @@ set.shiftwidth = 4
 set.softtabstop = 4
 set.tabstop = 4
 -- 新しい行のインデントを現在行と同じにする
--- set.smartindent = true
+set.smartindent = true
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 set.smarttab = true
 -- cプログラムの自動インデント

@@ -26,12 +26,6 @@
     "border": true,
     "highlight": "CocSuggestFloating"
   },
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "markdown",
-    "json",
-    "prisma"
-  ],
   "suggest.completionItemKindLabels": {
     "function": "",
     "method": "",
