@@ -45,12 +45,12 @@ brew "readline"
 brew "asdf"
 # Spell checker with better logic than ispell
 brew "aspell"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
 # Core application library for C
 brew "glib"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Command-line interface for SQLite
 brew "sqlite"
 # General-purpose data compression with high compression ratio
@@ -71,6 +71,8 @@ brew "bingrep"
 brew "icu4c"
 # Collection of portable C++ source libraries
 brew "boost"
+# Yet another cross-platform graphical process/system monitor
+brew "bottom"
 # Freely available high-quality data compressor
 brew "bzip2"
 # Software library to render fonts
@@ -133,6 +135,8 @@ brew "curl"
 brew "dash"
 # Command-line DNS client
 brew "dog"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
 # More intuitive version of du in rust
 brew "dust"
 # General purpose Language Server
@@ -405,12 +409,12 @@ brew "xinput"
 brew "xsv"
 # High-performance, high-quality MPEG-4 video library
 brew "xvid"
-# Tracks most-used directories to make cd smarter
-brew "z"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
 # High-performance, asynchronous messaging library
 brew "zeromq"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 # tbls is a CI-Friendly tool for document a database, written in Go.
 brew "k1low/tap/tbls"
 # Evans: more expressive universal gRPC client
@@ -523,7 +527,7 @@ cask "spotify"
 cask "vagrant"
 # Open-source code editor
 cask "visual-studio-code"
-# Web browser focusing on customization and control
+# Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
 # Multimedia player
 cask "vlc"

@@ -32,5 +32,7 @@
     "coc-vimlsp": ">=0.12.8",
     "coc-word": ">=1.2.2",
     "coc-yaml": ">=1.8.0"
-  }
+  },
+  "disabled": [],
+  "locked": []
 }

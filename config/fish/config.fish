@@ -234,3 +234,5 @@ fish_add_path $HOME/.local/bin
 source /usr/local/opt/asdf/libexec/asdf.fish
 
 . ~/.asdf/plugins/java/set-java-home.fish
+
+zoxide init fish | source
