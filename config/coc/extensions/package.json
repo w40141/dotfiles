@@ -34,5 +34,6 @@
     "coc-yaml": ">=1.8.0"
   },
   "disabled": [],
-  "locked": []
+  "locked": [],
+  "lastUpdate": 1663636646245
 }
