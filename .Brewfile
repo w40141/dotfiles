@@ -17,6 +17,7 @@ tap "michaeleisel/zld"
 tap "mongodb/brew"
 tap "neovim/neovim"
 tap "noborus/tap"
+tap "teamookla/speedtest"
 tap "tgotwig/linux-dust"
 tap "universal-ctags/universal-ctags"
 # C/C++ resolver library and DNS resolver utilities
@@ -27,8 +28,6 @@ brew "giflib"
 brew "libpng"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -55,6 +54,8 @@ brew "glib"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
+# Command-line interface for SQLite
+brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Interpreted, interactive, object-oriented programming language
@@ -85,6 +86,8 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # C string library for manipulating Unicode strings
@@ -133,8 +136,6 @@ brew "rtmpdump"
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
-# Text processing system for reStructuredText
-brew "docutils"
 # Command-line DNS client
 brew "dog"
 # Disk Usage/Free Utility - a better 'df' alternative
@@ -227,8 +228,6 @@ brew "graphite2"
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
 brew "pango"
-# Library to render SVG files using Cairo
-brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Command-line tool for generating regular expressions
@@ -307,8 +306,6 @@ brew "libzip"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # General-purpose lossless data-compression library
@@ -379,8 +376,6 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -431,6 +426,8 @@ brew "michaeleisel/zld/zld"
 brew "mongodb/brew/mongodb-community"
 # Tools for executing SQL queries to CSV, LTSV and JSON
 brew "noborus/tap/trdsql"
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
 # Maintained ctags implementation
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # GPU-accelerated terminal emulator
