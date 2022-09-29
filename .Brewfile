@@ -467,7 +467,6 @@ cask "firefox"
 cask "fitbit-os-simulator"
 cask "font-biz-udgothic"
 cask "font-biz-udmincho"
-cask "font-genshingothic"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 cask "font-hackgen"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
