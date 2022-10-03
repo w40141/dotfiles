@@ -207,6 +207,8 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 fish_add_path /usr/local/sbin
 fish_add_path /usr/local/opt/apr/bin
 fish_add_path /usr/local/opt/curl/bin
@@ -231,8 +233,9 @@ fish_add_path /usr/local/opt/ncurses/bin
 fish_add_path /usr/local/opt/mysql-client/bin
 fish_add_path $HOME/.local/bin
 
-source /usr/local/opt/asdf/libexec/asdf.fish
-
 . ~/.asdf/plugins/java/set-java-home.fish
 
 zoxide init fish | source
+
+
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
