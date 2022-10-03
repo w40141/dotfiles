@@ -13,7 +13,6 @@ tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "k1low/tap"
 tap "ktr0731/evans"
-tap "michaeleisel/zld"
 tap "mongodb/brew"
 tap "neovim/neovim"
 tap "noborus/tap"
@@ -420,8 +419,6 @@ brew "zoxide"
 brew "k1low/tap/tbls"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
-# A faster version of ld, Apple's linker
-brew "michaeleisel/zld/zld"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # Tools for executing SQL queries to CSV, LTSV and JSON
