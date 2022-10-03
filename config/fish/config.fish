@@ -1,5 +1,4 @@
 set -gx XDG_CONFIG_HOME $HOME/.config
-
 set -gx XDG_CACHE_HOME $HOME/.cache
 set -gx XDG_DATA_HOME $HOME/.local/share
 set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
@@ -237,5 +236,8 @@ fish_add_path $HOME/.local/bin
 
 zoxide init fish | source
 
-
-source /opt/homebrew/opt/asdf/libexec/asdf.fish
+if test (uname -m) = "x86_64"
+    source /usr/local/opt/asdf/libexec/asdf.fish
+else
+    source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
