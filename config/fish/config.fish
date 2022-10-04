@@ -8,81 +8,6 @@ set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
 set -gx EDITOR nvim
 set -x BROWSER open
 
-# for ls or exa
-if command -s exa > /dev/null
-    abbr -a ls 'exa --icons'
-    abbr -a la 'exa -a --icons'
-    abbr -a ll 'exa -l --icons'
-    abbr -a lal 'exa -al --icons'
-else
-    abbr -a la 'ls -a'
-    abbr -a ll 'ls -l'
-    abbr -a lal 'ls -al'
-end
-
-# for grep
-if command -s rg > /dev/null
-  abbr -a grep 'rg'
-else
-  abbr -a grep 'grep --color'
-end
-
-# for find
-if command -s fd > /dev/null
-    abbr -a find 'fd'
-end
-
-abbr -a cx 'chmod +x'
-
-# for ghq
-abbr -a gg 'ghq get -p'
-abbr -a ggh 'ghq get'
-abbr -a gc 'ghq create'
-abbr -a gau 'ghq list | ghq get --update --parallel'
-
-abbr -a cd.. 'cd ..'
-abbr -a .. 'cd ..'
-abbr -a ... 'cd ../..'
-abbr -a .... 'cd ../../..'
-abbr -a ..... 'cd ../../../..'
-
-abbr -a po 'poetry run'
-abbr -a pp 'poetry run python'
-
-abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
-abbr -a abs 'source ~/.config/fish/config_abbr.fish'
-
-# for brew
-abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
-abbr -a bci 'brew install --cask'
-abbr -a bbc 'brew bundle --global --force cleanup'
-abbr -a bbd 'brew bundle dump --global --force --describe'
-abbr -a bbi 'brew bundle --global --force'
-
-abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
-abbr -a echop 'echo $PATH | tr " " "\n" | nl'
-
-abbr -a ghci 'stack ghci'
-abbr -a ghc 'stack ghc --'
-abbr -a runghc 'stack runghc --'
-
-functions --copy cd standard_cd
-
-function cd
-  standard_cd $argv; and exa -a --icons
-  set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
-  echo -ne '\033]0;$p\007'
-end
-
-function brew
-  set -xl PATH $PATH # Protect global PATH by local PATH
-  if type -q asdf; and contains $HOME/.asdf/shims $PATH
-    set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
-  end
-
-  command brew $argv
-end
-
 # for fzf
 set -x FZF_DEFAULT_OPTS '--border --color=fg+:10 --height 40% --reverse --select-1 --exit-0'
 set -x FZF_DEFAULT_COMMAND 'rg --files --hidden --glob "!.git/*" 2> /dev/null'
@@ -208,28 +133,28 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 fish_add_path /opt/homebrew/bin
 fish_add_path /opt/homebrew/sbin
-fish_add_path /usr/local/sbin
-fish_add_path /usr/local/opt/apr/bin
-fish_add_path /usr/local/opt/curl/bin
-fish_add_path /usr/local/opt/icu4c/bin
-fish_add_path /usr/local/opt/icu4c/sbin
-fish_add_path /usr/local/opt/libpq/bin
-# fish_add_path /usr/local/opt/llvm/bin
-fish_add_path /usr/local/opt/nss/bin
-fish_add_path /usr/local/opt/qt/bin
-fish_add_path /usr/local/opt/sqlite/bin
-fish_add_path /usr/local/opt/libxml2/bin
-fish_add_path /usr/local/opt/krb5/bin
-fish_add_path /usr/local/opt/krb5/sbin
-fish_add_path /usr/local/opt/sphinx-doc/bin
-fish_add_path /usr/local/opt/openldap/bin
-fish_add_path /usr/local/opt/openldap/sbin
-fish_add_path /usr/local/opt/gnu-getopt/bin
-fish_add_path /usr/local/opt/libxslt/bin
-fish_add_path /usr/local/opt/openssl@1.1/bin
-# fish_add_path /usr/local/opt/openssl@3/bin
-fish_add_path /usr/local/opt/ncurses/bin
-fish_add_path /usr/local/opt/mysql-client/bin
+# fish_add_path /usr/local/sbin
+fish_add_path /opt/homebrew/opt/apr/bin
+fish_add_path /opt/homebrew/opt/curl/bin
+fish_add_path /opt/homebrew/opt/icu4c/bin
+fish_add_path /opt/homebrew/opt/icu4c/sbin
+fish_add_path /opt/homebrew/opt/libpq/bin
+# fish_add_path /opt/homebrew/opt/llvm/bin
+fish_add_path /opt/homebrew/opt/nss/bin
+fish_add_path /opt/homebrew/opt/qt/bin
+fish_add_path /opt/homebrew/opt/sqlite/bin
+fish_add_path /opt/homebrew/opt/libxml2/bin
+fish_add_path /opt/homebrew/opt/krb5/bin
+fish_add_path /opt/homebrew/opt/krb5/sbin
+fish_add_path /opt/homebrew/opt/sphinx-doc/bin
+fish_add_path /opt/homebrew/opt/openldap/bin
+fish_add_path /opt/homebrew/opt/openldap/sbin
+fish_add_path /opt/homebrew/opt/gnu-getopt/bin
+fish_add_path /opt/homebrew/opt/libxslt/bin
+fish_add_path /opt/homebrew/opt/openssl@1.1/bin
+# fish_add_path /opt/homebrew/opt/openssl@3/bin
+fish_add_path /opt/homebrew/opt/ncurses/bin
+fish_add_path /opt/homebrew/opt/mysql-client/bin
 fish_add_path $HOME/.local/bin
 
 . ~/.asdf/plugins/java/set-java-home.fish
@@ -240,4 +165,79 @@ if test (uname -m) = "x86_64"
     source /usr/local/opt/asdf/libexec/asdf.fish
 else
     source /opt/homebrew/opt/asdf/libexec/asdf.fish
+end
+
+# for ls or exa
+if command -s exa > /dev/null
+    abbr -a ls 'exa --icons'
+    abbr -a la 'exa -a --icons'
+    abbr -a ll 'exa -l --icons'
+    abbr -a lal 'exa -al --icons'
+else
+    abbr -a la 'ls -a'
+    abbr -a ll 'ls -l'
+    abbr -a lal 'ls -al'
+end
+
+# for grep
+if command -s rg > /dev/null
+  abbr -a grep 'rg'
+else
+  abbr -a grep 'grep --color'
+end
+
+# for find
+if command -s fd > /dev/null
+    abbr -a find 'fd'
+end
+
+abbr -a cx 'chmod +x'
+
+# for ghq
+abbr -a gg 'ghq get -p'
+abbr -a ggh 'ghq get'
+abbr -a gc 'ghq create'
+abbr -a gau 'ghq list | ghq get --update --parallel'
+
+abbr -a cd.. 'cd ..'
+abbr -a .. 'cd ..'
+abbr -a ... 'cd ../..'
+abbr -a .... 'cd ../../..'
+abbr -a ..... 'cd ../../../..'
+
+abbr -a po 'poetry run'
+abbr -a pp 'poetry run python'
+
+abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
+abbr -a abs 'source ~/.config/fish/config_abbr.fish'
+
+# for brew
+abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
+abbr -a bci 'brew install --cask'
+abbr -a bbc 'brew bundle --global --force cleanup'
+abbr -a bbd 'brew bundle dump --global --force --describe'
+abbr -a bbi 'brew bundle --global --force'
+
+abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
+abbr -a echop 'echo $PATH | tr " " "\n" | nl'
+
+abbr -a ghci 'stack ghci'
+abbr -a ghc 'stack ghc --'
+abbr -a runghc 'stack runghc --'
+
+functions --copy cd standard_cd
+
+function cd
+  standard_cd $argv; and exa -a --icons
+  set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
+  echo -ne '\033]0;$p\007'
+end
+
+function brew
+  set -xl PATH $PATH # Protect global PATH by local PATH
+  if type -q asdf; and contains $HOME/.asdf/shims $PATH
+    set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
+  end
+
+  command brew $argv
 end
