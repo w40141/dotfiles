@@ -21,7 +21,7 @@ set.clipboard = 'unnamed,unnamedplus'
 set.visualbell = true
 set.errorbells = false
 -- 自動更新の時間
-set.updatetime = 200
+set.updatetime = 300
 
 -- 表示設定
 -- 行番号を表示する

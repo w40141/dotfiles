@@ -9,7 +9,6 @@
     "coc-git": ">=2.5.3",
     "coc-gitignore": ">=0.0.4",
     "coc-go": ">=1.3.0",
-    "coc-graphql": ">=0.0.1",
     "coc-html": ">=1.6.1",
     "coc-java": ">=1.5.5",
     "coc-java-debug": ">=0.2.1",
@@ -28,12 +27,12 @@
     "coc-sumneko-lua": ">=0.0.34",
     "coc-texlab": ">=3.2.0",
     "coc-toml": ">=1.2.5",
-    "coc-tsserver": ">=1.11.9",
+    "coc-tsserver": ">=1.11.11",
     "coc-vimlsp": ">=0.12.8",
     "coc-word": ">=1.2.2",
     "coc-yaml": ">=1.8.0"
   },
   "disabled": [],
   "locked": [],
-  "lastUpdate": 1664847082203
+  "lastUpdate": 1665103473885
 }
