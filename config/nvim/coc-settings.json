@@ -56,9 +56,6 @@
         "default": ""
     },
     "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "*"
-    ],
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.local/bin/black",
     "python.linting.flake8Enabled": true,
