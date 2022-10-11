@@ -5,7 +5,7 @@ local cmd = vim.cmd
 local fn = vim.fn
 local api = vim.api
 local key = vim.keymap.set
-local bo = vim.bi
+local bo = vim.bo
 local opt = vim.opt
 local o = vim.o
 
