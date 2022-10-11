@@ -145,12 +145,12 @@ key('n', '[dev]q', "<plug>(coc-fix-current)", ff)
 key('n', '[dev]f', ":<c-u>Format<cr>", tf)
 
 -- Remap <C-f> and <C-b> for scroll float windows/popups.
-key("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', ttt)
-key("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', ttt)
-key("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', ttt)
-key("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', ttt)
-key("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', ttt)
-key("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', ttt)
+-- key("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', ttt)
+-- key("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', ttt)
+-- key("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', ttt)
+-- key("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', ttt)
+-- key("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', ttt)
+-- key("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', ttt)
 
 cmd([[hi! CocErrorSign guifg=#E82424]])
 cmd([[hi! CocWarninSign guifg=#FF9E3B]])
