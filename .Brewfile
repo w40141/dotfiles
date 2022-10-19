@@ -28,8 +28,6 @@ brew "giflib"
 brew "libpng"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -52,14 +50,6 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Perl compatible regular expressions library
-brew "pcre"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # Terminal bandwidth utilization tool
@@ -72,6 +62,8 @@ brew "bdw-gc"
 brew "bingrep"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Collection of portable C++ source libraries
 brew "boost"
 # Yet another cross-platform graphical process/system monitor
@@ -108,6 +100,8 @@ brew "gnutls"
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
+# Command-line interface for SQLite
+brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
@@ -134,8 +128,6 @@ brew "rtmpdump"
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
-# Text processing system for reStructuredText
-brew "docutils"
 # Command-line DNS client
 brew "dog"
 # Disk Usage/Free Utility - a better 'df' alternative
@@ -228,8 +220,6 @@ brew "graphite2"
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
 brew "pango"
-# Library to render SVG files using Cairo
-brew "librsvg"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Command-line tool for generating regular expressions
@@ -284,6 +274,8 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -308,8 +300,6 @@ brew "libzip"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # General-purpose lossless data-compression library
@@ -318,6 +308,8 @@ brew "zlib"
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -338,6 +330,8 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
+# Perl compatible regular expressions library
+brew "pcre"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
@@ -350,6 +344,8 @@ brew "poppler"
 brew "procs"
 # Cartographic Projections Library
 brew "proj"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Provides fake name and address data
@@ -426,8 +422,6 @@ brew "zoxide"
 brew "k1low/tap/tbls"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
-# A faster version of ld, Apple's linker
-brew "michaeleisel/zld/zld"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
 # Tools for executing SQL queries to CSV, LTSV and JSON
@@ -473,7 +467,6 @@ cask "firefox"
 cask "fitbit-os-simulator"
 cask "font-biz-udgothic"
 cask "font-biz-udmincho"
-cask "font-genshingothic"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
 # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
