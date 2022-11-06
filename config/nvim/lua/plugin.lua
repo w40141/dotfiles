@@ -85,7 +85,7 @@ require("packer").startup(function(use)
       require("rc.nvim-treesitter")
     end
   })
-  use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
+  -- use({ "nvim-treesitter/nvim-treesitter-textobjects", after = { "nvim-treesitter" } })
   use({ "yioneko/nvim-yati", after = { "nvim-treesitter" } })
   use({ "m-demare/hlargs.nvim", after = { "nvim-treesitter" } })
   use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } })
