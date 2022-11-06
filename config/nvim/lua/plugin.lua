@@ -419,13 +419,13 @@ require("packer").startup(function(use)
     end
   })
 
-  use({
-    "rust-lang/rust.vim",
-    ft = { "rust" },
-    config = function()
-      require("rc.rust-vim")
-    end
-  })
+  -- use({
+  --   "rust-lang/rust.vim",
+  --   ft = { "rust" },
+  --   config = function()
+  --     require("rc.rust-vim")
+  --   end
+  -- })
   -- use({
   --     "simrat39/rust-tools.nvim",
   --     ft = { "rust" },
