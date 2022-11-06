@@ -207,5 +207,6 @@
         "vite",
         "xorshift"
     ],
-    "Lua.telemetry.enable": true
+    "Lua.telemetry.enable": true,
+    "snippets.ultisnips.pythonPrompt": false
 }
