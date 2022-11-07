@@ -28,8 +28,6 @@ brew "giflib"
 brew "libpng"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -52,16 +50,6 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Perl compatible regular expressions library
-brew "pcre"
-# Command-line interface for SQLite
-brew "sqlite"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # Terminal bandwidth utilization tool
@@ -74,6 +62,8 @@ brew "bdw-gc"
 brew "bingrep"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Collection of portable C++ source libraries
 brew "boost"
 # Yet another cross-platform graphical process/system monitor
@@ -110,6 +100,8 @@ brew "gnutls"
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
+# Command-line interface for SQLite
+brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
@@ -136,8 +128,6 @@ brew "rtmpdump"
 brew "curl"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
-# Text processing system for reStructuredText
-brew "docutils"
 # Command-line DNS client
 brew "dog"
 # Disk Usage/Free Utility - a better 'df' alternative
@@ -286,6 +276,8 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -310,8 +302,6 @@ brew "libzip"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # General-purpose lossless data-compression library
@@ -342,6 +332,8 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
+# Perl compatible regular expressions library
+brew "pcre"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
@@ -354,6 +346,8 @@ brew "poppler"
 brew "procs"
 # Cartographic Projections Library
 brew "proj"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Provides fake name and address data
