@@ -23,20 +23,20 @@ if command -s exa > /dev/null
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
 
-function fzf-checkout-branch -d "Fuzzy-find and checkout a branch"
+function fzf_checkout_branch -d "Fuzzy-find and checkout a branch"
   git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
 end
 
-function fzf-choose-branch -d "Use `fzf` to choose which branch to check out" --argument-names branch
+function fzf_choose_branch -d "Use `fzf` to choose which branch to check out" --argument-names branch
   set -q branch[1]; or set branch ''
   git for-each-ref --format='%(refname:short)' refs/heads | fzf --height 10% --layout=reverse --border --query=$branch --select-1 | xargs git checkout
 end
 
-function fzf-checkout-commit -d "Fuzzy-find and checkout a commit"
+function fzf_checkout_commit -d "Fuzzy-find and checkout a commit"
   git log --pretty=oneline --abbrev-commit --reverse | fzf --tac +s -e | awk '{print $1;}' | read -l result; and git checkout "$result"
 end
 
-function fzf-pick-branch -d "Pick desired files from a chosen branch"
+function fzf_pick_branch -d "Pick desired files from a chosen branch"
   # use fzf to choose source branch to snag files FROM
   set branch (git for-each-ref --format='%(refname:short)' refs/heads | fzf --height 20% --layout=reverse --border)
   # avoid doing work if branch isn't set
@@ -50,19 +50,19 @@ function fzf-pick-branch -d "Pick desired files from a chosen branch"
   end
 end
 
-function fzf-view-all-unmerged -d "View all unmerged commits across all local branches"
+function fzf_view_all_unmerged -d "View all unmerged commits across all local branches"
   set viewUnmergedCommits "echo {} | head -1 | xargs -I BRANCH sh -c 'git log master..BRANCH --no-merges --color --format=\"%C(auto)%h - %C(green)%ad%Creset - %s\" --date=format:\'%b %d %Y\''"
   git branch --no-merged master --format "%(refname:short)" | fzf --no-sort --reverse --tiebreak=index --no-multi \
     --ansi --preview="$viewUnmergedCommits"
 end
 
 # Select a docker image or images to remove
-function docker-select-image
+function docker_select_image
   docker images | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $3 }' | xargs -r docker rmi
 end
 
 # Select a docker container to start and attach to
-function docker-start-container
+function docker_start_container
   local cid
   cid (docker ps -a | sed 1d | fzf -1 -q "$1" | awk '{print $1}')
 
@@ -70,7 +70,7 @@ function docker-start-container
 end
 
 # Select a running docker container to stop
-function docker-stop-container
+function docker_stop_container
   local cid
   cid (docker ps | sed 1d | fzf -q "$1" | awk '{print $1}')
 
@@ -78,7 +78,7 @@ function docker-stop-container
 end
 
 # Select a docker container to remove
-function docker-remove-container
+function docker_remove_container
   local cid
   cid (docker ps -a | sed 1d | fzf -q "$1" | awk '{print $1}')
 
@@ -90,6 +90,11 @@ function docker-remove-multi-container
   docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
 end
 
+function gh_create_and_ghq_get
+  gh repo create $argv
+  ghq get -p $argv[1]
+end
+
 set -g GHQ_SELECTOR fzf
 set -g GHQ_SELECTOR_OPTS "--no-sort --reverse --ansi --color bg+:13,hl:3,pointer:7"
 function ghq_fzf_repo -d 'Repository search'
@@ -98,7 +103,7 @@ function ghq_fzf_repo -d 'Repository search'
   echo " $select "
   commandline -f repaint
 end
- 
+
 function fish_user_key_bindings
   bind \cg ghq_fzf_repo
 end
@@ -224,6 +229,8 @@ abbr -a echop 'echo $PATH | tr " " "\n" | nl'
 abbr -a ghci 'stack ghci'
 abbr -a ghc 'stack ghc --'
 abbr -a runghc 'stack runghc --'
+
+abbr -a ghcr 'gh_create_and_ghq_get'
 
 functions --copy cd standard_cd
 
