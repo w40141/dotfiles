@@ -199,8 +199,8 @@ end
 abbr -a cx 'chmod +x'
 
 # for ghq
-abbr -a gg 'ghq get -p'
-abbr -a ggh 'ghq get'
+abbr -a ggp 'ghq get -p'
+abbr -a gg 'ghq get'
 abbr -a gc 'ghq create'
 abbr -a gau 'ghq list | ghq get --update --parallel'
 
@@ -210,27 +210,27 @@ abbr -a ... 'cd ../..'
 abbr -a .... 'cd ../../..'
 abbr -a ..... 'cd ../../../..'
 
-abbr -a po 'poetry run'
-abbr -a pp 'poetry run python'
-
-abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
-abbr -a abs 'source ~/.config/fish/config_abbr.fish'
-
-# for brew
-abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
-abbr -a bci 'brew install --cask'
-abbr -a bbc 'brew bundle --global --force cleanup'
-abbr -a bbd 'brew bundle dump --global --force --describe'
-abbr -a bbi 'brew bundle --global --force'
-
-abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
-abbr -a echop 'echo $PATH | tr " " "\n" | nl'
-
-abbr -a ghci 'stack ghci'
-abbr -a ghc 'stack ghc --'
-abbr -a runghc 'stack runghc --'
-
-abbr -a ghcr 'gh_create_and_ghq_get'
+# abbr -a po 'poetry run'
+# abbr -a pp 'poetry run python'
+#
+# abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
+# abbr -a abs 'source ~/.config/fish/config_abbr.fish'
+#
+# # for brew
+# abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
+# abbr -a bci 'brew install --cask'
+# abbr -a bbc 'brew bundle --global --force cleanup'
+# abbr -a bbd 'brew bundle dump --global --force --describe'
+# abbr -a bbi 'brew bundle --global --force'
+#
+# abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
+# abbr -a echop 'echo $PATH | tr " " "\n" | nl'
+#
+# abbr -a ghci 'stack ghci'
+# abbr -a ghc 'stack ghc --'
+# abbr -a runghc 'stack runghc --'
+#
+# abbr -a ghcr 'gh_create_and_ghq_get'
 
 functions --copy cd standard_cd
 
