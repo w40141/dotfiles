@@ -57,6 +57,7 @@ g['coc_global_extensions'] = {
     "coc-prisma",
     "coc-pyright",
     "coc-rust-analyzer",
+    "coc-sh",
     "coc-snippets",
     "coc-solargraph",
     "coc-spell-checker",
@@ -67,7 +68,8 @@ g['coc_global_extensions'] = {
     "coc-tsserver",
     "coc-vimlsp",
     "coc-word",
-    "coc-yaml"
+    "coc-yaml",
+
 }
 
 -- Use <C-j> for jump to next placeholder, it's default of coc.nvim
