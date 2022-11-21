@@ -12,63 +12,62 @@ local o = vim.o
 -- Highlight the symbol and its references when holding the cursor.
 api.nvim_create_augroup("CocGroup", {})
 api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
+  group = "CocGroup",
+  command = "silent call CocActionAsync('highlight')",
+  desc = "Highlight symbol under cursor on CursorHold"
 })
 
 -- Setup formatexpr specified filetype(s).
 api.nvim_create_autocmd("FileType", {
-    group = "CocGroup",
-    pattern = "typescript,json",
-    command = "setl formatexpr=CocAction('formatSelected')",
-    desc = "Setup formatexpr specified filetype(s)."
+  group = "CocGroup",
+  pattern = "typescript,json",
+  command = "setl formatexpr=CocAction('formatSelected')",
+  desc = "Setup formatexpr specified filetype(s)."
 })
 
 -- Update signature help on jump placeholder.
 api.nvim_create_autocmd("User", {
-    group = "CocGroup",
-    pattern = "CocJumpPlaceholder",
-    command = "call CocActionAsync('showSignatureHelp')",
-    desc = "Update signature help on jump placeholder"
+  group = "CocGroup",
+  pattern = "CocJumpPlaceholder",
+  command = "call CocActionAsync('showSignatureHelp')",
+  desc = "Update signature help on jump placeholder"
 })
 
 opt.shell = '/bin/zsh'
 cmd([[let $SHELL = "/bin/zsh"]])
 
 g['coc_global_extensions'] = {
-    "coc-css",
-    "coc-dictionary",
-    "coc-docker",
-    "coc-elixir",
-    "coc-eslint",
-    "coc-fish",
-    "coc-git",
-    "coc-gitignore",
-    "coc-go",
-    "coc-html",
-    "coc-java",
-    "coc-java-debug",
-    "coc-json",
-    "coc-kotlin",
-    "coc-markdownlint",
-    "coc-pairs",
-    "coc-prettier",
-    "coc-prisma",
-    "coc-pyright",
-    "coc-rust-analyzer",
-    "coc-sh",
-    "coc-snippets",
-    "coc-solargraph",
-    "coc-spell-checker",
-    "coc-sql",
-    "coc-sumneko-lua",
-    "coc-texlab",
-    "coc-toml",
-    "coc-tsserver",
-    "coc-vimlsp",
-    "coc-word",
-    "coc-yaml",
+  "coc-css",
+  "coc-dictionary",
+  "coc-docker",
+  "coc-elixir",
+  "coc-eslint",
+  "coc-fish",
+  "coc-git",
+  "coc-gitignore",
+  "coc-go",
+  "coc-html",
+  "coc-java",
+  "coc-java-debug",
+  "coc-json",
+  "coc-kotlin",
+  "coc-markdownlint",
+  "coc-pairs",
+  "coc-prettier",
+  "coc-prisma",
+  "coc-pyright",
+  "coc-rust-analyzer",
+  "coc-snippets",
+  "coc-solargraph",
+  "coc-spell-checker",
+  "coc-sql",
+  "coc-sumneko-lua",
+  "coc-texlab",
+  "coc-toml",
+  "coc-tsserver",
+  "coc-vimlsp",
+  "coc-word",
+  "coc-yaml",
 
 }
 
@@ -80,14 +79,14 @@ g['coc_global_extensions'] = {
 
 -- Use K to show documentation in preview window.
 function _G.show_docs()
-    local cw = fn.expand('<cword>')
-    if fn.index({ 'vim', 'help' }, bo.filetype) >= 0 then
-        api.nvim_command('h ' .. cw)
-    elseif api.nvim_eval('coc#rpc#ready()') then
-        fn.CocActionAsync('doHover')
-    else
-        api.nvim_command('!' .. o.keywordprg .. ' ' .. cw)
-    end
+  local cw = fn.expand('<cword>')
+  if fn.index({ 'vim', 'help' }, bo.filetype) >= 0 then
+    api.nvim_command('h ' .. cw)
+  elseif api.nvim_eval('coc#rpc#ready()') then
+    fn.CocActionAsync('doHover')
+  else
+    api.nvim_command('!' .. o.keywordprg .. ' ' .. cw)
+  end
 end
 
 -- Map function and class text objects
@@ -111,8 +110,8 @@ api.nvim_create_user_command("Fold", "call CocAction('fold', <f-args>)", { nargs
 api.nvim_create_user_command("OR", "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 
 function _G.check_back_space()
-    local col = fn.col(".") - 1
-    return col == 0 or fn.getline("."):sub(col, col):match("%s")
+  local col = fn.col(".") - 1
+  return col == 0 or fn.getline("."):sub(col, col):match("%s")
 end
 
 local ttt = { expr = true, noremap = true, silent = true, replace_keycodes = false }

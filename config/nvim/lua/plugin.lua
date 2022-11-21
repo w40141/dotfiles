@@ -213,17 +213,27 @@ require("packer").startup(function(use)
 
   -- https://github.com/neoclide/coc.nvim
   use({
-    "neoclide/coc.nvim",
-    branch = "release",
-    -- run = "yarn install --frozen-lockfile",
-    event = "VimEnter",
+    'neoclide/coc.nvim',
+    branch = 'master',
+    run = 'yarn install --frozen-lockfile',
+    -- event = "VimEnter",
     config = function()
       require("rc.coc-nvim")
     end
   })
+  -- use({
+  --   "neoclide/coc.nvim",
+  --   branch = "release",
+  --   -- run = "yarn install --frozen-lockfile",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("rc.coc-nvim")
+  --   end
+  -- })
 
-  -- Autopairs
-  -- https://github.com/windwp/nvim-autopairs
+  -- -- Autopairs
+  -- -- https://github.com/windwp/nvim-autopairs
+
   -- use({
   --     "windwp/nvim-autopairs",
   --     event = "VimEnter",
@@ -240,7 +250,7 @@ require("packer").startup(function(use)
   --         require("rc.nvim-snippy")
   --     end,
   -- })
-  --
+
   -- -- Cmp
   -- -- https://github.com/hrsh7th/nvim-cmp
   -- use({
@@ -279,7 +289,7 @@ require("packer").startup(function(use)
   -- use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
   -- -- https://github.com/dcampos/cmp-snippy
   -- use({ "dcampos/cmp-snippy", after = { "nvim-cmp" } })
-  --
+
   -- -- LSP
   -- -- https://github.com/neovim/nvim-lspconfig
   -- use({
@@ -305,8 +315,8 @@ require("packer").startup(function(use)
   --     end
   -- })
 
-  --  engine SKK
-  --  https://github.com/tyru/eskk.vim
+  -- engine SKK
+  -- https://github.com/tyru/eskk.vim
   use({
     "tyru/eskk.vim",
     opt = true,

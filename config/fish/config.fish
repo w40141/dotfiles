@@ -137,6 +137,7 @@ set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 if test (uname -m) = "x86_64"
+  fish_add_path $HOME/.asdf/installs/poetry/1.2.2/bin
   fish_add_path /usr/local/sbin
   fish_add_path /usr/local/opt/apr/bin
   fish_add_path /usr/local/opt/curl/bin
