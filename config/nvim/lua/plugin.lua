@@ -364,6 +364,7 @@ require("packer").startup(function(use)
 
   use({
     "vim-test/vim-test",
+    event = "CmdlineEnter",
     config = function()
       require("rc.vim-test")
     end
