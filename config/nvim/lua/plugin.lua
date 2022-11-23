@@ -482,7 +482,7 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({ "kamykn/spelunker.vim" })
+  -- use({ "kamykn/spelunker.vim" })
   use({ "lambdalisue/gina.vim" })
   use({
     "skanehira/translate.vim",
