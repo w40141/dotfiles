@@ -214,8 +214,9 @@ require("packer").startup(function(use)
   -- https://github.com/neoclide/coc.nvim
   use({
     'neoclide/coc.nvim',
-    branch = 'master',
-    run = 'yarn install --frozen-lockfile',
+    -- branch = 'master',
+    branch = "release",
+    -- run = 'yarn install --frozen-lockfile',
     -- event = "VimEnter",
     config = function()
       require("rc.coc-nvim")
