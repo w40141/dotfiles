@@ -117,7 +117,6 @@ end
 local ttt = { expr = true, noremap = true, silent = true, replace_keycodes = false }
 key("i", "<TAB>", 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', ttt)
 key('i', '<s-tab>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<c-h>"]], ttt)
--- key('i', '<cr>', [[coc#pum#visible() ? coc#_select_confirm() : "\<CR>"]], ttt)
 key("i", "<cr>", [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], ttt)
 
 local ff = { noremap = false, silent = false }
