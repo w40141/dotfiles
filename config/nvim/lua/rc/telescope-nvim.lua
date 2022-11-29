@@ -3,16 +3,17 @@ local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
 local custom_actions = {}
+local cmd = vim.cmd
 
 function custom_actions._multiopen(prompt_bufnr, open_cmd)
   local picker = action_state.get_current_picker(prompt_bufnr)
   local num_selections = #picker:get_multi_selection()
   if num_selections > 1 then
-    vim.cmd("bw!")
+    cmd("bw!")
     for _, entry in ipairs(picker:get_multi_selection()) do
-      vim.cmd(string.format("%s %s", open_cmd, entry.value:match("([^:]+)")))
+      cmd(string.format("%s %s", open_cmd, entry.value:match("([^:]+)")))
     end
-    vim.cmd("stopinsert")
+    cmd("stopinsert")
   else
     if open_cmd == "vsplit" then
       actions.file_vsplit(prompt_bufnr)
@@ -70,7 +71,6 @@ telescope.setup({
         ["<c-o>"] = trouble.open_with_trouble,
         ["<C-g>"] = custom_actions.multi_selection_open,
         ["<C-q>"] = actions.send_selected_to_qflist,
-        ["<C-g>"] = custom_actions.multi_selection_open,
       },
       i = {
         ["<c-o>"] = trouble.open_with_trouble,
@@ -93,7 +93,6 @@ telescope.setup({
     coc = { theme = 'ivy' }
   },
 })
-telescope.load_extension('coc')
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
@@ -104,15 +103,10 @@ key("n", "[ff]g", builtin.live_grep, opts)
 key("n", "[ff]/", builtin.grep_string, opts)
 key("n", "[ff]b", builtin.buffers, opts)
 key("n", "[ff]l", builtin.current_buffer_fuzzy_find, opts)
-key("n", "[ff]t", "<Cmd>Telescope treesitter<CR>", opts)
-key("n", "[ff]q", "<Cmd>Telescope quickfix<CR>", opts)
 key("n", "[ff]gs", builtin.git_status, opts)
 key("n", "[ff]gc", builtin.git_commits, opts)
 key("n", "[ff]gC", builtin.git_bcommits, opts)
 key("n", "[ff]gb", builtin.git_branches, opts)
-
-key("n", "[ff]q", "<Cmd>Telescope coc workspace_diagnostics<CR>", opts)
-key("n", "[ff]r", "<Cmd>Telescope coc references<CR>", opts)
-key("n", "[ff]d", "<Cmd>Telescope coc definitions<CR>", opts)
--- key("n", "[ff]c", "<Cmd>Telescope coc file_code_actions<CR>", opts)
-key("n", "[ff]w", "<Cmd>Telescope coc workspace_symbols<CR>", opts)
+key("n", "[ff]q", builtin.diagnostics, opts)
+key("n", "[ff]r", builtin.lsp_references, opts)
+key("n", "[ff]d", builtin.lsp_definitions, opts)

@@ -40,7 +40,10 @@ require 'lualine'.setup {
     lualine_c = {
       {
         'diagnostics',
-        sources = { 'coc' },
+        sources = {
+          'nvim_diagnostic',
+
+        },
         sections = { 'error', 'warn', 'info', 'hint' },
         diagnostics_color = {
           error = 'DiagnosticError',
