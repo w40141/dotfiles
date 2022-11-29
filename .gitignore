@@ -25,3 +25,4 @@ snippets
 /config/eskk
 /config/gh/hosts.yml
 node_modules
+*.log
