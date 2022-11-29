@@ -24,3 +24,4 @@ snippets
 *.lock
 /config/eskk
 /config/gh/hosts.yml
+node_modules
