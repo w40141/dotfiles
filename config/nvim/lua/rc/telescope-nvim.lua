@@ -89,9 +89,6 @@ telescope.setup({
       }
     }
   },
-  extensions = {
-    coc = { theme = 'ivy' }
-  },
 })
 
 local key = vim.keymap.set

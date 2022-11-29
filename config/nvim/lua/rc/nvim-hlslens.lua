@@ -8,9 +8,9 @@ require('hlslens').setup({
 
 local key = vim.keymap.set
 local opts = { noremap = true, silent = true }
-key('', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>", opts)
-key('', '*', "*<Cmd>lua require('hlslens').start()<CR>", opts)
-key('', '#', "#<Cmd>lua require('hlslens').start()<CR>", opts)
-key('', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", opts)
-key('', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", opts)
-key('', '<c-c>', "<Cmd>nohlsearch<cr>", opts)
+key('n', 'n', "<Cmd>execute('normal! ' . v:count1 . 'n')<CR> <Cmd>lua require('hlslens').start()<CR>", opts)
+key('n', '*', "*<Cmd>lua require('hlslens').start()<CR>", opts)
+key('n', '#', "#<Cmd>lua require('hlslens').start()<CR>", opts)
+key('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", opts)
+key('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", opts)
+key('n', '<c-c>', "<Cmd>nohlsearch<cr>", opts)

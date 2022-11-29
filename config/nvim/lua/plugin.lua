@@ -21,16 +21,14 @@ require("packer").startup(function(use)
   -- Library
   -- https://github.com/nvim-lua/plenary.nvim
   use({ "nvim-lua/plenary.nvim" })
-  use({ "nvim-lua/popup.nvim", module = "popup" })
-  use({ "kkharji/sqlite.lua", module = "sqlite" })
+  -- use({ "nvim-lua/popup.nvim", module = "popup" })
+  -- use({ "kkharji/sqlite.lua", module = "sqlite" })
   use({ "MunifTanjim/nui.nvim", module = "nui" })
 
   -- Colorscheme
   -- https://github.com/rebelot/kanagawa.nvim
-  local colorscheme = "kanagawa.nvim"
   use({
     "rebelot/kanagawa.nvim",
-    event = { "VimEnter", "ColorSchemePre" },
     config = function()
       require("rc.kanagawa-nvim")
     end
@@ -41,7 +39,6 @@ require("packer").startup(function(use)
   use({
     "goolord/alpha-nvim",
     requires = { "kyazdani42/nvim-web-devicons" },
-    after = { colorscheme },
     config = function()
       require("rc.alpha-nvim")
     end
@@ -60,7 +57,6 @@ require("packer").startup(function(use)
   -- https://github.com/nvim-telescope/telescope.nvim
   use({
     "nvim-telescope/telescope.nvim",
-    after = { colorscheme },
     requires = { "nvim-lua/plenary.nvim" },
     config = function()
       require("rc.telescope-nvim")
@@ -79,8 +75,8 @@ require("packer").startup(function(use)
   -- https://github.com/nvim-treesitter/nvim-treesitter
   use({
     "nvim-treesitter/nvim-treesitter",
-    after = { colorscheme },
     run = ":TSUpdate",
+    event = "VimEnter",
     config = function()
       require("rc.nvim-treesitter")
     end
@@ -91,21 +87,13 @@ require("packer").startup(function(use)
   use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } })
   use({ "haringsrob/nvim_context_vt", after = { "nvim-treesitter", colorscheme } })
   use({ "romgrk/nvim-treesitter-context", opt = true, cmd = { "TSContextEnable" } })
-  use({
-    "lewis6991/spellsitter.nvim",
-    after = "nvim-treesitter",
-    config = function()
-      require("spellsitter").setup()
-    end
-  })
-  use { "fannheyward/telescope-coc.nvim" }
 
   -- Annotation generator
   -- https://github.com/danymat/neogen
   use({
     "danymat/neogen",
     requires = "nvim-treesitter/nvim-treesitter",
-    after = { "nvim-treesitter" },
+    -- after = { "nvim-treesitter" },
     config = function()
       require("rc/neogen")
     end,
@@ -113,14 +101,13 @@ require("packer").startup(function(use)
 
   -- Icons
   -- https://github.com/kyazdani42/nvim-web-devicons
-  use({ "kyazdani42/nvim-web-devicons", after = colorscheme })
+  use({ "kyazdani42/nvim-web-devicons" })
 
   -- Buffer line
   -- https://github.com/akinsho/bufferline.nvim
   use({
     "akinsho/bufferline.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    after = colorscheme,
     config = function()
       require("rc.bufferline-nvim")
     end,
@@ -131,7 +118,6 @@ require("packer").startup(function(use)
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    after = colorscheme,
     config = function()
       require("rc.lualine-nvim")
     end,
@@ -142,6 +128,7 @@ require("packer").startup(function(use)
   use({
     "onsails/lspkind-nvim",
     module = "lspkind",
+    event = "VimEnter",
     config = function()
       require("rc.lspkind-nvim")
     end,
@@ -179,8 +166,8 @@ require("packer").startup(function(use)
   -- https://github.com/folke/todo-comments.nvim
   use({
     "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
     event = "VimEnter",
-    after = colorscheme,
     config = function()
       require("rc.todo-comments-nvim")
     end
@@ -201,7 +188,7 @@ require("packer").startup(function(use)
   -- https://github.com/ur4ltz/surround.nvim
   use {
     "ur4ltz/surround.nvim",
-    event = { "VimEnter", },
+    event = { "VimEnter" },
     config = function()
       require("rc.surround-nvim")
     end
@@ -209,7 +196,10 @@ require("packer").startup(function(use)
 
   -- Snippet
   -- https://github.com/honza/vim-snippets
-  use({ "honza/vim-snippets" })
+  use({
+    "honza/vim-snippets",
+    event = "VimEnter",
+  })
 
   -- https://github.com/neoclide/coc.nvim
   -- use({
@@ -227,7 +217,7 @@ require("packer").startup(function(use)
   -- https://github.com/windwp/nvim-autopairs
   use({
     "windwp/nvim-autopairs",
-    event = "VimEnter",
+    -- event = "VimEnter",
     config = function()
       require("rc.nvim-autopairs")
     end,
@@ -235,17 +225,18 @@ require("packer").startup(function(use)
 
   -- https://github.com/dcampos/nvim-snippy
   use({
-      "dcampos/nvim-snippy",
-      event = "VimEnter",
-      config = function()
-          require("rc.nvim-snippy")
-      end,
+    "dcampos/nvim-snippy",
+    event = "VimEnter",
+    config = function()
+      require("rc.nvim-snippy")
+    end,
   })
 
   -- LSP
   -- https://github.com/neovim/nvim-lspconfig
   use({
     "neovim/nvim-lspconfig",
+    event = "VimEnter",
     config = function()
       require("rc.nvim-lspconfig")
     end
@@ -253,6 +244,7 @@ require("packer").startup(function(use)
   -- https://github.com/williamboman/mason.nvim
   use {
     "williamboman/mason.nvim",
+    event = "VimEnter",
     config = function()
       require("rc.mason")
     end
@@ -260,6 +252,7 @@ require("packer").startup(function(use)
   -- https://github.com/williamboman/mason-lspconfig.nvim
   use {
     "williamboman/mason-lspconfig.nvim",
+    after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
     config = function()
       require("rc.mason-lspconfig")
     end
@@ -270,15 +263,16 @@ require("packer").startup(function(use)
   use({
     "hrsh7th/nvim-cmp",
     requires = {
+      { "dcampos/nvim-snippy", opt = true, event = "VimEnter" },
       { "windwp/nvim-autopairs", opt = true, event = "VimEnter" },
     },
-    after = { "nvim-autopairs" },
+    after = { "nvim-snippy", "nvim-autopairs" },
     config = function()
       require("rc.nvim-cmp")
     end,
   })
   -- https://github.com/hrsh7th/cmp-nvim-lsp
-  use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp" })
+  use({ "hrsh7th/cmp-nvim-lsp", module = "cmp_nvim_lsp", after = "nvim-cmp" })
   -- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
   use({ "hrsh7th/cmp-nvim-lsp-signature-help", after = "nvim-cmp" })
   -- https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
@@ -296,28 +290,10 @@ require("packer").startup(function(use)
   -- https://github.com/dcampos/cmp-snippy
   use({ "dcampos/cmp-snippy", after = { "nvim-cmp" } })
 
-  -- https://github.com/tamago324/nlsp-settings.nvim
-  -- use({
-  --   "tamago324/nlsp-settings.nvim",
-  --   after = { "nvim-lspconfig" },
-  --   config = function()
-  --     require("rc/nlsp-settings-nvim")
-  --   end,
-  -- })
-  -- https://github.com/williamboman/nvim-lsp-installer
-  -- use({
-  --   "williamboman/nvim-lsp-installer",
-  --   after = { "nvim-lspconfig", "cmp-nvim-lsp", "nlsp-settings.nvim" },
-  --   config = function()
-  --     require("rc.nvim-lsp-installer")
-  --   end
-  -- })
-
   -- engine SKK
   -- https://github.com/tyru/eskk.vim
   use({
     "tyru/eskk.vim",
-    opt = true,
     event = "InsertEnter",
     config = function()
       require("rc.eskk-vim")
@@ -342,7 +318,6 @@ require("packer").startup(function(use)
 
   use({
     "vim-jp/vimdoc-ja",
-    opt = true,
     cmd = "help"
   })
 
@@ -356,7 +331,6 @@ require("packer").startup(function(use)
 
   use({
     "tweekmonster/startuptime.vim",
-    opt = true,
     cmd = "StartupTime"
   })
 
@@ -372,7 +346,6 @@ require("packer").startup(function(use)
   -- https://github.com/segeljakt/vim-silicon
   use({
     "segeljakt/vim-silicon",
-    opt = true,
     cmd = "Silicon"
   })
 
@@ -387,6 +360,7 @@ require("packer").startup(function(use)
   -- https://github.com/kevinhwang91/nvim-hlslens
   use({
     "kevinhwang91/nvim-hlslens",
+    event = "VimEnter",
     config = function()
       require("rc.nvim-hlslens")
     end
@@ -404,7 +378,8 @@ require("packer").startup(function(use)
   use({
     "tamago324/lir.nvim",
     requires = { "kyazdani42/nvim-web-devicons", "nvim-lua/plenary.nvim" },
-    after = { colorscheme, "nvim-web-devicons" },
+    -- after = { colorscheme, "nvim-web-devicons" },
+    event = "VimEnter",
     config = function()
       require("rc.lir-nvim")
     end
@@ -513,23 +488,11 @@ require("packer").startup(function(use)
   -- https://github.com/ntpeters/vim-better-whitespace
   use({
     "ntpeters/vim-better-whitespace",
-    opt = true,
     cmd = { "StripWhitespace" },
     config = function()
       require("rc.vim-better-whitespace")
     end
   })
-
-  -- A more adventurous wildmenu
-  -- https://github.com/gelguy/wilder.nvim
-  -- use({
-  --   "gelguy/wilder.nvim",
-  --   event = "CmdlineEnter",
-  --   run = ":UpdateRemotePlugins",
-  --   config = function()
-  --     require("rc.wilder-nvim")
-  --   end,
-  -- })
 
   -- https://github.com/rapan931/lasterisk.nvim
   use({
