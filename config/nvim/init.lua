@@ -34,6 +34,10 @@ vim.api.nvim_set_var(
   "python3_host_prog",
   "$HOME/.config/nvim/python3/.venv/bin/python"
 )
+vim.api.nvim_set_var(
+    "node_host_prog",
+  "$HOME/.config/nvim/python3/node_modules/neovim/bin/cli.js"
+)
 
 require('base')
 require('autocmd')
