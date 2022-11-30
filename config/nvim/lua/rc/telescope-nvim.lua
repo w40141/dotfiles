@@ -67,19 +67,19 @@ telescope.setup({
     buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
     mappings = {
       n = {
-        ["<C-t>"] = action_layout.toggle_preview,
         ["<c-o>"] = trouble.open_with_trouble,
+        ["<C-t>"] = action_layout.toggle_preview,
         ["<C-g>"] = custom_actions.multi_selection_open,
         ["<C-q>"] = actions.send_selected_to_qflist,
       },
       i = {
         ["<c-o>"] = trouble.open_with_trouble,
         ["<C-t>"] = action_layout.toggle_preview,
+        ["<C-g>"] = custom_actions.multi_selection_open,
+        ["<C-q>"] = actions.send_selected_to_qflist,
         ["<C-x>"] = false,
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_next,
-        ["<C-q>"] = actions.send_selected_to_qflist,
         ["<CR>"] = actions.select_default + actions.center,
-        ["<C-g>"] = custom_actions.multi_selection_open,
       },
     },
     extensions = {

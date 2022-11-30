@@ -15,6 +15,7 @@ require("lspkind").init({
   --
   -- default: {}
   symbol_map = {
+    Treesitter = "a",
     Text = "",
     Method = "",
     Function = "",

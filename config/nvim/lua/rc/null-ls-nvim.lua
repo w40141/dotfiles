@@ -4,14 +4,24 @@ local fn = vim.fn
 local exe = fn.executable
 local d = vim.diagnostic.severity
 local call = vim.call
-local cspell_config_dir = '$XDG_CONFIG_HOME/.config/cspell'
+local cspell_config_dir = '$XDG_CONFIG_HOME/cspell'
 local cspell_data_dir = '$XDG_DATA_HOME/cspell'
+-- local cspell_config_dir = '~/.config/cspell'
+-- local cspell_data_dir = '~/.local/share/cspell'
 local cspell_files = {
   config = call('expand', cspell_config_dir .. '/cspell.json'),
   dotfiles = call('expand', cspell_config_dir .. '/dotfiles.txt'),
   vim = call('expand', cspell_data_dir .. '/vim.txt.gz'),
   user = call('expand', cspell_data_dir .. '/user.txt'),
 }
+
+if fn.exists(cspell_data_dir) ~= 1 then
+  io.popen('mkdir -p ' .. cspell_data_dir)
+end
+
+if fn.filereadable(cspell_files.dotfiles) ~= 1 then
+  io.popen('touch ' .. cspell_files.dotfiles)
+end
 
 -- vim辞書がなければダウンロード
 if fn.filereadable(cspell_files.vim) ~= 1 then
@@ -21,7 +31,6 @@ end
 
 -- ユーザー辞書がなければ作成
 if fn.filereadable(cspell_files.user) ~= 1 then
-  io.popen('mkdir -p ' .. cspell_data_dir)
   io.popen('touch ' .. cspell_files.user)
 end
 
