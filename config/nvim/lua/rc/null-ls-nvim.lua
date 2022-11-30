@@ -1,10 +1,33 @@
 local null_ls = require("null-ls")
 local builtins = require("null-ls.builtins")
-local exe = vim.fn.executable
+local fn = vim.fn
+local exe = fn.executable
 local d = vim.diagnostic.severity
+local call = vim.call
+local cspell_config_dir = '$XDG_CONFIG_HOME/.config/cspell'
+local cspell_data_dir = '$XDG_DATA_HOME/cspell'
+local cspell_files = {
+  config = call('expand', cspell_config_dir .. '/cspell.json'),
+  dotfiles = call('expand', cspell_config_dir .. '/dotfiles.txt'),
+  vim = call('expand', cspell_data_dir .. '/vim.txt.gz'),
+  user = call('expand', cspell_data_dir .. '/user.txt'),
+}
+
+-- vim辞書がなければダウンロード
+if fn.filereadable(cspell_files.vim) ~= 1 then
+  local vim_dictionary_url = 'https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz'
+  io.popen('curl -fsSLo ' .. cspell_files.vim .. ' --create-dirs ' .. vim_dictionary_url)
+end
+
+-- ユーザー辞書がなければ作成
+if fn.filereadable(cspell_files.user) ~= 1 then
+  io.popen('mkdir -p ' .. cspell_data_dir)
+  io.popen('touch ' .. cspell_files.user)
+end
 
 null_ls.setup({
   sources = {
+    builtins.diagnostics.credo,
     -- LuaFormatter off
     -- null_ls.builtins.completion.spell,
     builtins.formatting.trim_whitespace,
@@ -52,6 +75,7 @@ null_ls.setup({
       condition = function()
         return exe("cspell") > 0
       end,
+      extra_args = { '--config', cspell_files.config }
     }),
     builtins.diagnostics.vale.with({
       diagnostics_postprocess = function(diagnostic)
@@ -61,10 +85,7 @@ null_ls.setup({
         return exe("vale") > 0
       end,
     }),
-    -- builtins.diagnostics.codespell.with({
-    -- 	args = spell_args,
-    -- }),
-    -- create
+    builtins.completion.spell,
     builtins.formatting.markdownlint.with({
       condition = function()
         return exe("markdownlint") > 0
@@ -73,5 +94,4 @@ null_ls.setup({
     builtins.code_actions.gitsigns,
     -- LuaFormatter on
   }
-
 })

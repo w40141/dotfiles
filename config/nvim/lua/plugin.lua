@@ -85,15 +85,14 @@ require("packer").startup(function(use)
   use({ "yioneko/nvim-yati", after = { "nvim-treesitter" } })
   use({ "m-demare/hlargs.nvim", after = { "nvim-treesitter" } })
   use({ "p00f/nvim-ts-rainbow", after = { "nvim-treesitter" } })
-  use({ "haringsrob/nvim_context_vt", after = { "nvim-treesitter", colorscheme } })
-  use({ "romgrk/nvim-treesitter-context", opt = true, cmd = { "TSContextEnable" } })
+  use({ "haringsrob/nvim_context_vt", after = { "nvim-treesitter" } })
+  use({ "romgrk/nvim-treesitter-context", cmd = { "TSContextEnable" } })
 
   -- Annotation generator
   -- https://github.com/danymat/neogen
   use({
     "danymat/neogen",
     requires = "nvim-treesitter/nvim-treesitter",
-    -- after = { "nvim-treesitter" },
     config = function()
       require("rc/neogen")
     end,
@@ -314,6 +313,13 @@ require("packer").startup(function(use)
       }
       vim.notify = require("notify")
     end
+  })
+
+  -- Use Neovim as a language server to inject LSP diagnostics, code actions
+  -- https://github.com/jose-elias-alvarez/null-ls.nvim
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = "nvim-lua/plenary.nvim"
   })
 
   use({

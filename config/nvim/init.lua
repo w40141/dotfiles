@@ -28,13 +28,13 @@ g.loaded_tarPlugin         = 1
 g.skip_loading_mswin       = 1
 
 g.loaded_perl_provider = 0
-g.loaded_python3_provider = 0
+-- g.loaded_python3_provider = 0
 g.loaded_node_provider = 0
 
--- vim.api.nvim_set_var(
---   "python3_host_prog",
---   "$HOME/.config/nvim/python3/.venv/bin/python"
--- )
+vim.api.nvim_set_var(
+  "python3_host_prog",
+  "$XDG_CONFIG_HOME/nvim/python3/.venv/bin/python"
+)
 -- vim.api.nvim_set_var(
 --     "node_host_prog",
 --   "$HOME/.config/nvim/python3/node_modules/neovim/bin/cli.js"

@@ -9,8 +9,8 @@ opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
 opt.hidden = true
 -- スペルチェック
-opt.spell = true
-opt.spelllang = "en"
+-- opt.spell = true
+-- opt.spelllang = "en"
 -- 内容が変更されたら自動的に再読み込み
 opt.autoread = true
 opt.number = true
