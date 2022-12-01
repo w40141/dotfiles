@@ -2,20 +2,24 @@
 -- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 
-local fn = vim.fn
-local cmd = vim.cmd
+local v = vim
+local fn = v.fn
+local cmd = v.cmd
+local api = v.api
+local augroup = api.nvim_create_augroup
+local autocmd = api.nvim_create_autocmd -- Create autocommand
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
+local ensure_packer = function()
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		cmd([[packadd packer.nvim]])
+		return true
+	end
+	return false
 end
+
+local packer_bootstrap = ensure_packer()
 
 require("packer").startup(function(use)
 	-- Package Manager
@@ -335,8 +339,6 @@ require("packer").startup(function(use)
 	use({ "yutkat/cmp-mocword", after = { "nvim-cmp" } })
 	-- https://github.com/hrsh7th/cmp-cmdline
 	use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
-	-- https://github.com/dmitmel/cmp-cmdline-history
-	-- use({ "dmitmel/cmp-cmdline-history", after = "nvim-cmp" })
 	-- https://github.com/f3fora/cmp-spell
 	use({ "f3fora/cmp-spell", after = "nvim-cmp" })
 
@@ -529,7 +531,8 @@ require("packer").startup(function(use)
 	use({
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-		event = "VimEnter",
+		-- event = "VimEnter",
+    opt = true,
 		config = function()
 			require("rc.gitsigns-nvim")
 		end,
@@ -569,9 +572,9 @@ require("packer").startup(function(use)
 	end
 end)
 
-cmd([[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost plugin.lua source <afile> | PackerCompile
-    augroup end
-]])
+local puc = augroup("PackerUserConfig", {})
+autocmd("BufWritePost", {
+	pattern = "plugin.lua",
+	group = puc,
+	command = "source <afile> | PackerCompile",
+})

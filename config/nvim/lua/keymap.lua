@@ -22,90 +22,91 @@
 
 -- キーマッピング設定
 
-local g = vim.g
-local fn = vim.fn
-local key = vim.keymap.set
+local v = vim
+local g = v.g
+local fn = v.fn
+local key = v.keymap.set
 
 -- <leader>キーを変更 (default: \)
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
-key('n', '<leader>', '<nop>')
-key('x', '<leader>', '<nop>')
-key('n', '[ff]', '<nop>')
-key('x', '[ff]', '<nop>')
-key('n', '[dev]', '<nop>')
-key('x', '[dev]', '<nop>')
-key('n', '[tl]', '<nop>')
-key('x', '[tl]', '<nop>')
-key('n', '<c-f>', '[ff]', { remap = true })
-key('x', '<c-f>', '[ff]', { remap = true })
-key('n', 'm', '[dev]', { remap = true })
-key('x', 'm', '[dev]', { remap = true })
-key('n', 't', '[tl]', { remap = true })
-key('x', 't', '[tl]', { remap = true })
+key("n", "<leader>", "<nop>")
+key("x", "<leader>", "<nop>")
+key("n", "[ff]", "<nop>")
+key("x", "[ff]", "<nop>")
+key("n", "[dev]", "<nop>")
+key("x", "[dev]", "<nop>")
+key("n", "[tl]", "<nop>")
+key("x", "[tl]", "<nop>")
+key("n", "<c-f>", "[ff]", { remap = true })
+key("x", "<c-f>", "[ff]", { remap = true })
+key("n", "m", "[dev]", { remap = true })
+key("x", "m", "[dev]", { remap = true })
+key("n", "t", "[tl]", { remap = true })
+key("x", "t", "[tl]", { remap = true })
 
 -- [nore]map
 -- 行頭と行末への移動
-key('', '0', '$')
-key('', '1', '0')
+key("", "0", "$")
+key("", "1", "0")
 -- ;と:を入れ替
-key('', ';', ':')
-key('', ':', ';')
+key("", ";", ":")
+key("", ":", ";")
 -- キー置換
-key('', ',h', '^')
-key('', ',l', '$')
-key('', ',p', '%')
+key("", ",h", "^")
+key("", ",l", "$")
+key("", ",p", "%")
 
 -- n[nore]map
 -- 表示上の移動を可能にする
-key('n', 'j', 'gj')
-key('n', 'k', 'gk')
-key('n', 'gj', 'j')
-key('n', 'gk', 'k')
+key("n", "j", "gj")
+key("n", "k", "gk")
+key("n", "gj", "j")
+key("n", "gk", "k")
 -- 水平方向の移動を簡単にする
-key('n', 'zl', 'zL')
-key('n', 'zh', 'zH')
+key("n", "zl", "zL")
+key("n", "zh", "zH")
 -- キー置換
 -- key('n', ',/', ';')
 -- カーソル下の単語を小文字にする
-key('n', ',u', [[mzg~iw`z<Cmd>delmarks z<CR>]])
+key("n", ",u", [[mzg~iw`z<Cmd>delmarks z<CR>]])
 -- カーソル下の単語を大文字にする
-key('n', ',U', [[mzlbg~l`z<Cmd>delmarks z<CR>]])
+key("n", ",U", [[mzlbg~l`z<Cmd>delmarks z<CR>]])
 -- 保存
-key('n', ',w', ':w<cr>')
+key("n", ",w", ":w<cr>")
 -- 検索結果のハイライトをC-h連打でクリアする
-key('n', ',n', ':<c-u>nohlsearch<cr>')
+key("n", ",n", ":<c-u>nohlsearch<cr>")
 -- 辞書
-key('n', ',?', ':!open dict://<cword><cr>')
+key("n", ",?", ":!open dict://<cword><cr>")
 -- 検索後にジャンプした際に検索単語を画面中央に持ってくる
-key('n', 'n', 'nzz')
-key('n', 'N', 'Nzz')
-key('n', '*', '*zz')
-key('n', '#', '#zz')
-key('n', 'g*', 'g*zz')
-key('n', 'g#', 'g#zz')
+key("n", "n", "nzz")
+key("n", "N", "Nzz")
+key("n", "*", "*zz")
+key("n", "#", "#zz")
+key("n", "g*", "g*zz")
+key("n", "g#", "g#zz")
 -- カーソル位置の単語をyankした文字に置き換える
-key('n', 'vp', 'viwpviwy')
+key("n", "vp", "viwpviwy")
 -- カーソル位置の単語をyankする
-key('n', 'vy', 'viwy')
+key("n", "vy", "viwy")
 -- ノーマルモードでも改行可能
-key('n', '<cr>', 'i<cr><esc>')
+key("n", "<cr>", "i<cr><esc>")
 -- tabにて対応ペアにジャンプ
-key('n', '<tab>', '%')
+key("n", "<tab>", "%")
 -- ウィンドウを分割
-key('n', 'sp', ':<c-u>sp<cr>')
-key('n', 'sv', ':<c-u>vs<cr>')
+key("n", "sp", ":<c-u>sp<cr>")
+key("n", "sv", ":<c-u>vs<cr>")
 -- 分割したウィンドウ間を移動
-key('n', 'sw', '<c-w>w<cr>')
-key('n', 'sj', '<c-w>j<cr>')
-key('n', 'sk', '<c-w>k<cr>')
-key('n', 'sl', '<c-w>l<cr>')
-key('n', 'sh', '<c-w>h<cr>')
+key("n", "sw", "<c-w>w<cr>")
+key("n", "sj", "<c-w>j<cr>")
+key("n", "sk", "<c-w>k<cr>")
+key("n", "sl", "<c-w>l<cr>")
+key("n", "sh", "<c-w>h<cr>")
 -- ウィンドウを閉じる
-key('n', 'sc', '<c-w>c<cr>')
+key("n", "sc", "<c-w>c<cr>")
 -- 現在のウィンドウ以外のウィンドウを閉じる
-key('n', 'so', '<c-w>o<cr>')
+key("n", "so", "<c-w>o<cr>")
 -- 新規タブ
 -- key('n', 'tn', ':<c-u>tabnew<cr>')
 -- バッファを閉じる
@@ -118,66 +119,66 @@ key('n', 'so', '<c-w>o<cr>')
 -- バッファリストの最後を開く
 -- key('n', 'bl', ':bl<cr>')
 --変更中の次のバッファへ移動
-key('n', 'qm', ':<c-u>bm<cr>')
+key("n", "qm", ":<c-u>bm<cr>")
 -- 保存して閉じる、保存せずに閉じるを無効
-key('n', 'ZZ', '<nop>')
-key('n', 'ZQ', '<nop>')
+key("n", "ZZ", "<nop>")
+key("n", "ZQ", "<nop>")
 -- バッファリストの1つ前のバッファを開く
 -- key('n', '[b', ':bprevious<cr>')
 -- バッファリストの次のバッファを開く
 -- key('n', ']b', ':bnext<cr>')
 -- 前のタブに切り替え
-key('n', '[t', 'gT')
+key("n", "[t", "gT")
 -- 次のタブに切り替え
-key('n', ']t', 'gt')
+key("n", "]t", "gt")
 
 -- i[nore]map
 -- 挿入モードでの移動
-key('i', '<c-a>', '<home>')
-key('i', '<c-b>', '<left>')
-key('i', '<c-e>', '<end>')
-key('i', '<c-f>', '<right>')
+key("i", "<c-a>", "<home>")
+key("i", "<c-b>", "<left>")
+key("i", "<c-e>", "<end>")
+key("i", "<c-f>", "<right>")
 -- 挿入モードでのesc
-key('i', 'jj', '<esc>')
+key("i", "jj", "<esc>")
 -- ctrl-v で insert モードで貼り付け
-key('i', '<c-v>', '<eSC>"*pa')
+key("i", "<c-v>", '<eSC>"*pa')
 
 -- 矢印キー無効
-key('n', '<up>', '<nop>')
-key('n', '<down>', '<nop>')
-key('n', '<left>', '<nop>')
-key('n', '<right>', '<nop>')
-key('i', '<up>', '<nop>')
-key('i', '<down>', '<nop>')
-key('i', '<left>', '<nop>')
-key('i', '<right>', '<nop>')
+key("n", "<up>", "<nop>")
+key("n", "<down>", "<nop>")
+key("n", "<left>", "<nop>")
+key("n", "<right>", "<nop>")
+key("i", "<up>", "<nop>")
+key("i", "<down>", "<nop>")
+key("i", "<left>", "<nop>")
+key("i", "<right>", "<nop>")
 
 -- v[nore]map
 -- vを二回で行末まで選択
-key('v', 'v', '$h')
+key("v", "v", "$h")
 -- レジスタを汚さない削除
-key('n', 'x', '"_x')
-key('n', 'X', '"_X')
-key('v', 'x', '"_x')
-key('v', 'X', '"_X')
+key("n", "x", '"_x')
+key("n", "X", '"_X')
+key("v", "x", '"_x')
+key("v", "X", '"_X')
 -- tabにて対応ペアにジャンプ
-key('v', '<tab>', '%')
+key("v", "<tab>", "%")
 
 -- c[nore]map
 -- コマンドモード時のカーソル移動
-key('c', '<c-a>', '<home>')
-key('c', '<c-b>', '<left>')
-key('c', '<c-d>', '<delete>')
-key('c', '<c-e>', '<end>')
-key('c', '<c-f>', '<right>')
-key('c', '<c-n>', '<down>')
-key('c', '<c-p>', '<up>')
+key("c", "<c-a>", "<home>")
+key("c", "<c-b>", "<left>")
+key("c", "<c-d>", "<delete>")
+key("c", "<c-e>", "<end>")
+key("c", "<c-f>", "<right>")
+key("c", "<c-n>", "<down>")
+key("c", "<c-p>", "<up>")
 -- ctrl-v で command モードで貼り付け
-key('c', '<c-v>', '<C-r>+')
+key("c", "<c-v>", "<C-r>+")
 -- バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
-key('c', '/', function()
-  return fn.getcmdtype() == '/' and '\\/' or '/'
+key("c", "/", function()
+	return fn.getcmdtype() == "/" and "\\/" or "/"
 end, { expr = true })
-key('c', '?', function()
-  return fn.getcmdtype() == '?' and '\\?' or '?'
+key("c", "?", function()
+	return fn.getcmdtype() == "?" and "\\?" or "?"
 end, { expr = true })
