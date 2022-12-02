@@ -284,6 +284,7 @@ require("packer").startup(function(use)
   use({
     "neovim/nvim-lspconfig",
     opt = true,
+    -- after = { "mason-lspconfig.nvim" },
     event = "VimEnter",
     config = function()
       require("rc.nvim-lspconfig")
@@ -302,6 +303,7 @@ require("packer").startup(function(use)
   use({
     "williamboman/mason-lspconfig.nvim",
     opt = true,
+    -- after = { "mason.nvim", "cmp-nvim-lsp" },
     after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
     config = function()
       require("rc.mason-lspconfig")
@@ -572,7 +574,7 @@ require("packer").startup(function(use)
   end
 end)
 
-local puc = augroup("PackerUserConfig", { clear = true })
+local puc = augroup("PackerUserConfig", {})
 autocmd("BufWritePost", {
   pattern = "plugin.lua",
   group = puc,

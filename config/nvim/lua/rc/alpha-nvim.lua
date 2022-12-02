@@ -17,6 +17,7 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
 	dashboard.button("e", " New file", ":ene <BAR> startinsert<CR>"),
 	dashboard.button("f", " Find file", ":<c-u>Telescope git_files<CR>"),
+	dashboard.button("g", " Find word", ":<c-u>Telescope live_grep<CR>"),
 	dashboard.button("o", "פּ Open explorer", ":lua require'lir.float'.toggle()<cr>"),
 	dashboard.button("s", " Settings", ":e $MYVIMRC<CR>"),
 	dashboard.button("c", "﫵Check health", ":checkhealth<cr>"),
