@@ -7,9 +7,9 @@ local lsp = v.lsp
 local buf = lsp.buf
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
-local on_attach = function(client, bufnr)
-  local cap = client.server_capabilities.document_highlight
-  if cap then
+local on_attach = function(_, bufnr)
+  -- local cap = client.server_capabilities.document_highlight
+  -- if cap then
     hl(0, "LspReferenceText", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
     hl(0, "LspReferenceRead", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
     hl(0, "LspReferenceWrite", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
@@ -24,7 +24,7 @@ local on_attach = function(client, bufnr)
       callback = buf.clear_references,
       group = ldh,
     })
-  end
+  -- end
 end
 
 require("mason-lspconfig").setup_handlers({

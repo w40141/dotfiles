@@ -1,6 +1,7 @@
 -- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
 -- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
+-- TODO: https://github.com/kevinhwang91/nvim-bqf
 
 local v = vim
 local fn = v.fn
@@ -152,7 +153,6 @@ require("packer").startup(function(use)
   use({
     "nvim-lualine/lualine.nvim",
     requires = { "kyazdani42/nvim-web-devicons", opt = true },
-    -- opt = true,
     config = function()
       require("rc.lualine-nvim")
     end,
@@ -165,7 +165,6 @@ require("packer").startup(function(use)
     module = "lspkind",
     event = "InsertEnter",
     opt = true,
-    -- event = "VimEnter",
     config = function()
       require("rc.lspkind-nvim")
     end,
@@ -173,8 +172,6 @@ require("packer").startup(function(use)
   -- https://github.com/stevearc/aerial.nvim
   use({
     "stevearc/aerial.nvim",
-    event = "VimEnter",
-    opt = true,
     config = function()
       require("rc.aerial-nvim")
     end,
@@ -245,18 +242,6 @@ require("packer").startup(function(use)
     event = "VimEnter",
   })
 
-  -- https://github.com/neoclide/coc.nvim
-  -- use({
-  --   'neoclide/coc.nvim',
-  --   -- branch = 'master',
-  --   branch = "release",
-  --   -- run = 'yarn install --frozen-lockfile',
-  --   -- event = "VimEnter",
-  --   config = function()
-  --     require("rc.coc-nvim")
-  --   end
-  -- })
-
   -- Autopairs
   -- https://github.com/windwp/nvim-autopairs
   use({
@@ -265,7 +250,6 @@ require("packer").startup(function(use)
     opt = true,
     config = function()
       require("nvim-autopairs").setup()
-      -- require("rc.nvim-autopairs")
     end,
   })
 
@@ -284,7 +268,6 @@ require("packer").startup(function(use)
   use({
     "neovim/nvim-lspconfig",
     opt = true,
-    -- after = { "mason-lspconfig.nvim" },
     event = "VimEnter",
     config = function()
       require("rc.nvim-lspconfig")
@@ -303,7 +286,6 @@ require("packer").startup(function(use)
   use({
     "williamboman/mason-lspconfig.nvim",
     opt = true,
-    -- after = { "mason.nvim", "cmp-nvim-lsp" },
     after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
     config = function()
       require("rc.mason-lspconfig")
@@ -354,7 +336,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  -- Misc
   -- A fancy, configurable, notification manager for NeoVim
   -- https://github.com/rcarriga/nvim-notify
   use({
@@ -503,13 +484,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  -- Underlines the word under the cursor
-  -- https://github.com/itchyny/vim-cursorword
-  -- use({
-  --   "itchyny/vim-cursorword",
-  --   event = "VimEnter",
-  -- })
-
   -- Terminal
   -- https://github.com/akinsho/toggleterm.nvim
   use({
@@ -520,7 +494,6 @@ require("packer").startup(function(use)
     end,
   })
 
-  -- use({ "kamykn/spelunker.vim" })
   use({ "lambdalisue/gina.vim" })
   use({
     "skanehira/translate.vim",
@@ -530,11 +503,12 @@ require("packer").startup(function(use)
     end,
   })
 
+  -- https://github.com/lewis6991/gitsigns.nvim
   use({
     "lewis6991/gitsigns.nvim",
     requires = { "nvim-lua/plenary.nvim" },
     -- event = "VimEnter",
-    opt = true,
+    -- opt = true,
     config = function()
       require("rc.gitsigns-nvim")
     end,
@@ -560,6 +534,7 @@ require("packer").startup(function(use)
     end,
   })
 
+  -- vim-asterisk written in lua
   -- https://github.com/rapan931/lasterisk.nvim
   use({
     "rapan931/lasterisk.nvim",

@@ -13,11 +13,13 @@ for type, icon in pairs(signs) do
 	fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
 end
 
+-- https://neovim.io/doc/user/diagnostic.html#diagnostic-api
 key("n", "[dev]o", diagnostic.open_float, opts)
 key("n", "]g", diagnostic.goto_next, opts)
 key("n", "[g", diagnostic.goto_prev, opts)
 key("n", "[dev]q", diagnostic.setloclist, opts)
 
+-- https://neovim.io/doc/user/lsp.html#lsp-buf
 key("n", "H", buf.hover)
 key("n", "[dev]f", buf.format)
 key("n", "[dev]r", buf.references)

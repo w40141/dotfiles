@@ -33,16 +33,19 @@ g.maplocalleader = " "
 
 key("n", "<leader>", "<nop>")
 key("x", "<leader>", "<nop>")
+
 key("n", "[ff]", "<nop>")
 key("x", "[ff]", "<nop>")
-key("n", "[dev]", "<nop>")
-key("x", "[dev]", "<nop>")
-key("n", "[tl]", "<nop>")
-key("x", "[tl]", "<nop>")
 key("n", "<c-f>", "[ff]", { remap = true })
 key("x", "<c-f>", "[ff]", { remap = true })
+
+key("n", "[dev]", "<nop>")
+key("x", "[dev]", "<nop>")
 key("n", "m", "[dev]", { remap = true })
 key("x", "m", "[dev]", { remap = true })
+
+key("n", "[tl]", "<nop>")
+key("x", "[tl]", "<nop>")
 key("n", "t", "[tl]", { remap = true })
 key("x", "t", "[tl]", { remap = true })
 
@@ -177,8 +180,8 @@ key("c", "<c-p>", "<up>")
 key("c", "<c-v>", "<C-r>+")
 -- バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 key("c", "/", function()
-  return fn.getcmdtype() == "/" and "\\/" or "/"
+	return fn.getcmdtype() == "/" and "\\/" or "/"
 end, { expr = true })
 key("c", "?", function()
-  return fn.getcmdtype() == "?" and "\\?" or "?"
+	return fn.getcmdtype() == "?" and "\\?" or "?"
 end, { expr = true })
