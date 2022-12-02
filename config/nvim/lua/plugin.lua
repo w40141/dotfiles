@@ -1,7 +1,12 @@
 -- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
 -- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
+
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
+-- TODO: https://github.com/lambdalisue/gin.vim
+-- TODO: https://github.com/vim-denops/denops.vim
+-- TODO: https://github.com/vim-skk/skkeleton
+-- TODO: https://github.com/rinx/cmp-skkeleton
 
 local v = vim
 local fn = v.fn
