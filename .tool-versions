@@ -9,3 +9,4 @@ java openjdk-17.0.2
 elm 0.19.1
 poetry 1.2.2
 kotlin 1.4.30
+deno 1.28.3

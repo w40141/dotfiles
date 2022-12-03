@@ -1,8 +1,10 @@
-vim.g["test#strategy"] = "neoterm"
-vim.g["test#preserve_screen"] = 1
-vim.g["test#python#runner"] = "pytest"
-vim.g["test#java#runner"] = "gradletest"
-vim.g["test#go#runner"] = "ginkgo"
+local g = vim.g
+
+g["test#strategy"] = "neoterm"
+g["test#preserve_screen"] = 1
+g["test#python#runner"] = "pytest"
+g["test#java#runner"] = "gradletest"
+g["test#go#runner"] = "ginkgo"
 
 local key = vim.keymap.set
 key("n", "t<c-n>", "<cmd>TestNeares<cr>", { noremap = false, silent = true })

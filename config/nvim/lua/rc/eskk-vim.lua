@@ -1,8 +1,8 @@
 local g = vim.g
 g["toggle_markdown_eskk"] = 1
-g["eskk#directory"] = "~/.config/eskk"
-g["eskk#dictionary"] = { path = "~/.config/eskk/my_jisyo", sorted = 1, encoding = "utf-8" }
-g["eskk#large_dictionary"] = { path = "~/.config/eskk/SKK-JISYO.L", sorted = 1, encoding = "utf-8" }
+g["eskk#directory"] = "$XDG_CONFIG_HOME/skk"
+g["eskk#dictionary"] = { path = "$XDG_CONFIG_HOME/skk/my_jisyo", sorted = 1, encoding = "utf-8" }
+g["eskk#large_dictionary"] = { path = "$XDG_CONFIG_HOME/skk/SKK-JISYO.L", sorted = 1, encoding = "utf-8" }
 
 -- 漢字変換した時に候補が1つの場合、自動的に確定する
 g["eskk#kakutei_when_unique_candidate"] = 1
@@ -24,5 +24,4 @@ g["eskk#marker_jisyo_touroku"] = "[辞書]"
 
 local key = vim.keymap.set
 key('i', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = false })
-key('i', ';;', "pumvisible() ? coc#_select_confirm() : coc#refresh()", { expr = true, noremap = true, silent = true })
 key('c', 'jk', "<plug>(eskk:toggle)", { noremap = false, silent = false })

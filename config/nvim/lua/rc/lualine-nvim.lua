@@ -10,9 +10,9 @@ local function search_result()
 	return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
 end
 
-local function eskk()
-	if (vim.fn.mode() == "i") and vim.fn["eskk#is_enabled"]() then
-		return vim.fn["eskk#statusline"]()
+local function skk()
+	if (vim.fn.mode() == "i") and vim.fn["skkeleton#is_enabled"]() then
+		return vim.fn["skkeleton#mode"]()
 	else
 		return ""
 	end
@@ -31,7 +31,7 @@ require("lualine").setup({
 	sections = {
 		lualine_a = {
 			"mode",
-			eskk,
+			skk,
 		},
 		lualine_b = {
 			{ "filename", file_status = true, path = 0, symbols = { modified = "  ", readonly = "  " } },

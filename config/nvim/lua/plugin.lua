@@ -3,10 +3,6 @@
 
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
--- TODO: https://github.com/lambdalisue/gin.vim
--- TODO: https://github.com/vim-denops/denops.vim
--- TODO: https://github.com/vim-skk/skkeleton
--- TODO: https://github.com/rinx/cmp-skkeleton
 
 local v = vim
 local fn = v.fn
@@ -38,6 +34,8 @@ require("packer").startup(function(use)
   -- use({ "nvim-lua/popup.nvim", module = "popup" })
   -- use({ "kkharji/sqlite.lua", module = "sqlite" })
   use({ "MunifTanjim/nui.nvim", module = "nui" })
+  -- https://github.com/vim-denops/denops.vim
+  -- use({ "vim-denops/denops.vim" })
 
   -- Colorscheme
   -- https://github.com/rebelot/kanagawa.nvim
@@ -330,6 +328,16 @@ require("packer").startup(function(use)
   use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
   -- https://github.com/f3fora/cmp-spell
   use({ "f3fora/cmp-spell", after = "nvim-cmp" })
+  -- https://github.com/vim-skk/skkeleton
+  -- use({
+  --   "vim-skk/skkeleton",
+  --   requires = { "vim-denops/denops.vim" },
+  --   config = function()
+  --     require("rc.skkeleton")
+  --   end,
+  -- })
+  -- https://github.com/rinx/cmp-skkeleton
+  -- use({ "rinx/cmp-skkeleton", after = { "nvim-cmp", "skkeleton" } })
 
   -- engine SKK
   -- https://github.com/tyru/eskk.vim
@@ -499,7 +507,20 @@ require("packer").startup(function(use)
     end,
   })
 
-  use({ "lambdalisue/gina.vim" })
+  -- https://github.com/TimUntersberger/neogit
+  use({
+    "TimUntersberger/neogit",
+    requires = "nvim-lua/plenary.nvim",
+    config = function()
+      require("neogit").setup({})
+    end,
+  })
+
+  -- https://github.com/lambdalisue/gin.vim
+  -- use({
+  --   "lambdalisue/gin.vim",
+  -- })
+
   use({
     "skanehira/translate.vim",
     event = "VimEnter",
