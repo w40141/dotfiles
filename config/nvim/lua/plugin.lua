@@ -1,6 +1,8 @@
 -- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
 -- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
 
+-- TODO: https://github.com/folke/noice.nvim
+-- TODO: https://github.com/rcarriga/nvim-notify
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
 
@@ -84,22 +86,12 @@ require("packer").startup(function(use)
 			require("rc.telescope-nvim")
 		end,
 	})
-	-- https://github.com/nvim-telescope/telescope-packer.nvim
-	-- use({
-	-- 	"nvim-telescope/telescope-packer.nvim",
-	-- 	-- opt = true,
-	-- 	after = { "telescope.nvim" },
-	-- 	config = function()
-	-- 		require("telescope").load_extension("packer")
-	-- 	end,
-	-- })
 
 	-- Treesitter configurations
 	-- https://github.com/nvim-treesitter/nvim-treesitter
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
-		-- opt = true,
 		event = "VimEnter",
 		config = function()
 			require("rc.nvim-treesitter")
@@ -148,7 +140,6 @@ require("packer").startup(function(use)
 	use({
 		"akinsho/bufferline.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		opt = true,
 		config = function()
 			require("rc.bufferline-nvim")
 		end,
@@ -159,7 +150,6 @@ require("packer").startup(function(use)
 	use({
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-		-- opt = true,
 		config = function()
 			require("rc.lualine-nvim")
 		end,
@@ -180,7 +170,6 @@ require("packer").startup(function(use)
 	-- https://github.com/stevearc/aerial.nvim
 	use({
 		"stevearc/aerial.nvim",
-		event = "VimEnter",
 		config = function()
 			require("rc.aerial-nvim")
 		end,
@@ -276,7 +265,6 @@ require("packer").startup(function(use)
 	-- https://github.com/neovim/nvim-lspconfig
 	use({
 		"neovim/nvim-lspconfig",
-		opt = true,
 		event = "VimEnter",
 		config = function()
 			require("rc.nvim-lspconfig")
@@ -285,7 +273,6 @@ require("packer").startup(function(use)
 	-- https://github.com/williamboman/mason.nvim
 	use({
 		"williamboman/mason.nvim",
-		opt = true,
 		event = "VimEnter",
 		config = function()
 			require("rc.mason")
@@ -294,7 +281,6 @@ require("packer").startup(function(use)
 	-- https://github.com/williamboman/mason-lspconfig.nvim
 	use({
 		"williamboman/mason-lspconfig.nvim",
-		opt = true,
 		after = { "mason.nvim", "nvim-lspconfig", "cmp-nvim-lsp" },
 		config = function()
 			require("rc.mason-lspconfig")
@@ -334,16 +320,6 @@ require("packer").startup(function(use)
 	use({ "hrsh7th/cmp-cmdline", after = "nvim-cmp" })
 	-- https://github.com/f3fora/cmp-spell
 	use({ "f3fora/cmp-spell", after = "nvim-cmp" })
-	-- https://github.com/vim-skk/skkeleton
-	-- use({
-	--   "vim-skk/skkeleton",
-	--   requires = { "vim-denops/denops.vim" },
-	--   config = function()
-	--     require("rc.skkeleton")
-	--   end,
-	-- })
-	-- https://github.com/rinx/cmp-skkeleton
-	-- use({ "rinx/cmp-skkeleton", after = { "nvim-cmp", "skkeleton" } })
 
 	-- engine SKK
 	-- https://github.com/tyru/eskk.vim
@@ -366,7 +342,7 @@ require("packer").startup(function(use)
 				background_colour = "FloatShadow",
 				timeout = 3000,
 			})
-			vim.notify = require("notify")
+			v.notify = require("notify")
 		end,
 	})
 
