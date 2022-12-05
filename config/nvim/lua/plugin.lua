@@ -374,7 +374,8 @@ require("packer").startup(function(use)
 	})
 
 	use({
-		"tweekmonster/startuptime.vim",
+		"dstein64/vim-startuptime",
+		-- "tweekmonster/startuptime.vim",
 		cmd = "StartupTime",
 		opt = true,
 	})
