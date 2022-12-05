@@ -26,13 +26,13 @@ opt.title = true
 -- 不可視文字を表示
 opt.list = true
 opt.listchars = {
-  tab = "▸ ",
-  extends = "»",
-  trail = "-",
-  precedes = "«",
-  eol = "↲",
-  nbsp = "%",
-  space = "⋅",
+	tab = "▸ ",
+	extends = "»",
+	trail = "-",
+	precedes = "«",
+	eol = "↲",
+	nbsp = "%",
+	space = "⋅",
 }
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 opt.wrap = true
@@ -95,7 +95,7 @@ opt.smartindent = true
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 opt.smarttab = true
 -- タブを空白入力に置換
-opt.expandtab = true
+opt.expandtab = false
 -- 補完時に大文字小文字を区別しない
 opt.infercase = true
 -- 必要ない設定

@@ -11,8 +11,8 @@ local function search_result()
 end
 
 local function skk()
-	if (vim.fn.mode() == "i") and vim.fn["skkeleton#is_enabled"]() then
-		return vim.fn["skkeleton#mode"]()
+	if (vim.fn.mode() == "i") and vim.fn["eskk#is_enabled"]() then
+		return vim.fn['eskk#statusline']()
 	else
 		return ""
 	end
