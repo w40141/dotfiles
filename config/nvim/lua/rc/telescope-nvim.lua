@@ -1,46 +1,21 @@
+local v = vim
 local telescope = require("telescope")
 local actions = require("telescope.actions")
-local action_layout = require("telescope.actions.layout")
 local action_state = require("telescope.actions.state")
 local custom_actions = {}
-local cmd = vim.cmd
+local cmd = v.cmd
 
-function custom_actions._multiopen(prompt_bufnr, open_cmd)
+function custom_actions.multiopen(prompt_bufnr)
 	local picker = action_state.get_current_picker(prompt_bufnr)
 	local num_selections = #picker:get_multi_selection()
 	if num_selections > 1 then
-		cmd("bw!")
 		for _, entry in ipairs(picker:get_multi_selection()) do
-			cmd(string.format("%s %s", open_cmd, entry.value:match("([^:]+)")))
+			cmd(string.format("%s %s", ":e!", entry.value))
 		end
 		cmd("stopinsert")
 	else
-		if open_cmd == "vsplit" then
-			actions.file_vsplit(prompt_bufnr)
-		elseif open_cmd == "split" then
-			actions.file_split(prompt_bufnr)
-		elseif open_cmd == "tabe" then
-			actions.file_tab(prompt_bufnr)
-		else
-			actions.file_edit(prompt_bufnr)
-		end
+		actions.file_edit(prompt_bufnr)
 	end
-end
-
-function custom_actions.multi_selection_open_vsplit(prompt_bufnr)
-	custom_actions._multiopen(prompt_bufnr, "vsplit")
-end
-
-function custom_actions.multi_selection_open_split(prompt_bufnr)
-	custom_actions._multiopen(prompt_bufnr, "split")
-end
-
-function custom_actions.multi_selection_open_tab(prompt_bufnr)
-	custom_actions._multiopen(prompt_bufnr, "tabe")
-end
-
-function custom_actions.multi_selection_open(prompt_bufnr)
-	custom_actions._multiopen(prompt_bufnr, "edit")
 end
 
 local trouble = require("trouble.providers.telescope")
@@ -68,30 +43,19 @@ telescope.setup({
 		mappings = {
 			n = {
 				["<c-o>"] = trouble.open_with_trouble,
-				["<C-t>"] = action_layout.toggle_preview,
-				["<C-g>"] = custom_actions.multi_selection_open,
-				["<C-q>"] = actions.send_selected_to_qflist,
+				["<C-g>"] = custom_actions.multiopen,
 			},
 			i = {
-				["<c-o>"] = trouble.open_with_trouble,
-				["<C-t>"] = action_layout.toggle_preview,
-				["<C-g>"] = custom_actions.multi_selection_open,
-				["<C-q>"] = actions.send_selected_to_qflist,
 				["<C-x>"] = false,
-				["<Tab>"] = actions.toggle_selection + actions.move_selection_next,
+				["<c-o>"] = trouble.open_with_trouble,
+				["<C-g>"] = custom_actions.multiopen,
 				["<CR>"] = actions.select_default + actions.center,
-			},
-		},
-		extensions = {
-			aerial = {
-				-- Display symbols as <root>.<parent>.<symbol>
-				show_nesting = true,
 			},
 		},
 	},
 })
 
-local key = vim.keymap.set
+local key = v.keymap.set
 local opts = { noremap = true, silent = true }
 local builtin = require("telescope.builtin")
 key("n", "[ff]p", builtin.find_files, opts)
