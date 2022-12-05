@@ -507,17 +507,12 @@ require("packer").startup(function(use)
 	use({
 		"TimUntersberger/neogit",
 		requires = "nvim-lua/plenary.nvim",
-		event = "VimEnter",
+		cmd = { "Neogit" },
 		opt = true,
 		config = function()
 			require("neogit").setup({})
 		end,
 	})
-
-	-- https://github.com/lambdalisue/gin.vim
-	-- use({
-	--   "lambdalisue/gin.vim",
-	-- })
 
 	use({
 		"skanehira/translate.vim",
@@ -532,8 +527,6 @@ require("packer").startup(function(use)
 	use({
 		"lewis6991/gitsigns.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-		-- event = "VimEnter",
-		-- opt = true,
 		config = function()
 			require("rc.gitsigns-nvim")
 		end,
@@ -543,7 +536,7 @@ require("packer").startup(function(use)
 	-- https://github.com/norcalli/nvim-colorizer.lua
 	use({
 		"norcalli/nvim-colorizer.lua",
-		event = "VimEnter",
+		ft = { "css", "javascript" },
 		config = function()
 			require("rc.nvim-colorizer")
 		end,
