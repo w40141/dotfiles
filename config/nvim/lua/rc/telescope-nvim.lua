@@ -55,19 +55,3 @@ telescope.setup({
 	},
 })
 
-local key = v.keymap.set
-local opts = { noremap = true, silent = true }
-local builtin = require("telescope.builtin")
-key("n", "[ff]p", builtin.find_files, opts)
-key("n", "[ff]f", builtin.git_files, opts)
-key("n", "[ff]g", builtin.live_grep, opts)
-key("n", "[ff]/", builtin.grep_string, opts)
-key("n", "[ff]b", builtin.buffers, opts)
-key("n", "[ff]l", builtin.current_buffer_fuzzy_find, opts)
-key("n", "[ff]gs", builtin.git_status, opts)
-key("n", "[ff]gc", builtin.git_commits, opts)
-key("n", "[ff]gC", builtin.git_bcommits, opts)
-key("n", "[ff]gb", builtin.git_branches, opts)
-key("n", "[ff]q", builtin.diagnostics, opts)
-key("n", "[ff]r", builtin.lsp_references, opts)
-key("n", "[ff]d", builtin.lsp_definitions, opts)

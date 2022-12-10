@@ -1,3 +1,4 @@
+local v = vim
 local actions = require("lir.actions")
 local mark_actions = require("lir.mark.actions")
 local clipboard_actions = require("lir.clipboard.actions")
@@ -24,7 +25,7 @@ require("lir").setup({
 
 		["J"] = function()
 			mark_actions.toggle_mark()
-			vim.cmd("normal! j")
+			v.cmd("normal! j")
 		end,
 		["C"] = clipboard_actions.copy,
 		["X"] = clipboard_actions.cut,
@@ -40,7 +41,7 @@ require("lir").setup({
 	hide_cursor = true,
 	on_init = function()
 		-- use visual mode
-		vim.api.nvim_buf_set_keymap(
+		v.api.nvim_buf_set_keymap(
 			0,
 			"x",
 			"J",
@@ -48,9 +49,7 @@ require("lir").setup({
 			{ noremap = true, silent = true }
 		)
 		-- echo cwd
-		vim.api.nvim_echo({ { vim.fn.expand("%:p"), "Normal" } }, false, {})
+		v.api.nvim_echo({ { v.fn.expand("%:p"), "Normal" } }, false, {})
 	end,
 })
-
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>e", require("lir.float").toggle, opts)
+vim.keymap.set("n", "<leader>e", require("lir.float").toggle)
