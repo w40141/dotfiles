@@ -29,7 +29,6 @@ end
 local packer_bootstrap = ensure_packer()
 
 require("packer").startup(function(use)
-	-- TODO:
 	-- Package Manager
 	-- https://github.com/wbthomason/packer.nvim
 	use({ "wbthomason/packer.nvim" })
@@ -45,6 +44,7 @@ require("packer").startup(function(use)
 	-- Colorscheme
 	-- https://github.com/rebelot/kanagawa.nvim
 	use({
+		-- event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		"rebelot/kanagawa.nvim",
 		config = function()
 			vim.cmd("colorscheme kanagawa")
@@ -190,8 +190,11 @@ require("packer").startup(function(use)
 				"kyazdani42/nvim-web-devicons",
 				module = { "nvim-web-devicons" }
 			},
+			{
+				"rebelot/kanagawa.nvim",
+			}
 		},
-		wants = { "nvim-web-devicons" },
+		wants = { "nvim-web-devicons", "kanagawa.nvim" },
 		setup = function()
 			-- vim.opt.laststatus = 0
 			-- vim.opt.showtabline = 0
@@ -210,7 +213,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	-- Indent guide
 	-- https://github.com/lukas-reineke/indent-blankline.nvim
 	use({
@@ -221,7 +223,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	-- quickly highlight <cword> or visually selected word
 	-- https://github.com/t9md/vim-quickhl
 	use({
@@ -232,7 +233,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	-- Highlight, list and search todo comments
 	-- https://github.com/folke/todo-comments.nvim
 	use({
@@ -245,8 +245,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
-	-- edit
 	-- A surround text object plugin for neovim written in lua.
 	-- https://github.com/ur4ltz/surround.nvim
 	use({
@@ -427,10 +425,8 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	use({
 		"vim-jp/vimdoc-ja",
-		opt = true,
 		cmd = "help",
 	})
 
@@ -444,15 +440,11 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	use({
 		"dstein64/vim-startuptime",
-		-- "tweekmonster/startuptime.vim",
 		cmd = "StartupTime",
-		opt = true,
 	})
 
-	-- TODO:
 	use({
 		"vim-test/vim-test",
 		event = "CmdlineEnter",
@@ -462,7 +454,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	-- Generating images of source code using
 	-- https://github.com/segeljakt/vim-silicon
 	use({
@@ -470,7 +461,6 @@ require("packer").startup(function(use)
 		cmd = "Silicon",
 	})
 
-	-- TODO:
 	-- Automatically uppercase SQL keywords
 	-- https://github.com/jsborjesson/vim-uppercase-sql
 	use({
@@ -478,7 +468,6 @@ require("packer").startup(function(use)
 		ft = { "sql" },
 	})
 
-	-- TODO:
 	-- Delete buffers
 	-- https://github.com/famiu/bufdelete.nvim
 	use({
@@ -487,7 +476,6 @@ require("packer").startup(function(use)
 		opt = true,
 	})
 
-	-- TODO:
 	-- File finder
 	-- https://github.com/tamago324/lir.nvim
 	use({
@@ -557,7 +545,6 @@ require("packer").startup(function(use)
 		end,
 	})
 
-	-- TODO:
 	-- Comment out
 	-- https://github.com/numToStr/Comment.nvim
 	use({
@@ -610,7 +597,6 @@ require("packer").startup(function(use)
 		end,
 	}
 
-	-- TODO:
 	-- https://github.com/lewis6991/gitsigns.nvim
 	use({
 		"lewis6991/gitsigns.nvim",
