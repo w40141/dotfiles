@@ -33,22 +33,4 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"sumneko_lua",
-		"rust_analyzer",
-		"bashls",
-		"eslint",
-		"jdtls",
-		"tsserver",
-		"graphql",
-		"kotlin_language_server",
-		"pyright",
-		"sqlls",
-		"yamlls",
-		"spectral",
-		"marksman",
-		"html",
-		"dockerls",
-	},
-})
+require("mason-lspconfig").setup({})

@@ -236,7 +236,6 @@ require("packer").startup(function(use)
 	use({
 		"williamboman/mason-lspconfig.nvim",
 		event = { "BufReadPre" },
-		-- module = { "mason-lspconfig" },
 		requires = {
 			{
 				"WhoIsSethDaniel/mason-tool-installer.nvim",
