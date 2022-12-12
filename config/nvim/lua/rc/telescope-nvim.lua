@@ -2,6 +2,7 @@ local v = vim
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local action_state = require("telescope.actions.state")
+local aerial = require('telescope').load_extension('aerial')
 local custom_actions = {}
 local cmd = v.cmd
 
@@ -18,6 +19,7 @@ function custom_actions.multiopen(prompt_bufnr)
 	end
 end
 
+telescope.load_extension('aerial')
 local trouble = require("trouble.providers.telescope")
 telescope.setup({
 	defaults = {
@@ -53,5 +55,14 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		aerial = {
+			-- Display symbols as <root>.<parent>.<symbol>
+			show_nesting = {
+				['_'] = false, -- This key will be the default
+				json = true, -- You can set the option for specific filetypes
+				yaml = true,
+			}
+		}
+	},
 })
-

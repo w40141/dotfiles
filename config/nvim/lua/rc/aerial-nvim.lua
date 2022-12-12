@@ -1,18 +1,10 @@
--- Call the setup function to change the default behavior
 require("aerial").setup({
-	-- Priority list of preferred backends for aerial.
-	-- This can be a filetype map (see :help aerial-filetype-map)
 	backends = { "lsp", "treesitter", "markdown" },
 	close_automatic_events = { "unsupported" },
-	-- Set to false to remove the default keybindings for the aerial buffer
 	default_bindings = true,
 
-	-- Disable aerial on files with this many lines
 	disable_max_lines = 10000,
 
-	-- A list of all symbols to display. Set to false to display all symbols.
-	-- This can be a filetype map (see :help aerial-filetype-map)
-	-- To see all available values, see :help SymbolKind
 	filter_kind = {
 		"Class",
 		"Constructor",
@@ -23,7 +15,6 @@ require("aerial").setup({
 		"Method",
 		"Struct",
 	},
-
 	-- Enum: split_width, full_width, last, none
 	-- Determines line highlighting mode when multiple splits are visible
 	-- split_width   Each open window will have its cursor location marked in the

@@ -7,20 +7,15 @@
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
 
 local v = vim
-local fn = v.fn
-local cmd = v.cmd
-local api = v.api
-local augroup = api.nvim_create_augroup
-local autocmd = api.nvim_create_autocmd
 
 local ensure_packer = function()
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({
+	local install_path = v.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if v.fn.empty(v.fn.glob(install_path)) > 0 then
+		v.fn.system({
 			"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
 			install_path
 		})
-		cmd([[packadd packer.nvim]])
+		v.cmd([[packadd packer.nvim]])
 		return true
 	end
 	return false
@@ -34,8 +29,6 @@ require("packer").startup(function(use)
 	use({ "wbthomason/packer.nvim" })
 
 	-- Library
-	-- https://github.com/nvim-lua/plenary.nvim
-	-- use({ "nvim-lua/plenary.nvim" })
 	-- use({ "nvim-lua/popup.nvim", module = "popup" })
 	-- use({ "kkharji/sqlite.lua", module = "sqlite" })
 	-- https://github.com/vim-denops/denops.vim
@@ -44,15 +37,11 @@ require("packer").startup(function(use)
 	-- Colorscheme
 	-- https://github.com/rebelot/kanagawa.nvim
 	use({
-		-- event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		"rebelot/kanagawa.nvim",
 		config = function()
 			vim.cmd("colorscheme kanagawa")
 		end,
 	})
-
-	-- https://github.com/kyazdani42/nvim-web-devicons
-	-- use({ "kyazdani42/nvim-web-devicons" })
 
 	-- Greeter
 	-- https://github.com/goolord/alpha-nvim
@@ -77,18 +66,16 @@ require("packer").startup(function(use)
 				"folke/trouble.nvim",
 				module = { "trouble" },
 				requires = {
-					{
-						"kyazdani42/nvim-web-devicons",
-						module = { "nvim-web-devicons" }
-					},
+					{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 				},
 				wants = { "nvim-web-devicons" },
 				config = function()
 					require("rc.trouble-nvim")
 				end,
 			},
+			{ "stevearc/aerial.nvim" },
 		},
-		wants = { "trouble.nvim" },
+		wants = { "trouble.nvim", "aerial.nvim" },
 		setup = function()
 			local function builtin(name)
 				return function()
@@ -163,16 +150,22 @@ require("packer").startup(function(use)
 		end,
 	})
 
+	-- https://github.com/stevearc/aerial.nvim
+	use(
+		{
+			"stevearc/aerial.nvim",
+			config = function()
+				require("rc.aerial-nvim")
+			end,
+		})
+
 	-- Buffer line
 	-- https://github.com/akinsho/bufferline.nvim
 	use({
 		"akinsho/bufferline.nvim",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		requires = {
-			{
-				"kyazdani42/nvim-web-devicons",
-				module = { "nvim-web-devicons" }
-			},
+			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 		},
 		wants = { "nvim-web-devicons" },
 		config = function()
@@ -186,30 +179,13 @@ require("packer").startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		requires = {
-			{
-				"kyazdani42/nvim-web-devicons",
-				module = { "nvim-web-devicons" }
-			},
-			{
-				"rebelot/kanagawa.nvim",
-			}
+			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
+			{ "rebelot/kanagawa.nvim" },
+			{ "stevearc/aerial.nvim" },
 		},
-		wants = { "nvim-web-devicons", "kanagawa.nvim" },
-		setup = function()
-			-- vim.opt.laststatus = 0
-			-- vim.opt.showtabline = 0
-		end,
+		wants = { "nvim-web-devicons", "kanagawa.nvim", "aerial.nvim" },
 		config = function()
 			require("rc.lualine-nvim")
-		end,
-	})
-
-	-- TODO:
-	-- https://github.com/stevearc/aerial.nvim
-	use({
-		"stevearc/aerial.nvim",
-		config = function()
-			require("rc.aerial-nvim")
 		end,
 	})
 
@@ -400,18 +376,6 @@ require("packer").startup(function(use)
 	-- 		}
 	-- 	end
 	-- }
-	-- use({
-	-- 	"rcarriga/nvim-notify",
-	-- 	module = "notify",
-	-- 	config = function()
-	-- 		require("notify").setup({
-	-- 			stages = "slide",
-	-- 			background_colour = "FloatShadow",
-	-- 			timeout = 3000,
-	-- 		})
-	-- 		v.notify = require("notify")
-	-- 	end,
-	-- })
 
 	-- TODO:
 	-- Use Neovim as a language server to inject LSP diagnostics, code actions
@@ -434,7 +398,6 @@ require("packer").startup(function(use)
 	use({
 		"airblade/vim-rooter",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
-		opt = true,
 		config = function()
 			require("rc.vim-rooter")
 		end,
@@ -448,7 +411,6 @@ require("packer").startup(function(use)
 	use({
 		"vim-test/vim-test",
 		event = "CmdlineEnter",
-		opt = true,
 		config = function()
 			require("rc.vim-test")
 		end,
@@ -473,7 +435,6 @@ require("packer").startup(function(use)
 	use({
 		"famiu/bufdelete.nvim",
 		event = "CmdlineEnter",
-		opt = true,
 	})
 
 	-- File finder
@@ -482,13 +443,8 @@ require("packer").startup(function(use)
 		"tamago324/lir.nvim",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		requires = {
-			{
-				"kyazdani42/nvim-web-devicons",
-				module = { "nvim-web-devicons" }
-			},
-			{
-				"nvim-lua/plenary.nvim"
-			}
+			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
+			{ "nvim-lua/plenary.nvim" }
 		},
 		wants = { "plenary.nvim", "nvim-web-devicons" },
 		config = function()
@@ -514,7 +470,6 @@ require("packer").startup(function(use)
 	use({
 		"previm/previm",
 		ft = { "markdown" },
-		opt = true,
 		config = function()
 			require("rc.previm")
 		end,
@@ -634,10 +589,3 @@ require("packer").startup(function(use)
 		require("packer").sync()
 	end
 end)
-
-local puc = augroup("PackerUserConfig", {})
-autocmd("BufWritePost", {
-	pattern = "plugin.lua",
-	group = puc,
-	command = "source <afile> | PackerCompile",
-})
