@@ -1,5 +1,6 @@
 -- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
 -- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
+-- TODO: https://qiita.com/delphinus/items/fb905e452b2de72f1a0f
 
 -- TODO: https://github.com/folke/noice.nvim
 -- TODO: https://github.com/rcarriga/nvim-notify
@@ -276,7 +277,8 @@ require("packer").startup(function(use)
 		requires = {
 			-- https://github.com/dcampos/cmp-snippy
 			{ "dcampos/cmp-snippy",
-				event = "InsertEnter",
+				event = { "InsertEnter" },
+				-- , "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 				-- https://github.com/dcampos/nvim-snippy
 				requires = {
 					"dcampos/nvim-snippy",
@@ -299,23 +301,57 @@ require("packer").startup(function(use)
 				end
 			},
 			-- https://github.com/hrsh7th/cmp-nvim-lsp
-			{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
+			{
+				"hrsh7th/cmp-nvim-lsp",
+				event = { "InsertEnter" },
+				-- , "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
-			{ "hrsh7th/cmp-nvim-lsp-signature-help", event = "InsertEnter" },
+			{
+				"hrsh7th/cmp-nvim-lsp-signature-help",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
-			{ "hrsh7th/cmp-nvim-lsp-document-symbol", event = "InsertEnter" },
+			{
+				"hrsh7th/cmp-nvim-lsp-document-symbol",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/hrsh7th/cmp-buffer
-			{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
+			{
+				"hrsh7th/cmp-buffer",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/ray-x/cmp-treesitter
-			{ "ray-x/cmp-treesitter", event = "InsertEnter" },
+			{
+				"ray-x/cmp-treesitter",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/yutkat/cmp-mocword
-			{ "yutkat/cmp-mocword", event = "InsertEnter" },
+			{
+				"yutkat/cmp-mocword",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/f3fora/cmp-spell
-			{ "f3fora/cmp-spell", event = "InsertEnter" },
+			{
+				"f3fora/cmp-spell",
+				event = { "InsertEnter" },
+				-- "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
+			},
 			-- https://github.com/hrsh7th/cmp-cmdline
-			{ "hrsh7th/cmp-cmdline", event = "CmdlineEnter" },
+			{
+				"hrsh7th/cmp-cmdline",
+				event = "CmdlineEnter",
+			},
 			-- https://github.com/hrsh7th/cmp-path
-			{ "hrsh7th/cmp-path", event = "CmdlineEnter" },
+			{
+				"hrsh7th/cmp-path",
+				event = "CmdlineEnter",
+			},
 		},
 		config = function()
 			require("rc.nvim-cmp")
