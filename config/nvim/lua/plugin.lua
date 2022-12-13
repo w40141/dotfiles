@@ -6,6 +6,7 @@
 -- TODO: https://github.com/rcarriga/nvim-notify
 -- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
+-- TODO: https://github.com/ray-x/lsp_signature.nvim
 
 local v = vim
 
@@ -346,7 +347,7 @@ require("packer").startup(function(use)
 		module = { "nvim-autopairs" },
 		want = { "nvim-cmp" },
 		config = function()
-			require("rc.nvim-autopairs")
+			require("nvim-autopairs").setup()
 		end
 	})
 
