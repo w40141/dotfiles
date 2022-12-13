@@ -29,15 +29,9 @@ require("packer").startup(function(use)
 	-- https://github.com/wbthomason/packer.nvim
 	use({ "wbthomason/packer.nvim" })
 
-	-- Library
-	-- use({ "nvim-lua/popup.nvim", module = "popup" })
-	-- use({ "kkharji/sqlite.lua", module = "sqlite" })
-	-- https://github.com/vim-denops/denops.vim
-	-- use({ "vim-denops/denops.vim" })
-
 	-- Colorscheme
-	-- https://github.com/rebelot/kanagawa.nvim
 	use({
+		-- https://github.com/rebelot/kanagawa.nvim
 		"rebelot/kanagawa.nvim",
 		config = function()
 			vim.cmd("colorscheme kanagawa")
@@ -83,7 +77,6 @@ require("packer").startup(function(use)
 					return require("telescope.builtin")[name]()
 				end
 			end
-
 			vim.keymap.set("n", "[ff]p", builtin "find_files")
 			vim.keymap.set("n", "[ff]f", builtin "git_files")
 			vim.keymap.set("n", "[ff]g", builtin "live_grep")
@@ -280,15 +273,6 @@ require("packer").startup(function(use)
 			-- https://github.com/onsails/lspkind.nvim
 			{ "onsails/lspkind-nvim", module = { "lspkind" } },
 			{
-				-- https://github.com/windwp/nvim-autopairs
-				"windwp/nvim-autopairs",
-				module = { "nvim-autopairs" },
-				event = { "InsertEnter" },
-				config = function()
-					require("nvim-autopairs").setup()
-				end
-			},
-			{
 				-- https://github.com/hrsh7th/cmp-nvim-lsp
 				"hrsh7th/cmp-nvim-lsp",
 				event = { "InsertEnter" },
@@ -326,28 +310,44 @@ require("packer").startup(function(use)
 			{
 				-- https://github.com/hrsh7th/cmp-cmdline
 				"hrsh7th/cmp-cmdline",
-				event = "CmdlineEnter",
+				event = { "CmdlineEnter" },
 			},
 			{
 				-- https://github.com/hrsh7th/cmp-path
 				"hrsh7th/cmp-path",
-				event = "CmdlineEnter",
+				event = { "CmdlineEnter" },
+
 			},
 			{
-				-- https://github.com/dcampos/cmp-snippy
-				"dcampos/cmp-snippy",
+				-- https://github.com/saadparwaiz1/cmp_luasnip
+				"saadparwaiz1/cmp_luasnip",
+				event = { "InsertEnter" },
 				requires = {
-					-- https://github.com/dcampos/nvim-snippy
-					"dcampos/nvim-snippy",
-					module = { "snippy" },
-					-- https://github.com/honza/vim-snippets
-					requires = { "honza/vim-snippets" },
-					config = function()
-						require("rc.nvim-snippy")
-					end,
+					{
+						-- https://github.com/L3MON4D3/LuaSnip
+						"L3MON4D3/LuaSnip",
+						module = { "luasnip" },
+						requires = {
+							-- https://github.com/rafamadriz/friendly-snippets
+							{ "rafamadriz/friendly-snippets" },
+						},
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+						end,
+					},
 				}
 			},
 		},
+	})
+
+	use({
+		-- https://github.com/windwp/nvim-autopairs
+		"windwp/nvim-autopairs",
+		module = { "nvim-autopairs" },
+		want = { "nvim-cmp" },
+		config = function()
+			require("rc.nvim-autopairs")
+		end
 	})
 
 	-- TODO:
