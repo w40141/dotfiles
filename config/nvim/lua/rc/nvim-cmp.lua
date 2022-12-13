@@ -14,7 +14,7 @@ cmp.setup({
 				treesitter = "[TST]",
 			},
 			symbol_map = {
-				Treesitter = "a",
+				Treesitter = "",
 				Text = "",
 				Method = "",
 				Function = "",
