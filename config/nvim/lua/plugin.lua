@@ -78,6 +78,7 @@ require("packer").startup(function(use)
 					return require("telescope.builtin")[name]()
 				end
 			end
+
 			vim.keymap.set("n", "[ff]p", builtin "find_files")
 			vim.keymap.set("n", "[ff]f", builtin "git_files")
 			vim.keymap.set("n", "[ff]g", builtin "live_grep")
@@ -504,18 +505,12 @@ require("packer").startup(function(use)
 	})
 
 	-- use({
-	--   "rust-lang/rust.vim",
-	--   ft = { "rust" },
-	--   config = function()
-	--     require("rc.rust-vim")
-	--   end
-	-- })
-	-- use({
-	--     "simrat39/rust-tools.nvim",
-	--     ft = { "rust" },
-	--     config = function()
-	--         require("rc.rust-tools-nvim")
-	--     end
+	-- 	"simrat39/rust-tools.nvim",
+	-- 	module = { "rust-tools" },
+	-- 	config = function()
+	-- 		-- require("rc.rust-tools-nvim")
+	-- 		require('rust-tools').setup()
+	-- 	end
 	-- })
 
 	-- Resizing of windows

@@ -6,7 +6,8 @@ local hl = api.nvim_set_hl
 local lsp = v.lsp
 local buf = lsp.buf
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
+require("mason-lspconfig").setup({})
+
 local on_attach = function(client, bufnr)
 	if client.server_capabilities.documentHighlightProvider then
 		hl(0, "LspReferenceText", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
@@ -26,11 +27,18 @@ local on_attach = function(client, bufnr)
 	end
 end
 
+local lspconfig = require("lspconfig")
+local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
 require("mason-lspconfig").setup_handlers({
-	function(server)
-		local opts = { capabilities = capabilities, on_attach = on_attach }
-		require("lspconfig")[server].setup(opts)
+	function(server_name)
+		lspconfig[server_name].setup({ capabilities = capabilities, on_attach = on_attach })
+	end,
+	["rust_analyzer"] = function()
+		local has_rust_tools, rust_tools = pcall(require, "rust-tools")
+		if has_rust_tools then
+			rust_tools.setup({ server = { capabilities = capabilities, on_attach = on_attach } })
+		else
+			lspconfig.rust_analyzer.setup({ capabilities = capabilities, on_attach = on_attach })
+		end
 	end,
 })
-
-require("mason-lspconfig").setup({})
