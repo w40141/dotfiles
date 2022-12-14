@@ -72,27 +72,28 @@ require("packer").startup(function(use)
 			{ "stevearc/aerial.nvim" },
 		},
 		wants = { "trouble.nvim", "aerial.nvim" },
-		setup = function()
-			local function builtin(name)
-				return function()
-					return require("telescope.builtin")[name]()
-				end
-			end
-
-			vim.keymap.set("n", "[ff]p", builtin "find_files")
-			vim.keymap.set("n", "[ff]f", builtin "git_files")
-			vim.keymap.set("n", "[ff]g", builtin "live_grep")
-			vim.keymap.set("n", "[ff]/", builtin "grep_string")
-			vim.keymap.set("n", "[ff]b", builtin "buffers")
-			vim.keymap.set("n", "[ff]l", builtin "current_buffer_fuzzy_find")
-			vim.keymap.set("n", "[ff]gs", builtin "git_status")
-			vim.keymap.set("n", "[ff]gc", builtin "git_commits")
-			vim.keymap.set("n", "[ff]gC", builtin "git_bcommits")
-			vim.keymap.set("n", "[ff]gb", builtin "git_branches")
-			vim.keymap.set("n", "[ff]q", builtin "diagnostics")
-			vim.keymap.set("n", "[ff]r", builtin "lsp_references")
-			vim.keymap.set("n", "[ff]d", builtin "lsp_definitions")
-		end,
+		-- setup = function()
+		-- 	local function builtin(name)
+		-- 		return function()
+		-- 			return require("telescope.builtin")[name]()
+		-- 		end
+		-- 	end
+		--
+		-- 	vim.keymap.set("n", "[ff]p", builtin "find_files")
+		-- 	vim.keymap.set("n", "[ff]f", builtin "git_files")
+		-- 	vim.keymap.set("n", "[ff]g", builtin "live_grep")
+		-- 	vim.keymap.set("n", "[ff]/", builtin "grep_string")
+		-- 	vim.keymap.set("n", "[ff]b", builtin "buffers")
+		-- 	vim.keymap.set("n", "[ff]l", builtin "current_buffer_fuzzy_find")
+		-- 	vim.keymap.set("n", "[ff]gs", builtin "git_status")
+		-- 	vim.keymap.set("n", "[ff]gc", builtin "git_commits")
+		-- 	vim.keymap.set("n", "[ff]gC", builtin "git_bcommits")
+		-- 	vim.keymap.set("n", "[ff]gb", builtin "git_branches")
+		-- 	vim.keymap.set("n", "[ff]q", builtin "diagnostics")
+		-- 	vim.keymap.set("n", "[ff]r", builtin "lsp_references")
+		-- 	vim.keymap.set("n", "[ff]d", builtin "lsp_definitions")
+		-- end,
+		setup = require("rc.setup.telescope-nvim"),
 		config = function()
 			require("rc.telescope-nvim")
 		end
