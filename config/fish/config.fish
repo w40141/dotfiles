@@ -222,8 +222,8 @@ end
 
 # for ghq
 if command -s ghq > /dev/null
-  abbr -a ggp 'ghq get -p'
-  abbr -a gg 'ghq get'
+  abbr -a gg 'ghq get -p'
+  abbr -a ghqg 'ghq get'
   abbr -a gc 'ghq create'
   abbr -a gau 'ghq list | ghq get --update --parallel'
 end

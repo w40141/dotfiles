@@ -331,7 +331,9 @@ require("packer").startup(function(use)
 						module = { "luasnip" },
 						requires = {
 							-- https://github.com/rafamadriz/friendly-snippets
-							{ "rafamadriz/friendly-snippets" },
+							-- { "rafamadriz/friendly-snippets" },
+							-- https://github.com/honza/vim-snippets
+							{"honza/vim-snippets"}
 						},
 						config = function()
 							require("luasnip.loaders.from_vscode").lazy_load()
