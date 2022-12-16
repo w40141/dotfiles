@@ -4,9 +4,9 @@ require("indent_blankline").setup({
 	-- show_current_context_start = true,
 })
 
-vim.g.indent_blankline_filetype_exclude = {
-	"help",
-	"mini",
-	"starter",
-	"terminal",
-}
+-- vim.g.indent_blankline_filetype_exclude = {
+-- 	"help",
+-- 	"starter",
+-- 	"terminal",
+-- 	"man",
+-- }

@@ -53,7 +53,3 @@ require("todo-comments").setup({
 		-- pattern = [[\b(KEYWORDS)\b]], -- match without the extra colon. You'll likely get false positives
 	},
 })
-
-local key = vim.keymap.set
-local opts = { noremap = true, silent = true }
-key("n", "[ff]c", "<Cmd>TodoTelescope<CR>", opts)

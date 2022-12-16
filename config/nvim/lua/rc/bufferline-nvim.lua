@@ -3,7 +3,6 @@ local key = v.keymap.set
 local opt = v.opt
 local fn = v.fn
 
-opt.termguicolors = true
 require("bufferline").setup({
 	options = {
 		numbers = "buffer_id",
@@ -43,23 +42,3 @@ require("bufferline").setup({
 		sort_by = "directory",
 	},
 })
-
-local opts = { noremap = true, silent = true }
-key("n", "[b", "<Cmd>BufferLineCyclePrev<cr>", opts)
-key("n", "]b", "<Cmd>BufferLineCycleNext<cr>", opts)
-
--- These commands will sort buffers by directory, language, or a custom criteria
-key("n", "bE", "<Cmd>BufferLineSortByExtension<cr>", opts)
-key("n", "bD", "<Cmd>BufferLineSortByDirectory<cr>", opts)
-key("n", "bg", "<Cmd>BufferLinePick<cr>", opts)
-
--- These commands will move the current buffer backwards or forwards in the bufferline
-key("n", "<silent><leader>1", "<Cmd>BufferLineGoToBuffer 1<cr>", opts)
-key("n", "<silent><leader>2", "<Cmd>BufferLineGoToBuffer 2<cr>", opts)
-key("n", "<silent><leader>3", "<Cmd>BufferLineGoToBuffer 3<cr>", opts)
-key("n", "<silent><leader>4", "<Cmd>BufferLineGoToBuffer 4<cr>", opts)
-key("n", "<silent><leader>5", "<Cmd>BufferLineGoToBuffer 5<cr>", opts)
-key("n", "<silent><leader>6", "<Cmd>BufferLineGoToBuffer 6<cr>", opts)
-key("n", "<silent><leader>7", "<Cmd>BufferLineGoToBuffer 7<cr>", opts)
-key("n", "<silent><leader>8", "<Cmd>BufferLineGoToBuffer 8<cr>", opts)
-key("n", "<silent><leader>9", "<Cmd>BufferLineGoToBuffer 9<cr>", opts)

@@ -34,9 +34,7 @@ require("packer").startup(function(use)
 	use({
 		-- https://github.com/rebelot/kanagawa.nvim
 		"rebelot/kanagawa.nvim",
-		config = function()
-			vim.cmd("colorscheme kanagawa")
-		end,
+		config = require("rc.config.kanagawa"),
 	})
 
 	-- Greeter
@@ -45,9 +43,7 @@ require("packer").startup(function(use)
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons" },
 		wants = { "nvim-web-devicons" },
-		config = function()
-			require("rc.alpha-nvim")
-		end,
+		config = require("rc.config.alpha-nvim"),
 	})
 
 	-- Fzf finder
@@ -60,43 +56,23 @@ require("packer").startup(function(use)
 			{
 				-- https://github.com/folke/trouble.nvim
 				"folke/trouble.nvim",
+				cmd = { "Trouble" },
 				module = { "trouble" },
 				requires = {
-					{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
+					{
+						"kyazdani42/nvim-web-devicons",
+						module = { "nvim-web-devicons" }
+					},
 				},
 				wants = { "nvim-web-devicons" },
-				config = function()
-					require("rc.trouble-nvim")
-				end,
+				setup = require("rc.setup.trouble-nvim"),
+				config = require("rc.config.trouble-nvim"),
 			},
-			{ "stevearc/aerial.nvim" },
+			{ "stevearc/aerial.nvim", module = { "aerial" } },
 		},
 		wants = { "trouble.nvim", "aerial.nvim" },
-		-- setup = function()
-		-- 	local function builtin(name)
-		-- 		return function()
-		-- 			return require("telescope.builtin")[name]()
-		-- 		end
-		-- 	end
-		--
-		-- 	vim.keymap.set("n", "[ff]p", builtin "find_files")
-		-- 	vim.keymap.set("n", "[ff]f", builtin "git_files")
-		-- 	vim.keymap.set("n", "[ff]g", builtin "live_grep")
-		-- 	vim.keymap.set("n", "[ff]/", builtin "grep_string")
-		-- 	vim.keymap.set("n", "[ff]b", builtin "buffers")
-		-- 	vim.keymap.set("n", "[ff]l", builtin "current_buffer_fuzzy_find")
-		-- 	vim.keymap.set("n", "[ff]gs", builtin "git_status")
-		-- 	vim.keymap.set("n", "[ff]gc", builtin "git_commits")
-		-- 	vim.keymap.set("n", "[ff]gC", builtin "git_bcommits")
-		-- 	vim.keymap.set("n", "[ff]gb", builtin "git_branches")
-		-- 	vim.keymap.set("n", "[ff]q", builtin "diagnostics")
-		-- 	vim.keymap.set("n", "[ff]r", builtin "lsp_references")
-		-- 	vim.keymap.set("n", "[ff]d", builtin "lsp_definitions")
-		-- end,
 		setup = require("rc.setup.telescope-nvim"),
-		config = function()
-			require("rc.telescope-nvim")
-		end
+		config = require("rc.config.telescope-nvim"),
 	}
 
 	-- Treesitter configurations
@@ -105,9 +81,7 @@ require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufRead", "BufNewFile", "InsertEnter" },
 		run = ":TSUpdate",
-		config = function()
-			require("rc.nvim-treesitter")
-		end,
+		config = require("rc.config.nvim-treesitter")
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter-textobjects",
@@ -135,24 +109,24 @@ require("packer").startup(function(use)
 		wants = { "nvim-treesitter" }
 	})
 
-	-- TODO:
 	-- Annotation generator
 	use({
 		-- https://github.com/danymat/neogen
 		"danymat/neogen",
 		requires = { "nvim-treesitter/nvim-treesitter" },
+		module = { "neogen" },
 		wants = { "nvim-treesitter" },
-		config = function()
-			require("rc/neogen")
-		end,
+		setup = require("rc.setup.neogen"),
+		config = require("rc.config.neogen"),
 	})
 
 	use({
 		-- https://github.com/stevearc/aerial.nvim
 		"stevearc/aerial.nvim",
-		config = function()
-			require("rc.aerial-nvim")
-		end,
+		module = { "aerial" },
+		cmd = { "Aerial" },
+		setup = require("rc.setup.aerial-nvim"),
+		config = require("rc.config.aerial-nvim")
 	})
 
 	-- Buffer line
@@ -164,9 +138,8 @@ require("packer").startup(function(use)
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 		},
 		wants = { "nvim-web-devicons" },
-		config = function()
-			require("rc.bufferline-nvim")
-		end,
+		setup = require("rc.setup.bufferline-nvim"),
+		config = require("rc.config.bufferline-nvim"),
 	})
 
 	-- Status line
@@ -177,12 +150,10 @@ require("packer").startup(function(use)
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 			{ "rebelot/kanagawa.nvim" },
-			{ "stevearc/aerial.nvim" },
+			{ "stevearc/aerial.nvim", module = { "aerial" } },
 		},
 		wants = { "nvim-web-devicons", "kanagawa.nvim", "aerial.nvim" },
-		config = function()
-			require("rc.lualine-nvim")
-		end,
+		config = require("rc.config.lualine-nvim"),
 	})
 
 	-- Indent guide
@@ -190,19 +161,18 @@ require("packer").startup(function(use)
 		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
-		config = function()
-			require("rc.indent-blankline-nvim")
-		end,
+		config = require("rc.config.indent-blankline-nvim")
 	})
 
 	-- quickly highlight <cword> or visually selected word
 	use({
 		-- https://github.com/t9md/vim-quickhl
 		"t9md/vim-quickhl",
-		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
-		config = function()
-			require("rc.vim-quickhl")
-		end,
+		keys = {
+			{ "n", "<Plug>(quickhl-manual-this)" },
+			{ "n", "<Plug>(quickhl-manual-reset)" }
+		},
+		setup = require("rc.setup.vim-quickhl")
 	})
 
 	-- Highlight, list and search todo comments
@@ -212,9 +182,8 @@ require("packer").startup(function(use)
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
 		requires = { "nvim-lua/plenary.nvim" },
 		wants = { "plenary.nvim" },
-		config = function()
-			require("rc.todo-comments-nvim")
-		end,
+		setup = require("rc.setup.todo-comments-nvim"),
+		config = require("rc.config.todo-comments-nvim"),
 	})
 
 	-- A surround text object plugin for neovim written in lua.
@@ -222,9 +191,7 @@ require("packer").startup(function(use)
 		-- https://github.com/ur4ltz/surround.nvim
 		"ur4ltz/surround.nvim",
 		event = { "InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile" },
-		config = function()
-			require("rc.surround-nvim")
-		end,
+		config = require("rc.config.surround-nvim")
 	})
 
 	-- LSP
@@ -236,23 +203,18 @@ require("packer").startup(function(use)
 			{
 				"WhoIsSethDaniel/mason-tool-installer.nvim",
 				event = { "FocusLost", "CursorHold" },
-				config = function()
-					require("rc.mason-tool-installer")
-				end,
+				config = require("rc.config.mason-tool-installer")
 			},
 			{
 				"neovim/nvim-lspconfig",
 				module = { "lspconfig" },
-				config = function()
-					require("rc.nvim-lspconfig")
-				end,
+				setup = require("rc.setup.nvim-lspconfig"),
+				config = require("rc.config.nvim-lspconfig")
 			},
 			{
 				"williamboman/mason.nvim",
 				module = { "mason" },
-				config = function()
-					require("rc.mason")
-				end,
+				config = require("rc.config.mason")
 			},
 		},
 		wants = {
@@ -260,9 +222,7 @@ require("packer").startup(function(use)
 			"nvim-lspconfig",
 			"cmp-nvim-lsp",
 		},
-		config = function()
-			require("rc.mason-lspconfig")
-		end
+		config = require("rc.config.mason-lspconfig")
 	})
 
 	use({
@@ -334,7 +294,7 @@ require("packer").startup(function(use)
 							-- https://github.com/rafamadriz/friendly-snippets
 							-- { "rafamadriz/friendly-snippets" },
 							-- https://github.com/honza/vim-snippets
-							{"honza/vim-snippets"}
+							{ "honza/vim-snippets" }
 						},
 						config = function()
 							require("luasnip.loaders.from_vscode").lazy_load()

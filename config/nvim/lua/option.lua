@@ -30,7 +30,7 @@ opt.listchars = {
 	extends = "»",
 	trail = "-",
 	precedes = "«",
-	eol = "↲",
+	eol = "↴",
 	nbsp = "%",
 	space = "⋅",
 }
