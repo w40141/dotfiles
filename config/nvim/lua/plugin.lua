@@ -229,9 +229,7 @@ require("packer").startup(function(use)
 		-- https://github.com/hrsh7th/nvim-cmp
 		"hrsh7th/nvim-cmp",
 		module = { "cmp" },
-		config = function()
-			require("rc.nvim-cmp")
-		end,
+		config = require("rc.config.nvim-cmp"),
 		requires = {
 			-- https://github.com/onsails/lspkind.nvim
 			{ "onsails/lspkind-nvim", module = { "lspkind" } },
@@ -291,14 +289,9 @@ require("packer").startup(function(use)
 						"L3MON4D3/LuaSnip",
 						module = { "luasnip" },
 						requires = {
-							-- https://github.com/rafamadriz/friendly-snippets
-							-- { "rafamadriz/friendly-snippets" },
-							-- https://github.com/honza/vim-snippets
 							{ "honza/vim-snippets" }
 						},
-						config = function()
-							require("luasnip.loaders.from_vscode").lazy_load()
-						end,
+						config = require("rc.config.lualine-nvim")
 					},
 				}
 			},
