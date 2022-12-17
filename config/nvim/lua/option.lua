@@ -37,7 +37,7 @@ opt.listchars = {
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 opt.wrap = true
 -- コマンド行の長さ
-opt.cmdheight = 1
+opt.cmdheight = 0
 -- カラムを表示
 opt.signcolumn = "yes"
 -- エディタウィンドウの末尾から2行目にステータスラインを常時表示させるための指定

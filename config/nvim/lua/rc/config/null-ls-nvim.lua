@@ -41,11 +41,11 @@ return {
 				-- LuaFormatter off
 				-- null_ls.builtins.completion.spell,
 				builtins.formatting.trim_whitespace,
-				builtins.formatting.stylua.with({
-					condition = function()
-						return exe("stylua") > 0
-					end,
-				}),
+				-- builtins.formatting.stylua.with({
+				-- 	condition = function()
+				-- 		return exe("stylua") > 0
+				-- 	end,
+				-- }),
 				builtins.formatting.black.with({
 					condition = function()
 						return exe("black") > 0

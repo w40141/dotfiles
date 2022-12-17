@@ -11,7 +11,7 @@ local ensure_packer = function()
 			"--depth",
 			"1",
 			"https://github.com/wbthomason/packer.nvim",
-			path
+			path,
 		})
 		v.cmd([[packadd packer.nvim]])
 		return true
@@ -43,7 +43,7 @@ require("packer").startup(function(use)
 	})
 
 	-- Fzf finder
-	use {
+	use({
 		-- https://github.com/nvim-telescope/telescope.nvim
 		"nvim-telescope/telescope.nvim",
 		cmd = { "Telescope" },
@@ -57,7 +57,7 @@ require("packer").startup(function(use)
 				requires = {
 					{
 						"kyazdani42/nvim-web-devicons",
-						module = { "nvim-web-devicons" }
+						module = { "nvim-web-devicons" },
 					},
 				},
 				wants = { "nvim-web-devicons" },
@@ -69,7 +69,7 @@ require("packer").startup(function(use)
 		wants = { "trouble.nvim", "aerial.nvim" },
 		setup = require("rc.setup.telescope-nvim"),
 		config = require("rc.config.telescope-nvim"),
-	}
+	})
 
 	-- Treesitter configurations
 	use({
@@ -77,32 +77,32 @@ require("packer").startup(function(use)
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufRead", "BufNewFile", "InsertEnter" },
 		run = ":TSUpdate",
-		config = require("rc.config.nvim-treesitter")
+		config = require("rc.config.nvim-treesitter"),
 	})
 	use({
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" }
+		wants = { "nvim-treesitter" },
 	})
 	use({
 		"yioneko/nvim-yati",
 		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" }
+		wants = { "nvim-treesitter" },
 	})
 	use({
 		"m-demare/hlargs.nvim",
 		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" }
+		wants = { "nvim-treesitter" },
 	})
 	use({
 		"p00f/nvim-ts-rainbow",
 		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" }
+		wants = { "nvim-treesitter" },
 	})
 	use({
 		"haringsrob/nvim_context_vt",
 		event = { "BufNewFile", "BufRead", "FocusLost", "CursorHold" },
-		wants = { "nvim-treesitter" }
+		wants = { "nvim-treesitter" },
 	})
 
 	-- Annotation generator
@@ -122,7 +122,7 @@ require("packer").startup(function(use)
 		module = { "aerial" },
 		cmd = { "Aerial" },
 		setup = require("rc.setup.aerial-nvim"),
-		config = require("rc.config.aerial-nvim")
+		config = require("rc.config.aerial-nvim"),
 	})
 
 	-- Buffer line
@@ -130,7 +130,11 @@ require("packer").startup(function(use)
 		-- https://github.com/akinsho/bufferline.nvim
 		"akinsho/bufferline.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
@@ -145,7 +149,11 @@ require("packer").startup(function(use)
 		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
@@ -161,9 +169,13 @@ require("packer").startup(function(use)
 		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
-		config = require("rc.config.indent-blankline-nvim")
+		config = require("rc.config.indent-blankline-nvim"),
 	})
 
 	-- quickly highlight <cword> or visually selected word
@@ -172,9 +184,9 @@ require("packer").startup(function(use)
 		"t9md/vim-quickhl",
 		keys = {
 			{ "n", "<Plug>(quickhl-manual-this)" },
-			{ "n", "<Plug>(quickhl-manual-reset)" }
+			{ "n", "<Plug>(quickhl-manual-reset)" },
 		},
-		setup = require("rc.setup.vim-quickhl")
+		setup = require("rc.setup.vim-quickhl"),
 	})
 
 	-- Highlight, list and search todo comments
@@ -182,7 +194,11 @@ require("packer").startup(function(use)
 		-- https://github.com/folke/todo-comments.nvim
 		"folke/todo-comments.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		requires = { "nvim-lua/plenary.nvim" },
 		wants = { "plenary.nvim" },
@@ -195,9 +211,13 @@ require("packer").startup(function(use)
 		-- https://github.com/ur4ltz/surround.nvim
 		"ur4ltz/surround.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
-		config = require("rc.config.surround-nvim")
+		config = require("rc.config.surround-nvim"),
 	})
 
 	-- LSP
@@ -209,18 +229,18 @@ require("packer").startup(function(use)
 			{
 				"WhoIsSethDaniel/mason-tool-installer.nvim",
 				event = { "FocusLost", "CursorHold" },
-				config = require("rc.config.mason-tool-installer")
+				config = require("rc.config.mason-tool-installer"),
 			},
 			{
 				"neovim/nvim-lspconfig",
 				module = { "lspconfig" },
 				setup = require("rc.setup.nvim-lspconfig"),
-				config = require("rc.config.nvim-lspconfig")
+				config = require("rc.config.nvim-lspconfig"),
 			},
 			{
 				"williamboman/mason.nvim",
 				module = { "mason" },
-				config = require("rc.config.mason")
+				config = require("rc.config.mason"),
 			},
 		},
 		wants = {
@@ -228,7 +248,7 @@ require("packer").startup(function(use)
 			"nvim-lspconfig",
 			"cmp-nvim-lsp",
 		},
-		config = require("rc.config.mason-lspconfig")
+		config = require("rc.config.mason-lspconfig"),
 	})
 
 	use({
@@ -283,23 +303,20 @@ require("packer").startup(function(use)
 				-- https://github.com/hrsh7th/cmp-path
 				"hrsh7th/cmp-path",
 				event = { "CmdlineEnter" },
-
 			},
 			{
 				-- https://github.com/saadparwaiz1/cmp_luasnip
 				"saadparwaiz1/cmp_luasnip",
 				event = { "InsertEnter" },
 				requires = {
-					{
-						-- https://github.com/L3MON4D3/LuaSnip
-						"L3MON4D3/LuaSnip",
-						module = { "luasnip" },
-						requires = { "honza/vim-snippets" },
-						config = function()
-							require("luasnip.loaders.from_vscode").lazy_load()
-						end
-					},
-				}
+					-- https://github.com/L3MON4D3/LuaSnip
+					"L3MON4D3/LuaSnip",
+					module = { "luasnip" },
+					requires = { "honza/vim-snippets" },
+					config = function()
+						require("luasnip.loaders.from_vscode").lazy_load()
+					end,
+				},
 			},
 		},
 	})
@@ -312,7 +329,7 @@ require("packer").startup(function(use)
 		want = { "nvim-cmp" },
 		config = function()
 			require("nvim-autopairs").setup()
-		end
+		end,
 	})
 
 	-- engine SKK
@@ -328,49 +345,25 @@ require("packer").startup(function(use)
 	})
 
 	-- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
-	-- TODO: https://github.com/folke/noice.nvim
-	-- TODO: https://github.com/rcarriga/nvim-notify
 	-- A fancy, configurable, notification manager for NeoVim
-	-- https://github.com/rcarriga/nvim-notify
-	-- use {
-	-- 	"folke/noice.nvim",
-	-- 	event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter" },
-	-- 	module = { "noice" },
-	-- 	requires = {
-	-- 		{ "MunifTanjim/nui.nvim" },
 	use({
-		"rcarriga/nvim-notify",
-		module = { "notify" },
-		config = function()
-			require("notify").setup {
-				stages = "slide",
-				background_colour = "FloatShadow",
-				timeout = 3000,
-			}
-			vim.notify = require("notify")
-		end
+		-- TODO: https://github.com/folke/noice.nvim
+		"folke/noice.nvim",
+		event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter" },
+		module = { "noice" },
+		requires = {
+			{ "MunifTanjim/nui.nvim" },
+			{
+				-- TODO: https://github.com/rcarriga/nvim-notify
+				"rcarriga/nvim-notify",
+				module = { "notify" },
+				config = require("rc.config.nvim-notify"),
+			},
+		},
+		wants = { "nvim-treesitter" },
+		setup = require("rc.setup.noice-nvim"),
+		config = require("rc.config.noice-nvim"),
 	})
-	-- 	},
-	-- 	wants = { "nvim-treesitter" },
-	-- 	setup = function()
-	-- 		if not _G.__vim_notify_overwritten then
-	-- 			vim.notify = function(...)
-	-- 				local arg = { ... }
-	-- 				require "notify"
-	-- 				require "noice"
-	-- 				vim.schedule(function()
-	-- 					vim.notify(unpack(args))
-	-- 				end)
-	-- 			end
-	-- 			_G.__vim_notify_overwritten = true
-	-- 		end
-	-- 	end,
-	-- 	config = function()
-	-- 		require("noice").setup {
-	-- 			-- noice.nvim の設定
-	-- 		}
-	-- 	end
-	-- }
 
 	-- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
 	-- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
@@ -380,9 +373,10 @@ require("packer").startup(function(use)
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		event = {
-			"CursorHold", "FocusLost"
+			"CursorHold",
+			"FocusLost",
 		},
-		config = require("rc.config.null-ls-nvim")
+		config = require("rc.config.null-ls-nvim"),
 	})
 
 	-- TODO:
@@ -440,12 +434,16 @@ require("packer").startup(function(use)
 		-- https://github.com/tamago324/lir.nvim
 		"tamago324/lir.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		module = { "lir.float" },
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
-			{ "nvim-lua/plenary.nvim" }
+			{ "nvim-lua/plenary.nvim" },
 		},
 		wants = { "plenary.nvim", "nvim-web-devicons" },
 		setup = require("rc.setup.lir-nvim"),
@@ -463,7 +461,7 @@ require("packer").startup(function(use)
 	use({
 		"previm/previm",
 		ft = { "markdown" },
-		config = require("rc.config.previm")
+		config = require("rc.config.previm"),
 	})
 
 	-- use({
@@ -480,7 +478,7 @@ require("packer").startup(function(use)
 		-- https://github.com/simeji/winresizer
 		"simeji/winresizer",
 		keys = { { "n", "<C-e>" } },
-		setup = require("rc.config.winresizer")
+		setup = require("rc.config.winresizer"),
 	})
 
 	-- Comment out
@@ -488,7 +486,11 @@ require("packer").startup(function(use)
 		-- https://github.com/numToStr/Comment.nvim
 		"numToStr/Comment.nvim",
 		event = {
-			"InsertEnter", "CursorHold", "FocusLost", "BufRead", "BufNewFile"
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		config = function()
 			require("Comment").setup()
@@ -501,33 +503,30 @@ require("packer").startup(function(use)
 		"akinsho/toggleterm.nvim",
 		keys = { "n", [[<c-;>]] },
 		cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
-		config = require("rc.config.toggleterm-nvim")
+		config = require("rc.config.toggleterm-nvim"),
 	})
 
 	-- Scrollbar
-	use {
+	use({
 		-- https://github.com/petertriho/nvim-scrollbar
 		"petertriho/nvim-scrollbar",
 		event = {
-			"BufWinEnter",
-			"CmdwinLeave",
-			"TabEnter",
-			"TermEnter",
-			"TextChanged",
-			"VimResized",
-			"WinEnter",
-			"WinScrolled",
+			"InsertEnter",
+			"CursorHold",
+			"FocusLost",
+			"BufRead",
+			"BufNewFile",
 		},
 		config = function()
-			require("scrollbar").setup {}
+			require("scrollbar").setup({})
 		end,
-	}
+	})
 
 	use({
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		event = { "FocusLost", "CursorHold" },
-		config = require("rc.config.gitsigns-nvim")
+		config = require("rc.config.gitsigns-nvim"),
 	})
 
 	-- Colorizer
@@ -544,13 +543,13 @@ require("packer").startup(function(use)
 	use({
 		-- https://github.com/kevinhwang91/nvim-hlslens
 		"kevinhwang91/nvim-hlslens",
-		keys = { { 'n', '*' }, { 'n', 'g*' }, { 'n', 'g*' } },
+		keys = { { "n", "*" }, { "n", "g*" }, { "n", "g*" } },
 		event = { "CmdlineEnter" },
 		module = { "hlslens" },
 		requires = {
 			-- https://github.com/rapan931/lasterisk.nvim
 			"rapan931/lasterisk.nvim",
-			module = { "lasterisk" }
+			module = { "lasterisk" },
 		},
 		wants = { "lasterisk.nvim" },
 		setup = require("rc.setup.nvim-hlslens"),

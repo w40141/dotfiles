@@ -81,15 +81,6 @@ return {
 				{ name = "luasnip" },
 				{ name = "mocword" },
 				{ name = "treesitter", trigger_characters = { "." }, option = {} },
-				{
-					name = "spell",
-					option = {
-						keep_all_entries = false,
-						enable_in_context = function()
-							return true
-						end,
-					},
-				},
 			}),
 		})
 
