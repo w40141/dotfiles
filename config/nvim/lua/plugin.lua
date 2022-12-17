@@ -21,7 +21,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
-require("packer").startup(function(use)
+return require("packer").startup(function(use)
 	-- Package Manager
 	-- https://github.com/wbthomason/packer.nvim
 	use({ "wbthomason/packer.nvim" })
