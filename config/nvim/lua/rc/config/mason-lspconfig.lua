@@ -41,18 +41,6 @@ return {
 					{ capabilities = capabilities, on_attach = on_attach }
 				)
 			end,
-			["rust_analyzer"] = function()
-				local has_rust_tools, rust_tools = pcall(require, "rust-tools")
-				if has_rust_tools then
-					rust_tools.setup(
-						{ server = { capabilities = capabilities, on_attach = on_attach } }
-					)
-				else
-					lspconfig.rust_analyzer.setup(
-						{ capabilities = capabilities, on_attach = on_attach }
-					)
-				end
-			end,
 		})
 	end
 }

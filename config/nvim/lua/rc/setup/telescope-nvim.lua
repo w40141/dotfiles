@@ -7,8 +7,8 @@ return {
 			end
 		end
 
-		key("n", "[ff]p", builtin "find_files")
-		key("n", "[ff]f", builtin "git_files")
+		key("n", "[ff]f", builtin "find_files")
+		key("n", "[ff]p", builtin "git_files")
 		key("n", "[ff]g", builtin "live_grep")
 		key("n", "[ff]/", builtin "grep_string")
 		key("n", "[ff]b", builtin "buffers")

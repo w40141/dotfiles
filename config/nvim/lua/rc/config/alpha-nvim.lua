@@ -1,10 +1,9 @@
 return {
 	function()
-		local alpha = require("alpha")
-		local dashboard = require("alpha.themes.dashboard")
+		local d = require("alpha.themes.dashboard")
 
 		-- Banner
-		dashboard.section.header.val = {
+		d.section.header.val = {
 			"                                                    ",
 			" ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
 			" ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
@@ -16,30 +15,30 @@ return {
 		}
 
 		-- Menu
-		dashboard.section.buttons.val = {
-			dashboard.button("e", " New file", ":ene <BAR> startinsert<CR>"),
-			dashboard.button("f", " Find file", ":<c-u>Telescope git_files<CR>"),
-			dashboard.button("g", " Find word", ":<c-u>Telescope live_grep<CR>"),
-			dashboard.button("o", "פּ Open explorer", ":lua require'lir.float'.toggle()<cr>"),
-			dashboard.button("s", " Settings", ":e $MYVIMRC<CR>"),
-			dashboard.button("c", "﫵Check health", ":checkhealth<cr>"),
-			dashboard.button("u", " Update plugins", ":PackerSync<CR>"),
-			dashboard.button("m", " Open Mason Maneger", ":MasonToolsUpdate<CR>"),
-			dashboard.button("t", " Measure time", ":StartupTime<CR>"),
-			dashboard.button("q", " Quit", ":qa<CR>"),
+		d.section.buttons.val = {
+			d.button("e", " New file", ":ene <BAR> startinsert<CR>"),
+			d.button("f", " Find file", ":<c-u>Telescope find_files<CR>"),
+			d.button("g", " Find word", ":<c-u>Telescope live_grep<CR>"),
+			d.button("o", "פּ Open explorer", ":lua require'lir.float'.toggle()<cr>"),
+			d.button("s", " Settings", ":e $MYVIMRC<CR>"),
+			d.button("c", "﫵Check health", ":checkhealth<cr>"),
+			d.button("u", " Update plugins", ":PackerSync<CR>"),
+			d.button("m", " Open Mason Maneger", ":MasonToolsUpdate<CR>"),
+			d.button("t", " Measure time", ":StartupTime<CR>"),
+			d.button("q", " Quit", ":qa<CR>"),
 		}
 
 		-- Footer
 		local function footer()
-			local version = vim.version()
-			local print_version = "v" .. version.major .. "." .. version.minor .. "." .. version.patch
+			local v = vim.version()
+			local version = "v" .. v.major .. "." .. v.minor .. "." .. v.patch
 			local datetime = os.date("%Y/%m/%d %H:%M:%S")
 
-			return print_version .. " " .. datetime
+			return version .. " " .. datetime
 		end
 
-		dashboard.section.footer.val = footer()
+		d.section.footer.val = footer()
 
-		alpha.setup(dashboard.config)
+		require("alpha").setup(d.config)
 	end
 }
