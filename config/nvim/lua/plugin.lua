@@ -247,8 +247,14 @@ return require("packer").startup(function(use)
 			"mason.nvim",
 			"nvim-lspconfig",
 			"cmp-nvim-lsp",
+			-- "rust-tools",
 		},
 		config = require("rc.config.mason-lspconfig"),
+	})
+
+	use({
+		"simrat39/rust-tools.nvim",
+		-- module = { "rust-tools" },
 	})
 
 	use({
@@ -458,15 +464,6 @@ return require("packer").startup(function(use)
 		"previm/previm",
 		ft = { "markdown" },
 		config = require("rc.config.previm"),
-	})
-
-	use({
-		"simrat39/rust-tools.nvim",
-		-- ft = { "rust" },
-		module = { "rust-tools" },
-		config = function()
-			require("rust-tools").setup()
-		end,
 	})
 
 	-- Resizing of windows

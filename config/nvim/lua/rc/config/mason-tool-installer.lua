@@ -22,8 +22,6 @@ return {
 				"rust-analyzer",
 				"rustfmt",
 				"shfmt",
-				"spectral-language-server",
-				"sqlls",
 				"typescript-language-server",
 				"yaml-language-server",
 			},

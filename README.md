@@ -45,7 +45,7 @@
         cd dotfiles
         ./init.sh
 
-3.  brew bundle でアプリを一括インストールする.  
+3.  brew bundle でアプリを一括インストールする.
     2 回くらいやると大丈夫
 
         brew bundle --global
