@@ -460,14 +460,14 @@ return require("packer").startup(function(use)
 		config = require("rc.config.previm"),
 	})
 
-	-- use({
-	-- 	"simrat39/rust-tools.nvim",
-	-- 	module = { "rust-tools" },
-	-- 	config = function()
-	-- 		-- require("rc.rust-tools-nvim")
-	-- 		require('rust-tools').setup()
-	-- 	end
-	-- })
+	use({
+		"simrat39/rust-tools.nvim",
+		module = { "rust-tools" },
+		config = function()
+			-- require("rc.rust-tools-nvim")
+			require('rust-tools').setup()
+		end
+	})
 
 	-- Resizing of windows
 	use({
