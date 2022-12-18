@@ -376,7 +376,6 @@ return require("packer").startup(function(use)
 		config = require("rc.config.null-ls-nvim"),
 	})
 
-	-- TODO:
 	use({
 		-- https://github.com/TimUntersberger/neogit
 		"TimUntersberger/neogit",
