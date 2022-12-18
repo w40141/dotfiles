@@ -344,17 +344,16 @@ return require("packer").startup(function(use)
 		config = require("rc.config.eskk"),
 	})
 
-	-- TODO: https://dev.classmethod.jp/articles/eetann-noice-nvim-beginner/
 	-- A fancy, configurable, notification manager for NeoVim
 	use({
-		-- TODO: https://github.com/folke/noice.nvim
+		-- https://github.com/folke/noice.nvim
 		"folke/noice.nvim",
 		event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter" },
 		module = { "noice" },
 		requires = {
 			{ "MunifTanjim/nui.nvim" },
 			{
-				-- TODO: https://github.com/rcarriga/nvim-notify
+				-- https://github.com/rcarriga/nvim-notify
 				"rcarriga/nvim-notify",
 				module = { "notify" },
 				config = require("rc.config.nvim-notify"),
@@ -365,8 +364,6 @@ return require("packer").startup(function(use)
 		config = require("rc.config.noice-nvim"),
 	})
 
-	-- TODO: https://zenn.dev/kawarimidoll/articles/2e99432d27eda3
-	-- TODO: https://github.com/jose-elias-alvarez/null-ls.nvim
 	-- Use Neovim as a language server to inject LSP diagnostics, code actions
 	use({
 		-- https://github.com/jose-elias-alvarez/null-ls.nvim

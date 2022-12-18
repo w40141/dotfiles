@@ -38,14 +38,12 @@ return {
 		null_ls.setup({
 			sources = {
 				builtins.diagnostics.credo,
-				-- LuaFormatter off
-				-- null_ls.builtins.completion.spell,
 				builtins.formatting.trim_whitespace,
-				-- builtins.formatting.stylua.with({
-				-- 	condition = function()
-				-- 		return exe("stylua") > 0
-				-- 	end,
-				-- }),
+				builtins.formatting.stylua.with({
+					condition = function()
+						return exe("stylua") > 0
+					end,
+				}),
 				builtins.formatting.black.with({
 					condition = function()
 						return exe("black") > 0
@@ -78,6 +76,7 @@ return {
 						return exe("ec") > 0
 					end,
 				}),
+				builtins.code_actions.cspell,
 				builtins.diagnostics.cspell.with({
 					diagnostics_postprocess = function(diagnostic)
 						diagnostic.severity = d["WARN"]
@@ -95,15 +94,14 @@ return {
 						return exe("vale") > 0
 					end,
 				}),
-				builtins.completion.spell,
 				builtins.formatting.markdownlint.with({
 					condition = function()
 						return exe("markdownlint") > 0
 					end,
 				}),
 				builtins.code_actions.gitsigns,
-				-- LuaFormatter on
+				builtins.code_actions.refactoring,
 			},
 		})
-	end
+	end,
 }
