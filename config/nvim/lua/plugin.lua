@@ -222,22 +222,25 @@ return require("packer").startup(function(use)
 
 	-- LSP
 	use({
-		-- https://github.com/neovim/nvim-lspconfig
+		-- https://github.com/williamboman/mason-lspconfig.nvim
 		"williamboman/mason-lspconfig.nvim",
 		event = { "BufReadPre" },
 		requires = {
 			{
+				-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 				"WhoIsSethDaniel/mason-tool-installer.nvim",
 				event = { "FocusLost", "CursorHold" },
 				config = require("rc.config.mason-tool-installer"),
 			},
 			{
+				-- https://github.com/neovim/nvim-lspconfig
 				"neovim/nvim-lspconfig",
 				module = { "lspconfig" },
 				setup = require("rc.setup.nvim-lspconfig"),
 				config = require("rc.config.nvim-lspconfig"),
 			},
 			{
+				-- https://github.com/williamboman/mason.nvim
 				"williamboman/mason.nvim",
 				module = { "mason" },
 				config = require("rc.config.mason"),
