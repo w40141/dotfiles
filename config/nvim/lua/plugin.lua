@@ -437,13 +437,13 @@ return require("packer").startup(function(use)
 	use({
 		-- https://github.com/tamago324/lir.nvim
 		"tamago324/lir.nvim",
-		event = {
-			"InsertEnter",
-			"CursorHold",
-			"FocusLost",
-			"BufRead",
-			"BufNewFile",
-		},
+		-- event = {
+		-- 	"InsertEnter",
+		-- 	"CursorHold",
+		-- 	"FocusLost",
+		-- 	"BufRead",
+		-- 	"BufNewFile",
+		-- },
 		module = { "lir.float" },
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
