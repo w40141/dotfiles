@@ -356,7 +356,9 @@ return require("packer").startup(function(use)
 	use({
 		-- https://github.com/folke/noice.nvim
 		"folke/noice.nvim",
-		event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter" },
+		event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter", "CursorHold",
+			"FocusLost",
+		},
 		module = { "noice" },
 		requires = {
 			{ "MunifTanjim/nui.nvim" },

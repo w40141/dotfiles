@@ -3,10 +3,10 @@ return {
 		local v = vim
 		local fn = v.fn
 		local exe = fn.executable
-		local d = v.diagnostic.severity
 		local call = v.call
 		local cspell_config_dir = "$XDG_CONFIG_HOME/cspell"
 		local cspell_data_dir = "$XDG_DATA_HOME/cspell"
+
 		local cspell_files = {
 			config = call("expand", cspell_config_dir .. "/cspell.json"),
 			dotfiles = call("expand", cspell_config_dir .. "/dotfiles.txt"),
@@ -79,7 +79,7 @@ return {
 				builtins.code_actions.cspell,
 				builtins.diagnostics.cspell.with({
 					diagnostics_postprocess = function(diagnostic)
-						diagnostic.severity = d["WARN"]
+						diagnostic.severity = v.diagnostic.severity["WARN"]
 					end,
 					condition = function()
 						return exe("cspell") > 0
@@ -88,7 +88,7 @@ return {
 				}),
 				builtins.diagnostics.vale.with({
 					diagnostics_postprocess = function(diagnostic)
-						diagnostic.severity = d["WARN"]
+						diagnostic.severity = v.diagnostic.severity["WARN"]
 					end,
 					condition = function()
 						return exe("vale") > 0
