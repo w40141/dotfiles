@@ -81,6 +81,7 @@ return {
 				{ name = "luasnip" },
 				{ name = "mocword" },
 				{ name = "treesitter", trigger_characters = { "." }, option = {} },
+				{ name = "spell" }
 			}),
 		})
 

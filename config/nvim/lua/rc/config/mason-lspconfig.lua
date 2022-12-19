@@ -43,10 +43,10 @@ return {
 		end
 
 		local lspconfig = require("lspconfig")
-		-- local capabilities = require("cmp_nvim_lsp").default_capabilities(
-		-- 	lsp.protocol.make_client_capabilities()
-		-- )
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = require("cmp_nvim_lsp").default_capabilities(
+			lsp.protocol.make_client_capabilities()
+		)
+		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({
@@ -55,9 +55,9 @@ return {
 				})
 			end,
 			["rust_analyzer"] = function()
-				local has_rust_tools, _ = pcall(require, "rust-tools")
+				local has_rust_tools, rust_tools = pcall(require, "rust-tools")
 				if has_rust_tools then
-					require("rust-tools").setup({
+					rust_tools.setup({
 						server = {
 							capabilities = capabilities,
 							on_attach = on_attach,

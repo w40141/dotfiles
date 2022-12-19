@@ -247,7 +247,6 @@ return require("packer").startup(function(use)
 			"mason.nvim",
 			"nvim-lspconfig",
 			"cmp-nvim-lsp",
-			-- "rust-tools",
 		},
 		config = require("rc.config.mason-lspconfig"),
 	})
