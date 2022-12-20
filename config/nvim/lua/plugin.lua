@@ -345,7 +345,7 @@ return require("packer").startup(function(use)
 		-- https://github.com/tyru/eskk.vim
 		"tyru/eskk.vim",
 		keys = {
-			{ "n", "<Plug>(eskk:toggle)" },
+			{ "i", "<Plug>(eskk:toggle)" },
 			{ "c", "<Plug>(eskk:toggle)" },
 		},
 		setup = require("rc.setup.eskk"),
