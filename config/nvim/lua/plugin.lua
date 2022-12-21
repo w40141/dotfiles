@@ -246,22 +246,21 @@ function Pack:packer()
 			},
 			-- LSP
 			{
-				-- https://github.com/williamboman/mason-lspconfig.nvim
-				"williamboman/mason-lspconfig.nvim",
+				-- https://github.com/neovim/nvim-lspconfig
+				"neovim/nvim-lspconfig",
 				event = { "BufReadPre" },
 				requires = {
 					{
 						-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 						"WhoIsSethDaniel/mason-tool-installer.nvim",
-						event = { "FocusLost", "CursorHold" },
+						module = { "mason-tool-installer" },
 						config = require("rc.config.mason-tool-installer"),
 					},
 					{
-						-- https://github.com/neovim/nvim-lspconfig
-						"neovim/nvim-lspconfig",
-						module = { "lspconfig" },
-						setup = require("rc.setup.nvim-lspconfig"),
-						config = require("rc.config.nvim-lspconfig"),
+						-- https://github.com/williamboman/mason-lspconfig.nvim
+						"williamboman/mason-lspconfig.nvim",
+						module = { "mason-lspconfig" },
+						config = require("rc.config.mason-lspconfig"),
 					},
 					{
 						-- https://github.com/williamboman/mason.nvim
@@ -275,11 +274,12 @@ function Pack:packer()
 					"nvim-lspconfig",
 					"cmp-nvim-lsp",
 				},
-				config = require("rc.config.mason-lspconfig"),
+				setup = require("rc.setup.nvim-lspconfig"),
+				config = require("rc.config.nvim-lspconfig"),
 			},
 			{
 				"simrat39/rust-tools.nvim",
-				-- module = { "rust-tools" },
+				module = { "rust-tools" },
 			},
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
