@@ -39,6 +39,7 @@ return require("packer").startup(function(use)
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		wants = { "nvim-web-devicons" },
+		event = "BufWinEnter",
 		config = require("rc.config.alpha-nvim"),
 	})
 
@@ -130,11 +131,12 @@ return require("packer").startup(function(use)
 		-- https://github.com/akinsho/bufferline.nvim
 		"akinsho/bufferline.nvim",
 		event = {
-			"InsertEnter",
-			"CursorHold",
-			"FocusLost",
-			"BufRead",
-			"BufNewFile",
+			"BufReadPost",
+			-- "InsertEnter",
+			-- "CursorHold",
+			-- "FocusLost",
+			-- "BufRead",
+			-- "BufNewFile",
 		},
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
@@ -146,14 +148,15 @@ return require("packer").startup(function(use)
 
 	-- Status line
 	use({
-		-- https://github.com/nvim-lualine / lualine.nvim
+		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		event = {
-			"InsertEnter",
-			"CursorHold",
-			"FocusLost",
-			"BufRead",
-			"BufNewFile",
+			"BufReadPre",
+			-- "InsertEnter",
+			-- "CursorHold",
+			-- "FocusLost",
+			-- "BufRead",
+			-- "BufNewFile",
 		},
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
@@ -173,11 +176,12 @@ return require("packer").startup(function(use)
 		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
 		event = {
-			"InsertEnter",
-			"CursorHold",
-			"FocusLost",
-			"BufRead",
-			"BufNewFile",
+			"BufReadPost"
+			-- "InsertEnter",
+			-- "CursorHold",
+			-- "FocusLost",
+			-- "BufRead",
+			-- "BufNewFile",
 		},
 		config = require("rc.config.indent-blankline-nvim"),
 	})

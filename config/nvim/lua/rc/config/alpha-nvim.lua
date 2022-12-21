@@ -17,15 +17,15 @@ return {
 		-- Menu
 		d.section.buttons.val = {
 			d.button("e", " New file", ":ene <BAR> startinsert<CR>"),
-			d.button("f", " Find file", ":<c-u>Telescope find_files<CR>"),
-			d.button("g", " Find word", ":<c-u>Telescope live_grep<CR>"),
-			d.button("o", "פּ Open explorer", ":<c-u>lua require('lir.float').toggle()<cr>"),
+			d.button("f", " Find file", "<cmd>Telescope find_files<CR>"),
+			d.button("g", " Find word", "<cmd>Telescope live_grep<CR>"),
+			d.button("o", "פּ Open explorer", "<cmd>lua require('lir.float').toggle()<cr>"),
 			d.button("s", " Settings", ":e $MYVIMRC<CR>"),
-			d.button("c", "﫵Check health", ":checkhealth<cr>"),
-			d.button("u", " Update plugins", ":PackerSync<CR>"),
-			d.button("m", " Open Mason Maneger", ":MasonToolsUpdate<CR>"),
-			d.button("t", " Measure time", ":StartupTime<CR>"),
-			d.button("q", " Quit", ":qa<CR>"),
+			d.button("c", "﫵Check health", "<cmd>checkhealth<cr>"),
+			d.button("u", " Update plugins", "<cmd>PackerSync<CR>"),
+			d.button("m", " Open Mason Maneger", "<cmd>MasonToolsUpdate<CR>"),
+			d.button("t", " Measure time", "<cmd>StartupTime<CR>"),
+			d.button("q", " Quit", "<cmd>qa<CR>"),
 		}
 
 		-- Footer
