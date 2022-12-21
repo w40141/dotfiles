@@ -9,8 +9,6 @@ return {
 		local lsp = v.lsp
 		local buf = lsp.buf
 
-		require("mason-lspconfig").setup({})
-
 		local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 		for type, icon in pairs(signs) do
 			local sign = "DiagnosticSign" .. type
@@ -62,9 +60,12 @@ return {
 		end
 
 		local lspconfig = require("lspconfig")
-		local capabilities = require("cmp_nvim_lsp").default_capabilities(
-			lsp.protocol.make_client_capabilities()
-		)
+		local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+		local capabilities
+		if ok then
+			capabilities = cmp_nvim_lsp.default_capabilities(lsp.protocol.make_client_capabilities())
+		end
+
 		-- local capabilities = require("cmp_nvim_lsp").default_capabilities()
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
@@ -72,23 +73,6 @@ return {
 					capabilities = capabilities,
 					on_attach = on_attach,
 				})
-			end,
-			["rust_analyzer"] = function()
-				local has_rust_tools, rust_tools = pcall(require, "rust-tools")
-				if has_rust_tools then
-					require("rust-tools").setup({
-						-- rust_tools.setup({
-						server = {
-							capabilities = capabilities,
-							on_attach = on_attach,
-						},
-					})
-				else
-					lspconfig.rust_analyzer.setup({
-						capabilities = capabilities,
-						on_attach = on_attach,
-					})
-				end
 			end,
 		})
 	end
