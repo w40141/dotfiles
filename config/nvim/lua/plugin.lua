@@ -1,5 +1,12 @@
 -- TODO: https://github.com/kevinhwang91/nvim-bqf
 
+-- TODO: https://github.com/lewis6991/impatient.nvim
+-- TODO: https://blog.atusy.net/2022/12/16/impatient-nvim/
+
+-- TODO: https://github.com/phaazon/hop.nvim
+
+-- TODO: https://github.com/dvdsk/prosesitter.nvim
+
 local v = vim
 local fn = v.fn
 local uv = v.loop
