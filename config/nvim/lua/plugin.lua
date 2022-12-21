@@ -146,7 +146,7 @@ return require("packer").startup(function(use)
 
 	-- Status line
 	use({
-		-- https://github.com/nvim-lualine/lualine.nvim
+		-- https://github.com/nvim-lualine / lualine.nvim
 		"nvim-lualine/lualine.nvim",
 		event = {
 			"InsertEnter",
@@ -161,6 +161,10 @@ return require("packer").startup(function(use)
 			{ "stevearc/aerial.nvim", module = { "aerial" } },
 		},
 		wants = { "nvim-web-devicons", "kanagawa.nvim", "aerial.nvim" },
+		setup = function()
+			vim.opt.laststatus = 0
+			vim.opt.showtabline = 0
+		end,
 		config = require("rc.config.lualine-nvim"),
 	})
 
