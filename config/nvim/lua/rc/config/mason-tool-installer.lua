@@ -8,6 +8,7 @@ return {
 			ensure_installed = {
 				"bash-language-server",
 				"black",
+				"cspell",
 				"dockerfile-language-server",
 				"eslint-lsp",
 				"flake8",
@@ -22,6 +23,9 @@ return {
 				"rust-analyzer",
 				"rustfmt",
 				"shfmt",
+				"sql-formatter",
+				"sqlfluff",
+				"sqlls",
 				"typescript-language-server",
 				"yaml-language-server",
 			},

@@ -260,7 +260,7 @@ function Pack:packer()
 					{
 						-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 						"WhoIsSethDaniel/mason-tool-installer.nvim",
-						module = { "mason-tool-installer" },
+						event = { "FocusLost", "CursorHold" },
 						config = require("rc.config.mason-tool-installer"),
 					},
 					{

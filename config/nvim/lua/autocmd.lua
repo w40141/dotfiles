@@ -20,10 +20,10 @@ autocmd("BufEnter", {
 })
 
 -- Restore cursor location when file is opened
--- autocmd({ "BufReadPost" }, {
--- 	pattern = { "*" },
--- 	callback = function()
--- 		v.api.nvim_exec('silent! normal! g`"zv', false)
--- 	end,
--- 	group = mac,
--- })
+autocmd({ "BufReadPost" }, {
+	pattern = { "*" },
+	callback = function()
+		v.api.nvim_exec('silent! normal! g`"zv', false)
+	end,
+	group = mac,
+})
