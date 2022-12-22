@@ -66,6 +66,16 @@ return {
 			capabilities = cmp_nvim_lsp.default_capabilities(lsp.protocol.make_client_capabilities())
 		end
 
+		require("mason").setup({
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+			},
+		})
+
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({

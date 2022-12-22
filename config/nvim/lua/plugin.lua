@@ -30,6 +30,7 @@ function Pack:setup()
 	command("PackerClean", self:run_packer "clean", { desc = "[Packer] Clean plugins" })
 	command("PackerStatus", self:run_packer "status", { desc = "[Packer] Output plugins status" })
 	command("PackerSync", self:run_packer "sync", { desc = "[Packer] Output plugins status" })
+	command("PackerCompile", self:run_packer "compile", { desc = "[Packer] Output plugins status", nargs = "*" })
 	command("PackerLoad", function(opts)
 		local args = v.split(opts.args, " ")
 		table.insert(args, opts.bang)
@@ -267,18 +268,16 @@ function Pack:packer()
 						-- https://github.com/williamboman/mason-lspconfig.nvim
 						"williamboman/mason-lspconfig.nvim",
 						module = { "mason-lspconfig" },
-						config = require("rc.config.mason-lspconfig"),
 					},
 					{
 						-- https://github.com/williamboman/mason.nvim
 						"williamboman/mason.nvim",
 						module = { "mason" },
-						config = require("rc.config.mason"),
 					},
 				},
 				wants = {
 					"mason.nvim",
-					"nvim-lspconfig",
+					"mason-lspconfig.nvim",
 					"cmp-nvim-lsp",
 				},
 				setup = require("rc.setup.nvim-lspconfig"),
@@ -289,19 +288,7 @@ function Pack:packer()
 				"simrat39/rust-tools.nvim",
 				-- module = { "rust-tools" },
 				ft = { "rust" },
-				config = function()
-					local rt = require("rust-tools")
-					rt.setup({
-						server = {
-							on_attach = function(_, bufnr)
-								-- Hover actions
-								vim.keymap.set("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
-								-- Code action groups
-								vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-							end,
-						},
-					})
-				end
+				config = require("rc.config.rust-tools")
 			},
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
