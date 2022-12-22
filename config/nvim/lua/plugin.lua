@@ -1,5 +1,3 @@
--- TODO: https://github.com/kevinhwang91/nvim-bqf
-
 -- TODO: https://github.com/lewis6991/impatient.nvim
 -- TODO: https://blog.atusy.net/2022/12/16/impatient-nvim/
 
@@ -54,7 +52,7 @@ function Pack:assume_plugins()
 	end
 end
 
-function Pack:exists(path) -- luacheck: ignore 212
+function Pack:exists(path)
 	local st = uv.fs_stat(path)
 	return st and true or false
 end
@@ -84,8 +82,8 @@ function Pack:packer()
 				"rebelot/kanagawa.nvim",
 				config = require("rc.config.kanagawa"),
 			},
-			-- Greeter
 			{
+				-- Greeter
 				-- https://github.com/goolord/alpha-nvim
 				"goolord/alpha-nvim",
 				requires = { "kyazdani42/nvim-web-devicons", opt = true },
@@ -93,8 +91,8 @@ function Pack:packer()
 				event = "BufWinEnter",
 				config = require("rc.config.alpha-nvim"),
 			},
-			-- Fzf finder
 			{
+				-- Fzf finder
 				-- https://github.com/nvim-telescope/telescope.nvim
 				"nvim-telescope/telescope.nvim",
 				cmd = { "Telescope" },
@@ -121,8 +119,8 @@ function Pack:packer()
 				setup = require("rc.setup.telescope-nvim"),
 				config = require("rc.config.telescope-nvim"),
 			},
-			-- Treesitter configurations
 			{
+				-- Treesitter configurations
 				-- https://github.com/nvim-treesitter/nvim-treesitter
 				"nvim-treesitter/nvim-treesitter",
 				event = { "BufRead", "BufNewFile", "InsertEnter" },
@@ -154,8 +152,8 @@ function Pack:packer()
 				event = { "BufNewFile", "BufRead", "FocusLost", "CursorHold" },
 				wants = { "nvim-treesitter" },
 			},
-			-- Annotation generator
 			{
+				-- Annotation generator
 				-- https://github.com/danymat/neogen
 				"danymat/neogen",
 				requires = { "nvim-treesitter/nvim-treesitter" },
@@ -172,8 +170,8 @@ function Pack:packer()
 				setup = require("rc.setup.aerial-nvim"),
 				config = require("rc.config.aerial-nvim"),
 			},
-			-- Buffer line
 			{
+				-- Buffer line
 				-- https://github.com/akinsho/bufferline.nvim
 				"akinsho/bufferline.nvim",
 				event = {
@@ -186,8 +184,8 @@ function Pack:packer()
 				setup = require("rc.setup.bufferline-nvim"),
 				config = require("rc.config.bufferline-nvim"),
 			},
-			-- Status line
 			{
+				-- Status line
 				-- https://github.com/nvim-lualine/lualine.nvim
 				"nvim-lualine/lualine.nvim",
 				event = {
@@ -204,8 +202,8 @@ function Pack:packer()
 				end,
 				config = require("rc.config.lualine-nvim"),
 			},
-			-- Indent guide
 			{
+				-- Indent guide
 				-- https://github.com/lukas-reineke/indent-blankline.nvim
 				"lukas-reineke/indent-blankline.nvim",
 				event = {
@@ -213,8 +211,8 @@ function Pack:packer()
 				},
 				config = require("rc.config.indent-blankline-nvim"),
 			},
-			-- quickly highlight <cword> or visually selected word
 			{
+				-- quickly highlight <cword> or visually selected word
 				-- https://github.com/t9md/vim-quickhl
 				"t9md/vim-quickhl",
 				keys = {
@@ -223,8 +221,8 @@ function Pack:packer()
 				},
 				setup = require("rc.setup.vim-quickhl"),
 			},
-			-- Highlight, list and search todo comments
 			{
+				-- Highlight, list and search todo comments
 				-- https://github.com/folke/todo-comments.nvim
 				"folke/todo-comments.nvim",
 				event = {
@@ -239,8 +237,8 @@ function Pack:packer()
 				setup = require("rc.setup.todo-comments-nvim"),
 				config = require("rc.config.todo-comments-nvim"),
 			},
-			-- A surround text object plugin for neovim written in lua.
 			{
+				-- A surround text object plugin for neovim written in lua.
 				-- https://github.com/ur4ltz/surround.nvim
 				"ur4ltz/surround.nvim",
 				event = {
@@ -252,8 +250,8 @@ function Pack:packer()
 				},
 				config = require("rc.config.surround-nvim"),
 			},
-			-- LSP
 			{
+				-- LSP
 				-- https://github.com/neovim/nvim-lspconfig
 				"neovim/nvim-lspconfig",
 				event = { "BufReadPre" },
@@ -369,8 +367,8 @@ function Pack:packer()
 					require("nvim-autopairs").setup()
 				end,
 			},
-			-- engine SKK
 			{
+				-- engine SKK
 				-- https://github.com/tyru/eskk.vim
 				"tyru/eskk.vim",
 				keys = {
@@ -379,8 +377,8 @@ function Pack:packer()
 				},
 				config = require("rc.config.eskk"),
 			},
-			-- A fancy, configurable, notification manager for NeoVim
 			{
+				-- A fancy, configurable, notification manager for NeoVim
 				-- https://github.com/folke/noice.nvim
 				"folke/noice.nvim",
 				event = { "BufRead", "BufNewFile", "InsertEnter", "CmdlineEnter", "CursorHold", "FocusLost" },
@@ -398,8 +396,8 @@ function Pack:packer()
 				setup = require("rc.setup.noice-nvim"),
 				config = require("rc.config.noice-nvim"),
 			},
-			-- Use Neovim as a language server to inject LSP diagnostics, code actions
 			{
+				-- Use Neovim as a language server to inject LSP diagnostics, code actions
 				-- https://github.com/jose-elias-alvarez/null-ls.nvim
 				"jose-elias-alvarez/null-ls.nvim",
 				requires = "nvim-lua/plenary.nvim",
@@ -433,26 +431,26 @@ function Pack:packer()
 				setup = require("rc.setup.vim-test"),
 				config = require("rc.config.vim-test"),
 			},
-			-- Generating images of source code using
 			{
+				-- Generating images of source code using
 				-- https://github.com/segeljakt/vim-silicon
 				"segeljakt/vim-silicon",
 				cmd = "Silicon",
 			},
-			-- Automatically uppercase SQL keywords
 			{
+				-- Automatically uppercase SQL keywords
 				-- https://github.com/jsborjesson/vim-uppercase-sql
 				"jsborjesson/vim-uppercase-sql",
 				ft = { "sql" },
 			},
-			-- Delete buffers
 			{
+				-- Delete buffers
 				-- https://github.com/famiu/bufdelete.nvim
 				"famiu/bufdelete.nvim",
 				event = "CmdlineEnter",
 			},
-			-- File finder
 			{
+				-- File finder
 				-- https://github.com/tamago324/lir.nvim
 				"tamago324/lir.nvim",
 				-- },
@@ -465,8 +463,8 @@ function Pack:packer()
 				setup = require("rc.setup.lir-nvim"),
 				config = require("rc.config.lir-nvim"),
 			},
-			-- Open URI
 			{
+				-- Open URI
 				-- https://github.com/tyru/open-browser.vim
 				"tyru/open-browser.vim",
 				keys = { "<plug>(openbrowser-smart-search)" },
@@ -477,15 +475,19 @@ function Pack:packer()
 				ft = { "markdown" },
 				config = require("rc.config.previm"),
 			},
-			-- Resizing of windows
 			{
+				-- TODO: https://github.com/kevinhwang91/nvim-bqf
+				'kevinhwang91/nvim-bqf', ft = 'qf'
+			},
+			{
+				-- Resizing of windows
 				-- https://github.com/simeji/winresizer
 				"simeji/winresizer",
 				keys = { { "n", "<C-e>" } },
 				setup = require("rc.config.winresizer"),
 			},
-			-- Comment out
 			{
+				-- Comment out
 				-- https://github.com/numToStr/Comment.nvim
 				"numToStr/Comment.nvim",
 				event = {
@@ -499,16 +501,16 @@ function Pack:packer()
 					require("Comment").setup()
 				end,
 			},
-			-- Terminal
 			{
+				-- Terminal
 				-- https://github.com/akinsho/toggleterm.nvim
 				"akinsho/toggleterm.nvim",
 				keys = { "n", [[<c-;>]] },
 				cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
 				config = require("rc.config.toggleterm-nvim"),
 			},
-			-- Scrollbar
 			{
+				-- Scrollbar
 				-- https://github.com/petertriho/nvim-scrollbar
 				"petertriho/nvim-scrollbar",
 				event = {
@@ -528,8 +530,8 @@ function Pack:packer()
 				event = { "FocusLost", "CursorHold" },
 				config = require("rc.config.gitsigns-nvim"),
 			},
-			-- Colorizer
 			{
+				-- Colorizer
 				-- https://github.com/norcalli/nvim-colorizer.lua
 				"norcalli/nvim-colorizer.lua",
 				cmd = { "ColorizerToggle" },
@@ -537,8 +539,8 @@ function Pack:packer()
 					require("colorizer").setup({})
 				end,
 			},
-			-- Highlight length of search result
 			{
+				-- Highlight length of search result
 				-- https://github.com/kevinhwang91/nvim-hlslens
 				"kevinhwang91/nvim-hlslens",
 				keys = { { "n", "*" }, { "n", "g*" }, { "n", "g*" } },
