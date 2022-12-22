@@ -4,7 +4,6 @@ local opt = vim.opt
 opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
 opt.hidden = true
--- opt.spelllang = "en"
 -- 内容が変更されたら自動的に再読み込み
 opt.autoread = true
 opt.number = true
@@ -42,6 +41,10 @@ opt.cursorline = true
 opt.background = "dark"
 -- 文字を隠す
 opt.conceallevel = 1
+-- 検索時に大/小を区別しない
+opt.ignorecase = true
+-- 検索時に大文字を含んでいたら大/小を区別
+opt.smartcase = true
 -- deleteでインデントを削除可能にする
 opt.backspace = { "indent", "eol", "start" }
 opt.completeopt = { "menu", "menuone", "noselect" }
