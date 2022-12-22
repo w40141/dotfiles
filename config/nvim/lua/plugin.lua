@@ -374,10 +374,9 @@ function Pack:packer()
 				-- https://github.com/tyru/eskk.vim
 				"tyru/eskk.vim",
 				keys = {
-					{ "i", "<Plug>(eskk:toggle)" },
-					{ "c", "<Plug>(eskk:toggle)" },
+					{ "i", "<C-j>" },
+					{ "c", "<C-j>" },
 				},
-				setup = require("rc.setup.eskk"),
 				config = require("rc.config.eskk"),
 			},
 			-- A fancy, configurable, notification manager for NeoVim

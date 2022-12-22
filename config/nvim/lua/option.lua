@@ -59,8 +59,10 @@ opt.virtualedit = "block"
 opt.switchbuf = "useopen"
 -- <"や">"でインデントする際に"shiftwidth"の倍数に丸める
 opt.shiftround = true
--- 新しい行のインデントを現在行と同じにする
-opt.smartindent = true
+-- 行頭での<tab>の幅
+opt.shiftwidth = 2
+opt.softtabstop = 2
+opt.tabstop = 2
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 opt.smarttab = true
 -- タブを空白入力に置換

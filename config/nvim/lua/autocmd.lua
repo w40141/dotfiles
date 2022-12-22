@@ -6,11 +6,11 @@ local autocmd = api.nvim_create_autocmd -- Create autocommand
 local mac = augroup("MyAutoCmd", {})
 
 -- Remove whitespace on save
-autocmd("BufWritePre", {
-	pattern = "*",
-	command = ":%s/\\s\\+$//e",
-	group = mac,
-})
+-- autocmd("BufWritePre", {
+-- 	pattern = "*",
+-- 	command = ":%s/\\s\\+$//e",
+-- 	group = mac,
+-- })
 
 -- Don't auto commenting new lines
 autocmd("BufEnter", {
