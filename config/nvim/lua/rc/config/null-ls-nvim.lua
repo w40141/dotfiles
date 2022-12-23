@@ -50,7 +50,11 @@ return {
 					end,
 				}),
 				-- rust-analyzer
-				builtins.formatting.rustfmt,
+				builtins.formatting.rustfmt.with({
+					condition = function()
+						return exe("rustfmt") > 0
+					end
+				}),
 				builtins.formatting.prettier.with({
 					condition = function()
 						return exe("prettier") > 0

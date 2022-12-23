@@ -3,11 +3,14 @@ return {
 		local v = vim
 		local fn = v.fn
 		local api = v.api
+		local key = v.keymap.set
 		local augroup = api.nvim_create_augroup -- Create/get autocommand group
 		local autocmd = api.nvim_create_autocmd -- Create autocommand
 		local hl = api.nvim_set_hl
 		local lsp = v.lsp
 		local buf = lsp.buf
+		local lspconfig = require("lspconfig")
+		local rt = require("rust-tools")
 
 		local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 		for type, icon in pairs(signs) do
@@ -57,14 +60,16 @@ return {
 					{ buffer = bufnr, callback = buf.clear_references, group = ldh }
 				)
 			end
+
+			if client.name == "rust_analyzer" then
+				key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
+				key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+			end
 		end
 
-		local lspconfig = require("lspconfig")
-		local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-		local capabilities
-		if ok then
-			capabilities = cmp_nvim_lsp.default_capabilities(lsp.protocol.make_client_capabilities())
-		end
+		local capabilities = require("cmp_nvim_lsp").default_capabilities(
+			lsp.protocol.make_client_capabilities()
+		)
 
 		require("mason").setup({
 			ui = {
@@ -81,6 +86,14 @@ return {
 				lspconfig[server_name].setup({
 					capabilities = capabilities,
 					on_attach = on_attach,
+				})
+			end,
+			["rust_analyzer"] = function()
+				rt.setup({
+					server = {
+						on_attach = on_attach,
+						capabilities = capabilities,
+					},
 				})
 			end,
 		})

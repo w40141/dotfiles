@@ -270,6 +270,7 @@ function Pack:packer()
 					{
 						-- https://github.com/williamboman/mason.nvim
 						"williamboman/mason.nvim",
+						event = { "FocusLost", "CursorHold" },
 						module = { "mason" },
 					},
 				},
@@ -284,9 +285,8 @@ function Pack:packer()
 			{
 				-- https://github.com/simrat39/rust-tools.nvim
 				"simrat39/rust-tools.nvim",
-				-- module = { "rust-tools" },
-				ft = { "rust" },
-				config = require("rc.config.rust-tools")
+				module = { "rust-tools" },
+				requires = { "nvim-lua/plenary.nvim", "rust-lang/rust.vim" },
 			},
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
@@ -299,6 +299,7 @@ function Pack:packer()
 					{
 						-- https://github.com/hrsh7th/cmp-nvim-lsp
 						"hrsh7th/cmp-nvim-lsp",
+						module = { "cmp_nvim_lsp" },
 						event = { "InsertEnter" },
 					},
 					{
@@ -349,7 +350,7 @@ function Pack:packer()
 							-- https://github.com/L3MON4D3/LuaSnip
 							"L3MON4D3/LuaSnip",
 							module = { "luasnip" },
-							requires = { "honza/vim-snippets" },
+							requires = { "rafamadriz/friendly-snippets" },
 							config = function()
 								require("luasnip.loaders.from_vscode").lazy_load()
 							end,
@@ -372,9 +373,10 @@ function Pack:packer()
 				-- https://github.com/tyru/eskk.vim
 				"tyru/eskk.vim",
 				keys = {
-					{ "i", "<C-j>" },
-					{ "c", "<C-j>" },
+					{ "i", "<Plug>(eskk:toggle)"},
+					{ "c", "<Plug>(eskk:toggle)"},
 				},
+				setup = require("rc.setup.eskk"),
 				config = require("rc.config.eskk"),
 			},
 			{
@@ -401,10 +403,7 @@ function Pack:packer()
 				-- https://github.com/jose-elias-alvarez/null-ls.nvim
 				"jose-elias-alvarez/null-ls.nvim",
 				requires = "nvim-lua/plenary.nvim",
-				event = {
-					"CursorHold",
-					"FocusLost",
-				},
+				event = { "CursorHold", "FocusLost" },
 				config = require("rc.config.null-ls-nvim"),
 			},
 			{
@@ -524,6 +523,10 @@ function Pack:packer()
 					require("scrollbar").setup({})
 				end,
 			},
+			-- {
+			-- 	"mfussenegger/nvim-jdtls",
+			-- 	ft = { "java" },
+			-- },
 			{
 				-- https://github.com/lewis6991/gitsigns.nvim
 				"lewis6991/gitsigns.nvim",
