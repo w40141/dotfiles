@@ -72,7 +72,6 @@ function Pack:packer()
 			compile_on_sync = true,
 			profile = { enable = false, threshold = 1 },
 			disable_commands = true,
-			max_jobs = 50,
 		}
 		packer.reset()
 		packer.use {
@@ -254,7 +253,11 @@ function Pack:packer()
 				-- LSP
 				-- https://github.com/neovim/nvim-lspconfig
 				"neovim/nvim-lspconfig",
-				event = { "BufReadPre" },
+				event = {
+					"BufReadPre",
+					-- "CursorHold",
+					-- "FocusLost",
+				},
 				requires = {
 					{
 						-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
@@ -273,6 +276,11 @@ function Pack:packer()
 						event = { "FocusLost", "CursorHold" },
 						module = { "mason" },
 					},
+					{
+						-- https://github.com/simrat39/rust-tools.nvim
+						"simrat39/rust-tools.nvim",
+						module = { "rust-tools" },
+					},
 				},
 				wants = {
 					"mason.nvim",
@@ -281,12 +289,6 @@ function Pack:packer()
 				},
 				setup = require("rc.setup.nvim-lspconfig"),
 				config = require("rc.config.nvim-lspconfig"),
-			},
-			{
-				-- https://github.com/simrat39/rust-tools.nvim
-				"simrat39/rust-tools.nvim",
-				module = { "rust-tools" },
-				requires = { "nvim-lua/plenary.nvim", "rust-lang/rust.vim" },
 			},
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
@@ -327,11 +329,11 @@ function Pack:packer()
 						"yutkat/cmp-mocword",
 						event = { "InsertEnter" },
 					},
-					{
-						-- https://github.com/f3fora/cmp-spell
-						"f3fora/cmp-spell",
-						event = { "InsertEnter" },
-					},
+					-- {
+					-- 	-- https://github.com/f3fora/cmp-spell
+					-- 	"f3fora/cmp-spell",
+					-- 	event = { "InsertEnter" },
+					-- },
 					{
 						-- https://github.com/hrsh7th/cmp-cmdline
 						"hrsh7th/cmp-cmdline",
@@ -373,8 +375,8 @@ function Pack:packer()
 				-- https://github.com/tyru/eskk.vim
 				"tyru/eskk.vim",
 				keys = {
-					{ "i", "<Plug>(eskk:toggle)"},
-					{ "c", "<Plug>(eskk:toggle)"},
+					{ "i", "<Plug>(eskk:toggle)" },
+					{ "c", "<Plug>(eskk:toggle)" },
 				},
 				setup = require("rc.setup.eskk"),
 				config = require("rc.config.eskk"),
@@ -523,10 +525,6 @@ function Pack:packer()
 					require("scrollbar").setup({})
 				end,
 			},
-			-- {
-			-- 	"mfussenegger/nvim-jdtls",
-			-- 	ft = { "java" },
-			-- },
 			{
 				-- https://github.com/lewis6991/gitsigns.nvim
 				"lewis6991/gitsigns.nvim",
@@ -561,7 +559,6 @@ function Pack:packer()
 				end,
 			},
 		}
-
 		self._packer = packer
 	end
 	return self._packer
