@@ -9,8 +9,6 @@ return {
 		local hl = api.nvim_set_hl
 		local lsp = v.lsp
 		local buf = lsp.buf
-		local lspconfig = require("lspconfig")
-		local rt = require("rust-tools")
 
 		local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 		for type, icon in pairs(signs) do
@@ -30,6 +28,7 @@ return {
 			}
 		)
 
+		local rt = require("rust-tools")
 		local on_attach = function(client, bufnr)
 			if client.server_capabilities.documentHighlightProvider then
 				hl(0, "LspReferenceText", {
@@ -81,6 +80,8 @@ return {
 			lsp.protocol.make_client_capabilities()
 		)
 
+		local lspconfig = require("lspconfig")
+		require("mason-lspconfig").setup()
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
 				lspconfig[server_name].setup({

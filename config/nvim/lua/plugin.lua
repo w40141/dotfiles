@@ -255,8 +255,8 @@ function Pack:packer()
 				"neovim/nvim-lspconfig",
 				event = {
 					"BufReadPre",
-					-- "CursorHold",
-					-- "FocusLost",
+					"CursorHold",
+					"FocusLost",
 				},
 				requires = {
 					{
@@ -276,11 +276,6 @@ function Pack:packer()
 						event = { "FocusLost", "CursorHold" },
 						module = { "mason" },
 					},
-					{
-						-- https://github.com/simrat39/rust-tools.nvim
-						"simrat39/rust-tools.nvim",
-						module = { "rust-tools" },
-					},
 				},
 				wants = {
 					"mason.nvim",
@@ -289,6 +284,12 @@ function Pack:packer()
 				},
 				setup = require("rc.setup.nvim-lspconfig"),
 				config = require("rc.config.nvim-lspconfig"),
+			},
+			{
+				-- https://github.com/simrat39/rust-tools.nvim
+				"simrat39/rust-tools.nvim",
+				module = { "rust-tools" },
+				-- config = require("rc.config.rust-tools")
 			},
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
