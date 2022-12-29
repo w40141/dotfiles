@@ -136,65 +136,72 @@ set -g fish_prompt_pwd_dir_length 0
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
-if test (uname -m) = "x86_64"
-  fish_add_path $HOME/.asdf/installs/poetry/1.2.2/bin
-  fish_add_path /usr/local/sbin
-  fish_add_path /usr/local/opt/apr/bin
-  fish_add_path /usr/local/opt/curl/bin
-  fish_add_path /usr/local/opt/icu4c/bin
-  fish_add_path /usr/local/opt/icu4c/sbin
-  fish_add_path /usr/local/opt/libpq/bin
-  # fish_add_path /usr/local/opt/llvm/bin
-  fish_add_path /usr/local/opt/nss/bin
-  fish_add_path /usr/local/opt/qt/bin
-  fish_add_path /usr/local/opt/sqlite/bin
-  fish_add_path /usr/local/opt/libxml2/bin
-  fish_add_path /usr/local/opt/krb5/bin
-  fish_add_path /usr/local/opt/krb5/sbin
-  fish_add_path /usr/local/opt/sphinx-doc/bin
-  fish_add_path /usr/local/opt/openldap/bin
-  fish_add_path /usr/local/opt/openldap/sbin
-  fish_add_path /usr/local/opt/gnu-getopt/bin
-  fish_add_path /usr/local/opt/libxslt/bin
-  fish_add_path /usr/local/opt/openssl@1.1/bin
-  # fish_add_path /usr/local/opt/openssl@3/bin
-  fish_add_path /usr/local/opt/ncurses/bin
-  fish_add_path /usr/local/opt/mysql-client/bin
-  fish_add_path $HOME/.local/bin
-
-  source /usr/local/opt/asdf/libexec/asdf.fish
+if test (uname) = "Linux"
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+	fish_add_path /home/linuxbrew/.linuxbrew/bin
+	fish_add_path /home/linuxbrew/.linuxbrew/sbin
+	source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
 else
-  fish_add_path /opt/homebrew/bin
-  fish_add_path /opt/homebrew/sbin
-  fish_add_path /opt/homebrew/opt/apr/bin
-  fish_add_path /opt/homebrew/opt/curl/bin
-  fish_add_path /opt/homebrew/opt/icu4c/bin
-  fish_add_path /opt/homebrew/opt/icu4c/sbin
-  fish_add_path /opt/homebrew/opt/libpq/bin
-  # fish_add_path /opt/homebrew/opt/llvm/bin
-  fish_add_path /opt/homebrew/opt/nss/bin
-  fish_add_path /opt/homebrew/opt/qt/bin
-  fish_add_path /opt/homebrew/opt/sqlite/bin
-  fish_add_path /opt/homebrew/opt/libxml2/bin
-  fish_add_path /opt/homebrew/opt/krb5/bin
-  fish_add_path /opt/homebrew/opt/krb5/sbin
-  fish_add_path /opt/homebrew/opt/sphinx-doc/bin
-  fish_add_path /opt/homebrew/opt/openldap/bin
-  fish_add_path /opt/homebrew/opt/openldap/sbin
-  fish_add_path /opt/homebrew/opt/gnu-getopt/bin
-  fish_add_path /opt/homebrew/opt/libxslt/bin
-  fish_add_path /opt/homebrew/opt/openssl@1.1/bin
-  # fish_add_path /opt/homebrew/opt/openssl@3/bin
-  fish_add_path /opt/homebrew/opt/ncurses/bin
-  fish_add_path /opt/homebrew/opt/mysql-client/bin
-  fish_add_path $HOME/.local/bin
-
-  source /opt/homebrew/opt/asdf/libexec/asdf.fish
+	if test (uname -m) = "x86_64"
+		fish_add_path $HOME/.asdf/installs/poetry/1.2.2/bin
+		fish_add_path /usr/local/sbin
+		fish_add_path /usr/local/opt/apr/bin
+		fish_add_path /usr/local/opt/curl/bin
+		fish_add_path /usr/local/opt/icu4c/bin
+		fish_add_path /usr/local/opt/icu4c/sbin
+		fish_add_path /usr/local/opt/libpq/bin
+		# fish_add_path /usr/local/opt/llvm/bin
+		fish_add_path /usr/local/opt/nss/bin
+		fish_add_path /usr/local/opt/qt/bin
+		fish_add_path /usr/local/opt/sqlite/bin
+		fish_add_path /usr/local/opt/libxml2/bin
+		fish_add_path /usr/local/opt/krb5/bin
+		fish_add_path /usr/local/opt/krb5/sbin
+		fish_add_path /usr/local/opt/sphinx-doc/bin
+		fish_add_path /usr/local/opt/openldap/bin
+		fish_add_path /usr/local/opt/openldap/sbin
+		fish_add_path /usr/local/opt/gnu-getopt/bin
+		fish_add_path /usr/local/opt/libxslt/bin
+		fish_add_path /usr/local/opt/openssl@1.1/bin
+		# fish_add_path /usr/local/opt/openssl@3/bin
+		fish_add_path /usr/local/opt/ncurses/bin
+		fish_add_path /usr/local/opt/mysql-client/bin
+		fish_add_path $HOME/.local/bin
+		
+		source /usr/local/opt/asdf/libexec/asdf.fish
+		else
+		fish_add_path /opt/homebrew/bin
+		fish_add_path /opt/homebrew/sbin
+		fish_add_path /opt/homebrew/opt/apr/bin
+		fish_add_path /opt/homebrew/opt/curl/bin
+		fish_add_path /opt/homebrew/opt/icu4c/bin
+		fish_add_path /opt/homebrew/opt/icu4c/sbin
+		fish_add_path /opt/homebrew/opt/libpq/bin
+		# fish_add_path /opt/homebrew/opt/llvm/bin
+		fish_add_path /opt/homebrew/opt/nss/bin
+		fish_add_path /opt/homebrew/opt/qt/bin
+		fish_add_path /opt/homebrew/opt/sqlite/bin
+		fish_add_path /opt/homebrew/opt/libxml2/bin
+		fish_add_path /opt/homebrew/opt/krb5/bin
+		fish_add_path /opt/homebrew/opt/krb5/sbin
+		fish_add_path /opt/homebrew/opt/sphinx-doc/bin
+		fish_add_path /opt/homebrew/opt/openldap/bin
+		fish_add_path /opt/homebrew/opt/openldap/sbin
+		fish_add_path /opt/homebrew/opt/gnu-getopt/bin
+		fish_add_path /opt/homebrew/opt/libxslt/bin
+		fish_add_path /opt/homebrew/opt/openssl@1.1/bin
+		# fish_add_path /opt/homebrew/opt/openssl@3/bin
+		fish_add_path /opt/homebrew/opt/ncurses/bin
+		fish_add_path /opt/homebrew/opt/mysql-client/bin
+		fish_add_path $HOME/.local/bin
+		
+		source /opt/homebrew/opt/asdf/libexec/asdf.fish
+		end
 end
 
 . ~/.asdf/plugins/java/set-java-home.fish
 
-zoxide init fish | source
+# zoxide init fish | source
 
 # for ls or exa
 if command -s exa > /dev/null
