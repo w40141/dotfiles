@@ -60,6 +60,14 @@ return {
 				)
 			end
 
+			if client.resolved_capabilities.document_formatting then
+				autocmd("BufWritePre", {
+					desc = "Auto format before save",
+					pattern = "<buffer>",
+					callback = buf.formatting_sync,
+				})
+			end
+
 			if client.name == "rust_analyzer" then
 				key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
 				key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
