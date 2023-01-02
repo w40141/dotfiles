@@ -22,8 +22,12 @@ return {
 			},
 			cmdline = {
 				format = {
-					search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
-					search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+					search_down = {
+						kind = "search", pattern = "^/", icon = " ", lang = "regex"
+					},
+					search_up = {
+						kind = "search", pattern = "^%?", icon = " ", lang = "regex"
+					},
 				},
 			},
 			presets = {

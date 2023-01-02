@@ -37,27 +37,15 @@ return {
 		local builtins = require("null-ls.builtins")
 		null_ls.setup({
 			sources = {
+				builtins.code_actions.cspell,
+				builtins.code_actions.gitsigns,
+				builtins.code_actions.refactoring,
+				builtins.completion.luasnip,
+				builtins.diagnostics.fish,
 				builtins.diagnostics.credo,
-				builtins.formatting.trim_whitespace,
-				builtins.formatting.stylua.with({
+				builtins.diagnostics.editorconfig_checker.with({
 					condition = function()
-						return exe("stylua") > 0
-					end,
-				}),
-				builtins.formatting.black.with({
-					condition = function()
-						return exe("black") > 0
-					end,
-				}),
-				-- rust-analyzer
-				builtins.formatting.rustfmt.with({
-					condition = function()
-						return exe("rustfmt") > 0
-					end
-				}),
-				builtins.formatting.prettier.with({
-					condition = function()
-						return exe("prettier") > 0
+						return exe("ec") > 0
 					end,
 				}),
 				builtins.diagnostics.eslint.with({
@@ -65,22 +53,11 @@ return {
 						return exe("eslint") > 0
 					end,
 				}),
-				builtins.formatting.shfmt.with({
-					condition = function()
-						return exe("shfmt") > 0
-					end,
-				}),
 				builtins.diagnostics.shellcheck.with({
 					condition = function()
 						return exe("shellcheck") > 0
 					end,
 				}),
-				builtins.diagnostics.editorconfig_checker.with({
-					condition = function()
-						return exe("ec") > 0
-					end,
-				}),
-				builtins.code_actions.cspell,
 				builtins.diagnostics.cspell.with({
 					diagnostics_postprocess = function(diagnostic)
 						diagnostic.severity = v.diagnostic.severity["WARN"]
@@ -98,13 +75,44 @@ return {
 						return exe("vale") > 0
 					end,
 				}),
+				builtins.formatting.trim_whitespace,
+				builtins.formatting.stylua.with({
+					condition = function()
+						return exe("stylua") > 0
+					end,
+				}),
+				builtins.formatting.black.with({
+					condition = function()
+						return exe("black") > 0
+					end,
+				}),
+				builtins.formatting.rustfmt.with({
+					condition = function()
+						return exe("rustfmt") > 0
+					end,
+				}),
+				builtins.formatting.deno_fmt.with({
+					condition = function(utils)
+						return not (utils.has_file({ ".prettierrc", ".prettierrc.js", "deno.json", "deno.jsonc" }))
+					end,
+				}),
+				builtins.formatting.prettier.with({
+					condition = function(utils)
+						return utils.has_file({ ".prettierrc", ".prettierrc.js" })
+					end,
+					prefer_local = "node_modules/.bin",
+				}),
+				builtins.formatting.shfmt.with({
+					condition = function()
+						return exe("shfmt") > 0
+					end,
+				}),
+				builtins.formatting.fish_indent,
 				builtins.formatting.markdownlint.with({
 					condition = function()
 						return exe("markdownlint") > 0
 					end,
 				}),
-				builtins.code_actions.gitsigns,
-				builtins.code_actions.refactoring,
 			},
 		})
 	end,

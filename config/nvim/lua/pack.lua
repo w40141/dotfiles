@@ -16,35 +16,37 @@ Pack.new = function()
 	local self = setmetatable({
 		initialized = false,
 		_packer = nil,
-	}, { __index = Pack })
+	}, {
+		__index = Pack,
+	})
 	self:assume_plugins()
 	self:setup()
 	return self
 end
 
 function Pack:setup()
-	command("PackerInstall", self:run_packer "install", { desc = "[Packer] Install plugins" })
-	command("PackerUpdate", self:run_packer "update", { desc = "[Packer] Update plugins" })
-	command("PackerClean", self:run_packer "clean", { desc = "[Packer] Clean plugins" })
-	command("PackerStatus", self:run_packer "status", { desc = "[Packer] Output plugins status" })
-	command("PackerSync", self:run_packer "sync", { desc = "[Packer] Output plugins status" })
-	command("PackerCompile", self:run_packer "compile", { desc = "[Packer] Output plugins status", nargs = "*" })
+	command("PackerInstall", self:run_packer("install"), { desc = "[Packer] Install plugins" })
+	command("PackerUpdate", self:run_packer("update"), { desc = "[Packer] Update plugins" })
+	command("PackerClean", self:run_packer("clean"), { desc = "[Packer] Clean plugins" })
+	command("PackerStatus", self:run_packer("status"), { desc = "[Packer] Output plugins status" })
+	command("PackerSync", self:run_packer("sync"), { desc = "[Packer] Output plugins status" })
+	command("PackerCompile", self:run_packer("compile"), { desc = "[Packer] Output plugins status", nargs = "*" })
 	command("PackerLoad", function(opts)
 		local args = v.split(opts.args, " ")
 		table.insert(args, opts.bang)
-		self:run_packer "loader" (table.unpack(opts))
-	end, { bang = true, complete = self:run_packer "loader_complete", desc = "[Packer] Load plugins", nargs = "+" })
+		self:run_packer("loader")(table.unpack(opts))
+	end, { bang = true, complete = self:run_packer("loader_complete"), desc = "[Packer] Load plugins", nargs = "+" })
 end
 
 function Pack:assume_plugins()
-	local data_dir = fn.stdpath "data"
-	for _, p in ipairs {
+	local data_dir = fn.stdpath("data")
+	for _, p in ipairs({
 		{ "wbthomason/packer.nvim", opt = true },
-	} do
+	}) do
 		local dir = p.opt and "opt" or "start"
 		local pkg = p[1]
 		local branch = p.branch or "master"
-		local name = pkg:match "[^/]+$"
+		local name = pkg:match("[^/]+$")
 		local path = ("%s/site/pack/packer/%s/%s"):format(data_dir, dir, name)
 		if not self:exists(path) then
 			v.cmd(("!git clone https://github.com/%s %s -b %s"):format(pkg, path, branch))
@@ -65,17 +67,18 @@ end
 
 function Pack:packer()
 	if not self._packer then
-		v.cmd.packadd [[packer.nvim]]
-		local packer = require "packer"
-		packer.init {
+		v.cmd.packadd([[packer.nvim]])
+		local packer = require("packer")
+		packer.init({
 			compile_path = self.compile_path,
 			compile_on_sync = true,
 			profile = { enable = false, threshold = 1 },
 			disable_commands = true,
-		}
+		})
 		packer.reset()
-		packer.use {
+		packer.use({
 			{ "wbthomason/packer.nvim", opt = true },
+			{ "MunifTanjim/nui.nvim" },
 			{
 				-- https://github.com/rebelot/kanagawa.nvim
 				"rebelot/kanagawa.nvim",
@@ -206,7 +209,7 @@ function Pack:packer()
 				-- https://github.com/lukas-reineke/indent-blankline.nvim
 				"lukas-reineke/indent-blankline.nvim",
 				event = {
-					"BufReadPost"
+					"BufReadPost",
 				},
 				config = require("rc.config.indent-blankline-nvim"),
 			},
@@ -285,12 +288,12 @@ function Pack:packer()
 				setup = require("rc.setup.nvim-lspconfig"),
 				config = require("rc.config.nvim-lspconfig"),
 			},
-			{
-				-- https://github.com/simrat39/rust-tools.nvim
-				"simrat39/rust-tools.nvim",
-				module = { "rust-tools" },
-				-- config = require("rc.config.rust-tools")
-			},
+			-- {
+			-- 	-- https://github.com/simrat39/rust-tools.nvim
+			-- 	"simrat39/rust-tools.nvim",
+			-- 	module = { "rust-tools" },
+			-- 	-- config = require("rc.config.rust-tools")
+			-- },
 			{
 				-- https://github.com/hrsh7th/nvim-cmp
 				"hrsh7th/nvim-cmp",
@@ -361,6 +364,31 @@ function Pack:packer()
 					},
 				},
 			},
+			-- {
+			-- 	-- https://github.com/simrat39/inlay-hints.nvim
+			-- 	"simrat39/inlay-hints.nvim",
+			-- 	config = function()
+			-- 		require("inlay-hints").setup()
+			-- 	end,
+			-- },
+			-- {
+			-- 	-- https://github.com/lvimuser/lsp-inlayhints.nvim
+			-- 	"lvimuser/lsp-inlayhints.nvim",
+			-- 	config = function()
+			-- 		require("lsp-inlayhints").setup()
+			-- 		local inlay = v.api.nvim_create_augroup("LspAttach_inlayhints", {})
+			-- 		v.api.nvim_create_autocmd("LspAttach", {
+			-- 			group = inlay,
+			-- 			callback = function(args)
+			-- 				if not (args.data and args.data.client_id) then
+			-- 					return
+			-- 				end
+			-- 				local client = v.lsp.get_client_by_id(args.data.client_id)
+			-- 				require("lsp-inlayhints").on_attach(client, args.buf)
+			-- 			end,
+			-- 		})
+			-- 	end,
+			-- },
 			{
 				-- https://github.com/windwp/nvim-autopairs
 				"windwp/nvim-autopairs",
@@ -479,7 +507,8 @@ function Pack:packer()
 			},
 			{
 				-- TODO: https://github.com/kevinhwang91/nvim-bqf
-				'kevinhwang91/nvim-bqf', ft = 'qf'
+				"kevinhwang91/nvim-bqf",
+				ft = "qf",
 			},
 			{
 				-- Resizing of windows
@@ -559,7 +588,7 @@ function Pack:packer()
 					require("hlslens").setup()
 				end,
 			},
-		}
+		})
 		self._packer = packer
 	end
 	return self._packer
