@@ -1,3 +1,6 @@
+local setup = require("modules.edit.setup")
+local conf = require("modules.edit.config")
+
 return {
 	{
 		-- Highlight, list and search todo comments
@@ -12,8 +15,8 @@ return {
 		},
 		requires = { "nvim-lua/plenary.nvim" },
 		wants = { "plenary.nvim" },
-		setup = require("rc.setup.todo-comments-nvim"),
-		config = require("rc.config.todo-comments-nvim"),
+		setup = setup.todo_comments(),
+		config = conf.todo_comments(),
 	},
 	{
 		-- Annotation generator
@@ -22,8 +25,8 @@ return {
 		requires = { "nvim-treesitter/nvim-treesitter" },
 		module = { "neogen" },
 		wants = { "nvim-treesitter" },
-		setup = require("rc.setup.neogen"),
-		config = require("rc.config.neogen"),
+		setup = setup.neogen(),
+		config = conf.neogen(),
 	},
 	{
 		-- A surround text object plugin for neovim written in lua.
@@ -36,17 +39,7 @@ return {
 			"BufRead",
 			"BufNewFile",
 		},
-		config = require("rc.config.surround-nvim"),
-	},
-	{
-		-- https://github.com/windwp/nvim-autopairs
-		"windwp/nvim-autopairs",
-		module = { "nvim-autopairs" },
-		requires = { "hrsh7th/nvim-cmp" },
-		want = { "nvim-cmp" },
-		config = function()
-			require("nvim-autopairs").setup()
-		end,
+		config = conf.surround(),
 	},
 	{
 		-- engine SKK
@@ -56,8 +49,8 @@ return {
 			{ "i", "<Plug>(eskk:toggle)" },
 			{ "c", "<Plug>(eskk:toggle)" },
 		},
-		setup = require("rc.setup.eskk"),
-		config = require("rc.config.eskk"),
+		setup = setup.eskk(),
+		config = conf.eskk(),
 	},
 	{
 		-- Comment out
@@ -70,15 +63,14 @@ return {
 			"BufRead",
 			"BufNewFile",
 		},
-		config = function()
-			require("Comment").setup()
-		end,
+		config = conf.comment(),
 	},
 	{
 		-- Colorizer
 		-- https://github.com/norcalli/nvim-colorizer.lua
 		"norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
+		-- config = conf.colorizer(),
 		config = function()
 			require("colorizer").setup({})
 		end,
@@ -89,6 +81,6 @@ return {
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		event = { "CursorHold", "FocusLost" },
-		config = require("rc.config.null-ls-nvim"),
+		config = conf.null_ls(),
 	},
 }
