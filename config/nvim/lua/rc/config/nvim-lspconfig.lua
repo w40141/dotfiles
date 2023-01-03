@@ -25,7 +25,7 @@ return {
 			},
 		})
 
-		-- local rt = require("rust-tools")
+		local rt = require("rust-tools")
 		local on_attach = function(client, bufnr)
 			client.server_capabilities.documentFormattingProvider = false
 			if client.server_capabilities.documentHighlightProvider then
@@ -70,10 +70,10 @@ return {
 				})
 			end
 
-			-- if client.name == "rust_analyzer" then
-			-- 	key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
-			-- 	key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-			-- end
+			if client.name == "rust_analyzer" then
+				key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
+				key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+			end
 		end
 
 		require("mason").setup({
@@ -115,14 +115,14 @@ return {
 					on_attach = on_attach,
 				})
 			end,
-			-- ["rust_analyzer"] = function()
-			-- 	rt.setup({
-			-- 		server = {
-			-- 			-- on_attach = on_attach,
-			-- 			capabilities = lsp.protocol.make_client_capabilities(),
-			-- 		},
-			-- 	})
-			-- end,
+			["rust_analyzer"] = function()
+				rt.setup({
+					server = {
+						-- on_attach = on_attach,
+						capabilities = lsp.protocol.make_client_capabilities(),
+					},
+				})
+			end,
 		})
 	end,
 }

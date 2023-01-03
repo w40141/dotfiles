@@ -1,0 +1,32 @@
+return {
+			-- {
+			-- 	-- https://github.com/simrat39/inlay-hints.nvim
+			-- 	"simrat39/inlay-hints.nvim",
+			-- 	config = function()
+			-- 		require("inlay-hints").setup()
+			-- 	end,
+			-- },
+			-- {
+			-- 	-- https://github.com/lvimuser/lsp-inlayhints.nvim
+			-- 	"lvimuser/lsp-inlayhints.nvim",
+			-- 	config = function()
+			-- 		require("lsp-inlayhints").setup()
+			-- 		local inlay = v.api.nvim_create_augroup("LspAttach_inlayhints", {})
+			-- 		v.api.nvim_create_autocmd("LspAttach", {
+			-- 			group = inlay,
+			-- 			callback = function(args)
+			-- 				if not (args.data and args.data.client_id) then
+			-- 					return
+			-- 				end
+			-- 				local client = v.lsp.get_client_by_id(args.data.client_id)
+			-- 				require("lsp-inlayhints").on_attach(client, args.buf)
+			-- 			end,
+			-- 		})
+			-- 	end,
+			-- },
+		-- {
+		-- 	-- https://github.com/f3fora/cmp-spell
+		-- 	"f3fora/cmp-spell",
+		-- 	event = { "InsertEnter" },
+		-- },
+}

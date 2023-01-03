@@ -41,18 +41,21 @@ g.skip_loading_mswin = 1
 
 v.scriptencoding = "utf-8"
 
-local os_name = function()
-	return v.loop.os_uname().sysname
+local has = function(x)
+	return v.fn.has(x) == 1
 end
 
-if os_name() == "Darwin" then
+local is_mac = has("macunix")
+local is_win = has("win32")
+
+if is_mac then
 	g.clipboard = {
 		name = "macOS-clipboard",
 		copy = { ["+"] = "pbcopy", ["*"] = "pbcopy" },
 		paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
 		cache_enabled = 0,
 	}
-elseif os_name() == "Windows_NT" then
+elseif is_win then
 	g.clipboard = {
 		name = "win32yank-wsl",
 		copy = {
