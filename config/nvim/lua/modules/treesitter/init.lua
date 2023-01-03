@@ -1,3 +1,5 @@
+local conf = require("modules.treesitter.config")
+
 return {
 	{
 		-- Treesitter configurations
@@ -5,7 +7,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufRead", "BufNewFile", "InsertEnter" },
 		run = ":TSUpdate",
-		config = require("rc.config.nvim-treesitter"),
+		-- config = require("rc.config.nvim-treesitter"),
+		config = conf.treesitter,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",

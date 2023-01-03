@@ -1,3 +1,6 @@
+local conf = require("modules.search.config")
+local setup = require("modules.search.setup")
+
 return {
 	{
 		-- Fzf finder
@@ -18,14 +21,14 @@ return {
 					},
 				},
 				wants = { "nvim-web-devicons" },
-				setup = require("rc.setup.trouble-nvim"),
-				config = require("rc.config.trouble-nvim"),
+				setup = setup.trouble,
+				config = conf.trouble,
 			},
 			{ "stevearc/aerial.nvim", module = { "aerial" } },
 		},
 		wants = { "trouble.nvim", "aerial.nvim" },
-		setup = require("rc.setup.telescope-nvim"),
-		config = require("rc.config.telescope-nvim"),
+		setup = setup.telescope,
+		config = conf.telescope,
 	},
 	{
 		-- quickly highlight <cword> or visually selected word
@@ -35,7 +38,7 @@ return {
 			{ "n", "<Plug>(quickhl-manual-this)" },
 			{ "n", "<Plug>(quickhl-manual-reset)" },
 		},
-		setup = require("rc.setup.vim-quickhl"),
+		setup = setup.quickhl,
 	},
 	{
 		-- Highlight length of search result
@@ -50,9 +53,7 @@ return {
 			module = { "lasterisk" },
 		},
 		wants = { "lasterisk.nvim" },
-		setup = require("rc.setup.nvim-hlslens"),
-		config = function()
-			require("hlslens").setup()
-		end,
+		setup = setup.hlslens,
+		config = conf.hlslens,
 	},
 }

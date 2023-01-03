@@ -1,13 +1,4 @@
 local M = {}
-local v = vim
-local api = v.api
-local cmp = require("cmp")
-local snip = require("luasnip")
-local has_words_before = function()
-	unpack = unpack or table.unpack
-	local line, col = unpack(api.nvim_win_get_cursor(0))
-	return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
 
 function M.luasnip()
 	require("luasnip").config.set_config({
@@ -21,6 +12,14 @@ function M.luasnip()
 end
 
 function M.cmp()
+	local api = vim.api
+	local cmp = require("cmp")
+	local snip = require("luasnip")
+	local has_words_before = function()
+		unpack = unpack or table.unpack
+		local line, col = unpack(api.nvim_win_get_cursor(0))
+		return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+	end
 	cmp.setup({
 		formatting = {
 			format = require("lspkind").cmp_format({
@@ -117,12 +116,13 @@ function M.cmp()
 			{ name = "cmdline" },
 		}, {}),
 	})
+
+	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 function M.autopairs()
 	require("nvim-autopairs").setup()
-	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return M

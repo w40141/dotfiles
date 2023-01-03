@@ -1,9 +1,4 @@
 local M = {}
-local v = vim
-local g = v.g
-local fn = v.fn
-local exe = fn.executable
-local call = v.call
 
 function M.todo_comments()
 	require("todo-comments").setup({
@@ -86,15 +81,11 @@ function M.surround()
 	})
 end
 
-function M.comment()
-	require("Comment").setup()
-end
-
-function M.colorizer()
-	require("colorizer").setup()
-end
-
 function M.null_ls()
+	local v = vim
+	local fn = v.fn
+	local exe = fn.executable
+	local call = v.call
 	local cspell_config_dir = "$XDG_CONFIG_HOME/cspell"
 	local cspell_data_dir = "$XDG_DATA_HOME/cspell"
 
@@ -216,6 +207,7 @@ function M.null_ls()
 end
 
 function M.eskk()
+	local g = vim.g
 	g["toggle_markdown_eskk"] = 1
 	g["eskk#directory"] = "$XDG_CONFIG_HOME/skk"
 	g["eskk#dictionary"] = {
@@ -246,6 +238,14 @@ function M.eskk()
 	g["eskk#marker_henkan_select"] = "[選択]"
 	g["eskk#marker_okuri"] = "[送り]"
 	g["eskk#marker_jisyo_touroku"] = "[辞書]"
+end
+
+function M.comment()
+	require("Comment").setup()
+end
+
+function M.colorizer()
+	require("colorizer").setup()
 end
 
 return M

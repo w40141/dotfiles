@@ -1,3 +1,6 @@
+local conf = require("modules.misc.config")
+local setup = require("modules.misc.setup")
+
 return {
 	{
 		"vim-jp/vimdoc-ja",
@@ -10,8 +13,8 @@ return {
 	{
 		"vim-test/vim-test",
 		event = "CmdlineEnter",
-		setup = require("rc.setup.vim-test"),
-		config = require("rc.config.vim-test"),
+		setup = setup.vim_test(),
+		config = conf.vim_test(),
 	},
 	{
 		-- Generating images of source code using
@@ -24,6 +27,6 @@ return {
 		-- https://github.com/tyru/open-browser.vim
 		"tyru/open-browser.vim",
 		keys = { "<plug>(openbrowser-smart-search)" },
-		setup = require("rc.setup.open-browser"),
+		setup = setup.open_browser(),
 	},
 }

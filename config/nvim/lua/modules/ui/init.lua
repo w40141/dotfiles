@@ -1,8 +1,11 @@
+local conf = require("modules.ui.config")
+local setup = require("modules.ui.setup")
+
 return {
 	{
 		-- https://github.com/rebelot/kanagawa.nvim
 		"rebelot/kanagawa.nvim",
-		config = require("rc.config.kanagawa"),
+		config = conf.kanagawa,
 	},
 	{
 		-- Greeter
@@ -11,15 +14,15 @@ return {
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		wants = { "nvim-web-devicons" },
 		event = "BufWinEnter",
-		config = require("rc.config.alpha-nvim"),
+		config = conf.alpha,
 	},
 	{
 		-- https://github.com/stevearc/aerial.nvim
 		"stevearc/aerial.nvim",
 		module = { "aerial" },
 		cmd = { "Aerial" },
-		setup = require("rc.setup.aerial-nvim"),
-		config = require("rc.config.aerial-nvim"),
+		setup = setup.aerial,
+		config = conf.aerial,
 	},
 	{
 		-- Buffer line
@@ -32,8 +35,8 @@ return {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 		},
 		wants = { "nvim-web-devicons" },
-		setup = require("rc.setup.bufferline-nvim"),
-		config = require("rc.config.bufferline-nvim"),
+		setup = setup.bufferline,
+		config = conf.bufferline,
 	},
 	{
 		-- Status line
@@ -48,10 +51,8 @@ return {
 			{ "stevearc/aerial.nvim", module = { "aerial" } },
 		},
 		wants = { "nvim-web-devicons", "kanagawa.nvim", "aerial.nvim" },
-		setup = function()
-			require("rc.setup.lualine")
-		end,
-		config = require("rc.config.lualine-nvim"),
+		setup = setup.lualine,
+		config = conf.lualine,
 	},
 	{
 		-- Indent guide
@@ -60,7 +61,8 @@ return {
 		event = {
 			"BufReadPost",
 		},
-		config = require("rc.config.indent-blankline-nvim"),
+		-- config = require("rc.config.indent-blankline-nvim"),
+		config = conf.indnt_blankline,
 	},
 	{
 		-- A fancy, configurable, notification manager for NeoVim
@@ -81,12 +83,14 @@ return {
 				-- https://github.com/rcarriga/nvim-notify
 				"rcarriga/nvim-notify",
 				module = { "notify" },
-				config = require("rc.config.nvim-notify"),
+				config = conf.notify,
 			},
 		},
 		wants = { "nvim-treesitter" },
-		setup = require("rc.setup.noice-nvim"),
-		config = require("rc.config.noice-nvim"),
+		-- setup = require("rc.setup.noice-nvim"),
+		-- config = require("rc.config.noice-nvim"),
+		setup = setup.noice,
+		config = conf.noice,
 	},
 	{
 		-- Scrollbar
@@ -99,15 +103,13 @@ return {
 			"BufRead",
 			"BufNewFile",
 		},
-		config = function()
-			require("scrollbar").setup({})
-		end,
+		config = conf.scrollbar,
 	},
 	{
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		event = { "FocusLost", "CursorHold" },
-		config = require("rc.config.gitsigns-nvim"),
+		config = conf.gitsigns,
 	},
 	{
 		-- File finder
@@ -120,7 +122,7 @@ return {
 			{ "nvim-lua/plenary.nvim" },
 		},
 		wants = { "plenary.nvim", "nvim-web-devicons" },
-		setup = require("rc.setup.lir-nvim"),
-		config = require("rc.config.lir-nvim"),
+		setup = setup.lir,
+		config = conf.lir,
 	},
 }

@@ -1,3 +1,6 @@
+local conf = require("modules.tool.config")
+local setup = require("modules.tool.setup")
+
 return {
 	{
 		-- https://github.com/simrat39/rust-tools.nvim
@@ -12,9 +15,7 @@ return {
 		requires = { "nvim-lua/plenary.nvim", opt = true },
 		wants = "plenary.nvim",
 		cmd = { "Neogit" },
-		config = function()
-			require("neogit").setup({})
-		end,
+		config = conf.neogit
 	},
 	{
 		-- Delete buffers
@@ -28,13 +29,13 @@ return {
 		"akinsho/toggleterm.nvim",
 		keys = { "n", [[<c-;>]] },
 		cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
-		config = require("rc.config.toggleterm-nvim"),
+		config = conf.toggleterm,
 	},
 	{
 		-- Resizing of windows
 		-- https://github.com/simeji/winresizer
 		"simeji/winresizer",
 		keys = { { "n", "<C-e>" } },
-		setup = require("rc.config.winresizer"),
+		setup = setup.winresizer,
 	},
 }

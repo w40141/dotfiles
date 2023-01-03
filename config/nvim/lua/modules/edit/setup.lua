@@ -1,12 +1,12 @@
 local M = {}
-local v = vim
-local key = v.keymap.set
 
 function M.todo_comments()
+	local key = vim.keymap.set
 	key("n", "[ff]c", "<Cmd>TodoTelescope<CR>")
 end
 
 function M.neogen()
+	local key = vim.keymap.set
 	local function f(name)
 		return function()
 			return require("neogen")[name]()
@@ -19,6 +19,7 @@ function M.neogen()
 end
 
 function M.eskk()
+	local key = vim.keymap.set
 	key("i", "jk", "<Plug>(eskk:toggle)")
 	key("c", "jk", "<Plug>(eskk:toggle)")
 end

@@ -1,35 +1,39 @@
+local conf = require("modules.lsp.config")
+local setup = require("modules.lsp.setup")
+
 return {
-		-- https://github.com/neovim/nvim-lspconfig
-		"neovim/nvim-lspconfig",
-		event = {
-			"BufReadPre",
-			"CursorHold",
-			"FocusLost",
+	-- https://github.com/neovim/nvim-lspconfig
+	"neovim/nvim-lspconfig",
+	event = {
+		"BufReadPre",
+		"CursorHold",
+		"FocusLost",
+	},
+	requires = {
+		{
+			-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
+			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			event = { "FocusLost", "CursorHold" },
+			-- config = require("rc.config.mason-tool-installer"),
+			config = conf.mason_tool_installer,
 		},
-		requires = {
-			{
-				-- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
-				"WhoIsSethDaniel/mason-tool-installer.nvim",
-				event = { "FocusLost", "CursorHold" },
-				config = require("rc.config.mason-tool-installer"),
-			},
-			{
-				-- https://github.com/williamboman/mason-lspconfig.nvim
-				"williamboman/mason-lspconfig.nvim",
-				module = { "mason-lspconfig" },
-			},
-			{
-				-- https://github.com/williamboman/mason.nvim
-				"williamboman/mason.nvim",
-				event = { "FocusLost", "CursorHold" },
-				module = { "mason" },
-			},
+		{
+			-- https://github.com/williamboman/mason-lspconfig.nvim
+			"williamboman/mason-lspconfig.nvim",
+			module = { "mason-lspconfig" },
 		},
-		wants = {
-			"mason.nvim",
-			"mason-lspconfig.nvim",
-			"cmp-nvim-lsp",
+		{
+			-- https://github.com/williamboman/mason.nvim
+			"williamboman/mason.nvim",
+			event = { "FocusLost", "CursorHold" },
+			module = { "mason" },
 		},
-		setup = require("rc.setup.nvim-lspconfig"),
-		config = require("rc.config.nvim-lspconfig"),
+	},
+	wants = {
+		"mason.nvim",
+		"mason-lspconfig.nvim",
+		"cmp-nvim-lsp",
+	},
+	setup = setup.lspconfig,
+	config = conf.lspconfig,
 }

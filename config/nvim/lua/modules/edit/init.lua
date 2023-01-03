@@ -15,8 +15,8 @@ return {
 		},
 		requires = { "nvim-lua/plenary.nvim" },
 		wants = { "plenary.nvim" },
-		setup = setup.todo_comments(),
-		config = conf.todo_comments(),
+		setup = setup.todo_comments,
+		config = conf.todo_comments,
 	},
 	{
 		-- Annotation generator
@@ -25,8 +25,8 @@ return {
 		requires = { "nvim-treesitter/nvim-treesitter" },
 		module = { "neogen" },
 		wants = { "nvim-treesitter" },
-		setup = setup.neogen(),
-		config = conf.neogen(),
+		setup = setup.neogen,
+		config = conf.neogen,
 	},
 	{
 		-- A surround text object plugin for neovim written in lua.
@@ -39,7 +39,7 @@ return {
 			"BufRead",
 			"BufNewFile",
 		},
-		config = conf.surround(),
+		config = conf.surround,
 	},
 	{
 		-- engine SKK
@@ -49,8 +49,8 @@ return {
 			{ "i", "<Plug>(eskk:toggle)" },
 			{ "c", "<Plug>(eskk:toggle)" },
 		},
-		setup = setup.eskk(),
-		config = conf.eskk(),
+		setup = setup.eskk,
+		config = conf.eskk,
 	},
 	{
 		-- Comment out
@@ -63,17 +63,14 @@ return {
 			"BufRead",
 			"BufNewFile",
 		},
-		config = conf.comment(),
+		config = conf.comment
 	},
 	{
 		-- Colorizer
 		-- https://github.com/norcalli/nvim-colorizer.lua
 		"norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
-		-- config = conf.colorizer(),
-		config = function()
-			require("colorizer").setup({})
-		end,
+		config = conf.colorizer
 	},
 	{
 		-- Use Neovim as a language server to inject LSP diagnostics, code actions
@@ -81,6 +78,6 @@ return {
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = "nvim-lua/plenary.nvim",
 		event = { "CursorHold", "FocusLost" },
-		config = conf.null_ls(),
+		config = conf.null_ls,
 	},
 }

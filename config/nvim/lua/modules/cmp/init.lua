@@ -16,7 +16,7 @@ return {
 		"hrsh7th/nvim-cmp",
 		module = { "cmp" },
 		-- config = require("rc.config.nvim-cmp"),
-		config = conf.cmp(),
+		config = conf.cmp,
 		requires = {
 			-- https://github.com/onsails/lspkind.nvim
 			{ "onsails/lspkind-nvim", module = { "lspkind" } },
@@ -70,7 +70,7 @@ return {
 					"L3MON4D3/LuaSnip",
 					module = { "luasnip" },
 					requires = { "rafamadriz/friendly-snippets" },
-					config = conf.luasnip(),
+					config = conf.luasnip,
 				},
 			},
 		},
@@ -81,6 +81,6 @@ return {
 		module = { "nvim-autopairs" },
 		requires = { "hrsh7th/nvim-cmp" },
 		want = { "nvim-cmp" },
-		config = conf.autopairs()
+		config = conf.autopairs,
 	},
 }

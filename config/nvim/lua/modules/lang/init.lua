@@ -1,3 +1,5 @@
+local conf = require("modules.lang.config")
+
 return {
 	{
 		-- Automatically uppercase SQL keywords
@@ -8,7 +10,7 @@ return {
 	{
 		"previm/previm",
 		ft = { "markdown" },
-		config = require("rc.config.previm"),
+		config = conf.previm,
 	},
 	{
 		-- TODO: https://github.com/kevinhwang91/nvim-bqf
