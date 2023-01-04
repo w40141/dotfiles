@@ -1,38 +1,22 @@
 local conf = require("modules.treesitter.config")
 
+local function e(p)
+	p.event = { "BufNewFile", "BufRead", "FocusLost", "CursorHold" }
+	p.wants = { "nvim-treesitter" }
+	return p
+end
+
 return {
-	{
+	e({
 		-- Treesitter configurations
 		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufRead", "BufNewFile", "InsertEnter" },
 		run = ":TSUpdate",
-		-- config = require("rc.config.nvim-treesitter"),
 		config = conf.treesitter,
-	},
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" },
-	},
-	{
-		"yioneko/nvim-yati",
-		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" },
-	},
-	{
-		"m-demare/hlargs.nvim",
-		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" },
-	},
-	{
-		"p00f/nvim-ts-rainbow",
-		event = { "BufNewFile", "BufRead" },
-		wants = { "nvim-treesitter" },
-	},
-	{
-		"haringsrob/nvim_context_vt",
-		event = { "BufNewFile", "BufRead", "FocusLost", "CursorHold" },
-		wants = { "nvim-treesitter" },
-	},
+	}),
+	e({ "nvim-treesitter/nvim-treesitter-textobjects" }),
+	e({ "yioneko/nvim-yati" }),
+	e({ "m-demare/hlargs.nvim" }),
+	e({ "p00f/nvim-ts-rainbow" }),
+	e({ "haringsrob/nvim_context_vt" }),
 }

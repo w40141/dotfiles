@@ -13,8 +13,8 @@ return {
 	{
 		"vim-test/vim-test",
 		event = "CmdlineEnter",
-		setup = setup.vim_test(),
-		config = conf.vim_test(),
+		setup = setup.vim_test,
+		config = conf.vim_test,
 	},
 	{
 		-- Generating images of source code using
@@ -27,6 +27,6 @@ return {
 		-- https://github.com/tyru/open-browser.vim
 		"tyru/open-browser.vim",
 		keys = { "<plug>(openbrowser-smart-search)" },
-		setup = setup.open_browser(),
+		setup = setup.open_browser,
 	},
 }

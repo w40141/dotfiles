@@ -13,15 +13,16 @@ local command = v.api.nvim_create_user_command
 local Pack = {}
 
 Pack.new = function()
-	local self = setmetatable({
-		initialized = false,
-		_packer = nil,
-	}, {
-		__index = Pack,
-	})
+	local self = setmetatable({ initialized = false, _packer = nil }, { __index = Pack })
 	self:assume_plugins()
 	self:setup()
 	return self
+end
+
+function Pack:run_packer(method)
+	return function(opts)
+		self:packer()[method](opts)
+	end
 end
 
 function Pack:setup()
@@ -38,6 +39,11 @@ function Pack:setup()
 	end, { bang = true, complete = self:run_packer("loader_complete"), desc = "[Packer] Load plugins", nargs = "+" })
 end
 
+function Pack:exists(path)
+	local st = uv.fs_stat(path)
+	return st and true or false
+end
+
 function Pack:assume_plugins()
 	local data_dir = fn.stdpath("data")
 	for _, p in ipairs({
@@ -51,17 +57,6 @@ function Pack:assume_plugins()
 		if not self:exists(path) then
 			v.cmd(("!git clone https://github.com/%s %s -b %s"):format(pkg, path, branch))
 		end
-	end
-end
-
-function Pack:exists(path)
-	local st = uv.fs_stat(path)
-	return st and true or false
-end
-
-function Pack:run_packer(method)
-	return function(opts)
-		self:packer()[method](opts)
 	end
 end
 

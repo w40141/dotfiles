@@ -2,14 +2,10 @@ local conf = require("modules.ui.config")
 local setup = require("modules.ui.setup")
 
 return {
+	-- https://github.com/rebelot/kanagawa.nvim
+	{ "rebelot/kanagawa.nvim", config = conf.kanagawa },
+	-- https://github.com/goolord/alpha-nvim
 	{
-		-- https://github.com/rebelot/kanagawa.nvim
-		"rebelot/kanagawa.nvim",
-		config = conf.kanagawa,
-	},
-	{
-		-- Greeter
-		-- https://github.com/goolord/alpha-nvim
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		wants = { "nvim-web-devicons" },
@@ -29,7 +25,7 @@ return {
 		-- https://github.com/akinsho/bufferline.nvim
 		"akinsho/bufferline.nvim",
 		event = {
-			"BufReadPost",
+			"BufReadPre",
 		},
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
