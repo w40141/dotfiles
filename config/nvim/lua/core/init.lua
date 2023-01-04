@@ -1,6 +1,6 @@
 local global = require("core.global")
-local vim = vim
-local g = vim.g
+local v = vim
+local g = v.g
 
 local disable_distribution_plugins = function()
 	-- disable menu loading
@@ -69,20 +69,16 @@ local clipboard_config = function()
 end
 
 local load_core = function()
-	local pack = require("core.pack")
 	disable_distribution_plugins()
 
-	pack.ensure_plugins()
 	clipboard_config()
 
-	require("core.options")
-	require("core.mapping")
-	require("keymap")
+	require("core.option")
+	require("core.keymap")
 	require("core.event")
-	pack.load_compile()
+	require("core.pack")
 
-	-- vim.api.nvim_command([[set background=light]])
-	vim.api.nvim_command([[colorscheme kanagawa]])
+	v.cmd("colorscheme kanagawa")
 end
 
 load_core()
