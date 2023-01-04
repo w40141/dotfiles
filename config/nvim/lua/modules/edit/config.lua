@@ -118,6 +118,7 @@ function M.null_ls()
 	local null_ls = require("null-ls")
 	local builtins = require("null-ls.builtins")
 	null_ls.setup({
+		diagnostics_format = "#{m} (#{s}: #{c})",
 		sources = {
 			builtins.code_actions.cspell,
 			builtins.code_actions.gitsigns,

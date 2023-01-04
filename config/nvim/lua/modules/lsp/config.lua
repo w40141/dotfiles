@@ -2,8 +2,6 @@ local M = {}
 
 function M.mason_tool_installer()
 	local v = vim
-	local augroup = v.api.nvim_create_augroup
-	local autocmd = v.api.nvim_create_autocmd
 	require("mason-tool-installer").setup({
 		ensure_installed = {
 			"bash-language-server",
@@ -36,8 +34,8 @@ function M.mason_tool_installer()
 		start_delay = 3000,
 	})
 
-	local m = augroup("Mason", {})
-	autocmd("User", {
+	local m = v.api.nvim_create_augroup("Mason", {})
+	v.api.nvim_create_autocmd("User", {
 		pattern = "MasonToolsUpdateCompleted",
 		callback = function()
 			v.schedule(function()
@@ -49,6 +47,15 @@ function M.mason_tool_installer()
 end
 
 function M.lspconfig()
+	require("mason").setup({
+		ui = {
+			icons = {
+				package_installed = "✓",
+				package_pending = "➜",
+				package_uninstalled = "✗",
+			},
+		},
+	})
 	local v = vim
 	local fn = v.fn
 	local api = v.api
@@ -59,23 +66,60 @@ function M.lspconfig()
 	local augroup = v.api.nvim_create_augroup
 	local autocmd = v.api.nvim_create_autocmd
 	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+
+	local function b(name)
+		return function()
+			return v.lsp.buf[name]()
+		end
+	end
+
+	local function d(name)
+		return function()
+			return v.diagnostic[name]()
+		end
+	end
+
+	-- https://neovim.io/doc/user/diagnostic.html#diagnostic-api
+	key("n", "[dev]o", d("open_float"))
+	key("n", "]g", d("goto_next"))
+	key("n", "[g", d("goto_prev"))
+	key("n", "[dev]q", d("setloclist"))
+
 	for type, icon in pairs(signs) do
 		local sign = "DiagnosticSign" .. type
 		fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
 	end
 
+	-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
 	lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
 		update_in_insert = false,
 		virtual_text = {
-			format = function(d)
-				return string.format("%s (%s: %s)", d.message, d.source, d.code)
+			format = function(diagnostic)
+				return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
 			end,
 		},
 	})
 
-	local rt = require("rust-tools")
 	local on_attach = function(client, bufnr)
-		client.server_capabilities.documentFormattingProvider = false
+		api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+		local opts = { noremap = true, silent = true, buffer = bufnr }
+		-- https://neovim.io/doc/user/lsp.html#lsp-buf
+		key("n", "H", b("hover"), opts)
+		key("n", "[dev]f", b("format"), opts)
+		key("n", "[dev]r", b("references"), opts)
+		key("n", "[dev]d", b("definition"), opts)
+		key("n", "[dev]D", b("declaration"), opts)
+		key("n", "[dev]i", b("implementation"), opts)
+		key("n", "[dev]t", b("type_definition"), opts)
+		key("n", "[dev]n", b("rename"), opts)
+		key("n", "[dev]a", b("code_action"), opts)
+		key("n", "[dev]s", b("signature_help"), opts)
+		key("n", "[dev]wa", b("add_workspace_folder"), opts)
+		key("n", "[dev]wr", b("remove_workspace_folder"), opts)
+		key("n", "[dev]wl", function()
+			print(v.inspect(b("list_workspace_folders")))
+		end, opts)
+
 		if client.server_capabilities.documentHighlightProvider then
 			hl(0, "LspReferenceText", {
 				underline = true,
@@ -111,58 +155,17 @@ function M.lspconfig()
 				group = my,
 			})
 		end
-
-		if client.name == "rust_analyzer" then
-			key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
-			key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-		end
 	end
-
-	require("mason").setup({
-		ui = {
-			icons = {
-				package_installed = "✓",
-				package_pending = "➜",
-				package_uninstalled = "✗",
-			},
-		},
-	})
 
 	local lspconfig = require("lspconfig")
 	local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
-	-- local servers = {
-	-- 	default_setup = function()
-	-- 		return function(server_name)
-	-- 			lspconfig[server_name].setup({
-	-- 				capabilities = capabilities,
-	-- 				on_attach = on_attach,
-	-- 			})
-	-- 		end
-	-- 	end,
-	-- 	rust_analyzer = function ()
-	-- 		return function(server_name)
-	-- 		end
-	-- 	end
-	-- }
 
 	require("mason-lspconfig").setup()
 	require("mason-lspconfig").setup_handlers({
-		-- function(server_name)
-		-- 	local config_fn = servers[server_name] or servers.default_setup
-		-- 	config_fn(server_name)
-		-- end,
 		function(server_name)
 			lspconfig[server_name].setup({
 				capabilities = capabilities,
 				on_attach = on_attach,
-			})
-		end,
-		["rust_analyzer"] = function()
-			rt.setup({
-				server = {
-					-- on_attach = on_attach,
-					capabilities = lsp.protocol.make_client_capabilities(),
-				},
 			})
 		end,
 	})

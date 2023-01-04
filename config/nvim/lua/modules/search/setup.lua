@@ -44,8 +44,8 @@ end
 
 function M.hlslens()
 	local key = vim.keymap.set
-	key("n", "n", [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
-	key("n", "N", [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
+	key("n", "n", [[<Cmd>execute('normal!'.v:count1.'n')<CR><Cmd>lua require('hlslens').start()<CR>]])
+	key("n", "N", [[<Cmd>execute('normal!'.v:count1.'N')<CR><Cmd>lua require('hlslens').start()<CR>]])
 	key("n", "*", function()
 		require("lasterisk").search()
 		require("hlslens").start()

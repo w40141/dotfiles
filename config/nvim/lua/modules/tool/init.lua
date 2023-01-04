@@ -3,13 +3,6 @@ local setup = require("modules.tool.setup")
 
 return {
 	{
-		-- https://github.com/simrat39/rust-tools.nvim
-		"simrat39/rust-tools.nvim",
-		module = { "rust-tools" },
-		requires = { "nvim-lua/plenary.nvim" },
-		-- config = require("rc.config.rust-tools")
-	},
-	{
 		-- https://github.com/TimUntersberger/neogit
 		"TimUntersberger/neogit",
 		requires = { "nvim-lua/plenary.nvim", opt = true },

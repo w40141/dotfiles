@@ -1,5 +1,5 @@
 local conf = require("modules.lsp.config")
-local setup = require("modules.lsp.setup")
+-- local setup = require("modules.lsp.setup")
 
 local function e(p)
 	p.event = { "BufReadPre", "FocusLost", "CursorHold" }
@@ -20,17 +20,17 @@ return e({
 			"williamboman/mason-lspconfig.nvim",
 			module = { "mason-lspconfig" },
 		},
-		e({
+		{
 			-- https://github.com/williamboman/mason.nvim
 			"williamboman/mason.nvim",
 			module = { "mason" },
-		}),
+		},
 	},
 	wants = {
 		"mason.nvim",
 		"mason-lspconfig.nvim",
 		"cmp-nvim-lsp",
 	},
-	setup = setup.lspconfig,
+	-- setup = setup.lspconfig,
 	config = conf.lspconfig,
 })
