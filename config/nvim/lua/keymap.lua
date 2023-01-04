@@ -30,6 +30,8 @@ local key = v.keymap.set
 -- <leader>キーを変更 (default: \)
 g.mapleader = " "
 g.maplocalleader = " "
+key("n", " ", "")
+key("x", " ", "")
 
 key("n", "<leader>", "<nop>")
 key("x", "<leader>", "<nop>")
