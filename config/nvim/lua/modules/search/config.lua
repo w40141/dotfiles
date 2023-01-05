@@ -94,12 +94,12 @@ function M.telescope()
 			buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 			mappings = {
 				n = {
-					["<c-o>"] = trouble.open_with_trouble,
+					["<c-t>"] = trouble.open_with_trouble,
 					["<C-g>"] = custom_actions.multiopen,
 				},
 				i = {
 					["<C-x>"] = false,
-					["<c-o>"] = trouble.open_with_trouble,
+					["<c-t>"] = trouble.open_with_trouble,
 					["<C-g>"] = custom_actions.multiopen,
 					["<CR>"] = actions.select_default + actions.center,
 				},

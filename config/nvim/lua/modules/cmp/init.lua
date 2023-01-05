@@ -22,7 +22,9 @@ return {
 			-- https://github.com/hrsh7th/cmp-nvim-lsp
 			i({ "hrsh7th/cmp-nvim-lsp", module = { "cmp_nvim_lsp" } }),
 			-- https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
-			i({ "hrsh7th/cmp-nvim-lsp-signature-help" }),
+			-- i({ "hrsh7th/cmp-nvim-lsp-signature-help" }),
+			-- https://github.com/ray-x/lsp_signature.nvim
+			i({ "ray-x/lsp_signature.nvim", config = conf.signature }),
 			-- https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
 			i({ "hrsh7th/cmp-nvim-lsp-document-symbol" }),
 			-- https://github.com/hrsh7th/cmp-buffer

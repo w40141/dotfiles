@@ -89,7 +89,7 @@ function M.cmp()
 		},
 		sources = cmp.config.sources({
 			{ name = "nvim_lsp" },
-			{ name = "nvim_lsp_signature_help" },
+			-- { name = "nvim_lsp_signature_help" },
 			{ name = "nvim_lsp_document_symbol" },
 			{ name = "buffer" },
 			{ name = "path" },
@@ -117,6 +117,10 @@ function M.cmp()
 
 	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+end
+
+function M.signature()
+	require("lsp_signature").setup({ hint_enable = false })
 end
 
 function M.autopairs()

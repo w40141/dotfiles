@@ -3,6 +3,7 @@ local setup = require("modules.search.setup")
 
 return {
 	{
+		-- TODO: keymap
 		-- Fzf finder
 		-- https://github.com/nvim-telescope/telescope.nvim
 		"nvim-telescope/telescope.nvim",

@@ -32,6 +32,7 @@ function M.telescope()
 	key("n", "[ff]q", builtin("diagnostics"))
 	key("n", "[ff]r", builtin("lsp_references"))
 	key("n", "[ff]d", builtin("lsp_definitions"))
+	key("n", "[ff]c", builtin("spell_suggest"))
 end
 
 function M.quickhl()

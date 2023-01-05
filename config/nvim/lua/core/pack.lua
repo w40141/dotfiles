@@ -2,8 +2,11 @@
 -- TODO: https://blog.atusy.net/2022/12/16/impatient-nvim/
 
 -- TODO: https://github.com/phaazon/hop.nvim
-
 -- TODO: https://github.com/dvdsk/prosesitter.nvim
+-- TODO: https://github.com/stevearc/dressing.nvim
+-- TODO: https://github.com/kkharji/lspsaga.nvim
+-- TODO: https://github.com/nvim-tree/nvim-tree.lua
+-- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
 
 local v = vim
 local fn = v.fn

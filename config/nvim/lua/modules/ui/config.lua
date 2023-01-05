@@ -333,7 +333,7 @@ function M.noice()
 				enabled = true,
 			},
 			signature = {
-				enabled = true,
+				enabled = false,
 			},
 			format = {
 				spinner = {
