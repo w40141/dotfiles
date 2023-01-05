@@ -71,7 +71,7 @@ function M.telescope()
 
 	telescope.load_extension("aerial")
 	local trouble = require("trouble.providers.telescope")
-	telescope.setup({
+	local opt = {
 		defaults = {
 			vimgrep_arguments = {
 				"rg",
@@ -115,11 +115,8 @@ function M.telescope()
 				},
 			},
 		},
-	})
-end
-
-function M.hlslens()
-	require("hlslens").setup()
+	}
+	telescope.setup(opt)
 end
 
 return M

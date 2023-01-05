@@ -36,7 +36,7 @@ local disable_distribution_plugins = function()
 
 	-- Do not use builtin matchit.vim and matchparen.vim since the use of vim-matchup
 	g.loaded_matchit = 1
-	g.loaded_matchparen = 1
+	-- g.loaded_matchparen = 1
 
 	-- Disable sql omni completion.
 	g.loaded_sql_completion = 1

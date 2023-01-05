@@ -38,4 +38,8 @@ function M.neogit()
 	require("neogit").setup()
 end
 
+function M.hlslens()
+	require("hlslens").setup()
+end
+
 return M
