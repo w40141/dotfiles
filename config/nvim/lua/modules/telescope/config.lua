@@ -70,8 +70,10 @@ function M.telescope()
 	end
 
 	telescope.load_extension("aerial")
+	telescope.load_extension("yank_history")
+	require("dressing").setup({})
 	local trouble = require("trouble.providers.telescope")
-	local opt = {
+	telescope.setup({
 		defaults = {
 			vimgrep_arguments = {
 				"rg",
@@ -115,8 +117,30 @@ function M.telescope()
 				},
 			},
 		},
+	})
+	local utils = require("yanky.utils")
+	local mapping = require("yanky.telescope.mapping")
+	local options = require("yanky.config").options
+	options.picker.telescope.mappings = {
+		default = mapping.put("p"),
+		i = {
+			["<A-p>"] = mapping.put("p"),
+			["<A-P>"] = mapping.put("P"),
+			["<A-d>"] = mapping.delete(),
+			["<A-r>"] = mapping.set_register(utils.get_default_register()),
+		},
+		n = {
+			p = mapping.put("p"),
+			P = mapping.put("P"),
+			d = mapping.delete(),
+			r = mapping.set_register(utils.get_default_register()),
+		},
 	}
-	telescope.setup(opt)
+	require("yanky.config").setup(options)
+end
+
+function M.yanky()
+	require("yanky").setup({ ring = { storage = "sqlite" } })
 end
 
 return M

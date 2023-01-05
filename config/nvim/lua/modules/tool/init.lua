@@ -57,4 +57,14 @@ return {
 		setup = setup.hlslens,
 		config = conf.hlslens,
 	},
+	{
+		"phaazon/hop.nvim",
+		keys = {
+			{ "n", [['j]] },
+			{ "v", [['j]] },
+			{ "n", [['k]] },
+			{ "v", [['k]] },
+		},
+		config = conf.hop,
+	},
 }

@@ -17,11 +17,13 @@ return {
 		"kevinhwang91/nvim-bqf",
 		ft = "qf",
 	},
-	-- {
-	-- 	-- https://github.com/simrat39/rust-tools.nvim
-	-- 	"simrat39/rust-tools.nvim",
-	-- 	ft = "rust",
-	-- 	requires = { "nvim-lua/plenary.nvim" },
-	-- 	config = conf.rust,
-	-- },
+	{
+		-- https://github.com/simrat39/rust-tools.nvim
+		-- "simrat39/rust-tools.nvim",
+		-- https://github.com/kdarkhan/rust-tools.nvim
+		"kdarkhan/rust-tools.nvim",
+		ft = "rust",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = conf.rust,
+	},
 }
