@@ -1,5 +1,10 @@
 local M = {}
 
+function M.todo_comments()
+	local key = vim.keymap.set
+	key("n", "[ff]t", "<cmd>TodoTelescope<CR>")
+end
+
 function M.trouble()
 	local key = vim.keymap.set
 	key("n", "[tr]f", "<cmd>Trouble document_diagnostics<cr>")

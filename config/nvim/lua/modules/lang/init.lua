@@ -3,7 +3,6 @@ local conf = require("modules.lang.config")
 return {
 	{
 		-- Automatically uppercase SQL keywords
-		-- https://github.com/jsborjesson/vim-uppercase-sql
 		"jsborjesson/vim-uppercase-sql",
 		ft = { "sql" },
 	},
@@ -18,9 +17,7 @@ return {
 		ft = "qf",
 	},
 	{
-		-- https://github.com/simrat39/rust-tools.nvim
 		-- "simrat39/rust-tools.nvim",
-		-- https://github.com/kdarkhan/rust-tools.nvim
 		"kdarkhan/rust-tools.nvim",
 		ft = "rust",
 		requires = { "nvim-lua/plenary.nvim" },

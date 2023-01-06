@@ -11,7 +11,7 @@ return {
 		module = { "telescope" },
 		requires = {
 			{
-				-- https://github.com/folke/trouble.nvim
+				-- TODO: https://github.com/folke/trouble.nvim
 				"folke/trouble.nvim",
 				cmd = { "Trouble" },
 				module = { "trouble" },
@@ -30,6 +30,16 @@ return {
 		wants = { "trouble.nvim", "aerial.nvim" },
 		setup = setup.telescope,
 		config = conf.telescope,
+	},
+	{
+		-- Highlight, list and search todo comments
+		-- TODO: https://github.com/folke/todo-comments.nvim
+		"folke/todo-comments.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+		wants = { "plenary.nvim" },
+		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
+		setup = setup.todo_comments,
+		config = conf.todo_comments,
 	},
 	-- TODO: https://github.com/gbprod/yanky.nvim
 	-- {
@@ -53,5 +63,5 @@ return {
 	-- 	wants = { "sqlite.lua" },
 	-- },
 	-- TODO: https://github.com/stevearc/dressing.nvim
-	{ "stevearc/dressing.nvim" },
+	{ "stevearc/dressing.nvim", module = { "dressing" } },
 }

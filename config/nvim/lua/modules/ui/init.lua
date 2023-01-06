@@ -2,10 +2,8 @@ local conf = require("modules.ui.config")
 local setup = require("modules.ui.setup")
 
 return {
-	-- https://github.com/rebelot/kanagawa.nvim
 	{ "rebelot/kanagawa.nvim" },
 	{
-		-- https://github.com/goolord/alpha-nvim
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 		wants = { "nvim-web-devicons" },
@@ -13,7 +11,6 @@ return {
 		config = conf.alpha,
 	},
 	{
-		-- https://github.com/stevearc/aerial.nvim
 		"stevearc/aerial.nvim",
 		module = { "aerial" },
 		cmd = { "Aerial" },
@@ -22,11 +19,8 @@ return {
 	},
 	{
 		-- Buffer line
-		-- https://github.com/akinsho/bufferline.nvim
 		"akinsho/bufferline.nvim",
-		event = {
-			"BufReadPre",
-		},
+		event = { "BufReadPre" },
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 		},
@@ -36,11 +30,8 @@ return {
 	},
 	{
 		-- Status line
-		-- https://github.com/nvim-lualine/lualine.nvim
 		"nvim-lualine/lualine.nvim",
-		event = {
-			"BufReadPre",
-		},
+		event = { "BufReadPre" },
 		requires = {
 			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
 			{ "rebelot/kanagawa.nvim" },
@@ -52,17 +43,13 @@ return {
 	},
 	{
 		-- Indent guide
-		-- https://github.com/lukas-reineke/indent-blankline.nvim
 		"lukas-reineke/indent-blankline.nvim",
-		event = {
-			"BufReadPost",
-		},
+		event = { "BufReadPost" },
 		-- config = require("rc.config.indent-blankline-nvim"),
 		config = conf.indnt_blankline,
 	},
 	{
 		-- A fancy, configurable, notification manager for NeoVim
-		-- https://github.com/folke/noice.nvim
 		"folke/noice.nvim",
 		event = {
 			"BufRead",
@@ -76,13 +63,12 @@ return {
 		requires = {
 			{ "MunifTanjim/nui.nvim" },
 			{
-				-- https://github.com/rcarriga/nvim-notify
 				"rcarriga/nvim-notify",
 				module = { "notify" },
 				config = conf.notify,
 			},
 		},
-		wants = { "nvim-treesitter" },
+		-- wants = { "nvim-treesitter" },
 		-- setup = require("rc.setup.noice-nvim"),
 		-- config = require("rc.config.noice-nvim"),
 		setup = setup.noice,
@@ -93,21 +79,19 @@ return {
 		-- https://github.com/petertriho/nvim-scrollbar
 		"petertriho/nvim-scrollbar",
 		event = {
-			"BufWinEnter",
-			"CmdwinLeave",
-			"TabEnter",
-			"TermEnter",
-			"TextChanged",
-			"VimResized",
-			"WinEnter",
-			"WinScrolled",
+			"BufRead",
+			"BufNewFile",
+			"InsertEnter",
+			"CmdlineEnter",
+			"CursorHold",
+			"FocusLost",
 		},
 		config = conf.scrollbar,
 	},
 	{
 		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
-		event = { "FocusLost", "CursorHold" },
+		event = { "BufReadPost" },
 		config = conf.gitsigns,
 	},
 	{

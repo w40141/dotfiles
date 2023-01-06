@@ -1,10 +1,5 @@
 local M = {}
 
-function M.todo_comments()
-	local key = vim.keymap.set
-	key("n", "[ff]c", "<Cmd>TodoTelescope<CR>")
-end
-
 function M.neogen()
 	local key = vim.keymap.set
 	local function f(name)

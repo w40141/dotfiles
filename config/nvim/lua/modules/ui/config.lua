@@ -24,12 +24,13 @@ function M.alpha()
 		d.button("e", " New file", ":ene <BAR> startinsert<CR>"),
 		d.button("f", " Find file", "<cmd>Telescope find_files<CR>"),
 		d.button("g", " Find word", "<cmd>Telescope live_grep<CR>"),
+		d.button("t", " Find TODO", "<cmd>TodoTelescope<CR>"),
 		d.button("o", "פּ Open explorer", "<cmd>lua require('lir.float').toggle()<cr>"),
 		d.button("s", " Settings", ":e $MYVIMRC<CR>"),
 		d.button("c", "﫵Check health", "<cmd>checkhealth<cr>"),
 		d.button("u", " Update plugins", "<cmd>PackerSync<CR>"),
 		d.button("m", " Open Mason Maneger", "<cmd>MasonToolsUpdate<CR>"),
-		d.button("t", " Measure time", "<cmd>StartupTime<CR>"),
+		d.button("T", " Measure time", "<cmd>StartupTime<CR>"),
 		d.button("q", " Quit", "<cmd>qa<CR>"),
 	}
 

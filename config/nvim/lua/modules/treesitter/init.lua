@@ -2,8 +2,7 @@ local conf = require("modules.treesitter.config")
 local setup = require("modules.treesitter.setup")
 
 local function e(p)
-	p.event = { "BufNewFile", "BufRead" }
-	-- , "FocusLost", "CursorHold" }
+	p.event = { "BufNewFile", "BufReadPre", "BufRead" }
 	p.wants = { "nvim-treesitter" }
 	return p
 end
@@ -11,7 +10,6 @@ end
 return {
 	e({
 		-- Treesitter configurations
-		-- https://github.com/nvim-treesitter/nvim-treesitter
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		config = conf.treesitter,
@@ -22,7 +20,7 @@ return {
 	-- e({"mrjones2014/nvim-ts-rainbow"}),
 	-- e({ "p00f/nvim-ts-rainbow" }),
 	e({ "haringsrob/nvim_context_vt" }),
-	-- https://github.com/mfussenegger/nvim-treehopper
+	-- TODO: https://github.com/mfussenegger/nvim-treehopper
 	-- e({
 	-- 	"mfussenegger/nvim-treehopper",
 	-- 	module = { "tsht" },

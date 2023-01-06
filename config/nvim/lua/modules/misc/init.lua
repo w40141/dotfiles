@@ -18,13 +18,11 @@ return {
 	},
 	{
 		-- Generating images of source code using
-		-- https://github.com/segeljakt/vim-silicon
 		"segeljakt/vim-silicon",
 		cmd = "Silicon",
 	},
 	{
 		-- Open URI
-		-- https://github.com/tyru/open-browser.vim
 		"tyru/open-browser.vim",
 		keys = { "<plug>(openbrowser-smart-search)" },
 		setup = setup.open_browser,
