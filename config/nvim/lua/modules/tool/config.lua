@@ -52,21 +52,21 @@ function M.hop()
 		extend_visual = true,
 	})
 	local direction = require("hop.hint").HintDirection
-	local function j()
+	local function after()
 		if fn.getcmdwintype() == "" then
 			hop.hint_lines({ direction = direction.AFTER_CURSOR })
 		end
 	end
 
-	key({ "n", "v" }, [['j]], j())
+	key({ "n", "v" }, [['j]], after())
 
-	local function k()
+	local function before()
 		if fn.getcmdwintype() == "" then
 			hop.hint_lines({ direction = direction.BEFORE_CURSOR })
 		end
 	end
 
-	key({ "n", "v" }, [['k]], k())
+	key({ "n", "v" }, [['k]], before())
 end
 
 return M

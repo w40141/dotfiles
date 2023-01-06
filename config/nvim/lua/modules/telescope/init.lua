@@ -31,6 +31,7 @@ return {
 		setup = setup.telescope,
 		config = conf.telescope,
 	},
+	-- TODO: https://github.com/gbprod/yanky.nvim
 	-- {
 	-- 	"gbprod/yanky.nvim",
 	-- 	keys = {
@@ -51,5 +52,6 @@ return {
 	-- 	config = conf.yanky,
 	-- 	wants = { "sqlite.lua" },
 	-- },
+	-- TODO: https://github.com/stevearc/dressing.nvim
 	{ "stevearc/dressing.nvim" },
 }

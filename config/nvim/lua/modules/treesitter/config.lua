@@ -8,7 +8,9 @@ function M.treesitter()
 			enable = true,
 			additional_vim_regex_highlighting = false,
 		},
-		-- indent = { enable = false },
+		rainbow = {
+			enable = true,
+		},
 		textobjects = {
 			select = {
 				enable = true,
@@ -56,18 +58,6 @@ function M.treesitter()
 		},
 		yati = { enable = true },
 	})
-end
-
-function M.treehopper()
-	local key = vim.keymap.set
-	local function t(name)
-		return function()
-			return require("tsht")[name]()
-		end
-	end
-
-	key("o", [['t]], t("nodes"), { remap = true })
-	key("x", [['t]], t("nodes"))
 end
 
 return M
