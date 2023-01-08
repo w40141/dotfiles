@@ -1,4 +1,3 @@
--- TODO: https://zenn.dev/yutakatay/articles/neovim-plugins-2022
 -- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
 
 local v = vim

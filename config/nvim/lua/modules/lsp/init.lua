@@ -32,6 +32,8 @@ return {
 		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
 		config = conf.mason_tool_installer,
 	},
+	-- TODO: https://github.com/kkharji/lspsaga.nvim
+	-- TODO: https://zenn.dev/botamotch/articles/c02c51cff7d61d
 	-- e({
 	-- 	"kkharji/lspsaga.nvim",
 	-- 	setup = setup.lspsaga,
