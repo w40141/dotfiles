@@ -64,7 +64,7 @@ local load_core = function()
 	require("core.event")
 	require("core.pack")
 
-	v.cmd("colorscheme kanagawa")
+	-- v.cmd("colorscheme kanagawa")
 end
 
 load_core()

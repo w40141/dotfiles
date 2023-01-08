@@ -3,25 +3,16 @@ local setup = require("modules.telescope.setup")
 
 return {
 	{
-		-- TODO: keymap
 		-- Fzf finder
-		-- https://github.com/nvim-telescope/telescope.nvim
 		"nvim-telescope/telescope.nvim",
 		cmd = { "Telescope" },
 		module = { "telescope" },
 		requires = {
 			{
-				-- TODO: https://github.com/folke/trouble.nvim
 				"folke/trouble.nvim",
 				cmd = { "Trouble" },
 				module = { "trouble" },
-				requires = {
-					{
-						"kyazdani42/nvim-web-devicons",
-						module = { "nvim-web-devicons" },
-					},
-				},
-				wants = { "nvim-web-devicons" },
+				requires = { "kyazdani42/nvim-web-devicons" },
 				setup = setup.trouble,
 				config = conf.trouble,
 			},
@@ -33,35 +24,15 @@ return {
 	},
 	{
 		-- Highlight, list and search todo comments
-		-- TODO: https://github.com/folke/todo-comments.nvim
 		"folke/todo-comments.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
-		wants = { "plenary.nvim" },
-		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
+		cmd = {
+			"TodoQuickFix",
+			"TodoLocList",
+			"TodoTrouble",
+			"TodoTelescope",
+		},
 		setup = setup.todo_comments,
 		config = conf.todo_comments,
 	},
-	-- TODO: https://github.com/gbprod/yanky.nvim
-	-- {
-	-- 	"gbprod/yanky.nvim",
-	-- 	keys = {
-	-- 		{ "n", "<Plug>(YankyCycleBackward)" },
-	-- 		{ "n", "<Plug>(YankyCycleForward)" },
-	-- 		{ "n", "<Plug>(YankyGPutAfter)" },
-	-- 		{ "n", "<Plug>(YankyGPutBefore)" },
-	-- 		{ "n", "<Plug>(YankyPutAfter)" },
-	-- 		{ "n", "<Plug>(YankyPutBefore)" },
-	-- 		{ "x", "<Plug>(YankyGPutAfter)" },
-	-- 		{ "x", "<Plug>(YankyGPutBefore)" },
-	-- 		{ "x", "<Plug>(YankyPutAfter)" },
-	-- 		{ "x", "<Plug>(YankyPutBefore)" },
-	-- 	},
-	-- 	module = { "yanky" },
-	-- 	requires = { "kkharji/sqlite.lua", opt = true },
-	-- 	setup = setup.yanky,
-	-- 	config = conf.yanky,
-	-- 	wants = { "sqlite.lua" },
-	-- },
-	-- TODO: https://github.com/stevearc/dressing.nvim
-	{ "stevearc/dressing.nvim", module = { "dressing" } },
 }

@@ -48,8 +48,8 @@ key("x", "m", "[dev]", { remap = true })
 
 key("n", "[tr]", "<nop>")
 key("x", "[tr]", "<nop>")
-key("n", "t", "[tr]", { remap = true })
-key("x", "t", "[tr]", { remap = true })
+key("n", "<c-m>", "[tr]", { remap = true })
+key("x", "<c-m>", "[tr]", { remap = true })
 
 -- [nore]map
 -- 行頭と行末への移動

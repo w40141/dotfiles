@@ -1,8 +1,8 @@
 local M = {}
 
--- function M.kanagawa()
--- 	vim.cmd("colorscheme kanagawa")
--- end
+function M.kanagawa()
+	vim.cmd("colorscheme kanagawa")
+end
 
 function M.alpha()
 	local d = require("alpha.themes.dashboard")

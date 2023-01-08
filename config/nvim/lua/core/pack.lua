@@ -1,6 +1,3 @@
--- TODO: https://github.com/kkharji/lspsaga.nvim
--- TODO: https://github.com/nvim-tree/nvim-tree.lua
--- TODO: https://github.com/AckslD/nvim-neoclip.lua
 -- TODO: https://zenn.dev/yutakatay/articles/neovim-plugins-2022
 -- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
 

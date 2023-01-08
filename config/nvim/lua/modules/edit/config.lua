@@ -75,7 +75,7 @@ function M.null_ls()
 		sources = {
 			builtins.code_actions.cspell,
 			builtins.code_actions.gitsigns,
-			builtins.code_actions.refactoring,
+			-- builtins.code_actions.refactoring,
 			builtins.completion.luasnip,
 			builtins.diagnostics.fish,
 			builtins.diagnostics.credo,
@@ -130,13 +130,13 @@ function M.null_ls()
 			builtins.formatting.deno_fmt.with({
 				condition = function(utils)
 					return not (
-							utils.has_file({
-								".prettierrc",
-								".prettierrc.js",
-								"deno.json",
-								"deno.jsonc",
-							})
-							)
+						utils.has_file({
+							".prettierrc",
+							".prettierrc.js",
+							"deno.json",
+							"deno.jsonc",
+						})
+					)
 				end,
 			}),
 			builtins.formatting.prettier.with({
@@ -200,6 +200,21 @@ end
 
 function M.colorizer()
 	require("colorizer").setup()
+end
+
+function M.yanky()
+	require("dressing").setup()
+	require("yanky").setup({
+		ring = {
+			history_length = 100,
+			storage = "shada",
+			sync_with_numbered_registers = true,
+			cancel_event = "update",
+		},
+		system_clipboard = {
+			sync_with_ring = true,
+		},
+	})
 end
 
 return M

@@ -2,7 +2,11 @@ local conf = require("modules.ui.config")
 local setup = require("modules.ui.setup")
 
 return {
-	{ "rebelot/kanagawa.nvim" },
+	{
+		"rebelot/kanagawa.nvim",
+		event = { "VimEnter" },
+		config = conf.kanagawa,
+	},
 	{
 		"goolord/alpha-nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
