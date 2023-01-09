@@ -50,7 +50,7 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost" },
 		-- config = require("rc.config.indent-blankline-nvim"),
-		config = conf.indnt_blankline,
+		config = conf.indent_blankline,
 	},
 	{
 		-- A fancy, configurable, notification manager for NeoVim

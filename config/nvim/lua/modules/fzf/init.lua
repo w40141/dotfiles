@@ -1,5 +1,5 @@
-local conf = require("modules.telescope.config")
-local setup = require("modules.telescope.setup")
+local conf = require("modules.fzf.config")
+local setup = require("modules.fzf.setup")
 
 return {
 	{
