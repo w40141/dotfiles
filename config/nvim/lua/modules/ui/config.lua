@@ -334,12 +334,12 @@ function M.noice()
 				enabled = true,
 			},
 			signature = {
+				-- lsp_signature.nvimを使うためfalseにする
 				enabled = false,
 			},
 			format = {
 				spinner = {
 					name = "dots12",
-					--name = "sand",
 				},
 			},
 		},
