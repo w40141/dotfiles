@@ -137,11 +137,13 @@ set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
 
 if test (uname) = Linux
+    abbr -a bud 'brew update && brew upgrade && brew doctor && brew cleanup'
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fish_add_path /home/linuxbrew/.linuxbrew/bin
     fish_add_path /home/linuxbrew/.linuxbrew/sbin
     source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
 else
+    abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
     if test (uname -m) = x86_64
         fish_add_path $HOME/.asdf/installs/poetry/1.2.2/bin
         fish_add_path /usr/local/sbin
@@ -250,7 +252,6 @@ abbr -a abe 'for a in (abbr --list); abbr --erase $a; end'
 abbr -a abs 'source ~/.config/fish/config_abbr.fish'
 
 # for brew
-abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
 abbr -a bci 'brew install --cask'
 abbr -a bbc 'brew bundle --global --force cleanup'
 abbr -a bbd 'brew bundle dump --global --force --describe'
