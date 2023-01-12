@@ -450,7 +450,7 @@ function M.lir()
 	require("lir").setup({
 		show_hidden_files = true,
 		ignore = {},
-		devicons_enable = true,
+		devicons = { enable = true },
 		mappings = {
 			["l"] = actions.edit,
 			["<c-s>"] = actions.split,

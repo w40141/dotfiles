@@ -2,18 +2,19 @@ local conf = require("modules.treesitter.config")
 local setup = require("modules.treesitter.setup")
 
 local function e(p)
-	p.event = { "BufNewFile", "BufReadPre", "BufRead" }
+	p.event = { "BufRead", "BufNewFile" }
 	p.wants = { "nvim-treesitter" }
 	return p
 end
 
 return {
-	e({
+	{
 		-- Treesitter configurations
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
+		event = { "BufNewFile", "BufRead" },
 		config = conf.treesitter,
-	}),
+	},
 	e({ "nvim-treesitter/nvim-treesitter-textobjects" }),
 	e({ "yioneko/nvim-yati" }),
 	e({ "m-demare/hlargs.nvim" }),
