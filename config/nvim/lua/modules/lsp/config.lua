@@ -59,37 +59,16 @@ function M.lspconfig()
 	local v = vim
 	local fn = v.fn
 	local api = v.api
-	local key = v.keymap.set
 	local hl = api.nvim_set_hl
 	local lsp = v.lsp
 	local buf = lsp.buf
 	local augroup = v.api.nvim_create_augroup
 	local autocmd = v.api.nvim_create_autocmd
 	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-
-	local function b(name)
-		return function()
-			return v.lsp.buf[name]()
-		end
-	end
-
-	local function d(name)
-		return function()
-			return v.diagnostic[name]()
-		end
-	end
-
-	-- https://neovim.io/doc/user/diagnostic.html#diagnostic-api
-	key("n", "[dev]o", d("open_float"))
-	key("n", "]g", d("goto_next"))
-	key("n", "[g", d("goto_prev"))
-	key("n", "[dev]q", d("setloclist"))
-
 	for type, icon in pairs(signs) do
 		local sign = "DiagnosticSign" .. type
 		fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
 	end
-
 	-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
 	lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
 		update_in_insert = false,
@@ -102,23 +81,6 @@ function M.lspconfig()
 
 	local on_attach = function(client, bufnr)
 		api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-		local opts = { noremap = true, silent = true, buffer = bufnr }
-		-- https://neovim.io/doc/user/lsp.html#lsp-buf
-		key("n", "H", b("hover"), opts)
-		key("n", "[dev]f", b("format"), opts)
-		key("n", "[dev]r", b("references"), opts)
-		key("n", "[dev]d", b("definition"), opts)
-		key("n", "[dev]D", b("declaration"), opts)
-		key("n", "[dev]i", b("implementation"), opts)
-		key("n", "[dev]t", b("type_definition"), opts)
-		key("n", "[dev]n", b("rename"), opts)
-		key("n", "[dev]a", b("code_action"), opts)
-		key("n", "[dev]s", b("signature_help"), opts)
-		key("n", "[dev]wa", b("add_workspace_folder"), opts)
-		key("n", "[dev]wr", b("remove_workspace_folder"), opts)
-		key("n", "[dev]wl", function()
-			print(v.inspect(b("list_workspace_folders")))
-		end, opts)
 
 		if client.server_capabilities.documentHighlightProvider then
 			hl(0, "LspReferenceText", {
@@ -168,6 +130,57 @@ function M.lspconfig()
 				on_attach = on_attach,
 			})
 		end,
+	})
+end
+
+function M.lspsaga()
+	local lspsaga = require("lspsaga")
+	lspsaga.setup({ -- defaults ...
+		debug = false,
+		use_saga_diagnostic_sign = true,
+		error_sign = "",
+		warn_sign = "",
+		hint_sign = "",
+		infor_sign = "",
+		diagnostic_header_icon = "   ",
+		-- code action title icon
+		code_action_icon = " ",
+		code_action_prompt = {
+			enable = true,
+			sign = true,
+			sign_priority = 40,
+			virtual_text = true,
+		},
+		finder_definition_icon = "  ",
+		finder_reference_icon = "  ",
+		max_preview_lines = 10,
+		finder_action_keys = {
+			open = "o",
+			vsplit = "v",
+			split = "p",
+			quit = "q",
+			scroll_down = "<C-f>",
+			scroll_up = "<C-b>",
+		},
+		code_action_keys = {
+			quit = "q",
+			exec = "<CR>",
+		},
+		rename_action_keys = {
+			quit = "<C-c>",
+			exec = "<CR>",
+		},
+		definition_preview_icon = "  ",
+		border_style = "single",
+		rename_prompt_prefix = "➤",
+		rename_output_qflist = {
+			enable = false,
+			auto_open_qflist = false,
+		},
+		server_filetype_map = {},
+		diagnostic_prefix_format = "%d. ",
+		diagnostic_message_format = "%m %c",
+		highlight_prefix = false,
 	})
 end
 

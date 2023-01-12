@@ -56,15 +56,11 @@ end
 
 local load_core = function()
 	disable_distribution_plugins()
-
 	clipboard_config()
-
 	require("core.option")
 	require("core.keymap")
 	require("core.event")
 	require("core.pack")
-
-	v.cmd("colorscheme kanagawa")
 end
 
 load_core()

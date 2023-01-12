@@ -19,4 +19,15 @@ function M.eskk()
 	key("c", "jk", "<Plug>(eskk:toggle)")
 end
 
+function M.yanky()
+	local key = vim.keymap.set
+	key({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
+	key({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
+	key({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
+	key({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
+	key("n", "<c-n>", "<Plug>(YankyCycleForward)")
+	key("n", "<c-p>", "<Plug>(YankyCycleBackward)")
+	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>")
+end
+
 return M

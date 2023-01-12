@@ -1,7 +1,3 @@
--- TODO: https://github.com/kkharji/lspsaga.nvim
--- TODO: https://github.com/nvim-tree/nvim-tree.lua
--- TODO: https://github.com/AckslD/nvim-neoclip.lua
--- TODO: https://zenn.dev/yutakatay/articles/neovim-plugins-2022
 -- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
 
 local v = vim
@@ -71,12 +67,12 @@ function Pack:packer()
 		})
 		packer.reset()
 		packer.use(require("modules.start"))
-		packer.use(require("modules.cmp"))
+		packer.use(require("modules.complement"))
 		packer.use(require("modules.lsp"))
 		packer.use(require("modules.edit"))
 		packer.use(require("modules.tool"))
 		packer.use(require("modules.treesitter"))
-		packer.use(require("modules.telescope"))
+		packer.use(require("modules.fzf"))
 		packer.use(require("modules.ui"))
 		packer.use(require("modules.lang"))
 		packer.use(require("modules.misc"))

@@ -1,8 +1,8 @@
 local M = {}
 
--- function M.kanagawa()
--- 	vim.cmd("colorscheme kanagawa")
--- end
+function M.kanagawa()
+	vim.cmd("colorscheme kanagawa")
+end
 
 function M.alpha()
 	local d = require("alpha.themes.dashboard")
@@ -314,7 +314,7 @@ function M.lualine()
 	})
 end
 
-function M.indnt_blankline()
+function M.indent_blankline()
 	require("indent_blankline").setup({
 		indent_blankline_use_treesitter = true,
 		show_current_context = true,
@@ -334,12 +334,12 @@ function M.noice()
 				enabled = true,
 			},
 			signature = {
+				-- lsp_signature.nvimを使うためfalseにする
 				enabled = false,
 			},
 			format = {
 				spinner = {
 					name = "dots12",
-					--name = "sand",
 				},
 			},
 		},

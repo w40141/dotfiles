@@ -1,4 +1,4 @@
-local conf = require("modules.cmp.config")
+local conf = require("modules.complement.config")
 
 local function i(p)
 	p.event = { "InsertEnter" }

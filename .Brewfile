@@ -19,7 +19,6 @@ tap "neovim/neovim"
 tap "noborus/tap"
 tap "teamookla/speedtest"
 tap "tgotwig/linux-dust"
-tap "universal-ctags/universal-ctags"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Library and utilities for processing GIFs
@@ -430,8 +429,6 @@ brew "mongodb/brew/mongodb-community"
 brew "noborus/tap/trdsql"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
-# Maintained ctags implementation
-brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Application launcher and productivity software
