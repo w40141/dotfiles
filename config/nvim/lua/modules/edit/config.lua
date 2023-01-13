@@ -118,6 +118,11 @@ function M.null_ls()
 					return exe("stylua") > 0
 				end,
 			}),
+			builtins.formatting.isort.with({
+				condition = function()
+					return exe("isort") > 0
+				end,
+			}),
 			builtins.formatting.black.with({
 				condition = function()
 					return exe("black") > 0
