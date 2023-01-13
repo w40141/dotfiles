@@ -20,7 +20,10 @@ return {
 	e({ "m-demare/hlargs.nvim" }),
 	-- e({"mrjones2014/nvim-ts-rainbow"}),
 	-- e({ "p00f/nvim-ts-rainbow" }),
-	e({ "haringsrob/nvim_context_vt" }),
+	e({
+		"haringsrob/nvim_context_vt",
+		config = conf.context_vt,
+	}),
 	-- TODO: https://github.com/mfussenegger/nvim-treehopper
 	-- e({
 	-- 	"mfussenegger/nvim-treehopper",

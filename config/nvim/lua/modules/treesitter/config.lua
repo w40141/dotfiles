@@ -1,5 +1,17 @@
 local M = {}
 
+function M.context_vt()
+	require("nvim_context_vt").setup({
+		enabled = true,
+		prefix = "",
+		highlight = "CustomContextVt",
+		disable_ft = { "markdown" },
+		disable_virtual_lines_ft = { "python", "yaml" },
+		min_rows = 1,
+		min_rows_ft = {},
+	})
+end
+
 function M.treesitter()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = "all",
