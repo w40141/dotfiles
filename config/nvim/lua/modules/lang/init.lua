@@ -17,8 +17,8 @@ return {
 		ft = "qf",
 	},
 	{
-		-- "simrat39/rust-tools.nvim",
-		"kdarkhan/rust-tools.nvim",
+		"simrat39/rust-tools.nvim",
+		-- "kdarkhan/rust-tools.nvim",
 		ft = "rust",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = conf.rust,
