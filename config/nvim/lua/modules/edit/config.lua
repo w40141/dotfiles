@@ -76,7 +76,6 @@ function M.null_ls()
 		sources = {
 			builtins.code_actions.cspell,
 			builtins.code_actions.gitsigns,
-			-- builtins.code_actions.refactoring,
 			builtins.completion.luasnip,
 			builtins.diagnostics.fish,
 			builtins.diagnostics.credo,

@@ -106,17 +106,17 @@ function M.lspconfig()
 			autocmd({ "CursorMoved", "CursorMovedI" }, { buffer = bufnr, callback = buf.clear_references, group = ldh })
 		end
 
-		if client.server_capabilities.documentFormattingProvider then
-			local my = augroup("documentFormattingProvider", {})
-			autocmd("BufWritePre", {
-				desc = "Auto format before save",
-				buffer = bufnr,
-				callback = function()
-					buf.format({ timeout_ms = 2000 })
-				end,
-				group = my,
-			})
-		end
+		-- if client.server_capabilities.documentFormattingProvider then
+		-- 	local my = augroup("documentFormattingProvider", {})
+		-- 	autocmd("BufWritePre", {
+		-- 		desc = "Auto format before save",
+		-- 		buffer = bufnr,
+		-- 		callback = function()
+		-- 			buf.format({ bufnr = bufnr, timeout_ms = 2000 })
+		-- 		end,
+		-- 		group = my,
+		-- 	})
+		-- end
 	end
 
 	local lspconfig = require("lspconfig")

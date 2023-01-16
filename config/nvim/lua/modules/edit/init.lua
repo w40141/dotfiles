@@ -54,12 +54,13 @@ return {
 		cmd = { "ColorizerToggle" },
 		config = conf.colorizer,
 	},
-	e({
+	{
 		-- Use Neovim as a language server to inject LSP diagnostics, code actions
 		"jose-elias-alvarez/null-ls.nvim",
+		event = { "FocusLost", "CursorHold" },
 		requires = "nvim-lua/plenary.nvim",
 		config = conf.null_ls,
-	}),
+	},
 	{
 		"gbprod/yanky.nvim",
 		requires = { "stevearc/dressing.nvim", opt = true },
