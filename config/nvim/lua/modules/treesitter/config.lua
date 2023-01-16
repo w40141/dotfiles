@@ -3,12 +3,12 @@ local M = {}
 function M.context_vt()
 	require("nvim_context_vt").setup({
 		enabled = true,
-		prefix = "",
-		highlight = "CustomContextVt",
-		disable_ft = { "markdown" },
+		-- prefix = "",
+		-- highlight = "CustomContextVt",
+		-- disable_ft = { "markdown" },
 		disable_virtual_lines_ft = { "python", "yaml" },
-		min_rows = 1,
-		min_rows_ft = {},
+		-- min_rows = 1,
+		-- min_rows_ft = {},
 	})
 end
 
