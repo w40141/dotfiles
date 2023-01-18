@@ -26,7 +26,6 @@ function M.alpha()
 		d.button("g", " Find word", "<cmd>Telescope live_grep<CR>"),
 		d.button("t", " Find TODO", "<cmd>TodoTelescope<CR>"),
 		d.button("o", "פּ Open explorer", "<cmd>lua require('lir.float').toggle()<cr>"),
-		d.button("s", " Settings", ":e $MYVIMRC<CR>"),
 		d.button("c", "﫵Check health", "<cmd>checkhealth<cr>"),
 		d.button("u", " Update plugins", "<cmd>PackerSync<CR>"),
 		d.button("m", " Open Mason Maneger", "<cmd>MasonToolsUpdate<CR>"),
