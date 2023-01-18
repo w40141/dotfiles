@@ -62,8 +62,8 @@ function M.lspconfig()
 	local hl = api.nvim_set_hl
 	local lsp = v.lsp
 	local buf = lsp.buf
-	local augroup = v.api.nvim_create_augroup
-	local autocmd = v.api.nvim_create_autocmd
+	local augroup = api.nvim_create_augroup
+	local autocmd = api.nvim_create_autocmd
 	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 	for type, icon in pairs(signs) do
 		local sign = "DiagnosticSign" .. type
@@ -106,17 +106,6 @@ function M.lspconfig()
 			autocmd({ "CursorMoved", "CursorMovedI" }, { buffer = bufnr, callback = buf.clear_references, group = ldh })
 		end
 
-		-- if client.server_capabilities.documentFormattingProvider then
-		-- 	local my = augroup("documentFormattingProvider", {})
-		-- 	autocmd("BufWritePre", {
-		-- 		desc = "Auto format before save",
-		-- 		buffer = bufnr,
-		-- 		callback = function()
-		-- 			buf.format({ bufnr = bufnr, timeout_ms = 2000 })
-		-- 		end,
-		-- 		group = my,
-		-- 	})
-		-- end
 	end
 
 	local lspconfig = require("lspconfig")
