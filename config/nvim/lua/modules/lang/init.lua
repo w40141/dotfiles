@@ -20,6 +20,7 @@ return {
 		"simrat39/rust-tools.nvim",
 		-- "kdarkhan/rust-tools.nvim",
 		ft = "rust",
+		-- modules = "rust-tools",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = conf.rust,
 	},

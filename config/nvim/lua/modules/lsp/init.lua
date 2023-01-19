@@ -17,6 +17,7 @@ return {
 			{
 				"williamboman/mason.nvim",
 				module = { "mason" },
+				config = conf.mason,
 			},
 		},
 		wants = {

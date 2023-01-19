@@ -8,6 +8,7 @@ function M.previm()
 	v.keymap.set("n", ",o", "<Cmd>PrevimOpen<cr>")
 end
 
+-- TODO: mason-lspconfig との連携
 function M.rust()
 	local v = vim
 	local api = v.api
@@ -19,42 +20,38 @@ function M.rust()
 	local rt = require("rust-tools")
 	rt.setup({
 		server = {
-			on_attach = function(client, bufnr)
+			on_attach = function(_, bufnr)
 				api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-				if client.server_capabilities.documentHighlightProvider then
-					hl(0, "LspReferenceText", {
-						underline = true,
-						bold = true,
-						fg = "#A00000",
-						bg = "#104040",
-					})
-					hl(0, "LspReferenceRead", {
-						underline = true,
-						bold = true,
-						fg = "#A00000",
-						bg = "#104040",
-					})
-					hl(0, "LspReferenceWrite", {
-						underline = true,
-						bold = true,
-						fg = "#A00000",
-						bg = "#104040",
-					})
-					local ldh = augroup("LspDocumentHighlight", {})
-					autocmd(
-						{ "CursorHold", "CursorHoldI" },
-						{ buffer = bufnr, callback = buf.document_highlight, group = ldh }
-					)
-					autocmd(
-						{ "CursorMoved", "CursorMovedI" },
-						{ buffer = bufnr, callback = buf.clear_references, group = ldh }
-					)
-				end
+				hl(0, "LspReferenceText", {
+					underline = true,
+					bold = true,
+					fg = "#A00000",
+					bg = "#104040",
+				})
+				hl(0, "LspReferenceRead", {
+					underline = true,
+					bold = true,
+					fg = "#A00000",
+					bg = "#104040",
+				})
+				hl(0, "LspReferenceWrite", {
+					underline = true,
+					bold = true,
+					fg = "#A00000",
+					bg = "#104040",
+				})
+				local ldh = augroup("LspDocumentHighlight", {})
+				autocmd(
+					{ "CursorHold", "CursorHoldI" },
+					{ buffer = bufnr, callback = buf.document_highlight, group = ldh }
+				)
+				autocmd(
+					{ "CursorMoved", "CursorMovedI" },
+					{ buffer = bufnr, callback = buf.clear_references, group = ldh }
+				)
 
-				-- Hover actions
 				key("n", "H", rt.hover_actions.hover_actions, { buffer = bufnr })
-				-- Code action groups
 				key("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
 			end,
 		},
