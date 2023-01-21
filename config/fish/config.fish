@@ -142,6 +142,7 @@ if test (uname) = Linux
     fish_add_path /home/linuxbrew/.linuxbrew/bin
     fish_add_path /home/linuxbrew/.linuxbrew/sbin
     source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
+		fish_add_path $HOME/.local/bin
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
     fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin

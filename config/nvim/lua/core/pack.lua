@@ -1,9 +1,10 @@
 -- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
 
-local v = vim
-local fn = v.fn
-local uv = v.loop
-local command = v.api.nvim_create_user_command
+local gl = require("core.global")
+local v = gl.v
+local fn = gl.fn
+local uv = gl.uv
+local command = gl.command
 
 local Pack = {}
 

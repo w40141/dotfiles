@@ -1,4 +1,5 @@
-local opt = vim.opt
+local gl = require("core.global")
+local opt = gl.opt
 
 -- 全モードでマウスを有効化
 opt.mouse = "a"
@@ -80,7 +81,7 @@ opt.writebackup = false
 opt.swapfile = false
 opt.backup = false
 opt.termguicolors = true
--- カーソルを行頭、行末で止まらないようにする
+-- カーソルを行頭、行末で止まらないにする
 opt.whichwrap = "b,s,h,l,<,>,[,]"
 opt.winblend = 20
 opt.pumblend = 20
