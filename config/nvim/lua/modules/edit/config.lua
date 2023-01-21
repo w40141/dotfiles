@@ -96,7 +96,23 @@ function M.null_ls()
 				condition = function()
 					return exe("eslint") > 0
 				end,
+				prefer_local = "node_modules/.bin",
 			}),
+			null_ls.builtins.code_actions.eslint.with({
+				prefer_local = "node_modules/.bin",
+			}),
+			null_ls.builtins.formatting.eslint.with({
+				prefer_local = "node_modules/.bin",
+			}),
+			null_ls.builtins.diagnostics.textlint.with({
+				filetypes = { "markdown" },
+				prefer_local = "node_modules/.bin",
+			}),
+			-- null_ls.builtins.formatting.textlint.with({
+			-- 	filetypes = { "markdown" },
+			-- 	prefer_local = "node_modules/.bin",
+			-- }),
+			null_ls.builtins.formatting.yamlfmt,
 			builtins.diagnostics.shellcheck.with({
 				condition = function()
 					return exe("shellcheck") > 0
@@ -143,13 +159,13 @@ function M.null_ls()
 			builtins.formatting.deno_fmt.with({
 				condition = function(utils)
 					return not (
-							utils.has_file({
-								".prettierrc",
-								".prettierrc.js",
-								"deno.json",
-								"deno.jsonc",
-							})
-							)
+						utils.has_file({
+							".prettierrc",
+							".prettierrc.js",
+							"deno.json",
+							"deno.jsonc",
+						})
+					)
 				end,
 			}),
 			builtins.formatting.prettier.with({
@@ -214,10 +230,11 @@ function M.null_ls()
 				local word = ""
 				local regex = "^Unknown word %((%w+)%)$"
 				for _, va in pairs(diagnostics) do
-					if va.source == "cspell"
-							and va.col < col
-							and col <= va.end_col
-							and string.match(va.message, regex)
+					if
+						va.source == "cspell"
+						and va.col < col
+						and col <= va.end_col
+						and string.match(va.message, regex)
 					then
 						-- 見つかった場合、単語を抽出
 						word = string.gsub(va.message, regex, "%1"):lower()

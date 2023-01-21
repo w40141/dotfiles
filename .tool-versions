@@ -1,6 +1,6 @@
-python 3.10.6
+python 3.10.9
 ruby 3.0.2
-nodejs 16.19.0
+nodejs 18.13.0
 yarn 1.22.18
 golang 1.17.1
 elixir 1.13.4-otp-25
