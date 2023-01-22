@@ -99,9 +99,15 @@ function M.null_ls()
 				prefer_local = "node_modules/.bin",
 			}),
 			null_ls.builtins.code_actions.eslint.with({
+				condition = function()
+					return exe("eslint") > 0
+				end,
 				prefer_local = "node_modules/.bin",
 			}),
 			null_ls.builtins.formatting.eslint.with({
+				condition = function()
+					return exe("eslint") > 0
+				end,
 				prefer_local = "node_modules/.bin",
 			}),
 			null_ls.builtins.diagnostics.textlint.with({
@@ -159,13 +165,13 @@ function M.null_ls()
 			builtins.formatting.deno_fmt.with({
 				condition = function(utils)
 					return not (
-						utils.has_file({
-							".prettierrc",
-							".prettierrc.js",
-							"deno.json",
-							"deno.jsonc",
-						})
-					)
+							utils.has_file({
+								".prettierrc",
+								".prettierrc.js",
+								"deno.json",
+								"deno.jsonc",
+							})
+							)
 				end,
 			}),
 			builtins.formatting.prettier.with({
@@ -230,11 +236,10 @@ function M.null_ls()
 				local word = ""
 				local regex = "^Unknown word %((%w+)%)$"
 				for _, va in pairs(diagnostics) do
-					if
-						va.source == "cspell"
-						and va.col < col
-						and col <= va.end_col
-						and string.match(va.message, regex)
+					if va.source == "cspell"
+							and va.col < col
+							and col <= va.end_col
+							and string.match(va.message, regex)
 					then
 						-- 見つかった場合、単語を抽出
 						word = string.gsub(va.message, regex, "%1"):lower()
