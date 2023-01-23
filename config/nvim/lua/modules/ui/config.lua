@@ -25,7 +25,7 @@ function M.alpha()
 		d.button("f", " Find file", "<cmd>Telescope find_files<CR>"),
 		d.button("g", " Find word", "<cmd>Telescope live_grep<CR>"),
 		d.button("t", " Find TODO", "<cmd>TodoTelescope<CR>"),
-		d.button("o", "פּ Open explorer", "<cmd>lua require('lir.float').toggle()<cr>"),
+		d.button("o", "פּ Open explorer", "<space>e"),
 		d.button("c", " Check health", "<cmd>checkhealth<cr>"),
 		d.button("u", " Update plugins", "<cmd>PackerSync<CR>"),
 		d.button("m", " Open Mason Maneger", "<cmd>MasonToolsUpdate<CR>"),
@@ -508,6 +508,26 @@ end
 
 function M.scrollbar()
 	require("scrollbar").setup()
+end
+
+function M.nvimTree()
+	require("nvim-tree").setup({
+		sort_by = "case_sensitive",
+		view = {
+			adaptive_size = true,
+			mappings = {
+				list = {
+					{ key = "u", action = "dir_up" },
+				},
+			},
+		},
+		renderer = {
+			group_empty = true,
+		},
+		filters = {
+			dotfiles = true,
+		},
+	})
 end
 
 return M

@@ -5,8 +5,7 @@ function M.aerial()
 end
 
 function M.bufferline()
-	local v = vim
-	local key = v.keymap.set
+	local key = vim.keymap.set
 
 	key("n", "[b", "<Cmd>BufferLineCyclePrev<cr>")
 	key("n", "]b", "<Cmd>BufferLineCycleNext<cr>")
@@ -51,6 +50,10 @@ function M.lualine()
 	local v = vim
 	v.opt.laststatus = 0
 	v.opt.showtabline = 0
+end
+
+function M.nvimTree()
+	vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>")
 end
 
 return M

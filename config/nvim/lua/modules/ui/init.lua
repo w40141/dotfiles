@@ -80,7 +80,6 @@ return {
 	},
 	{
 		-- Scrollbar
-		-- https://github.com/petertriho/nvim-scrollbar
 		"petertriho/nvim-scrollbar",
 		event = {
 			"BufRead",
@@ -93,23 +92,30 @@ return {
 		config = conf.scrollbar,
 	},
 	{
-		-- https://github.com/lewis6991/gitsigns.nvim
 		"lewis6991/gitsigns.nvim",
 		event = { "BufReadPost" },
 		config = conf.gitsigns,
 	},
+	-- {
+	-- 	-- File finder
+	-- 	"tamago324/lir.nvim",
+	-- 	module = { "lir.float" },
+	-- 	requires = {
+	-- 		{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
+	-- 		{ "nvim-lua/plenary.nvim" },
+	-- 	},
+	-- 	wants = { "plenary.nvim", "nvim-web-devicons" },
+	-- 	setup = setup.lir,
+	-- 	config = conf.lir,
+	-- },
 	{
 		-- File finder
-		-- https://github.com/tamago324/lir.nvim
-		"tamago324/lir.nvim",
-		-- },
-		module = { "lir.float" },
+		"nvim-tree/nvim-tree.lua",
 		requires = {
-			{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
-			{ "nvim-lua/plenary.nvim" },
+			"nvim-tree/nvim-web-devicons",
 		},
-		wants = { "plenary.nvim", "nvim-web-devicons" },
-		setup = setup.lir,
-		config = conf.lir,
+		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
+		setup = setup.nvimTree,
+		config = conf.nvimTree,
 	},
 }
