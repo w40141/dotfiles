@@ -25,7 +25,7 @@ function M.alpha()
 		d.button("f", " Find file", "<cmd>Telescope find_files<CR>"),
 		d.button("g", " Find word", "<cmd>Telescope live_grep<CR>"),
 		d.button("t", " Find TODO", "<cmd>TodoTelescope<CR>"),
-		d.button("o", "פּ Open explorer", "<space>e"),
+		d.button("o", "פּ Open explorer", "<cmd>NvimTreeToggle<cr>"),
 		d.button("c", " Check health", "<cmd>checkhealth<cr>"),
 		d.button("u", " Update plugins", "<cmd>PackerSync<CR>"),
 		d.button("m", " Open Mason Maneger", "<cmd>MasonToolsUpdate<CR>"),
@@ -517,7 +517,9 @@ function M.nvimTree()
 			adaptive_size = true,
 			mappings = {
 				list = {
-					{ key = "u", action = "dir_up" },
+					{ key = "h", action = "dir_up" },
+					{ key = "l", action = "cd" },
+					{ key = "s", action = "none" },
 				},
 			},
 		},
