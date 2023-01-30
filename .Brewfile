@@ -25,6 +25,10 @@ brew "adns"
 brew "giflib"
 # Library for manipulating PNG images
 brew "libpng"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
 # Cryptography and SSL/TLS Toolkit
@@ -39,6 +43,8 @@ brew "gmp"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
@@ -61,8 +67,6 @@ brew "bdw-gc"
 brew "bingrep"
 # C/C++ and Java libraries for Unicode and globalization
 brew "icu4c"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Collection of portable C++ source libraries
 brew "boost"
 # Yet another cross-platform graphical process/system monitor
@@ -177,8 +181,6 @@ brew "gdk-pixbuf"
 brew "geos"
 # GitHub command-line tool
 brew "gh"
-# Color management engine supporting ICC profiles
-brew "little-cms2"
 # Library for JPEG-2000 image manipulation
 brew "openjpeg"
 # Interpreter for PostScript and PDF
@@ -321,8 +323,6 @@ brew "nsh"
 brew "nspr"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # 7-Zip (high compression file archiver) implementation
 brew "p7zip"
 # Learn vim commands via a game
@@ -465,6 +465,7 @@ cask "firefox"
 # Build apps and clock faces for Fitbit
 cask "fitbit-os-simulator"
 cask "font-biz-udgothic"
+# Universal design typeface in the Japanese Mincho type tradition
 cask "font-biz-udmincho"
 # Developer targeted fonts with a high number of glyphs
 cask "font-hack-nerd-font"
