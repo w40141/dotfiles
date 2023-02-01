@@ -55,6 +55,14 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Perl compatible regular expressions library
+brew "pcre"
+# Command-line interface for SQLite
+brew "sqlite"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # Terminal bandwidth utilization tool
@@ -81,6 +89,8 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # C string library for manipulating Unicode strings
@@ -97,14 +107,14 @@ brew "libtasn1"
 brew "nettle"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Emacs text editor
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
-# Command-line interface for SQLite
-brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
@@ -211,6 +221,8 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Ping, but with a graph
@@ -277,8 +289,6 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -303,16 +313,14 @@ brew "libzip"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
+# Platform built on V8 to build network applications
+brew "node@16"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
-# Parser generator tool and incremental parsing library
-brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -331,8 +339,6 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
-# Perl compatible regular expressions library
-brew "pcre"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
@@ -345,8 +351,6 @@ brew "poppler"
 brew "procs"
 # Cartographic Projections Library
 brew "proj"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Provides fake name and address data
@@ -377,8 +381,6 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
