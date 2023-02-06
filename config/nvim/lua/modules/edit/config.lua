@@ -104,6 +104,7 @@ function M.null_ls()
 				end,
 				prefer_local = "node_modules/.bin",
 			}),
+			null_ls.builtins.formatting.prismaFmt,
 			null_ls.builtins.formatting.sql_formatter,
 			null_ls.builtins.formatting.eslint.with({
 				condition = function()
