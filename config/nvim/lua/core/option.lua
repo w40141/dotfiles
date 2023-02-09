@@ -73,7 +73,7 @@ opt.tabstop = 2
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 opt.smarttab = true
 -- タブを空白入力に置換
-opt.expandtab = false
+opt.expandtab = true
 -- 補完時に大文字小文字を区別しない
 opt.infercase = true
 -- 必要ない設定
