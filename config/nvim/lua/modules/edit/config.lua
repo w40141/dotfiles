@@ -138,6 +138,12 @@ function M.null_ls()
               end,
               prefer_local = "node_modules/.bin",
           }),
+          builtins.formatting.prettier.with({
+              condition = function(utils)
+                return utils.has_file({ ".prettierrc", ".prettierrc.js" })
+              end,
+              prefer_local = "node_modules/.bin",
+          }),
           builtins.formatting.yamlfmt,
           builtins.formatting.stylua.with({
               condition = function()
@@ -158,24 +164,6 @@ function M.null_ls()
               condition = function()
                 return exe("rustfmt") > 0
               end,
-          }),
-          builtins.formatting.deno_fmt.with({
-              condition = function(utils)
-                return not (
-                    utils.has_file({
-                        ".prettierrc",
-                        ".prettierrc.js",
-                        "deno.json",
-                        "deno.jsonc",
-                    })
-                    )
-              end,
-          }),
-          builtins.formatting.prettier.with({
-              condition = function(utils)
-                return utils.has_file({ ".prettierrc", ".prettierrc.js" })
-              end,
-              prefer_local = "node_modules/.bin",
           }),
           builtins.formatting.shfmt.with({
               condition = function()
