@@ -21,13 +21,13 @@ opt.title = true
 -- 不可視文字を表示
 opt.list = true
 opt.listchars = {
-	tab = "▸ ",
-	extends = "»",
-	trail = "-",
-	precedes = "«",
-	eol = "↲",
-	nbsp = "%",
-	space = "⋅",
+  tab = "▸ ",
+  extends = "»",
+  trail = "-",
+  precedes = "«",
+  eol = "↲",
+  nbsp = "%",
+  space = "⋅",
 }
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 opt.wrap = true
