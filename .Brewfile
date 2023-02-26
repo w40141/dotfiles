@@ -359,6 +359,8 @@ brew "proj"
 brew "protobuf"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
+# Persistent key-value database, with built-in net interface
+brew "redis"
 # Provides fake name and address data
 brew "rig"
 # Search tool like grep and The Silver Searcher
