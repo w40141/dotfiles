@@ -1,4 +1,5 @@
 tap "argon/mas"
+tap "aws/tap"
 tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
@@ -31,8 +32,6 @@ brew "xz"
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -57,14 +56,6 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Perl compatible regular expressions library
-brew "pcre"
-# Command-line interface for SQLite
-brew "sqlite"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # Terminal bandwidth utilization tool
@@ -113,6 +104,8 @@ brew "guile"
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
+# Command-line interface for SQLite
+brew "sqlite"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
@@ -287,6 +280,8 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -311,8 +306,6 @@ brew "libzip"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # General-purpose lossless data-compression library
@@ -341,6 +334,8 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
+# Perl compatible regular expressions library
+brew "pcre"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
@@ -357,6 +352,8 @@ brew "procs"
 brew "proj"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Persistent key-value database, with built-in net interface
@@ -431,6 +428,8 @@ brew "zellij"
 brew "zeromq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+# Copilot CLI - build, release and operate your container apps on AWS
+brew "aws/tap/copilot-cli"
 # tbls is a CI-Friendly tool for document a database, written in Go.
 brew "k1low/tap/tbls"
 # Evans: more expressive universal gRPC client
