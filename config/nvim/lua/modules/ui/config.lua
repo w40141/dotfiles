@@ -1,6 +1,30 @@
 local M = {}
 
 function M.kanagawa()
+  -- Default options:
+  require("kanagawa").setup({
+    compile = false, -- enable compiling the colorscheme
+    undercurl = true, -- enable undercurls
+    commentStyle = { italic = true },
+    functionStyle = {},
+    keywordStyle = { italic = true },
+    statementStyle = { bold = true },
+    typeStyle = {},
+    transparent = false, -- do not set background color
+    dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+    terminalColors = true, -- define vim.g.terminal_color_{0,17}
+    colors = {
+      palette = {},
+      theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+    },
+    theme = "wave", -- Load "wave" theme when 'background' option is not set
+    background = {
+      -- map the value of 'background' option to a theme
+      dark = "dragon", -- try "dragon" !
+      light = "lotus",
+    },
+  })
+
   vim.cmd("colorscheme kanagawa")
 end
 
@@ -99,14 +123,11 @@ function M.aerial()
       -- options will open the window in the other direction *if* there is a
       -- different buffer in the way of the preferred direction
       default_direction = "prefer_right",
-
       -- The maximum width of the aerial window
       max_width = { 40, 0.3 },
-
       -- The minimum width of the aerial window.
       -- To disable dynamic resizing, set this to be equal to max_width
       min_width = 10,
-
       -- Set to true to only open aerial at the far right/left of the editor
       -- Default behavior opens aerial relative to current window
       placement_editor_edge = false,
@@ -130,10 +151,8 @@ function M.aerial()
     float = {
       -- Controls border appearance. Passed to nvim_open_win
       border = "rounded",
-
       -- The maximum height of the floating aerial window
       max_height = 100,
-
       -- The minimum height of the floating aerial window
       -- To disable dynamic resizing, set this to be equal to max_height
       min_height = 4,
@@ -142,7 +161,6 @@ function M.aerial()
       -- Fetch document symbols when LSP diagnostics change.
       -- If you set this to false, you will need to manually fetch symbols
       diagnostics_trigger_update = true,
-
       -- Set to false to not update the symbols when there are LSP errors
       update_when_errors = true,
     },
@@ -163,10 +181,10 @@ function M.bufferline()
   require("bufferline").setup({
     options = {
       numbers = "buffer_id",
-      close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+      close_command = "bdelete! %d",    -- can be a string | function, see "Mouse actions"
       right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
       left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-      middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+      middle_mouse_command = nil,       -- can be a string | function, see "Mouse actions"
       indicator = { icon = "▎", stype = "icon" },
       buffer_close_icon = "",
       modified_icon = "",
@@ -187,7 +205,7 @@ function M.bufferline()
       max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
       tab_size = 15,
       offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
-      color_icons = true, -- whether or not to add the filetype icon highlights
+      color_icons = true,    -- whether or not to add the filetype icon highlights
       show_buffer_icons = true, -- disable filetype icons for buffers
       show_buffer_close_icons = false,
       show_close_icon = false,
@@ -226,7 +244,6 @@ function M.lualine()
   require("lualine").setup({
     options = {
       icons_enabled = true,
-      theme = "kanagawa",
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {},
@@ -308,9 +325,9 @@ function M.noice()
   require("noice").setup({
     lsp = {
       override = {
-        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-        ["vim.lsp.util.stylize_markdown"] = true,
-        ["cmp.entry.get_documentation"] = true,
+            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+            ["vim.lsp.util.stylize_markdown"] = true,
+            ["cmp.entry.get_documentation"] = true,
       },
       hover = {
         enabled = true,
@@ -342,11 +359,11 @@ function M.noice()
       },
     },
     presets = {
-      bottom_search = true, -- use a classic bottom cmdline for search
-      command_palette = true, -- position the cmdline and popupmenu together
+      bottom_search = true,      -- use a classic bottom cmdline for search
+      command_palette = true,    -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false, -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = false, -- add a border to hover docs and signature help
+      inc_rename = false,        -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = false,    -- add a border to hover docs and signature help
     },
     views = {
       confirm = {
@@ -434,29 +451,26 @@ function M.lir()
     ignore = {},
     devicons = { enable = true },
     mappings = {
-      ["l"] = actions.edit,
-      ["<c-s>"] = actions.split,
-      ["<c-v>"] = actions.vsplit,
-      ["<c-t>"] = actions.tabedit,
-
-      ["h"] = actions.up,
-      ["q"] = actions.quit,
-
-      ["K"] = actions.mkdir,
-      ["N"] = actions.newfile,
-      ["R"] = actions.rename,
-      ["@"] = actions.cd,
-      ["Y"] = actions.yank_path,
-      ["."] = actions.toggle_show_hidden,
-      ["D"] = actions.delete,
-
-      ["J"] = function()
+          ["l"] = actions.edit,
+          ["<c-s>"] = actions.split,
+          ["<c-v>"] = actions.vsplit,
+          ["<c-t>"] = actions.tabedit,
+          ["h"] = actions.up,
+          ["q"] = actions.quit,
+          ["K"] = actions.mkdir,
+          ["N"] = actions.newfile,
+          ["R"] = actions.rename,
+          ["@"] = actions.cd,
+          ["Y"] = actions.yank_path,
+          ["."] = actions.toggle_show_hidden,
+          ["D"] = actions.delete,
+          ["J"] = function()
         mark_actions.toggle_mark()
         v.cmd("normal! j")
       end,
-      ["C"] = clipboard_actions.copy,
-      ["X"] = clipboard_actions.cut,
-      ["P"] = clipboard_actions.paste,
+          ["C"] = clipboard_actions.copy,
+          ["X"] = clipboard_actions.cut,
+          ["P"] = clipboard_actions.paste,
     },
     float = {
       winblend = 0,
