@@ -281,7 +281,7 @@ brew "jq"
 # JSON parser for C
 brew "json-c"
 # Kubernetes command-line interface
-brew "kubernetes-cli", link: false
+brew "kubernetes-cli"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Blu-Ray disc playback library for media players like VLC
@@ -344,6 +344,8 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
+# Modern Python package and dependency manager supporting the latest PEP standards
+brew "pdm"
 # Simplistic interactive filtering tool
 brew "peco"
 # Highly capable, feature-rich programming language
