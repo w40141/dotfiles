@@ -142,7 +142,7 @@ if test (uname) = Linux
     fish_add_path /home/linuxbrew/.linuxbrew/bin
     fish_add_path /home/linuxbrew/.linuxbrew/sbin
     source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
-		fish_add_path $HOME/.local/bin
+    fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
@@ -234,7 +234,7 @@ end
 # for ghq
 if command -s ghq >/dev/null
     abbr -a gp 'ghq get -p'
-		abbr -a gg 'ghq get'
+    abbr -a gg 'ghq get'
     abbr -a gc 'ghq create'
     abbr -a gau 'ghq list | ghq get --update --parallel'
 end
