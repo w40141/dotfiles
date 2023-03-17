@@ -259,7 +259,7 @@ function M.lualine()
         {
           "filename",
           file_status = true,
-          path = 0,
+          path = 1,
           symbols = { modified = "  ", readonly = "  " },
         },
         search_result,
