@@ -68,6 +68,8 @@ brew "sqlite"
 brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
+# C parser in Python
+brew "pycparser"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool
