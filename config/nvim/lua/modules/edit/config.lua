@@ -122,6 +122,11 @@ function M.null_ls()
         end,
         extra_args = { "--config", cspell_files.config },
       }),
+      builtins.diagnostics.ruff.with({
+        condition = function()
+          return exe("ruff") > 0
+        end,
+      }),
       builtins.diagnostics.vale.with({
         diagnostics_postprocess = function(diagnostic)
           diagnostic.severity = v.diagnostic.severity["WARN"]
