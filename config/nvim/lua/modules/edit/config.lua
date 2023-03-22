@@ -77,11 +77,6 @@ function M.null_ls()
       builtins.code_actions.cspell,
       builtins.code_actions.gitsigns,
       builtins.code_actions.eslint.with({
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.code_actions.cspell,
-      builtins.code_actions.gitsigns,
-      builtins.code_actions.eslint.with({
         condition = function()
           return exe("eslint") > 0
         end,
