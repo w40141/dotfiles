@@ -79,45 +79,110 @@ function M.null_ls()
       builtins.code_actions.eslint.with({
         prefer_local = "node_modules/.bin",
       }),
+      builtins.code_actions.cspell,
+      builtins.code_actions.gitsigns,
+      builtins.code_actions.eslint.with({
+        condition = function()
+          return exe("eslint") > 0
+        end,
+        prefer_local = "node_modules/.bin",
+      }),
       builtins.completion.spell,
-      builtins.diagnostics.fish,
-      builtins.diagnostics.credo,
-      builtins.diagnostics.editorconfig_checker,
+      builtins.diagnostics.fish.with({
+        condition = function()
+          return exe("fish") > 0
+        end,
+      }),
+      builtins.diagnostics.credo.with({
+        condition = function()
+          return exe("credo") > 0
+        end,
+      }),
+      builtins.diagnostics.editorconfig_checker.with({
+        condition = function()
+          return exe("ec") > 0
+        end,
+      }),
       builtins.diagnostics.eslint.with({
+        condition = function()
+          return exe("eslint") > 0
+        end,
         prefer_local = "node_modules/.bin",
       }),
       builtins.diagnostics.textlint.with({
         filetypes = { "markdown" },
         prefer_local = "node_modules/.bin",
       }),
+      builtins.diagnostics.shellcheck.with({
+        condition = function()
+          return exe("shellcheck") > 0
+        end,
+      }),
       builtins.diagnostics.cspell.with({
         diagnostics_postprocess = function(diagnostic)
           diagnostic.severity = v.diagnostic.severity["WARN"]
         end,
+        condition = function()
+          return exe("cspell") > 0
+        end,
         extra_args = { "--config", cspell_files.config },
       }),
-      builtins.diagnostics.ruff,
+      builtins.diagnostics.ruff.with({
+        condition = function()
+          return exe("ruff") > 0
+        end,
+      }),
       builtins.diagnostics.vale.with({
         diagnostics_postprocess = function(diagnostic)
           diagnostic.severity = v.diagnostic.severity["WARN"]
         end,
+        condition = function()
+          return exe("vale") > 0
+        end,
       }),
+      builtins.formatting.prismaFmt,
       builtins.formatting.sql_formatter,
       builtins.formatting.eslint.with({
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.formatting.prettier.with({
-        condition = function(utils)
-          return utils.has_file({ ".prettierrc", ".prettierrc.js" })
+        condition = function()
+          return exe("eslint") > 0
         end,
         prefer_local = "node_modules/.bin",
       }),
+      builtins.formatting.prettier.with({
+        prefer_local = "node_modules/.bin",
+      }),
       builtins.formatting.yamlfmt,
-      builtins.formatting.stylua,
-      builtins.formatting.black,
-      builtins.formatting.rustfmt,
-      builtins.formatting.shfmt,
+      builtins.formatting.stylua.with({
+        condition = function()
+          return exe("stylua") > 0
+        end,
+      }),
+      builtins.formatting.isort.with({
+        condition = function()
+          return exe("isort") > 0
+        end,
+      }),
+      builtins.formatting.black.with({
+        condition = function()
+          return exe("black") > 0
+        end,
+      }),
+      builtins.formatting.rustfmt.with({
+        condition = function()
+          return exe("rustfmt") > 0
+        end,
+      }),
+      builtins.formatting.shfmt.with({
+        condition = function()
+          return exe("shfmt") > 0
+        end,
+      }),
       builtins.formatting.fish_indent,
+      builtins.formatting.markdownlint.with({
+        condition = function()
+          return exe("markdownlint") > 0
+        end,
+      }),
       builtins.formatting.markdownlint,
     },
   })
