@@ -124,22 +124,6 @@
         pipx install mypy
         pipx install sphinx
 
-### 4. neovim のインストール
-
-1.  python の設定
-
-        cd ~/.config/nvim/neovim3
-        poetry install
-
-1.  ruby の設定
-
-        gem install neovim
-
-1.  node の設定
-
-        yarn global add neovim
-        yarn global add coc
-
 ### 5. Rust のインストール
 
 1.  rustup でインストール (Homebrew でインストール済)
