@@ -67,3 +67,4 @@ rcarriga
 petertriho
 trpc
 isort
+pydantic
