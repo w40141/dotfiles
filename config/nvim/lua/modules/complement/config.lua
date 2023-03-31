@@ -49,7 +49,7 @@ function M.cmp()
       ["<C-,>"] = cmp.mapping.complete(),
       ["<C-n>"] = cmp.mapping.select_next_item(),
       ["<C-p>"] = cmp.mapping.select_prev_item(),
-      ["<C-f>"] = cmp.mapping.scroll_docs( -4),
+      ["<C-f>"] = cmp.mapping.scroll_docs(-4),
       ["<C-b>"] = cmp.mapping.scroll_docs(4),
       ["<C-e>"] = cmp.mapping.abort(),
       ["<C-j>"] = cmp.mapping(function(fallback)
@@ -63,8 +63,8 @@ function M.cmp()
         end
       end, { "i", "s" }),
       ["<C-k>"] = cmp.mapping(function(fallback)
-        if snip.jumpable( -1) then
-          snip.jump( -1)
+        if snip.jumpable(-1) then
+          snip.jump(-1)
         else
           fallback()
         end
@@ -95,7 +95,11 @@ function M.cmp()
       { name = "path" },
       { name = "luasnip" },
       { name = "mocword" },
-      { name = "treesitter",              trigger_characters = { "." }, option = {} },
+      {
+        name = "treesitter",
+        trigger_characters = { "." },
+        option = {},
+      },
     }),
   })
 

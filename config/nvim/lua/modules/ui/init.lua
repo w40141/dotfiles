@@ -49,7 +49,6 @@ return {
     -- Indent guide
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost" },
-    -- config = require("rc.config.indent-blankline-nvim"),
     config = conf.indent_blankline,
   },
   {
@@ -72,9 +71,6 @@ return {
         config = conf.notify,
       },
     },
-    -- wants = { "nvim-treesitter" },
-    -- setup = require("rc.setup.noice-nvim"),
-    -- config = require("rc.config.noice-nvim"),
     setup = setup.noice,
     config = conf.noice,
   },
@@ -96,18 +92,6 @@ return {
     event = { "BufReadPost" },
     config = conf.gitsigns,
   },
-  -- {
-  -- 	-- File finder
-  -- 	"tamago324/lir.nvim",
-  -- 	module = { "lir.float" },
-  -- 	requires = {
-  -- 		{ "kyazdani42/nvim-web-devicons", module = { "nvim-web-devicons" } },
-  -- 		{ "nvim-lua/plenary.nvim" },
-  -- 	},
-  -- 	wants = { "plenary.nvim", "nvim-web-devicons" },
-  -- 	setup = setup.lir,
-  -- 	config = conf.lir,
-  -- },
   {
     -- File finder
     "nvim-tree/nvim-tree.lua",

@@ -1,5 +1,4 @@
 local conf = require("modules.treesitter.config")
-local setup = require("modules.treesitter.setup")
 
 local function e(p)
   p.event = { "BufRead", "BufNewFile" }
@@ -24,10 +23,4 @@ return {
     "haringsrob/nvim_context_vt",
     config = conf.context_vt,
   }),
-  -- TODO: https://github.com/mfussenegger/nvim-treehopper
-  -- e({
-  -- 	"mfussenegger/nvim-treehopper",
-  -- 	module = { "tsht" },
-  -- 	setup = setup.treehopper,
-  -- }),
 }

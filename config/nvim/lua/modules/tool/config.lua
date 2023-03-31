@@ -42,31 +42,4 @@ function M.hlslens()
   require("hlslens").setup()
 end
 
-function M.hop()
-  local v = vim
-  local fn = v.fn
-  local key = v.keymap.set
-  local hop = require("hop")
-  hop.setup({
-    keys = "hjklasdfgyuiopqwertnmzxcvbHJKLASDFGYUIOPQWERTNMZXCVB",
-    extend_visual = true,
-  })
-  local direction = require("hop.hint").HintDirection
-  local function after()
-    if fn.getcmdwintype() == "" then
-      hop.hint_lines({ direction = direction.AFTER_CURSOR })
-    end
-  end
-
-  key({ "n", "v" }, [['j]], after())
-
-  local function before()
-    if fn.getcmdwintype() == "" then
-      hop.hint_lines({ direction = direction.BEFORE_CURSOR })
-    end
-  end
-
-  key({ "n", "v" }, [['k]], before())
-end
-
 return M

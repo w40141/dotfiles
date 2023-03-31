@@ -18,7 +18,6 @@ return {
     requires = {
       { "onsails/lspkind-nvim", module = { "lspkind" } },
       i({ "hrsh7th/cmp-nvim-lsp", module = { "cmp_nvim_lsp" } }),
-      -- i({ "hrsh7th/cmp-nvim-lsp-signature-help" }),
       i({ "ray-x/lsp_signature.nvim", config = conf.signature }),
       i({ "hrsh7th/cmp-nvim-lsp-document-symbol" }),
       i({ "hrsh7th/cmp-buffer" }),

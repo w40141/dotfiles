@@ -2,8 +2,7 @@ local setup = require("modules.edit.setup")
 local conf = require("modules.edit.config")
 
 local function e(p)
-  p.event = {
-    -- "InsertEnter",
+  p.event = { -- "InsertEnter",
     -- "CursorHold",
     -- "FocusLost",
     -- "BufRead",

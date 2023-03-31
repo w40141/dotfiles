@@ -40,19 +40,4 @@ function M.lspconfig()
   end)
 end
 
-function M.lspsaga()
-  local key = vim.keymap.set
-  key("n", "[tr]n", "<cmd>Lspsaga rename<cr>")
-  key("n", "[tr]a", "<cmd>Lspsaga code_action<cr>")
-  -- key("x", "M", ":<c-u>Lspsaga range_code_action<cr>", { silent = true, noremap = true })
-  key("n", "H", "<cmd>Lspsaga hover_doc<cr>")
-  key("n", "[tr]o", "<cmd>Lspsaga show_line_diagnostics<cr>")
-  key("n", "]g", "<cmd>Lspsaga diagnostic_jump_next<cr>")
-  key("n", "[g", "<cmd>Lspsaga diagnostic_jump_prev<cr>")
-  key("n", "[tr]f", "<cmd>Lspsaga lsp_finder<CR>")
-  key("n", "[tr]s", "<Cmd>Lspsaga signature_help<CR>")
-  key("n", "[tr]d", "<cmd>Lspsaga preview_definition<CR>")
-  -- key("n", "[dev]o", "<cmd>LSoutlineToggle<CR>")
-end
-
 return M
