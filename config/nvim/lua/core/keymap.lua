@@ -8,16 +8,14 @@
 -- i[nore]map |  -   | yes |  -  |  -  |  -  |  -  |  -   |  -   |
 -- c[nore]map |  -   |  -  | yes |  -  |  -  |  -  |  -   |  -   |
 -- v[nore]map |  -   |  -  |  -  | yes | yes |  -  |  -   |  -   |
--- x[nore]map |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   |
--- s[nore]map |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
+-- x[nore]map |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   | s[nore]map |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
 -- o[nore]map |  -   |  -  |  -  |  -  |  -  | yes |  -   |  -   |
 -- t[nore]map |  -   |  -  |  -  |  -  |  -  |  -  | yes  |  -   |
 -- l[nore]map |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
 
 -- ([n/v/c/i][nore]map]) <オプション> 入力する操作 Vimが解釈する操作
 -- noremap は再帰的に定義しない。
--- map は再帰的に定義する。
--- 詳しくは→ http://cocopon.me/blog/?p=3871
+-- map は再帰的に定義する。 詳しくは→ http://cocopon.me/blog/?p=3871
 -- 確認する場合:map
 
 -- キーマッピング設定
@@ -187,3 +185,7 @@ end, { expr = true })
 key("c", "?", function()
   return fn.getcmdtype() == "?" and "\\?" or "?"
 end, { expr = true })
+
+-- ターミナル
+key("t", "jj", "<C-\\><C-N>")
+key("t", "<C-q>", "<C-\\><C-n>:q<CR>")
