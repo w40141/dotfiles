@@ -26,6 +26,7 @@ return {
     -- Highlight, list and search todo comments
     "folke/todo-comments.nvim",
     requires = { "nvim-lua/plenary.nvim" },
+    event = { "BufReadPre", "FocusLost", "CursorHold" },
     cmd = {
       "TodoQuickFix",
       "TodoLocList",

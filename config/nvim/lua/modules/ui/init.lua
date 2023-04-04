@@ -1,6 +1,7 @@
 local conf = require("modules.ui.config")
 local setup = require("modules.ui.setup")
 
+-- TODO: https://github.com/utilyre/barbecue.nvim
 return {
   {
     "rebelot/kanagawa.nvim",
