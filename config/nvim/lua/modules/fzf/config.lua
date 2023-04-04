@@ -71,7 +71,7 @@ function M.trouble()
 	require("trouble").setup({
 		action_keys = {
 			close = "q",
-			cancel = "<esc>",
+			cancel = "<c-c>",
 			refresh = "r",
 			jump = { "<cr>" },
 			open_split = { "<c-x>" },
@@ -82,9 +82,9 @@ function M.trouble()
 			toggle_preview = "P",
 			hover = "H",
 			preview = "p",
-			close_folds = { "zM", "l" }, -- close all folds
-			open_folds = { "zR", "h" }, -- open all folds
-			toggle_fold = { "zA", "<tab>" }, -- toggle fold of current file
+			close_folds = { "h", "zM" }, -- close all folds
+			open_folds = { "l", "zR" }, -- open all folds
+			toggle_fold = { "<tab>", "zA" }, -- toggle fold of current file
 			previous = "k",
 			next = "j",
 		},
