@@ -135,7 +135,7 @@ function M.null_ls()
           return exe("vale") > 0
         end,
       }),
-      builtins.formatting.prismaFmt,
+      -- builtins.formatting.prismaFmt,
       builtins.formatting.sql_formatter,
       builtins.formatting.eslint.with({
         condition = function()

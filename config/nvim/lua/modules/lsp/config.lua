@@ -19,6 +19,7 @@ function M.mason_tool_installer()
       "markdownlint",
       "marksman",
       "prettier",
+      "prisma-language-server",
       "pyright",
       "ruff",
       "rust-analyzer",
