@@ -325,9 +325,9 @@ function M.noice()
   require("noice").setup({
     lsp = {
       override = {
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true,
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
       },
       hover = {
         enabled = true,
@@ -453,16 +453,27 @@ function M.scrollbar()
 end
 
 function M.nvimTree()
+  local api = require("nvim-tree.api")
+  local key = vim.keymap.set
+
+  local function on_attach(bufnr)
+    local function opts(desc)
+      return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    end
+
+    api.config.mappings.default_on_attach(bufnr)
+
+    key("n", "l", api.tree.change_root_to_node, opts("CD"))
+    key("n", "h", api.tree.change_root_to_parent, opts("Up"))
+    key("n", "?", api.tree.toggle_help, opts("Help"))
+    key("n", "sl", "<C-w>w", opts("Back Display"))
+  end
+
   require("nvim-tree").setup({
     sort_by = "case_sensitive",
+    on_attach = on_attach,
     view = {
       adaptive_size = true,
-      mappings = {
-        list = {
-          { key = "h", action = "dir_up" },
-          { key = "l", action = "cd" },
-        },
-      },
     },
     renderer = {
       group_empty = true,
