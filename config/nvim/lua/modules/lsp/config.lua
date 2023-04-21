@@ -31,7 +31,6 @@ function M.mason_tool_installer()
       "textlint",
       "typescript-language-server",
       "vale",
-      "yaml-language-server",
       "yamlfmt",
     },
     auto_update = true,
