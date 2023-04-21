@@ -11,6 +11,9 @@ function M.mason_tool_installer()
       "editorconfig-checker",
       "eslint-lsp",
       "fixjson",
+      "gofumpt",
+      "golangci-lint",
+      "gopls",
       "graphql-language-service-cli",
       "html-lsp",
       "jdtls",
@@ -116,10 +119,25 @@ function M.lspconfig()
     end
   end
 
+  local lsp_flags = {
+    -- This is the default in Nvim 0.7+
+    debounce_text_changes = 150,
+  }
+
   local handler = function(server_name)
+    local settings = {}
+    if server_name == "gopls" then
+      settings = {
+        gopls = {
+          gofumpt = true,
+        },
+      }
+    end
     require("lspconfig")[server_name].setup({
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = settings,
+      flag = lsp_flags,
     })
   end
 
