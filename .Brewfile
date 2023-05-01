@@ -20,6 +20,8 @@ tap "neovim/neovim"
 tap "noborus/tap"
 tap "teamookla/speedtest"
 tap "tgotwig/linux-dust"
+# Run your GitHub Actions locally 🚀
+brew "act"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Library and utilities for processing GIFs
@@ -32,8 +34,6 @@ brew "xz"
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -62,8 +62,6 @@ brew "glib"
 brew "libffi"
 # Perl compatible regular expressions library
 brew "pcre"
-# Command-line interface for SQLite
-brew "sqlite"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # GNOME accessibility toolkit
@@ -96,6 +94,8 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Asynchronous event library
@@ -110,6 +110,8 @@ brew "libtasn1"
 brew "nettle"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Ubiquitous Intelligent Language for Extensions
@@ -118,8 +120,6 @@ brew "guile"
 brew "emacs", restart_service: true
 # Emacs dependency management
 brew "cask"
-# Next-gen compiler infrastructure
-brew "llvm"
 # C/C++/ObjC language server
 brew "ccls"
 # Create and view interactive cheat sheets for *nix commands
@@ -230,6 +230,8 @@ brew "gobject-introspection"
 brew "gping"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
+# Image manipulation
+brew "netpbm"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
@@ -258,6 +260,8 @@ brew "hadolint"
 brew "hexyl"
 # Viewer/editor/analyzer for executables
 brew "ht"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.10"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Configurable static site generator
@@ -310,22 +314,20 @@ brew "libvpx"
 brew "libxslt"
 # C library for reading, creating, and modifying zip archives
 brew "libzip"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Just-In-Time Compiler (JIT) for the Lua programming language
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
+# Platform built on V8 to build network applications
+brew "node@16"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
-# Parser generator tool and incremental parsing library
-brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -394,8 +396,6 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -475,7 +475,7 @@ cask "deepl"
 cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
-# Draw.io is free online diagram software
+# Online diagram software
 cask "drawio"
 # Collaborative team software
 cask "figma"
@@ -501,6 +501,7 @@ cask "gitkraken"
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
+# Japanese input software
 cask "google-japanese-ime"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
