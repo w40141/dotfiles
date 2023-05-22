@@ -3,10 +3,6 @@ local setup = require("modules.misc.setup")
 
 return {
   {
-    "vim-jp/vimdoc-ja",
-    cmd = "help",
-  },
-  {
     "dstein64/vim-startuptime",
     cmd = "StartupTime",
   },
