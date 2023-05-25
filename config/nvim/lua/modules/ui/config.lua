@@ -180,13 +180,12 @@ function M.bufferline()
 
   require("bufferline").setup({
     options = {
-      numbers = "buffer_id",
+      numbers = "ordinal",
       close_command = "bdelete! %d",    -- can be a string | function, see "Mouse actions"
       right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
       left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
       middle_mouse_command = nil,       -- can be a string | function, see "Mouse actions"
       indicator = { icon = "▎", stype = "icon" },
-      buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",
       -- left_trunc_marker = '',
@@ -277,8 +276,7 @@ function M.lualine()
             info = "DiagnosticInfo",
             hint = "DiagnosticHint",
           },
-          symbols = { Error = "", Warn = "", Hint = "", Info = "" },
-          colored = true,
+          symbols = { Error = "", Warn = "", Hint = "", Info = "" },
         },
       },
       lualine_x = {

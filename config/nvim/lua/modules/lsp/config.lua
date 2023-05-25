@@ -74,7 +74,7 @@ function M.lspconfig()
   local augroup = api.nvim_create_augroup
   local autocmd = api.nvim_create_autocmd
 
-  local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+  local signs = { Error = "", Warn = "", Hint = "", Info = "" }
   for type, icon in pairs(signs) do
     local sign = "DiagnosticSign" .. type
     v.fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
