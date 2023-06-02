@@ -56,12 +56,6 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
-# Portable Foreign Function Interface library
-brew "libffi"
-# Perl compatible regular expressions library
-brew "pcre"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # C parser in Python
@@ -92,8 +86,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Asynchronous event library
@@ -108,8 +100,6 @@ brew "libtasn1"
 brew "nettle"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Ubiquitous Intelligent Language for Extensions
@@ -240,6 +230,8 @@ brew "librsvg"
 brew "graphviz"
 # Command-line tool for generating regular expressions
 brew "grex"
+# Like cURL, but for gRPC
+brew "grpcurl"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
 # Fallback theme for FreeDesktop.org icon themes
@@ -258,8 +250,6 @@ brew "hadolint"
 brew "hexyl"
 # Viewer/editor/analyzer for executables
 brew "ht"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # User-friendly cURL replacement (command-line HTTP client)
 brew "httpie"
 # Configurable static site generator
@@ -274,6 +264,8 @@ brew "x265"
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
+# Image loading and rendering library
+brew "imlib2"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # Regular expressions library
@@ -292,6 +284,8 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
+# Portable Foreign Function Interface library
+brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -318,18 +312,24 @@ brew "llvm"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# Platform built on V8 to build network applications
-brew "node@16"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
+# Platform built on V8 to build network applications
+brew "node"
 # Fish-like, POSIX-compatible shell
 brew "nsh"
 # Platform-neutral API for system-level and libc-like functions
@@ -344,6 +344,8 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
+# Perl compatible regular expressions library
+brew "pcre"
 # Modern Python package and dependency manager supporting the latest PEP standards
 brew "pdm"
 # Simplistic interactive filtering tool
@@ -362,6 +364,8 @@ brew "procs"
 brew "proj"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Persistent key-value database, with built-in net interface
@@ -394,6 +398,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -564,6 +570,7 @@ cask "xquartz"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
+mas "Gapplin", id: 768053424
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
@@ -576,3 +583,5 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "TweetDeck", id: 485812721
 mas "Xcode", id: 497799835
+vscode "ms-azuretools.vscode-docker"
+vscode "MS-CEINTL.vscode-language-pack-ja"
