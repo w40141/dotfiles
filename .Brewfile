@@ -32,6 +32,8 @@ brew "xz"
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -56,10 +58,18 @@ brew "aspell"
 brew "pcre2"
 # Core application library for C
 brew "glib"
+# Portable Foreign Function Interface library
+brew "libffi"
+# Perl compatible regular expressions library
+brew "pcre"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # GNOME accessibility toolkit
 brew "atk"
 # C parser in Python
 brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool
@@ -218,8 +228,6 @@ brew "gobject-introspection"
 brew "gping"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
-# Image manipulation
-brew "netpbm"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
@@ -264,8 +272,6 @@ brew "x265"
 brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Image loading and rendering library
-brew "imlib2"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
 # Regular expressions library
@@ -284,8 +290,6 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Portable Foreign Function Interface library
-brew "libffi"
 # Conversion library
 brew "libiconv"
 # Postgres C API library
@@ -344,8 +348,6 @@ brew "pacvim"
 brew "pandoc"
 # Command-line tool to generate, analyze, convert and manipulate colors
 brew "pastel"
-# Perl compatible regular expressions library
-brew "pcre"
 # Modern Python package and dependency manager supporting the latest PEP standards
 brew "pdm"
 # Simplistic interactive filtering tool
@@ -364,8 +366,6 @@ brew "procs"
 brew "proj"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Reattach process (e.g., tmux) to background
 brew "reattach-to-user-namespace"
 # Persistent key-value database, with built-in net interface
@@ -452,25 +452,13 @@ brew "mongodb/brew/mongodb-community"
 brew "noborus/tap/trdsql"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"
-# GPU-accelerated terminal emulator
-cask "alacritty"
 # Application launcher and productivity software
 cask "alfred"
-# Tools for building Android applications
-cask "android-studio"
-# Application uninstaller
-cask "appcleaner"
-# Tool to flash OS images to SD cards & USB drives
-cask "balenaetcher"
 # Web browser focusing on privacy
 cask "brave-browser"
-# GUI app for Homebrew
-cask "cakebrew"
 # Clipboard extension app
 cask "clipy"
 cask "color-oracle"
-# API documentation browser and code snippet manager
-cask "dash"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Trains AIs to understand and translate texts
@@ -485,8 +473,6 @@ cask "drawio"
 cask "figma"
 # Web browser
 cask "firefox"
-# Build apps and clock faces for Fitbit
-cask "fitbit-os-simulator"
 cask "font-biz-udgothic"
 # Universal design typeface in the Japanese Mincho type tradition
 cask "font-biz-udmincho"
@@ -511,18 +497,12 @@ cask "google-japanese-ime"
 cask "grammarly"
 # Screenshot and screen recording tool
 cask "gyazo"
-# Desktop automation application
-cask "hammerspoon"
 # IDE for Java development - community edition
 cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Interface for reading and syncing eBooks
 cask "kindle"
-# GPU-based terminal emulator
-cask "kitty"
-# Kubernetes IDE
-cask "lens"
 # Software for Logitech devices
 cask "logi-options-plus"
 # Full TeX Live distribution without GUI applications
@@ -531,18 +511,10 @@ cask "mactex-no-gui"
 cask "microsoft-auto-update"
 # Office suite
 cask "microsoft-office"
-# Visual tool to design, develop and administer MySQL servers
-cask "mysqlworkbench"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# Finder Toolbar app to open the current directory in Terminal or Editor
-cask "openinterminal"
 # Collaboration platform for API development
 cask "postman"
-# Imaging utility to install operating systems to a microSD card
-cask "raspberry-pi-imager"
-# Control your tools with a few keystrokes
-cask "raycast"
 # MySQL/MariaDB database management
 cask "sequel-ace"
 # PDF reader and note-taking application
@@ -559,22 +531,12 @@ cask "vagrant"
 cask "visual-studio-code"
 # Web browser with built-in email client focusing on customization and control
 cask "vivaldi"
-# Multimedia player
-cask "vlc"
-# Rust-based terminal
-cask "warp"
-# Network protocol analyzer
-cask "wireshark"
-# Open-source version of the X.Org X Window System
-cask "xquartz"
 # Video communication and virtual meeting platform
 cask "zoom"
 mas "Amphetamine", id: 937984704
-mas "Gapplin", id: 768053424
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
-mas "Levelator", id: 1493326487
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Mathpix Snipping Tool", id: 1349670778
