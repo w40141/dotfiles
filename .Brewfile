@@ -5,7 +5,6 @@ tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
 tap "delphinus/sfmono-square"
 tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
@@ -32,8 +31,6 @@ brew "xz"
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
 # Automatic configure script builder
@@ -68,8 +65,6 @@ brew "python@3.9"
 brew "atk"
 # C parser in Python
 brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool
@@ -96,6 +91,8 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Tool Command Language
+brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Asynchronous event library
@@ -110,6 +107,8 @@ brew "libtasn1"
 brew "nettle"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Ubiquitous Intelligent Language for Extensions
@@ -228,6 +227,8 @@ brew "gobject-introspection"
 brew "gping"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
+# Image manipulation
+brew "netpbm"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
@@ -238,8 +239,6 @@ brew "librsvg"
 brew "graphviz"
 # Command-line tool for generating regular expressions
 brew "grex"
-# Like cURL, but for gRPC
-brew "grpcurl"
 # GSettings schemas for desktop components
 brew "gsettings-desktop-schemas"
 # Fallback theme for FreeDesktop.org icon themes
@@ -316,24 +315,18 @@ brew "llvm"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
+# Platform built on V8 to build network applications
+brew "node@16"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
-# General-purpose lossless data-compression library
-brew "zlib"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
-# Parser generator tool and incremental parsing library
-brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
 brew "nkf"
-# Platform built on V8 to build network applications
-brew "node"
 # Fish-like, POSIX-compatible shell
 brew "nsh"
 # Platform-neutral API for system-level and libc-like functions
@@ -398,8 +391,6 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
-# Tool Command Language
-brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -537,6 +528,7 @@ mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
+mas "Levelator", id: 1493326487
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Mathpix Snipping Tool", id: 1349670778
@@ -545,5 +537,3 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "TweetDeck", id: 485812721
 mas "Xcode", id: 497799835
-vscode "ms-azuretools.vscode-docker"
-vscode "MS-CEINTL.vscode-language-pack-ja"
