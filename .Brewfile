@@ -528,7 +528,6 @@ mas "Amphetamine", id: 937984704
 mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
-mas "Levelator", id: 1493326487
 mas "LINE", id: 539883307
 mas "Magnet", id: 441258766
 mas "Mathpix Snipping Tool", id: 1349670778
