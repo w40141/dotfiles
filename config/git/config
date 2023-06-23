@@ -55,7 +55,6 @@
 
 [ghq]
 	use = w40141
-	root = ~/dev/src
 
 [includeIf "gitdir:~/dev/src/github-sub/pol-inc/"]
    path = ~/.gitconfig_sub
