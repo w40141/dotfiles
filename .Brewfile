@@ -17,7 +17,7 @@ tap "neovim/neovim"
 tap "noborus/tap"
 tap "teamookla/speedtest"
 tap "tgotwig/linux-dust"
-# Run your GitHub Actions locally 🚀
+# Run your GitHub Actions locally
 brew "act"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
@@ -349,7 +349,7 @@ brew "peco"
 brew "perl"
 # Execute binaries from Python packages in isolated environments
 brew "pipx"
-# 📦🚀 Fast, disk space efficient package manager
+# Fast, disk space efficient package manager
 brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
