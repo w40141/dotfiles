@@ -109,7 +109,6 @@ function fish_user_key_bindings
 end
 
 # for develop
-set -x GOPATH $HOME/dev
 set -x PATH $PATH $GOPATH/bin
 
 # theme-bobthefish
