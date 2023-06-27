@@ -8,7 +8,8 @@
 -- i[nore]map |  -   | yes |  -  |  -  |  -  |  -  |  -   |  -   |
 -- c[nore]map |  -   |  -  | yes |  -  |  -  |  -  |  -   |  -   |
 -- v[nore]map |  -   |  -  |  -  | yes | yes |  -  |  -   |  -   |
--- x[nore]map |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   | s[nore]map |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
+-- x[nore]map |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   |
+-- s[nore]map |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
 -- o[nore]map |  -   |  -  |  -  |  -  |  -  | yes |  -   |  -   |
 -- t[nore]map |  -   |  -  |  -  |  -  |  -  |  -  | yes  |  -   |
 -- l[nore]map |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |

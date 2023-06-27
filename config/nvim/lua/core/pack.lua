@@ -45,15 +45,15 @@ function Pack:assume_plugins()
   for _, p in ipairs({
     { "wbthomason/packer.nvim", opt = true },
   }) do
-  local dir = p.opt and "opt" or "start"
-  local pkg = p[1]
-  local branch = p.branch or "master"
-  local name = pkg:match("[^/]+$")
-  local path = ("%s/site/pack/packer/%s/%s"):format(data_dir, dir, name)
-  if not self:exists(path) then
-    v.cmd(("!git clone https://github.com/%s %s -b %s"):format(pkg, path, branch))
+    local dir = p.opt and "opt" or "start"
+    local pkg = p[1]
+    local branch = p.branch or "master"
+    local name = pkg:match("[^/]+$")
+    local path = ("%s/site/pack/packer/%s/%s"):format(data_dir, dir, name)
+    if not self:exists(path) then
+      v.cmd(("!git clone https://github.com/%s %s -b %s"):format(pkg, path, branch))
+    end
   end
-end
 end
 
 function Pack:packer()
