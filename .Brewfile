@@ -31,8 +31,10 @@ brew "xz"
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
+# Codec library for encoding and decoding AV1 video streams
+brew "aom"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+brew "openssl@3"
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -43,8 +45,6 @@ brew "gmp"
 brew "coreutils"
 # Generic library support script
 brew "libtool"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
 # Library for command-line editing
 brew "readline"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
@@ -57,6 +57,8 @@ brew "pcre2"
 brew "glib"
 # Portable Foreign Function Interface library
 brew "libffi"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Perl compatible regular expressions library
 brew "pcre"
 # Interpreted, interactive, object-oriented programming language
@@ -65,6 +67,8 @@ brew "python@3.9"
 brew "atk"
 # C parser in Python
 brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool
@@ -91,8 +95,6 @@ brew "fontconfig"
 brew "pkg-config"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Tool Command Language
-brew "tcl-tk"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # Asynchronous event library
@@ -107,8 +109,6 @@ brew "libtasn1"
 brew "nettle"
 # Library to load and enumerate PKCS#11 modules
 brew "p11-kit"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # GNU Ubiquitous Intelligent Language for Extensions
@@ -221,14 +221,14 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Ping, but with a graph
 brew "gping"
 # Smart font renderer for non-Roman scripts
 brew "graphite2"
-# Image manipulation
-brew "netpbm"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Framework for layout and rendering of i18n text
@@ -315,14 +315,18 @@ brew "llvm"
 brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
-# Platform built on V8 to build network applications
-brew "node@16"
+# MongoDB Shell to connect, configure, query, and work with your MongoDB database
+brew "mongosh"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
+# General-purpose lossless data-compression library
+brew "zlib"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
+# Parser generator tool and incremental parsing library
+brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -391,6 +395,8 @@ brew "subversion"
 brew "swftools"
 # Rich and complete approach to parallelism in C++
 brew "tbb"
+# Tool Command Language
+brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
 # Open video compression format
@@ -536,3 +542,5 @@ mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "TweetDeck", id: 485812721
 mas "Xcode", id: 497799835
+vscode "ms-azuretools.vscode-docker"
+vscode "MS-CEINTL.vscode-language-pack-ja"
