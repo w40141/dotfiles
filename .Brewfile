@@ -407,8 +407,6 @@ brew "tmux"
 brew "toilet"
 # Program that allows you to count code, quickly
 brew "tokei"
-# Anonymizing overlay network for TCP
-brew "tor", restart_service: true
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Command-line unarchiving tools supporting multiple formats
