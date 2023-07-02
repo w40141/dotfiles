@@ -68,3 +68,5 @@ petertriho
 trpc
 isort
 pydantic
+ndarray
+qubo
