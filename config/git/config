@@ -56,7 +56,7 @@
 [ghq]
 	use = w40141
 
-[includeIf "gitdir:~/dev/src/github-sub/pol-inc/"]
+[includeIf "gitdir:~/ghq/github-sub/pol-inc/"]
    path = ~/.gitconfig_sub
 
 [pager]
