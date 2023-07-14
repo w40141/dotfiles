@@ -56,9 +56,6 @@
 [ghq]
 	use = w40141
 
-[includeIf "gitdir:~/ghq/github-sub/pol-inc/"]
-   path = ~/.gitconfig_sub
-
 [pager]
 	diff = delta
 	log = delta
