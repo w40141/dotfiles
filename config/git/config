@@ -1,6 +1,4 @@
-# This is Git's per-user configuration file.
 [user]
-# Please adapt and uncomment the following lines:
 	name = w40141
 	email = w.40141@gmail.com
 
@@ -57,7 +55,10 @@
 	use = w40141
 
 [url "git@github.com:w40141"]
-	insteadOf = https://github.com/w40141
+	pushInsteadOf = https://github.com/w40141
+
+[includeIf "gitdir:~/ghq/github-sub/**"]
+  path = ~/.gitconfig_sub
 
 [pager]
 	diff = delta
