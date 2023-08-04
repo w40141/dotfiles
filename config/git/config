@@ -56,6 +56,9 @@
 [ghq]
 	use = w40141
 
+[url "git@github.com:w40141"]
+	pushInsteadOf = https://github.com/w40141
+
 [pager]
 	diff = delta
 	log = delta
@@ -79,6 +82,3 @@
 	hunk-header-file-style = red
 	hunk-header-line-number-style = "#067a00"
 	hunk-header-style = file line-number syntax
-
-[url "git@github.com:"]
-	pushInsteadOf = https://github.com/
