@@ -57,7 +57,7 @@
 	use = w40141
 
 [url "git@github.com:w40141"]
-	pushInsteadOf = https://github.com/w40141
+	insteadOf = https://github.com/w40141
 
 [pager]
 	diff = delta
