@@ -11,7 +11,6 @@ local disable_distribution_plugins = function()
   g.loaded_netrwFileHandlers = 1
   g.loaded_netrwPlugin = 1
   g.loaded_netrwSettings = 1
-  g.loaded_node_provider = 0
   g.loaded_perl_provider = 0
   g.loaded_python3_provider = 0
   g.loaded_remote_plugins = 1

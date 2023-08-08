@@ -22,7 +22,6 @@ return {
       i({ "hrsh7th/cmp-nvim-lsp-document-symbol" }),
       i({ "hrsh7th/cmp-buffer" }),
       i({ "ray-x/cmp-treesitter" }),
-      i({ "yutkat/cmp-mocword" }),
       c({ "hrsh7th/cmp-cmdline" }),
       c({ "hrsh7th/cmp-path" }),
       i({
@@ -34,6 +33,13 @@ return {
           config = conf.luasnip,
         },
       }),
+      i({
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+          require("copilot_cmp").setup()
+        end,
+      }),
     },
   },
   {
@@ -42,5 +48,12 @@ return {
     requires = { "hrsh7th/nvim-cmp" },
     want = { "nvim-cmp" },
     config = conf.autopairs,
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = conf.copilot,
+    -- setup = setup.copilot,
   },
 }

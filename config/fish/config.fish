@@ -109,7 +109,7 @@ function fish_user_key_bindings
 end
 
 # for develop
-set -x PATH $PATH $GOPATH/bin
+# set -x PATH $PATH $GOPATH/bin
 
 # theme-bobthefish
 set -g theme_color_scheme dracula
@@ -143,6 +143,7 @@ if test (uname) = Linux
     source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
+    fish_add_path $HOME/go/bin
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
     fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin

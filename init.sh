@@ -26,3 +26,5 @@ for f in ??*; do
 done
 
 git submodule update -i
+
+echo "complete!"
