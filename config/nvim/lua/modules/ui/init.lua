@@ -52,29 +52,29 @@ return {
     event = { "BufReadPost" },
     config = conf.indent_blankline,
   },
-  {
-    -- A fancy, configurable, notification manager for NeoVim
-    "folke/noice.nvim",
-    event = {
-      "BufRead",
-      "BufNewFile",
-      "InsertEnter",
-      "CmdlineEnter",
-      "CursorHold",
-      "FocusLost",
-    },
-    module = { "noice" },
-    requires = {
-      { "MunifTanjim/nui.nvim" },
-      {
-        "rcarriga/nvim-notify",
-        module = { "notify" },
-        config = conf.notify,
-      },
-    },
-    setup = setup.noice,
-    config = conf.noice,
-  },
+  -- {
+  --   -- A fancy, configurable, notification manager for NeoVim
+  --   "folke/noice.nvim",
+  --   event = {
+  --     "BufRead",
+  --     "BufNewFile",
+  --     "InsertEnter",
+  --     "CmdlineEnter",
+  --     "CursorHold",
+  --     "FocusLost",
+  --   },
+  --   module = { "noice" },
+  --   requires = {
+  --     { "MunifTanjim/nui.nvim" },
+  --     {
+  --       "rcarriga/nvim-notify",
+  --       module = { "notify" },
+  --       config = conf.notify,
+  --     },
+  --   },
+  --   setup = setup.noice,
+  --   config = conf.noice,
+  -- },
   {
     -- Scrollbar
     "petertriho/nvim-scrollbar",

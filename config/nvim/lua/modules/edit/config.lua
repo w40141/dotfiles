@@ -264,7 +264,7 @@ function M.eskk()
   g["toggle_markdown_eskk"] = 1
   g["eskk#directory"] = "$XDG_CONFIG_HOME/skk"
   g["eskk#dictionary"] = {
-    path = "$XDG_CONFIG_HOME/skk/my_jisyo",
+    path = "$XDG_CONFIG_HOME/skk/SKK-JISYO.S",
     sorted = 1,
     encoding = "utf-8",
   }

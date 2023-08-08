@@ -7,8 +7,8 @@ function M.todo_comments()
     -- keywords recognized as todo comments
     keywords = {
       FIX = {
-        icon = " ",                          -- icon used for the sign, and in search results
-        color = "error",                        -- can be a hex color, or a named color (see below)
+        icon = " ", -- icon used for the sign, and in search results
+        color = "error", -- can be a hex color, or a named color (see below)
         alt = { "FIXME", "BUG", "FIXIT", "ISSUE" }, -- a set of other keywords that all map to this FIX keywords
         -- signs = false, -- configure signs for some keywords individually
       },
@@ -83,7 +83,7 @@ function M.trouble()
       hover = "H",
       preview = "p",
       close_folds = { "zM", "zm" }, -- close all folds
-      open_folds = { "zR", "zr" },  -- open all folds
+      open_folds = { "zR", "zr" }, -- open all folds
       toggle_fold = { "<tab>" }, -- toggle fold of current file
       previous = "k",
       next = "j",

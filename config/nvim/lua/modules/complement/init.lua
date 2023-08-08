@@ -1,4 +1,5 @@
 local conf = require("modules.complement.config")
+-- local setup = require("modules.complement.setup")
 
 local function i(p)
   p.event = { "InsertEnter" }
@@ -35,25 +36,41 @@ return {
       }),
       i({
         "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
+        require = {
+          "zbirenbaum/copilot.lua",
+          cmd = "Copilot",
+          event = "InsertEnter",
+          config = conf.copilot,
+        },
         config = function()
           require("copilot_cmp").setup()
         end,
       }),
+      -- i({ "uga-rosa/cmp-skkeleton" }),
     },
   },
+  -- {
+  --   "vim-skk/skkeleton",
+  --   -- keys = {
+  --   --   { "i", "<Plug>(skkeleton-enable)" },
+  --   --   { "i", "<Plug>(skkeleton-disable)" },
+  --   --   { "i", "<Plug>(skkeleton-toggle)" },
+  --   --   { "c", "<Plug>(skkeleton-enable)" },
+  --   --   { "c", "<Plug>(skkeleton-disable)" },
+  --   --   { "c", "<Plug>(skkeleton-toggle)" },
+  --   --   { "l", "<Plug>(skkeleton-enable)" },
+  --   --   { "l", "<Plug>(skkeleton-disable)" },
+  --   --   { "l", "<Plug>(skkeleton-toggle)" },
+  --   -- },
+  --   setup = setup.skkeleton,
+  --   config = conf.skkeleton,
+  --   want = { "denops.vim" },
+  -- },
   {
     "windwp/nvim-autopairs",
     module = { "nvim-autopairs" },
     requires = { "hrsh7th/nvim-cmp" },
     want = { "nvim-cmp" },
     config = conf.autopairs,
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = conf.copilot,
-    -- setup = setup.copilot,
   },
 }
