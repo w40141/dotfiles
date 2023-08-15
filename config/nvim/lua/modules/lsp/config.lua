@@ -27,7 +27,6 @@ function M.mason_tool_installer()
       "pyright",
       "ruff",
       "rust-analyzer",
-      "rustfmt",
       "shfmt",
       "sql-formatter",
       "sqlls",
