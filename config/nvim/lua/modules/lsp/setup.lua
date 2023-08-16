@@ -16,13 +16,10 @@ function M.lspconfig()
     end
   end
 
-  -- https://neovim.io/doc/user/diagnostic.html#diagnostic-api
   key("n", "[dev]o", d("open_float"))
   key("n", "]g", d("goto_next"))
   key("n", "[g", d("goto_prev"))
   key("n", "[dev]q", d("setloclist"))
-  -- local opts = { noremap = true, silent = true, buffer = bufnr }
-  -- https://neovim.io/doc/user/lsp.html#lsp-buf
   key("n", "H", b("hover"))
   key("n", "[dev]f", b("format"))
   key("n", "[dev]r", b("references"))

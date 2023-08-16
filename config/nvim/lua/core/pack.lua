@@ -1,4 +1,12 @@
--- TODO: https://zenn.dev/yano/articles/neovim_frontend_development_2022
+-- TODO: https://github.com/uga-rosa/ccc.nvim
+-- TODO: https://github.com/kkharji/lspsaga.nvim
+-- TODO: https://github.com/stevearc/dressing.nvim
+-- TODO: https://github.com/utilyre/barbecue.nvim
+-- TODO: https://github.com/folke/noice.nvim
+-- TODO: https://github.com/MunifTanjim/nui.nvim
+-- TODO: https://github.com/rcarriga/nvim-notify
+-- TODO: https://github.com/Bekaboo/dropbar.nvim
+-- TODO: https://github.com/hrsh7th/vim-eft
 
 local gl = require("core.global")
 local v = gl.v
