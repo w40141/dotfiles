@@ -59,6 +59,7 @@ local load_core = function()
   require("core.keymap")
   require("core.event")
   require("core.pack")
+  -- require("core.lazy")
 end
 
 load_core()
