@@ -58,8 +58,8 @@ local load_core = function()
   require("core.option")
   require("core.keymap")
   require("core.event")
-  require("core.pack")
-  -- require("core.lazy")
+  -- require("core.pack")
+  require("core.lazy")
 end
 
 load_core()

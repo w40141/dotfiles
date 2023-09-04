@@ -51,7 +51,7 @@ function M.alpha()
     d.button("t", " Find TODO", "<cmd>TodoTelescope<CR>"),
     d.button("o", " Open explorer", "<cmd>NvimTreeToggle<cr>"),
     d.button("c", "󱙣 Check health", "<cmd>checkhealth<cr>"),
-    d.button("u", "󰚰 Update plugins", "<cmd>PackerSync<CR>"),
+    d.button("u", "󰚰 Update plugins", "<cmd>Lazy<CR>"),
     d.button("m", " Open Mason Maneger", "<cmd>Mason<CR>"),
     d.button("T", "󱫐 Measure time", "<cmd>StartupTime<CR>"),
     d.button("q", " Quit", "<cmd>qa<CR>"),
