@@ -176,7 +176,7 @@ require("lazy").setup({
 		-- Terminal
 		"akinsho/toggleterm.nvim",
 		keys = {
-			{ "n", [[<c-;>]] },
+			{ "<c-;>", mode = "n" },
 		},
 		cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
 		config = confTool.toggleterm,
@@ -185,7 +185,7 @@ require("lazy").setup({
 		-- Resizing of windows
 		"simeji/winresizer",
 		keys = {
-			{ "n", "<C-e>" },
+			{ "<C-e>", mode = "n" },
 		},
 		init = setupTool.winresizer,
 	},
@@ -193,8 +193,8 @@ require("lazy").setup({
 		-- quickly highlight <cword> or visually selected word
 		"t9md/vim-quickhl",
 		keys = {
-			{ "n", "<Plug>(quickhl-manual-this)" },
-			{ "n", "<Plug>(quickhl-manual-reset)" },
+			{ "<Plug>(quickhl-manual-this)", mode = "n" },
+			{ "<Plug>(quickhl-manual-reset)", mode = "n" },
 		},
 		init = setupTool.quickhl,
 	},
@@ -202,9 +202,9 @@ require("lazy").setup({
 		-- Highlight length of search result
 		"kevinhwang91/nvim-hlslens",
 		keys = {
-			{ "n", "*" },
-			{ "n", "g*" },
-			{ "n", "g*" },
+			{ "*", mode = "n" },
+			{ "g*", mode = "n" },
+			{ "g*", mode = "n" },
 		},
 		event = { "CmdlineEnter" },
 		dependencies = { "rapan931/lasterisk.nvim" },
@@ -230,7 +230,7 @@ require("lazy").setup({
 		-- Open URI
 		"tyru/open-browser.vim",
 		keys = {
-			{ "<plug>(openbrowser-smart-search)" },
+			{ "<plug>(openbrowser-smart-search)", mode = "n" },
 		},
 		init = setupMisc.open_browser,
 	},
@@ -344,16 +344,16 @@ require("lazy").setup({
 		"gbprod/yanky.nvim",
 		dependencies = { "stevearc/dressing.nvim", opt = true },
 		keys = {
-			{ "n", "<Plug>(YankyCycleBackward)" },
-			{ "n", "<Plug>(YankyCycleForward)" },
-			{ "n", "<Plug>(YankyGPutAfter)" },
-			{ "n", "<Plug>(YankyGPutBefore)" },
-			{ "n", "<Plug>(YankyPutAfter)" },
-			{ "n", "<Plug>(YankyPutBefore)" },
-			{ "x", "<Plug>(YankyGPutAfter)" },
-			{ "x", "<Plug>(YankyGPutBefore)" },
-			{ "x", "<Plug>(YankyPutAfter)" },
-			{ "x", "<Plug>(YankyPutBefore)" },
+			{ "<Plug>(YankyCycleBackward)", mode = "n" },
+			{ "<Plug>(YankyCycleForward)", mode = "n" },
+			{ "<Plug>(YankyGPutAfter)", mode = "n" },
+			{ "<Plug>(YankyGPutBefore)", mode = "n" },
+			{ "<Plug>(YankyPutAfter)", mode = "n" },
+			{ "<Plug>(YankyPutBefore)", mode = "n" },
+			{ "<Plug>(YankyGPutAfter)", mode = "x" },
+			{ "<Plug>(YankyGPutBefore)", mode = "x" },
+			{ "<Plug>(YankyPutAfter)", mode = "x" },
+			{ "<Plug>(YankyPutBefore)", mode = "x" },
 		},
 		cmd = { "YankyRingHistory" },
 		init = setupEdit.yanky,
@@ -386,7 +386,7 @@ require("lazy").setup({
 			},
 			{
 				"zbirenbaum/copilot.lua",
-				build = "Copilot auth",
+				build = "Copilot",
 				config = confComplement.copilot,
 			},
 			{
