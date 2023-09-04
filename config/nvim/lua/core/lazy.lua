@@ -20,26 +20,6 @@ local confEdit = require("modules.edit.config")
 local confComplement = require("modules.complement.config")
 -- local setup = require("modules.complement.setup")
 
-local function i(p)
-	p.event = { "InsertEnter" }
-	return p
-end
-
-local function c(p)
-	p.event = { "CmdlineEnter" }
-	return p
-end
-
-local function t(p)
-	p.event = { "BufRead", "BufNewFile" }
-	return p
-end
-
-local function e(p)
-	p.event = { "BufReadPre", "FocusLost", "CursorHold" }
-	return p
-end
-
 local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	fn.system({
@@ -53,30 +33,49 @@ if not v.loop.fs_stat(lazypath) then
 end
 opt.rtp:prepend(lazypath)
 
+local opts = {
+	defaults = {
+		lazy = true,
+	},
+	performance = {
+		cache = {
+			enabled = true,
+		},
+	},
+}
+
 require("lazy").setup({
 	{
 		"rebelot/kanagawa.nvim",
-		event = { "VimEnter" },
+		event = {
+			"VimEnter",
+		},
 		config = confUi.kanagawa,
 	},
 	{
 		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
 		event = "BufWinEnter",
 		config = confUi.alpha,
 	},
 	{
 		"stevearc/aerial.nvim",
-		cmd = { "Aerial" },
+		cmd = {
+			"Aerial",
+		},
 		init = setupUi.aerial,
 		config = confUi.aerial,
 	},
 	{
 		-- Buffer line
 		"akinsho/bufferline.nvim",
-		event = { "BufReadPre" },
+		event = {
+			"BufReadPre",
+		},
 		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
+			"nvim-tree/nvim-web-devicons",
 		},
 		init = setupUi.bufferline,
 		config = confUi.bufferline,
@@ -84,11 +83,13 @@ require("lazy").setup({
 	{
 		-- Status line
 		"nvim-lualine/lualine.nvim",
-		event = { "BufReadPre" },
+		event = {
+			"BufReadPre",
+		},
 		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "rebelot/kanagawa.nvim" },
-			{ "stevearc/aerial.nvim" },
+			"nvim-tree/nvim-web-devicons",
+			"rebelot/kanagawa.nvim",
+			"stevearc/aerial.nvim",
 		},
 		init = setupUi.lualine,
 		config = confUi.lualine,
@@ -96,7 +97,9 @@ require("lazy").setup({
 	{
 		-- Indent guide
 		"lukas-reineke/indent-blankline.nvim",
-		event = { "BufReadPost" },
+		event = {
+			"BufReadPost",
+		},
 		config = confUi.indent_blankline,
 	},
 	-- {
@@ -137,7 +140,9 @@ require("lazy").setup({
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		event = { "BufReadPost" },
+		event = {
+			"BufReadPost",
+		},
 		config = confUi.gitsigns,
 	},
 	{
@@ -146,49 +151,89 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
-		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
+		cmd = {
+			"NvimTreeToggle",
+			"NvimTreeFindFileToggle",
+		},
 		init = setupUi.nvimTree,
 		config = confUi.nvimTree,
 	},
 	{
 		-- Treesitter configurations
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-		event = { "BufNewFile", "BufRead" },
+		build = ":TSUpdate",
+		event = "VeryLazy",
+		-- event = {
+		--   "BufNewFile",
+		--   "BufRead",
+		-- },
 		config = confTree.treesitter,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 	},
-	t({ "nvim-treesitter/nvim-treesitter-textobjects" }),
-	t({ "yioneko/nvim-yati" }),
-	t({ "m-demare/hlargs.nvim" }),
+	{
+		"yioneko/nvim-yati",
+		event = {
+			"BufNewFile",
+			"BufRead",
+		},
+	},
+	{
+		"m-demare/hlargs.nvim",
+		event = {
+			"BufNewFile",
+			"BufRead",
+		},
+	},
 	-- e({"mrjones2014/nvim-ts-rainbow"}),
 	-- e({ "p00f/nvim-ts-rainbow" }),
-	t({
+	{
 		"haringsrob/nvim_context_vt",
 		config = confTree.context_vt,
-	}),
+		event = {
+			"BufNewFile",
+			"BufRead",
+		},
+	},
 	{
 		"TimUntersberger/neogit",
-		dependencies = { "nvim-lua/plenary.nvim", opt = true },
-		cmd = { "Neogit" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		cmd = {
+			"Neogit",
+		},
 		config = confTool.neogit,
 	},
 	{
 		-- Delete buffers
 		"famiu/bufdelete.nvim",
-		cmd = { "Bdelete", "Bwipeout" },
+		cmd = {
+			"Bdelete",
+			"Bwipeout",
+		},
 		event = "CmdlineEnter",
 	},
 	{
 		-- Terminal
 		"akinsho/toggleterm.nvim",
-		keys = { "n", [[<c-;>]] },
-		cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
+		keys = {
+			{ "n", [[<c-;>]] },
+		},
+		cmd = {
+			"ToggleTerm",
+			"ToggleTermAll",
+			"TermExec",
+		},
 		config = confTool.toggleterm,
 	},
 	{
 		-- Resizing of windows
 		"simeji/winresizer",
-		keys = { { "n", "<C-e>" } },
+		keys = {
+			{ "n", "<C-e>" },
+		},
 		init = setupTool.winresizer,
 	},
 	{
@@ -203,8 +248,14 @@ require("lazy").setup({
 	{
 		-- Highlight length of search result
 		"kevinhwang91/nvim-hlslens",
-		keys = { { "n", "*" }, { "n", "g*" }, { "n", "g*" } },
-		event = { "CmdlineEnter" },
+		keys = {
+			{ "n", "*" },
+			{ "n", "g*" },
+			{ "n", "g*" },
+		},
+		event = {
+			"CmdlineEnter",
+		},
 		dependencies = {
 			"rapan931/lasterisk.nvim",
 		},
@@ -229,10 +280,12 @@ require("lazy").setup({
 	{
 		-- Open URI
 		"tyru/open-browser.vim",
-		keys = { "<plug>(openbrowser-smart-search)" },
+		keys = {
+			{ "<plug>(openbrowser-smart-search)" },
+		},
 		init = setupMisc.open_browser,
 	},
-	e({
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			{
@@ -245,20 +298,28 @@ require("lazy").setup({
 		},
 		init = setupLsp.lspconfig,
 		config = confLsp.lspconfig,
-	}),
+		event = {
+			"BufReadPre",
+			"FocusLost",
+			"CursorHold",
+		},
+	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
+		cmd = {
+			"MasonToolsInstall",
+			"MasonToolsUpdate",
+		},
 		config = confLsp.mason_tool_installer,
 	},
 	{
 		-- Automatically uppercase SQL keywords
 		"jsborjesson/vim-uppercase-sql",
-		ft = { "sql" },
+		ft = "sql",
 	},
 	{
 		"previm/previm",
-		ft = { "markdown" },
+		ft = "markdown",
 		config = confLang.previm,
 	},
 	{
@@ -275,19 +336,20 @@ require("lazy").setup({
 	{
 		-- Fzf finder
 		"nvim-telescope/telescope.nvim",
-		cmd = { "Telescope" },
+		cmd = {
+			"Telescope",
+		},
 		dependencies = {
 			{
 				"folke/trouble.nvim",
 				cmd = { "Trouble" },
-				module = { "trouble" },
 				dependencies = {
-					{ "nvim-tree/nvim-web-devicons" },
+					"nvim-tree/nvim-web-devicons",
 				},
 				init = setupFzf.trouble,
 				config = confFzf.trouble,
 			},
-			{ "stevearc/aerial.nvim", module = { "aerial" } },
+			{ "stevearc/aerial.nvim" },
 		},
 		init = setupFzf.telescope,
 		config = confFzf.telescope,
@@ -295,8 +357,14 @@ require("lazy").setup({
 	{
 		-- Highlight, list and search todo comments
 		"folke/todo-comments.nvim",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		event = { "BufReadPre", "FocusLost", "CursorHold" },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		event = {
+			"BufReadPre",
+			"FocusLost",
+			"CursorHold",
+		},
 		cmd = {
 			"TodoQuickFix",
 			"TodoLocList",
@@ -309,34 +377,49 @@ require("lazy").setup({
 	{
 		-- Annotation generator
 		"danymat/neogen",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 		setup = setupEdit.neogen,
 		config = confEdit.neogen,
 	},
-	e({
+	{
 		-- A surround text object plugin for neovim written in lua.
 		"ur4ltz/surround.nvim",
 		config = confEdit.surround,
-	}),
-	i({
-		-- engine SKK
-		"tyru/eskk.vim",
-		keys = {
-			{ "i", "<Plug>(eskk:toggle)" },
-			{ "c", "<Plug>(eskk:toggle)" },
+		event = {
+			"BufReadPre",
+			"FocusLost",
+			"CursorHold",
 		},
-		init = setupEdit.eskk,
-		config = confEdit.eskk,
-	}),
-	e({
+	},
+	-- {
+	-- 	-- engine SKK
+	-- 	"tyru/eskk.vim",
+	-- 	keys = {
+	-- 		{ "i", "<Plug>(eskk:toggle)" },
+	-- 		{ "c", "<Plug>(eskk:toggle)" },
+	-- 	},
+	-- 	init = setupEdit.eskk,
+	-- 	config = confEdit.eskk,
+	-- 	event = { "InsertEnter" },
+	-- },
+	{
 		-- Comment out
 		"numToStr/Comment.nvim",
 		config = confEdit.comment,
-	}),
+		event = {
+			"BufReadPre",
+			"FocusLost",
+			"CursorHold",
+		},
+	},
 	{
 		-- Colorizer
 		"norcalli/nvim-colorizer.lua",
-		cmd = { "ColorizerToggle" },
+		cmd = {
+			"ColorizerToggle",
+		},
 		config = confEdit.colorizer,
 	},
 	{
@@ -368,39 +451,48 @@ require("lazy").setup({
 	{
 		"hrsh7th/nvim-cmp",
 		config = confComplement.cmp,
+		event = { "InsertEnter" },
 		dependencies = {
 			{ "onsails/lspkind-nvim" },
-			i({ "hrsh7th/cmp-nvim-lsp" }),
-			i({ "ray-x/lsp_signature.nvim", config = confComplement.signature }),
-			i({ "hrsh7th/cmp-nvim-lsp-document-symbol" }),
-			i({ "hrsh7th/cmp-buffer" }),
-			i({ "ray-x/cmp-treesitter" }),
-			c({ "hrsh7th/cmp-cmdline" }),
-			c({ "hrsh7th/cmp-path" }),
-			i({
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{
+				"ray-x/lsp_signature.nvim",
+				event = "VeryLazy",
+				opts = {},
+				config = function(_, o)
+					require("lsp_signature").setup(o)
+				end,
+			},
+			{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "ray-x/cmp-treesitter" },
+			{ "hrsh7th/cmp-cmdline" },
+			{ "hrsh7th/cmp-path" },
+			{
 				"saadparwaiz1/cmp_luasnip",
 				dependencies = {
 					"L3MON4D3/LuaSnip",
-					dependencies = { "rafamadriz/friendly-snippets" },
+					dependencies = { "rafamadriz/friendly-snippets", lazy = true },
 					config = confComplement.luasnip,
 				},
-			}),
-			i({
+				lazy = true,
+			},
+			{
 				"zbirenbaum/copilot-cmp",
 				config = function()
 					require("copilot_cmp").setup()
 				end,
-			}),
+			},
 		},
 	},
-	i({
+	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
 		config = confComplement.copilot,
-	}),
+	},
 	{
 		"windwp/nvim-autopairs",
 		dependencies = { "hrsh7th/nvim-cmp" },
 		config = confComplement.autopairs,
 	},
-})
+}, opts)
