@@ -463,6 +463,7 @@ function M.nvimTree()
 
     key("n", "l", api.tree.change_root_to_node, opts("CD"))
     key("n", "h", api.tree.change_root_to_parent, opts("Up"))
+    key("n", "<C-s>", api.node.open.vertical, opts("Open: Vertical Split"))
     key("n", "?", api.tree.toggle_help, opts("Help"))
     key("n", "sl", "<C-w>w", opts("Back Display"))
   end
