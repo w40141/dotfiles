@@ -18,8 +18,8 @@ set -x FZF_FIND_FILE_COMMAND $FZF_DEFAULT_COMMAND
 if command -s bat >/dev/null
     set -x FZF_PREVIEW_FILE_CMD "bat --color=always --style=numbers --line-range :500"
 end
-if command -s exa >/dev/null
-    set -x FZF_PREVIEW_DIR_CMD exa
+if command -s eza >/dev/null
+    set -x FZF_PREVIEW_DIR_CMD eza
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
 
@@ -207,12 +207,12 @@ end
 
 # zoxide init fish | source
 
-# for ls or exa
-if command -s exa >/dev/null
-    abbr -a ls 'exa --icons'
-    abbr -a la 'exa -a --icons'
-    abbr -a ll 'exa -l --icons'
-    abbr -a lal 'exa -al --icons'
+# for ls or eza
+if command -s eza >/dev/null
+    abbr -a ls 'eza --icons'
+    abbr -a la 'eza -a --icons'
+    abbr -a ll 'eza -l --icons'
+    abbr -a lal 'eza -al --icons'
 else
     abbr -a la 'ls -a'
     abbr -a ll 'ls -l'
@@ -271,7 +271,7 @@ abbr -a ghcr gh_create_and_ghq_get
 functions --copy cd standard_cd
 
 function cd
-    standard_cd $argv; and exa -a --icons
+    standard_cd $argv; and eza -a --icons
     set -x p (pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)
     echo -ne '\033]0;$p\007'
 end
