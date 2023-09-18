@@ -110,4 +110,9 @@ return {
     init = setup.nvimTree,
     config = conf.nvimTree,
   },
+  {
+    "stevearc/dressing.nvim",
+    opts = {},
+    config = conf.dressing,
+  },
 }

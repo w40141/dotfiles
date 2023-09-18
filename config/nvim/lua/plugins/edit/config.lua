@@ -315,7 +315,6 @@ function M.colorizer()
 end
 
 function M.yanky()
-  require("dressing").setup()
   require("yanky").setup({
     ring = {
       history_length = 100,

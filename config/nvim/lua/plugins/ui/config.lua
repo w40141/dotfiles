@@ -483,4 +483,8 @@ function M.nvimTree()
   })
 end
 
+function M.dressing()
+  require("dressing").setup()
+end
+
 return M
