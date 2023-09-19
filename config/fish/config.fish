@@ -1,7 +1,12 @@
-set -gx XDG_CONFIG_HOME $HOME/.config
-set -gx XDG_CACHE_HOME $HOME/.cache
-set -gx XDG_DATA_HOME $HOME/.local/share
-set -gx NVIM_PYTHON_LOG_FILE /tmp/nvim.log
+# define XDG paths
+set -q XDG_CONFIG_HOME || set -gx XDG_CONFIG_HOME $HOME/.config
+set -q XDG_DATA_HOME || set -gx XDG_DATA_HOME $HOME/.local/share
+set -q XDG_CACHE_HOME || set -gx XDG_CACHE_HOME $HOME/.cache
+
+# define fish config paths
+set -g FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
+set -g FISH_CONFIG $FISH_CONFIG_DIR/config.fish
+set -g FISH_CACHE_DIR $HOME/.cache/fish
 
 set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
 

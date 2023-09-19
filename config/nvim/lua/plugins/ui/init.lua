@@ -55,7 +55,7 @@ return {
 			"MunifTanjim/nui.nvim",
 			{ "rcarriga/nvim-notify", config = conf.notify },
 		},
-		setup = setup.noice,
+		init = setup.noice,
 		config = conf.noice,
 	},
 	{
