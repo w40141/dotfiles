@@ -45,19 +45,19 @@ return {
 		event = { "BufReadPost" },
 		config = conf.indent_blankline,
 	},
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			{ "rcarriga/nvim-notify", config = conf.notify },
-		},
-		init = setup.noice,
-		config = conf.noice,
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		-- add any options here
+	-- 	},
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		{ "rcarriga/nvim-notify", config = conf.notify },
+	-- 	},
+	-- 	init = setup.noice,
+	-- 	config = conf.noice,
+	-- },
 	{
 		-- Scrollbar
 		"petertriho/nvim-scrollbar",

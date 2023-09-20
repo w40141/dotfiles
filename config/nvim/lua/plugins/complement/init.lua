@@ -5,7 +5,7 @@ return {
 	{
 		"hrsh7th/nvim-cmp",
 		config = conf.cmp,
-		event = { "InsertEnter" },
+		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
 			{ "onsails/lspkind-nvim" },
 			{ "hrsh7th/cmp-nvim-lsp" },
