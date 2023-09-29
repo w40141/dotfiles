@@ -16,13 +16,13 @@ done
 CONFIG=$HOME/.config
 DOTCONF=$DOTPATH/config
 if [ ! -d $CONFIG ]; then
-	mkdir -p $CONFIG
+  mkdir -p $CONFIG
 fi
 
 cd config
 for f in ??*; do
-	echo $f
-	ln -snfv "$DOTCONF/$f" "$CONFIG/$f"
+  echo $f
+wln -snfv "$DOTCONF/$f" "$CONFIG/$f"
 done
 
 git submodule update -i

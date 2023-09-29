@@ -312,9 +312,9 @@ function M.lualine()
 end
 
 function M.indent_blankline()
-	require("indent_blankline").setup({
-		indent_blankline_use_treesitter = true,
-		show_current_context = true,
+	require("ibl").setup({
+		-- indent_blankline_use_treesitter = true,
+		-- show_current_context = true,
 		-- show_current_context_start = true,
 	})
 end
