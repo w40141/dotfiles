@@ -312,23 +312,12 @@ function M.lualine()
 end
 
 function M.indent_blankline()
-  local highlight = {
-    "CursorColumn",
-    "Whitespace",
-  }
   require("ibl").setup({
-    indent = { highlight = highlight, char = "" },
-    whitespace = {
-      highlight = highlight,
-      remove_blankline_trail = false,
+    indent = {
+      char = "│",
     },
     scope = { enabled = true },
   })
-  -- require("ibl").setup({
-  --   -- indent_blankline_use_treesitter = true,
-  --   -- show_current_context = true,
-  --   -- show_current_context_start = true,
-  -- })
 end
 
 function M.noice()
