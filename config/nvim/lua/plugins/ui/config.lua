@@ -316,7 +316,6 @@ function M.indent_blankline()
     indent = {
       char = "│",
     },
-    scope = { enabled = true },
   })
 end
 
