@@ -3,15 +3,15 @@ local M = {}
 function M.kanagawa()
   -- Default options:
   require("kanagawa").setup({
-    compile = false, -- enable compiling the colorscheme
+    compile = false,  -- enable compiling the colorscheme
     undercurl = true, -- enable undercurls
     commentStyle = { italic = true },
     functionStyle = {},
     keywordStyle = { italic = true },
     statementStyle = { bold = true },
     typeStyle = {},
-    transparent = false, -- do not set background color
-    dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+    transparent = false,   -- do not set background color
+    dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
     terminalColors = true, -- define vim.g.terminal_color_{0,17}
     colors = {
       palette = {},
@@ -181,10 +181,10 @@ function M.bufferline()
   require("bufferline").setup({
     options = {
       numbers = "ordinal",
-      close_command = "bdelete! %d",    -- can be a string | function, see "Mouse actions"
+      close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
       right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-      left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-      middle_mouse_command = nil,       -- can be a string | function, see "Mouse actions"
+      left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+      middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
       indicator = { icon = "▎", stype = "icon" },
       modified_icon = "",
       close_icon = "",
@@ -204,7 +204,7 @@ function M.bufferline()
       max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
       tab_size = 15,
       offsets = { { filetype = "NvimTree", text = "File Explorer", text_align = "center" } },
-      color_icons = true,    -- whether or not to add the filetype icon highlights
+      color_icons = true,       -- whether or not to add the filetype icon highlights
       show_buffer_icons = true, -- disable filetype icons for buffers
       show_buffer_close_icons = false,
       show_close_icon = false,
@@ -367,11 +367,11 @@ function M.noice()
       },
     },
     presets = {
-      bottom_search = true,      -- use a classic bottom cmdline for search
-      command_palette = true,    -- position the cmdline and popupmenu together
+      bottom_search = true,         -- use a classic bottom cmdline for search
+      command_palette = true,       -- position the cmdline and popupmenu together
       long_message_to_split = true, -- long messages will be sent to a split
-      inc_rename = false,        -- enables an input dialog for inc-rename.nvim
-      lsp_doc_border = false,    -- add a border to hover docs and signature help
+      inc_rename = false,           -- enables an input dialog for inc-rename.nvim
+      lsp_doc_border = false,       -- add a border to hover docs and signature help
     },
     views = {
       confirm = {

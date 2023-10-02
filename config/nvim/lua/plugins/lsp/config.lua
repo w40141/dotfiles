@@ -171,7 +171,34 @@ function M.lspconfig()
     if server_name == "gopls" then
       opts.settings = {
         gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
           gofumpt = true,
+        },
+      }
+    end
+
+    if server_name == "efm" then
+      opts.settings = {
+        init_options = { documentFormatting = true },
+        settings = {
+          rootMarkers = { ".git/" },
+          languages = {
+            lua = {
+              {
+                formatCommand = "stylua --color Never --config-path ~/.config/.stylua.toml -",
+              },
+              {
+                lintCommand = "luacheck --no-color --quiet --config ~/.config/.luacheckrc -",
+                lintFormats = { "%f:%l:%c: %m" },
+              },
+            },
+          },
+        },
+        filetypes = {
+          "lua",
         },
       }
     end
