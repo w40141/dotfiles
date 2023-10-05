@@ -10,6 +10,7 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "k1low/tap"
+tap "koki-develop/tap"
 tap "ktr0731/evans"
 tap "michaeleisel/zld"
 tap "mongodb/brew"
@@ -125,8 +126,6 @@ brew "tree-sitter"
 brew "emacs"
 # Emacs dependency management
 brew "cask"
-# Next-gen compiler infrastructure
-brew "llvm"
 # C/C++/ObjC language server
 brew "ccls"
 # Create and view interactive cheat sheets for *nix commands
@@ -231,6 +230,8 @@ brew "go"
 brew "pkg-config"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
+# Fast linters runner for Go
+brew "golangci-lint"
 # Ping, but with a graph
 brew "gping"
 # Smart font renderer for non-Roman scripts
@@ -267,6 +268,8 @@ brew "ht"
 brew "httpie"
 # Configurable static site generator
 brew "hugo"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Verilog simulation and synthesis tool
 brew "icarus-verilog"
 # H.265/HEVC encoder
@@ -309,6 +312,8 @@ brew "libuv"
 brew "libvpx"
 # C library for reading, creating, and modifying zip archives
 brew "libzip"
+# Next-gen compiler infrastructure
+brew "llvm"
 # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "mongosh"
 # Library for a binary-based efficient data interchange format
@@ -431,6 +436,7 @@ brew "zoxide"
 brew "aws/tap/copilot-cli"
 # tbls is a CI-Friendly tool for document a database, written in Go.
 brew "k1low/tap/tbls"
+brew "koki-develop/tap/askai"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
 # High-performance, schema-free, document-oriented database
@@ -475,6 +481,22 @@ cask "fontforge"
 # Git client focusing on productivity
 cask "gitkraken"
 # Web browser
+cask "google-chrome"
+# Client for the Google Drive storage service
+cask "google-drive"
+# Japanese input software
+cask "google-japanese-ime"
+# Utility to fix grammar errors and style issues in text
+cask "grammarly"
+# Screenshot and screen recording tool
+cask "gyazo"
+# IDE for Java development - community edition
+cask "intellij-idea-ce"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Interface for reading and syncing eBooks
+cask "kindle"
+# Software for Logitech devices
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
