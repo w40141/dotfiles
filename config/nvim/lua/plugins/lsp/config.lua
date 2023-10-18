@@ -189,7 +189,13 @@ function M.lspconfig()
       opts.settings = {
         gopls = {
           analyses = {
+            fieldalignment = true,
+            nilness = true,
+            shadow = true,
             unusedparams = true,
+            unusedwrite = true,
+            useany = true,
+            unusedstructfield = true,
           },
           staticcheck = true,
           gofumpt = true,
