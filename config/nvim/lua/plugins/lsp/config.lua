@@ -169,6 +169,23 @@ function M.lspconfig()
     end
 
     if server_name == "gopls" then
+      autocmd("BufWritePre", {
+        pattern = "*.go",
+        callback = function()
+          local params = v.lsp.util.make_range_params()
+          params.context = { only = { "source.organizeImports" } }
+          local result = v.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+          for cid, res in pairs(result or {}) do
+            for _, r in pairs(res.result or {}) do
+              if r.edit then
+                local enc = (v.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+                v.lsp.util.apply_workspace_edit(r.edit, enc)
+              end
+            end
+          end
+          v.lsp.buf.format({ async = false })
+        end,
+      })
       opts.settings = {
         gopls = {
           analyses = {
@@ -180,6 +197,19 @@ function M.lspconfig()
       }
     end
 
+    if server_name == "golangci_lint_ls" then
+      -- opts.filetypes = { "go", "gomod" }
+      -- opts.cmd = { "golangci-lint-langserver" }
+      -- opts.root_dir = nvim_lsp.util.root_pattern(".git", "go.mod")
+      opts.init_options = {
+        command = {
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+        },
+      }
+    end
     -- if server_name == "efm" then
     -- 	opts.settings = {
     -- 		init_options = { documentFormatting = true },
