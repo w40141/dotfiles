@@ -20,6 +20,7 @@ function M.lspconfig()
   key("n", "]g", d("goto_next"))
   key("n", "[g", d("goto_prev"))
   key("n", "[dev]q", d("setloclist"))
+
   key("n", "H", b("hover"))
   key("n", "[dev]f", b("format"))
   key("n", "[dev]r", b("references"))

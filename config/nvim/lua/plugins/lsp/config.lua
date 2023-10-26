@@ -1,74 +1,5 @@
 local M = {}
 
-function M.mason_tool_installer()
-  local v = vim
-  require("mason-tool-installer").setup({
-    ensure_installed = {
-      "bash-language-server",
-      "black",
-      "cspell",
-      "deno",
-      "docker-compose-language-service",
-      "dockerfile-language-server",
-      "editorconfig-checker",
-      "eslint-lsp",
-      "fixjson",
-      "gofumpt",
-      "golangci-lint",
-      "gopls",
-      "graphql-language-service-cli",
-      "hadolint",
-      "html-lsp",
-      "jdtls",
-      "kotlin-language-server",
-      "latexindent",
-      "lua-language-server",
-      "markdownlint",
-      "marksman",
-      "prettier",
-      "prisma-language-server",
-      "pyright",
-      "ruff",
-      "rust-analyzer",
-      "shfmt",
-      "sql-formatter",
-      "sqlls",
-      "stylua",
-      "texlab",
-      "textlint",
-      "typescript-language-server",
-      "vale",
-      "yamlfmt",
-    },
-    auto_update = true,
-    run_on_start = true,
-    start_delay = 3000,
-  })
-
-  local m = v.api.nvim_create_augroup("Mason", {})
-  v.api.nvim_create_autocmd("User", {
-    pattern = "MasonToolsUpdateCompleted",
-    callback = function()
-      v.schedule(function()
-        print("mason-tool-installer has finished")
-      end)
-    end,
-    group = m,
-  })
-end
-
-function M.mason()
-  require("mason").setup({
-    ui = {
-      icons = {
-        package_installed = "✓",
-        package_pending = "➜",
-        package_uninstalled = "✗",
-      },
-    },
-  })
-end
-
 function M.lspconfig()
   local v = vim
   local lsp = v.lsp
@@ -95,7 +26,8 @@ function M.lspconfig()
     },
   })
 
-  local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
+  -- local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
+  local capabilities = require("cmp_nvim_lsp").default_capabilities()
   local on_attach = function(client, bufnr)
     api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
@@ -125,7 +57,6 @@ function M.lspconfig()
   end
 
   local lsp_flags = {
-    -- This is the default in Nvim 0.7+
     debounce_text_changes = 150,
   }
 
@@ -134,24 +65,25 @@ function M.lspconfig()
     local is_node_repo = node_root_dir(api.nvim_buf_get_name(0)) ~= nil
 
     local opts = {}
+    -- bash-language-server bashls
 
+    -- eslint-lsp eslint
+    -- typescript-language-server tsserver
+    -- deno denols
     if server_name == "tsserver" then
       if not is_node_repo then
         return
       end
-
       opts.root_dir = node_root_dir
     elseif server_name == "eslint" then
       if not is_node_repo then
         return
       end
-
       opts.root_dir = node_root_dir
     elseif server_name == "denols" then
       if is_node_repo then
         return
       end
-
       opts.root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json")
       opts.init_options = {
         lint = true,
@@ -168,6 +100,34 @@ function M.lspconfig()
       }
     end
 
+    -- docker-compose-language-service docker_compose_language_service
+    -- dockerfile-language-server dockerls
+
+    -- efm
+    -- if server_name == "efm" then
+    -- 	opts.settings = {
+    -- 		init_options = { documentFormatting = true },
+    -- 		settings = {
+    -- 			rootMarkers = { ".git/" },
+    -- 			languages = {
+    -- 				lua = {
+    -- 					{
+    -- 						formatCommand = "stylua --color Never --config-path ~/.config/.stylua.toml -",
+    -- 					},
+    -- 					{
+    -- 						lintCommand = "luacheck --no-color --quiet --config ~/.config/.luacheckrc -",
+    -- 						lintFormats = { "%f:%l:%c: %m" },
+    -- 					},
+    -- 				},
+    -- 			},
+    -- 		},
+    -- 		filetypes = {
+    -- 			"lua",
+    -- 		},
+    -- 	}
+    -- end
+
+    -- gopls
     if server_name == "gopls" then
       autocmd("BufWritePre", {
         pattern = "*.go",
@@ -216,28 +176,24 @@ function M.lspconfig()
         },
       }
     end
-    -- if server_name == "efm" then
-    -- 	opts.settings = {
-    -- 		init_options = { documentFormatting = true },
-    -- 		settings = {
-    -- 			rootMarkers = { ".git/" },
-    -- 			languages = {
-    -- 				lua = {
-    -- 					{
-    -- 						formatCommand = "stylua --color Never --config-path ~/.config/.stylua.toml -",
-    -- 					},
-    -- 					{
-    -- 						lintCommand = "luacheck --no-color --quiet --config ~/.config/.luacheckrc -",
-    -- 						lintFormats = { "%f:%l:%c: %m" },
-    -- 					},
-    -- 				},
-    -- 			},
-    -- 		},
-    -- 		filetypes = {
-    -- 			"lua",
-    -- 		},
-    -- 	}
-    -- end
+
+    -- graphql-language-service-cli graphql
+
+    -- html-lsp html
+
+    -- lua-language-server lua_ls
+
+    -- marksman
+
+    -- prisma-language-server prismals
+
+    -- pyright
+
+    -- ruff-lsp ruff_lsp
+
+    -- rust-analyzer rust_analyzer
+
+    -- sqlls
 
     opts.capabilities = capabilities
     opts.on_attach = on_attach
@@ -246,6 +202,7 @@ function M.lspconfig()
     nvim_lsp[server_name].setup(opts)
   end
 
+  require("mason-lspconfig").setup()
   require("mason-lspconfig").setup_handlers({
     handler,
   })
