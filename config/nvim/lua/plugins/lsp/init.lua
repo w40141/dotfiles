@@ -12,11 +12,6 @@ return {
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 	},
 	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },
-		config = conf.mason_tool_installer,
-	},
-	{
 		"williamboman/mason.nvim",
 		cmd = { "Mason" },
 		config = conf.mason,
