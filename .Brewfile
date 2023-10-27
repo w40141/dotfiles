@@ -10,7 +10,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "homebrew/test-bot"
 tap "k1low/tap"
-tap "koki-develop/tap"
 tap "ktr0731/evans"
 tap "michaeleisel/zld"
 tap "mongodb/brew"
@@ -20,32 +19,18 @@ tap "teamookla/speedtest"
 tap "tgotwig/linux-dust"
 # Run your GitHub Actions locally
 brew "act"
-# General-purpose lossless data-compression library
-brew "zlib"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# Integer Set Library for the polyhedral model
-brew "isl"
-# C library for multiple-precision floating-point computations
-brew "mpfr"
-# C library for the arithmetic of high precision complex numbers
-brew "libmpc"
-# General-purpose data compression with high compression ratio
-brew "xz"
-# GNU compiler collection
-brew "gcc"
 # C/C++ resolver library and DNS resolver utilities
 brew "adns"
 # Library and utilities for processing GIFs
 brew "giflib"
+# Fast linters runner for Go
+brew "golangci-lint"
 # Library for manipulating PNG images
 brew "libpng"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
-# Codec library for encoding and decoding AV1 video streams
-brew "aom"
 # Text-based UI library
 brew "ncurses"
 # Library for command-line editing
@@ -54,6 +39,10 @@ brew "readline"
 brew "libtool"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
+# Command-line interface for SQLite
+brew "sqlite"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Automatic configure script builder
@@ -82,12 +71,14 @@ brew "atk"
 brew "icu4c"
 # C parser in Python
 brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Terminal bandwidth utilization tool
 brew "bandwhich"
+# C library implementing the SSH2 protocol
+brew "libssh2"
+# Regular expressions library
+brew "oniguruma"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Garbage collector for C and C++
@@ -138,16 +129,30 @@ brew "cmake"
 brew "cmake-docs"
 # Console Matrix
 brew "cmatrix"
-# Filename encoding conversion tool
-brew "convmv"
-# High performance csv viewer for cli
-brew "csview"
-# C library implementing the SSH2 protocol
-brew "libssh2"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
+# Graphics library to dynamically manipulate images
+brew "gd"
+# Common error values for all GnuPG components
+brew "libgpg-error"
+# Cryptographic library based on the code from GnuPG
+brew "libgcrypt"
+# Postgres C API library
+brew "libpq"
+# C XSLT library for GNOME
+brew "libxslt"
+# C library for reading, creating, and modifying zip archives
+brew "libzip"
+# General-purpose scripting language
+brew "php"
+# Dependency Manager for PHP
+brew "composer"
+# Filename encoding conversion tool
+brew "convmv"
+# High performance csv viewer for cli
+brew "csview"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash"
 # Command-line DNS Client for Humans
@@ -174,6 +179,10 @@ brew "fdk-aac"
 brew "fish"
 # Ogg Bitstream Library
 brew "libogg"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Utility to configure and test X input devices
+brew "xinput"
 # Library to extract data from Excel .xls files
 brew "freexl"
 # Implementation of the Unicode BiDi algorithm
@@ -182,8 +191,8 @@ brew "fribidi"
 brew "fzf"
 # GNU awk utility
 brew "gawk"
-# Graphics library to dynamically manipulate images
-brew "gd"
+# GNU compiler collection
+brew "gcc"
 # Database of common MIME types
 brew "shared-mime-info"
 # Toolkit for image loading and pixel buffer manipulation
@@ -206,12 +215,8 @@ brew "git"
 brew "git-delta"
 # Prevents you from committing sensitive information to a git repo
 brew "git-secrets"
-# Common error values for all GnuPG components
-brew "libgpg-error"
 # Assuan IPC Library
 brew "libassuan"
-# Cryptographic library based on the code from GnuPG
-brew "libgcrypt"
 # X.509 and CMS library
 brew "libksba"
 # Library for USB device access
@@ -222,16 +227,12 @@ brew "npth"
 brew "pinentry"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# C XSLT library for GNOME
-brew "libxslt"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Manage compile and link flags for libraries
 brew "pkg-config"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
-# Fast linters runner for Go
-brew "golangci-lint"
 # Ping, but with a graph
 brew "gping"
 # Smart font renderer for non-Roman scripts
@@ -268,8 +269,6 @@ brew "ht"
 brew "httpie"
 # Configurable static site generator
 brew "hugo"
-# Command-line benchmarking tool
-brew "hyperfine"
 # Verilog simulation and synthesis tool
 brew "icarus-verilog"
 # H.265/HEVC encoder
@@ -280,12 +279,14 @@ brew "libheif"
 brew "imagemagick"
 # Implementation of malloc emphasizing fragmentation avoidance
 brew "jemalloc"
-# Regular expressions library
-brew "oniguruma"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # JSON parser for C
 brew "json-c"
+# 7-Zip (high compression file archiver) implementation
+brew "p7zip"
+# Fast, Dynamic Programming Language
+brew "julia", link: false
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # High quality MPEG Audio Layer III (MP3) encoder
@@ -296,8 +297,6 @@ brew "libbluray"
 brew "libcaca"
 # Portable low-level networking library
 brew "libdnet"
-# Postgres C API library
-brew "libpq"
 # Vorbis General Audio Compression Codec
 brew "libvorbis"
 # Audio codec
@@ -310,12 +309,12 @@ brew "libtermkey"
 brew "libuv"
 # VP8/VP9 video codec
 brew "libvpx"
-# C library for reading, creating, and modifying zip archives
-brew "libzip"
-# Next-gen compiler infrastructure
-brew "llvm"
-# MongoDB Shell to connect, configure, query, and work with your MongoDB database
-brew "mongosh"
+# Language Server for the Lua language
+brew "lua-language-server"
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew "luajit"
+# Package manager for the Lua programming language
+brew "luarocks"
 # Library for a binary-based efficient data interchange format
 brew "msgpack"
 # Open source relational database management system
@@ -332,10 +331,6 @@ brew "nsh"
 brew "nspr"
 # Libraries for security-enabled client and server applications
 brew "nss"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
-# 7-Zip (high compression file archiver) implementation
-brew "p7zip"
 # Learn vim commands via a game
 brew "pacvim"
 # Swiss-army knife of markup format conversion
@@ -436,12 +431,11 @@ brew "zoxide"
 brew "aws/tap/copilot-cli"
 # tbls is a CI-Friendly tool for document a database, written in Go.
 brew "k1low/tap/tbls"
-brew "koki-develop/tap/askai"
 # Evans: more expressive universal gRPC client
 brew "ktr0731/evans/evans"
 # High-performance, schema-free, document-oriented database
 brew "mongodb/brew/mongodb-community"
-# Tools for executing SQL queries to CSV, LTSV and JSON
+# Tools for executing SQL queries to CSV, LTSV, JSON and TBLN
 brew "noborus/tap/trdsql"
 # Ookla Speedtest
 brew "teamookla/speedtest/speedtest"

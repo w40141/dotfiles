@@ -1,16 +1,7 @@
-local conf = require("plugins.lsp.config")
-local setup = require("plugins.lsp.setup")
+local conf = require("plugins.mason.config")
+local setup = require("plugins.mason.setup")
 
 return {
-	{
-		"williamboman/mason-lspconfig.nvim",
-	},
-	{
-		"neovim/nvim-lspconfig",
-		init = setup.lspconfig,
-		config = conf.lspconfig,
-		event = { "BufReadPre", "FocusLost", "CursorHold" },
-	},
 	{
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 		cmd = { "MasonToolsInstall", "MasonToolsUpdate" },

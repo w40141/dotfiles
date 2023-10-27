@@ -24,239 +24,10 @@ function M.surround()
         B = { "{", "}" },
         a = { "<", ">" },
       },
-      linear = {
-        q = { "'", "'" },
-        t = { "`", "`" },
-        d = { '"', '"' },
-      },
+      linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } },
     },
     prefix = "s",
   })
-end
-
-function M.null_ls()
-  local v = vim
-  local fn = v.fn
-  local api = v.api
-  local exe = fn.executable
-  local call = v.call
-  local cspell_config_dir = "$XDG_CONFIG_HOME/cspell"
-  local cspell_data_dir = "$XDG_DATA_HOME/cspell"
-
-  local cspell_files = {
-    config = call("expand", cspell_config_dir .. "/cspell.json"),
-    dotfiles = call("expand", cspell_config_dir .. "/dotfiles.txt"),
-    vim = call("expand", cspell_data_dir .. "/vim.txt.gz"),
-    user = call("expand", cspell_data_dir .. "/user.txt"),
-  }
-
-  if fn.exists(cspell_data_dir) ~= 1 then
-    io.popen("mkdir -p " .. cspell_data_dir)
-  end
-
-  if fn.filereadable(cspell_files.dotfiles) ~= 1 then
-    io.popen("touch " .. cspell_files.dotfiles)
-  end
-
-  -- vim辞書がなければダウンロード
-  if fn.filereadable(cspell_files.vim) ~= 1 then
-    local url = "https://github.com/iamcco/coc-spell-checker/raw/master/dicts/vim/vim.txt.gz"
-    io.popen("curl -fsSLo " .. cspell_files.vim .. " --create-dirs " .. url)
-  end
-
-  -- ユーザー辞書がなければ作成
-  if fn.filereadable(cspell_files.user) ~= 1 then
-    io.popen("touch " .. cspell_files.user)
-  end
-
-  local null_ls = require("null-ls")
-  local builtins = require("null-ls.builtins")
-  null_ls.setup({
-    diagnostics_format = "#{m} (#{s}: #{c})",
-    sources = {
-      builtins.code_actions.cspell,
-      builtins.code_actions.gitsigns,
-      builtins.code_actions.eslint.with({
-        condition = function()
-          return exe("eslint") > 0
-        end,
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.completion.spell,
-      builtins.diagnostics.fish.with({
-        condition = function()
-          return exe("fish") > 0
-        end,
-      }),
-      builtins.diagnostics.credo.with({
-        condition = function()
-          return exe("credo") > 0
-        end,
-      }),
-      builtins.diagnostics.editorconfig_checker.with({
-        condition = function()
-          return exe("ec") > 0
-        end,
-      }),
-      builtins.diagnostics.eslint.with({
-        condition = function()
-          return exe("eslint") > 0
-        end,
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.diagnostics.textlint.with({
-        filetypes = { "markdown" },
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.diagnostics.shellcheck.with({
-        condition = function()
-          return exe("shellcheck") > 0
-        end,
-      }),
-      builtins.diagnostics.cspell.with({
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = v.diagnostic.severity["WARN"]
-        end,
-        condition = function()
-          return exe("cspell") > 0
-        end,
-        extra_args = { "--config", cspell_files.config },
-      }),
-      builtins.diagnostics.ruff.with({
-        condition = function()
-          return exe("ruff") > 0
-        end,
-      }),
-      builtins.diagnostics.vale.with({
-        diagnostics_postprocess = function(diagnostic)
-          diagnostic.severity = v.diagnostic.severity["WARN"]
-        end,
-        condition = function()
-          return exe("vale") > 0
-        end,
-      }),
-      -- builtins.formatting.prismaFmt,
-      builtins.formatting.sql_formatter,
-      builtins.formatting.eslint.with({
-        condition = function()
-          return exe("eslint") > 0
-        end,
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.formatting.prettier.with({
-        prefer_local = "node_modules/.bin",
-      }),
-      builtins.formatting.yamlfmt,
-      builtins.formatting.stylua.with({
-        condition = function()
-          return exe("stylua") > 0
-        end,
-      }),
-      builtins.formatting.black.with({
-        condition = function()
-          return exe("black") > 0
-        end,
-      }),
-      builtins.formatting.rustfmt.with({
-        condition = function()
-          return exe("rustfmt") > 0
-        end,
-      }),
-      builtins.formatting.shfmt.with({
-        condition = function()
-          return exe("shfmt") > 0
-        end,
-      }),
-      builtins.formatting.fish_indent,
-      builtins.formatting.markdownlint.with({
-        condition = function()
-          return exe("markdownlint") > 0
-        end,
-      }),
-      builtins.formatting.markdownlint,
-    },
-  })
-
-  local cspell_append = function(opts)
-    local word = opts.args
-    if not word or word == "" then
-      -- 引数がなければcwordを取得
-      word = v.call("expand", "<cword>"):lower()
-    end
-
-    -- bangの有無で保存先を分岐
-    local dictionary_name = opts.bang and "dotfiles" or "user"
-
-    -- shellのechoコマンドで辞書ファイルに追記
-    io.popen("echo " .. word .. " >> " .. cspell_files[dictionary_name])
-
-    -- 追加した単語および辞書を表示
-    v.notify('"' .. word .. '" is appended to ' .. dictionary_name .. " dictionary.", v.log.levels.INFO, {})
-
-    -- cspellをリロードするため、現在行を更新してすぐ戻す
-    if api.nvim_get_option_value("modifiable", {}) then
-      api.nvim_set_current_line(api.nvim_get_current_line())
-      api.nvim_command("silent! undo")
-    end
-  end
-
-  api.nvim_create_user_command("CSpellAppend", cspell_append, { nargs = "?", bang = true })
-
-  local cspell_custom_actions = {
-    name = "append-to-cspell-dictionary",
-    method = null_ls.methods.CODE_ACTION,
-    filetypes = {},
-    generator = {
-      fn = function(_)
-        -- 現在のカーソル位置
-        local lnum = fn.getcurpos()[2] - 1
-        local col = fn.getcurpos()[3]
-
-        -- 現在行のエラーメッセージ一覧
-        local diagnostics = v.diagnostic.get(0, { lnum = lnum })
-
-        -- カーソル位置にcspellの警告が出ているか探索
-        local word = ""
-        local regex = "^Unknown word %((%w+)%)$"
-        for _, va in pairs(diagnostics) do
-          if
-              va.source == "cspell"
-              and va.col < col
-              and col <= va.end_col
-              and string.match(va.message, regex)
-          then
-            -- 見つかった場合、単語を抽出
-            word = string.gsub(va.message, regex, "%1"):lower()
-            break
-          end
-        end
-
-        -- 警告が見つからなければ終了
-        if word == "" then
-          return
-        end
-
-        -- cspell_appendを呼び出すactionのリストを返却
-        return {
-          {
-            title = 'Append "' .. word .. '" to user dictionary',
-            action = function()
-              cspell_append({ args = word })
-            end,
-          },
-          {
-            title = 'Append "' .. word .. '" to dotfiles dictionary',
-            action = function()
-              cspell_append({ args = word, bang = true })
-            end,
-          },
-        }
-      end,
-    },
-  }
-
-  -- null_lsに登録
-  null_ls.register(cspell_custom_actions)
 end
 
 function M.eskk()
@@ -298,11 +69,7 @@ function M.comment()
 end
 
 function M.colorizer()
-  require("colorizer").setup({
-    "css",
-    "javascript",
-    "typescript",
-  }, {
+  require("colorizer").setup({ "css", "javascript", "typescript" }, {
     RGB = true,    -- #RGB hex codes
     RRGGBB = true, -- #RRGGBB hex codes
     names = true,  -- "Name" codes like Blue
@@ -322,9 +89,7 @@ function M.yanky()
       sync_with_numbered_registers = true,
       cancel_event = "update",
     },
-    system_clipboard = {
-      sync_with_ring = true,
-    },
+    system_clipboard = { sync_with_ring = true },
   })
 end
 
