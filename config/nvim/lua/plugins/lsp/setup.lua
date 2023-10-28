@@ -38,8 +38,4 @@ function M.lspconfig()
 	end)
 end
 
-function M.conform()
-	vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-end
-
 return M
