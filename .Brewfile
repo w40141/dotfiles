@@ -37,6 +37,8 @@ brew "ncurses"
 brew "readline"
 # Generic library support script
 brew "libtool"
+# Opinionated Lua code formatter
+brew "stylua"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
 # Command-line interface for SQLite
