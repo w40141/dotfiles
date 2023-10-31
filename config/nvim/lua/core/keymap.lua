@@ -181,12 +181,12 @@ key("c", "<c-p>", "<up>")
 key("c", "<c-v>", "<C-r>+")
 -- バックスラッシュやクエスチョンを状況に合わせ自動的にエスケープ
 key("c", "/", function()
-  return fn.getcmdtype() == "/" and "\\/" or "/"
+	return fn.getcmdtype() == "/" and "\\/" or "/"
 end, { expr = true })
 key("c", "?", function()
-  return fn.getcmdtype() == "?" and "\\?" or "?"
+	return fn.getcmdtype() == "?" and "\\?" or "?"
 end, { expr = true })
 
 -- ターミナル
 key("t", "jj", "<C-\\><C-N>")
-key("t", "<C-q>", "<C-\\><C-n>:q<CR>")
+key("t", "<C-j>q", "<C-\\><C-n>:q<CR>")
