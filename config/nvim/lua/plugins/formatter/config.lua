@@ -15,7 +15,6 @@ function M.conform()
 			lua = { "stylua" },
 			markdown = { "markdownlint" },
 			python = { "black" },
-			rust = { "rustfmt" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
 			yaml = { "yamlfmt" },
