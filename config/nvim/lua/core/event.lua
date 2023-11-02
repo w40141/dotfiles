@@ -6,7 +6,7 @@ local myAutoCmd = augroup("MyAutoCmd", {})
 
 -- Don't auto commenting new lines
 autocmd("BufEnter", {
-  pattern = "*",
-  command = "set fo-=c fo-=r fo-=o",
-  group = myAutoCmd,
+	pattern = "*",
+	command = "set fo-=c fo-=r fo-=o",
+	group = myAutoCmd,
 })

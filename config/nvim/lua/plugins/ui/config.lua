@@ -322,7 +322,7 @@ function M.indent_blankline()
 			highlight = highlight,
 			remove_blankline_trail = false,
 		},
-		scope = { enabled = true },
+		scope = { enabled = false },
 	})
 end
 

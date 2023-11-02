@@ -4,7 +4,7 @@ local conf = require("plugins.linter.config")
 return {
 	{
 		"mfussenegger/nvim-lint",
-		event = "VimEnter",
+		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		config = conf.nvim_lint,
 		dependencies = {
 			"rshkarin/mason-nvim-lint",

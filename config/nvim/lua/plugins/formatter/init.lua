@@ -5,7 +5,7 @@ local setup = require("plugins.formatter.setup")
 return {
 	{
 		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
+		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		cmd = { "ConformInfo" },
 		keys = {
 			{
