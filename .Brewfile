@@ -43,8 +43,6 @@ brew "stylua"
 brew "openssl@3"
 # Command-line interface for SQLite
 brew "sqlite"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Highly capable, feature-rich programming language
 brew "perl"
 # Automatic configure script builder

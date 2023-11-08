@@ -255,6 +255,7 @@ function M.lualine()
 				skk,
 			},
 			lualine_b = {
+				{ "filetype", icon_only = true },
 				{
 					"filename",
 					file_status = true,
@@ -296,7 +297,7 @@ function M.lualine()
 				},
 				"branch",
 			},
-			lualine_z = { "location", "progress" },
+			lualine_z = { "encoding", "fileformat", "location", "progress" },
 		},
 		inactive_sections = {
 			lualine_a = {},
