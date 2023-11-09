@@ -243,6 +243,7 @@ function M.lualine()
 	require("lualine").setup({
 		options = {
 			icons_enabled = true,
+			theme = "papercolor_dark",
 			component_separators = { left = "", right = "" },
 			section_separators = { left = "", right = "" },
 			disabled_filetypes = {},
@@ -255,7 +256,14 @@ function M.lualine()
 				skk,
 			},
 			lualine_b = {
-				{ "filetype", icon_only = true },
+				"branch",
+				{
+					"diff",
+					symbols = { added = " ", modified = " ", removed = " " },
+				},
+				"diagnostics",
+			},
+			lualine_c = {
 				{
 					"filename",
 					file_status = true,
@@ -264,40 +272,19 @@ function M.lualine()
 				},
 				search_result,
 			},
-			lualine_c = {
-				{
-					"diagnostics",
-					sources = {
-						"nvim_diagnostic",
-					},
-					sections = { "error", "warn", "info", "hint" },
-					diagnostics_color = {
-						error = "DiagnosticError",
-						warn = "DiagnosticWarn",
-						info = "DiagnosticInfo",
-						hint = "DiagnosticHint",
-					},
-					symbols = { Error = "", Warn = "", Hint = "", Info = "" },
-				},
-			},
 			lualine_x = {
 				"aerial",
 				depth = nil,
 			},
 			lualine_y = {
-				{
-					"diff",
-					colored = true,
-					diff_color = {
-						added = "DiffAdd",
-						modified = "DiffChange",
-						removed = "DiffDelete",
-					},
-					symbols = { added = " ", modified = " ", removed = " " },
-				},
-				"branch",
+				"encoding",
+				"fileformat",
+				"filetype",
 			},
-			lualine_z = { "encoding", "fileformat", "location", "progress" },
+			lualine_z = {
+				"progress",
+				"location",
+			},
 		},
 		inactive_sections = {
 			lualine_a = {},
