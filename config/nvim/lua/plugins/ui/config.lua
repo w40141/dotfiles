@@ -273,8 +273,10 @@ function M.lualine()
 				search_result,
 			},
 			lualine_x = {
-				"aerial",
-				depth = nil,
+				{
+					"aerial",
+					depth = nil,
+				},
 			},
 			lualine_y = {
 				"encoding",
@@ -295,7 +297,15 @@ function M.lualine()
 			lualine_z = {},
 		},
 		tabline = {},
-		extensions = { "quickfix", "fzf", "nvim-tree", "toggleterm" },
+		extensions = {
+			"aerial",
+			"quickfix",
+			"fzf",
+			"nvim-tree",
+			"toggleterm",
+			"lasy",
+			"mason",
+		},
 	})
 end
 
