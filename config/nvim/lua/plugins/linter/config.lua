@@ -9,6 +9,7 @@ function M.nvim_lint()
 		bash = { "shellcheck" },
 		docker = { "hadolint" },
 		go = { "golangcilint" },
+		-- java = { "checkstyle" },
 		javascript = { "eslint_d" },
 		lua = { "selene" },
 		python = { "ruff", "vulture" },
@@ -21,7 +22,6 @@ function M.nvim_lint()
 
 	require("mason-nvim-lint").setup()
 
-	-- ✓ typos (keywords: )
 	lint.linters_by_ft = linters
 
 	api.nvim_create_autocmd({ "BufWritePost" }, {

@@ -8,7 +8,7 @@ function M.lspconfig()
 	local buf = lsp.buf
 	local augroup = api.nvim_create_augroup
 	local autocmd = api.nvim_create_autocmd
-	local nvim_lsp = require("lspconfig")
+	local lspconfig = require("lspconfig")
 
 	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 	for type, icon in pairs(signs) do
@@ -52,30 +52,18 @@ function M.lspconfig()
 	local lsp_flags = { debounce_text_changes = 150 }
 
 	local handler = function(server_name)
-		local node_root_dir = nvim_lsp.util.root_pattern("package.json")
+		local node_root_dir = lspconfig.util.root_pattern("package.json")
 		local is_node_repo = node_root_dir(api.nvim_buf_get_name(0)) ~= nil
 
 		local opts = {}
 		-- bash-language-server bashls
 
-		-- eslint-lsp eslint
-		-- typescript-language-server tsserver
 		-- deno denols
-		if server_name == "tsserver" then
-			if not is_node_repo then
-				return
-			end
-			opts.root_dir = node_root_dir
-		elseif server_name == "eslint" then
-			if not is_node_repo then
-				return
-			end
-			opts.root_dir = node_root_dir
-		elseif server_name == "denols" then
+		if server_name == "denols" then
 			if is_node_repo then
 				return
 			end
-			opts.root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json")
+			opts.root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc", "deps.ts", "import_map.json")
 			opts.init_options = {
 				lint = true,
 				unstable = true,
@@ -118,6 +106,14 @@ function M.lspconfig()
 		--   }
 		-- end
 
+		-- eslint-lsp eslint
+		if server_name == "eslint" then
+			if not is_node_repo then
+				return
+			end
+			opts.root_dir = node_root_dir
+		end
+
 		-- gopls
 		if server_name == "gopls" then
 			autocmd("BufWritePre", {
@@ -154,23 +150,30 @@ function M.lspconfig()
 			}
 		end
 
-		if server_name == "golangci_lint_ls" then
-			-- opts.filetypes = { "go", "gomod" }
-			-- opts.cmd = { "golangci-lint-langserver" }
-			-- opts.root_dir = nvim_lsp.util.root_pattern(".git", "go.mod")
-			opts.init_options = {
-				command = { "golangci-lint", "run", "--out-format", "json" },
-			}
-		end
+		-- if server_name == "golangci_lint_ls" then
+		-- 	-- opts.filetypes = { "go", "gomod" }
+		-- 	-- opts.cmd = { "golangci-lint-langserver" }
+		-- 	-- opts.root_dir = nvim_lsp.util.root_pattern(".git", "go.mod")
+		-- 	opts.init_options = {
+		-- 		command = { "golangci-lint", "run", "--out-format", "json" },
+		-- 	}
+		-- end
 
 		-- graphql-language-service-cli graphql
 
 		-- html-lsp html
 
+		-- jtdls
+		if server_name == "jtdls" then
+		end
+
 		-- lua-language-server lua_ls
 		if server_name == "lua_ls" then
 			opts.settings = {
 				Lua = {
+					diagnostics = {
+						globals = { "vim" },
+					},
 					runtime = {
 						version = "LuaJIT",
 					},
@@ -208,11 +211,23 @@ function M.lspconfig()
 
 		-- sqlls
 
+		-- texlab
+
+		-- typescript-language-server tsserver
+		if server_name == "tsserver" then
+			if not is_node_repo then
+				return
+			end
+			opts.root_dir = node_root_dir
+		end
+
+		-- yamlls
+
 		opts.capabilities = capabilities
 		opts.on_attach = on_attach
 		opts.flag = lsp_flags
 
-		nvim_lsp[server_name].setup(opts)
+		lspconfig[server_name].setup(opts)
 	end
 
 	require("mason-lspconfig").setup({
@@ -225,6 +240,7 @@ function M.lspconfig()
 			"gopls",
 			"graphql",
 			"html",
+			"jdtls",
 			"lua_ls",
 			"prismals",
 			"pyright",

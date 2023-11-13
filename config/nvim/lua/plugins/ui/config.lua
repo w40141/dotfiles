@@ -303,7 +303,7 @@ function M.lualine()
 			"fzf",
 			"nvim-tree",
 			"toggleterm",
-			"lasy",
+			"lazy",
 			"mason",
 		},
 	})
