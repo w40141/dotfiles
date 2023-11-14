@@ -11,6 +11,7 @@ return {
 	},
 	{
 		-- A surround text object plugin for neovim written in lua.
+		-- https://github.com/kylechui/nvim-surround
 		"ur4ltz/surround.nvim",
 		config = conf.surround,
 		event = { "BufReadPre", "FocusLost", "CursorHold" },

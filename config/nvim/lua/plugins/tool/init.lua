@@ -43,6 +43,7 @@ return {
 	},
 	{
 		-- Highlight length of search result
+		-- TODO: luaで書かれたものを探す
 		"kevinhwang91/nvim-hlslens",
 		keys = {
 			{ "*", mode = "n" },
