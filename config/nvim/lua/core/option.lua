@@ -1,6 +1,7 @@
 local gl = require("core.global")
 local opt = gl.opt
 
+opt.mousemoveevent = true
 -- 全モードでマウスを有効化
 opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
@@ -85,3 +86,6 @@ opt.termguicolors = true
 opt.whichwrap = "b,s,h,l,<,>,[,]"
 opt.winblend = 20
 opt.pumblend = 20
+
+opt.spell = true
+opt.spelllang = { "en_us" }
