@@ -116,7 +116,6 @@ function M.cmp()
 		sources = cmp.config.sources({
 			{ name = "copilot" },
 			{ name = "nvim_lsp" },
-			-- { name = "nvim_lsp_signature_help" },
 			{ name = "nvim_lsp_document_symbol" },
 			{ name = "buffer" },
 			{ name = "path" },
@@ -163,7 +162,7 @@ function M.cmp()
 end
 
 function M.signature()
-	require("lsp_signature").setup({ hint_enable = false })
+	require("lsp_signature").setup({ hint_prefix = "󰛨 " })
 end
 
 function M.autopairs()
