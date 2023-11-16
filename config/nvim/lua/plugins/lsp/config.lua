@@ -160,12 +160,17 @@ function M.lspconfig()
 		-- end
 
 		-- graphql-language-service-cli graphql
+		if server_name == "graphql" then
+			opts.cmd = { "graphql-lsp", "server", "-m", "stream" }
+			opts.filetypes = { "graphql", "gql", "graphqls" }
+			opts.root_dir = lspconfig.util.root_pattern(".git", ".graphqlrc*", ".graphql.config.*", "graphql.config.*")
+		end
 
 		-- html-lsp html
 
 		-- jtdls
-		if server_name == "jtdls" then
-		end
+		-- if server_name == "jtdls" then
+		-- end
 
 		-- lua-language-server lua_ls
 		if server_name == "lua_ls" then
