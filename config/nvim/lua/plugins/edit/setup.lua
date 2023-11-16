@@ -29,5 +29,4 @@ function M.yanky()
 	key("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>")
 end
-
 return M

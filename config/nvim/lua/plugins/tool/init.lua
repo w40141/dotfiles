@@ -3,21 +3,23 @@ local setup = require("plugins.tool.setup")
 
 return {
 	{
-		"TimUntersberger/neogit",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		url = "https://github.com/NeogitOrg/neogit",
+		dependencies = {
+			url = "https://github.com/nvim-lua/plenary.nvim",
+		},
 		cmd = { "Neogit" },
 		config = conf.neogit,
 	},
 	{
 		-- Delete buffers
-		"famiu/bufdelete.nvim",
+		url = "https://github.com/famiu/bufdelete.nvim",
 		cmd = { "Bdelete", "Bwipeout" },
 		event = "CmdlineEnter",
 	},
 	{
 		-- Terminal
 		-- TODO: setting
-		"akinsho/toggleterm.nvim",
+		url = "https://github.com/akinsho/toggleterm.nvim",
 		keys = {
 			{ "<c-;>", mode = "n" },
 		},
@@ -26,7 +28,7 @@ return {
 	},
 	{
 		-- Resizing of windows
-		"simeji/winresizer",
+		url = "https://github.com/simeji/winresizer",
 		keys = {
 			{ "<C-e>", mode = "n" },
 		},
@@ -34,7 +36,7 @@ return {
 	},
 	{
 		-- quickly highlight <cword> or visually selected word
-		"t9md/vim-quickhl",
+		url = "https://github.com/t9md/vim-quickhl",
 		keys = {
 			{ "<Plug>(quickhl-manual-this)", mode = "n" },
 			{ "<Plug>(quickhl-manual-reset)", mode = "n" },
@@ -43,8 +45,7 @@ return {
 	},
 	{
 		-- Highlight length of search result
-		-- TODO: luaで書かれたものを探す
-		"kevinhwang91/nvim-hlslens",
+		url = "https://github.com/kevinhwang91/nvim-hlslens",
 		keys = {
 			{ "*", mode = "n" },
 			{ "g*", mode = "n" },

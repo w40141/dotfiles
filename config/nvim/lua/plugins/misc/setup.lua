@@ -11,8 +11,7 @@ end
 
 function M.open_browser()
 	local key = vim.keymap.set
-	key("n", "gx", "<plug>(openbrowser-smart-search)")
-	key("v", "gx", "<plug>(openbrowser-smart-search)")
+	key({ "n", "v" }, "gx", "<plug>(openbrowser-smart-search)")
 end
 
 return M

@@ -3,44 +3,54 @@ local setup = require("plugins.ui.setup")
 
 return {
 	{
-		"rebelot/kanagawa.nvim",
+		url = "https://github.com/rebelot/kanagawa.nvim",
 		event = { "VimEnter" },
 		config = conf.kanagawa,
 	},
 	{
-		"goolord/alpha-nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		url = "https://github.com/goolord/alpha-nvim",
+		dependencies = {
+			url = "https://github.com/nvim-tree/nvim-web-devicons",
+		},
 		event = "BufWinEnter",
 		config = conf.alpha,
 	},
 	{
-		"stevearc/aerial.nvim",
+		url = "https://github.com/stevearc/aerial.nvim",
 		cmd = { "Aerial" },
 		init = setup.aerial,
 		config = conf.aerial,
 	},
 	{
 		-- Buffer line
-		"akinsho/bufferline.nvim",
+		url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPre" },
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = {
+			url = "https://github.com/nvim-tree/nvim-web-devicons",
+		},
 		init = setup.bufferline,
 		config = conf.bufferline,
 	},
 	{
 		-- Status line
-		"nvim-lualine/lualine.nvim",
+		url = "https://github.com/nvim-lualine/lualine.nvim",
 		event = { "BufReadPre" },
 		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-			"rebelot/kanagawa.nvim",
-			"stevearc/aerial.nvim",
+			{
+				url = "https://github.com/nvim-tree/nvim-web-devicons",
+			},
+			{
+				url = "https://github.com/rebelot/kanagawa.nvim",
+			},
+			{
+				url = "https://github.com/stevearc/aerial.nvim",
+			},
 		},
 		init = setup.lualine,
 		config = conf.lualine,
 	},
 	{
-		"lukas-reineke/indent-blankline.nvim",
+		url = "https://github.com/lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		event = { "BufReadPost" },
 		config = conf.indent_blankline,
@@ -60,7 +70,7 @@ return {
 	-- },
 	{
 		-- Scrollbar
-		"petertriho/nvim-scrollbar",
+		url = "https://github.com/petertriho/nvim-scrollbar",
 		event = {
 			"BufRead",
 			"BufNewFile",
@@ -72,20 +82,22 @@ return {
 		config = conf.scrollbar,
 	},
 	{
-		"lewis6991/gitsigns.nvim",
+		url = "https://github.com/lewis6991/gitsigns.nvim",
 		event = { "BufReadPost" },
 		config = conf.gitsigns,
 	},
 	{
 		-- File finder
-		"nvim-tree/nvim-tree.lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		url = "https://github.com/nvim-tree/nvim-tree.lua",
+		dependencies = {
+			url = "https://github.com/nvim-tree/nvim-web-devicons",
+		},
 		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
 		init = setup.nvimTree,
 		config = conf.nvimTree,
 	},
 	{
-		"stevearc/dressing.nvim",
+		url = "https://github.com/stevearc/dressing.nvim",
 		opts = {},
 		config = conf.dressing,
 	},
