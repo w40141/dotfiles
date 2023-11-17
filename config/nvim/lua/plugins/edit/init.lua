@@ -6,7 +6,11 @@ return {
 		-- A better annotation generator.
 		-- Supports multiple languages and annotation conventions.
 		url = "https://github.com/danymat/neogen",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		dependencies = {
+			{
+				url = "https://github.com/nvim-treesitter/nvim-treesitter",
+			},
+		},
 		init = setup.neogen,
 		config = conf.neogen,
 	},

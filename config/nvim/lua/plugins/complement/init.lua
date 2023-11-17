@@ -61,7 +61,11 @@ return {
 	},
 	{
 		url = "https://github.com/windwp/nvim-autopairs",
-		dependencies = { "hrsh7th/nvim-cmp" },
+		dependencies = {
+			{
+				url = "https://github.com/hrsh7th/nvim-cmp",
+			},
+		},
 		config = conf.autopairs,
 	},
 }

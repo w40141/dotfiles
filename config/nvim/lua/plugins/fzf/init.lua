@@ -12,7 +12,11 @@ return {
 			{
 				url = "https://github.com/folke/trouble.nvim",
 				cmd = { "Trouble" },
-				dependencies = { "nvim-tree/nvim-web-devicons" },
+				dependencies = {
+					{
+						url = "https://github.com/nvim-tree/nvim-web-devicons",
+					},
+				},
 				init = setup.trouble,
 				config = conf.trouble,
 			},

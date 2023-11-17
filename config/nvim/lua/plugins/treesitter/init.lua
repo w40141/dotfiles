@@ -7,13 +7,19 @@ return {
 		build = ":TSUpdate",
 		event = "VeryLazy",
 		config = conf.treesitter,
-		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+		dependencies = {
+			{
+				url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+			},
+		},
 	},
 	{
 		url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-		dependencies = {
-			url = "https://github.com/nvim-treesitter/nvim-treesitter",
-		},
+		-- dependencies = {
+		-- 	{
+		-- 		url = "https://github.com/nvim-treesitter/nvim-treesitter",
+		-- 	},
+		-- },
 	},
 	{
 		url = "https://github.com/yioneko/nvim-yati",

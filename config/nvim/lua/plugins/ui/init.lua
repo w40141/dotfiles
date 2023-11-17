@@ -10,7 +10,9 @@ return {
 	{
 		url = "https://github.com/goolord/alpha-nvim",
 		dependencies = {
-			url = "https://github.com/nvim-tree/nvim-web-devicons",
+			{
+				url = "https://github.com/nvim-tree/nvim-web-devicons",
+			},
 		},
 		event = "BufWinEnter",
 		config = conf.alpha,
@@ -26,7 +28,9 @@ return {
 		url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPre" },
 		dependencies = {
-			url = "https://github.com/nvim-tree/nvim-web-devicons",
+			{
+				url = "https://github.com/nvim-tree/nvim-web-devicons",
+			},
 		},
 		init = setup.bufferline,
 		config = conf.bufferline,

@@ -3,8 +3,8 @@ local v = gl.v
 local fn = gl.fn
 local opt = gl.opt
 
--- TODO: リポジトリをurlで指定する
--- https://github.com/folke/lazy.nvim/blob/96584866b9c5e998cbae300594d0ccfd0c464627/lua/lazy/example.lua#L81C1-L81C1
+-- TODO: https://github.com/folke/flash.nvim
+-- TODO: https://github.com/nvim-pack/nvim-spectre
 local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	fn.system({
@@ -12,7 +12,7 @@ if not v.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end

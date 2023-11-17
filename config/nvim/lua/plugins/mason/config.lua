@@ -9,6 +9,8 @@ function M.mason()
 				package_uninstalled = "✗",
 			},
 		},
+		width = 0.5,
+		height = 0.5,
 	})
 end
 
