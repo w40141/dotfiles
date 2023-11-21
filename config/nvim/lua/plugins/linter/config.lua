@@ -2,7 +2,7 @@ local M = {}
 
 function M.nvim_lint()
 	local v = vim
-	local api = v.api
+	local autocmd = v.api.nvim_create_autocmd
 	local lint = require("lint")
 
 	local linters = {
@@ -24,7 +24,7 @@ function M.nvim_lint()
 
 	lint.linters_by_ft = linters
 
-	api.nvim_create_autocmd({ "BufWritePost" }, {
+	autocmd({ "BufWritePost" }, {
 		callback = function()
 			lint.try_lint()
 		end,

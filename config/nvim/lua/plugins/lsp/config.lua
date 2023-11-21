@@ -182,6 +182,13 @@ function M.lspconfig()
 					runtime = {
 						version = "LuaJIT",
 					},
+					-- format = {
+					-- 	enable = true,
+					-- 	defaultConfig = {
+					-- 		indent_type = "tab",
+					-- 		indent_width = "4",
+					-- 	},
+					-- },
 				},
 			}
 		end

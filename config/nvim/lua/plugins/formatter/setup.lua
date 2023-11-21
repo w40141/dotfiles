@@ -1,7 +1,13 @@
 local M = {}
 
 function M.conform()
-	vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+	local v = vim
+	local key = v.keymap.set
+	v.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+	key("n", "[dev]f", function()
+		require("conform").format({ async = true, lsp_fallback = true })
+	end)
 end
 
 return M
