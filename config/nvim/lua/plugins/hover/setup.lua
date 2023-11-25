@@ -5,7 +5,9 @@ function M.hover()
 	local key = v.keymap.set
 
 	local function b(name)
-		return require("hover")[name]
+		return function()
+			return require("hover")[name]()
+		end
 	end
 
 	key("n", "H", b("hover"), { desc = "hover.nvim" })

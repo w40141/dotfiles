@@ -18,7 +18,9 @@ end
 function M.telescope()
 	local key = vim.keymap.set
 	local function b(name)
-		return require("telescope.builtin")[name]
+		return function()
+			return require("telescope.builtin")[name]()
+		end
 	end
 
 	key("n", "[ff]f", b("find_files"))

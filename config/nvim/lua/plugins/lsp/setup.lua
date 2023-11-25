@@ -5,7 +5,9 @@ function M.lspconfig()
 	local key = v.keymap.set
 
 	local function d(name)
-		return v.diagnostic[name]
+		return function()
+			return v.diagnostic[name]()
+		end
 	end
 
 	key("n", "[dev]o", d("open_float"))
@@ -14,7 +16,9 @@ function M.lspconfig()
 	key("n", "[dev]q", d("setloclist"))
 
 	local function b(name)
-		return v.lsp.buf[name]
+		return function()
+			return v.lsp.buf[name]()
+		end
 	end
 
 	-- key("n", "[dev]f", b("format"))
