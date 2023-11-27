@@ -53,8 +53,6 @@ local clipboard_config = function()
 end
 
 local load_core = function()
-	disable_distribution_plugins()
-	clipboard_config()
 	require("core.option")
 	require("core.keymap")
 	require("core.event")
@@ -62,4 +60,6 @@ local load_core = function()
 	require("core.lazy")
 end
 
+disable_distribution_plugins()
+clipboard_config()
 load_core()
