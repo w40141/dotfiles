@@ -1,5 +1,5 @@
-local gl = require("core.global")
-local opt = gl.opt
+local v = vim
+local opt = v.opt
 
 opt.mousemoveevent = true
 -- 全モードでマウスを有効化

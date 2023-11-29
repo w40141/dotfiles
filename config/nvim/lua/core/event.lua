@@ -1,6 +1,6 @@
-local gl = require("core.global")
-local augroup = gl.augroup
-local autocmd = gl.autocmd
+local v = vim
+local augroup = v.api.nvim_create_augroup
+local autocmd = v.api.nvim_create_autocmd
 
 local myAutoCmd = augroup("MyAutoCmd", {})
 

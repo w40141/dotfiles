@@ -23,7 +23,9 @@ function M.conform()
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
 			yaml = { "yamlfmt" },
-			["*"] = { "codespell" },
+			["*"] = {
+				"codespell",
+			},
 			["_"] = { "trim_whitespace", "trim_newlines", "squeeze_blanks" },
 		},
 		log_level = v.log.levels.ERROR,

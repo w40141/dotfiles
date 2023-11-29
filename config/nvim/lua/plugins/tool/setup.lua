@@ -1,5 +1,9 @@
 local M = {}
 
+function M.toggleterm()
+	vim.keymap.set("n", "<Space>l", "<cmd>ToggleTerm<CR>")
+end
+
 function M.winresizer()
 	local g = vim.g
 	g.winresizer_keycode_cancel = 122

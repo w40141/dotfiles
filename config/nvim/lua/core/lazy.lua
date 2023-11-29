@@ -1,7 +1,6 @@
-local gl = require("core.global")
-local v = gl.v
-local fn = gl.fn
-local opt = gl.opt
+local v = vim
+local fn = v.fn
+local opt = v.opt
 
 -- TODO: https://github.com/folke/flash.nvim
 -- TODO: https://github.com/nvim-pack/nvim-spectre

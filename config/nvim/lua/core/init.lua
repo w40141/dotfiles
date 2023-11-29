@@ -1,5 +1,6 @@
-local gl = require("core.global")
-local g = gl.g
+-- local gl = require("core.global")
+local v = vim
+local g = v.g
 
 local disable_distribution_plugins = function()
 	g.did_install_default_menus = 1
@@ -29,14 +30,15 @@ local disable_distribution_plugins = function()
 end
 
 local clipboard_config = function()
-	if gl.is_mac then
+	local os_name = v.loop.os_uname().sysname
+	if os_name == "Darwin" then
 		g.clipboard = {
 			name = "macOS-clipboard",
 			copy = { ["+"] = "pbcopy", ["*"] = "pbcopy" },
 			paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
 			cache_enabled = 0,
 		}
-	elseif gl.is_wsl then
+	elseif v.fn.has("wsl") == 1 then
 		g.clipboard = {
 			name = "win32yank-wsl",
 			copy = {

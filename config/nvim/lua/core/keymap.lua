@@ -21,10 +21,10 @@
 
 -- キーマッピング設定
 
-local gl = require("core.global")
-local g = gl.g
-local fn = gl.fn
-local key = gl.key
+local v = vim
+local g = v.g
+local fn = v.fn
+local key = v.keymap.set
 
 -- <leader>キーを変更 (default: \)
 g.mapleader = " "

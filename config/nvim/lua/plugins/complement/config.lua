@@ -22,7 +22,8 @@ function M.skkeleton()
 end
 
 function M.cmp()
-	local api = vim.api
+	local v = vim
+	local api = v.api
 	local cmp = require("cmp")
 	local snip = require("luasnip")
 	local has_words_before = function()
@@ -88,7 +89,7 @@ function M.cmp()
 					fallback()
 				end
 			end, { "i", "s" }),
-			["<Tab>"] = vim.schedule_wrap(function(fallback)
+			["<Tab>"] = v.schedule_wrap(function(fallback)
 				if cmp.visible() and has_words_before() then
 					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 				else

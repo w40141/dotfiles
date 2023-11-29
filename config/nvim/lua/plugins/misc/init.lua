@@ -1,4 +1,4 @@
-local conf = require("plugins.misc.config")
+-- local conf = require("plugins.misc.config")
 local setup = require("plugins.misc.setup")
 
 return {
@@ -6,12 +6,12 @@ return {
 		url = "https://github.com/dstein64/vim-startuptime",
 		cmd = "StartupTime",
 	},
-	{
-		url = "https://github.com/vim-test/vim-test",
-		event = "CmdlineEnter",
-		init = setup.vim_test,
-		config = conf.vim_test,
-	},
+	-- {
+	-- 	url = "https://github.com/vim-test/vim-test",
+	-- 	event = "CmdlineEnter",
+	-- 	init = setup.vim_test,
+	-- 	config = conf.vim_test,
+	-- },
 	{
 		-- Generating images of source code using
 		url = "https://github.com/segeljakt/vim-silicon",

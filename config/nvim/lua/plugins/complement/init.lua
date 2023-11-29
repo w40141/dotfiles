@@ -15,7 +15,7 @@ return {
 			},
 			{
 				url = "https://github.com/ray-x/lsp_signature.nvim",
-				event = "VeryLazy",
+				-- event = "VeryLazy",
 				config = conf.signature,
 			},
 			{
@@ -67,5 +67,6 @@ return {
 			},
 		},
 		config = conf.autopairs,
+		event = { "InsertEnter" },
 	},
 }

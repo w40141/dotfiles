@@ -18,13 +18,10 @@ return {
 	},
 	{
 		-- Terminal
-		-- TODO: setting
 		url = "https://github.com/akinsho/toggleterm.nvim",
-		keys = {
-			{ "<c-;>", mode = "n" },
-		},
-		cmd = { "ToggleTerm", "ToggleTermAll", "TermExec" },
+		cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" },
 		config = conf.toggleterm,
+		init = setup.toggleterm,
 	},
 	{
 		-- Resizing of windows

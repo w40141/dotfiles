@@ -7,26 +7,52 @@ function M.nvim_lint()
 
 	local linters = {
 		bash = { "shellcheck" },
-		docker = { "hadolint" },
-		go = { "golangcilint" },
+		dockerfile = {
+			"hadolint",
+			"trivy",
+		},
+		go = {
+			"golangcilint",
+			"revive",
+			"trivy",
+		},
 		-- java = { "checkstyle" },
-		javascript = { "eslint_d" },
+		javascript = {
+			"eslint_d",
+			"trivy",
+		},
 		lua = { "selene" },
-		python = { "ruff", "vulture" },
+		markdown = { "markdownlint" },
+		python = {
+			"ruff",
+			"vulture",
+			"trivy",
+		},
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
-		typescript = { "eslint_d" },
+		typescript = {
+			"eslint_d",
+			"trivy",
+		},
 		yaml = { "yamllint", "actionlint" },
 		zsh = { "shellcheck" },
 	}
 
-	require("mason-nvim-lint").setup()
+	local anyfile = {
+		"codespell",
+		"woke",
+	}
+
+	require("mason-nvim-lint").setup({
+		ensure_installed = anyfile,
+	})
 
 	lint.linters_by_ft = linters
 
-	autocmd({ "BufWritePost" }, {
+	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 		callback = function()
 			lint.try_lint()
+			lint.try_lint(anyfile)
 		end,
 	})
 end

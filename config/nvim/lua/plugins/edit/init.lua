@@ -13,6 +13,12 @@ return {
 		},
 		init = setup.neogen,
 		config = conf.neogen,
+		cmd = { "Neogen" },
+		keys = {
+			{ "<C-l>", mode = "i" },
+			{ "<C-h>", mode = "i" },
+			{ ",n", mode = "n" },
+		},
 	},
 	-- {
 	-- 	-- Add/change/delete surrounding delimiter pairs with ease.
