@@ -261,7 +261,7 @@ abbr -a abs 'source ~/.config/fish/config_abbr.fish'
 # for brew
 abbr -a bci 'brew install --cask'
 abbr -a bbc 'brew bundle --global --force cleanup'
-abbr -a bbd 'brew bundle dump --global --force --describe'
+abbr -a bbd 'brew bundle dump --global --force'
 abbr -a bbi 'brew bundle --global --force'
 
 abbr -a echof 'echo $fish_user_paths | tr " " "\n" | nl'
@@ -297,6 +297,6 @@ end
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
