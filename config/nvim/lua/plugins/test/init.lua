@@ -26,6 +26,6 @@ return {
 			"TestInfo",
 		},
 		config = conf.nvim_test,
-		setup = setup.nvim_test,
+		init = setup.nvim_test,
 	},
 }
