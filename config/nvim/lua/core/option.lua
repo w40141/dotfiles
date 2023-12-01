@@ -10,7 +10,6 @@ opt.hidden = true
 opt.autoread = true
 opt.number = true
 -- クリップボードをWindowsと連携する
--- opt.clipboard = { "unnamed", "unnamedplus" }
 opt.clipboard = "unnamedplus"
 -- ビープ音すべてを無効にする
 opt.visualbell = true
@@ -50,7 +49,6 @@ opt.ignorecase = true
 opt.smartcase = true
 -- deleteでインデントを削除可能にする
 opt.backspace = { "indent", "eol", "start" }
--- opt.completeopt = { "menu", "menuone", "noselect" }
 opt.completeopt = { "menuone", "noselect" }
 -- 閉括弧が入力された時、対応する括弧を強調する
 opt.showmatch = true

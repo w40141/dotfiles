@@ -1,12 +1,10 @@
 local v = vim
-local fn = v.fn
-local opt = v.opt
 
 -- TODO: https://github.com/folke/flash.nvim
 -- TODO: https://github.com/nvim-pack/nvim-spectre
-local lazypath = fn.stdpath("data") .. "/lazy/lazy.nvim"
+local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
-	fn.system({
+	v.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",
@@ -15,7 +13,7 @@ if not v.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
-opt.rtp:prepend(lazypath)
+v.opt.rtp:prepend(lazypath)
 
 local opts = {
 	defaults = {
