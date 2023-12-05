@@ -4,7 +4,8 @@ local setup = require("plugins.formatter.setup")
 -- TODO: https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
 return {
 	{
-		url = "https://github.com/stevearc/conform.nvim",
+		"stevearc/conform.nvim",
+		-- url = "https://github.com/stevearc/conform.nvim",
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		cmd = { "ConformInfo" },
 		config = conf.conform,

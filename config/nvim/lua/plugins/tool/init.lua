@@ -3,29 +3,34 @@ local setup = require("plugins.tool.setup")
 
 return {
 	{
-		url = "https://github.com/NeogitOrg/neogit",
+		"NeogitOrg/neogit",
+		-- url = "https://github.com/NeogitOrg/neogit",
 		dependencies = {
-			url = "https://github.com/nvim-lua/plenary.nvim",
+			"nvim-lua/plenary.nvim",
+			-- url = "https://github.com/nvim-lua/plenary.nvim",
 		},
 		cmd = { "Neogit" },
 		config = conf.neogit,
 	},
 	{
 		-- Delete buffers
-		url = "https://github.com/famiu/bufdelete.nvim",
+		"famiu/bufdelete.nvim",
+		-- url = "https://github.com/famiu/bufdelete.nvim",
 		cmd = { "Bdelete", "Bwipeout" },
 		event = "CmdlineEnter",
 	},
 	{
 		-- Terminal
-		url = "https://github.com/akinsho/toggleterm.nvim",
+		"akinsho/toggleterm.nvim",
+		-- url = "https://github.com/akinsho/toggleterm.nvim",
 		cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" },
 		config = conf.toggleterm,
 		init = setup.toggleterm,
 	},
 	{
 		-- Resizing of windows
-		url = "https://github.com/simeji/winresizer",
+		"simeji/winresizer",
+		-- url = "https://github.com/simeji/winresizer",
 		keys = {
 			{ "<C-e>", mode = "n" },
 		},
@@ -33,7 +38,8 @@ return {
 	},
 	{
 		-- quickly highlight <cword> or visually selected word
-		url = "https://github.com/t9md/vim-quickhl",
+		"t9md/vim-quickhl",
+		-- url = "https://github.com/t9md/vim-quickhl",
 		keys = {
 			{ "<Plug>(quickhl-manual-this)", mode = "n" },
 			{ "<Plug>(quickhl-manual-reset)", mode = "n" },
@@ -42,14 +48,17 @@ return {
 	},
 	{
 		-- Highlight length of search result
-		url = "https://github.com/kevinhwang91/nvim-hlslens",
+		"kevinhwang91/nvim-hlslens",
+		-- url = "https://github.com/kevinhwang91/nvim-hlslens",
 		keys = {
 			{ "*", mode = "n" },
 			{ "g*", mode = "n" },
 			{ "g*", mode = "n" },
 		},
 		event = { "CmdlineEnter" },
-		dependencies = { "rapan931/lasterisk.nvim" },
+		dependencies = {
+			"rapan931/lasterisk.nvim",
+		},
 		init = setup.hlslens,
 		config = conf.hlslens,
 	},

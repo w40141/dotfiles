@@ -5,17 +5,24 @@ local setup = require("plugins.debug.setup")
 
 return {
 	{
-		url = "https://github.com/mfussenegger/nvim-dap",
+		"mfussenegger/nvim-dap",
+		-- url = "https://github.com/mfussenegger/nvim-dap",
 		dependencies = {
-			{ url = "https://github.com/rcarriga/nvim-dap-ui" },
 			{
-				url = "https://github.com/theHamsta/nvim-dap-virtual-text",
+				"rcarriga/nvim-dap-ui",
+				-- url = "https://github.com/rcarriga/nvim-dap-ui",
+			},
+			{
+				"theHamsta/nvim-dap-virtual-text",
+				-- url = "https://github.com/theHamsta/nvim-dap-virtual-text",
 				config = conf.nvim_dap_virtual_text,
 			},
 			{
-				url = "https://github.com/jay-babu/mason-nvim-dap.nvim",
+				"jay-babu/mason-nvim-dap.nvim",
+				-- url = "https://github.com/jay-babu/mason-nvim-dap.nvim",
 				dependencies = {
-					url = "https://github.com/williamboman/mason.nvim",
+					"williamboman/mason.nvim",
+					-- url = "https://github.com/williamboman/mason.nvim",
 				},
 			},
 		},

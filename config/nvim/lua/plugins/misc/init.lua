@@ -3,7 +3,8 @@ local setup = require("plugins.misc.setup")
 
 return {
 	{
-		url = "https://github.com/dstein64/vim-startuptime",
+		"dstein64/vim-startuptime",
+		-- url = "https://github.com/dstein64/vim-startuptime",
 		cmd = "StartupTime",
 	},
 	-- {
@@ -14,12 +15,14 @@ return {
 	-- },
 	{
 		-- Generating images of source code using
-		url = "https://github.com/segeljakt/vim-silicon",
+		"segeljakt/vim-silicon",
+		-- url = "https://github.com/segeljakt/vim-silicon",
 		cmd = "Silicon",
 	},
 	{
 		-- Open URI
-		url = "https://github.com/tyru/open-browser.vim",
+		"tyru/open-browser.vim",
+		-- url = "https://github.com/tyru/open-browser.vim",
 		keys = {
 			{ "<plug>(openbrowser-smart-search)", mode = "n" },
 		},

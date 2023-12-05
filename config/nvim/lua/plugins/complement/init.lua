@@ -3,56 +3,71 @@ local conf = require("plugins.complement.config")
 
 return {
 	{
-		url = "https://github.com/hrsh7th/nvim-cmp",
+		"hrsh7th/nvim-cmp",
+		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
 		event = { "InsertEnter", "CmdlineEnter" },
 		dependencies = {
 			{
-				url = "https://github.com/onsails/lspkind.nvim",
+				"onsails/lspkind.nvim",
+				-- url = "https://github.com/onsails/lspkind.nvim",
 			},
 			{
-				url = "https://github.com/hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-nvim-lsp",
+				-- url = "https://github.com/hrsh7th/cmp-nvim-lsp",
 			},
 			{
-				url = "https://github.com/ray-x/lsp_signature.nvim",
-				-- event = "VeryLazy",
+				"ray-x/lsp_signature.nvim",
+				-- url = "https://github.com/ray-x/lsp_signature.nvim",
+				event = "VeryLazy",
 				config = conf.signature,
 			},
 			{
-				url = "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol",
+				"hrsh7th/cmp-nvim-lsp-document-symbol",
+				-- url = "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol",
 			},
 			{
-				url = "https://github.com/hrsh7th/cmp-buffer",
+				"hrsh7th/cmp-buffer",
+				-- url = "https://github.com/hrsh7th/cmp-buffer",
 			},
 			{
-				url = "https://github.com/ray-x/cmp-treesitter",
+				"ray-x/cmp-treesitter",
+				-- url = "https://github.com/ray-x/cmp-treesitter",
 			},
 			{
-				url = "https://github.com/hrsh7th/cmp-cmdline",
+				"hrsh7th/cmp-cmdline",
+				-- url = "https://github.com/hrsh7th/cmp-cmdline",
 			},
 			{
-				url = "https://github.com/hrsh7th/cmp-path",
+				"hrsh7th/cmp-path",
+				-- url = "https://github.com/hrsh7th/cmp-path",
 			},
 			{
-				url = "https://github.com/f3fora/cmp-spell",
+				"f3fora/cmp-spell",
+				-- url = "https://github.com/f3fora/cmp-spell",
 			},
 			{
-				url = "https://github.com/saadparwaiz1/cmp_luasnip",
+				"saadparwaiz1/cmp_luasnip",
+				-- url = "https://github.com/saadparwaiz1/cmp_luasnip",
 				dependencies = {
-					url = "https://github.com/L3MON4D3/LuaSnip",
+					"L3MON4D3/LuaSnip",
+					-- url = "https://github.com/L3MON4D3/LuaSnip",
 					dependencies = {
+						"rafamadriz/friendly-snippets",
 						url = "https://github.com/rafamadriz/friendly-snippets",
 					},
 					config = conf.luasnip,
 				},
 			},
 			{
-				url = "https://github.com/zbirenbaum/copilot.lua",
+				"zbirenbaum/copilot.lua",
+				-- url = "https://github.com/zbirenbaum/copilot.lua",
 				build = ":Copilot auth",
 				config = conf.copilot,
 			},
 			{
-				url = "https://github.com/zbirenbaum/copilot-cmp",
+				"zbirenbaum/copilot-cmp",
+				-- url = "https://github.com/zbirenbaum/copilot-cmp",
 				config = function()
 					require("copilot_cmp").setup()
 				end,
@@ -60,10 +75,12 @@ return {
 		},
 	},
 	{
-		url = "https://github.com/windwp/nvim-autopairs",
+		"windwp/nvim-autopairs",
+		-- url = "https://github.com/windwp/nvim-autopairs",
 		dependencies = {
 			{
-				url = "https://github.com/hrsh7th/nvim-cmp",
+				"hrsh7th/nvim-cmp",
+				-- url = "https://github.com/hrsh7th/nvim-cmp",
 			},
 		},
 		config = conf.autopairs,

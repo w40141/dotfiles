@@ -15,7 +15,8 @@ return {
 	-- 	lazy = true,
 	-- },
 	{
-		url = "https://github.com/klen/nvim-test",
+		"klen/nvim-test",
+		-- url = "https://github.com/klen/nvim-test",
 		cmd = {
 			"TestSuite",
 			"TestFile",

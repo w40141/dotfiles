@@ -5,10 +5,12 @@ return {
 	{
 		-- A better annotation generator.
 		-- Supports multiple languages and annotation conventions.
-		url = "https://github.com/danymat/neogen",
+		"danymat/neogen",
+		-- url = "https://github.com/danymat/neogen",
 		dependencies = {
 			{
-				url = "https://github.com/nvim-treesitter/nvim-treesitter",
+				"nvim-treesitter/nvim-treesitter",
+				-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 			},
 		},
 		init = setup.neogen,
@@ -28,33 +30,38 @@ return {
 	-- },
 	{
 		-- A surround text object plugin for neovim written in lua.
-		url = "https://github.com/ur4ltz/surround.nvim",
+		"ur4ltz/surround.nvim",
+		-- url = "https://github.com/ur4ltz/surround.nvim",
 		config = conf.surround,
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 	},
 	{
 		-- eskk is pure Vim script implementation of input method engine SKK
-		url = "https://github.com/vim-skk/eskk.vim",
+		"vim-skk/eskk.vim",
+		-- url = "https://github.com/vim-skk/eskk.vim",
 		init = setup.eskk,
 		config = conf.eskk,
 		event = { "InsertEnter" },
 	},
 	{
 		-- Comment out
-		url = "https://github.com/numToStr/Comment.nvim",
+		"numToStr/Comment.nvim",
+		-- url = "https://github.com/numToStr/Comment.nvim",
 		config = conf.comment,
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 	},
 	{
 		-- Colorizer
-		url = "https://github.com/norcalli/nvim-colorizer.lua",
+		"norcalli/nvim-colorizer.lua",
+		-- url = "https://github.com/norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
 		config = conf.colorizer,
 	},
 	{
 		-- TODO: cmpと連携させる
 		-- Improved Yank and Put functionalities for Neovim
-		url = "https://github.com/gbprod/yanky.nvim",
+		"gbprod/yanky.nvim",
+		-- url = "https://github.com/gbprod/yanky.nvim",
 		keys = {
 			{ "<Plug>(YankyCycleBackward)", mode = "n" },
 			{ "<Plug>(YankyCycleForward)", mode = "n" },
