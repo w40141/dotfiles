@@ -9,30 +9,30 @@ function M.nvim_lint()
 		bash = { "shellcheck" },
 		dockerfile = {
 			"hadolint",
-			-- "trivy",
+			"trivy",
 		},
 		go = {
 			"golangcilint",
 			"revive",
-			-- "trivy",
+			"trivy",
 		},
 		-- java = { "checkstyle" },
 		javascript = {
 			"eslint_d",
-			-- "trivy",
+			"trivy",
 		},
 		lua = { "selene" },
 		markdown = { "markdownlint" },
 		python = {
 			"ruff",
 			"vulture",
-			-- "trivy",
+			"trivy",
 		},
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
 		typescript = {
 			"eslint_d",
-			-- "trivy",
+			"trivy",
 		},
 		yaml = { "yamllint", "actionlint" },
 		zsh = { "shellcheck" },
@@ -41,7 +41,7 @@ function M.nvim_lint()
 	local anyfile = {
 		"codespell",
 		"woke",
-		"trivy",
+		-- "trivy",
 	}
 
 	require("mason-nvim-lint").setup({
