@@ -1,35 +1,47 @@
--- local gl = require("core.global")
 local v = vim
 local g = v.g
 
--- local disable_distribution_plugins = function()
-g.did_install_default_menus = 1
-g.did_install_syntax_menu = 1
 g.loaded_2html_plugin = 1
+
 g.loaded_gzip = 1
-g.loaded_matchit = 1
+g.loaded_tar = 1
+g.loaded_tarPlugin = 1
+g.loaded_zip = 1
+g.loaded_zipPlugin = 1
+
+g.loaded_vimball = 1
+g.loaded_vimballPlugin = 1
+
 g.loaded_netrw = 1
 g.loaded_netrwFileHandlers = 1
 g.loaded_netrwPlugin = 1
 g.loaded_netrwSettings = 1
-g.loaded_perl_provider = 0
-g.loaded_python3_provider = 0
+
+g.loaded_getscript = 1
+g.loaded_getscriptPlugin = 1
+
+g.did_indent_on = 1
+g.did_install_default_menus = 1
+g.did_install_syntax_menu = 1
+g.did_load_ftplugin = 1
+g.loaded_man = 1
+g.loaded_matchit = 1
+g.loaded_matchparen = 1
 g.loaded_remote_plugins = 1
 g.loaded_rrhelper = 1
-g.loaded_ruby_provider = 0
-g.loaded_spellfile_plugin = 1
-g.loaded_sql_completion = 1
-g.loaded_syntax_completion = 1
-g.loaded_tar = 1
-g.loaded_tarPlugin = 1
-g.loaded_vimball = 1
-g.loaded_vimballPlugin = 1
-g.loaded_zip = 1
-g.loaded_zipPlugin = 1
-g.netrw_liststyle = 3
--- end
+g.loaded_shada_plugin = 1
+g.loaded_tutor_mode_plugin = 1
+g.skip_loading_mswin = 1
 
--- local clipboard_config = function()
+g.loaded_perl_provider = 0
+g.loaded_python3_provider = 0
+g.loaded_ruby_provider = 0
+
+-- g.did_load_filetypes = 1
+-- g.loaded_spellfile_plugin = 1
+-- g.loaded_sql_completion = 1
+-- g.loaded_syntax_completion = 1
+
 local os_name = v.loop.os_uname().sysname
 if os_name == "Darwin" then
 	g.clipboard = {
@@ -52,15 +64,12 @@ elseif v.fn.has("wsl") == 1 then
 		cache_enabled = 0,
 	}
 end
--- end
 
--- local load_core = function()
 require("core.option")
 require("core.keymap")
 require("core.event")
 -- require("core.pack")
 require("core.lazy")
--- end
 --
 -- disable_distribution_plugins()
 -- clipboard_config()
