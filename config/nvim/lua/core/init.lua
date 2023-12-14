@@ -42,6 +42,8 @@ g.loaded_ruby_provider = 0
 -- g.loaded_sql_completion = 1
 -- g.loaded_syntax_completion = 1
 
+v.loader.enable()
+
 local os_name = v.loop.os_uname().sysname
 if os_name == "Darwin" then
 	g.clipboard = {
