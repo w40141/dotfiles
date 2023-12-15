@@ -34,7 +34,7 @@ function M.nvim_lint()
 			"eslint_d",
 			-- "trivy",
 		},
-		yaml = { "yamllint", "actionlint" },
+		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}
 

@@ -121,4 +121,9 @@ return {
 		opts = {},
 		config = conf.dressing,
 	},
+	{
+		"folke/zen-mode.nvim",
+		opts = {},
+		cmd = { "ZenMode" },
+	},
 }
