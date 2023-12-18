@@ -1,4 +1,4 @@
-local conf = require("plugins.treesitter.config")
+local conf = require("plugins.syntax.config")
 
 return {
 	{
@@ -6,33 +6,30 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		event = { "BufNewFile", "BufRead" },
 		config = conf.treesitter,
 		dependencies = {
 			{
 				"nvim-treesitter/nvim-treesitter-textobjects",
-				-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
 			},
 		},
 	},
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-		-- dependencies = {
-		-- 	{
-		-- 		url = "https://github.com/nvim-treesitter/nvim-treesitter",
-		-- 	},
-		-- },
+		"nvim-treesitter/nvim-treesitter-context",
+		-- url = https://github.com/nvim-treesitter/nvim-treesitter-context
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 	{
-		"yioneko/nvim-yati",
-		-- url = "https://github.com/yioneko/nvim-yati",
-		event = { "BufNewFile", "BufRead" },
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+		-- config = conf.context_commentstring,
 	},
 	{
 		"m-demare/hlargs.nvim",
 		-- url = "https://github.com/m-demare/hlargs.nvim",
 		event = { "BufNewFile", "BufRead" },
+		config = conf.hlargs,
 	},
 	{
 		"andersevenrud/nvim_context_vt",

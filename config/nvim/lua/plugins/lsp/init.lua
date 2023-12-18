@@ -1,7 +1,6 @@
 local conf = require("plugins.lsp.config")
 local setup = require("plugins.lsp.setup")
 
--- TODO: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 return {
 	{
 		"neovim/nvim-lspconfig",

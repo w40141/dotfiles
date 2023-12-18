@@ -65,7 +65,11 @@ function M.eskk()
 end
 
 function M.comment()
-	require("Comment").setup()
+	require("Comment").setup({
+		pre_hook = function()
+			return require("ts_context_commentstring.internal").calculate_commentstring()
+		end,
+	})
 end
 
 function M.colorizer()

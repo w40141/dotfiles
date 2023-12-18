@@ -9,30 +9,24 @@ function M.nvim_lint()
 		bash = { "shellcheck" },
 		dockerfile = {
 			"hadolint",
-			-- "trivy",
 		},
 		go = {
 			"golangcilint",
 			"revive",
-			-- "trivy",
 		},
-		-- java = { "checkstyle" },
 		javascript = {
 			"eslint_d",
-			-- "trivy",
 		},
 		lua = { "selene" },
 		markdown = { "markdownlint" },
 		python = {
 			"ruff",
 			"vulture",
-			-- "trivy",
 		},
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
 		typescript = {
 			"eslint_d",
-			-- "trivy",
 		},
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },

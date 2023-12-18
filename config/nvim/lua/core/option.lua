@@ -1,13 +1,14 @@
 local v = vim
 local opt = v.opt
 
+-- 内容が変更されたら自動的に再読み込み
+opt.autoread = true
 opt.mousemoveevent = true
 -- 全モードでマウスを有効化
 opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
 opt.hidden = true
--- 内容が変更されたら自動的に再読み込み
-opt.autoread = true
+-- 行番号を表示
 opt.number = true
 -- クリップボードをWindowsと連携する
 opt.clipboard = "unnamedplus"
@@ -72,7 +73,7 @@ opt.tabstop = 2
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 opt.smarttab = true
 -- タブを空白入力に置換
-opt.expandtab = true
+-- opt.expandtab = true
 -- 補完時に大文字小文字を区別しない
 opt.infercase = true
 -- 必要ない設定

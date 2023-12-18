@@ -60,17 +60,19 @@ return {
 				},
 			},
 			{
-				"zbirenbaum/copilot.lua",
-				-- url = "https://github.com/zbirenbaum/copilot.lua",
-				build = ":Copilot auth",
-				config = conf.copilot,
-			},
-			{
 				"zbirenbaum/copilot-cmp",
 				-- url = "https://github.com/zbirenbaum/copilot-cmp",
 				config = function()
 					require("copilot_cmp").setup()
 				end,
+				dependencies = {
+					{
+						"zbirenbaum/copilot.lua",
+						-- url = "https://github.com/zbirenbaum/copilot.lua",
+						build = ":Copilot auth",
+						config = conf.copilot,
+					},
+				},
 			},
 		},
 	},
