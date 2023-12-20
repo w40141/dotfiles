@@ -8,10 +8,7 @@ return {
 		"danymat/neogen",
 		-- url = "https://github.com/danymat/neogen",
 		dependencies = {
-			{
-				"nvim-treesitter/nvim-treesitter",
-				-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
-			},
+			"nvim-treesitter/nvim-treesitter",
 		},
 		init = setup.neogen,
 		config = conf.neogen,

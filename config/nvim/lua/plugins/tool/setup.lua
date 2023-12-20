@@ -1,5 +1,10 @@
 local M = {}
 
+function M.open_browser()
+	local key = vim.keymap.set
+	key({ "n", "v" }, "gx", "<plug>(openbrowser-smart-search)")
+end
+
 function M.toggleterm()
 	vim.keymap.set("n", "<Space>l", "<cmd>ToggleTerm<CR>")
 end

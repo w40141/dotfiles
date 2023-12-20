@@ -3,6 +3,10 @@ local setup = require("plugins.ui.setup")
 
 return {
 	{
+		"nvim-tree/nvim-web-devicons",
+		-- url = "https://github.com/nvim-tree/nvim-web-devicons",
+	},
+	{
 		"rebelot/kanagawa.nvim",
 		-- url = "https://github.com/rebelot/kanagawa.nvim",
 		event = { "VimEnter" },
@@ -12,10 +16,7 @@ return {
 		"goolord/alpha-nvim",
 		-- url = "https://github.com/goolord/alpha-nvim",
 		dependencies = {
-			{
-				"nvim-tree/nvim-web-devicons",
-				-- url = "https://github.com/nvim-tree/nvim-web-devicons",
-			},
+			"nvim-tree/nvim-web-devicons",
 		},
 		event = "BufWinEnter",
 		config = conf.alpha,
@@ -26,6 +27,10 @@ return {
 		cmd = { "Aerial" },
 		init = setup.aerial,
 		config = conf.aerial,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
 	},
 	{
 		-- Buffer line
@@ -33,10 +38,7 @@ return {
 		-- url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPre" },
 		dependencies = {
-			{
-				"nvim-tree/nvim-web-devicons",
-				-- url = "https://github.com/nvim-tree/nvim-web-devicons",
-			},
+			"nvim-tree/nvim-web-devicons",
 		},
 		init = setup.bufferline,
 		config = conf.bufferline,
@@ -47,18 +49,9 @@ return {
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
 		event = { "BufReadPre" },
 		dependencies = {
-			{
-				"nvim-tree/nvim-web-devicons",
-				-- url = "https://github.com/nvim-tree/nvim-web-devicons",
-			},
-			{
-				"rebelot/kanagawa.nvim",
-				-- url = "https://github.com/rebelot/kanagawa.nvim",
-			},
-			{
-				"stevearc/aerial.nvim",
-				-- url = "https://github.com/stevearc/aerial.nvim",
-			},
+			"nvim-tree/nvim-web-devicons",
+			"rebelot/kanagawa.nvim",
+			"stevearc/aerial.nvim",
 		},
 		init = setup.lualine,
 		config = conf.lualine,
@@ -109,18 +102,17 @@ return {
 		-- url = "https://github.com/nvim-tree/nvim-tree.lua",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
-			-- url = "https://github.com/nvim-tree/nvim-web-devicons",
 		},
 		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
 		init = setup.nvimTree,
 		config = conf.nvimTree,
 	},
-	{
-		"stevearc/dressing.nvim",
-		-- url = "https://github.com/stevearc/dressing.nvim",
-		opts = {},
-		config = conf.dressing,
-	},
+	-- {
+	-- 	"stevearc/dressing.nvim",
+	-- 	-- url = "https://github.com/stevearc/dressing.nvim",
+	-- 	opts = {},
+	-- 	config = conf.dressing,
+	-- },
 	{
 		"folke/zen-mode.nvim",
 		opts = {},

@@ -216,4 +216,8 @@ function M.copilot()
 	})
 end
 
+function M.copilot_cmp()
+	require("copilot_cmp").setup()
+end
+
 return M

@@ -1,5 +1,5 @@
-local conf = require("plugins.fzf.config")
-local setup = require("plugins.fzf.setup")
+local conf = require("plugins.finder.config")
+local setup = require("plugins.finder.setup")
 
 return {
 	{
@@ -10,26 +10,21 @@ return {
 			"Telescope",
 		},
 		dependencies = {
-			{
-				"folke/trouble.nvim",
-				-- url = "https://github.com/folke/trouble.nvim",
-				cmd = { "Trouble" },
-				dependencies = {
-					{
-						"nvim-tree/nvim-web-devicons",
-						-- url = "https://github.com/nvim-tree/nvim-web-devicons",
-					},
-				},
-				init = setup.trouble,
-				config = conf.trouble,
-			},
-			{
-				"stevearc/aerial.nvim",
-				-- url = "https://github.com/stevearc/aerial.nvim",
-			},
+			"folke/trouble.nvim",
+			"stevearc/aerial.nvim",
 		},
 		init = setup.telescope,
 		config = conf.telescope,
+	},
+	{
+		"folke/trouble.nvim",
+		-- url = "https://github.com/folke/trouble.nvim",
+		cmd = { "Trouble" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		init = setup.trouble,
+		config = conf.trouble,
 	},
 	{
 		-- Highlight, list and search todo comments
@@ -37,7 +32,6 @@ return {
 		-- url = "https://github.com/folke/todo-comments.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			-- url = "https://github.com/nvim-lua/plenary.nvim",
 		},
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },

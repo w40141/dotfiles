@@ -10,9 +10,7 @@ return {
 		event = { "BufNewFile", "BufRead" },
 		config = conf.treesitter,
 		dependencies = {
-			{
-				"nvim-treesitter/nvim-treesitter-textobjects",
-			},
+			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
 	},
 	{

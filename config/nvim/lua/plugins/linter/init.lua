@@ -7,14 +7,14 @@ return {
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		config = conf.nvim_lint,
 		dependencies = {
-			{
-				"rshkarin/mason-nvim-lint",
-				-- url = "https://github.com/rshkarin/mason-nvim-lint",
-				dependencies = {
-					"williamboman/mason.nvim",
-					-- url = "https://github.com/williamboman/mason.nvim",
-				},
-			},
+			"rshkarin/mason-nvim-lint",
+		},
+	},
+	{
+		"rshkarin/mason-nvim-lint",
+		-- url = "https://github.com/rshkarin/mason-nvim-lint",
+		dependencies = {
+			"williamboman/mason.nvim",
 		},
 	},
 }

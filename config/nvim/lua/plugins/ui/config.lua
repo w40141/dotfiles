@@ -52,7 +52,8 @@ function M.alpha()
 		d.button("o", " Open explorer", "<CMD>NvimTreeToggle<CR>"),
 		d.button("c", "󱙣 Check health", "<CMD>checkhealth<CR>"),
 		d.button("u", "󰚰 Update plugins", "<CMD>Lazy sync<CR>"),
-		d.button("m", " Open Mason Maneger", "<CMD>Mason<CR>"),
+		d.button("l", " Open Library Maneger", "<CMD>Lazy<CR>"),
+		d.button("m", " Open Package Maneger", "<CMD>Mason<CR>"),
 		d.button("T", "󱫐 Measure time", "<CMD>StartupTime<CR>"),
 		d.button("q", " Quit", "<CMD>qa<CR>"),
 	}
@@ -73,7 +74,7 @@ end
 
 function M.aerial()
 	require("aerial").setup({
-		backends = { "lsp", "treesitter", "markdown" },
+		backends = { "lsp", "treesitter", "markdown", "man" },
 		close_automatic_events = { "unsupported" },
 		default_bindings = true,
 		disable_max_lines = 10000,

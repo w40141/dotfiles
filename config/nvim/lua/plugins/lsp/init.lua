@@ -9,14 +9,14 @@ return {
 		config = conf.lspconfig,
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		dependencies = {
-			{
-				"williamboman/mason-lspconfig.nvim",
-				-- url = "https://github.com/williamboman/mason-lspconfig.nvim",
-				dependencies = {
-					"williamboman/mason.nvim",
-					-- url = "https://github.com/williamboman/mason.nvim",
-				},
-			},
+			"williamboman/mason-lspconfig.nvim",
+		},
+	},
+	{
+		"williamboman/mason-lspconfig.nvim",
+		-- url = "https://github.com/williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
 		},
 	},
 }
