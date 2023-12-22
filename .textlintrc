@@ -21,7 +21,7 @@
     },
     "preset-jtf-style": true,
     "prh": {
-      "rulePaths": ["~/.prh-rules/media/WEB+DB_PRESS.yml"]
+      "rulePaths": ["~/node_modules/prh/prh-rules/media/WEB+DB_PRESS.yml"]
     },
     "terminology": {
       "defaultTerms": true

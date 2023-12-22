@@ -83,28 +83,48 @@ function M.lspconfig()
 		-- dockerfile-language-server dockerls
 
 		-- efm
-		-- if server_name == "efm" then
-		--   opts.settings = {
-		--     init_options = { documentFormatting = true },
-		--     settings = {
-		--       rootMarkers = { ".git/" },
-		--       languages = {
-		--         lua = {
-		--           {
-		--             formatCommand = "stylua --color Never --config-path ~/.config/.stylua.toml -",
-		--           },
-		--           {
-		--             lintCommand = "luacheck --no-color --quiet --config ~/.config/.luacheckrc -",
-		--             lintFormats = { "%f:%l:%c: %m" },
-		--           },
-		--         },
-		--       },
-		--     },
-		--     filetypes = {
-		--       "lua",
-		--     },
-		--   }
-		-- end
+		if server_name == "efm" then
+			opts.init_options = {
+				documentFormatting = true,
+				documentRangeFormatting = true,
+				-- hover = true,
+				-- documentSymbol = true,
+				codeAction = true,
+				-- completion = true,
+			}
+			opts.single_file_support = true
+			opts.filetypes = { "markdown" }
+			opts.settings = {
+				rootMarkers = { ".git/" },
+				languages = {
+					markdown = {
+						{
+							-- lintIgnoreExitCode = true,
+							-- lintCommand = [[npx textlint -f json ${INPUT} | jq -r '.[] | .filePath as $filePath | .messages[] | "1;\($filePath):\(.line):\(.column):\n2;\(.message | split("\n")[0])\n3;[\(.ruleId)]"']],
+							-- lintFormats = {
+							-- 	"%f:%l:%c: %m [%trror/%r]",
+							-- },
+							-- https://textlint.github.io/
+							prefix = "textlint",
+							lintSource = "efm/textlint",
+							lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+							lintStdin = true,
+							lintFormats = {
+								"%.%#: line %l, col %c, %trror - %m",
+								"%.%#: line %l, col %c, %tarning - %m",
+							},
+							rootMarkers = {
+								".textlintrc",
+								".textlintrc.js",
+								".textlintrc.json",
+								".textlintrc.yml",
+								".textlintrc.yaml",
+							},
+						},
+					},
+				},
+			}
+		end
 
 		-- eslint-lsp eslint
 		if server_name == "eslint" then
@@ -248,6 +268,7 @@ function M.lspconfig()
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",
+			"efm",
 			"eslint",
 			"gopls",
 			"graphql",
