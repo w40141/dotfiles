@@ -3,6 +3,12 @@ local setup = require("plugins.lsp.setup")
 
 return {
 	{
+		"williamboman/mason.nvim",
+		-- url = "https://github.com/williamboman/mason.nvim",
+		cmd = { "Mason" },
+		config = conf.mason,
+	},
+	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
 		init = setup.lspconfig,

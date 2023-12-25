@@ -2,18 +2,16 @@ local conf = require("plugins.tool.config")
 local setup = require("plugins.tool.setup")
 
 -- TODO: https://github.com/sindrets/diffview.nvim
+
+-- TODO: https://zenn.dev/koga1020/articles/009766e1bec42c
+-- TODO: https://github.com/glidenote/memolist.vim
+-- TODO: https://github.com/delphinus/telescope-memo.nvim
 return {
 	{
 		"dstein64/vim-startuptime",
 		-- url = "https://github.com/dstein64/vim-startuptime",
 		cmd = "StartupTime",
 	},
-	-- {
-	-- 	url = "https://github.com/vim-test/vim-test",
-	-- 	event = "CmdlineEnter",
-	-- 	init = setup.vim_test,
-	-- 	config = conf.vim_test,
-	-- },
 	{
 		-- Generating images of source code using
 		"segeljakt/vim-silicon",
