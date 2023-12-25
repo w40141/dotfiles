@@ -1,6 +1,7 @@
 local conf = require("plugins.tool.config")
 local setup = require("plugins.tool.setup")
 
+-- TODO: https://github.com/sindrets/diffview.nvim
 return {
 	{
 		"dstein64/vim-startuptime",

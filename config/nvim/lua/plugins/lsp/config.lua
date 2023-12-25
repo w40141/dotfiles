@@ -2,6 +2,7 @@ local M = {}
 
 function M.lspconfig()
 	local v = vim
+	local fn = v.fn
 	local lsp = v.lsp
 	local api = v.api
 	local hl = api.nvim_set_hl
@@ -13,14 +14,16 @@ function M.lspconfig()
 	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 	for type, icon in pairs(signs) do
 		local sign = "DiagnosticSign" .. type
-		v.fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
+		fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
 	end
 
 	-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
 	lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
-		update_in_insert = false,
 		virtual_text = {
 			format = function(diagnostic)
+				if not diagnostic.source then
+					return diagnostic.message
+				end
 				return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
 			end,
 		},
@@ -84,45 +87,52 @@ function M.lspconfig()
 
 		-- efm
 		if server_name == "efm" then
-			opts.init_options = {
-				documentFormatting = true,
-				documentRangeFormatting = true,
-				-- hover = true,
-				-- documentSymbol = true,
-				codeAction = true,
-				-- completion = true,
-			}
-			opts.single_file_support = true
-			opts.filetypes = { "markdown" }
-			opts.settings = {
-				rootMarkers = { ".git/" },
-				languages = {
-					markdown = {
-						{
-							-- lintIgnoreExitCode = true,
-							-- lintCommand = [[npx textlint -f json ${INPUT} | jq -r '.[] | .filePath as $filePath | .messages[] | "1;\($filePath):\(.line):\(.column):\n2;\(.message | split("\n")[0])\n3;[\(.ruleId)]"']],
-							-- lintFormats = {
-							-- 	"%f:%l:%c: %m [%trror/%r]",
-							-- },
-							-- https://textlint.github.io/
-							prefix = "textlint",
-							lintSource = "efm/textlint",
-							lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
-							lintStdin = true,
-							lintFormats = {
-								"%.%#: line %l, col %c, %trror - %m",
-								"%.%#: line %l, col %c, %tarning - %m",
-							},
-							rootMarkers = {
-								".textlintrc",
-								".textlintrc.js",
-								".textlintrc.json",
-								".textlintrc.yml",
-								".textlintrc.yaml",
-							},
-						},
+			local textlint = {
+				{
+					prefix = "textlint",
+					lintSource = "efm/textlint",
+					lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+					lintStdin = true,
+					lintFormats = {
+						"%.%#: line %l, col %c, %trror - %m",
+						"%.%#: line %l, col %c, %tarning - %m",
+					},
+					rootMarkers = {
+						".textlintrc",
+						".textlintrc.json",
+						".textlintrc.yml",
+						".textlintrc.yaml",
 					},
 				},
+			}
+			local languages = {
+				markdown = textlint,
+			}
+
+			-- cspellが実行できるなら追加
+			if fn.executable("cspell") then
+				languages["="] = {
+					{
+						lintCommand = "cspell --no-progress --no-summary --no-color --config=~/.config/cspell/cspell.json ${INPUT}",
+						lintIgnoreExitCode = true,
+						lintFormats = {
+							"%f:%l:%c - %m",
+							"%f:%l:%c %m",
+						},
+						lintSeverity = 4, -- hint
+					},
+				}
+			end
+
+			opts.init_options = {
+				documentFormatting = true,
+				hover = true,
+				codeAction = true,
+			}
+			opts.filetypes = v.tbl_keys(languages)
+			opts.settings = {
+				rootMarkers = { ".git/" },
+				languages = languages,
 			}
 		end
 
@@ -265,6 +275,7 @@ function M.lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = {
 			"bashls",
+			"cspell",
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",

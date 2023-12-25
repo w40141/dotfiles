@@ -12,6 +12,7 @@ return {
 		dependencies = {
 			"folke/trouble.nvim",
 			"stevearc/aerial.nvim",
+			"nvim-telescope/telescope-ui-select.nvim",
 		},
 		init = setup.telescope,
 		config = conf.telescope,

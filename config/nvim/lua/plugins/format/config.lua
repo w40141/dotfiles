@@ -6,15 +6,11 @@ function M.conform()
 
 	local slow_format_filetypes = {}
 	conform.setup({
-		-- formatters = {
-		-- 	google_java_format = { args = { "-", "-aosp" } },
-		-- },
 		formatters_by_ft = {
 			bash = { "shfmt" },
 			elixir = { "mix" },
 			fish = { "fish_indent" },
 			go = { "gofumpt", "gofmt", "goimports", "golines" },
-			-- java = { "google-java-format" },
 			javascript = { "prettier" },
 			json = { "fixjson" },
 			lua = { "stylua" },

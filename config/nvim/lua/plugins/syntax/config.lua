@@ -78,7 +78,9 @@ function M.treesitter()
 				},
 			},
 		},
-		yati = { enable = true },
+		autotag = {
+			enable = true,
+		},
 	})
 end
 

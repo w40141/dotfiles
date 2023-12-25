@@ -1,6 +1,7 @@
 local setup = require("plugins.edit.setup")
 local conf = require("plugins.edit.config")
 
+-- TODO: https://github.com/tkmpypy/chowcho.nvim
 return {
 	{
 		-- A better annotation generator.
