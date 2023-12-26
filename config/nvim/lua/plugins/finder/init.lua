@@ -13,6 +13,7 @@ return {
 			"folke/trouble.nvim",
 			"stevearc/aerial.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
+			"delphinus/telescope-memo.nvim",
 		},
 		init = setup.telescope,
 		config = conf.telescope,

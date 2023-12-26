@@ -1,12 +1,21 @@
 local conf = require("plugins.tool.config")
 local setup = require("plugins.tool.setup")
 
--- TODO: https://github.com/sindrets/diffview.nvim
-
 -- TODO: https://zenn.dev/koga1020/articles/009766e1bec42c
 -- TODO: https://github.com/glidenote/memolist.vim
 -- TODO: https://github.com/delphinus/telescope-memo.nvim
 return {
+	{
+		"glidenote/memolist.vim",
+		-- url = "https://github.com/glidenote/memolist.vim"
+		cmd = {
+			"MemoList",
+			"MemoNew",
+			"MemoGrep",
+		},
+		config = conf.memolist,
+		init = setup.memolist,
+	},
 	{
 		"dstein64/vim-startuptime",
 		-- url = "https://github.com/dstein64/vim-startuptime",
@@ -26,16 +35,6 @@ return {
 			{ "<plug>(openbrowser-smart-search)", mode = "n" },
 		},
 		init = setup.open_browser,
-	},
-	{
-		"NeogitOrg/neogit",
-		-- url = "https://github.com/NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			-- url = "https://github.com/nvim-lua/plenary.nvim",
-		},
-		cmd = { "Neogit" },
-		config = conf.neogit,
 	},
 	{
 		-- Delete buffers

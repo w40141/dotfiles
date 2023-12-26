@@ -289,7 +289,6 @@ function M.lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = {
 			"bashls",
-			"cspell",
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",

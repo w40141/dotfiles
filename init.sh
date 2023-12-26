@@ -22,9 +22,7 @@ fi
 cd config || exit
 for f in ??*; do
 	echo "$f"
-	wln -snfv "$DOTCONF/$f" "$CONFIG/$f"
+	ln -snfv "$DOTCONF/$f" "$CONFIG/$f"
 done
-
-git submodule update -i
 
 echo "complete!"

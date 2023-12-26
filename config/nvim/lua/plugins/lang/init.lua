@@ -2,7 +2,6 @@
 
 return {
 	{
-		-- TODO: 設定
 		"iamcco/markdown-preview.nvim",
 		-- url = "https://github.com/iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

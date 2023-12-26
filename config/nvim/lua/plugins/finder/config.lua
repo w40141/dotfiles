@@ -207,6 +207,7 @@ function M.telescope()
 	})
 	telescope.load_extension("ui-select")
 	telescope.load_extension("aerial")
+	telescope.load_extension("memo")
 end
 
 return M

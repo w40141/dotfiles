@@ -1,5 +1,9 @@
 local M = {}
 
+function M.memolist()
+	local key = vim.keymap.set
+end
+
 function M.open_browser()
 	local key = vim.keymap.set
 	key({ "n", "v" }, "gx", "<plug>(openbrowser-smart-search)")

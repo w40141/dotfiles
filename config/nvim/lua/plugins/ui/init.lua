@@ -91,12 +91,6 @@ return {
 		config = conf.scrollbar,
 	},
 	{
-		"lewis6991/gitsigns.nvim",
-		-- url = "https://github.com/lewis6991/gitsigns.nvim",
-		event = { "BufReadPost" },
-		config = conf.gitsigns,
-	},
-	{
 		-- File finder
 		"nvim-tree/nvim-tree.lua",
 		-- url = "https://github.com/nvim-tree/nvim-tree.lua",
