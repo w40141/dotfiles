@@ -45,17 +45,18 @@ function M.alpha()
 
 	-- Menu
 	d.section.buttons.val = {
-		d.button("e", " New file", ":ene <BAR> startinsert<CR>"),
+		d.button("e", "󰝒 New file", ":ene <BAR> startinsert<CR>"),
 		d.button("f", "󰱼 Find file", "<CMD>Telescope find_files<CR>"),
 		d.button("g", "󱎸 Find word", "<CMD>Telescope live_grep<CR>"),
-		d.button("t", " Find TODO", "<CMD>TodoTelescope<CR>"),
-		d.button("o", " Open explorer", "<CMD>NvimTreeToggle<CR>"),
-		d.button("c", "󱙣 Check health", "<CMD>checkhealth<CR>"),
+		d.button("t", "󰄲 Find TODO", "<CMD>TodoTelescope<CR>"),
+		d.button("o", "󰌀 Open explorer", "<CMD>NvimTreeToggle<CR>"),
+		d.button("c", "󰓙 Check health", "<CMD>checkhealth<CR>"),
 		d.button("u", "󰚰 Update plugins", "<CMD>Lazy sync<CR>"),
-		d.button("l", " Open Library Maneger", "<CMD>Lazy<CR>"),
-		d.button("m", " Open Package Maneger", "<CMD>Mason<CR>"),
-		d.button("T", "󱫐 Measure time", "<CMD>StartupTime<CR>"),
-		d.button("q", " Quit", "<CMD>qa<CR>"),
+		d.button("l", "󰏓 Open Package Maneger", "<CMD>Lazy<CR>"),
+		d.button("m", "󰌱 Open Mason Maneger", "<CMD>Mason<CR>"),
+		d.button("T", "󱫠 Measure time", "<CMD>StartupTime<CR>"),
+		d.button("M", "󱩧 New Memo", ":MemoNew<CR>"),
+		d.button("q", "󰩈 Quit", "<CMD>qa<CR>"),
 	}
 
 	-- Footer
