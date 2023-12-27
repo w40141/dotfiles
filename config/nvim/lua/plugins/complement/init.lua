@@ -19,6 +19,7 @@ return {
 			"f3fora/cmp-spell",
 			"saadparwaiz1/cmp_luasnip",
 			"zbirenbaum/copilot-cmp",
+			"chrisgrieser/cmp_yanky",
 		},
 	},
 	{
@@ -58,6 +59,10 @@ return {
 	{
 		"f3fora/cmp-spell",
 		-- url = "https://github.com/f3fora/cmp-spell",
+	},
+	{
+		"chrisgrieser/cmp_yanky",
+		-- url = "https://github.com/chrisgrieser/cmp_yanky",
 	},
 	{
 		"saadparwaiz1/cmp_luasnip",

@@ -1,7 +1,6 @@
 local setup = require("plugins.edit.setup")
 local conf = require("plugins.edit.config")
 
--- TODO: https://github.com/tkmpypy/chowcho.nvim
 return {
 	{
 		-- A better annotation generator.
@@ -59,7 +58,6 @@ return {
 		config = conf.colorizer,
 	},
 	{
-		-- TODO: cmpと連携させる
 		-- Improved Yank and Put functionalities for Neovim
 		"gbprod/yanky.nvim",
 		-- url = "https://github.com/gbprod/yanky.nvim",

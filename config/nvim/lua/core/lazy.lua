@@ -1,7 +1,6 @@
 local v = vim
 
 -- TODO: https://github.com/folke/flash.nvim
--- TODO: https://github.com/nvim-pack/nvim-spectre
 -- TODO: https://github.com/epwalsh/obsidian.nvim
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then

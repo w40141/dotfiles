@@ -46,6 +46,7 @@ function M.cmp()
 					spell = "[SPL]",
 					treesitter = "[TST]",
 					copilot = "[COP]",
+					cmp_yanky = "[YNK]",
 				},
 				symbol_map = {
 					Copilot = "",
@@ -135,6 +136,7 @@ function M.cmp()
 					end,
 				},
 			},
+			{ name = "cmp_yanky" },
 			-- { name = "skkeleton" },
 		}),
 		-- view = {
