@@ -38,6 +38,8 @@ function M.telescope()
 	key("n", "[ff]gc", b("git_commits"))
 	key("n", "[ff]gC", b("git_bcommits"))
 	key("n", "[ff]gb", b("git_branches"))
+	key("n", "[ff]ml", "<cmd>Telescope memo list<cr>")
+	key("n", "[ff]mg", "<cmd>Telescope memo live_grep<cr>")
 end
 
 return M

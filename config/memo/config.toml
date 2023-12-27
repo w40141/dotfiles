@@ -1,9 +1,9 @@
 memodir = "~/ghq/github.com/w40141/memolist/posts"
+memotemplate = "$XDG_CONFIG_HOME/memo/templates/md.txt"
 editor = "nvim"
 column = 20
 width = 0
 selectcmd = "fzf"
 grepcmd = "grep -nH ${PATTERN} ${FILES}"
-memotemplate = "$XDG_CONFIG_HOME/memo/templates/template.md"
 assetsdir = "."
 pluginsdir = "$XDG_CONFIG_HOME/memo/plugins"
