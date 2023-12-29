@@ -6,8 +6,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		-- event = "VeryLazy",
-		event = { "BufNewFile", "BufRead" },
+		event = "VeryLazy",
+		-- event = { "BufNewFile", "BufRead" },
 		config = conf.treesitter,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",

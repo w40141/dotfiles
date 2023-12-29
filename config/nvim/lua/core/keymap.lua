@@ -102,11 +102,11 @@ key("n", "<tab>", "%")
 key("n", "sp", ":<c-u>sp<cr>")
 key("n", "sv", ":<c-u>vs<cr>")
 -- 分割したウィンドウ間を移動
--- key("n", "sw", "<c-w>w<cr>")
--- key("n", "sj", "<c-w>j<cr>")
--- key("n", "sk", "<c-w>k<cr>")
--- key("n", "sl", "<c-w>l<cr>")
--- key("n", "sh", "<c-w>h<cr>")
+key("n", "sw", "<c-w>w<cr>")
+key("n", "sj", "<c-w>j<cr>")
+key("n", "sk", "<c-w>k<cr>")
+key("n", "sl", "<c-w>l<cr>")
+key("n", "sh", "<c-w>h<cr>")
 -- ウィンドウを閉じる
 key("n", "sc", "<c-w>c<cr>")
 -- 現在のウィンドウ以外のウィンドウを閉じる

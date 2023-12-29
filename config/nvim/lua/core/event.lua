@@ -12,19 +12,19 @@ autocmd("BufEnter", {
 	group = myAutoCmd,
 })
 
-local memoAutoCommit = augroup("MemoAutoCommit", { clear = true })
-local pattern = "*/memolist/posts/*.md"
-
-autocmd("BufEnter", {
-	pattern = pattern,
-	callback = function()
-		api.nvim_buf_set_var(0, "auto_save", 0)
-	end,
-	group = memoAutoCommit,
-})
-
-autocmd("BufWritePost", {
-	pattern = pattern,
-	command = "!memo commit",
-	group = memoAutoCommit,
-})
+-- local memoAutoCommit = augroup("MemoAutoCommit", { clear = true })
+-- local pattern = "*/memolist/posts/*.md"
+--
+-- autocmd("BufEnter", {
+-- 	pattern = pattern,
+-- 	callback = function()
+-- 		api.nvim_buf_set_var(0, "auto_save", 0)
+-- 	end,
+-- 	group = memoAutoCommit,
+-- })
+--
+-- autocmd("BufWritePost", {
+-- 	pattern = pattern,
+-- 	command = "!memo commit",
+-- 	group = memoAutoCommit,
+-- })

@@ -47,7 +47,8 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		event = { "BufReadPre" },
+		-- event = { "BufReadPre" },
+		event = "VeryLazy",
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"rebelot/kanagawa.nvim",
@@ -60,7 +61,8 @@ return {
 		"lukas-reineke/indent-blankline.nvim",
 		-- url = "https://github.com/lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
-		event = { "BufReadPost" },
+		-- event = { "BufReadPost" },
+		event = "VeryLazy",
 		config = conf.indent_blankline,
 	},
 	-- {
@@ -80,14 +82,15 @@ return {
 		-- Scrollbar
 		"petertriho/nvim-scrollbar",
 		-- url = "https://github.com/petertriho/nvim-scrollbar",
-		event = {
-			"BufRead",
-			"BufNewFile",
-			"InsertEnter",
-			"CmdlineEnter",
-			"CursorHold",
-			"FocusLost",
-		},
+		event = "VeryLazy",
+		-- event = {
+		-- 	"BufRead",
+		-- 	"BufNewFile",
+		-- 	"InsertEnter",
+		-- 	"CmdlineEnter",
+		-- 	"CursorHold",
+		-- 	"FocusLost",
+		-- },
 		config = conf.scrollbar,
 	},
 	{
