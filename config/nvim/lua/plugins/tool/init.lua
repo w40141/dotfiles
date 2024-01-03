@@ -137,4 +137,67 @@ return {
 			},
 		},
 	},
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*", -- recommended, use latest release instead of latest commit
+		-- lazy = true,
+		-- ft = "markdown",
+		-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+		-- event = {
+		--   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+		--   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+		--   "BufReadPre path/to/my-vault/**.md",
+		--   "BufNewFile path/to/my-vault/**.md",
+		-- },
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		cmd = {
+			"ObsidianCheck",
+			"ObsidianToday",
+			"ObsidianYesterday",
+			"ObsidianTomorrow",
+			"ObsidianNew",
+			"ObsidianOpen",
+			"ObsidianBacklinks",
+			"ObsidianSearch",
+			"ObsidianTemplate",
+			"ObsidianQuickSwitch",
+			"ObsidianLinkNew",
+			"ObsidianLink",
+			"ObsidianFollowLink",
+			"ObsidianWorkspace",
+			"ObsidianRename",
+			"ObsidianPasteImg",
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "vault",
+					path = "~/ghq/github.com/w40141/vault",
+				},
+			},
+			notes_subdir = "Inbox",
+			daily_notes = {
+				folder = "Daily",
+				date_format = "%Y-%m-%d",
+				alias_format = "%B %-d, %Y",
+				template = "Daily.md",
+			},
+			completion = {
+				nvim_cmp = true,
+				min_chars = 2,
+				new_notes_location = "notes_subdir",
+				prepend_note_id = true,
+				prepend_note_path = false,
+				use_path_only = false,
+			},
+			templates = {
+				subdir = "Config/Templates",
+			},
+		},
+	},
 }

@@ -57,13 +57,19 @@ return {
 		init = setup.lualine,
 		config = conf.lualine,
 	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	-- url = "https://github.com/lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- 	-- event = { "BufReadPost" },
+	-- 	event = "VeryLazy",
+	-- 	config = conf.indent_blankline,
+	-- },
 	{
-		"lukas-reineke/indent-blankline.nvim",
-		-- url = "https://github.com/lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		-- event = { "BufReadPost" },
-		event = "VeryLazy",
-		config = conf.indent_blankline,
+		"shellRaining/hlchunk.nvim",
+		-- url = "https://github.com/shellRaining/hlchunk.nvim"
+		event = { "UIEnter" },
+		config = conf.hlchunk,
 	},
 	-- {
 	-- 	"folke/noice.nvim",

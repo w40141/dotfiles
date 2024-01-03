@@ -14,6 +14,7 @@ return {
 			"stevearc/aerial.nvim",
 			"nvim-telescope/telescope-ui-select.nvim",
 			"delphinus/telescope-memo.nvim",
+			"nvim-telescope/telescope-frecency.nvim",
 		},
 		init = setup.telescope,
 		config = conf.telescope,

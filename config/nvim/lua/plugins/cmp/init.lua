@@ -1,4 +1,4 @@
-local conf = require("plugins.complement.config")
+local conf = require("plugins.cmp.config")
 -- local setup = require("modules.complement.setup")
 
 return {

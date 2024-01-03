@@ -6,7 +6,10 @@ function M.memolist()
 	g.memolist_path = "~/ghq/github.com/w40141/memolist/posts"
 	g.memolist_memo_suffix = "md"
 	g.memolist_ex_cmd = "NvimTreeToggle"
-	g.memolist_template_dir_path = "$XDG_CONFIG_HOME/memo/templates"
+	g.memolist_template_dir_path = "~/.config/memo/templates"
+	g.memolist_delimiter_yaml_array = ","
+	g.memolist_delimiter_yaml_start = "---"
+	g.memolist_delimiter_yaml_end = "---"
 	v.cmd([[command! -nargs=0 MemoCommit !memo commit]])
 end
 

@@ -435,4 +435,14 @@ function M.dressing()
 	require("dressing").setup()
 end
 
+function M.hlchunk()
+	require("hlchunk").setup({
+		indent = {
+			use_treesitter = true,
+		},
+		line_num = {
+			use_treesitter = true,
+		},
+	})
+end
 return M
