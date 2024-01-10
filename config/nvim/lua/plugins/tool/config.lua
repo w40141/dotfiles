@@ -96,20 +96,6 @@ function M.obsidian()
 	local obsidian = require("obsidian")
 	local day_sec = 60 * 60 * 24
 	local week_sec = day_sec * 7
-	local padding = function(s)
-		return string.format("%02d", s)
-	end
-	local split_slash = function(y, m, d)
-		return (y .. "/" .. m .. "/" .. d)
-	end
-	local split_hyphen = function(y, m, d)
-		return (y .. "-" .. m .. "-" .. d)
-	end
-	local date = function(time, f)
-		local tmp = os.date("*t", os.time() + time)
-		return f(tmp.year, padding(tmp.month), padding(tmp.day))
-	end
-
 	obsidian.setup({
 		workspaces = {
 			{
@@ -121,7 +107,7 @@ function M.obsidian()
 		daily_notes = {
 			folder = "Daily",
 			date_format = "%Y-%m-%d",
-			alias_format = "%Y%m%d%H%M%S",
+			alias_format = "%Y%m%dT%H%M%S",
 			template = "DailyNvim.md",
 		},
 		completion = {
@@ -132,11 +118,19 @@ function M.obsidian()
 			prepend_note_path = false,
 			use_path_only = false,
 		},
+		note_id_func = function(title)
+			local suffix = ""
+			if title ~= nil then
+				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+			else
+				for _ = 1, 4 do
+					suffix = suffix .. string.char(math.random(65, 90))
+				end
+			end
+			return (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
+		end,
 		note_frontmatter_func = function(note)
-			-- This is equivalent to the default frontmatter function.
-			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-			-- `note.metadata` contains any manually added fields in the frontmatter.
-			-- So here we just make sure those fields are kept in the frontmatter.
+			local out = { id = note.id, aliases = note.aliases, tags = note.tags, created = os.date("%Y-%m-%dT%H:%M:%S") }
 			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
 				for k, v in pairs(note.metadata) do
 					out[k] = v
@@ -146,49 +140,31 @@ function M.obsidian()
 		end,
 		templates = {
 			subdir = "Config/Templates",
-			date_format = "%Y/%m/%d",
+			date_format = "%Y-%m-%d",
 			substitutions = {
 				year_kanji = function()
-					return (os.date("%Y") .. "年")
+					return os.date("%Y年")
 				end,
 				month_kanji = function()
-					local month = padding(os.date("%m"))
-					return (os.date("%Y") .. "年" .. month .. "月")
+					return os.date("%Y年%m月")
 				end,
 				today_kanji = function()
-					local day = padding(os.date("%d"))
-					local month = padding(os.date("%m"))
-					return (os.date("%Y") .. "年" .. month .. "月" .. day .. "日")
+					return os.date("%Y年%m月%d日")
 				end,
-				-- today_slash = function()
-				-- 	return date(0, split_slash)
-				-- end,
-				today_hyphen = function()
-					return date(0, split_hyphen)
+				today_slash = function()
+					return os.date("%Y/%m/%d")
 				end,
-				-- tomorrow_slash = function()
-				-- 	return date(day_sec, split_slash)
-				-- end,
-				tomorrow_hyphen = function()
-					return date(day_sec, split_hyphen)
+				yesterday = function()
+					return os.date("%Y-%m-%d", os.time() - day_sec)
 				end,
-				-- yesterday_slash = function()
-				-- 	return date(-day_sec, split_slash)
-				-- end,
-				yesterday_hyphen = function()
-					return date(-day_sec, split_hyphen)
+				tomorrow = function()
+					return os.date("%Y-%m-%d", os.time() + day_sec)
 				end,
-				-- one_week_before_slash = function()
-				-- 	return date(-week_sec, split_slash)
-				-- end,
-				one_week_before_hyphen = function()
-					return date(-week_sec, split_hyphen)
+				a_week_before = function()
+					return os.date("%Y-%m-%d", os.time() - week_sec)
 				end,
-				-- one_week_after_slash = function()
-				-- 	return date(week_sec, split_slash)
-				-- end,
-				one_week_after_hyphen = function()
-					return date(week_sec, split_hyphen)
+				a_week_after = function()
+					return os.date("%Y-%m-%d", os.time() + week_sec)
 				end,
 			},
 		},
