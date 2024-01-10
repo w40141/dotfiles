@@ -438,10 +438,11 @@ end
 function M.hlchunk()
 	require("hlchunk").setup({
 		indent = {
+			chars = { "│", "¦", "┆", "┊" },
 			use_treesitter = true,
 		},
 		line_num = {
-			use_treesitter = true,
+			enable = false,
 		},
 	})
 end

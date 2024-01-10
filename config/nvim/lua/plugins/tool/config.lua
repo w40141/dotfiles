@@ -132,60 +132,64 @@ function M.obsidian()
 			prepend_note_path = false,
 			use_path_only = false,
 		},
+		note_frontmatter_func = function(note)
+			-- This is equivalent to the default frontmatter function.
+			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+			-- `note.metadata` contains any manually added fields in the frontmatter.
+			-- So here we just make sure those fields are kept in the frontmatter.
+			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+				for k, v in pairs(note.metadata) do
+					out[k] = v
+				end
+			end
+			return out
+		end,
 		templates = {
 			subdir = "Config/Templates",
 			date_format = "%Y/%m/%d",
 			substitutions = {
-				year = function()
+				year_kanji = function()
 					return (os.date("%Y") .. "年")
 				end,
 				month_kanji = function()
 					local month = padding(os.date("%m"))
 					return (os.date("%Y") .. "年" .. month .. "月")
 				end,
-				month_slash = function()
-					local month = padding(os.date("%m"))
-					return (os.date("%Y") .. "/" .. month)
-				end,
-				month_hyphen = function()
-					local month = padding(os.date("%m"))
-					return (os.date("%Y") .. "-" .. month)
-				end,
 				today_kanji = function()
 					local day = padding(os.date("%d"))
 					local month = padding(os.date("%m"))
 					return (os.date("%Y") .. "年" .. month .. "月" .. day .. "日")
 				end,
-				today_slash = function()
-					return date(0, split_slash)
-				end,
+				-- today_slash = function()
+				-- 	return date(0, split_slash)
+				-- end,
 				today_hyphen = function()
 					return date(0, split_hyphen)
 				end,
-				tomorrow_slash = function()
-					return date(day_sec, split_slash)
-				end,
-				-- tomorrow_hyphen = function()
-				-- 	return date(day_sec, split_hyphen)
+				-- tomorrow_slash = function()
+				-- 	return date(day_sec, split_slash)
 				-- end,
-				yesterday_slash = function()
-					return date(-day_sec, split_slash)
+				tomorrow_hyphen = function()
+					return date(day_sec, split_hyphen)
 				end,
-				-- yesterday_hyphen = function()
-				-- 	return date(-day_sec, split_hyphen)
+				-- yesterday_slash = function()
+				-- 	return date(-day_sec, split_slash)
 				-- end,
-				one_week_before_slash = function()
-					return date(-week_sec, split_slash)
+				yesterday_hyphen = function()
+					return date(-day_sec, split_hyphen)
 				end,
-				-- one_week_before_hyphen = function()
-				-- 	return date(week_sec, split_hyphen)
+				-- one_week_before_slash = function()
+				-- 	return date(-week_sec, split_slash)
 				-- end,
-				one_week_after_slash = function()
-					return date(week_sec, split_slash)
+				one_week_before_hyphen = function()
+					return date(-week_sec, split_hyphen)
 				end,
-				-- one_week_after_hyphen = function()
-				-- 	return date(-week_sec, split_hyphen)
+				-- one_week_after_slash = function()
+				-- 	return date(week_sec, split_slash)
 				-- end,
+				one_week_after_hyphen = function()
+					return date(week_sec, split_hyphen)
+				end,
 			},
 		},
 		attachments = {
