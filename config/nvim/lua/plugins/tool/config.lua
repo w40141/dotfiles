@@ -94,6 +94,22 @@ end
 
 function M.obsidian()
 	local obsidian = require("obsidian")
+	local day_sec = 60 * 60 * 24
+	local week_sec = day_sec * 7
+	local padding = function(s)
+		return string.format("%02d", s)
+	end
+	local split_slash = function(y, m, d)
+		return (y .. "/" .. m .. "/" .. d)
+	end
+	local split_hyphen = function(y, m, d)
+		return (y .. "-" .. m .. "-" .. d)
+	end
+	local date = function(time, f)
+		local tmp = os.date("*t", os.time() + time)
+		return f(tmp.year, padding(tmp.month), padding(tmp.day))
+	end
+
 	obsidian.setup({
 		workspaces = {
 			{
@@ -105,8 +121,8 @@ function M.obsidian()
 		daily_notes = {
 			folder = "Daily",
 			date_format = "%Y-%m-%d",
-			alias_format = "%B %-d, %Y",
-			-- template = "Daily.md",
+			alias_format = "%Y%m%d%H%M%S",
+			template = "DailyNvim.md",
 		},
 		completion = {
 			nvim_cmp = true,
@@ -116,9 +132,62 @@ function M.obsidian()
 			prepend_note_path = false,
 			use_path_only = false,
 		},
-		-- templates = {
-		-- 	subdir = "Config/Templates",
-		-- },
+		templates = {
+			subdir = "Config/Templates",
+			date_format = "%Y/%m/%d",
+			substitutions = {
+				year = function()
+					return (os.date("%Y") .. "年")
+				end,
+				month_kanji = function()
+					local month = padding(os.date("%m"))
+					return (os.date("%Y") .. "年" .. month .. "月")
+				end,
+				month_slash = function()
+					local month = padding(os.date("%m"))
+					return (os.date("%Y") .. "/" .. month)
+				end,
+				month_hyphen = function()
+					local month = padding(os.date("%m"))
+					return (os.date("%Y") .. "-" .. month)
+				end,
+				today_kanji = function()
+					local day = padding(os.date("%d"))
+					local month = padding(os.date("%m"))
+					return (os.date("%Y") .. "年" .. month .. "月" .. day .. "日")
+				end,
+				today_slash = function()
+					return date(0, split_slash)
+				end,
+				today_hyphen = function()
+					return date(0, split_hyphen)
+				end,
+				tomorrow_slash = function()
+					return date(day_sec, split_slash)
+				end,
+				-- tomorrow_hyphen = function()
+				-- 	return date(day_sec, split_hyphen)
+				-- end,
+				yesterday_slash = function()
+					return date(-day_sec, split_slash)
+				end,
+				-- yesterday_hyphen = function()
+				-- 	return date(-day_sec, split_hyphen)
+				-- end,
+				one_week_before_slash = function()
+					return date(-week_sec, split_slash)
+				end,
+				-- one_week_before_hyphen = function()
+				-- 	return date(week_sec, split_hyphen)
+				-- end,
+				one_week_after_slash = function()
+					return date(week_sec, split_slash)
+				end,
+				-- one_week_after_hyphen = function()
+				-- 	return date(-week_sec, split_hyphen)
+				-- end,
+			},
+		},
 		attachments = {
 			img_folder = "Config/Extra",
 		},
