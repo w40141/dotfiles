@@ -173,31 +173,6 @@ return {
 			"ObsidianRename",
 			"ObsidianPasteImg",
 		},
-		opts = {
-			workspaces = {
-				{
-					name = "vault",
-					path = "~/ghq/github.com/w40141/vault",
-				},
-			},
-			notes_subdir = "Inbox",
-			daily_notes = {
-				folder = "Daily",
-				date_format = "%Y-%m-%d",
-				alias_format = "%B %-d, %Y",
-				template = "Daily.md",
-			},
-			completion = {
-				nvim_cmp = true,
-				min_chars = 2,
-				new_notes_location = "notes_subdir",
-				prepend_note_id = true,
-				prepend_note_path = false,
-				use_path_only = false,
-			},
-			templates = {
-				subdir = "Config/Templates",
-			},
-		},
+		config = conf.obsidian,
 	},
 }

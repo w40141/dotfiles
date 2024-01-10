@@ -77,21 +77,51 @@ function M.chowcho()
 		api.nvim_command("wincmd w")
 	end)
 
-	require("chowcho").setup({
+	chowcho.setup({
 		icon_enabled = true, -- required 'nvim-web-devicons' (default: false)
 		text_color = "#FFFFFF",
 		bg_color = "#555555",
 		active_border_color = "#0A8BFF",
 		border_style = "default",
 		use_exclude_default = false,
-		exclude = function(buf, win)
-			-- Exclude a window from the choice based on its buffer information.
-			-- This option is applied iff `use_exclude_default = false`.
-			-- Note that below is identical to the `use_exclude_default = true`.
+		exclude = function(buf, _)
 			local fname = fn.expand("#" .. buf .. ":t")
 			return fname == ""
 		end,
 		zindex = 10000, -- sufficiently large value to show on top of the other windows
+	})
+end
+
+function M.obsidian()
+	local obsidian = require("obsidian")
+	obsidian.setup({
+		workspaces = {
+			{
+				name = "vault",
+				path = "~/ghq/github.com/w40141/vault",
+			},
+		},
+		notes_subdir = "Inbox",
+		daily_notes = {
+			folder = "Daily",
+			date_format = "%Y-%m-%d",
+			alias_format = "%B %-d, %Y",
+			-- template = "Daily.md",
+		},
+		completion = {
+			nvim_cmp = true,
+			min_chars = 2,
+			new_notes_location = "notes_subdir",
+			prepend_note_id = true,
+			prepend_note_path = false,
+			use_path_only = false,
+		},
+		-- templates = {
+		-- 	subdir = "Config/Templates",
+		-- },
+		attachments = {
+			img_folder = "Config/Extra",
+		},
 	})
 end
 
