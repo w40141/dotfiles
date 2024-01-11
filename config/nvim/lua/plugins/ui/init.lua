@@ -37,7 +37,7 @@ return {
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
-		event = { "VeryLazy" },
+		event = { "BufReadPre" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -48,8 +48,7 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		-- event = { "BufReadPre" },
-		event = { "VeryLazy" },
+		event = { "BufReadPre" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"rebelot/kanagawa.nvim",
@@ -58,18 +57,10 @@ return {
 		init = setup.lualine,
 		config = conf.lualine,
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	-- url = "https://github.com/lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- 	-- event = { "BufReadPost" },
-	-- 	event = "VeryLazy",
-	-- 	config = conf.indent_blankline,
-	-- },
 	{
 		"shellRaining/hlchunk.nvim",
 		-- url = "https://github.com/shellRaining/hlchunk.nvim"
-		event = { "VeryLazy" },
+		event = { "BufReadPost" },
 		config = conf.hlchunk,
 	},
 	-- {
@@ -111,7 +102,7 @@ return {
 	-- },
 	{
 		"folke/zen-mode.nvim",
-		-- 	-- url = "https://github.com/folke/zen-mode.nvim",
+		-- url = "https://github.com/folke/zen-mode.nvim",
 		opts = {},
 		cmd = { "ZenMode" },
 	},
