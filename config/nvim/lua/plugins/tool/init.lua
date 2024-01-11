@@ -8,7 +8,8 @@ return {
 		cmd = {
 			"MemoNew",
 			"MemoGrep",
-			"MemoList"
+			"MemoList",
+			"MemoCommit",
 		},
 		config = conf.memolist,
 		init = setup.memolist,
@@ -145,10 +146,10 @@ return {
 		ft = "markdown",
 		-- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
 		event = {
-		  -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-		  -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-		  "BufReadPre ~/ghq/github/w40141/vault/**.md",
-		  "BufNewFile ~/ghq/github/w40141/vault/**.md",
+			-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+			-- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
+			"BufReadPre ~/ghq/github/w40141/vault/**.md",
+			"BufNewFile ~/ghq/github/w40141/vault/**.md",
 		},
 		dependencies = {
 			"nvim-lua/plenary.nvim",
