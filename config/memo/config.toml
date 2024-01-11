@@ -1,4 +1,4 @@
-memodir = "~/ghq/github.com/w40141/memolist/posts"
+memodir = "~/ghq/github.com/w40141/vault/Inbox"
 memotemplate = "$XDG_CONFIG_HOME/memo/templates/md.txt"
 editor = "nvim"
 column = 20

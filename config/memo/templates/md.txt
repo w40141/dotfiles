@@ -1,8 +1,8 @@
 ---
-title: {{_title_}}
-date: {{_date_}}
+aliases:
+  - {{_title_}}
 tags: []
-categories: []
+created: {{_date_}}
 ---
 
 # {{_title_}}

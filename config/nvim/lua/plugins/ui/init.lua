@@ -5,6 +5,7 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		-- url = "https://github.com/nvim-tree/nvim-web-devicons",
+		lazy = true,
 	},
 	{
 		"rebelot/kanagawa.nvim",
@@ -36,7 +37,7 @@ return {
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
-		event = { "BufReadPre" },
+		event = { "VeryLazy" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -48,7 +49,7 @@ return {
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
 		-- event = { "BufReadPre" },
-		event = "VeryLazy",
+		event = { "VeryLazy" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"rebelot/kanagawa.nvim",
@@ -68,7 +69,7 @@ return {
 	{
 		"shellRaining/hlchunk.nvim",
 		-- url = "https://github.com/shellRaining/hlchunk.nvim"
-		event = { "UIEnter" },
+		event = { "VeryLazy" },
 		config = conf.hlchunk,
 	},
 	-- {
@@ -88,15 +89,7 @@ return {
 		-- Scrollbar
 		"petertriho/nvim-scrollbar",
 		-- url = "https://github.com/petertriho/nvim-scrollbar",
-		event = "VeryLazy",
-		-- event = {
-		-- 	"BufRead",
-		-- 	"BufNewFile",
-		-- 	"InsertEnter",
-		-- 	"CmdlineEnter",
-		-- 	"CursorHold",
-		-- 	"FocusLost",
-		-- },
+		event = { "VeryLazy" },
 		config = conf.scrollbar,
 	},
 	{
@@ -118,6 +111,7 @@ return {
 	-- },
 	{
 		"folke/zen-mode.nvim",
+		-- 	-- url = "https://github.com/folke/zen-mode.nvim",
 		opts = {},
 		cmd = { "ZenMode" },
 	},

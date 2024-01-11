@@ -3,7 +3,9 @@ local M = {}
 function M.memolist()
 	local v = vim
 	local g = v.g
-	g.memolist_path = "~/ghq/github.com/w40141/memolist/posts"
+	g.memolist_memo_date = "%Y-%m-%dT%H:%M:%S"
+	g.memolist_filename_date = "%Y%m%dT%H%M%S-"
+	g.memolist_path = "~/ghq/github.com/w40141/vault/Inbox"
 	g.memolist_memo_suffix = "md"
 	g.memolist_ex_cmd = "NvimTreeToggle"
 	g.memolist_template_dir_path = "~/.config/memo/templates"
@@ -130,7 +132,7 @@ function M.obsidian()
 			return (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
 		end,
 		note_frontmatter_func = function(note)
-			local out = { id = note.id, aliases = note.aliases, tags = note.tags, created = os.date("%Y-%m-%dT%H:%M:%S") }
+			local out = { aliases = note.aliases, tags = note.tags, created = os.date("%Y-%m-%dT%H:%M:%S") }
 			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
 				for k, v in pairs(note.metadata) do
 					out[k] = v
