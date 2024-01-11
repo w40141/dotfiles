@@ -156,6 +156,9 @@ function M.obsidian()
 				today_slash = function()
 					return os.date("%Y/%m/%d")
 				end,
+				today = function()
+					return os.date("%Y-%m-%d")
+				end,
 				yesterday = function()
 					return os.date("%Y-%m-%d", os.time() - day_sec)
 				end,
@@ -167,6 +170,9 @@ function M.obsidian()
 				end,
 				a_week_after = function()
 					return os.date("%Y-%m-%d", os.time() + week_sec)
+				end,
+				now = function()
+					return os.date("%Y-%m-%dT%H:%M:%S")
 				end,
 			},
 		},
