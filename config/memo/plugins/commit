@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd ~/ghq/github.com/w40141/memolist || exit
+cd ~/ghq/github.com/w40141/vault || exit
 
 git pull --no-edit
 git add .

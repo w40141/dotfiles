@@ -3,9 +3,9 @@ local M = {}
 function M.memolist()
 	local v = vim
 	local g = v.g
-	g.memolist_memo_date = "%Y-%m-%dT%H:%M:%S"
+	g.memolist_memo_date = "%Y-%m-%d"
 	g.memolist_filename_date = "%Y%m%dT%H%M%S-"
-	g.memolist_path = "~/ghq/github.com/w40141/vault/Inbox"
+	g.memolist_path = "~/ghq/github.com/w40141/vault/Memo"
 	g.memolist_memo_suffix = "md"
 	g.memolist_ex_cmd = "NvimTreeToggle"
 	g.memolist_template_dir_path = "~/.config/memo/templates"

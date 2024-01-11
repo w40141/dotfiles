@@ -1,8 +1,7 @@
 ---
 aliases:
   - {{_title_}}
-tags: [memo, ]
-created: {{_date_}}
+tags: [memo, {{_date_}}]
 ---
 
 # {{_title_}}
