@@ -37,7 +37,7 @@ return {
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
-		event = { "BufReadPre" },
+		event = { "VeryLazy" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
@@ -48,7 +48,7 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		event = { "BufReadPre" },
+		event = { "VeryLazy" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"rebelot/kanagawa.nvim",

@@ -4,7 +4,7 @@ function M.memolist()
 	local v = vim
 	local g = v.g
 	g.memolist_memo_date = "%Y-%m-%d"
-	g.memolist_filename_date = "%Y%m%dT%H%M%S-"
+	g.memolist_filename_date = "%Y-%m-%dT%H:%M:%S-"
 	g.memolist_path = "~/ghq/github.com/w40141/vault/Memo"
 	g.memolist_memo_suffix = "md"
 	g.memolist_ex_cmd = "NvimTreeToggle"
@@ -122,17 +122,19 @@ function M.obsidian()
 		},
 		note_id_func = function(title)
 			local suffix = ""
+			local new_title = ""
 			if title ~= nil then
-				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				new_title = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
 			else
 				for _ = 1, 4 do
 					suffix = suffix .. string.char(math.random(65, 90))
+					new_title =  (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
 				end
 			end
-			return (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
+			return new_title
 		end,
 		note_frontmatter_func = function(note)
-			local out = { aliases = note.aliases, tags = note.tags, created = os.date("%Y-%m-%dT%H:%M:%S") }
+			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
 			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
 				for k, v in pairs(note.metadata) do
 					out[k] = v
