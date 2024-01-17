@@ -19,6 +19,7 @@ function M.conform()
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
 			yaml = { "yamlfmt" },
+			xml = {"xmlformat"},
 			["*"] = {
 				"codespell",
 			},
