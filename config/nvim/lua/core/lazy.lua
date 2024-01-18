@@ -1,7 +1,7 @@
 local v = vim
 
--- TODO: https://github.com/epwalsh/obsidian.nvim
 -- TODO: https://github.com/epwalsh/pomo.nvim
+-- TODO: https://github.com/tris203/hawtkeys.nvim
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	v.fn.system({
