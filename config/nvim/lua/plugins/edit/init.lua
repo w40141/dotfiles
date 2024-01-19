@@ -19,19 +19,21 @@ return {
 			{ ",n", mode = "n" },
 		},
 	},
-	-- {
-	-- 	-- Add/change/delete surrounding delimiter pairs with ease.
-	-- 	url = "https://github.com/kylechui/nvim-surround",
-	-- 	config = conf.nvim_surround,
-	-- 	event = "VeryLazy",
-	-- },
 	{
-		-- A surround text object plugin for neovim written in lua.
-		"ur4ltz/surround.nvim",
-		-- url = "https://github.com/ur4ltz/surround.nvim",
-		config = conf.surround,
-		event = { "BufReadPre", "FocusLost", "CursorHold" },
+		-- Add/change/delete surrounding delimiter pairs with ease.
+		"kylechui/nvim-surround",
+		-- url = "https://github.com/kylechui/nvim-surround",
+		version = "*",
+		config = conf.nvim_surround,
+		event = "VeryLazy",
 	},
+	-- {
+	-- 	-- A surround text object plugin for neovim written in lua.
+	-- 	"ur4ltz/surround.nvim",
+	-- 	-- url = "https://github.com/ur4ltz/surround.nvim",
+	-- 	config = conf.surround,
+	-- 	event = { "BufReadPre", "FocusLost", "CursorHold" },
+	-- },
 	{
 		-- eskk is pure Vim script implementation of input method engine SKK
 		"vim-skk/eskk.vim",

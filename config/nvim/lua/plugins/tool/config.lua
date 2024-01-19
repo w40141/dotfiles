@@ -128,7 +128,7 @@ function M.obsidian()
 			else
 				for _ = 1, 4 do
 					suffix = suffix .. string.char(math.random(65, 90))
-					new_title =  (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
+					new_title = (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
 				end
 			end
 			return new_title
@@ -181,6 +181,13 @@ function M.obsidian()
 		attachments = {
 			img_folder = "Config/Extra",
 		},
+	})
+end
+
+function M.swagger_preview()
+	require("swagger-preview").setup({
+		port = 8003,
+		host = "localhost",
 	})
 end
 

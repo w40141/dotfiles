@@ -15,7 +15,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		-- url = "https://github.com/lewis6991/gitsigns.nvim",
-		event = { "BufReadPost" },
+		event = "VeryLazy",
 		config = conf.gitsigns,
 	},
 	{
