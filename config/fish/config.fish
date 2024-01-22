@@ -11,7 +11,6 @@ set -g FISH_CACHE_DIR $HOME/.cache/fish
 set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
 
 set -gx EDITOR nvim
-set -x BROWSER open
 
 # for fzf
 set -x FZF_DEFAULT_OPTS '--border --color=fg+:10 --height 40% --reverse --select-1 --exit-0'
@@ -149,9 +148,11 @@ if test (uname) = Linux
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
+		set -x BROWSER /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
     fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin
+		set -x BROWSER open
     if test (uname -m) = x86_64
         fish_add_path /usr/local/sbin
         fish_add_path /usr/local/opt/apr/bin
