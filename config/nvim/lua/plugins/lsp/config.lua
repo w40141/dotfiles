@@ -8,8 +8,8 @@ function M.mason()
 				package_pending = "➜",
 				package_uninstalled = "✗",
 			},
-			width = 0.5,
-			height = 0.5,
+			width = 0.7,
+			height = 0.7,
 		},
 	})
 end
