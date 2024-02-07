@@ -3,6 +3,7 @@ local v = vim
 -- TODO: https://github.com/epwalsh/pomo.nvim
 -- TODO: https://github.com/tris203/hawtkeys.nvim
 -- TODO: https://github.com/yutkat/my-neovim-pluginlist/blob/main/search_replace_grep_select.md#replace
+-- TODO: https://github.com/j-hui/fidget.nvim
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	v.fn.system({
