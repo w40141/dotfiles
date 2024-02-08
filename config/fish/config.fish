@@ -8,7 +8,7 @@ set -g FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 set -g FISH_CONFIG $FISH_CONFIG_DIR/config.fish
 set -g FISH_CACHE_DIR $HOME/.cache/fish
 
-set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
+# set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
 
 set -gx EDITOR nvim
 
@@ -144,14 +144,14 @@ if test (uname) = Linux
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fish_add_path /home/linuxbrew/.linuxbrew/bin
     fish_add_path /home/linuxbrew/.linuxbrew/sbin
-    source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
+    # source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
 		set -x BROWSER /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
-    fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin
+    # fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin
 		set -x BROWSER open
     if test (uname -m) = x86_64
         fish_add_path /usr/local/sbin
@@ -178,7 +178,7 @@ else
         fish_add_path /usr/local/opt/mysql-client/bin
         fish_add_path $HOME/.local/bin
 
-        source /usr/local/opt/asdf/libexec/asdf.fish
+        # source /usr/local/opt/asdf/libexec/asdf.fish
     else
         fish_add_path /opt/homebrew/bin
         fish_add_path /opt/homebrew/sbin
@@ -205,7 +205,7 @@ else
         fish_add_path /opt/homebrew/opt/mysql-client/bin
         fish_add_path $HOME/.local/bin
 
-        source /opt/homebrew/opt/asdf/libexec/asdf.fish
+        # source /opt/homebrew/opt/asdf/libexec/asdf.fish
     end
 end
 
@@ -284,9 +284,9 @@ end
 
 function brew
     set -xl PATH $PATH # Protect global PATH by local PATH
-    if type -q asdf; and contains $HOME/.asdf/shims $PATH
-        set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
-    end
+    # if type -q asdf; and contains $HOME/.asdf/shims $PATH
+    #     set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
+    # end
 
     command brew $argv
 end
