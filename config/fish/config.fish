@@ -8,8 +8,6 @@ set -g FISH_CONFIG_DIR $XDG_CONFIG_HOME/fish
 set -g FISH_CONFIG $FISH_CONFIG_DIR/config.fish
 set -g FISH_CACHE_DIR $HOME/.cache/fish
 
-# set -gx ASDF_CONFIG_FILE $XDG_CONFIG_HOME/asdf/.asdfrc
-
 set -gx EDITOR nvim
 
 # for fzf
@@ -112,9 +110,6 @@ function fish_user_key_bindings
     bind \cg ghq_fzf_repo
 end
 
-# for develop
-# set -x PATH $PATH $GOPATH/bin
-
 # theme-bobthefish
 set -g theme_color_scheme dracula
 set -g theme_display_git yes
@@ -144,15 +139,14 @@ if test (uname) = Linux
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fish_add_path /home/linuxbrew/.linuxbrew/bin
     fish_add_path /home/linuxbrew/.linuxbrew/sbin
-    # source /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.fish
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
-		set -x BROWSER /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
+    set -x BROWSER /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
     # fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin
-		set -x BROWSER open
+    set -x BROWSER open
     if test (uname -m) = x86_64
         fish_add_path /usr/local/sbin
         fish_add_path /usr/local/opt/apr/bin
@@ -160,7 +154,6 @@ else
         fish_add_path /usr/local/opt/icu4c/bin
         fish_add_path /usr/local/opt/icu4c/sbin
         fish_add_path /usr/local/opt/libpq/bin
-        # fish_add_path /usr/local/opt/llvm/bin
         fish_add_path /usr/local/opt/nss/bin
         fish_add_path /usr/local/opt/qt/bin
         fish_add_path /usr/local/opt/sqlite/bin
@@ -173,12 +166,9 @@ else
         fish_add_path /usr/local/opt/gnu-getopt/bin
         fish_add_path /usr/local/opt/libxslt/bin
         fish_add_path /usr/local/opt/openssl@1.1/bin
-        # fish_add_path /usr/local/opt/openssl@3/bin
         fish_add_path /usr/local/opt/ncurses/bin
         fish_add_path /usr/local/opt/mysql-client/bin
         fish_add_path $HOME/.local/bin
-
-        # source /usr/local/opt/asdf/libexec/asdf.fish
     else
         fish_add_path /opt/homebrew/bin
         fish_add_path /opt/homebrew/sbin
@@ -187,7 +177,6 @@ else
         fish_add_path /opt/homebrew/opt/icu4c/bin
         fish_add_path /opt/homebrew/opt/icu4c/sbin
         fish_add_path /opt/homebrew/opt/libpq/bin
-        # fish_add_path /opt/homebrew/opt/llvm/bin
         fish_add_path /opt/homebrew/opt/nss/bin
         fish_add_path /opt/homebrew/opt/qt/bin
         fish_add_path /opt/homebrew/opt/sqlite/bin
@@ -200,18 +189,11 @@ else
         fish_add_path /opt/homebrew/opt/gnu-getopt/bin
         fish_add_path /opt/homebrew/opt/libxslt/bin
         fish_add_path /opt/homebrew/opt/openssl@1.1/bin
-        # fish_add_path /opt/homebrew/opt/openssl@3/bin
         fish_add_path /opt/homebrew/opt/ncurses/bin
         fish_add_path /opt/homebrew/opt/mysql-client/bin
         fish_add_path $HOME/.local/bin
-
-        # source /opt/homebrew/opt/asdf/libexec/asdf.fish
     end
 end
-
-# . ~/.asdf/plugins/java/set-java-home.fish
-
-# zoxide init fish | source
 
 # for ls or eza
 if command -s eza >/dev/null
@@ -284,9 +266,6 @@ end
 
 function brew
     set -xl PATH $PATH # Protect global PATH by local PATH
-    # if type -q asdf; and contains $HOME/.asdf/shims $PATH
-    #     set -e PATH[(contains -i $HOME/.asdf/shims $PATH)]
-    # end
 
     command brew $argv
 end
@@ -295,9 +274,9 @@ end
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
-# pnpm
-set -gx PNPM_HOME "$HOME/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-    set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
+# # pnpm
+# set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+# if not string match -q -- $PNPM_HOME $PATH
+#     set -gx PATH "$PNPM_HOME" $PATH
+# end
+# # pnpm end
