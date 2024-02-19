@@ -112,14 +112,20 @@ function M.obsidian()
 			alias_format = "%Y%m%dT%H%M%S",
 			template = "DailyNvim.md",
 		},
+		new_notes_location = "notes_subdir",
 		completion = {
 			nvim_cmp = true,
 			min_chars = 2,
-			new_notes_location = "notes_subdir",
-			prepend_note_id = true,
-			prepend_note_path = false,
-			use_path_only = false,
 		},
+		wiki_link_func = function(opts)
+			if opts.id == nil then
+				return string.format("[[%s]]", opts.label)
+			elseif opts.label ~= opts.id then
+				return string.format("[[%s|%s]]", opts.id, opts.label)
+			else
+				return string.format("[[%s]]", opts.id)
+			end
+		end,
 		note_id_func = function(title)
 			local suffix = ""
 			local new_title = ""
