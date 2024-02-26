@@ -137,8 +137,8 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 if test (uname) = Linux
     abbr -a bud 'brew update && brew upgrade && brew doctor && brew cleanup'
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    fish_add_path /home/linuxbrew/.linuxbrew/bin
-    fish_add_path /home/linuxbrew/.linuxbrew/sbin
+    # fish_add_path /home/linuxbrew/.linuxbrew/bin
+    # fish_add_path /home/linuxbrew/.linuxbrew/sbin
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
@@ -279,4 +279,4 @@ end
 # if not string match -q -- $PNPM_HOME $PATH
 #     set -gx PATH "$PNPM_HOME" $PATH
 # end
-# # pnpm end
+ # pnpm end
