@@ -137,15 +137,12 @@ set -g theme_newline_prompt (set_color green)\uf0a9'  '
 if test (uname) = Linux
     abbr -a bud 'brew update && brew upgrade && brew doctor && brew cleanup'
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-    # fish_add_path /home/linuxbrew/.linuxbrew/bin
-    # fish_add_path /home/linuxbrew/.linuxbrew/sbin
     fish_add_path $HOME/.local/bin
     fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
     set -x BROWSER /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe
 else
     abbr -a bud 'brew update && brew upgrade && brew upgrade --cask && brew doctor && brew cleanup'
-    # fish_add_path $HOME/.asdf/installs/poetry/1.3.2/bin
     set -x BROWSER open
     if test (uname -m) = x86_64
         fish_add_path /usr/local/sbin
