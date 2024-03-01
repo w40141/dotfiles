@@ -191,11 +191,14 @@ end, { expr = true })
 key("t", "jj", "<C-\\><C-N>")
 key("t", "<C-j>q", "<C-\\><C-n>:q<CR>")
 key("n", "gf", function()
+	local os_name = v.loop.os_uname().sysname
 	local cfile = fn.expand("<cfile>")
 	if cfile:match("^https?://") then
-		-- Neovim nightlyなら `vim.ui.open(cfile)` が便利。
-		v.ui.open(cfile)
-		-- fn.system({ "xdg-open", cfile })
+		if os_name then
+			v.ui.open(cfile)
+		else
+			fn.system({ "explorer.exe", cfile })
+		end
 	else
 		v.cmd("normal! gF")
 	end
