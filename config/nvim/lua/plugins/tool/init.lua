@@ -25,15 +25,15 @@ return {
 		-- url = "https://github.com/segeljakt/vim-silicon",
 		cmd = "Silicon",
 	},
-	{
-		-- Open URI
-		"tyru/open-browser.vim",
-		-- url = "https://github.com/tyru/open-browser.vim",
-		keys = {
-			{ "<plug>(openbrowser-smart-search)", mode = "n" },
-		},
-		init = setup.open_browser,
-	},
+	-- {
+	-- 	-- Open URI
+	-- 	"tyru/open-browser.vim",
+	-- 	-- url = "https://github.com/tyru/open-browser.vim",
+	-- 	keys = {
+	-- 		{ "<plug>(openbrowser-smart-search)", mode = "n" },
+	-- 	},
+	-- 	init = setup.open_browser,
+	-- },
 	{
 		-- Delete buffers
 		"famiu/bufdelete.nvim",

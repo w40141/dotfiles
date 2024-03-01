@@ -190,3 +190,13 @@ end, { expr = true })
 -- ターミナル
 key("t", "jj", "<C-\\><C-N>")
 key("t", "<C-j>q", "<C-\\><C-n>:q<CR>")
+key("n", "gf", function()
+	local cfile = fn.expand("<cfile>")
+	if cfile:match("^https?://") then
+		-- Neovim nightlyなら `vim.ui.open(cfile)` が便利。
+		v.ui.open(cfile)
+		-- fn.system({ "xdg-open", cfile })
+	else
+		v.cmd("normal! gF")
+	end
+end)
