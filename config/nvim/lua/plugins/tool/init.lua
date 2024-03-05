@@ -182,5 +182,10 @@ return {
 		-- url = "https://github.com/vinnymeller/swagger-preview.nvim",
 		config = conf.swagger_preview,
 		build = "npm install -g swagger-ui-watcher",
+		cmd = {
+			"SwaggerPreview",
+			"SwaggerPreviewStop",
+			"SwaggerPreviewToggle",
+		},
 	},
 }
