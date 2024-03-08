@@ -180,7 +180,7 @@ function M.lspconfig()
 			opts.settings = {
 				gopls = {
 					analyses = {
-						fieldalignment = true,
+						fieldalignment = false,
 						nilness = true,
 						shadow = true,
 						unusedparams = true,
