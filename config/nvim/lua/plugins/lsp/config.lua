@@ -196,7 +196,7 @@ function M.lspconfig()
 						directive = true,
 						embed = true,
 						errorsas = true,
-						fieldalignment = true,
+						fieldalignment = false,
 						fillreturns = true,
 						httpresponse = true,
 						ifaceassert = true,
