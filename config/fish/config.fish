@@ -111,28 +111,29 @@ function fish_user_key_bindings
 end
 
 # theme-bobthefish
-set -g theme_color_scheme dracula
-set -g theme_display_git yes
-set -g theme_display_git_untracked yes
-set -g theme_display_git_ahead_verbose yes
-set -g theme_display_cmd_duration no
-set -g theme_display_vagrant yes
-set -g theme_display_docker_machine yes
-set -g theme_display_k8s_context no
-set -g theme_display_k8s_namespace yes
-set -g theme_display_hg no
-set -g theme_display_nix no
-set -g theme_display_ruby no
-set -g theme_display_nvm no
-set -g theme_display_virtualenv yes
-set -g theme_title_display_process no
-set -g theme_title_display_path yes
-set -g theme_powerline_fonts yes
-set -g theme_nerd_fonts yes
-set -g theme_show_exit_status no
 set -g fish_prompt_pwd_dir_length 0
+set -g theme_color_scheme dracula
+set -g theme_display_cmd_duration no
+set -g theme_display_docker_machine no
+set -g theme_display_git yes
+set -g theme_display_git_ahead_verbose yes
+set -g theme_display_git_untracked yes
+set -g theme_display_go no
+set -g theme_display_hg no
+set -g theme_display_k8s_context no
+set -g theme_display_k8s_namespace no
+set -g theme_display_nix no
+set -g theme_display_nvm no
+set -g theme_display_ruby no
+set -g theme_display_vagrant no
+set -g theme_display_virtualenv no
+set -g theme_nerd_fonts yes
 set -g theme_newline_cursor yes
 set -g theme_newline_prompt (set_color green)\uf0a9'  '
+set -g theme_powerline_fonts yes
+set -g theme_show_exit_status no
+set -g theme_title_display_path yes
+set -g theme_title_display_process no
 
 if test (uname) = Linux
     abbr -a bud 'brew update && brew upgrade && brew doctor && brew cleanup'
