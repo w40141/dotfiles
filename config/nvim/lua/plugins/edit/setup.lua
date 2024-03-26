@@ -29,4 +29,11 @@ function M.yanky()
 	key("n", "<c-p>", "<Plug>(YankyCycleBackward)")
 	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>")
 end
+
+function M.ufo()
+	local key = vim.keymap.set
+	key("n", "zR", require("ufo").openAllFolds)
+	key("n", "zM", require("ufo").closeAllFolds)
+end
+
 return M

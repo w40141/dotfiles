@@ -75,4 +75,10 @@ return {
 		init = setup.yanky,
 		config = conf.yanky,
 	},
+	-- {
+	-- 	"kevinhwang91/nvim-ufo",
+	-- 	dependencies = { "kevinhwang91/promise-async" },
+	-- 	init = setup.ufo,
+	-- 	config = conf.ufo,
+	-- },
 }
