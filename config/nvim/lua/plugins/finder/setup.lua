@@ -4,7 +4,7 @@ function M.todo_comments()
 	local key = vim.keymap.set
 	key("n", "[ff]o", "<cmd>TodoTelescope<CR>")
 	key("n", "[ff]O", "<cmd>TodoTrouble<CR>")
-	key("n", "[ff]oq", "<cmd>TodoQuickFix<CR>")
+	key("n", "[ff]u", "<cmd>TodoQuickFix<CR>")
 end
 
 function M.trouble()
