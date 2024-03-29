@@ -139,7 +139,6 @@ if test (uname) = Linux
     abbr -a bud 'brew update && brew upgrade && brew doctor && brew cleanup'
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
     fish_add_path $HOME/.local/bin
-    # fish_add_path /home/linuxbrew/.linuxbrew/opt/openssl@3/bin
     fish_add_path $HOME/go/bin
     set -x BROWSER "/mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe"
     # set -x BROWSER wslview
@@ -278,4 +277,4 @@ end
 # if not string match -q -- $PNPM_HOME $PATH
 #     set -gx PATH "$PNPM_HOME" $PATH
 # end
- # pnpm end
+# pnpm end
