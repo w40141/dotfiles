@@ -1,4 +1,4 @@
--- local conf = require("plugins.lang.config")
+local conf = require("plugins.lang.config")
 
 return {
 	{
@@ -9,6 +9,7 @@ return {
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
+		config = conf.previm,
 	},
 	{
 		-- TODO: 設定
