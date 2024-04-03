@@ -10,7 +10,7 @@ function M.conform()
 			bash = { "shfmt" },
 			elixir = { "mix" },
 			fish = { "fish_indent" },
-			go = { "gofumpt", "goimports", "golines" },
+			go = { "gofumpt", "goimports", "golines", "gofmt" },
 			-- go = { "gofumpt", "goimports" },
 			javascript = { "prettier" },
 			json = { "fixjson" },
