@@ -335,6 +335,20 @@ function M.lspconfig()
 		end
 
 		-- yamlls
+		if server_name == "yamlls" then
+			opts.settings = {
+				schemas = {
+					["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+				},
+				format = {
+					enable = true,
+					bracketSpacing = true,
+					proseWrap = "Always",
+				},
+				hover = true,
+				validate = true,
+			}
+		end
 
 		opts.capabilities = capabilities
 		opts.on_attach = on_attach
