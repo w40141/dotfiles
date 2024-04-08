@@ -53,27 +53,23 @@ if os_name == "Darwin" then
 		paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
 		cache_enabled = 0,
 	}
-elseif v.fn.has("wsl") == 1 then
-	g.clipboard = {
-		name = "win32yank-wsl",
-		copy = {
-			["+"] = "win32yank.exe -i --crlf",
-			["*"] = "win32yank.exe -i --crlf",
-		},
-		paste = {
-			["+"] = "win32yank.exe -o --lf",
-			["*"] = "win32yank.exe -o --lf",
-		},
-		cache_enabled = 1,
-	}
 end
+-- if v.fn.has("wsl") == 1 then
+-- 	g.clipboard = {
+-- 		name = "win32yank-wsl",
+-- 		copy = {
+-- 			["+"] = "win32yank.exe -i --crlf",
+-- 			["*"] = "win32yank.exe -i --crlf",
+-- 		},
+-- 		paste = {
+-- 			["+"] = "win32yank.exe -o --crlf",
+-- 			["*"] = "win32yank.exe -o --crlf",
+-- 		},
+-- 		cache_enabled = 0,
+-- 	}
+-- end
 
 require("core.option")
 require("core.keymap")
 require("core.event")
--- require("core.pack")
 require("core.lazy")
---
--- disable_distribution_plugins()
--- clipboard_config()
--- load_core()
