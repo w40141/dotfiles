@@ -7,7 +7,6 @@ return {
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = "VeryLazy",
-		-- event = { "BufNewFile", "BufRead" },
 		config = conf.treesitter,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
@@ -22,7 +21,8 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-		-- config = conf.context_commentstring,
+		event = "VeryLazy",
+		config = conf.context_commentstring,
 	},
 	{
 		"m-demare/hlargs.nvim",

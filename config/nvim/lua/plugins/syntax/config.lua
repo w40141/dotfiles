@@ -30,9 +30,6 @@ function M.treesitter()
 			enable = true,
 			additional_vim_regex_highlighting = false,
 		},
-		rainbow = {
-			enable = true,
-		},
 		textobjects = {
 			select = {
 				enable = true,
