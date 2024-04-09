@@ -16,12 +16,6 @@ function M.hlargs()
 	require("hlargs").setup()
 end
 
-function M.context_commentstring()
-	require("nvim-ts-context-commentstring").setup({
-		enable = true,
-	})
-end
-
 function M.treesitter()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = "all",

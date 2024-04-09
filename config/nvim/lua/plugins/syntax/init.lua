@@ -22,7 +22,6 @@ return {
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
 		event = "VeryLazy",
-		config = conf.context_commentstring,
 	},
 	{
 		"m-demare/hlargs.nvim",
