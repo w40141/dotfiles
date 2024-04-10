@@ -43,7 +43,6 @@ function M.lspconfig()
 		},
 	})
 
-	-- local capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities())
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	capabilities.textDocument.foldingRange = {
 		dynamicRegistration = false,
