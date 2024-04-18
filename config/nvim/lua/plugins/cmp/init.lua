@@ -70,7 +70,6 @@ return {
 		dependencies = {
 			"L3MON4D3/LuaSnip",
 		},
-		build = "make install_jsregexp",
 	},
 	{
 		"L3MON4D3/LuaSnip",
@@ -78,6 +77,7 @@ return {
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 		},
+		build = "make install_jsregexp",
 		config = conf.luasnip,
 	},
 	{
