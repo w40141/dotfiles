@@ -1,5 +1,8 @@
 local v = vim
 
+-- TODO: https://github.com/chrisgrieser/nvim-spider
+-- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
+
 -- TODO: https://github.com/epwalsh/pomo.nvim
 -- A simple, customizable pomodoro timer for Neovim, written in Lua,
 -- with nvim-notify, lualine, and telescope integrations
