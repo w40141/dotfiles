@@ -27,13 +27,6 @@ return {
 		config = conf.nvim_surround,
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	-- A surround text object plugin for neovim written in lua.
-	-- 	"ur4ltz/surround.nvim",
-	-- 	-- url = "https://github.com/ur4ltz/surround.nvim",
-	-- 	config = conf.surround,
-	-- 	event = { "BufReadPre", "FocusLost", "CursorHold" },
-	-- },
 	{
 		-- eskk is pure Vim script implementation of input method engine SKK
 		"vim-skk/eskk.vim",
@@ -75,10 +68,19 @@ return {
 		init = setup.yanky,
 		config = conf.yanky,
 	},
-	-- {
-	-- 	"kevinhwang91/nvim-ufo",
-	-- 	dependencies = { "kevinhwang91/promise-async" },
-	-- 	init = setup.ufo,
-	-- 	config = conf.ufo,
-	-- },
+	{
+		-- Not UFO in the sky, but an ultra fold in Neovim.
+		"kevinhwang91/nvim-ufo",
+		-- url = "https://github.com/kevinhwang91/nvim-ufo"
+		dependencies = { "kevinhwang91/promise-async" },
+		init = setup.ufo,
+		config = conf.ufo,
+	},
+	{
+		-- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
+		"chrisgrieser/nvim-spider",
+		-- url = "https://github.com/chrisgrieser/nvim-spider"
+		lazy = true,
+		init = setup.spider,
+	},
 }
