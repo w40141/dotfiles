@@ -1,19 +1,5 @@
 local M = {}
 
-function M.memolist()
-	local key = vim.keymap.set
-	key({ "n", "v" }, "<leader>mn", "<CMD>MemoNew<CR>")
-end
-
-function M.open_browser()
-	local key = vim.keymap.set
-	key({ "n", "v" }, "gx", "<plug>(openbrowser-smart-search)")
-end
-
-function M.toggleterm()
-	vim.keymap.set("n", "<Space>l", "<CMD>ToggleTerm<CR>")
-end
-
 function M.winresizer()
 	local g = vim.g
 	g.winresizer_keycode_cancel = 122
@@ -23,28 +9,17 @@ function M.winresizer()
 	g.winresizer_keycode_down = "<DOWN>"
 end
 
-function M.quickhl()
+function M.neogen()
 	local key = vim.keymap.set
-	key("n", ",m", "<plug>(quickhl-manual-this)")
-	key("x", ",m", "<plug>(quickhl-manual-this)")
-	key("n", ",M", "<plug>(quickhl-manual-reset)")
-	key("x", ",M", "<plug>(quickhl-manual-reset)")
-end
+	local function f(name)
+		return function()
+			return require("neogen")[name]()
+		end
+	end
 
-function M.hlslens()
-	local key = vim.keymap.set
-	key("n", "n", [[<CMD>execute('normal!'.v:count1.'n')<CR><CMD>lua require('hlslens').start()<CR>]])
-	key("n", "N", [[<CMD>execute('normal!'.v:count1.'N')<CR><CMD>lua require('hlslens').start()<CR>]])
-	key("n", "*", function()
-		require("lasterisk").search()
-		require("hlslens").start()
-	end)
-
-	key({ "n", "x" }, "g*", function()
-		require("lasterisk").search({ is_whole = false })
-		require("hlslens").start()
-	end)
-	key("n", "<c-c>", "<CMD>nohlsearch<CR>")
+	key("i", "<C-l>", f("jump_next"))
+	key("i", "<C-h>", f("jump_prev"))
+	key("n", ",n", f("generate"))
 end
 
 return M

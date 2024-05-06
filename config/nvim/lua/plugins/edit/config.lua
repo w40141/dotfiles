@@ -1,23 +1,6 @@
 local M = {}
 
-function M.neogen()
-	require("neogen").setup({
-		snippet_engine = "luasnip",
-		enabled = true,
-		input_after_comment = true,
-	})
-end
-
 function M.nvim_surround()
-	--     Old text                    Command         New text
-	-- --------------------------------------------------------------------------------
-	--     surr*ound_words             ysiw)           (surround_words)
-	--     *make strings               ys$"            "make strings"
-	--     [delete ar*ound me!]        ds]             delete around me!
-	--     remove <b>HTML t*ags</b>    dst             remove HTML tags
-	--     'change quot*es'            cs'"            "change quotes"
-	--     <b>or tag* types</b>        csth1<CR>       <h1>or tag types</h1>
-	--     delete(functi*on calls)     dsf             function calls
 	require("nvim-surround").setup()
 end
 
@@ -82,19 +65,6 @@ function M.comment()
 		pre_hook = function()
 			return require("ts_context_commentstring.internal").calculate_commentstring()
 		end,
-	})
-end
-
-function M.colorizer()
-	require("colorizer").setup({ "css", "javascript", "typescript" }, {
-		RGB = true, -- #RGB hex codes
-		RRGGBB = true, -- #RRGGBB hex codes
-		names = true, -- "Name" codes like Blue
-		RRGGBBAA = true, -- #RRGGBBAA hex codes
-		rgb_fn = false, -- CSS rgb() and rgba() functions
-		hsl_fn = false, -- CSS hsl() and hsla() functions
-		css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-		css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
 	})
 end
 

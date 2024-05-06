@@ -37,10 +37,4 @@ function M.lspconfig()
 	key({ "n", "v" }, "[dev]a", b("code_action"))
 end
 
-function M.ufo()
-	local key = vim.keymap.set
-	key("n", "zR", require("ufo").openAllFolds)
-	key("n", "zM", require("ufo").closeAllFolds)
-end
-
 return M

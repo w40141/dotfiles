@@ -10,6 +10,9 @@ local v = vim
 -- TODO: https://github.com/nvim-orgmode/orgmode
 -- Orgmode clone written in Lua for Neovim 0.9+.
 
+-- TODO: https://github.com/folke/which-key.nvim
+-- Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
+
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	v.fn.system({

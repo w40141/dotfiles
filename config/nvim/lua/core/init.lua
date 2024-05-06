@@ -72,4 +72,4 @@ end
 require("core.option")
 require("core.keymap")
 require("core.event")
-require("core.lazy")
+require("core.plugin")

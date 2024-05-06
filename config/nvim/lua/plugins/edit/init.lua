@@ -3,23 +3,6 @@ local conf = require("plugins.edit.config")
 
 return {
 	{
-		-- A better annotation generator.
-		-- Supports multiple languages and annotation conventions.
-		"danymat/neogen",
-		-- url = "https://github.com/danymat/neogen",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-		init = setup.neogen,
-		config = conf.neogen,
-		cmd = { "Neogen" },
-		keys = {
-			{ "<C-l>", mode = "i" },
-			{ "<C-h>", mode = "i" },
-			{ ",n", mode = "n" },
-		},
-	},
-	{
 		-- Add/change/delete surrounding delimiter pairs with ease.
 		"kylechui/nvim-surround",
 		-- url = "https://github.com/kylechui/nvim-surround",
@@ -46,13 +29,6 @@ return {
 		},
 	},
 	{
-		-- Colorizer
-		"norcalli/nvim-colorizer.lua",
-		-- url = "https://github.com/norcalli/nvim-colorizer.lua",
-		cmd = { "ColorizerToggle" },
-		config = conf.colorizer,
-	},
-	{
 		-- Improved Yank and Put functionalities for Neovim
 		"gbprod/yanky.nvim",
 		-- url = "https://github.com/gbprod/yanky.nvim",
@@ -64,7 +40,6 @@ return {
 			{ "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
 			{ "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
 		},
-		cmd = { "YankyRingHistory" },
 		init = setup.yanky,
 		config = conf.yanky,
 	},
@@ -75,12 +50,6 @@ return {
 		dependencies = { "kevinhwang91/promise-async" },
 		init = setup.ufo,
 		config = conf.ufo,
-	},
-	{
-		-- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
-		"chrisgrieser/nvim-spider",
-		-- url = "https://github.com/chrisgrieser/nvim-spider"
-		lazy = true,
-		init = setup.spider,
+		event = "VeryLazy",
 	},
 }
