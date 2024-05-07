@@ -3,6 +3,8 @@ local M = {}
 function M.bufferline()
 	local key = vim.keymap.set
 
+	key("n", "<leader>bd", "<Cmd>Bdelete<cr>", { desc = "Previous Buffer" })
+	key("n", "<leader>bw", "<Cmd>Bwipeout<cr>", { desc = "Previous Buffer" })
 	key("n", "[b", "<Cmd>BufferLineCyclePrev<cr>", { desc = "Previous Buffer" })
 	key("n", "]b", "<Cmd>BufferLineCycleNext<cr>", { desc = "Next Buffer" })
 	key("n", "bE", "<Cmd>BufferLineSortByExtension<cr>", { desc = "Sort by Extension" })
@@ -11,11 +13,10 @@ function M.bufferline()
 end
 
 function M.close()
-	local delete = require("close_buffers").delete
 
 	local function f(name)
 		return function()
-			return delete({ type = name })
+			return require("close_buffers").delete({ type = name })
 		end
 	end
 
