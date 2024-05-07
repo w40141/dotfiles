@@ -5,7 +5,7 @@ return {
 		"mfussenegger/nvim-lint",
 		-- url = "https://github.com/mfussenegger/nvim-lint",
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
-		config = conf.nvim_lint,
+		config = conf.lint,
 		dependencies = {
 			"rshkarin/mason-nvim-lint",
 		},

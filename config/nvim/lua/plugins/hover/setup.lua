@@ -14,7 +14,7 @@ function M.hover()
 		end
 	end, { desc = "hover.nvim" })
 
-	key("n", "gK", require("hover").hover_select, {desc = "hover.nvim (select)"})
+	key("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
 end
 
 return M

@@ -2,8 +2,7 @@ local M = {}
 
 function M.eskk()
 	local key = vim.keymap.set
-	key("i", "jk", "<Plug>(eskk:toggle)")
-	key("c", "jk", "<Plug>(eskk:toggle)")
+	key({ "i", "c" }, "jk", "<Plug>(eskk:toggle)", { desc = "Toggle ESKK" })
 end
 
 function M.yanky()
@@ -18,16 +17,17 @@ function M.yanky()
 end
 
 function M.ufo()
-	local key = vim.keymap.set
 	local function f(name)
 		return function()
 			return require("ufo")[name]()
 		end
 	end
-	key("n", "zR", f("openAllFolds"))
-	key("n", "zM", f("closeAllFolds"))
-	key("n", "zr", f("openFoldsExceptKinds"))
-	key("n", "zm", f("closeFoldsWith"))
+
+	local key = vim.keymap.set
+	key("n", "zR", f("openAllFolds"), { desc = "Open All Folds" })
+	key("n", "zM", f("closeAllFolds"), { desc = "Close All Folds" })
+	key("n", "zr", f("openFoldsExceptKinds"), { desc = "Open Folds Except Kinds" })
+	key("n", "zm", f("closeFoldsWith"), { desc = "Close Folds With" })
 end
 
 return M

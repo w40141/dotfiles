@@ -25,5 +25,6 @@ return {
 		'kazhala/close-buffers.nvim',
 		-- url = "https://github.com/kazhala/close-buffers.nvim",
 		init = setup.close,
+		event = { "VeryLazy" },
 	},
 }

@@ -17,6 +17,7 @@ function M.neogen()
 		end
 	end
 
+	-- TODO: description
 	key("i", "<C-l>", f("jump_next"))
 	key("i", "<C-h>", f("jump_prev"))
 	key("n", ",n", f("generate"))

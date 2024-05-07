@@ -32,16 +32,17 @@ return {
 		-- Improved Yank and Put functionalities for Neovim
 		"gbprod/yanky.nvim",
 		-- url = "https://github.com/gbprod/yanky.nvim",
-		keys = {
-			{ "<Plug>(YankyCycleBackward)", mode = "n" },
-			{ "<Plug>(YankyCycleForward)", mode = "n" },
-			{ "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
-			{ "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
-			{ "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
-			{ "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
-		},
+		-- keys = {
+		-- 	{ "<Plug>(YankyCycleBackward)", mode = "n" },
+		-- 	{ "<Plug>(YankyCycleForward)", mode = "n" },
+		-- 	{ "<Plug>(YankyGPutAfter)", mode = { "n", "x" } },
+		-- 	{ "<Plug>(YankyGPutBefore)", mode = { "n", "x" } },
+		-- 	{ "<Plug>(YankyPutAfter)", mode = { "n", "x" } },
+		-- 	{ "<Plug>(YankyPutBefore)", mode = { "n", "x" } },
+		-- },
 		init = setup.yanky,
 		config = conf.yanky,
+		event = "VeryLazy",
 	},
 	{
 		-- Not UFO in the sky, but an ultra fold in Neovim.

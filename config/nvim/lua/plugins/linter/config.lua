@@ -1,6 +1,6 @@
 local M = {}
 
-function M.nvim_lint()
+function M.lint()
 	local v = vim
 	local autocmd = v.api.nvim_create_autocmd
 	local lint = require("lint")

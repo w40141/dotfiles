@@ -21,5 +21,6 @@ return {
 		},
 		init = setup.hlslens,
 		config = conf.hlslens,
+		event = "VeryLazy",
 	},
 }

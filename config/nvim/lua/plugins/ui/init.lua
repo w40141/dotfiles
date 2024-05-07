@@ -5,7 +5,6 @@ return {
 	{
 		"nvim-tree/nvim-web-devicons",
 		-- url = "https://github.com/nvim-tree/nvim-web-devicons",
-		lazy = true,
 	},
 	{
 		"goolord/alpha-nvim",

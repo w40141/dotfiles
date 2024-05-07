@@ -7,7 +7,7 @@ function M.conform()
 
 	key("n", "[dev]f", function()
 		require("conform").format({ async = true, lsp_fallback = true })
-	end)
+	end, { desc = "Format" })
 end
 
 return M
