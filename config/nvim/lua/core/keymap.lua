@@ -83,8 +83,6 @@ key("n", ",U", [[mzlbg~l`z<Cmd>delmarks z<CR>]])
 key("n", ",w", ":w<cr>")
 -- 検索結果のハイライトをC-h連打でクリアする
 -- key("n", ",n", ":<c-u>nohlsearch<cr>")
--- 辞書
-key("n", ",?", ":!open dict://<cword><cr>")
 -- 検索後にジャンプした際に検索単語を画面中央に持ってくる
 key("n", "n", "nzz")
 key("n", "N", "Nzz")
