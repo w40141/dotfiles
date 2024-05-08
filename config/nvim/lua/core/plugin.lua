@@ -7,9 +7,6 @@ local v = vim
 -- TODO: https://github.com/tris203/hawtkeys.nvim
 --  Suggest new easy to hit keymaps and find issues with your current key map configurations
 
--- TODO: https://github.com/nvim-orgmode/orgmode
--- Orgmode clone written in Lua for Neovim 0.9+.
-
 -- TODO: https://github.com/folke/which-key.nvim
 -- Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
 

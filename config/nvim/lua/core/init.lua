@@ -54,20 +54,6 @@ if os_name == "Darwin" then
 		cache_enabled = 0,
 	}
 end
--- if v.fn.has("wsl") == 1 then
--- 	g.clipboard = {
--- 		name = "win32yank-wsl",
--- 		copy = {
--- 			["+"] = "win32yank.exe -i --crlf",
--- 			["*"] = "win32yank.exe -i --crlf",
--- 		},
--- 		paste = {
--- 			["+"] = "win32yank.exe -o --crlf",
--- 			["*"] = "win32yank.exe -o --crlf",
--- 		},
--- 		cache_enabled = 0,
--- 	}
--- end
 
 require("core.option")
 require("core.keymap")
