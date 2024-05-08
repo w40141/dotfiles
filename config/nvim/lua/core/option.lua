@@ -48,7 +48,9 @@ opt.display = "lastline"
 opt.cursorline = true
 opt.background = ""
 -- 文字を隠す
-opt.conceallevel = 1
+-- opt.conceallevel = 1
+opt.conceallevel = 2
+opt.concealcursor = 'nc'
 -- 検索時に大/小を区別しない
 opt.ignorecase = true
 -- 検索時に大文字を含んでいたら大/小を区別

@@ -1,4 +1,4 @@
-local conf = require("plugins.syntax.config")
+local conf = require("plugins.treesitter.config")
 
 return {
 	{

@@ -3,6 +3,13 @@ local setup = require("plugins.memo.setup")
 
 return {
 	{
+		-- TODO: setting
+		"nvim-orgmode/orgmode",
+		event = "VeryLazy",
+		ft = { "org" },
+		config = conf.orgmode,
+	},
+	{
 		"glidenote/memolist.vim",
 		-- url = "https://github.com/glidenote/memolist.vim"
 		cmd = {

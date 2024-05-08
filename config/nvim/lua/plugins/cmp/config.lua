@@ -137,6 +137,7 @@ function M.cmp()
 				},
 			},
 			{ name = "cmp_yanky" },
+			{ name = "orgmode" },
 			-- { name = "skkeleton" },
 		}),
 		-- view = {

@@ -42,4 +42,21 @@ return {
 		event = { "VeryLazy" },
 		config = conf.scrollbar,
 	},
+	{
+		-- Buffer line
+		"akinsho/bufferline.nvim",
+		-- url = "https://github.com/akinsho/bufferline.nvim",
+		event = { "VeryLazy" },
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		init = setup.bufferline,
+		config = conf.bufferline,
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		-- url = "https://github.com/rebelot/kanagawa.nvim",
+		config = conf.kanagawa,
+		event = { "VimEnter" },
+	},
 }

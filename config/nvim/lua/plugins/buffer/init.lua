@@ -1,18 +1,6 @@
-local conf = require("plugins.buffer.config")
 local setup = require("plugins.buffer.setup")
 
 return {
-	{
-		-- Buffer line
-		"akinsho/bufferline.nvim",
-		-- url = "https://github.com/akinsho/bufferline.nvim",
-		event = { "VeryLazy" },
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
-		init = setup.bufferline,
-		config = conf.bufferline,
-	},
 	{
 		-- Delete buffers
 		"famiu/bufdelete.nvim",
