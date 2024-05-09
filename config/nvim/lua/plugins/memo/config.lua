@@ -57,16 +57,15 @@ function M.obsidian()
 		end,
 		note_id_func = function(title)
 			local suffix = ""
-			local new_title = ""
 			if title ~= nil then
-				new_title = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
 			else
 				for _ = 1, 4 do
 					suffix = suffix .. string.char(math.random(65, 90))
-					new_title = (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
 				end
 			end
-			return new_title
+			-- return new_title
+			return (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
 		end,
 		note_frontmatter_func = function(note)
 			local out = { id = note.id, aliases = note.aliases, tags = note.tags }
