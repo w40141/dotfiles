@@ -26,3 +26,4 @@ snippets
 /config/gh/hosts.yml
 node_modules
 *.log
+config/nvim/lua/plugins/myplug
