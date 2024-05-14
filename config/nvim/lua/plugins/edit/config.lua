@@ -1,30 +1,30 @@
 local M = {}
 
-function M.nvim_surround()
+function M.surround()
 	require("nvim-surround").setup()
 end
 
-function M.surround()
-	require("surround").setup({
-		context_offset = 100,
-		load_autogroups = false,
-		mappings_style = "sandwich",
-		map_insert_mode = true,
-		quotes = { "'", '"' },
-		brackets = { "(", "{", "[" },
-		space_on_closing_char = false,
-		pairs = {
-			nestable = {
-				b = { "(", ")" },
-				s = { "[", "]" },
-				B = { "{", "}" },
-				a = { "<", ">" },
-			},
-			linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } },
-		},
-		prefix = "s",
-	})
-end
+-- function M.surround()
+-- 	require("surround").setup({
+-- 		context_offset = 100,
+-- 		load_autogroups = false,
+-- 		mappings_style = "sandwich",
+-- 		map_insert_mode = true,
+-- 		quotes = { "'", '"' },
+-- 		brackets = { "(", "{", "[" },
+-- 		space_on_closing_char = false,
+-- 		pairs = {
+-- 			nestable = {
+-- 				b = { "(", ")" },
+-- 				s = { "[", "]" },
+-- 				B = { "{", "}" },
+-- 				a = { "<", ">" },
+-- 			},
+-- 			linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } },
+-- 		},
+-- 		prefix = "s",
+-- 	})
+-- end
 
 function M.eskk()
 	local g = vim.g

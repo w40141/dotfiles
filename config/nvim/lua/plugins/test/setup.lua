@@ -2,6 +2,6 @@ local M = {}
 
 function M.neotest() end
 
-function M.nvim_test() end
+function M.test() end
 
 return M

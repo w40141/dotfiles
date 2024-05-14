@@ -37,7 +37,7 @@ return {
 		},
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
-		init = setup.todo_comments,
-		config = conf.todo_comments,
+		init = setup.todo,
+		config = conf.todo,
 	},
 }

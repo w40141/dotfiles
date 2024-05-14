@@ -27,7 +27,7 @@ return {
 			"TestVisit",
 			"TestInfo",
 		},
-		config = conf.nvim_test,
-		init = setup.nvim_test,
+		config = conf.test,
+		init = setup.test,
 	},
 }

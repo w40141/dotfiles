@@ -18,4 +18,12 @@ function M.bufferline()
 	key("n", "bg", "<Cmd>BufferLinePick<cr>", { desc = "Pick Buffer" })
 end
 
+function M.aerial()
+	vim.keymap.set("n", "gt", "<Cmd>AerialToggle<CR>", { desc = "Toggle outliner by aerial" })
+end
+
+function M.tree()
+	vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", { desc = "Toggle NvimTree" })
+end
+
 return M

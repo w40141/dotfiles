@@ -59,4 +59,27 @@ return {
 		config = conf.kanagawa,
 		event = { "VimEnter" },
 	},
+	{
+		-- Neovim plugin for a code outline window
+		"stevearc/aerial.nvim",
+		-- url = "https://github.com/stevearc/aerial.nvim",
+		cmd = { "Aerial" },
+		init = setup.aerial,
+		config = conf.aerial,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+	},
+	{
+		-- File finder
+		"nvim-tree/nvim-tree.lua",
+		-- url = "https://github.com/nvim-tree/nvim-tree.lua",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
+		init = setup.tree,
+		config = conf.tree,
+	},
 }

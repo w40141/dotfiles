@@ -12,7 +12,7 @@ function M.neotest()
 	})
 end
 
-function M.nvim_test()
+function M.test()
 	require("nvim-test").setup({
 		run = true, -- run tests (using for debug)
 		commands_create = true, -- create commands (TestFile, TestLast, ...)

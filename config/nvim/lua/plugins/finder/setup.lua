@@ -1,6 +1,6 @@
 local M = {}
 
-function M.todo_comments()
+function M.todo()
 	local key = vim.keymap.set
 	key("n", "[ff]o", "<cmd>TodoTelescope<CR>", { desc = "Find TODO Comments" })
 	key("n", "[ff]O", "<cmd>TodoTrouble<CR>", { desc = "Find TODO Comments in Trouble" })

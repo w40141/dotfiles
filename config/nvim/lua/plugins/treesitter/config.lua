@@ -1,6 +1,6 @@
 local M = {}
 
-function M.context_vt()
+function M.context()
 	require("nvim_context_vt").setup({
 		enabled = true,
 		-- prefix = "",

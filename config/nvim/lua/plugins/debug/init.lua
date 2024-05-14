@@ -12,9 +12,7 @@ return {
 			"jay-babu/mason-nvim-dap.nvim",
 		},
 		lazy = true,
-		config = function()
-			require("mason-nvim-dap").setup()
-		end,
+		config = conf.dap,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
@@ -23,7 +21,7 @@ return {
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		-- url = "https://github.com/theHamsta/nvim-dap-virtual-text",
-		config = conf.nvim_dap_virtual_text,
+		config = conf.virtual_text,
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
