@@ -107,9 +107,10 @@ function M.lspconfig()
 			local textlint = {
 				{
 					prefix = "textlint",
+					lintIgnoreExitCode = true,
 					lintSource = "efm/textlint",
-					lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
 					lintStdin = true,
+					lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
 					lintFormats = {
 						"%.%#: line %l, col %c, %trror - %m",
 						"%.%#: line %l, col %c, %tarning - %m",

@@ -1,6 +1,6 @@
 # README
 
-開発環境を整えるためのドキュメント
+開発環境を整えるためのドキュメントです。
 
 ## 目次
 
@@ -48,7 +48,7 @@ ToDo
 
 ### 設定ファイルの復元
 
-dotfilesで設定ファイルを管理している
+dotfilesで設定ファイルを管理している。
 
 1. Homebrewをインストールする
 
@@ -69,7 +69,7 @@ echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.config/fish/conf.d/user.fish
 ```
 
-1. 以下のコマンドでエラーを確認する
+1. 次のコマンドでエラーを確認する
 
    ```sh
    brew doctor
@@ -90,7 +90,7 @@ echo "eval \$($(brew --prefix)/bin/brew shellenv)" >> ~/.config/fish/conf.d/user
 
 1. brew bundleでアプリケーションを一括インストールする
 
-うまくいかない場合、2回くらい実行する
+うまくいかない場合、2回くらい実行する。
 
 ```sh
 brew bundle --global
@@ -100,7 +100,7 @@ brew bundle --global
 
 ### シェルの設定
 
-fishを設定する
+fishを設定する。
 
 1. fishのパスの確認する（`brew bundle --global` でインストール済なはず）
 
@@ -114,7 +114,7 @@ fishを設定する
    sudo vi /etc/shells
    ```
 
-1. 末尾にfishのパス (/usr/local/bin/fish) を追加する
+1. 末尾にfishのパス（`/usr/local/bin/fish`）を追加する
 
 1. ログインシェルをfishに変更する
 
@@ -169,7 +169,7 @@ fishを設定する
 
 ### asdfのインストール
 
-1. [asdf](https://asdf-vm.com/#/core-manage-asdf) に従いインストールする
+1. [asdf](https://asdf-vm.com/#/core-manage-asdf)に従いインストールする
 
    ```sh
    echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
@@ -210,7 +210,7 @@ fishを設定する
 
 ### Python周りをインストールする
 
-0. [pipx をインストールする（Homebrew でしてある）.](https://pipxproject.github.io/pipx/installation/)
+0. [pipx をインストールする(（Homebrew でしてある）.](https://pipxproject.github.io/pipx/installation/)
 
    ```sh
    pipx ensurepath
@@ -252,7 +252,7 @@ fishを設定する
 
    1. SKK-JISYO.SとSKK-JISYO.Lをダウンロードする
    1. SKK-JISYO.Sをmy-jisyoにリネームする
-   1. 上記2ファイルを以下のディレクトリへ移動する
+   1. 上記2ファイルを `~/.config/eskk` のディレクトリへ移動する
 
       ```sh
       mv my-jisyo SKK-JISYO.L ~/.config/eskk
@@ -287,10 +287,10 @@ yarn global add \
 ### Macのクリーンインストール方法
 
 1. 電源シャットダウンする
-1. command + R + 電源キー3つ長押しで、「macOSユーティリティ」起動する
+1. command + R + 電源キー3つ長押しで「macOSユーティリティ」起動する
 1. 「ディスクユーティリティ」選択する
 1. 「MacintoshHD」を消去する
-1. 「ディスクユーティリティ」終了し、「macOSユーティリティ」に戻る
+1. 「ディスクユーティリティ」終了し「macOSユーティリティ」に戻る
 1. 「macOSを再インストール」選択する
 1. Wi-Fiに接続する
-1. フルネームとアカウント名を同じにする (例： daisuke.oku)
+1. フルネームとアカウント名を同じにする（例：daisuke.oku）
