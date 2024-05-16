@@ -1,7 +1,14 @@
 {
   "filters": {},
   "rules": {
-    "preset-ja-technical-writing": true,
+    "preset-ja-technical-writing": {
+			"no-mix-dearu-desumasu": {
+				"preferInHeader": "", // "である" or "ですます"
+        "preferInBody": "ですます",// "である" or "ですます"
+        "preferInList": "である",  // "である" or "ですます"
+        "strict": true
+			}
+		},
     "preset-ja-spacing": {
       "ja-space-around-code": {
         "before": true,
@@ -11,7 +18,6 @@
     "preset-jtf-style": true,
     "prh": {
       "rulePaths": [
-        "~/.local/share/mise/installs/node/20.6.1/lib/node_modules/textlint-rule-prh/node_modules/prh/prh-rules/media/techbooster.yml",
         "~/.local/share/mise/installs/node/20.6.1/lib/node_modules/textlint-rule-prh/node_modules/prh/prh-rules/media/WEB+DB_PRESS.yml"
       ]
     },

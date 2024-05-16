@@ -21,6 +21,7 @@ function M.conform()
 			sql = { "sql_formatter" },
 			yaml = { "yamlfmt" },
 			xml = { "xmlformat" },
+			terraform = { "terraform_fmt" },
 			["*"] = {
 				"codespell",
 			},

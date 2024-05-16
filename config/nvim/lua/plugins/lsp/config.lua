@@ -71,6 +71,7 @@ function M.lspconfig()
 
 	local lsp_flags = { debounce_text_changes = 150 }
 
+	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	local handler = function(server_name)
 		local node_root_dir = lspconfig.util.root_pattern("package.json")
 		local is_node_repo = node_root_dir(api.nvim_buf_get_name(0)) ~= nil
@@ -323,6 +324,13 @@ function M.lspconfig()
 		end
 
 		-- sqlls
+
+		-- terraform
+
+		if server_name == "terraform" then
+			opts.filetypes = { "hcl", "tf", "tfvars" }
+			opts.root_dir = lspconfig.util.root_pattern(".git", ".terraform", ".gitmodules")
+		end
 
 		-- texlab
 

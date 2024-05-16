@@ -30,6 +30,7 @@ function M.lint()
 		},
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
+		terraform = { "tflint" },
 	}
 
 	local anyfile = {
