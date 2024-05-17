@@ -71,6 +71,30 @@ function M.lspconfig()
 
 	local lsp_flags = { debounce_text_changes = 150 }
 
+	-- TODO: serversに設定を追加する
+	local servers = {
+		bashls = {},
+		denols = {},
+		docker_compose_language_service = {},
+		dockerls = {},
+		efm = {},
+		eslint = {},
+		gopls = {},
+		graphql = {},
+		html = {},
+		jdtls = {},
+		lua_ls = {},
+		prismals = {},
+		pyright = {},
+		ruff_lsp = {},
+		rust_analyzer = {},
+		sqlls = {},
+		terraformls = {},
+		texlab = {},
+		tsserver = {},
+		yamlls = {},
+	}
+
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	local handler = function(server_name)
 		local node_root_dir = lspconfig.util.root_pattern("package.json")
@@ -252,15 +276,6 @@ function M.lspconfig()
 			}
 		end
 
-		-- if server_name == "golangci_lint_ls" then
-		-- 	-- opts.filetypes = { "go", "gomod" }
-		-- 	-- opts.cmd = { "golangci-lint-langserver" }
-		-- 	-- opts.root_dir = nvim_lsp.util.root_pattern(".git", "go.mod")
-		-- 	opts.init_options = {
-		-- 		command = { "golangci-lint", "run", "--out-format", "json" },
-		-- 	}
-		-- end
-
 		-- graphql-language-service-cli graphql
 		if server_name == "graphql" then
 			opts.cmd = { "graphql-lsp", "server", "-m", "stream" }
@@ -366,27 +381,7 @@ function M.lspconfig()
 	end
 
 	require("mason-lspconfig").setup({
-		ensure_installed = {
-			"bashls",
-			"denols",
-			"docker_compose_language_service",
-			"dockerls",
-			"efm",
-			"eslint",
-			"gopls",
-			"graphql",
-			"html",
-			"jdtls",
-			"lua_ls",
-			"prismals",
-			"pyright",
-			"ruff_lsp",
-			"rust_analyzer",
-			"sqlls",
-			"texlab",
-			"tsserver",
-			"yamlls",
-		},
+		ensure_installed = v.tbl_keys(servers),
 	})
 	require("mason-lspconfig").setup_handlers({ handler })
 end
