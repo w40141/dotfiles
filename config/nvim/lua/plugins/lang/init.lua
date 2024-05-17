@@ -17,4 +17,10 @@ return {
 		-- url = "https://github.com/kevinhwang91/nvim-bqf",
 		ft = "qf",
 	},
+	{
+		"folke/neodev.nvim",
+		-- url = "https://github.com/folke/neodev.nvim",
+		opts = {},
+		ft = { "lua" },
+	},
 }

@@ -299,6 +299,9 @@ function M.lspconfig()
 					runtime = {
 						version = "LuaJIT",
 					},
+					workspace = {
+						library = { require("neodev.config").types() },
+					},
 					-- format = {
 					-- 	enable = true,
 					-- 	defaultConfig = {
