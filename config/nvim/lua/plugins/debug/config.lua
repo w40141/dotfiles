@@ -1,7 +1,7 @@
 local M = {}
 
 function M.virtual_text()
-	require("nvim-dap-virtual-text").setup()
+	require("nvim-dap-virtual-text").setup({})
 end
 
 function M.dap()

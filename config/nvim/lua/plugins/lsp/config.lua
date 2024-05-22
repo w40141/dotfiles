@@ -49,7 +49,8 @@ function M.lspconfig()
 		lineFoldingOnly = true,
 	}
 	local on_attach = function(client, bufnr)
-		api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+		-- api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+		api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", {})
 
 		if client.server_capabilities.documentHighlightProvider then
 			hl(0, "LspReferenceText", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })

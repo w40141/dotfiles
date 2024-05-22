@@ -4,13 +4,11 @@ function M.conform()
 	local v = vim
 	local conform = require("conform")
 
-	-- local slow_format_filetypes = {}
 	conform.setup({
 		formatters_by_ft = {
 			bash = { "shfmt" },
 			elixir = { "mix" },
 			fish = { "fish_indent" },
-			-- go = { "gofumpt", "goimports", "golines", "gofmt" },
 			go = { "gofumpt", "goimports", "golines" },
 			javascript = { "prettier" },
 			json = { "fixjson" },

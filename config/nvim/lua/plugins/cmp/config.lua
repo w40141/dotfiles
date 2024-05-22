@@ -27,10 +27,14 @@ function M.cmp()
 	local cmp = require("cmp")
 	local snip = require("luasnip")
 	local has_words_before = function()
-		unpack = unpack or table.unpack
-		if api.nvim_buf_get_option(0, "buftype") == "prompt" then
+		-- unpack = unpack or table.unpack
+		-- if api.nvim_buf_get_option(0, "buftype") == "prompt" then
+		if api.nvim_get_option_value("buftype", {}) == "prompt" then
 			return false
 		end
+		-- if v.bo.buftype == "prompt" then
+		-- 	return false
+		-- end
 		local line, col = unpack(api.nvim_win_get_cursor(0))
 		return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 	end
@@ -52,6 +56,7 @@ function M.cmp()
 					Copilot = "",
 				},
 			}),
+			expandable_indicator = true,
 		},
 		snippet = {
 			expand = function(args)

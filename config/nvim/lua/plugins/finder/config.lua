@@ -93,7 +93,7 @@ function M.trouble()
 		auto_fold = true,
 		auto_jump = { "lsp_definitions" },
 		use_diagnostic_signs = true,
-	}) -- Lua
+	})
 end
 
 function M.telescope()
