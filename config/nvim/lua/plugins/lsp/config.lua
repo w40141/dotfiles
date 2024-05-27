@@ -72,30 +72,6 @@ function M.lspconfig()
 
 	local lsp_flags = { debounce_text_changes = 150 }
 
-	-- TODO: serversに設定を追加する
-	local servers = {
-		bashls = {},
-		denols = {},
-		docker_compose_language_service = {},
-		dockerls = {},
-		efm = {},
-		eslint = {},
-		gopls = {},
-		graphql = {},
-		html = {},
-		jdtls = {},
-		lua_ls = {},
-		prismals = {},
-		pyright = {},
-		ruff_lsp = {},
-		rust_analyzer = {},
-		sqlls = {},
-		terraformls = {},
-		texlab = {},
-		tsserver = {},
-		yamlls = {},
-	}
-
 	-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 	local handler = function(server_name)
 		local node_root_dir = lspconfig.util.root_pattern("package.json")
@@ -130,8 +106,8 @@ function M.lspconfig()
 
 		-- efm
 		if server_name == "efm" then
-			local textlint = {
-				{
+			local languages = {
+				markdown = {
 					prefix = "textlint",
 					lintIgnoreExitCode = true,
 					lintSource = "efm/textlint",
@@ -148,9 +124,6 @@ function M.lspconfig()
 						".textlintrc.yaml",
 					},
 				},
-			}
-			local languages = {
-				markdown = textlint,
 			}
 
 			-- cspellが実行できるなら追加
@@ -385,7 +358,28 @@ function M.lspconfig()
 	end
 
 	require("mason-lspconfig").setup({
-		ensure_installed = v.tbl_keys(servers),
+		ensure_installed = {
+			"bashls",
+			"denols",
+			"docker_compose_language_service",
+			"dockerls",
+			"efm",
+			"eslint",
+			"gopls",
+			"graphql",
+			"html",
+			"jdtls",
+			"lua_ls",
+			"prismals",
+			"pyright",
+			"ruff_lsp",
+			"rust_analyzer",
+			"sqlls",
+			"terraformls",
+			"texlab",
+			"tsserver",
+			"yamlls",
+		},
 	})
 	require("mason-lspconfig").setup_handlers({ handler })
 end

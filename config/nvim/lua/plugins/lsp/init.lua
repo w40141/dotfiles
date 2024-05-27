@@ -14,6 +14,7 @@ return {
 		init = setup.lspconfig,
 		config = conf.lspconfig,
 		event = { "BufReadPre", "FocusLost", "CursorHold" },
+		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim",
 		},
