@@ -334,6 +334,12 @@ function M.lspconfig()
 			opts.root_dir = node_root_dir
 		end
 
+		if server_name == "typos" then
+			opts.init_options = {
+				config = "~/.config/nvim/spell/.typos.toml",
+			}
+		end
+
 		-- yamlls
 		if server_name == "yamlls" then
 			opts.settings = {

@@ -28,6 +28,7 @@ function M.conform()
 		log_level = v.log.levels.ERROR,
 		notify_on_error = true,
 	})
+	require("mason-conform").setup()
 end
 
 return M
