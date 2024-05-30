@@ -49,7 +49,6 @@ function M.lspconfig()
 		lineFoldingOnly = true,
 	}
 	local on_attach = function(client, bufnr)
-		-- api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 		api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", {})
 
 		if client.server_capabilities.documentHighlightProvider then
@@ -106,24 +105,25 @@ function M.lspconfig()
 
 		-- efm
 		if server_name == "efm" then
-			local languages = {
-				markdown = {
-					prefix = "textlint",
-					lintIgnoreExitCode = true,
-					lintSource = "efm/textlint",
-					lintStdin = true,
-					lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
-					lintFormats = {
-						"%.%#: line %l, col %c, %trror - %m",
-						"%.%#: line %l, col %c, %tarning - %m",
-					},
-					rootMarkers = {
-						".textlintrc",
-						".textlintrc.json",
-						".textlintrc.yml",
-						".textlintrc.yaml",
-					},
+			local textlint = {
+				prefix = "textlint",
+				lintIgnoreExitCode = true,
+				lintSource = "efm/textlint",
+				lintStdin = true,
+				lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+				lintFormats = {
+					"%.%#: line %l, col %c, %trror - %m",
+					"%.%#: line %l, col %c, %tarning - %m",
 				},
+				rootMarkers = {
+					".textlintrc",
+					".textlintrc.json",
+					".textlintrc.yml",
+					".textlintrc.yaml",
+				},
+			}
+			local languages = {
+				markdown = textlint,
 			}
 
 			-- cspellが実行できるなら追加
@@ -163,23 +163,23 @@ function M.lspconfig()
 
 		-- gopls
 		if server_name == "gopls" then
-			autocmd("BufWritePre", {
-				pattern = "*.go",
-				callback = function()
-					local params = v.lsp.util.make_range_params()
-					params.context = { only = { "source.organizeImports" } }
-					local result = v.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-					for cid, res in pairs(result or {}) do
-						for _, r in pairs(res.result or {}) do
-							if r.edit then
-								local enc = (v.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-								v.lsp.util.apply_workspace_edit(r.edit, enc)
-							end
-						end
-					end
-					v.lsp.buf.format({ async = false })
-				end,
-			})
+			-- autocmd("BufWritePre", {
+			-- 	pattern = "*.go",
+			-- 	callback = function()
+			-- 		local params = v.lsp.util.make_range_params()
+			-- 		params.context = { only = { "source.organizeImports" } }
+			-- 		local result = v.lsp.buf_request_sync(0, "textDocument/codeAction", params)
+			-- 		for cid, res in pairs(result or {}) do
+			-- 			for _, r in pairs(res.result or {}) do
+			-- 				if r.edit then
+			-- 					local enc = (v.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+			-- 					v.lsp.util.apply_workspace_edit(r.edit, enc)
+			-- 				end
+			-- 			end
+			-- 		end
+			-- 		-- v.lsp.buf.format({ async = false })
+			-- 	end,
+			-- })
 			opts.settings = {
 				gopls = {
 					analyses = {
