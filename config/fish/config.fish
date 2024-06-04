@@ -25,8 +25,8 @@ if command -s eza >/dev/null
 end
 set -x FZF_ENABLE_OPEN_PREVIEW 1
 
-function fzf_checkout_branch -d "Fuzzy-find and checkout a branch"
-    git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git checkout "$result"
+function fzf_switch_branch -d "Fuzzy-find and switch a branch"
+    git branch --all | grep -v HEAD | string trim | fzf | read -l result; and git switch "$result"
 end
 
 function fzf_choose_branch -d "Use `fzf` to choose which branch to check out" --argument-names branch
@@ -88,7 +88,7 @@ function docker_remove_container
 end
 
 # Same as above, but allows multi selection:
-function docker-remove-multi-container
+function docker_remove_multi_container
     docker ps -a | sed 1d | fzf -q "$1" --no-sort -m --tac | awk '{ print $1 }' | xargs -r docker rm
 end
 
@@ -106,8 +106,10 @@ function ghq_fzf_repo -d 'Repository search'
     commandline -f repaint
 end
 
+
 function fish_user_key_bindings
     bind \cg ghq_fzf_repo
+		bind \cb fzf_switch_branch
 end
 
 # theme-bobthefish
