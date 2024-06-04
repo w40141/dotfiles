@@ -101,7 +101,8 @@ function M.telescope()
 	local telescope = require("telescope")
 	local actions = require("telescope.actions")
 	local action_state = require("telescope.actions.state")
-	local trouble = require("trouble.providers.telescope")
+	-- local trouble = require("trouble.providers.telescope")
+	local trouble = require("trouble.sources.telescope")
 	local custom_actions = {}
 	local cmd = v.cmd
 
@@ -140,7 +141,7 @@ function M.telescope()
 			buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 			mappings = {
 				i = {
-					["<C-t>"] = trouble.open_with_trouble,
+					["<C-t>"] = trouble.open,
 					["<C-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					["<C-g>"] = custom_actions.multiopen,
 					["<C-h>"] = actions.which_key,
@@ -155,7 +156,7 @@ function M.telescope()
 					["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				},
 				n = {
-					["<C-t>"] = trouble.open_with_trouble,
+					["<C-t>"] = trouble.open,
 					["<C-l>"] = actions.send_selected_to_qflist + actions.open_qflist,
 					["<C-g>"] = custom_actions.multiopen,
 					["<C-h>"] = actions.which_key,
