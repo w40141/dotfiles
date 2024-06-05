@@ -317,6 +317,8 @@ function M.lspconfig()
 
 		-- sqlls
 
+		-- taplo
+
 		-- terraform
 
 		if server_name == "terraform" then
@@ -381,6 +383,7 @@ function M.lspconfig()
 			"ruff_lsp",
 			"rust_analyzer",
 			"sqlls",
+			"taplo",
 			"terraformls",
 			"texlab",
 			"tsserver",

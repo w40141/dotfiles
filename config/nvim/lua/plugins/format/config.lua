@@ -17,9 +17,10 @@ function M.conform()
 			python = { "black" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
+			terraform = { "terraform_fmt" },
+			toml = { "taplo" },
 			yaml = { "yamlfmt" },
 			xml = { "xmlformat" },
-			terraform = { "terraform_fmt" },
 			["*"] = {
 				"codespell",
 			},
