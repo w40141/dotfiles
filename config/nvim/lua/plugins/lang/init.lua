@@ -23,4 +23,10 @@ return {
 		opts = {},
 		ft = { "lua" },
 	},
+	{
+		"richardbizik/nvim-toc",
+		-- url = "https://github.com/richardbizik/nvim-toc"
+		ft = { "markdown" },
+		config = conf.toc,
+	},
 }
