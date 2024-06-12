@@ -163,23 +163,6 @@ function M.lspconfig()
 
 		-- gopls
 		if server_name == "gopls" then
-			-- autocmd("BufWritePre", {
-			-- 	pattern = "*.go",
-			-- 	callback = function()
-			-- 		local params = v.lsp.util.make_range_params()
-			-- 		params.context = { only = { "source.organizeImports" } }
-			-- 		local result = v.lsp.buf_request_sync(0, "textDocument/codeAction", params)
-			-- 		for cid, res in pairs(result or {}) do
-			-- 			for _, r in pairs(res.result or {}) do
-			-- 				if r.edit then
-			-- 					local enc = (v.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
-			-- 					v.lsp.util.apply_workspace_edit(r.edit, enc)
-			-- 				end
-			-- 			end
-			-- 		end
-			-- 		-- v.lsp.buf.format({ async = false })
-			-- 	end,
-			-- })
 			opts.settings = {
 				gopls = {
 					analyses = {
@@ -368,6 +351,7 @@ function M.lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = {
 			"bashls",
+			"cspell",
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",

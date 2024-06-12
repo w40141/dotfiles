@@ -1,28 +1,29 @@
 local conf = require("plugins.memo.config")
-local setup = require("plugins.memo.setup")
+-- local setup = require("plugins.memo.setup")
 
 return {
-	{
-		-- TODO: setting
-		"nvim-orgmode/orgmode",
-		event = "VeryLazy",
-		ft = { "org" },
-		config = conf.orgmode,
-	},
-	{
-		"glidenote/memolist.vim",
-		-- url = "https://github.com/glidenote/memolist.vim"
-		cmd = {
-			"MemoNew",
-			"MemoGrep",
-			"MemoList",
-			"MemoCommit",
-		},
-		config = conf.memolist,
-		init = setup.memolist,
-	},
+	-- {
+	-- 	-- TODO: setting
+	-- 	"nvim-orgmode/orgmode",
+	-- 	event = "VeryLazy",
+	-- 	ft = { "org" },
+	-- 	config = conf.orgmode,
+	-- },
+	-- {
+	-- 	"glidenote/memolist.vim",
+	-- 	-- url = "https://github.com/glidenote/memolist.vim"
+	-- 	cmd = {
+	-- 		"MemoNew",
+	-- 		"MemoGrep",
+	-- 		"MemoList",
+	-- 		"MemoCommit",
+	-- 	},
+	-- 	config = conf.memolist,
+	-- 	init = setup.memolist,
+	-- },
 	{
 		"epwalsh/obsidian.nvim",
+		-- url = "https://github.com/epwalsh/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
 		-- lazy = true,
 		ft = "markdown",

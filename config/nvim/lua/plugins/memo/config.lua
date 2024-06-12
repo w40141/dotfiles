@@ -1,27 +1,27 @@
 local M = {}
 
-function M.orgmode()
-	-- Setup orgmode
-	require("orgmode").setup({
-		org_agenda_files = "~/orgfiles/**/*",
-		org_default_notes_file = "~/orgfiles/refile.org",
-	})
-end
+-- function M.orgmode()
+-- 	-- Setup orgmode
+-- 	require("orgmode").setup({
+-- 		org_agenda_files = "~/orgfiles/**/*",
+-- 		org_default_notes_file = "~/orgfiles/refile.org",
+-- 	})
+-- end
 
-function M.memolist()
-	local v = vim
-	local g = v.g
-	g.memolist_memo_date = "%Y-%m-%d"
-	g.memolist_filename_date = "%Y-%m-%dT%H:%M:%S-"
-	g.memolist_path = "~/ghq/github.com/w40141/vault/Memo"
-	g.memolist_memo_suffix = "md"
-	g.memolist_ex_cmd = "NvimTreeToggle"
-	g.memolist_template_dir_path = "~/.config/memo/templates"
-	g.memolist_delimiter_yaml_array = ","
-	g.memolist_delimiter_yaml_start = "---"
-	g.memolist_delimiter_yaml_end = "---"
-	v.cmd([[command! -nargs=0 MemoCommit !memo commit]])
-end
+-- function M.memolist()
+-- 	local v = vim
+-- 	local g = v.g
+-- 	g.memolist_memo_date = "%Y-%m-%d"
+-- 	g.memolist_filename_date = "%Y-%m-%dT%H:%M:%S-"
+-- 	g.memolist_path = "~/ghq/github.com/w40141/vault/Memo"
+-- 	g.memolist_memo_suffix = "md"
+-- 	g.memolist_ex_cmd = "NvimTreeToggle"
+-- 	g.memolist_template_dir_path = "~/.config/memo/templates"
+-- 	g.memolist_delimiter_yaml_array = ","
+-- 	g.memolist_delimiter_yaml_start = "---"
+-- 	g.memolist_delimiter_yaml_end = "---"
+-- 	v.cmd([[command! -nargs=0 MemoCommit !memo commit]])
+-- end
 
 function M.obsidian()
 	local obsidian = require("obsidian")
@@ -79,6 +79,7 @@ function M.obsidian()
 		templates = {
 			subdir = "Config/Templates",
 			date_format = "%Y-%m-%d",
+			time_format = "%H:%M",
 			substitutions = {
 				year_kanji = function()
 					return os.date("%Y年")
