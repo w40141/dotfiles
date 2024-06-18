@@ -18,7 +18,7 @@ function M.lint()
 			"eslint_d",
 		},
 		lua = { "selene" },
-		markdown = { "markdownlint" },
+		markdown = { "markdownlint-cli2" },
 		python = {
 			"ruff",
 			"vulture",

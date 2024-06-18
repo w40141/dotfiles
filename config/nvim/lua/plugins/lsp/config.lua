@@ -105,25 +105,27 @@ function M.lspconfig()
 
 		-- efm
 		if server_name == "efm" then
-			local textlint = {
-				prefix = "textlint",
-				lintIgnoreExitCode = true,
-				lintSource = "efm/textlint",
-				lintStdin = true,
-				lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
-				lintFormats = {
-					"%.%#: line %l, col %c, %trror - %m",
-					"%.%#: line %l, col %c, %tarning - %m",
-				},
-				rootMarkers = {
-					".textlintrc",
-					".textlintrc.json",
-					".textlintrc.yml",
-					".textlintrc.yaml",
-				},
-			}
 			local languages = {
-				markdown = textlint,
+				markdown = {
+					-- 配列を渡す必要がある
+					{
+						prefix = "textlint",
+						lintIgnoreExitCode = true,
+						lintSource = "efm/textlint",
+						lintStdin = true,
+						lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+						lintFormats = {
+							"%.%#: line %l, col %c, %trror - %m",
+							"%.%#: line %l, col %c, %tarning - %m",
+						},
+						rootMarkers = {
+							".textlintrc",
+							".textlintrc.json",
+							".textlintrc.yml",
+							".textlintrc.yaml",
+						},
+					},
+				},
 			}
 
 			-- cspellが実行できるなら追加

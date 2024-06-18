@@ -13,7 +13,7 @@ function M.conform()
 			javascript = { "prettier" },
 			json = { "fixjson" },
 			lua = { "stylua" },
-			markdown = { "markdownlint", "markdown-toc", "prettier" },
+			markdown = { "markdownlint-cli2", "markdown-toc", "prettier" },
 			python = { "black" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },

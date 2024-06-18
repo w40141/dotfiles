@@ -13,6 +13,9 @@ local v = vim
 -- TODO: https://github.com/tani/dmacro.nvim
 -- neovim version of dmacro.el, which makes a key macro on-the-fly.
 
+-- TODO: https://github.com/zk-org/zk-nvim
+-- Neovim extension for zk
+
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not v.loop.fs_stat(lazypath) then
 	v.fn.system({
