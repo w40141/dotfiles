@@ -7,7 +7,8 @@
         "preferInBody": "ですます",// "である" or "ですます"
         "preferInList": "である",  // "である" or "ですます"
         "strict": true
-			}
+			},
+			"ja-no-mixed-period": false
 		},
     "preset-ja-spacing": {
       "ja-space-around-code": {
