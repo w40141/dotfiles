@@ -32,4 +32,9 @@ function M.hlslens()
 	key("n", "<c-c>", "<CMD>nohlsearch<CR>", { desc = "Clear search highlight" })
 end
 
+function M.kensaku()
+	local key = vim.keymap.set
+	key({ "c" }, "<CR>", "<Plug>(kensaku-search-replace)<CR>", { noremap = true})
+end
+
 return M

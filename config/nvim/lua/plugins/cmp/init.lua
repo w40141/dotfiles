@@ -1,7 +1,23 @@
 local conf = require("plugins.cmp.config")
--- local setup = require("modules.complement.setup")
+local setup = require("plugins.cmp.setup")
 
 return {
+	{
+		"vim-skk/skkeleton",
+		-- url = "https://github.com/vim-skk/skkeleton",
+		dependencies = {
+			"vim-denops/denops.vim",
+		},
+		init = setup.skkeleton,
+		config = conf.skkeleton,
+	},
+	{
+		"rinx/cmp-skkeleton",
+		-- url = "https://github.com/rinx/cmp-skkeleton",
+		dependencies = {
+			"vim-skk/skkeleton",
+		},
+	},
 	{
 		"hrsh7th/nvim-cmp",
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
@@ -20,6 +36,7 @@ return {
 			"saadparwaiz1/cmp_luasnip",
 			"zbirenbaum/copilot-cmp",
 			"chrisgrieser/cmp_yanky",
+			"rinx/cmp-skkeleton",
 		},
 	},
 	{

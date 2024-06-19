@@ -37,6 +37,7 @@ g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 -- g.loaded_node_provider = 0
+-- g.denops.deno = "~/.local/share/nvim/mason/bin/deno"
 
 -- g.did_load_filetypes = 1
 -- g.loaded_spellfile_plugin = 1

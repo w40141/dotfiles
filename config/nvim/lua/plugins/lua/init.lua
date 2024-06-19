@@ -2,6 +2,9 @@ return {
 	{
 		"nvim-lua/plenary.nvim",
 		-- url = "https://github.com/nvim-lua/plenary.nvim",
-		lazy = true,
+	},
+	{
+		"vim-denops/denops.vim",
+		-- url = "https://github.com/vim-denops/denops.vim",
 	},
 }

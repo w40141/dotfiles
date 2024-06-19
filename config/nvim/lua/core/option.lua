@@ -1,7 +1,7 @@
 local v = vim
 local opt = v.opt
 
-v.o.foldcolumn = '1' -- '0' is not bad
+v.o.foldcolumn = "1" -- '0' is not bad
 v.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 v.o.foldlevelstart = 99
 v.o.foldenable = true
@@ -121,4 +121,5 @@ opt.spelllang = { "en_us" }
 -- end
 --
 -- opt.foldtext = [[v:lua.Foldtext()]]
-v.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.dictionary = "/usr/share/dict/words"

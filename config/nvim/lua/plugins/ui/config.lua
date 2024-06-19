@@ -60,8 +60,8 @@ function M.lualine()
 	end
 
 	local function skk()
-		if (v.fn.mode() == "i") and v.fn["eskk#is_enabled"]() then
-			return v.fn["eskk#statusline"]()
+		if (v.fn.mode() == "i") and v.fn["skkeleton#is_enabled"]() then
+			return v.fn["skkeleton#mode"]()
 		else
 			return ""
 		end

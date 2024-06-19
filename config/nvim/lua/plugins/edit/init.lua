@@ -10,14 +10,14 @@ return {
 		config = conf.surround,
 		event = "VeryLazy",
 	},
-	{
-		-- eskk is pure Vim script implementation of input method engine SKK
-		"vim-skk/eskk.vim",
-		-- url = "https://github.com/vim-skk/eskk.vim",
-		init = setup.eskk,
-		config = conf.eskk,
-		event = { "InsertEnter" },
-	},
+	-- {
+	-- 	-- eskk is pure Vim script implementation of input method engine SKK
+	-- 	"vim-skk/eskk.vim",
+	-- 	-- url = "https://github.com/vim-skk/eskk.vim",
+	-- 	init = setup.eskk,
+	-- 	config = conf.eskk,
+	-- 	event = { "InsertEnter" },
+	-- },
 	{
 		-- Comment out
 		"numToStr/Comment.nvim",

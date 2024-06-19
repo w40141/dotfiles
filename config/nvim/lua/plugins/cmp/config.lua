@@ -12,11 +12,13 @@ end
 function M.skkeleton()
 	local fn = vim.fn
 	fn["skkeleton#config"]({
-		globalJisyo = "$XDG_CONFIG_HOME/skk/SKK-JISYO.L",
-		userJisyo = "$XDG_CONFIG_HOME/skk/SKK-JISYO.S",
+		globalDictionaries = {
+			{
+				"~/.config/skk/SKK-JISYO.L",
+				"utf-8",
+			},
+		},
 		eggLikeNewline = true,
-		useSkkServer = true,
-		immediatelyCancel = false,
 		registerConvertResult = true,
 	})
 end
@@ -27,14 +29,9 @@ function M.cmp()
 	local cmp = require("cmp")
 	local snip = require("luasnip")
 	local has_words_before = function()
-		-- unpack = unpack or table.unpack
-		-- if api.nvim_buf_get_option(0, "buftype") == "prompt" then
 		if api.nvim_get_option_value("buftype", {}) == "prompt" then
 			return false
 		end
-		-- if v.bo.buftype == "prompt" then
-		-- 	return false
-		-- end
 		local line, col = unpack(api.nvim_win_get_cursor(0))
 		return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 	end
@@ -51,6 +48,7 @@ function M.cmp()
 					treesitter = "[TST]",
 					copilot = "[COP]",
 					cmp_yanky = "[YNK]",
+					skkeleton = "[SKK]",
 				},
 				symbol_map = {
 					Copilot = "",
@@ -72,7 +70,7 @@ function M.cmp()
 				behavior = cmp.ConfirmBehavior.Replace,
 				select = true,
 			}),
-			["<C-,>"] = cmp.mapping.complete(),
+			-- ["<C-,>"] = cmp.mapping.complete(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
 			["<C-p>"] = cmp.mapping.select_prev_item(),
 			["<C-f>"] = cmp.mapping.scroll_docs(-4),
@@ -102,13 +100,6 @@ function M.cmp()
 					fallback()
 				end
 			end),
-			-- ["<Tab>"] = cmp.mapping(function(fallback)
-			-- 	if cmp.visible() then
-			-- 		cmp.select_next_item()
-			-- 	else
-			-- 		fallback()
-			-- 	end
-			-- end, { "i", "s" }),
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()
@@ -142,12 +133,12 @@ function M.cmp()
 				},
 			},
 			{ name = "cmp_yanky" },
-			{ name = "orgmode" },
-			-- { name = "skkeleton" },
+			-- { name = "orgmode" },
+			{ name = "skkeleton" },
 		}),
 		-- view = {
-		--   entries = 'native'
-		-- }
+		-- 	entries = "native",
+		-- },
 	})
 
 	cmp.setup.cmdline({ "/", "?" }, {
