@@ -15,7 +15,11 @@ function M.lint()
 			"revive",
 		},
 		javascript = {
-			"eslint_d",
+			-- "eslint_d",
+			"biome"
+		},
+		json = {
+			"jsonlint",
 		},
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
@@ -26,7 +30,8 @@ function M.lint()
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
 		typescript = {
-			"eslint_d",
+			-- "eslint_d",
+			"biome"
 		},
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
