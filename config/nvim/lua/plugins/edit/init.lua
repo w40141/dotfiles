@@ -23,7 +23,8 @@ return {
 		"numToStr/Comment.nvim",
 		-- url = "https://github.com/numToStr/Comment.nvim",
 		config = conf.comment,
-		event = { "BufReadPre", "FocusLost", "CursorHold" },
+		-- event = { "BufReadPre", "FocusLost", "CursorHold" },
+		event = { "FocusLost", "CursorHold" },
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},

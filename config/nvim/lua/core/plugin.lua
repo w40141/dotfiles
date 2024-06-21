@@ -36,6 +36,16 @@ local opts = {
 	performance = {
 		cache = {
 			enabled = true,
+			path = v.fn.stdpath("cache") .. "/lazy/cache",
+			-- Once one of the following events triggers, caching will be disabled.
+			-- To cache all modules, set this to `{}`, but that is not recommended.
+			disable_events = { "UIEnter", "BufReadPre" },
+		},
+		reset_packpath = true, -- reset the package path to improve startup time
+		rtp = {
+			reset = true, -- reset the runtime path to $VIMRUNTIME and the config directory
+			---@type string[]
+			paths = {}, -- add any custom paths here that you want to include in the rtp
 		},
 	},
 }

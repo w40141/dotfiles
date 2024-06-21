@@ -1,5 +1,5 @@
 local conf = require("plugins.memo.config")
--- local setup = require("plugins.memo.setup")
+local setup = require("plugins.memo.setup")
 
 return {
 	-- {
@@ -9,18 +9,18 @@ return {
 	-- 	ft = { "org" },
 	-- 	config = conf.orgmode,
 	-- },
-	-- {
-	-- 	"glidenote/memolist.vim",
-	-- 	-- url = "https://github.com/glidenote/memolist.vim"
-	-- 	cmd = {
-	-- 		"MemoNew",
-	-- 		"MemoGrep",
-	-- 		"MemoList",
-	-- 		"MemoCommit",
-	-- 	},
-	-- 	config = conf.memolist,
-	-- 	init = setup.memolist,
-	-- },
+	{
+		"glidenote/memolist.vim",
+		-- url = "https://github.com/glidenote/memolist.vim"
+		cmd = {
+			"MemoNew",
+			"MemoGrep",
+			"MemoList",
+			"MemoCommit",
+		},
+		config = conf.memolist,
+		init = setup.memolist,
+	},
 	{
 		"epwalsh/obsidian.nvim",
 		-- url = "https://github.com/epwalsh/obsidian.nvim",
@@ -31,7 +31,7 @@ return {
 		event = {
 			-- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
 			-- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/**.md"
-			"BufReadPre ~/ghq/github/w40141/vault/**.md",
+			-- "BufReadPre ~/ghq/github/w40141/vault/**.md",
 			"BufNewFile ~/ghq/github/w40141/vault/**.md",
 		},
 		dependencies = {

@@ -29,23 +29,23 @@ return {
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
+		event = "VeryLazy",
 	},
-	-- {
-	-- 	"lambdalisue/vim-kensaku-command",
-	-- 	-- url = "https://github.com/lambdalisue/vim-kensaku-command",
-	-- 	dependencies = {
-	-- 		"lambdalisue/kensaku.vim",
-	-- 	},
-	-- 	cmd = { "Kensaku" },
-	-- },
-	-- {
-	-- 	"lambdalisue/vim-kensaku-search",
-	-- 	-- url = "https://github.com/lambdalisue/vim-kensaku-search"
-	-- 	dependencies = {
-	-- 		"lambdalisue/kensaku.vim",
-	-- 	},
-	-- 	-- init = setup.kensaku,
-	-- 	config = conf.kensaku,
-	-- 	event = { "CmdlineEnter" },
-	-- },
+	{
+		"lambdalisue/vim-kensaku-command",
+		-- url = "https://github.com/lambdalisue/vim-kensaku-command",
+		dependencies = {
+			"lambdalisue/kensaku.vim",
+		},
+		event = "VeryLazy",
+	},
+	{
+		"lambdalisue/vim-kensaku-search",
+		-- url = "https://github.com/lambdalisue/vim-kensaku-search"
+		dependencies = {
+			"lambdalisue/kensaku.vim",
+		},
+		config = conf.kensaku,
+		event = "VeryLazy",
+	},
 }

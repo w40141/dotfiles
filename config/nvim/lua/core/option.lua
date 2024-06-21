@@ -95,6 +95,7 @@ opt.pumblend = 20
 
 opt.spell = true
 opt.spelllang = { "en_us" }
+opt.incsearch = true
 
 -- function Foldtext()
 -- 	local res = v.treesitter.foldtext()

@@ -47,7 +47,8 @@ return {
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
 		-- event = { "VeryLazy" },
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = { "BufReadPost", "BufAdd", "BufNewFile" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},

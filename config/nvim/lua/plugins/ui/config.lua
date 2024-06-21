@@ -14,6 +14,7 @@ function M.alpha()
 		" ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
 		"                                                    ",
 	}
+	d.section.header.opts.hl = "AlphaHeader"
 
 	-- Menu
 	d.section.buttons.val = {
@@ -30,6 +31,7 @@ function M.alpha()
 		d.button("M", "󱩧 New Memo", ":MemoNew<CR>"),
 		d.button("q", "󰩈 Quit", "<CMD>qa<CR>"),
 	}
+	d.section.buttons.opts.hl = "AlphaButtons"
 
 	-- Footer
 	local function footer()
@@ -41,23 +43,24 @@ function M.alpha()
 	end
 
 	d.section.footer.val = footer()
+	d.section.footer.opts.hl = "AlphaFooter"
 
 	require("alpha").setup(d.config)
 end
 
 function M.lualine()
 	local v = vim
-	local function search_result()
-		if v.v.hlsearch == 0 then
-			return ""
-		end
-		local last_search = v.fn.getreg("/")
-		if not last_search or last_search == "" then
-			return ""
-		end
-		local searchcount = v.fn.searchcount({ maxcount = 9999 })
-		return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
-	end
+	-- local function search_result()
+	-- 	if v.v.hlsearch == 0 then
+	-- 		return ""
+	-- 	end
+	-- 	local last_search = v.fn.getreg("/")
+	-- 	if not last_search or last_search == "" then
+	-- 		return ""
+	-- 	end
+	-- 	local searchcount = v.fn.searchcount({ maxcount = 9999 })
+	-- 	return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
+	-- end
 
 	local function skk()
 		if (v.fn.mode() == "i") and v.fn["skkeleton#is_enabled"]() then
@@ -97,7 +100,7 @@ function M.lualine()
 					path = 1,
 					symbols = { modified = "  ", readonly = "  " },
 				},
-				search_result,
+				-- search_result,
 			},
 			lualine_x = {
 				{

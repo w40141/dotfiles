@@ -8,20 +8,20 @@ local M = {}
 -- 	})
 -- end
 
--- function M.memolist()
--- 	local v = vim
--- 	local g = v.g
--- 	g.memolist_memo_date = "%Y-%m-%d"
--- 	g.memolist_filename_date = "%Y-%m-%dT%H:%M:%S-"
--- 	g.memolist_path = "~/ghq/github.com/w40141/vault/Memo"
--- 	g.memolist_memo_suffix = "md"
--- 	g.memolist_ex_cmd = "NvimTreeToggle"
--- 	g.memolist_template_dir_path = "~/.config/memo/templates"
--- 	g.memolist_delimiter_yaml_array = ","
--- 	g.memolist_delimiter_yaml_start = "---"
--- 	g.memolist_delimiter_yaml_end = "---"
--- 	v.cmd([[command! -nargs=0 MemoCommit !memo commit]])
--- end
+function M.memolist()
+	local v = vim
+	local g = v.g
+	g.memolist_memo_date = "%Y-%m-%d"
+	g.memolist_filename_date = "%Y-%m-%dT%H:%M:%S-"
+	g.memolist_path = "~/ghq/github.com/w40141/vault/Inbox"
+	g.memolist_memo_suffix = "md"
+	g.memolist_ex_cmd = "NvimTreeToggle"
+	g.memolist_template_dir_path = "~/.config/memo/templates"
+	g.memolist_delimiter_yaml_array = ","
+	g.memolist_delimiter_yaml_start = "---"
+	g.memolist_delimiter_yaml_end = "---"
+	v.cmd([[command! -nargs=0 MemoCommit !memo commit]])
+end
 
 function M.obsidian()
 	local obsidian = require("obsidian")
@@ -65,7 +65,7 @@ function M.obsidian()
 				end
 			end
 			-- return new_title
-			return (os.date("%Y%m%dT%H%M%S") .. "-" .. suffix)
+			return (os.date("%Y-%m-%dT%H:%M:%S") .. "-" .. suffix)
 		end,
 		note_frontmatter_func = function(note)
 			local out = { id = note.id, aliases = note.aliases, tags = note.tags }

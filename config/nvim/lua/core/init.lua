@@ -24,6 +24,7 @@ g.did_indent_on = 1
 g.did_install_default_menus = 1
 g.did_install_syntax_menu = 1
 g.did_load_ftplugin = 1
+
 g.loaded_man = 1
 g.loaded_matchit = 1
 g.loaded_matchparen = 1
@@ -43,18 +44,6 @@ g.loaded_ruby_provider = 0
 -- g.loaded_spellfile_plugin = 1
 -- g.loaded_sql_completion = 1
 -- g.loaded_syntax_completion = 1
-
-v.loader.enable()
-
-local os_name = v.loop.os_uname().sysname
-if os_name == "Darwin" then
-	g.clipboard = {
-		name = "macOS-clipboard",
-		copy = { ["+"] = "pbcopy", ["*"] = "pbcopy" },
-		paste = { ["+"] = "pbpaste", ["*"] = "pbpaste" },
-		cache_enabled = 0,
-	}
-end
 
 require("core.option")
 require("core.keymap")

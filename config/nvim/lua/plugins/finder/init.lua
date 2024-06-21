@@ -35,7 +35,8 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
-		event = { "BufReadPre", "FocusLost", "CursorHold" },
+		-- event = { "BufReadPre", "FocusLost", "CursorHold" },
+		event = { "FocusLost", "CursorHold" },
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
 		init = setup.todo,
 		config = conf.todo,
