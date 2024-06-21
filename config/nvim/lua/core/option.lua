@@ -16,7 +16,7 @@ opt.hidden = true
 -- 行番号を表示
 opt.number = true
 -- クリップボードをWindowsと連携する
--- opt.clipboard = "unnamedplus"
+opt.clipboard:append({"unnamedplus"})
 -- ビープ音すべてを無効にする
 opt.visualbell = true
 opt.errorbells = false

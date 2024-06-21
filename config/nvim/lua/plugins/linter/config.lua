@@ -16,7 +16,7 @@ function M.lint()
 		},
 		javascript = {
 			-- "eslint_d",
-			"biome"
+			"biomejs"
 		},
 		json = {
 			"jsonlint",
@@ -31,7 +31,7 @@ function M.lint()
 		sql = { "sqlfluff" },
 		typescript = {
 			-- "eslint_d",
-			"biome"
+			"biomejs"
 		},
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
