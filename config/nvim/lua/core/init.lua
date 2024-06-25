@@ -23,8 +23,6 @@ g.loaded_netrwSettings = 1
 g.loaded_getscript = 1
 g.loaded_getscriptPlugin = 1
 
-g.loaded_osc52 = 1
-
 g.did_indent_on = 1
 g.did_install_default_menus = 1
 g.did_install_syntax_menu = 1

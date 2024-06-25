@@ -6,6 +6,5 @@ return {
 	{
 		"vim-denops/denops.vim",
 		-- url = "https://github.com/vim-denops/denops.vim",
-		event = "VeryLazy",
 	},
 }

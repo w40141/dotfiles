@@ -8,6 +8,7 @@ return {
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
+		event = "VeryLazy",
 		init = setup.skkeleton,
 		config = conf.skkeleton,
 	},

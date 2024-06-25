@@ -16,20 +16,24 @@ local v = vim
 -- TODO: https://github.com/zk-org/zk-nvim
 -- Neovim extension for zk
 
-local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not v.loop.fs_stat(lazypath) then
-	v.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable",
-		lazypath,
-	})
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end
-v.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
 
-local opts = {
+-- Setup lazy.nvim
+require("lazy").setup({
+	spec = {
+		{ import = "plugins" },
+	},
+	-- Configure any other settings here. See the documentation for more details.
+	-- colorscheme that will be used when installing plugins.
+	install = { colorscheme = { "habamax" } },
+	-- automatically check for plugin updates
+	checker = { enabled = true },
 	defaults = {
 		lazy = true,
 	},
@@ -37,8 +41,6 @@ local opts = {
 		cache = {
 			enabled = true,
 			path = v.fn.stdpath("cache") .. "/lazy/cache",
-			-- Once one of the following events triggers, caching will be disabled.
-			-- To cache all modules, set this to `{}`, but that is not recommended.
 			disable_events = { "UIEnter", "BufReadPre" },
 		},
 		reset_packpath = true, -- reset the package path to improve startup time
@@ -48,6 +50,4 @@ local opts = {
 			paths = {}, -- add any custom paths here that you want to include in the rtp
 		},
 	},
-}
-
-require("lazy").setup("plugins", opts)
+})

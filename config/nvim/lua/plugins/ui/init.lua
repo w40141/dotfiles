@@ -19,7 +19,8 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		event = { "VeryLazy" },
+		-- event = { "VeryLazy" },
+		event = { "BufReadPost", "BufAdd", "BufNewFile" },
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 			"rebelot/kanagawa.nvim",
