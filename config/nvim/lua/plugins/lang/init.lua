@@ -29,4 +29,21 @@ return {
 		ft = { "markdown" },
 		config = conf.toc,
 	},
+	{
+		"MeanderingProgrammer/markdown.nvim",
+		-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = { "markdown" },
+		config = function()
+			require("render-markdown").setup({})
+		end,
+	},
+	-- {
+	-- 	"lukas-reineke/headlines.nvim",
+	-- 	-- url = "https://github.com/lukas-reineke/headlines.nvim"
+	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
+	-- 	config = function()
+	-- 		require("headlines").setup({})
+	-- 	end,
+	-- },
 }

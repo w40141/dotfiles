@@ -215,7 +215,6 @@ function M.kanagawa()
 			light = "lotus",
 		},
 	})
-
 	vim.cmd("colorscheme kanagawa")
 end
 
