@@ -39,6 +39,15 @@ return {
 		end,
 	},
 	-- {
+	-- TODO: watch
+	-- 	"OXY2DEV/markview.nvim",
+	-- 	url = "https://github.com/OXY2DEV/markview.nvim",
+	-- 	ft = { "markdown" },
+	-- 	config = function()
+	-- 		require("render-markdown").setup({})
+	-- 	end,
+	-- },
+	-- {
 	-- 	"lukas-reineke/headlines.nvim",
 	-- 	-- url = "https://github.com/lukas-reineke/headlines.nvim"
 	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
