@@ -2,15 +2,27 @@ local conf = require("plugins.cmp.config")
 local setup = require("plugins.cmp.setup")
 
 return {
+	-- {
+	-- 	"delphinus/skkeleton_indicator.nvim",
+	-- 	-- url = "https://github.com/delphinus/skkeleton_indicator.nvim",
+	-- 	config = function()
+	-- 		require("skkeleton_indicator").setup()
+	-- 	end,
+	-- 	lazy = false,
+	-- },
+	{
+		"vim-denops/denops.vim",
+		-- url = "https://github.com/vim-denops/denops.vim",
+	},
 	{
 		"vim-skk/skkeleton",
 		-- url = "https://github.com/vim-skk/skkeleton",
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
-		event = "VeryLazy",
 		init = setup.skkeleton,
 		config = conf.skkeleton,
+		event = { "VeryLazy" },
 	},
 	{
 		"rinx/cmp-skkeleton",
@@ -51,7 +63,7 @@ return {
 	{
 		"ray-x/lsp_signature.nvim",
 		-- url = "https://github.com/ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
+		-- event = "VeryLazy",
 		config = conf.signature,
 	},
 	{

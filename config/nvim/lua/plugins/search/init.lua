@@ -29,7 +29,7 @@ return {
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
-		event = "VeryLazy",
+		event = "VeryLazy"
 	},
 	{
 		"lambdalisue/vim-kensaku-command",
@@ -37,7 +37,7 @@ return {
 		dependencies = {
 			"lambdalisue/kensaku.vim",
 		},
-		event = "VeryLazy",
+		event = { "CmdlineEnter" },
 	},
 	{
 		"lambdalisue/vim-kensaku-search",
@@ -46,6 +46,6 @@ return {
 			"lambdalisue/kensaku.vim",
 		},
 		config = conf.kensaku,
-		event = "VeryLazy",
+		event = { "CmdlineEnter" },
 	},
 }
