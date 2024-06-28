@@ -80,12 +80,6 @@ function M.lspconfig()
 		-- bash-language-server bashls
 
 		-- biome
-		-- if server_name == "biome" then
-		-- 	if not is_node_repo then
-		-- 		return
-		-- 	end
-		-- 	opts.root_dir = node_root_dir
-		-- end
 
 		-- deno denols
 		if server_name == "denols" then
@@ -163,13 +157,15 @@ function M.lspconfig()
 			}
 		end
 
-		-- -- eslint-lsp eslint
-		-- if server_name == "eslint" then
-		-- 	if not is_node_repo then
-		-- 		return
-		-- 	end
-		-- 	opts.root_dir = node_root_dir
-		-- end
+		-- eslint-lsp eslint
+		if server_name == "eslint" then
+			local biome_root_dir = lspconfig.util.root_pattern("biome.json", "biome.jsonc")
+			local is_biome_repo = biome_root_dir(api.nvim_buf_get_name(0)) ~= nil
+			if not is_node_repo or is_biome_repo then
+				return
+			end
+			opts.root_dir = node_root_dir
+		end
 
 		-- gopls
 		if server_name == "gopls" then
@@ -322,12 +318,12 @@ function M.lspconfig()
 		-- texlab
 
 		-- typescript-language-server tsserver
-		if server_name == "tsserver" then
-			if not is_node_repo then
-				return
-			end
-			opts.root_dir = node_root_dir
-		end
+		-- if server_name == "tsserver" then
+		-- 	if not is_node_repo then
+		-- 		return
+		-- 	end
+		-- 	opts.root_dir = node_root_dir
+		-- end
 
 		if server_name == "typos" then
 			opts.init_options = {
@@ -367,7 +363,7 @@ function M.lspconfig()
 			"docker_compose_language_service",
 			"dockerls",
 			"efm",
-			-- "eslint",
+			"eslint",
 			"gopls",
 			"graphql",
 			"html",
