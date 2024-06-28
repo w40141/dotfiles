@@ -20,6 +20,7 @@ function M.lint()
 		},
 		json = {
 			"jsonlint",
+			"biomejs"
 		},
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
@@ -43,11 +44,11 @@ function M.lint()
 		"woke",
 	}
 
+	lint.linters_by_ft = linters
+
 	require("mason-nvim-lint").setup({
 		ensure_installed = anyfile,
 	})
-
-	lint.linters_by_ft = linters
 
 	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 		callback = function()

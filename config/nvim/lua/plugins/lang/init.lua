@@ -35,7 +35,9 @@ return {
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		ft = { "markdown" },
 		config = function()
-			require("render-markdown").setup({})
+			require("render-markdown").setup({
+				latex_enabled = false,
+			})
 		end,
 	},
 	-- {

@@ -79,6 +79,14 @@ function M.lspconfig()
 		local opts = {}
 		-- bash-language-server bashls
 
+		-- biome
+		-- if server_name == "biome" then
+		-- 	if not is_node_repo then
+		-- 		return
+		-- 	end
+		-- 	opts.root_dir = node_root_dir
+		-- end
+
 		-- deno denols
 		if server_name == "denols" then
 			if is_node_repo then
@@ -155,13 +163,13 @@ function M.lspconfig()
 			}
 		end
 
-		-- eslint-lsp eslint
-		if server_name == "eslint" then
-			if not is_node_repo then
-				return
-			end
-			opts.root_dir = node_root_dir
-		end
+		-- -- eslint-lsp eslint
+		-- if server_name == "eslint" then
+		-- 	if not is_node_repo then
+		-- 		return
+		-- 	end
+		-- 	opts.root_dir = node_root_dir
+		-- end
 
 		-- gopls
 		if server_name == "gopls" then
@@ -353,12 +361,13 @@ function M.lspconfig()
 	require("mason-lspconfig").setup({
 		ensure_installed = {
 			"bashls",
+			"biome",
 			"cspell",
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",
 			"efm",
-			"eslint",
+			-- "eslint",
 			"gopls",
 			"graphql",
 			"html",
