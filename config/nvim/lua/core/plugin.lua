@@ -16,6 +16,9 @@ local v = vim
 -- TODO: https://github.com/zk-org/zk-nvim
 -- Neovim extension for zk
 
+-- TODO: Navigate and manipulate file system. Part of 'mini.nvim' library.
+-- https://github.com/echasnovski/mini.files
+
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
