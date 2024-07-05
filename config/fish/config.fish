@@ -235,6 +235,8 @@ abbr -a ... 'cd ../..'
 abbr -a .... 'cd ../../..'
 abbr -a ..... 'cd ../../../..'
 
+abbr -a k 'kubectl'
+
 abbr -a po 'poetry run'
 abbr -a pp 'poetry run python'
 
@@ -280,3 +282,5 @@ end
 #     set -gx PATH "$PNPM_HOME" $PATH
 # end
 # pnpm end
+
+# starship init fish | source
