@@ -29,26 +29,30 @@ return {
 		ft = { "markdown" },
 		config = conf.toc,
 	},
-	{
-		"MeanderingProgrammer/markdown.nvim",
-		-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = { "markdown" },
-		config = function()
-			require("render-markdown").setup({
-				latex_enabled = false,
-			})
-		end,
-	},
 	-- {
-	-- TODO: watch
-	-- 	"OXY2DEV/markview.nvim",
-	-- 	url = "https://github.com/OXY2DEV/markview.nvim",
+	-- 	"MeanderingProgrammer/markdown.nvim",
+	-- 	-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
+	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
 	-- 	ft = { "markdown" },
 	-- 	config = function()
-	-- 		require("render-markdown").setup({})
+	-- 		require("render-markdown").setup({
+	-- 			latex_enabled = false,
+	-- 		})
 	-- 	end,
 	-- },
+	{
+		-- TODO: watch
+		"OXY2DEV/markview.nvim",
+		-- url = "https://github.com/OXY2DEV/markview.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		ft = { "markdown" },
+		-- config = function()
+		-- 	require("mark").setup({})
+		-- end,
+	},
 	-- {
 	-- 	"lukas-reineke/headlines.nvim",
 	-- 	-- url = "https://github.com/lukas-reineke/headlines.nvim"
