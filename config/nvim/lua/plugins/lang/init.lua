@@ -33,40 +33,29 @@ return {
 		"windwp/nvim-ts-autotag",
 		-- url = "https://github.com/windwp/nvim-ts-autotag"
 		event = "VeryLazy",
-		config = function()
-			require("nvim-ts-autotag").setup()
-		end,
+		config = conf.autotag,
 	},
-	-- {
-	-- 	"MeanderingProgrammer/markdown.nvim",
-	-- 	-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
-	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	-- 	ft = { "markdown" },
-	-- 	config = function()
-	-- 		require("render-markdown").setup({
-	-- 			latex_enabled = false,
-	-- 		})
-	-- 	end,
-	-- },
 	{
-		-- TODO: watch
-		"OXY2DEV/markview.nvim",
-		-- url = "https://github.com/OXY2DEV/markview.nvim",
+		"MeanderingProgrammer/markdown.nvim",
+		-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
 		},
 		ft = { "markdown" },
-		-- config = function()
-		-- 	require("mark").setup({})
-		-- end,
+		config = conf.markdown,
 	},
 	-- {
-	-- 	"lukas-reineke/headlines.nvim",
-	-- 	-- url = "https://github.com/lukas-reineke/headlines.nvim"
-	-- 	dependencies = { "nvim-treesitter/nvim-treesitter" },
-	-- 	config = function()
-	-- 		require("headlines").setup({})
-	-- 	end,
+	-- 	-- TODO: watch
+	-- 	"OXY2DEV/markview.nvim",
+	-- 	-- url = "https://github.com/OXY2DEV/markview.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	ft = { "markdown" },
+	-- 	-- config = function()
+	-- 	-- 	require("mark").setup({})
+	-- 	-- end,
 	-- },
 }

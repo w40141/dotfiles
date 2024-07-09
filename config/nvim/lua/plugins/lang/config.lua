@@ -10,4 +10,12 @@ function M.toc()
 	})
 end
 
+function M.markdown()
+	require("render-markdown").setup()
+end
+
+function M.autotag()
+	require("nvim-ts-autotag").setup()
+end
+
 return M
