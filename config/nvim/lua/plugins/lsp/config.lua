@@ -359,6 +359,7 @@ function M.lspconfig()
 			"bashls",
 			"biome",
 			"cspell",
+			"cssls",
 			"denols",
 			"docker_compose_language_service",
 			"dockerls",

@@ -19,24 +19,22 @@ local v = vim
 -- TODO: Navigate and manipulate file system. Part of 'mini.nvim' library.
 -- https://github.com/echasnovski/mini.files
 
--- Bootstrap lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
+-- TODO:Use treesitter to auto close and auto rename html tag
+-- https://github.com/windwp/nvim-ts-autotag
+
+local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+	v.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
 end
-vim.opt.rtp:prepend(lazypath)
+v.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	-- install = { colorscheme = { "kanagawa" } },
-	-- automatically check for plugin updates
-	checker = { enabled = true },
+	-- checker = { enabled = true },
 	defaults = {
 		lazy = true,
 	},

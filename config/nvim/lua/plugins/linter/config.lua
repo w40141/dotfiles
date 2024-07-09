@@ -7,36 +7,20 @@ function M.lint()
 
 	local linters = {
 		bash = { "shellcheck" },
-		dockerfile = {
-			"hadolint",
-		},
-		go = {
-			"golangcilint",
-			"revive",
-		},
-		javascript = {
-			-- "eslint_d",
-			"biomejs"
-		},
-		json = {
-			"jsonlint",
-			"biomejs"
-		},
+		css = { "stylelint" },
+		dockerfile = { "hadolint" },
+		go = { "golangcilint", "revive" },
+		javascript = { "biomejs" },
+		json = { "jsonlint", "biomejs" },
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
-		python = {
-			"ruff",
-			"vulture",
-		},
+		python = { "ruff", "vulture" },
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
-		typescript = {
-			-- "eslint_d",
-			"biomejs"
-		},
+		terraform = { "tflint" },
+		typescript = { "biomejs" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
-		terraform = { "tflint" },
 	}
 
 	local anyfile = {
