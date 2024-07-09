@@ -29,6 +29,14 @@ return {
 		ft = { "markdown" },
 		config = conf.toc,
 	},
+	{
+		"windwp/nvim-ts-autotag",
+		-- url = "https://github.com/windwp/nvim-ts-autotag"
+		event = "VeryLazy",
+		config = function()
+			require("nvim-ts-autotag").setup()
+		end,
+	},
 	-- {
 	-- 	"MeanderingProgrammer/markdown.nvim",
 	-- 	-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"

@@ -70,9 +70,6 @@ function M.treesitter()
 				},
 			},
 		},
-		autotag = {
-			enable = true,
-		},
 	})
 end
 

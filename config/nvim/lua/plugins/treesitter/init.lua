@@ -10,7 +10,6 @@ return {
 		config = conf.treesitter,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
-			"windwp/nvim-ts-autotag",
 		},
 	},
 	{
