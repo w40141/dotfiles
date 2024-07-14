@@ -16,12 +16,6 @@ local v = vim
 -- TODO: https://github.com/zk-org/zk-nvim
 -- Neovim extension for zk
 
--- TODO: Navigate and manipulate file system. Part of 'mini.nvim' library.
--- https://github.com/echasnovski/mini.files
-
--- TODO:Use treesitter to auto close and auto rename html tag
--- https://github.com/windwp/nvim-ts-autotag
-
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
