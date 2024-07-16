@@ -7,6 +7,7 @@ function M.conform()
 	conform.setup({
 		formatters_by_ft = {
 			bash = { "shfmt" },
+			css = { "prettier" },
 			elixir = { "mix" },
 			fish = { "fish_indent" },
 			go = { "gofumpt", "goimports", "golines" },
