@@ -97,30 +97,5 @@ opt.spell = true
 opt.spelllang = { "en_us" }
 opt.incsearch = true
 
--- function Foldtext()
--- 	local res = v.treesitter.foldtext()
---
--- 	if type(res) == "string" then
--- 		return res
--- 	end
---
--- 	if (#res == 1 and res[1][1] == "{") or (#res == 2 and res[1][1]:match("^%s+$") and res[2][1] == "{") then
--- 		local foldstart = v.v.foldstart
--- 		v.v.foldstart = foldstart + 1
--- 		local text = v.treesitter.foldtext()
--- 		if type(text) == "table" then
--- 			for i, va in pairs(text) do
--- 				if i == 1 and va[1]:match("^%s+$") then
--- 					va[1] = " "
--- 				end
--- 				table.insert(res, va)
--- 			end
--- 		end
--- 		v.v.foldstart = foldstart
--- 	end
--- 	return res
--- end
---
--- opt.foldtext = [[v:lua.Foldtext()]]
 v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.dictionary = "/usr/share/dict/words"
