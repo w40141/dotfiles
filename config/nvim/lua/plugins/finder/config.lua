@@ -122,12 +122,11 @@ function M.telescope()
 		defaults = {
 			vimgrep_arguments = {
 				"rg",
-				"--color=never",
-				"--no-heading",
-				"--with-filename",
-				"--line-number",
+				"--hidden",
+				"--glob",
+				"!**/.git/**",
 				"--column",
-				"--smart-case",
+				"--trim",
 			},
 			find_command = { "fd", "-t=f", "-a" },
 			path_display = { shorten = { len = 5, exclude = { 5, -5 } } },
