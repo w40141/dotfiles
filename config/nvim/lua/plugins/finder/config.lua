@@ -126,7 +126,6 @@ function M.telescope()
 				"--glob",
 				"!**/.git/**",
 				"--column",
-				"--trim",
 			},
 			find_command = { "fd", "-t=f", "-a" },
 			path_display = { shorten = { len = 5, exclude = { 5, -5 } } },
