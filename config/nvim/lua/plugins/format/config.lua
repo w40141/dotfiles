@@ -16,7 +16,7 @@ function M.conform()
 			json = { "biome", "fixjson" },
 			-- json = { "fixjson" },
 			lua = { "stylua" },
-			markdown = { "markdownlint-cli2", "markdown-toc" },
+			markdown = { "markdownlint-cli2", "markdown-toc", "prettier" },
 			python = { "black" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
@@ -25,9 +25,9 @@ function M.conform()
 			toml = { "taplo" },
 			yaml = { "yamlfmt" },
 			xml = { "xmlformat" },
-			["*"] = {
-				"codespell",
-			},
+			-- ["*"] = {
+			-- 	"codespell",
+			-- },
 			["_"] = { "trim_whitespace", "trim_newlines", "squeeze_blanks" },
 		},
 		log_level = v.log.levels.ERROR,
