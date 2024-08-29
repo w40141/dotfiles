@@ -12,6 +12,7 @@ function M.conform()
 			fish = { "fish_indent" },
 			go = { "gofumpt", "goimports", "golines" },
 			-- javascript = { "prettier" },
+			hcl = { "hcl" },
 			javascript = { "biome" },
 			json = { "biome", "fixjson" },
 			-- json = { "fixjson" },
