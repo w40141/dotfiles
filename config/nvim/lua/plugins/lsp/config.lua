@@ -325,7 +325,7 @@ function M.lspconfig()
 		-- 	opts.root_dir = node_root_dir
 		-- end
 
-		if server_name == "typos" then
+		if server_name == "typos_lsp" then
 			opts.init_options = {
 				config = "~/.config/nvim/spell/.typos.toml",
 			}
@@ -358,7 +358,6 @@ function M.lspconfig()
 		ensure_installed = {
 			"bashls",
 			"biome",
-			-- "cspell",
 			"cssls",
 			"denols",
 			"docker_compose_language_service",
@@ -378,7 +377,8 @@ function M.lspconfig()
 			"taplo",
 			"terraformls",
 			"texlab",
-			"tsserver",
+			"ts_ls",
+			"typos_lsp",
 			"yamlls",
 		},
 	})

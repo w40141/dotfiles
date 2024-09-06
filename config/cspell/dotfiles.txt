@@ -35,6 +35,7 @@ lspsaga
 infor
 kkharji
 pytest
+bashls
 segeljakt
 dstein
 hjklasdfgyuiopqwertnmzxcvb
@@ -70,3 +71,4 @@ isort
 pydantic
 ndarray
 qubo
+yamlls

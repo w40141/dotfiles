@@ -24,7 +24,7 @@ function M.lint()
 	}
 
 	local anyfile = {
-		"codespell",
+		-- "codespell",
 		"cspell",
 		"woke",
 	}
@@ -33,15 +33,6 @@ function M.lint()
 
 	require("mason-nvim-lint").setup({
 		ensure_installed = anyfile,
-	})
-
-	autocmd({ "BufRead", "BufWritePost" }, {
-		callback = function()
-			if v.tbl_contains({ "man", "vim", "help" }, v.bo.filetype) then
-				return
-			end
-			require("lint").try_lint("cspell")
-		end,
 	})
 
 	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
