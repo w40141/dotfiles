@@ -131,19 +131,19 @@ function M.lspconfig()
 			}
 
 			-- cspellが実行できるなら追加
-			if fn.executable("cspell") then
-				languages["="] = {
-					{
-						lintCommand = "cspell --no-progress --no-summary --no-color --config=~/.config/cspell/cspell.json ${INPUT}",
-						lintIgnoreExitCode = true,
-						lintFormats = {
-							"%f:%l:%c - %m",
-							"%f:%l:%c %m",
-						},
-						lintSeverity = 4, -- hint
-					},
-				}
-			end
+			-- if fn.executable("cspell") then
+			-- 	languages["="] = {
+			-- 		{
+			-- 			lintCommand = "cspell --no-progress --no-summary --no-color --config=~/.config/cspell/cspell.json ${INPUT}",
+			-- 			lintIgnoreExitCode = true,
+			-- 			lintFormats = {
+			-- 				"%f:%l:%c - %m",
+			-- 				"%f:%l:%c %m",
+			-- 			},
+			-- 			lintSeverity = 4, -- hint
+			-- 		},
+			-- 	}
+			-- end
 
 			opts.init_options = {
 				documentFormatting = true,
@@ -358,7 +358,7 @@ function M.lspconfig()
 		ensure_installed = {
 			"bashls",
 			"biome",
-			"cspell",
+			-- "cspell",
 			"cssls",
 			"denols",
 			"docker_compose_language_service",

@@ -10,21 +10,22 @@ function M.lint()
 		css = { "stylelint" },
 		dockerfile = { "hadolint" },
 		go = { "golangcilint", "revive" },
-		javascript = { "biomejs" },
-		json = { "jsonlint", "biomejs" },
+		javascript = { "biome" },
+		json = { "jsonlint", "biome" },
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
 		python = { "ruff", "vulture" },
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
 		terraform = { "tflint" },
-		typescript = { "biomejs" },
+		typescript = { "biome" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}
 
 	local anyfile = {
 		"codespell",
+		"cspell",
 		"woke",
 	}
 
@@ -32,6 +33,15 @@ function M.lint()
 
 	require("mason-nvim-lint").setup({
 		ensure_installed = anyfile,
+	})
+
+	autocmd({ "BufRead", "BufWritePost" }, {
+		callback = function()
+			if v.tbl_contains({ "man", "vim", "help" }, v.bo.filetype) then
+				return
+			end
+			require("lint").try_lint("cspell")
+		end,
 	})
 
 	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
