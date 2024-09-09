@@ -6,11 +6,11 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		-- url = "https://github.com/mfussenegger/nvim-dap",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"theHamsta/nvim-dap-virtual-text",
-			"jay-babu/mason-nvim-dap.nvim",
-		},
+		-- dependencies = {
+		-- 	"rcarriga/nvim-dap-ui",
+		-- 	"theHamsta/nvim-dap-virtual-text",
+		-- 	"jay-babu/mason-nvim-dap.nvim",
+		-- },
 		lazy = true,
 		config = conf.dap,
 	},
@@ -26,8 +26,8 @@ return {
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		-- url = "https://github.com/jay-babu/mason-nvim-dap.nvim",
-		dependencies = {
-			"williamboman/mason.nvim",
-		},
+		-- dependencies = {
+		-- 	"williamboman/mason.nvim",
+		-- },
 	},
 }

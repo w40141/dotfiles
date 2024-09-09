@@ -16,12 +16,15 @@ return {
 		-- Highlight length of search result
 		"kevinhwang91/nvim-hlslens",
 		-- url = "https://github.com/kevinhwang91/nvim-hlslens",
-		dependencies = {
-			"rapan931/lasterisk.nvim",
-		},
+		-- dependencies = {
+		-- 	"rapan931/lasterisk.nvim",
+		-- },
 		init = setup.hlslens,
 		config = conf.hlslens,
 		event = "VeryLazy",
+	},
+	{
+		"rapan931/lasterisk.nvim",
 	},
 	{
 		"lambdalisue/kensaku.vim",
@@ -29,22 +32,22 @@ return {
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
-		event = "VeryLazy"
+		event = "VeryLazy",
 	},
 	{
 		"lambdalisue/vim-kensaku-command",
 		-- url = "https://github.com/lambdalisue/vim-kensaku-command",
-		dependencies = {
-			"lambdalisue/kensaku.vim",
-		},
+		-- dependencies = {
+		-- 	"lambdalisue/kensaku.vim",
+		-- },
 		event = { "CmdlineEnter" },
 	},
 	{
 		"lambdalisue/vim-kensaku-search",
 		-- url = "https://github.com/lambdalisue/vim-kensaku-search"
-		dependencies = {
-			"lambdalisue/kensaku.vim",
-		},
+		-- dependencies = {
+		-- 	"lambdalisue/kensaku.vim",
+		-- },
 		config = conf.kensaku,
 		event = { "CmdlineEnter" },
 	},

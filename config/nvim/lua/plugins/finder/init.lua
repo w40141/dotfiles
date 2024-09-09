@@ -9,12 +9,12 @@ return {
 		cmd = {
 			"Telescope",
 		},
-		dependencies = {
-			"folke/trouble.nvim",
-			"stevearc/aerial.nvim",
-			"nvim-telescope/telescope-ui-select.nvim",
-			"delphinus/telescope-memo.nvim",
-		},
+		-- dependencies = {
+		-- 	"folke/trouble.nvim",
+		-- 	"stevearc/aerial.nvim",
+		-- 	"nvim-telescope/telescope-ui-select.nvim",
+		-- 	"delphinus/telescope-memo.nvim",
+		-- },
 		init = setup.telescope,
 		config = conf.telescope,
 	},
@@ -22,19 +22,25 @@ return {
 		"folke/trouble.nvim",
 		-- url = "https://github.com/folke/trouble.nvim",
 		cmd = { "Trouble" },
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
+		-- dependencies = {
+		-- 	"nvim-tree/nvim-web-devicons",
+		-- },
 		init = setup.trouble,
 		config = conf.trouble,
+	},
+	{
+		"nvim-telescope/telescope-ui-select.nvim",
+	},
+	{
+		"delphinus/telescope-memo.nvim",
 	},
 	{
 		-- Highlight, list and search todo comments
 		"folke/todo-comments.nvim",
 		-- url = "https://github.com/folke/todo-comments.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
+		-- dependencies = {
+		-- 	"nvim-lua/plenary.nvim",
+		-- },
 		-- event = { "BufReadPre", "FocusLost", "CursorHold" },
 		event = { "FocusLost", "CursorHold" },
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },

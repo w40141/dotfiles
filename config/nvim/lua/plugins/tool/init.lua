@@ -27,9 +27,9 @@ return {
 		-- Supports multiple languages and annotation conventions.
 		"danymat/neogen",
 		-- url = "https://github.com/danymat/neogen",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
+		-- dependencies = {
+		-- 	"nvim-treesitter/nvim-treesitter",
+		-- },
 		init = setup.neogen,
 		config = conf.neogen,
 		cmd = { "Neogen" },

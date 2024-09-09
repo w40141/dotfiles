@@ -38,10 +38,10 @@ return {
 	{
 		"MeanderingProgrammer/markdown.nvim",
 		-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"nvim-tree/nvim-web-devicons",
-		},
+		-- dependencies = {
+		-- 	"nvim-treesitter/nvim-treesitter",
+		-- 	"nvim-tree/nvim-web-devicons",
+		-- },
 		ft = { "markdown" },
 		config = conf.markdown,
 	},

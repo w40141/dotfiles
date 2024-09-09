@@ -4,26 +4,20 @@ return {
 	{
 		"NeogitOrg/neogit",
 		-- url = "https://github.com/NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
-			"nvim-telescope/telescope.nvim",
-		},
+		-- dependencies = {
+		-- 	"nvim-lua/plenary.nvim",
+		-- 	"sindrets/diffview.nvim",
+		-- 	"nvim-telescope/telescope.nvim",
+		-- },
 		cmd = { "Neogit" },
 		config = conf.neogit,
 	},
 	{
-		"lewis6991/gitsigns.nvim",
-		-- url = "https://github.com/lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
-		config = conf.gitsigns,
-	},
-	{
 		"sindrets/diffview.nvim",
 		-- url = "https://github.com/sindrets/diffview.nvim",
-		dependencies = {
-			"nvim-tree/nvim-web-devicons",
-		},
+		-- dependencies = {
+		-- 	"nvim-tree/nvim-web-devicons",
+		-- },
 		cmd = {
 			"DiffviewOpen",
 			"DiffviewClose",
@@ -32,6 +26,12 @@ return {
 			"DiffviewRefresh",
 			"DiffviewFileHistory",
 		},
+	},
+	{
+		"lewis6991/gitsigns.nvim",
+		-- url = "https://github.com/lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
+		config = conf.gitsigns,
 	},
 	{
 		"akinsho/git-conflict.nvim",

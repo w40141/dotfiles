@@ -9,15 +9,15 @@ return {
 		cmd = { "ConformInfo" },
 		config = conf.conform,
 		init = setup.conform,
-		dependencies = {
-			"zapling/mason-conform.nvim",
-		},
+		-- dependencies = {
+		-- 	"zapling/mason-conform.nvim",
+		-- },
 	},
 	{
 		"zapling/mason-conform.nvim",
 		-- url = "https://github.com/zapling/mason-conform.nvim"
-		dependencies = {
-			"williamboman/mason.nvim",
-		},
+		-- dependencies = {
+		-- 	"williamboman/mason.nvim",
+		-- },
 	},
 }
