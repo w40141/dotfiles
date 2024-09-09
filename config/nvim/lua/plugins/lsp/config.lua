@@ -130,21 +130,6 @@ function M.lspconfig()
 				},
 			}
 
-			-- cspellが実行できるなら追加
-			-- if fn.executable("cspell") then
-			-- 	languages["="] = {
-			-- 		{
-			-- 			lintCommand = "cspell --no-progress --no-summary --no-color --config=~/.config/cspell/cspell.json ${INPUT}",
-			-- 			lintIgnoreExitCode = true,
-			-- 			lintFormats = {
-			-- 				"%f:%l:%c - %m",
-			-- 				"%f:%l:%c %m",
-			-- 			},
-			-- 			lintSeverity = 4, -- hint
-			-- 		},
-			-- 	}
-			-- end
-
 			opts.init_options = {
 				documentFormatting = true,
 				hover = true,
@@ -328,6 +313,7 @@ function M.lspconfig()
 		if server_name == "typos_lsp" then
 			opts.init_options = {
 				config = "~/.config/nvim/spell/.typos.toml",
+				diagnosticSeverity = "Hint",
 			}
 		end
 
