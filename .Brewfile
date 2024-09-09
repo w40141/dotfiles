@@ -224,6 +224,7 @@ brew "toilet"
 brew "tokei"
 brew "tree"
 brew "trivy"
+brew "typos-cli"
 brew "unar"
 brew "vim"
 brew "vimpager"
@@ -281,20 +282,8 @@ cask "gitkraken"
 cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
-# Japanese input software
-cask "google-japanese-ime"
-# Utility to fix grammar errors and style issues in text
-cask "grammarly"
-# Screenshot and screen recording tool
-cask "gyazo"
-# IDE for Java development - community edition
-cask "intellij-idea-ce"
-# Terminal emulator as alternative to Apple's Terminal app
-cask "iterm2"
 # Interface for reading and syncing eBooks
 cask "kindle"
-# Software for Logitech devices
-cask "google-chrome"
 # Client for the Google Drive storage service
 cask "google-drive"
 # Japanese input software
@@ -307,8 +296,6 @@ cask "gyazo"
 cask "intellij-idea-ce"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Interface for reading and syncing eBooks
-cask "kindle"
 # Software for Logitech devices
 cask "logi-options-plus"
 # Full TeX Live distribution without GUI applications
