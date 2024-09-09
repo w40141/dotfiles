@@ -26,7 +26,7 @@ function M.lint()
 	local anyfile = {
 		"codespell",
 		-- "cspell",
-		"typos",
+		-- "typos",
 		"woke",
 	}
 
