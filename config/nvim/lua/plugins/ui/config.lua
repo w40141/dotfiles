@@ -97,7 +97,12 @@ function M.lualine()
 				{
 					"filename",
 					file_status = true,
-					path = 1,
+					-- 0: Just the filename
+					-- 1: Relative path
+					-- 2: Absolute path
+					-- 3: Absolute path, with tilde as the home directory
+					-- 4: Filename and parent dir, with tilde as the home directory
+					path = 4,
 					symbols = { modified = "  ", readonly = "  " },
 				},
 				-- search_result,
@@ -116,6 +121,10 @@ function M.lualine()
 			lualine_z = {
 				"progress",
 				"location",
+				{
+					"datetime",
+					style = "%Y/%m/%d %H:%M:%S",
+				},
 			},
 		},
 		inactive_sections = {
