@@ -8,9 +8,6 @@ return {
 		build = ":TSUpdate",
 		event = "VeryLazy",
 		config = conf.treesitter,
-		-- dependencies = {
-		-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-		-- },
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",

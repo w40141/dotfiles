@@ -25,9 +25,6 @@ return {
 		config = conf.comment,
 		-- event = { "BufReadPre", "FocusLost", "CursorHold" },
 		event = { "FocusLost", "CursorHold" },
-		-- dependencies = {
-		-- 	"JoosepAlviste/nvim-ts-context-commentstring",
-		-- },
 	},
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
@@ -44,7 +41,6 @@ return {
 		-- Not UFO in the sky, but an ultra fold in Neovim.
 		"kevinhwang91/nvim-ufo",
 		-- url = "https://github.com/kevinhwang91/nvim-ufo"
-		-- dependencies = { "kevinhwang91/promise-async" },
 		init = setup.ufo,
 		config = conf.ufo,
 		event = "VeryLazy",

@@ -29,7 +29,7 @@ return {
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
 		event = { "InsertEnter", "CmdlineEnter" },
-		dependencies = {
+		-- dependencies = {
 			"chrisgrieser/cmp_yanky",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
@@ -43,7 +43,7 @@ return {
 			"rinx/cmp-skkeleton",
 			"saadparwaiz1/cmp_luasnip",
 			"zbirenbaum/copilot-cmp",
-		},
+		-- },
 	},
 	{
 		"chrisgrieser/cmp_yanky",
@@ -90,23 +90,14 @@ return {
 	{
 		"rinx/cmp-skkeleton",
 		-- url = "https://github.com/rinx/cmp-skkeleton",
-		-- dependencies = {
-		-- 	"vim-skk/skkeleton",
-		-- },
 	},
 	{
 		"saadparwaiz1/cmp_luasnip",
 		-- url = "https://github.com/saadparwaiz1/cmp_luasnip",
-		-- dependencies = {
-		-- 	"L3MON4D3/LuaSnip",
-		-- },
 	},
 	{
 		"L3MON4D3/LuaSnip",
 		-- url = "https://github.com/L3MON4D3/LuaSnip",
-		-- dependencies = {
-		-- 	"rafamadriz/friendly-snippets",
-		-- },
 		build = "make install_jsregexp",
 		config = conf.luasnip,
 	},
@@ -118,9 +109,6 @@ return {
 		"zbirenbaum/copilot-cmp",
 		-- url = "https://github.com/zbirenbaum/copilot-cmp",
 		config = conf.copilot_cmp,
-		-- dependencies = {
-		-- 	"zbirenbaum/copilot.lua",
-		-- },
 	},
 	{
 		"zbirenbaum/copilot.lua",
@@ -131,9 +119,6 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		-- url = "https://github.com/windwp/nvim-autopairs",
-		-- dependencies = {
-		-- 	"hrsh7th/nvim-cmp",
-		-- },
 		config = conf.autopairs,
 		event = { "InsertEnter" },
 	},

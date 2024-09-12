@@ -34,12 +34,6 @@ return {
 			-- "BufReadPre ~/ghq/github/w40141/vault/**.md",
 			"BufNewFile ~/ghq/github/w40141/vault/**.md",
 		},
-		-- dependencies = {
-		-- 	"nvim-lua/plenary.nvim",
-		-- 	"hrsh7th/nvim-cmp",
-		-- 	"nvim-telescope/telescope.nvim",
-		-- 	"nvim-treesitter/nvim-treesitter",
-		-- },
 		cmd = {
 			"ObsidianCheck",
 			"ObsidianToday",

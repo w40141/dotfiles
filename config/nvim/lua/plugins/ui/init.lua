@@ -9,9 +9,6 @@ return {
 	{
 		"goolord/alpha-nvim",
 		-- url = "https://github.com/goolord/alpha-nvim",
-		-- dependencies = {
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- },
 		event = "BufWinEnter",
 		config = conf.alpha,
 	},
@@ -21,11 +18,6 @@ return {
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
 		-- event = { "VeryLazy" },
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
-		-- dependencies = {
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- 	"rebelot/kanagawa.nvim",
-		-- 	"stevearc/aerial.nvim",
-		-- },
 		init = setup.lualine,
 		config = conf.lualine,
 	},
@@ -47,12 +39,7 @@ return {
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
-		-- event = { "VeryLazy" },
-		-- event = "BufWinEnter",
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
-		-- dependencies = {
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- },
 		init = setup.bufferline,
 		config = conf.bufferline,
 	},
@@ -69,18 +56,11 @@ return {
 		cmd = { "Aerial" },
 		init = setup.aerial,
 		config = conf.aerial,
-		-- dependencies = {
-		-- 	"nvim-treesitter/nvim-treesitter",
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- },
 	},
 	{
 		-- File finder
 		"nvim-tree/nvim-tree.lua",
 		-- url = "https://github.com/nvim-tree/nvim-tree.lua",
-		-- dependencies = {
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- },
 		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
 		init = setup.tree,
 		config = conf.tree,
