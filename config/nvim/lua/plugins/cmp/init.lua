@@ -29,7 +29,7 @@ return {
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
 		event = { "InsertEnter", "CmdlineEnter" },
-		-- dependencies = {
+		dependencies = {
 			"chrisgrieser/cmp_yanky",
 			"f3fora/cmp-spell",
 			"hrsh7th/cmp-buffer",
@@ -43,7 +43,7 @@ return {
 			"rinx/cmp-skkeleton",
 			"saadparwaiz1/cmp_luasnip",
 			"zbirenbaum/copilot-cmp",
-		-- },
+		},
 	},
 	{
 		"chrisgrieser/cmp_yanky",
@@ -100,6 +100,7 @@ return {
 		-- url = "https://github.com/L3MON4D3/LuaSnip",
 		build = "make install_jsregexp",
 		config = conf.luasnip,
+		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	{
 		"rafamadriz/friendly-snippets",

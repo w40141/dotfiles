@@ -270,17 +270,9 @@ function M.lspconfig()
 
 		-- prisma-language-server prismals
 
-		-- pyright
+		-- pylsp
 
-		-- ruff-lsp ruff_lsp
-		if server_name == "ruff_lsp" then
-			opts.init_options = {
-				settings = {
-					-- Any extra CLI arguments for `ruff` go here.
-					args = {},
-				},
-			}
-		end
+		-- pyright
 
 		-- rust-analyzer rust_analyzer
 		if server_name == "rust_analyzer" then
@@ -356,8 +348,7 @@ function M.lspconfig()
 			"jdtls",
 			"lua_ls",
 			"prismals",
-			"pyright",
-			"ruff_lsp",
+			"pylsp",
 			"rust_analyzer",
 			"sqlls",
 			"taplo",
