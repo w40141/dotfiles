@@ -284,3 +284,4 @@ end
 # pnpm end
 
 # starship init fish | source
+uv generate-shell-completion fish | source

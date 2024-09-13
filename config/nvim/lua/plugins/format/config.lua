@@ -18,7 +18,7 @@ function M.conform()
 			-- json = { "fixjson" },
 			lua = { "stylua" },
 			markdown = { "markdownlint-cli2", "markdown-toc", "prettier" },
-			python = { "black" },
+			python = { "ruff" },
 			sh = { "shfmt" },
 			sql = { "sql_formatter" },
 			terraform = { "terraform_fmt" },

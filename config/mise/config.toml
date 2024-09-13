@@ -1,5 +1,4 @@
 [tools]
-python = "3.12.1"
 deno = "1.45.5"
 bun = "1.0.26"
 erlang = "26.2.1"
@@ -14,3 +13,4 @@ usage = "latest"
 zig = "latest"
 gleam = "latest"
 dotnet = "8.0.303"
+python = "3.12.6"
