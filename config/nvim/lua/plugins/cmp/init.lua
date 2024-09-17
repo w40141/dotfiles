@@ -110,6 +110,9 @@ return {
 		"zbirenbaum/copilot-cmp",
 		-- url = "https://github.com/zbirenbaum/copilot-cmp",
 		config = conf.copilot_cmp,
+		dependencies = {
+			"zbirenbaum/copilot.lua",
+		},
 	},
 	{
 		"zbirenbaum/copilot.lua",
