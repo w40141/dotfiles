@@ -11,7 +11,7 @@ function M.lint()
 		dockerfile = { "hadolint" },
 		go = { "golangcilint", "revive" },
 		javascript = { "biome" },
-		json = { "jsonlint", "biome" },
+		json = { "jsonlint" },
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
 		-- python = { "ruff", "vulture" },
