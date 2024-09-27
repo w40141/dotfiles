@@ -11,7 +11,6 @@ function M.conform()
 			elixir = { "mix" },
 			fish = { "fish_indent" },
 			go = { "gofumpt", "goimports", "golines" },
-			-- javascript = { "prettier" },
 			hcl = { "hcl" },
 			javascript = { "biome" },
 			json = { "fixjson" },
@@ -25,9 +24,6 @@ function M.conform()
 			toml = { "taplo" },
 			yaml = { "yamlfmt" },
 			xml = { "xmlformat" },
-			-- ["*"] = {
-			-- 	"codespell",
-			-- },
 			["_"] = { "trim_whitespace", "trim_newlines", "squeeze_blanks" },
 		},
 		log_level = v.log.levels.ERROR,
