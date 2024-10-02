@@ -10,6 +10,7 @@ function M.conform()
 			css = { "prettier" },
 			elixir = { "mix" },
 			fish = { "fish_indent" },
+			fsharp = { "fantomas" },
 			go = { "gofumpt", "goimports", "golines" },
 			hcl = { "hcl" },
 			javascript = { "biome" },

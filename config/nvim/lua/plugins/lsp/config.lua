@@ -342,6 +342,7 @@ function M.lspconfig()
 			"dockerls",
 			"efm",
 			"eslint",
+			"fsautocomplete",
 			"gopls",
 			"graphql",
 			"html",
