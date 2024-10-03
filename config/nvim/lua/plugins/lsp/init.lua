@@ -13,7 +13,6 @@ return {
 		-- url = "https://github.com/neovim/nvim-lspconfig",
 		init = setup.lspconfig,
 		config = conf.lspconfig,
-		-- event = { "BufReadPre", "FocusLost", "CursorHold" },
 		event = { "FocusLost", "CursorHold" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 	},

@@ -135,6 +135,10 @@ function M.cmp()
 			{ name = "cmp_yanky" },
 			-- { name = "orgmode" },
 			{ name = "skkeleton" },
+			{
+				name = "lazydev",
+				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
+			},
 		}),
 		-- view = {
 		-- 	entries = "native",
