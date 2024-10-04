@@ -12,7 +12,7 @@ function M.conform()
 			fish = { "fish_indent" },
 			fsharp = { "fantomas" },
 			go = { "gofumpt", "goimports", "golines" },
-			hcl = { "hcl" },
+			hcl = { "hclfmt" },
 			javascript = { "biome" },
 			json = { "fixjson" },
 			lua = { "stylua" },

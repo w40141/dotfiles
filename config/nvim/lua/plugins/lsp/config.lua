@@ -152,6 +152,13 @@ function M.lspconfig()
 			opts.root_dir = node_root_dir
 		end
 
+		if server_name == "contextive" then
+		end
+
+		if server_name == "fsautocomplete" then
+			-- opt
+		end
+
 		-- gopls
 		if server_name == "gopls" then
 			opts.settings = {
