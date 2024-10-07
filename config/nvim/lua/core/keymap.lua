@@ -157,6 +157,15 @@ key("i", "<down>", "<nop>")
 key("i", "<left>", "<nop>")
 key("i", "<right>", "<nop>")
 
+-- 入力した文字列を大文字にする
+key("i", "<C-l>", function()
+	local line = fn.getline(".")
+	local col = fn.getpos(".")[3]
+	local substring = line:sub(1, col - 1)
+	local result = fn.matchstr(substring, [[\v<(\k(<)@!)*$]])
+	return "<C-w>" .. result:upper()
+end, { expr = true })
+
 -- v[nore]map
 -- vを二回で行末まで選択
 key("v", "v", "$h")
