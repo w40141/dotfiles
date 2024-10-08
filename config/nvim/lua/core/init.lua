@@ -6,6 +6,7 @@ g.did_install_syntax_menu = 1
 
 g.loaded_2html_plugin = 1
 
+g.loaded_tar = 1
 g.loaded_gzip = 1
 g.loaded_tar = 1
 g.loaded_tarPlugin = 1
@@ -40,11 +41,7 @@ g.skip_loading_mswin = 1
 g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
--- g.loaded_node_provider = 0
 
--- g.did_load_filetypes = 1
--- g.loaded_spellfile_plugin = 1
--- g.loaded_sql_completion = 1
 g.loaded_syntax_completion = 1
 
 if v.fn.has("wsl") == 1 then
@@ -54,15 +51,16 @@ if v.fn.has("wsl") == 1 then
 		v.g.clipboard = {
 			name = "WslClipboard",
 			copy = {
-				["+"] = "wl-copy",
+				["+"] = "xsel -bi",
+				["*"] = "xsel -bi",
 			},
 			paste = {
-				["+"] = function()
-					return v.fn.systemlist('wl-paste | tr -d "\r"')
+				["+"] = "xsel -bo",
+				["*"] = function()
+					return v.fn.systemlist('xsel -bo | tr -d "\r"')
 				end,
-				["*"] = "wl-paste",
 			},
-			cache_enabled = 0,
+			cache_enabled = 1,
 		}
 	end
 end
