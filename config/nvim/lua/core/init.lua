@@ -47,6 +47,26 @@ g.loaded_ruby_provider = 0
 -- g.loaded_sql_completion = 1
 g.loaded_syntax_completion = 1
 
+if v.fn.has("wsl") == 1 then
+	if v.fn.executable("wl-copy") == 0 then
+		print("wl-clipboard not found, clipboard integration won't work")
+	else
+		v.g.clipboard = {
+			name = "WslClipboard",
+			copy = {
+				["+"] = "wl-copy",
+			},
+			paste = {
+				["+"] = function()
+					return v.fn.systemlist('wl-paste | tr -d "\r"')
+				end,
+				["*"] = "wl-paste",
+			},
+			cache_enabled = 0,
+		}
+	end
+end
+
 require("core.option")
 require("core.keymap")
 require("core.event")
