@@ -22,7 +22,8 @@ return {
 		},
 		init = setup.skkeleton,
 		config = conf.skkeleton,
-		event = { "InsertEnter", "CmdlineEnter" },
+		-- event = { "InsertEnter", "CmdlineEnter" },
+		event = {"VeryLazy"}
 	},
 	{
 		"yioneko/nvim-cmp",

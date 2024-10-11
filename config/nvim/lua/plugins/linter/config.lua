@@ -19,7 +19,7 @@ function M.lint()
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
 		terraform = { "tflint" },
-		typescript = { "biomejs" },
+		typescript = { "biome" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}
