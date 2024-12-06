@@ -6,6 +6,9 @@ local v = vim
 -- TODO: AI
 -- https://github.com/yetone/avante.nvim
 
+-- TODO: todo.txt
+-- https://github.com/arnarg/todotxt.nvim
+
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
