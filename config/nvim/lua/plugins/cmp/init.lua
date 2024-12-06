@@ -26,9 +26,9 @@ return {
 		event = {"VeryLazy"}
 	},
 	{
-		"yioneko/nvim-cmp",
-		branch = "perf",
-		-- "hrsh7th/nvim-cmp",
+		-- "yioneko/nvim-cmp",
+		-- branch = "perf",
+		"hrsh7th/nvim-cmp",
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
 		-- event = { "InsertEnter", "CmdlineEnter" },
