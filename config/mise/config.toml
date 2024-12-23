@@ -1,5 +1,5 @@
 [tools]
-deno = "1.45.5"
+deno = "latest"
 bun = "1.0.26"
 elixir = "1.16.1-otp-26"
 kotlin = "1.9.22"
