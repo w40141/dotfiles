@@ -29,9 +29,7 @@ return {
 		config = conf.hlargs,
 	},
 	{
-		"vlaw/nvim_context_vt",
-		branch = "fix_dead_loop",
-		-- "andersevenrud/nvim_context_vt",
+		"andersevenrud/nvim_context_vt",
 		-- url = "https://github.com/andersevenrud/nvim_context_vt",
 		config = conf.context,
 		event = { "BufNewFile", "BufRead" },
