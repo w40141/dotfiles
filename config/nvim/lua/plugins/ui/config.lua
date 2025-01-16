@@ -155,6 +155,7 @@ end
 function M.hlchunk()
 	require("hlchunk").setup({
 		chunk = {
+			enable = true,
 			chars = {
 				horizontal_line = "─",
 				vertical_line = "│",
@@ -165,6 +166,7 @@ function M.hlchunk()
 			style = "#806d9c",
 		},
 		indent = {
+			enable = true,
 			chars = { "│", "¦", "┆", "┊" },
 			use_treesitter = true,
 		},

@@ -9,6 +9,9 @@ local v = vim
 -- TODO: todo.txt
 -- https://github.com/arnarg/todotxt.nvim
 
+-- TODO: plugin
+-- https://zenn.dev/neo/articles/078cdbfcb61b2d
+
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"

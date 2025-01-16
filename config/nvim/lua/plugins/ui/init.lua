@@ -25,7 +25,7 @@ return {
 		-- highlight indent line and the current chunk (context) cursor stayed
 		"shellRaining/hlchunk.nvim",
 		-- url = "https://github.com/shellRaining/hlchunk.nvim"
-		event = { "BufReadPost" },
+		event = { "BufReadPre", "BufNewFile" },
 		config = conf.hlchunk,
 	},
 	{

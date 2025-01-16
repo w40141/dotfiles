@@ -11,6 +11,7 @@ return {
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
