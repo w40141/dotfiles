@@ -1,19 +1,14 @@
 local M = {}
 
-function M.eskk()
-	local key = vim.keymap.set
-	key({ "i", "c" }, "jk", "<Plug>(eskk:toggle)", { desc = "Toggle ESKK" })
-end
-
 function M.yanky()
 	local key = vim.keymap.set
-	key({ "n", "x" }, "p", "<Plug>(YankyPutAfter)")
-	key({ "n", "x" }, "P", "<Plug>(YankyPutBefore)")
-	key({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)")
-	key({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)")
-	key("n", "<c-n>", "<Plug>(YankyCycleForward)")
-	key("n", "<c-p>", "<Plug>(YankyCycleBackward)")
-	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>")
+	key({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "Yanky: Put After" })
+	key({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "Yanky: Put Before" })
+	key({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)", { desc = "Yanky: GPut After" })
+	key({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)", { desc = "Yanky: GPut Before" })
+	key("n", "<c-n>", "<Plug>(YankyCycleForward)", { desc = "Yanky: Cycle Forward" })
+	key("n", "<c-p>", "<Plug>(YankyCycleBackward)", { desc = "Yanky: Cycle Backward" })
+	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>", { desc = "Yanky: Ring History" })
 end
 
 function M.ufo()
@@ -24,10 +19,10 @@ function M.ufo()
 	end
 
 	local key = vim.keymap.set
-	key("n", "zR", f("openAllFolds"), { desc = "Open All Folds" })
-	key("n", "zM", f("closeAllFolds"), { desc = "Close All Folds" })
-	key("n", "zr", f("openFoldsExceptKinds"), { desc = "Open Folds Except Kinds" })
-	key("n", "zm", f("closeFoldsWith"), { desc = "Close Folds With" })
+	key("n", "zR", f("openAllFolds"), { desc = "ufo: Open All Folds" })
+	key("n", "zM", f("closeAllFolds"), { desc = "ufo: Close All Folds" })
+	key("n", "zr", f("openFoldsExceptKinds"), { desc = "ufo: Open Folds Except Kinds" })
+	key("n", "zm", f("closeFoldsWith"), { desc = "ufo: Close Folds With" })
 end
 
 return M
