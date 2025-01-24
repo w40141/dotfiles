@@ -10,10 +10,10 @@ function M.lspconfig()
 		end
 	end
 
-	key("n", "[dev]o", d("open_float"), { desc = "Open Float" })
-	key("n", "]g", d("goto_next"), { desc = "Go to Next" })
-	key("n", "[g", d("goto_prev"), { desc = "Go to Previous" })
-	key("n", "[dev]q", d("setloclist"), { desc = "Set Location List" })
+	key("n", "[dev]o", d("open_float"), { desc = "[LSP] 診断メッセージを表示" })
+	key("n", "]g", d("goto_next"), { desc = "[LSP] 次の診断メッセージへ移動" })
+	key("n", "[g", d("goto_prev"), { desc = "[LSP] 前の診断メッセージへ移動" })
+	key("n", "[dev]q", d("setloclist"), { desc = "[LSP] 診断メッセージをローカルリストに設定" })
 
 	local function b(name)
 		return function()
@@ -21,19 +21,19 @@ function M.lspconfig()
 		end
 	end
 
-	key("n", "[dev]r", b("references"), { desc = "Go to references" })
-	key("n", "[dev]d", b("definition"), { desc = "Go to definition" })
-	key("n", "[dev]D", b("declaration"), { desc = "Go to declaration" })
-	key("n", "[dev]i", b("implementation"), { desc = "Go to implementation" })
-	key("n", "[dev]t", b("type_definition"), { desc = "Go to type definition" })
-	key("n", "[dev]n", b("rename"), { desc = "Rename variable" })
-	key("n", "[dev]s", b("signature_help"), { desc = "Signature help" })
-	key("n", "[dev]wa", b("add_workspace_folder"), { desc = "Add workspace folder" })
-	key("n", "[dev]wr", b("remove_workspace_folder"), { desc = "Remove workspace folder" })
+	key("n", "[dev]r", b("references"), { desc = "[LSP] 参照を表示" })
+	key("n", "[dev]d", b("definition"), { desc = "[LSP] 定義へ移動" })
+	key("n", "[dev]D", b("declaration"), { desc = "[LSP] 宣言へ移動" })
+	key("n", "[dev]i", b("implementation"), { desc = "[LSP] 実装へ移動" })
+	key("n", "[dev]t", b("type_definition"), { desc = "[LSP] 型定義へ移動" })
+	key("n", "[dev]n", b("rename"), { desc = "[LSP] シンボル名をリネーム" })
+	key("n", "[dev]s", b("signature_help"), { desc = "[LSP] シグネチャヘルプを表示" })
+	key("n", "[dev]wa", b("add_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを追加" })
+	key("n", "[dev]wr", b("remove_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを削除" })
 	key("n", "[dev]wl", function()
 		print(v.inspect(b("list_workspace_folders")))
-	end, { desc = "List workspace folders" })
-	key({ "n", "v" }, "[dev]a", b("code_action"), { desc = "Code action" })
+	end, { desc = "[LSP] ワークスペースフォルダ一覧を表示" })
+	key({ "n", "v" }, "[dev]a", b("code_action"), { desc = "[LSP] コードアクションを適用" })
 end
 
 return M

@@ -24,4 +24,13 @@ return {
 		init = setup.flash,
 		event = "VeryLazy",
 	},
+	{
+		"s-show/extend_word_motion.nvim",
+		-- url = "https://github.com/s-show/extend_word_motion.nvim"
+		opts = {},
+		dependencies = {
+			"sirasagi62/tinysegmenter.nvim",
+		},
+		event = "VeryLazy",
+	},
 }

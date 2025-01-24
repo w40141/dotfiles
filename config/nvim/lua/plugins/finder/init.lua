@@ -1,6 +1,5 @@
 local conf = require("plugins.finder.config")
 local setup = require("plugins.finder.setup")
-local key = require("plugins.finder.key")
 
 return {
 	{
