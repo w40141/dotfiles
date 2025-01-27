@@ -16,7 +16,6 @@ end
 
 function M.lspconfig()
 	local v = vim
-	local fn = v.fn
 	local lsp = v.lsp
 	local api = v.api
 	local hl = api.nvim_set_hl
@@ -24,24 +23,41 @@ function M.lspconfig()
 	local augroup = api.nvim_create_augroup
 	local autocmd = api.nvim_create_autocmd
 	local lspconfig = require("lspconfig")
+	local diag = v.diagnostic
 
-	local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-	for type, icon in pairs(signs) do
-		local sign = "DiagnosticSign" .. type
-		fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
-	end
+	-- local signs = { Error = "", Warn = "", Hint = "", Info = "" }
+	-- for type, icon in pairs(signs) do
+	-- 	local sign = "DiagnosticSign" .. type
+	-- 	fn.sign_define(sign, { text = icon, texthl = sign, numhl = sign })
+	-- end
 
-	-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
-	lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+	diag.config({
 		virtual_text = {
 			format = function(diagnostic)
-				if not diagnostic.source then
-					return diagnostic.message
-				end
 				return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
 			end,
 		},
+		signs = {
+			text = {
+				[diag.severity.ERROR] = "",
+				[diag.severity.WARN] = "",
+				[diag.severity.INFO] = "",
+				[diag.severity.HINT] = "",
+			},
+		},
 	})
+
+	-- https://dev.classmethod.jp/articles/eetann-change-neovim-lsp-diagnostics-format/
+	-- lsp.handlers["textDocument/publishDiagnostics"] = lsp.with(lsp.diagnostic.on_publish_diagnostics, {
+	-- 	virtual_text = {
+	-- 		format = function(diagnostic)
+	-- 			if not diagnostic.source then
+	-- 				return diagnostic.message
+	-- 			end
+	-- 			return string.format("%s (%s: %s)", diagnostic.message, diagnostic.source, diagnostic.code)
+	-- 		end,
+	-- 	},
+	-- })
 
 	local capabilities = require("cmp_nvim_lsp").default_capabilities()
 	capabilities.textDocument.foldingRange = {
