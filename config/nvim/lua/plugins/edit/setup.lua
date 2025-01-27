@@ -2,71 +2,71 @@ local M = {}
 
 function M.yanky()
 	local key = vim.keymap.set
-	key({ "n", "x" }, "p", "<Plug>(yankyPutAfter)", { desc = "[Yanky] カーソルの後ろにペースト" })
-	key({ "n", "x" }, "P", "<Plug>(yankyPutBefore)", { desc = "[Yanky] カーソルの前にペースト" })
-	key({ "n", "x" }, "gp", "<Plug>(yankyGPutAfter)", { desc = "[Yanky] セクションの後ろにペースト" })
-	key({ "n", "x" }, "gP", "<Plug>(yankyGPutBefore)", { desc = "[Yanky] セクションの前にペースト" })
-	key("n", "<c-n>", "<Plug>(yankyPreviousEntry)", { desc = "[Yanky] 前のヤンク履歴を選択" })
-	key("n", "<c-p>", "<Plug>(yankyNextEntry)", { desc = "[Yanky] 次のヤンク履歴を選択" })
-	key("n", "<c-y>", "<Cmd>yankyRingHistory<CR>", { desc = "[Yanky] ヤンク履歴を表示" })
+	key({ "n", "x" }, "p", "<Plug>(YankyPutAfter)", { desc = "[yanky] カーソルの後ろにペースト" })
+	key({ "n", "x" }, "P", "<Plug>(YankyPutBefore)", { desc = "[yanky] カーソルの前にペースト" })
+	key({ "n", "x" }, "gp", "<Plug>(YankyGPutAfter)", { desc = "[yanky] セクションの後ろにペースト" })
+	key({ "n", "x" }, "gP", "<Plug>(YankyGPutBefore)", { desc = "[yanky] セクションの前にペースト" })
+	key("n", "<c-n>", "<Plug>(YankyPreviousEntry)", { desc = "[yanky] 前のヤンク履歴を選択" })
+	key("n", "<c-p>", "<Plug>(YankyNextEntry)", { desc = "[yanky] 次のヤンク履歴を選択" })
+	key("n", "<c-y>", "<Cmd>YankyRingHistory<CR>", { desc = "[yanky] ヤンク履歴を表示" })
 	key(
 		"n",
 		"]p",
-		"<Plug>(yankyPutIndentAfterLinewise)",
+		"<Plug>(YankyPutIndentAfterLinewise)",
 		{ desc = "[yanky] 後ろにインデント付きでペースト" }
 	)
 	key(
 		"n",
 		"[p",
-		"<Plug>(yankyPutIndentBeforeLinewise)",
+		"<Plug>(YankyPutIndentBeforeLinewise)",
 		{ desc = "[yanky] 前にインデント付きでペースト" }
 	)
 	key(
 		"n",
 		"]P",
-		"<Plug>(yankyPutIndentAfterLinewise)",
+		"<Plug>(YankyPutIndentAfterLinewise)",
 		{ desc = "[yanky] セクションの後ろにインデント付きでペースト" }
 	)
 	key(
 		"n",
 		"[P",
-		"<Plug>(yankyPutIndentBeforeLinewise)",
+		"<Plug>(YankyPutIndentBeforeLinewise)",
 		{ desc = "[yanky] セクションの前にインデント付きでペースト" }
 	)
 	key(
 		"n",
 		">p",
-		"<Plug>(yankyPutIndentAfterShiftRight)",
+		"<Plug>(YankyPutIndentAfterShiftRight)",
 		{ desc = "[yanky] 後ろにインデント付きで右シフト" }
 	)
 	key(
 		"n",
 		"<p",
-		"<Plug>(yankyPutIndentAfterShiftLeft)",
+		"<Plug>(YankyPutIndentAfterShiftLeft)",
 		{ desc = "[yanky] 後ろにインデント付きで左シフト" }
 	)
 	key(
 		"n",
 		">P",
-		"<Plug>(yankyPutIndentBeforeShiftRight)",
+		"<Plug>(YankyPutIndentBeforeShiftRight)",
 		{ desc = "[yanky] セクションの後ろにインデント付きで右シフト" }
 	)
 	key(
 		"n",
 		"<P",
-		"<Plug>(yankyPutIndentBeforeShiftLeft)",
+		"<Plug>(YankyPutIndentBeforeShiftLeft)",
 		{ desc = "[yanky] セクションの前にインデント付きで左シフト" }
 	)
 	key(
 		"n",
 		"=p",
-		"<Plug>(yankyPutAfterFilter)",
+		"<Plug>(YankyPutAfterFilter)",
 		{ desc = "[yanky] 後ろにフィルターを適用してペースト" }
 	)
 	key(
 		"n",
 		"=P",
-		"<Plug>(yankyPutBeforeFilter)",
+		"<Plug>(YankyPutBeforeFilter)",
 		{ desc = "[yanky] 前にフィルターを適用してペースト" }
 	)
 end

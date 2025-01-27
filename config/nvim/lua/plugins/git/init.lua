@@ -1,4 +1,5 @@
 local conf = require("plugins.git.config")
+local setup = require("plugins.git.setup")
 
 return {
 	{
@@ -30,7 +31,7 @@ return {
 		-- url = "https://github.com/akinsho/git-conflict.nvim",
 		version = "*",
 		config = true,
-		event = "VeryLazy",
+		init = setup.conflict,
 		cmd = {
 			"GitConflictChooseOurs",
 			"GitConflictChooseTheirs",
