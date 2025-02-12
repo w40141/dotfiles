@@ -109,7 +109,7 @@ end
 
 function fish_user_key_bindings
     bind \cg ghq_fzf_repo
-		bind \cs fzf_switch_branch
+		bind \cb fzf_switch_branch
 end
 
 # theme-bobthefish
