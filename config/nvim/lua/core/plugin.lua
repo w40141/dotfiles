@@ -12,6 +12,9 @@ local v = vim
 -- TODO: plugin
 -- https://zenn.dev/neo/articles/078cdbfcb61b2d
 
+-- TODO: cursor
+-- https://github.com/yetone/avante.nvim
+
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
