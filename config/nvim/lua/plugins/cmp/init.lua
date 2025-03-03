@@ -23,7 +23,7 @@ return {
 		init = setup.skkeleton,
 		config = conf.skkeleton,
 		-- event = { "InsertEnter", "CmdlineEnter" },
-		event = {"VeryLazy"}
+		event = { "VeryLazy" },
 	},
 	{
 		-- "yioneko/nvim-cmp",
@@ -136,6 +136,8 @@ return {
 		"zbirenbaum/copilot.lua",
 		-- url = "https://github.com/zbirenbaum/copilot.lua",
 		build = ":Copilot auth",
+		cmd = "Copilot",
+		event = { "InsertEnter" },
 		config = conf.copilot,
 	},
 	{

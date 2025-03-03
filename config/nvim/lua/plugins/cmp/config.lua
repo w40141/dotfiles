@@ -180,8 +180,8 @@ end
 function M.copilot()
 	require("copilot").setup({
 		panel = {
-			enabled = false,
-			auto_refresh = false,
+			enabled = true,
+			auto_refresh = true,
 			keymap = {
 				jump_prev = "[[",
 				jump_next = "]]",
@@ -190,13 +190,14 @@ function M.copilot()
 				open = "<M-CR>",
 			},
 			layout = {
-				position = "bottom", -- | top | left | right
+				position = "bottom", -- | top | left | right | horizontal | vertical
 				ratio = 0.4,
 			},
 		},
 		suggestion = {
-			enabled = false,
-			auto_trigger = true,
+			enabled = true,
+			auto_trigger = false,
+			hide_during_completion = true,
 			debounce = 75,
 			keymap = {
 				accept = "<M-l>",
@@ -218,7 +219,7 @@ function M.copilot()
 			cvs = false,
 			["."] = false,
 		},
-		copilot_node_command = "node", -- Node.js version must be > 16.x
+		copilot_node_command = "node", -- Node.js version must be > 18.x
 		server_opts_overrides = {},
 	})
 end

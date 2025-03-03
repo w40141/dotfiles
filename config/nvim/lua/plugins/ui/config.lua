@@ -119,12 +119,9 @@ function M.lualine()
 				"filetype",
 			},
 			lualine_z = {
+				"lsp-status",
 				"progress",
 				"location",
-				{
-					"datetime",
-					style = "%Y/%m/%d %H:%M:%S",
-				},
 			},
 		},
 		inactive_sections = {

@@ -22,6 +22,10 @@ return {
 		config = conf.lualine,
 	},
 	{
+		"pnx/lualine-lsp-status",
+		-- url = "https://github.com/pnx/lualine-lsp-status"
+	},
+	{
 		-- highlight indent line and the current chunk (context) cursor stayed
 		"shellRaining/hlchunk.nvim",
 		-- url = "https://github.com/shellRaining/hlchunk.nvim"
