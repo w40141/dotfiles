@@ -42,12 +42,6 @@
 	shallow = clone --depth 1 = checkout
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
 
-[fetch]
-	prune = true
-
-[pull]
-	rebase = false
-
 [core]
 	ignorecase = false
 
@@ -83,5 +77,66 @@
 	hunk-header-file-style = red
 	hunk-header-line-number-style = "#067a00"
 	hunk-header-style = file line-number syntax
+
+# clearly makes git better
+
+[column]
+	ui = auto
+
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
 [init]
 	defaultBranch = main
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[push]
+	default = simple
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+# why the hell not?
+
+[help]
+	autocorrect = prompt
+
+[commit]
+	verbose = true
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[core]
+	excludesfile = ~/.gitignore
+
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
+
+# a matter of taste (uncomment if you dare)
+
+[core]
+	# fsmonitor = true
+	# untrackedCache = true
+
+[merge]
+	# (just 'diff3' if git version < 2.3)
+	# conflictstyle = zdiff3
+
+[pull]
+	rebase = true
