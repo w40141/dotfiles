@@ -133,14 +133,6 @@ return {
 		},
 	},
 	{
-		"zbirenbaum/copilot.lua",
-		-- url = "https://github.com/zbirenbaum/copilot.lua",
-		build = ":Copilot auth",
-		cmd = "Copilot",
-		event = { "InsertEnter" },
-		config = conf.copilot,
-	},
-	{
 		"windwp/nvim-autopairs",
 		-- url = "https://github.com/windwp/nvim-autopairs",
 		config = conf.autopairs,

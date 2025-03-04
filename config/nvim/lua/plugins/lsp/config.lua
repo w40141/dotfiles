@@ -313,13 +313,6 @@ function M.lspconfig()
 
 		-- taplo
 
-		-- terraform
-
-		if server_name == "terraform" then
-			opts.filetypes = { "hcl", "tf", "tfvars" }
-			opts.root_dir = lspconfig.util.root_pattern(".git", ".terraform", ".gitmodules")
-		end
-
 		-- texlab
 
 		-- typescript-language-server tsserver
@@ -381,7 +374,6 @@ function M.lspconfig()
 			"rust_analyzer",
 			"sqlls",
 			"taplo",
-			"terraformls",
 			"texlab",
 			"ts_ls",
 			"typos_lsp",
