@@ -3,7 +3,7 @@ local M = {}
 function M.toggleterm()
 	vim.keymap.set(
 		{ "n", "t" },
-		"<Space>l",
+		"<leader>l",
 		"<CMD>ToggleTerm direction=float<CR>",
 		{ desc = "[toggleterm] ターミナルをトグル" }
 	)

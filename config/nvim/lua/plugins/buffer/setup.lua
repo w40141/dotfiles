@@ -3,7 +3,7 @@ local M = {}
 function M.close()
 	local function f(name)
 		return function()
-			return require("close-buffers").delete({ type = name })
+			return require("close_buffers").delete({ type = name })
 		end
 	end
 
