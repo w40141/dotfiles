@@ -23,7 +23,7 @@ function M.neogen()
 
 	key("i", "<C-l>", f("jump_next"), { desc = "[Neogen] 次のコメントセクションへジャンプする" })
 	key("i", "<C-h>", f("jump_prev"), { desc = "[Neogen] 前のコメントセクションへジャンプする" })
-	key("n", ",n", f("generate"), { desc = "[Neogen] 関数のドキュメントコメントを生成する" })
+	key("n", "<leader>n", f("generate"), { desc = "[Neogen] 関数のドキュメントコメントを生成する" })
 end
 
 return M

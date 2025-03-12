@@ -28,27 +28,27 @@ local key = v.keymap.set
 
 -- <leader>キーを変更 (default: \)
 g.mapleader = " "
-g.maplocalleader = " "
-key("n", " ", "")
-key("x", " ", "")
+g.maplocalleader = ","
+key({ "n", "x" }, " ", "<nop>")
+key({ "n", "x" }, ",", "<nop>")
 
-key("n", "<leader>", "<nop>")
-key("x", "<leader>", "<nop>")
+key({ "n", "x" }, "<leader>", "<nop>")
+key({ "n", "x" }, "<localleader>", "<nop>")
 
-key("n", "[ff]", "<nop>")
-key("x", "[ff]", "<nop>")
-key("n", "<c-f>", "[ff]", { remap = true })
-key("x", "<c-f>", "[ff]", { remap = true })
+key({ "n", "x" }, "[ff]", "<nop>")
+key({ "n", "x" }, "<c-f>", "[ff]", { remap = true })
 
-key("n", "[dev]", "<nop>")
-key("x", "[dev]", "<nop>")
-key("n", "m", "[dev]", { remap = true })
-key("x", "m", "[dev]", { remap = true })
+key({ "n", "x" }, "[dev]", "<nop>")
+key({ "n", "x" }, "m", "[dev]", { remap = true })
 
-key("n", "[tr]", "<nop>")
-key("x", "[tr]", "<nop>")
-key("n", "<c-m>", "[tr]", { remap = true })
-key("x", "<c-m>", "[tr]", { remap = true })
+key({ "n", "x" }, "[tr]", "<nop>")
+key({ "n", "x" }, "<c-t>", "[tr]", { remap = true })
+
+key({ "n", "x" }, "[git]", "<nop>")
+key({ "n", "x" }, "<c-g>", "[git]", { remap = true })
+
+key({ "n", "x" }, "[buf]", "<nop>")
+key({ "n", "x" }, "<c-b>", "[buf]", { remap = true })
 
 -- [nore]map
 -- 行頭と行末への移動
@@ -58,9 +58,9 @@ key("", "1", "0")
 key("", ";", ":")
 key("", ":", ";")
 -- キー置換
-key("", ",h", "^")
-key("", ",l", "$")
-key("", ",p", "%")
+key("", "<leader>h", "^")
+key("", "<leader>l", "$")
+key("", "<leader>p", "%")
 -- ヤンク
 key("", "gy", '"+y')
 
@@ -76,11 +76,11 @@ key("n", "zh", "zH")
 -- キー置換
 -- key('n', ',/', ';')
 -- カーソル下の単語を小文字にする
-key("n", ",u", [[mzg~iw`z<Cmd>delmarks z<CR>]])
+key("n", "<leader>u", [[mzg~iw`z<Cmd>delmarks z<cr>]])
 -- カーソル下の単語を大文字にする
-key("n", ",U", [[mzlbg~l`z<Cmd>delmarks z<CR>]])
+key("n", "<leader>U", [[mzlbg~l`z<Cmd>delmarks z<cr>]])
 -- 保存
-key("n", ",w", ":w<cr>")
+key("n", "<leader>w", ":w<cr>")
 -- 検索結果のハイライトをC-h連打でクリアする
 -- key("n", ",n", ":<c-u>nohlsearch<cr>")
 -- 検索後にジャンプした際に検索単語を画面中央に持ってくる
@@ -145,7 +145,7 @@ key("i", "<c-f>", "<right>")
 -- 挿入モードでのesc
 key("i", "jj", "<esc>")
 -- ctrl-v で insert モードで貼り付け
-key("i", "<c-v>", '<eSC>"*pa')
+key("i", "<c-v>", '<esc>"*pa')
 
 -- 矢印キー無効
 key("n", "<up>", "<nop>")

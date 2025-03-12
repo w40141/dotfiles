@@ -11,9 +11,9 @@ function M.lspconfig()
 	end
 
 	key("n", "[dev]o", d("open_float"), { desc = "[LSP] 診断メッセージを表示" })
+	key("n", "[dev]q", d("setloclist"), { desc = "[LSP] 診断メッセージをローカルリストに設定" })
 	key("n", "]g", d("goto_next"), { desc = "[LSP] 次の診断メッセージへ移動" })
 	key("n", "[g", d("goto_prev"), { desc = "[LSP] 前の診断メッセージへ移動" })
-	key("n", "[dev]q", d("setloclist"), { desc = "[LSP] 診断メッセージをローカルリストに設定" })
 
 	local function b(name)
 		return function()

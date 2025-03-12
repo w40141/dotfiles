@@ -2,28 +2,28 @@ local M = {}
 
 function M.todo()
 	local key = vim.keymap.set
-	key("n", "[ff]O", "<cmd>TodoTelescope<CR>", { desc = "[todo-comment] TelescopeでTODOを検索" })
-	key("n", "[ff]o", "<cmd>TodoTrouble<CR>", { desc = "[todo-comment] TroubleでTODOを検索" })
+	key("n", "[ff]o", "<cmd>TodoTelescope<CR>", { desc = "[todo-comment] TelescopeでTODOを検索" })
+	key("n", "[tr]o", "<cmd>TodoTrouble<CR>", { desc = "[todo-comment] TroubleでTODOを検索" })
 end
 
 function M.trouble()
 	local key = vim.keymap.set
-	key("n", "[ff]Q", "<cmd>Trouble diagnostics toggle<cr>", { desc = "[trouble] 診断リストを表示" })
+	key("n", "[tr]q", "<cmd>Trouble diagnostics toggle<cr>", { desc = "[trouble] 診断リストを表示" })
 	key(
 		"n",
-		"[ff]R",
+		"[tr]r",
 		"<cmd>Trouble lsp_references<cr>",
 		{ desc = "[trouble] カーソル下の単語のLSP参照を一覧表示" }
 	)
 	key(
 		"n",
-		"[ff]D",
+		"[tr]d",
 		"<cmd>Trouble lsp_definitions<cr>",
 		{ desc = "[trouble] カーソル下の単語の定義を一覧表示" }
 	)
 	key(
 		"n",
-		"[ff]T",
+		"[tr]t",
 		"<cmd>Trouble lsp_type_definitions<cr>",
 		{ desc = "[trouble] カーソル下の単語の型定義を一覧表示" }
 	)
