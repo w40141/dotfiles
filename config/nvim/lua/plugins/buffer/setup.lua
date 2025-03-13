@@ -10,25 +10,25 @@ function M.close()
 	local key = vim.keymap.set
 	key(
 		"n",
-		"[buf]h",
+		"[BUF]h",
 		f("hidden"),
 		{ noremap = true, silent = true, desc = "[close-buffers] 隠れているバッファをすべて削除" }
 	)
 	key(
 		"n",
-		"[buf]t",
+		"[BUF]t",
 		f("this"),
 		{ noremap = true, silent = true, desc = "[close-buffers] 現在のバッファを削除" }
 	)
 	key(
 		"n",
-		"[buf]a",
+		"[BUF]a",
 		f("all"),
 		{ noremap = true, silent = true, desc = "[close-buffers] すべてのバッファを削除" }
 	)
 	key(
 		"n",
-		"[buf]o",
+		"[BUF]o",
 		f("other"),
 		{ noremap = true, silent = true, desc = "[close-buffers] 現在のバッファ以外を削除" }
 	)

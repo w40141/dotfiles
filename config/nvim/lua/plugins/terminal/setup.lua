@@ -4,7 +4,7 @@ function M.toggleterm()
 	vim.keymap.set(
 		{ "n", "t" },
 		"<leader>l",
-		"<CMD>ToggleTerm direction=float<CR>",
+		"<cmd>ToggleTerm direction=float<cr>",
 		{ desc = "[toggleterm] ターミナルをトグル" }
 	)
 end

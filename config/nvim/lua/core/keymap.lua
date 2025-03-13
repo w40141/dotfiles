@@ -35,19 +35,19 @@ key({ "n", "x" }, ",", "<nop>")
 key({ "n", "x" }, "<leader>", "<nop>")
 key({ "n", "x" }, "<localleader>", "<nop>")
 
-key({ "n", "x" }, "[ff]", "<nop>")
+key({ "n", "x" }, "[FF]", "<nop>")
 key({ "n", "x" }, "<c-f>", "[ff]", { remap = true })
 
-key({ "n", "x" }, "[dev]", "<nop>")
+key({ "n", "x" }, "[DEV]", "<nop>")
 key({ "n", "x" }, "m", "[dev]", { remap = true })
 
-key({ "n", "x" }, "[tr]", "<nop>")
+key({ "n", "x" }, "[TR]", "<nop>")
 key({ "n", "x" }, "<c-t>", "[tr]", { remap = true })
 
-key({ "n", "x" }, "[git]", "<nop>")
+key({ "n", "x" }, "[GIT]", "<nop>")
 key({ "n", "x" }, "<c-g>", "[git]", { remap = true })
 
-key({ "n", "x" }, "[buf]", "<nop>")
+key({ "n", "x" }, "[BUF]", "<nop>")
 key({ "n", "x" }, "<c-b>", "[buf]", { remap = true })
 
 -- [nore]map

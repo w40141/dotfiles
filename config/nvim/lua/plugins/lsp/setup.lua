@@ -10,8 +10,8 @@ function M.lspconfig()
 		end
 	end
 
-	key("n", "[dev]o", d("open_float"), { desc = "[LSP] 診断メッセージを表示" })
-	key("n", "[dev]q", d("setloclist"), { desc = "[LSP] 診断メッセージをローカルリストに設定" })
+	key("n", "[DEV]o", d("open_float"), { desc = "[LSP] 診断メッセージを表示" })
+	key("n", "[DEV]q", d("setloclist"), { desc = "[LSP] 診断メッセージをローカルリストに設定" })
 	key("n", "]g", d("goto_next"), { desc = "[LSP] 次の診断メッセージへ移動" })
 	key("n", "[g", d("goto_prev"), { desc = "[LSP] 前の診断メッセージへ移動" })
 
@@ -21,16 +21,16 @@ function M.lspconfig()
 		end
 	end
 
-	key("n", "[dev]r", b("references"), { desc = "[LSP] 参照を表示" })
-	key("n", "[dev]d", b("definition"), { desc = "[LSP] 定義へ移動" })
-	key("n", "[dev]D", b("declaration"), { desc = "[LSP] 宣言へ移動" })
-	key("n", "[dev]i", b("implementation"), { desc = "[LSP] 実装へ移動" })
-	key("n", "[dev]t", b("type_definition"), { desc = "[LSP] 型定義へ移動" })
-	key("n", "[dev]n", b("rename"), { desc = "[LSP] シンボル名をリネーム" })
-	key("n", "[dev]s", b("signature_help"), { desc = "[LSP] シグネチャヘルプを表示" })
-	key("n", "[dev]wa", b("add_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを追加" })
-	key("n", "[dev]wr", b("remove_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを削除" })
-	key("n", "[dev]wl", function()
+	key("n", "[DEV]r", b("references"), { desc = "[LSP] 参照を表示" })
+	key("n", "[DEV]d", b("definition"), { desc = "[LSP] 定義へ移動" })
+	key("n", "[DEV]D", b("declaration"), { desc = "[LSP] 宣言へ移動" })
+	key("n", "[DEV]i", b("implementation"), { desc = "[LSP] 実装へ移動" })
+	key("n", "[DEV]t", b("type_definition"), { desc = "[LSP] 型定義へ移動" })
+	key("n", "[DEV]n", b("rename"), { desc = "[LSP] シンボル名をリネーム" })
+	key("n", "[DEV]s", b("signature_help"), { desc = "[LSP] シグネチャヘルプを表示" })
+	key("n", "[DEV]wa", b("add_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを追加" })
+	key("n", "[DEV]wr", b("remove_workspace_folder"), { desc = "[LSP] ワークスペースフォルダを削除" })
+	key("n", "[DEV]wl", function()
 		print(v.inspect(b("list_workspace_folders")))
 	end, { desc = "[LSP] ワークスペースフォルダ一覧を表示" })
 	key({ "n", "v" }, "[dev]a", b("code_action"), { desc = "[LSP] コードアクションを適用" })

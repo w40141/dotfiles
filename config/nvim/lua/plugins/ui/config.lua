@@ -18,18 +18,18 @@ function M.alpha()
 
 	-- Menu
 	d.section.buttons.val = {
-		d.button("e", "󰝒 New file", ":ene <BAR> startinsert<CR>"),
-		d.button("f", "󰱼 Find file", "<CMD>Telescope find_files<CR>"),
-		d.button("g", "󱎸 Find word", "<CMD>Telescope live_grep<CR>"),
-		d.button("t", "󰄲 Find TODO", "<CMD>TodoTelescope<CR>"),
-		d.button("o", "󰌀 Open explorer", "<CMD>NvimTreeToggle<CR>"),
-		d.button("c", "󰓙 Check health", "<CMD>checkhealth<CR>"),
-		d.button("u", "󰚰 Update plugins", "<CMD>Lazy sync<CR>"),
-		d.button("l", "󰏓 Open Package Maneger", "<CMD>Lazy<CR>"),
-		d.button("m", "󰌱 Open Mason Maneger", "<CMD>Mason<CR>"),
-		d.button("T", "󱫠 Measure time", "<CMD>StartupTime<CR>"),
-		d.button("M", "󱩧 New Memo", ":MemoNew<CR>"),
-		d.button("q", "󰩈 Quit", "<CMD>qa<CR>"),
+		d.button("e", "󰝒 New file", ":ene <bar> startinsert<cr>"),
+		d.button("f", "󰱼 Find file", "<cmd>Telescope find_files<cr>"),
+		d.button("g", "󱎸 Find word", "<cmd>Telescope live_grep<cr>"),
+		d.button("t", "󰄲 Find TODO", "<cmd>TodoTelescope<cr>"),
+		d.button("o", "󰌀 Open explorer", "<cmd>NvimTreeToggle<cr>"),
+		d.button("c", "󰓙 Check health", "<cmd>checkhealth<cr>"),
+		d.button("u", "󰚰 Update plugins", "<cmd>Lazy sync<cr>"),
+		d.button("l", "󰏓 Open Package Maneger", "<cmd>Lazy<cr>"),
+		d.button("m", "󰌱 Open Mason Maneger", "<cmd>Mason<cr>"),
+		d.button("T", "󱫠 Measure time", "<cmd>StartupTime<cr>"),
+		d.button("M", "󱩧 New Memo", ":MemoNew<cr>"),
+		d.button("q", "󰩈 Quit", "<cmd>qa<cr>"),
 	}
 	d.section.buttons.opts.hl = "AlphaButtons"
 
