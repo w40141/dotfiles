@@ -21,6 +21,7 @@ function M.lspconfig()
 		end
 	end
 
+	key({ "n", "v" }, "[DEV]a", b("code_action"), { desc = "[LSP] コードアクションを適用" })
 	key("n", "[DEV]r", b("references"), { desc = "[LSP] 参照を表示" })
 	key("n", "[DEV]d", b("definition"), { desc = "[LSP] 定義へ移動" })
 	key("n", "[DEV]D", b("declaration"), { desc = "[LSP] 宣言へ移動" })
@@ -33,7 +34,6 @@ function M.lspconfig()
 	key("n", "[DEV]wl", function()
 		print(v.inspect(b("list_workspace_folders")))
 	end, { desc = "[LSP] ワークスペースフォルダ一覧を表示" })
-	key({ "n", "v" }, "[dev]a", b("code_action"), { desc = "[LSP] コードアクションを適用" })
 end
 
 return M
