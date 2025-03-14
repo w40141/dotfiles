@@ -36,19 +36,19 @@ key({ "n", "x" }, "<leader>", "<nop>")
 key({ "n", "x" }, "<localleader>", "<nop>")
 
 key({ "n", "x" }, "[FF]", "<nop>")
-key({ "n", "x" }, "<c-f>", "[ff]", { remap = true })
+key({ "n", "x" }, "<c-f>", "[FF]", { remap = true })
 
 key({ "n", "x" }, "[DEV]", "<nop>")
-key({ "n", "x" }, "m", "[dev]", { remap = true })
+key({ "n", "x" }, "m", "[DEV]", { remap = true })
 
 key({ "n", "x" }, "[TR]", "<nop>")
-key({ "n", "x" }, "<c-t>", "[tr]", { remap = true })
+key({ "n", "x" }, "<c-t>", "[TR]", { remap = true })
 
 key({ "n", "x" }, "[GIT]", "<nop>")
-key({ "n", "x" }, "<c-g>", "[git]", { remap = true })
+key({ "n", "x" }, "<c-g>", "[GIT]", { remap = true })
 
 key({ "n", "x" }, "[BUF]", "<nop>")
-key({ "n", "x" }, "<c-b>", "[buf]", { remap = true })
+key({ "n", "x" }, "<c-b>", "[BUF]", { remap = true })
 
 -- [nore]map
 -- 行頭と行末への移動
