@@ -46,7 +46,7 @@ opt.display = "lastline"
 -- ポップアップメニューの高さを指定
 -- カーソル行の強調表示
 opt.cursorline = true
-opt.background = ""
+-- opt.background = ""
 -- 文字を隠す
 opt.conceallevel = 1
 -- opt.conceallevel = 2
