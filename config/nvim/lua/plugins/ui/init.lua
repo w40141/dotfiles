@@ -48,12 +48,6 @@ return {
 		config = conf.bufferline,
 	},
 	{
-		"rebelot/kanagawa.nvim",
-		-- url = "https://github.com/rebelot/kanagawa.nvim",
-		config = conf.kanagawa,
-		event = { "VimEnter" },
-	},
-	{
 		-- Neovim plugin for a code outline window
 		"stevearc/aerial.nvim",
 		-- url = "https://github.com/stevearc/aerial.nvim",
