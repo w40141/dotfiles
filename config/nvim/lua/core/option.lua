@@ -57,7 +57,7 @@ opt.ignorecase = true
 opt.smartcase = true
 -- deleteでインデントを削除可能にする
 opt.backspace = { "indent", "eol", "start" }
-opt.completeopt = { "menuone", "noselect" }
+opt.completeopt = { "menuone", "noselect", "popup" }
 -- 閉括弧が入力された時、対応する括弧を強調する
 opt.showmatch = true
 opt.fileformats = { "unix", "mac", "dos" }
