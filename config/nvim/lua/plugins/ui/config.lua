@@ -50,17 +50,6 @@ end
 
 function M.lualine()
 	local v = vim
-	-- local function search_result()
-	-- 	if v.v.hlsearch == 0 then
-	-- 		return ""
-	-- 	end
-	-- 	local last_search = v.fn.getreg("/")
-	-- 	if not last_search or last_search == "" then
-	-- 		return ""
-	-- 	end
-	-- 	local searchcount = v.fn.searchcount({ maxcount = 9999 })
-	-- 	return last_search .. "(" .. searchcount.current .. "/" .. searchcount.total .. ")"
-	-- end
 
 	local function skk()
 		if (v.fn.mode() == "i") and v.fn["skkeleton#is_enabled"]() then
@@ -68,6 +57,18 @@ function M.lualine()
 		else
 			return ""
 		end
+	end
+
+	local function lsp_status()
+		local clients = v.lsp.get_clients({ bufnr = 0 })
+		if #clients == 0 then
+			return "No Active Lsp"
+		end
+		local names = {}
+		for _, client in ipairs(clients) do
+			table.insert(names, client.name)
+		end
+		return table.concat(names, ", ")
 	end
 
 	require("lualine").setup({
@@ -114,12 +115,16 @@ function M.lualine()
 				},
 			},
 			lualine_y = {
-				"encoding",
-				"fileformat",
 				"filetype",
+				{
+					lsp_status,
+					icon = " LSP:",
+					color = { fg = "#000000", gui = "bold" },
+				},
 			},
 			lualine_z = {
-				"lsp-status",
+				"encoding",
+				"fileformat",
 				"progress",
 				"location",
 			},

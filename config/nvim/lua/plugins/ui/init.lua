@@ -22,7 +22,7 @@ return {
 		config = conf.lualine,
 	},
 	{
-		"pnx/lualine-lsp-status",
+		-- "pnx/lualine-lsp-status",
 		-- url = "https://github.com/pnx/lualine-lsp-status"
 	},
 	{
