@@ -352,10 +352,10 @@ function M.lspconfig()
 		on_attach = function(client, bufnr)
 			-- TODO: 理解する
 			-- lsp.completion.enable(true, client.id, bufnr, {
-			-- autotrigger = true,
-			-- convert = function(item)
-			-- 	return { abbr = item.label:gsub("%b()", "") }
-			-- end,
+			-- 	autotrigger = true,
+			-- 	convert = function(item)
+			-- 		return { abbr = item.label:gsub("%b()", "") }
+			-- 	end,
 			-- })
 			-- api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", {})
 			if client.server_capabilities.documentHighlightProvider then
@@ -378,6 +378,10 @@ function M.lspconfig()
 	})
 
 	lsp.config("bashls", {})
+
+	lsp.config("docker_compose_language_service", {})
+
+	lsp.config("dockerls", {})
 
 	local efm_enabled_language = {
 		markdown = {
@@ -503,18 +507,12 @@ function M.lspconfig()
 
 			client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
 				runtime = {
-					-- Tell the language server which version of Lua you're using
-					-- (most likely LuaJIT in the case of Neovim)
 					version = "LuaJIT",
 				},
-				-- Make the server aware of Neovim runtime files
 				workspace = {
 					checkThirdParty = false,
 					library = {
 						v.env.VIMRUNTIME,
-						-- Depending on the usage, you might want to add additional paths here.
-						-- "${3rd}/luv/library"
-						-- "${3rd}/busted/library",
 					},
 				},
 			})

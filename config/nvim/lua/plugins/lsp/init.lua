@@ -7,6 +7,7 @@ return {
 		-- url = "https://github.com/williamboman/mason.nvim",
 		cmd = { "Mason" },
 		config = conf.mason,
+		build = ":MasonUpdate",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -19,5 +20,9 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		-- url = "https://github.com/williamboman/mason-lspconfig.nvim",
+		-- init = setup.lspconfig,
+		-- config = conf.lspconfig,
+		-- event = { "FocusLost", "CursorHold" },
+		-- cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 	},
 }

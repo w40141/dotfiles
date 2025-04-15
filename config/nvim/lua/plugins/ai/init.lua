@@ -6,7 +6,7 @@ return {
 		-- url = "https://github.com/zbirenbaum/copilot.lua",
 		build = ":Copilot auth",
 		cmd = "Copilot",
-		event = { "InsertEnter" },
+		event = { "VeryLazy" },
 		config = conf.copilot,
 	},
 	{
