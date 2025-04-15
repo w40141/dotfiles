@@ -2,9 +2,9 @@ local M = {}
 
 function M.kanagawa()
 	require("kanagawa").setup({
-		theme = "dragon",
+		theme = "wave",
 		background = {
-			dark = "dragon",
+			dark = "wave",
 			light = "lotus",
 		},
 	})

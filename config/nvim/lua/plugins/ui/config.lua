@@ -118,7 +118,7 @@ function M.lualine()
 				"filetype",
 				{
 					lsp_status,
-					icon = " LSP:",
+					icon = " :",
 					color = { fg = "#000000", gui = "bold" },
 				},
 			},
