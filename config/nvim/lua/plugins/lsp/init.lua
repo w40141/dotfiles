@@ -15,14 +15,11 @@ return {
 		init = setup.lspconfig,
 		config = conf.lspconfig,
 		event = { "FocusLost", "CursorHold" },
-		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+		-- cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		-- url = "https://github.com/williamboman/mason-lspconfig.nvim",
-		-- init = setup.lspconfig,
-		-- config = conf.lspconfig,
-		-- event = { "FocusLost", "CursorHold" },
-		-- cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+		event = { "FocusLost", "CursorHold" },
 	},
 }

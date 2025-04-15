@@ -1,0 +1,51 @@
+version: "2"
+linters:
+  default: fast
+  disable:
+    - depguard
+    - gosmopolitan
+    - gochecknoglobals
+    - wsl
+  settings:
+    # https://golangci-lint.run/usage/linters/#linters-configuration
+    godox:
+      keywords:
+        - TODO
+        - BUG
+        - FIXME
+        - NOTE
+        - OPTIMIZE
+        - HACK
+  exclusions:
+    generated: strict
+    warn-unused: true
+    presets:
+      - comments
+      - std-error-handling
+      - common-false-positives
+    rules:
+      # Excluding configuration per-path, per-linter, per-text and per-source.
+      - path: _test\.go
+        linters:
+          - gocyclo
+          - errcheck
+formatters:
+  # https://golangci-lint.run/usage/configuration/#formatters-configuration
+  enable:
+    - gofmt
+  exclusions:
+    warn-unused: true
+    generated: strict
+issues:
+  # https://golangci-lint.run/usage/configuration/#issues-configuration
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  uniq-by-line: false
+# output:
+# https://golangci-lint.run/usage/configuration/#output-configuration
+run:
+  # https://golangci-lint.run/usage/configuration/#run-configuration
+  timeout: 5m
+severity:
+  # https://golangci-lint.run/usage/configuration/#severity-configuration
+  default: error
