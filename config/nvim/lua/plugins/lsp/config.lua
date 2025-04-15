@@ -494,6 +494,8 @@ function M.lspconfig()
 	lsp.config("html", {})
 
 	lsp.config("lua_ls", {
+		cmd = { "lua-language-server" },
+		filetypes = { "lua" },
 		on_init = function(client)
 			if client.workspace_folders then
 				local path = client.workspace_folders[1].name
@@ -504,27 +506,59 @@ function M.lspconfig()
 					return
 				end
 			end
-
 			client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
-				runtime = {
-					version = "LuaJIT",
-				},
+				runtime = { version = "LuaJIT" },
 				workspace = {
 					checkThirdParty = false,
-					library = {
-						v.env.VIMRUNTIME,
-					},
+					library = v.list_extend(v.api.nvim_get_runtime_file("lua", true), {
+						"${3rd}/luv/library",
+						"${3rd}/busted/library",
+					}),
 				},
 			})
 		end,
 		settings = {
 			Lua = {
 				diagnostics = {
+					unusedLocalExclude = { "_*" },
 					globals = { "vim" },
 				},
 			},
 		},
 	})
+
+	-- lsp.config("lua_ls", {
+	-- 	on_init = function(client)
+	-- 		if client.workspace_folders then
+	-- 			local path = client.workspace_folders[1].name
+	-- 			if
+	-- 				path ~= v.fn.stdpath("config")
+	-- 				and (v.uv.fs_stat(path .. "/.luarc.json") or v.uv.fs_stat(path .. "/.luarc.jsonc"))
+	-- 			then
+	-- 				return
+	-- 			end
+	-- 		end
+	--
+	-- 		client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
+	-- 			runtime = {
+	-- 				version = "LuaJIT",
+	-- 			},
+	-- 			workspace = {
+	-- 				checkThirdParty = false,
+	-- 				library = {
+	-- 					v.env.VIMRUNTIME,
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- 	settings = {
+	-- 		Lua = {
+	-- 			diagnostics = {
+	-- 				globals = { "vim" },
+	-- 			},
+	-- 		},
+	-- 	},
+	-- })
 
 	lsp.config("sqlls", {})
 

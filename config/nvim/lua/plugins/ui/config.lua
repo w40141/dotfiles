@@ -115,12 +115,12 @@ function M.lualine()
 				},
 			},
 			lualine_y = {
-				"filetype",
 				{
 					lsp_status,
 					icon = " :",
 					color = { fg = "#000000", gui = "bold" },
 				},
+				"filetype",
 			},
 			lualine_z = {
 				"encoding",
