@@ -10,7 +10,7 @@ function M.lint()
 		css = { "stylelint" },
 		dockerfile = { "hadolint" },
 		go = { "golangcilint", "revive" },
-		javascript = { "biome" },
+		javascript = { "biomejs" },
 		json = { "jsonlint" },
 		lua = { "selene" },
 		markdown = { "markdownlint-cli2" },
@@ -18,7 +18,7 @@ function M.lint()
 		python = { "ruff" },
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
-		typescript = { "biome" },
+		typescript = { "biomejs" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}
