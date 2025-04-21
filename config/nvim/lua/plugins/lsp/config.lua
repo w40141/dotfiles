@@ -424,58 +424,7 @@ function M.lspconfig()
 			gopls = {
 				-- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
 				analyses = {
-					appends = true,
-					asmdetect = true,
-					assign = true,
-					atomic = true,
-					atomicalign = true,
-					bools = true,
-					buildtags = true,
-					cgocall = true,
-					composite = true,
-					copylocks = true,
-					deepequalerrors = true,
-					defers = true,
-					deprecated = true,
-					directive = true,
-					embed = true,
-					errorsas = true,
-					fieldalignment = false,
-					fillreturns = true,
-					httpresponse = true,
-					ifaceassert = true,
-					infertypeargs = true,
-					loopclosure = true,
-					lostcancel = true,
-					nilfunc = true,
-					nilness = true,
-					nonewvars = true,
-					noresultvalues = true,
-					printf = true,
 					shadow = true,
-					shift = true,
-					simplifyrange = true,
-					simplifyslice = true,
-					slog = true,
-					sortslice = true,
-					stdmethods = true,
-					stdversion = true,
-					stringintconv = true,
-					structtag = true,
-					stubmethods = true,
-					testinggoroutine = true,
-					tests = true,
-					timeformat = true,
-					undeclaredname = true,
-					unmarshal = true,
-					unreachable = true,
-					unsafeptr = true,
-					unusedparams = true,
-					unusedresult = true,
-					unusedstructfield = true,
-					unusedvariable = true,
-					unusedwrite = true,
-					useany = true,
 				},
 				hints = {
 					assignVariableTypes = true,
@@ -526,39 +475,6 @@ function M.lspconfig()
 			},
 		},
 	})
-
-	-- lsp.config("lua_ls", {
-	-- 	on_init = function(client)
-	-- 		if client.workspace_folders then
-	-- 			local path = client.workspace_folders[1].name
-	-- 			if
-	-- 				path ~= v.fn.stdpath("config")
-	-- 				and (v.uv.fs_stat(path .. "/.luarc.json") or v.uv.fs_stat(path .. "/.luarc.jsonc"))
-	-- 			then
-	-- 				return
-	-- 			end
-	-- 		end
-	--
-	-- 		client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
-	-- 			runtime = {
-	-- 				version = "LuaJIT",
-	-- 			},
-	-- 			workspace = {
-	-- 				checkThirdParty = false,
-	-- 				library = {
-	-- 					v.env.VIMRUNTIME,
-	-- 				},
-	-- 			},
-	-- 		})
-	-- 	end,
-	-- 	settings = {
-	-- 		Lua = {
-	-- 			diagnostics = {
-	-- 				globals = { "vim" },
-	-- 			},
-	-- 		},
-	-- 	},
-	-- })
 
 	lsp.config("sqlls", {})
 
