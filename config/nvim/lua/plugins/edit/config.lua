@@ -88,4 +88,22 @@ function M.ufo()
 	})
 end
 
+function M.dial()
+	local augend = require("dial.augend")
+	require("dial.config").augends:register_group({
+		-- default augends used when no group name is specified
+		default = {
+			augend.constant.alias.bool, -- boolean value (true <-> false)
+			augend.integer.alias.decimal,
+			augend.integer.alias.hex,
+			augend.date.alias["%Y/%m/%d"],
+			augend.date.alias["%Y-%m-%d"],
+			augend.date.alias["%m/%d"],
+			augend.date.alias["%H:%M"],
+			augend.date.alias["%H:%M:%S"],
+			augend.constant.alias.ja_weekday_full,
+		},
+	})
+end
+
 return M

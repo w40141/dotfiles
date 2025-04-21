@@ -39,4 +39,11 @@ return {
 	{
 		"kevinhwang91/promise-async",
 	},
+	{
+		"monaqa/dial.nvim",
+		-- url = "https://github.com/monaqa/dial.nvim",
+		init = setup.dial,
+		config = conf.dial,
+		event = "VeryLazy",
+	},
 }
