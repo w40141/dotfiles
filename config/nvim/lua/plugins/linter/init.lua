@@ -8,8 +8,8 @@ return {
 		event = { "FocusLost", "CursorHold" },
 		config = conf.lint,
 	},
-	{
-		"rshkarin/mason-nvim-lint",
-		-- url = "https://github.com/rshkarin/mason-nvim-lint",
-	},
+	-- {
+	-- 	"rshkarin/mason-nvim-lint",
+	-- 	-- url = "https://github.com/rshkarin/mason-nvim-lint",
+	-- },
 }

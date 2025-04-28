@@ -10,31 +10,34 @@ function M.lint()
 		css = { "stylelint" },
 		dockerfile = { "hadolint" },
 		go = { "golangcilint", "revive" },
-		javascript = { "biomejs" },
+		-- javascript = { "biomejs" },
 		json = { "jsonlint" },
 		lua = { "selene" },
-		markdown = { "markdownlint-cli2" },
+		markdown = { "markdownlint" },
 		-- python = { "ruff", "vulture" },
 		python = { "ruff" },
 		sh = { "shellcheck" },
 		sql = { "sqlfluff" },
-		typescript = { "biomejs" },
+		-- typescript = { "biomejs" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}
 
 	local anyfile = {
-		-- "codespell",
+		"codespell",
 		-- "cspell",
-		-- "typos",
+		"typos",
 		"woke",
 	}
 
 	lint.linters_by_ft = linters
 
-	require("mason-nvim-lint").setup({
-		ensure_installed = anyfile,
-	})
+	-- require("mason-nvim-lint").setup({
+	-- 	ensure_installed = anyfile,
+	-- 	automatic_installation = false,
+	-- 	quiet_mode = false,
+	-- 	ignore_install = {},
+	-- })
 
 	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
 		callback = function()
