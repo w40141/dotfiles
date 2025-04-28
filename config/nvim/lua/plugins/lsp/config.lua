@@ -310,37 +310,6 @@ function M.lspconfig()
 	-- 	lspconfig[server_name].setup(opts)
 	-- end
 
-	local ensure_installed = {
-		"bashls",
-		-- "biome",
-		-- "cssls",
-		-- "denols",
-		"docker_compose_language_service",
-		"dockerls",
-		"efm",
-		-- "eslint",
-		-- "fsautocomplete",
-		"gopls",
-		-- "graphql",
-		"html",
-		-- "jdtls",
-		"lua_ls",
-		-- "prismals",
-		-- "pylsp",
-		-- "rust_analyzer",
-		"sqlls",
-		"taplo",
-		-- "texlab",
-		-- "ts_ls",
-		"typos_lsp",
-		"yamlls",
-	}
-
-	require("mason-lspconfig").setup({
-		automatic_installation = true,
-		ensure_installed = ensure_installed,
-	})
-
 	local capabilities = lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.semanticTokens.multilineTokenSupport = true
 	--Enable (broadcasting) snippet capability for completion
@@ -476,6 +445,18 @@ function M.lspconfig()
 		},
 	})
 
+	lsp.config("marksman", {
+		cmd = { "marksman", "server" },
+		filetypes = { "markdown" },
+		root_markers = { ".git", ".marksman.toml" },
+	})
+
+	-- lsp.config("markdown_oxide", {
+	-- 	cmd = { "markdown-oxide" },
+	-- 	filetypes = { "markdown" },
+	-- 	root_markers = { ".git", ".obsidian", ".moxide.toml" },
+	-- })
+
 	lsp.config("sqlls", {})
 
 	lsp.config("taplo", {})
@@ -500,6 +481,39 @@ function M.lspconfig()
 			hover = true,
 			validate = true,
 		},
+	})
+
+	local ensure_installed = {
+		"bashls",
+		-- "biome",
+		-- "cssls",
+		-- "denols",
+		"docker_compose_language_service",
+		"dockerls",
+		"efm",
+		-- "eslint",
+		-- "fsautocomplete",
+		"gopls",
+		-- "graphql",
+		"html",
+		-- "jdtls",
+		"lua_ls",
+		-- "markdown_oxide",
+		"marksman",
+		-- "prismals",
+		-- "pylsp",
+		-- "rust_analyzer",
+		"sqlls",
+		"taplo",
+		-- "texlab",
+		-- "ts_ls",
+		"typos_lsp",
+		"yamlls",
+	}
+
+	require("mason-lspconfig").setup({
+		automatic_installation = true,
+		ensure_installed = ensure_installed,
 	})
 
 	lsp.enable(ensure_installed)
