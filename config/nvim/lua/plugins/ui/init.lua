@@ -9,7 +9,8 @@ return {
 	{
 		"goolord/alpha-nvim",
 		-- url = "https://github.com/goolord/alpha-nvim",
-		event = "BufWinEnter",
+		-- event = "BufWinEnter",
+		event = "VimEnter",
 		config = conf.alpha,
 	},
 	{
