@@ -25,6 +25,7 @@ return {
 		"j-hui/fidget.nvim",
 		-- url = "https://github.com/j-hui/fidget.nvim",
 		config = conf.fidget,
-		event = { "VeryLazy" },
+    event = { "LspAttach" },
+		-- event = { "VeryLazy" },
 	},
 }

@@ -1,14 +1,21 @@
 local v = vim
 local opt = v.opt
 
-v.o.foldcolumn = "1" -- '0' is not bad
-v.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-v.o.foldlevelstart = 99
-v.o.foldenable = true
+opt.foldcolumn = "1" -- '0' is not bad
+opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+opt.foldlevelstart = 99
+opt.foldenable = true
+v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- v.o.foldcolumn = "1" -- '0' is not bad
+-- v.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- v.o.foldlevelstart = 99
+-- v.o.foldenable = true
+
 
 -- 内容が変更されたら自動的に再読み込み
 opt.autoread = true
-opt.mousemoveevent = true
+-- opt.mousemoveevent = true
 -- 全モードでマウスを有効化
 opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
@@ -35,8 +42,10 @@ opt.listchars = {
 	nbsp = "%",
 	space = "⋅",
 }
+opt.shada = ""
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
-opt.wrap = true
+-- opt.wrap = true
+opt.wrap = false
 -- コマンド行の長さ
 opt.cmdheight = 0
 -- カラムを表示
@@ -66,7 +75,7 @@ opt.startofline = false
 -- コマンドライン履歴保存
 opt.history = 10000
 -- カーソルを常に画面の中央に表示させる
-opt.scrolloff = 999
+-- opt.scrolloff = 999
 -- C-vの矩形選択で行末より後ろもカーソルを置ける
 opt.virtualedit = "block"
 -- 新しく開く代わりにすでに開いてあるバッファを開く
@@ -80,7 +89,7 @@ opt.tabstop = 2
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
 opt.smarttab = true
 -- タブを空白入力に置換
--- opt.expandtab = true
+opt.expandtab = true
 -- 補完時に大文字小文字を区別しない
 opt.infercase = true
 -- 必要ない設定
@@ -89,7 +98,8 @@ opt.swapfile = false
 opt.backup = false
 opt.termguicolors = true
 -- カーソルを行頭、行末で止まらないにする
-opt.whichwrap = "b,s,h,l,<,>,[,]"
+-- opt.whichwrap = "b,s,h,l,<,>,[,]"
+opt.whichwrap = "b,s,<,>"
 opt.winblend = 20
 opt.pumblend = 20
 
@@ -97,5 +107,4 @@ opt.spell = true
 opt.spelllang = { "en_us" }
 opt.incsearch = true
 
-v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.dictionary = "/usr/share/dict/words"

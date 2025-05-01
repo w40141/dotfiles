@@ -1,6 +1,10 @@
 local v = vim
 local g = v.g
 
+g.loaded_netrw = 1
+g.loaded_tar = 1
+g.loaded_zip = 1
+
 -- runtime/plugin/*
 g.loaded_gzip = 0
 g.loaded_man = 0
@@ -23,7 +27,7 @@ g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 
-require("core.option")
-require("core.keymap")
-require("core.event")
-require("core.plugin")
+pcall(require, "core.option")
+pcall(require, "core.keymap")
+pcall(require, "core.event")
+pcall(require, "core.plugin")

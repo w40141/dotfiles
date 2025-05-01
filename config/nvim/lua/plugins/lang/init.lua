@@ -46,7 +46,8 @@ return {
 	{
 		"windwp/nvim-ts-autotag",
 		-- url = "https://github.com/windwp/nvim-ts-autotag"
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+    event = { "InsertEnter" },
 		config = conf.autotag,
 	},
 	{
