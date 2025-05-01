@@ -42,7 +42,7 @@ opt.listchars = {
 	nbsp = "%",
 	space = "⋅",
 }
-opt.shada = ""
+-- opt.shada = ""
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
 -- opt.wrap = true
 opt.wrap = false
