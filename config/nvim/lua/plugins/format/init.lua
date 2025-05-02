@@ -1,5 +1,6 @@
 local conf = require("plugins.format.config")
 local setup = require("plugins.format.setup")
+local keys = require("plugins.format.keys")
 
 return {
 	{
@@ -9,6 +10,7 @@ return {
 		cmd = { "ConformInfo" },
 		config = conf.conform,
 		init = setup.conform,
+		keys = keys.conform,
 	},
 	{
 		"zapling/mason-conform.nvim",

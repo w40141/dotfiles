@@ -1,13 +1,12 @@
-local setup = require("plugins.move.setup")
 local conf = require("plugins.move.config")
+local keys = require("plugins.move.keys")
 
 return {
 	{
 		-- Use the w, e, b motions like a spider. Move by subwords and skip insignificant punctuation.
 		"chrisgrieser/nvim-spider",
 		-- url = "https://github.com/chrisgrieser/nvim-spider"
-		lazy = true,
-		init = setup.spider,
+		keys = keys.spider,
 	},
 	{
 		-- simply window selector for neovim written in lua
@@ -21,8 +20,7 @@ return {
 		-- Navigate your code with search labels, enhanced character motions and Treesitter integration
 		"folke/flash.nvim",
 		-- url = "https://github.com/folke/flash.nvim"
-		init = setup.flash,
-		event = "VeryLazy",
+		keys = keys.flash,
 	},
 	{
 		"s-show/extend_word_motion.nvim",

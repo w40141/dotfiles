@@ -1,5 +1,5 @@
 local conf = require("plugins.git.config")
-local setup = require("plugins.git.setup")
+local keys = require("plugins.git.keys")
 
 return {
 	{
@@ -31,7 +31,7 @@ return {
 		-- url = "https://github.com/akinsho/git-conflict.nvim",
 		version = "*",
 		config = true,
-		init = setup.conflict,
+		-- init = setup.conflict,
 		cmd = {
 			"GitConflictChooseOurs",
 			"GitConflictChooseTheirs",
@@ -41,6 +41,7 @@ return {
 			"GitConflictPrevConflict",
 			"GitConflictListQf",
 		},
+		keys = keys.conflict,
 	},
 	-- {
 	-- 	"pwntester/octo.nvim",

@@ -168,6 +168,7 @@ fishを設定する。
 ## プログラミング言語の設定
 
 <!-- TODO mise に変更する -->
+
 ### asdfのインストール
 
 1. [asdf](https://asdf-vm.com/#/core-manage-asdf)に従いインストールする

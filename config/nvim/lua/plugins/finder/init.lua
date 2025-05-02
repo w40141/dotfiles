@@ -1,5 +1,6 @@
 local conf = require("plugins.finder.config")
 local setup = require("plugins.finder.setup")
+local keys = require("plugins.finder.keys")
 
 return {
 	{
@@ -16,8 +17,9 @@ return {
 		"folke/trouble.nvim",
 		-- url = "https://github.com/folke/trouble.nvim",
 		cmd = { "Trouble" },
-		init = setup.trouble,
+		-- init = setup.trouble,
 		config = conf.trouble,
+    keys = keys.trouble,
 	},
 	{
 		"nvim-telescope/telescope-ui-select.nvim",
@@ -31,7 +33,8 @@ return {
 		-- url = "https://github.com/folke/todo-comments.nvim",
 		event = { "FocusLost", "CursorHold" },
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
-		init = setup.todo,
+		-- init = setup.todo,
 		config = conf.todo,
+		keys = keys.todo,
 	},
 }

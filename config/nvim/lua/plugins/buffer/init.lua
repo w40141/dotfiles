@@ -1,4 +1,4 @@
-local setup = require("plugins.buffer.setup")
+local keys = require("plugins.buffer.keys")
 
 return {
 	{
@@ -12,7 +12,8 @@ return {
 		-- Delete multiple vim buffers based on different conditions
 		"kazhala/close-buffers.nvim",
 		-- url = "https://github.com/kazhala/close-buffers.nvim",
-		init = setup.close,
+		-- init = setup.close,
 		event = { "VeryLazy" },
+		keys = keys.close,
 	},
 }

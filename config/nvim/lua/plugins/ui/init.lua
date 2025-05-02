@@ -1,5 +1,6 @@
 local conf = require("plugins.ui.config")
 local setup = require("plugins.ui.setup")
+local keys = require("plugins.ui.keys")
 
 return {
 	{
@@ -45,23 +46,26 @@ return {
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
-		init = setup.bufferline,
+		-- init = setup.bufferline,
 		config = conf.bufferline,
+		keys = keys.bufferline,
 	},
 	{
 		-- Neovim plugin for a code outline window
 		"stevearc/aerial.nvim",
 		-- url = "https://github.com/stevearc/aerial.nvim",
 		cmd = { "Aerial" },
-		init = setup.aerial,
+		-- init = setup.aerial,
 		config = conf.aerial,
+		keys = keys.aerial,
 	},
 	{
 		-- File finder
 		"nvim-tree/nvim-tree.lua",
 		-- url = "https://github.com/nvim-tree/nvim-tree.lua",
 		cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
-		init = setup.tree,
+		-- init = setup.tree,
 		config = conf.tree,
+		keys = keys.tree,
 	},
 }

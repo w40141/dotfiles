@@ -1,34 +1,6 @@
 local M = {}
 
-function M.todo()
-	local key = vim.keymap.set
-	key("n", "[FF]o", "<cmd>TodoTelescope<cr>", { desc = "[todo-comment] TelescopeでTODOを検索" })
-	key("n", "[TR]o", "<cmd>TodoTrouble<cr>", { desc = "[todo-comment] TroubleでTODOを検索" })
-end
-
-function M.trouble()
-	local key = vim.keymap.set
-	key("n", "[TR]q", "<cmd>Trouble diagnostics toggle<cr>", { desc = "[trouble] 診断リストを表示" })
-	key(
-		"n",
-		"[TR]r",
-		"<cmd>Trouble lsp_references<cr>",
-		{ desc = "[trouble] カーソル下の単語のLSP参照を一覧表示" }
-	)
-	key(
-		"n",
-		"[TR]d",
-		"<cmd>Trouble lsp_definitions<cr>",
-		{ desc = "[trouble] カーソル下の単語の定義を一覧表示" }
-	)
-	key(
-		"n",
-		"[TR]t",
-		"<cmd>Trouble lsp_type_definitions<cr>",
-		{ desc = "[trouble] カーソル下の単語の型定義を一覧表示" }
-	)
-end
-
+-- TODO: keysに移動
 function M.telescope()
 	local function f(name)
 		return function()

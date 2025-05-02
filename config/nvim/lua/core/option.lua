@@ -91,8 +91,7 @@ opt.swapfile = false
 opt.backup = false
 opt.termguicolors = true
 -- カーソルを行頭、行末で止まらないにする
--- opt.whichwrap = "b,s,h,l,<,>,[,]"
-opt.whichwrap = "b,s,<,>"
+opt.whichwrap = "b,s,h,l,<,>,[,]"
 opt.winblend = 20
 opt.pumblend = 20
 

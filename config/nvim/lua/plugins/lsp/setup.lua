@@ -1,5 +1,6 @@
 local M = {}
 
+-- TODO: keysに移動
 function M.lspconfig()
 	local v = vim
 	local key = v.keymap.set
