@@ -7,12 +7,6 @@ opt.foldlevelstart = 99
 opt.foldenable = true
 v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
--- v.o.foldcolumn = "1" -- '0' is not bad
--- v.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
--- v.o.foldlevelstart = 99
--- v.o.foldenable = true
-
-
 -- 内容が変更されたら自動的に再読み込み
 opt.autoread = true
 -- opt.mousemoveevent = true
@@ -44,8 +38,7 @@ opt.listchars = {
 }
 -- opt.shada = ""
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
--- opt.wrap = true
-opt.wrap = false
+opt.wrap = true
 -- コマンド行の長さ
 opt.cmdheight = 0
 -- カラムを表示
