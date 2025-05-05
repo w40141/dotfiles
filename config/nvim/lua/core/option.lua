@@ -8,19 +8,19 @@ opt.foldenable = true
 v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- 内容が変更されたら自動的に再読み込み
-opt.autoread = true
+-- opt.autoread = true
 -- opt.mousemoveevent = true
 -- 全モードでマウスを有効化
 opt.mouse = "a"
 -- 変更中のファイルでも、保存しないで他のファイルを表示する
-opt.hidden = true
+-- opt.hidden = true
 -- 行番号を表示
 opt.number = true
 -- クリップボードをWindowsと連携する
 opt.clipboard = "unnamedplus"
 -- ビープ音すべてを無効にする
 opt.visualbell = true
-opt.errorbells = false
+-- opt.errorbells = false
 -- 自動更新の時間
 opt.updatetime = 300
 -- タイトルをウィンドウ枠に表示する
@@ -38,13 +38,13 @@ opt.listchars = {
 }
 -- opt.shada = ""
 -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
-opt.wrap = true
+-- opt.wrap = true
 -- コマンド行の長さ
 opt.cmdheight = 0
 -- カラムを表示
 opt.signcolumn = "yes"
 -- 1行が長くても全部表示
-opt.display = "lastline"
+-- opt.display = "lastline"
 -- ポップアップメニューの高さを指定
 -- カーソル行の強調表示
 opt.cursorline = true
@@ -80,7 +80,7 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
 -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
-opt.smarttab = true
+-- opt.smarttab = true
 -- タブを空白入力に置換
 opt.expandtab = true
 -- 補完時に大文字小文字を区別しない
@@ -88,7 +88,7 @@ opt.infercase = true
 -- 必要ない設定
 opt.writebackup = false
 opt.swapfile = false
-opt.backup = false
+-- opt.backup = false
 opt.termguicolors = true
 -- カーソルを行頭、行末で止まらないにする
 opt.whichwrap = "b,s,h,l,<,>,[,]"
@@ -97,6 +97,6 @@ opt.pumblend = 20
 
 opt.spell = true
 opt.spelllang = { "en_us" }
-opt.incsearch = true
+-- opt.incsearch = true
 
 opt.dictionary = "/usr/share/dict/words"
