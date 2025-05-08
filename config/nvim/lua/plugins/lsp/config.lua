@@ -22,7 +22,6 @@ function M.lspconfig()
 	local buf = lsp.buf
 	local augroup = api.nvim_create_augroup
 	local autocmd = api.nvim_create_autocmd
-	-- local lspconfig = require("lspconfig")
 
 	local diag = v.diagnostic
 	diag.config({
@@ -451,12 +450,6 @@ function M.lspconfig()
 		root_markers = { ".git", ".marksman.toml" },
 	})
 
-	-- lsp.config("markdown_oxide", {
-	-- 	cmd = { "markdown-oxide" },
-	-- 	filetypes = { "markdown" },
-	-- 	root_markers = { ".git", ".obsidian", ".moxide.toml" },
-	-- })
-
 	lsp.config("sqlls", {})
 
 	lsp.config("taplo", {})
@@ -483,40 +476,18 @@ function M.lspconfig()
 		},
 	})
 
-	local ensure_installed = {
-		"bashls",
-		-- "biome",
-		-- "cssls",
-		-- "denols",
-		"docker_compose_language_service",
-		"dockerls",
-		"efm",
-		-- "eslint",
-		-- "fsautocomplete",
-		"gopls",
-		-- "graphql",
-		"html",
-		-- "jdtls",
-		"lua_ls",
-		-- "markdown_oxide",
-		"marksman",
-		-- "prismals",
-		-- "pylsp",
-		-- "rust_analyzer",
-		"sqlls",
-		"taplo",
-		-- "texlab",
-		-- "ts_ls",
-		"typos_lsp",
-		"yamlls",
-	}
+	local clients = lsp.get_clients()
+	local ensure_installed = {}
+	for _, client in ipairs(clients) do
+		table.insert(ensure_installed, client.name)
+	end
 
 	require("mason-lspconfig").setup({
-		automatic_installation = true,
+		automatic_enable = true,
 		ensure_installed = ensure_installed,
 	})
 
-	lsp.enable(ensure_installed)
+	-- lsp.enable(ensure_installed)
 end
 
 return M
