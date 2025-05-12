@@ -68,7 +68,7 @@ opt.startofline = false
 -- コマンドライン履歴保存
 opt.history = 10000
 -- カーソルを常に画面の中央に表示させる
--- opt.scrolloff = 999
+opt.scrolloff = 999
 -- C-vの矩形選択で行末より後ろもカーソルを置ける
 opt.virtualedit = "block"
 -- 新しく開く代わりにすでに開いてあるバッファを開く
