@@ -101,7 +101,6 @@ function M.telescope()
 	local telescope = require("telescope")
 	local actions = require("telescope.actions")
 	local action_state = require("telescope.actions.state")
-	-- local trouble = require("trouble.providers.telescope")
 	local trouble = require("trouble.sources.telescope")
 	local custom_actions = {}
 	local cmd = v.cmd
@@ -109,11 +108,10 @@ function M.telescope()
 	function custom_actions.multiopen(prompt_bufnr)
 		local picker = action_state.get_current_picker(prompt_bufnr)
 		local num_selections = #picker:get_multi_selection()
-		if num_selections > 1 then
+		if num_selections >= 1 then
 			for _, entry in ipairs(picker:get_multi_selection()) do
 				cmd(string.format("%s %s", ":e!", entry.value))
 			end
-			cmd("stopinsert")
 		else
 			actions.file_edit(prompt_bufnr)
 		end

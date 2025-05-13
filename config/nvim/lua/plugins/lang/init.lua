@@ -9,7 +9,7 @@ return {
 		-- build = function()
 		-- 	vim.fn["mkdp#util#install"]()
 		-- end,
-		build = ':call mkdp#util#install()',
+		build = ":call mkdp#util#install()",
 		config = conf.previm,
 	},
 	{
@@ -17,6 +17,7 @@ return {
 		"kevinhwang91/nvim-bqf",
 		-- url = "https://github.com/kevinhwang91/nvim-bqf",
 		ft = "qf",
+		config = conf.bqf,
 	},
 	{
 		"folke/lazydev.nvim",
@@ -47,7 +48,7 @@ return {
 		"windwp/nvim-ts-autotag",
 		-- url = "https://github.com/windwp/nvim-ts-autotag"
 		-- event = "VeryLazy",
-    event = { "InsertEnter" },
+		event = { "InsertEnter" },
 		config = conf.autotag,
 	},
 	{

@@ -18,4 +18,8 @@ function M.autotag()
 	require("nvim-ts-autotag").setup()
 end
 
+function M.bqf()
+	require("bqf").setup({})
+end
+
 return M
