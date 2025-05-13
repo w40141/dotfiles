@@ -22,7 +22,7 @@ M.conflict = {
 		{ desc = "[git-conflict] 競合を削除 (none)" },
 	},
 	{
-		"{GIT]q",
+		"[GIT]q",
 		"<cmd>GitConflictListQf",
 		{ desc = "[git-conflict] QuickFixですべてを表示" },
 	},

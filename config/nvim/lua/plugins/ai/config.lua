@@ -10,7 +10,7 @@ function M.copilot()
 				jump_next = "]]",
 				accept = "<CR>",
 				refresh = "gr",
-				open = "<M-CR>",
+				open = "<C-[>",
 			},
 			layout = {
 				position = "bottom", -- | top | left | right | horizontal | vertical
@@ -32,8 +32,8 @@ function M.copilot()
 			},
 		},
 		filetypes = {
-			yaml = false,
-			markdown = false,
+			yaml = true,
+			markdown = true,
 			help = false,
 			gitcommit = false,
 			gitrebase = false,
