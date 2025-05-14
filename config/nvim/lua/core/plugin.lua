@@ -14,9 +14,6 @@ local v = vim
 -- https://tomato3713.hatenablog.com/entry/2024/05/29/211918
 -- https://qiita.com/lx-sasabo/items/97c49d0f354ea3bdd525
 
--- TODO: convert string case
--- https://github.com/johmsalas/text-case.nvim
-
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
 	local lazyrepo = "https://github.com/folke/lazy.nvim.git"

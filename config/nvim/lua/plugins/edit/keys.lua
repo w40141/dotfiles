@@ -90,4 +90,230 @@ M.dial = {
 	{ "g<C-x>", "g<Plug>(dial-decrement)", mode = { "n", "v" }, { desc = "[dial] デクリメント" } },
 }
 
+M.textcase = {
+	{ "gtt", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "[textcase] Telescope" },
+
+	-- Current word transformations
+	{
+		"gau",
+		"<cmd>lua require('textcase').current_word('to_upper_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Upper Case",
+	},
+	{
+		"gal",
+		"<cmd>lua require('textcase').current_word('to_lower_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Lower Case",
+	},
+	{
+		"gas",
+		"<cmd>lua require('textcase').current_word('to_snake_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Snake Case",
+	},
+	{
+		"ga-",
+		"<cmd>lua require('textcase').current_word('to_dash_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Dash Case",
+	}, -- Changed from "gad" to "ga-"
+	{
+		"gan",
+		"<cmd>lua require('textcase').current_word('to_constant_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Constant Case",
+	},
+	{
+		"ga.",
+		"<cmd>lua require('textcase').current_word('to_dot_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Dot Case",
+	}, -- Changed from "gad" to "ga,"
+	{
+		"ga;",
+		"<cmd>lua require('textcase').current_word('to_comma_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Comma Case",
+	}, -- Changed from "ga," to "ga;"
+	{
+		"gaa",
+		"<cmd>lua require('textcase').current_word('to_phrase_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Phrase Case",
+	},
+	{
+		"gac",
+		"<cmd>lua require('textcase').current_word('to_camel_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Camel Case",
+	},
+	{
+		"gap",
+		"<cmd>lua require('textcase').current_word('to_pascal_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Pascal Case",
+	},
+	{
+		"gat",
+		"<cmd>lua require('textcase').current_word('to_title_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Title Case",
+	},
+	{
+		"gaf",
+		"<cmd>lua require('textcase').current_word('to_path_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] To Path Case",
+	},
+
+	-- LSP rename transformations
+	{
+		"glu",
+		"<cmd>lua require('textcase').lsp_rename('to_upper_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Upper Case",
+	},
+	{
+		"gll",
+		"<cmd>lua require('textcase').lsp_rename('to_lower_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Lower Case",
+	},
+	{
+		"gls",
+		"<cmd>lua require('textcase').lsp_rename('to_snake_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Snake Case",
+	},
+	{
+		"gld",
+		"<cmd>lua require('textcase').lsp_rename('to_dash_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Dash Case",
+	},
+	{
+		"gln",
+		"<cmd>lua require('textcase').lsp_rename('to_constant_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Constant Case",
+	},
+	{
+		"gl.",
+		"<cmd>lua require('textcase').lsp_rename('to_dot_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Dot Case",
+	}, -- Changed from "gaD" to "ga."
+	{
+		"gl;",
+		"<cmd>lua require('textcase').lsp_rename('to_comma_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Comma Case",
+	}, -- Changed from "ga," to "ga,"
+	{
+		"gla",
+		"<cmd>lua require('textcase').lsp_rename('to_phrase_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Phrase Case",
+	},
+	{
+		"glc",
+		"<cmd>lua require('textcase').lsp_rename('to_camel_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Camel Case",
+	},
+	{
+		"glp",
+		"<cmd>lua require('textcase').lsp_rename('to_pascal_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Pascal Case",
+	},
+	{
+		"glt",
+		"<cmd>lua require('textcase').lsp_rename('to_title_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Title Case",
+	},
+	{
+		"glf",
+		"<cmd>lua require('textcase').lsp_rename('to_path_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] LSP Rename to Path Case",
+	},
+
+	-- Operator pending transformations
+	{
+		"geu",
+		"<cmd>lua require('textcase').operator('to_upper_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Upper Case",
+	},
+	{
+		"gel",
+		"<cmd>lua require('textcase').operator('to_lower_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Lower Case",
+	},
+	{
+		"ges",
+		"<cmd>lua require('textcase').operator('to_snake_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Snake Case",
+	},
+	{
+		"ge-",
+		"<cmd>lua require('textcase').operator('to_dash_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Dash Case",
+	}, -- Changed from "ged" to "ge-"
+	{
+		"gen",
+		"<cmd>lua require('textcase').operator('to_constant_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Constant Case",
+	},
+	{
+		"ge.",
+		"<cmd>lua require('textcase').operator('to_dot_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Dot Case",
+	}, -- Changed from "ged" to "ge."
+	{
+		"ge;",
+		"<cmd>lua require('textcase').operator('to_comma_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Comma Case",
+	}, -- Changed from "ge," to "ge,"
+	{
+		"gea",
+		"<cmd>lua require('textcase').operator('to_phrase_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Phrase Case",
+	},
+	{
+		"gec",
+		"<cmd>lua require('textcase').operator('to_camel_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Camel Case",
+	},
+	{
+		"gep",
+		"<cmd>lua require('textcase').operator('to_pascal_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Pascal Case",
+	},
+	{
+		"get",
+		"<cmd>lua require('textcase').operator('to_title_case')<CR>",
+		mode = { "n", "x" },
+		desc = "[textcase] Operator Pending to Title Case",
+	},
+	{
+		"gef",
+		"<cmd>lua require('textcase').operator('to_path_case')<CR>",
+		mode = { "n", "x" },
+    desc = "[textcase] Operator Pending to Path Case",
+	},
+}
+
 return M

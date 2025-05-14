@@ -40,6 +40,19 @@ return {
 		"monaqa/dial.nvim",
 		-- url = "https://github.com/monaqa/dial.nvim",
 		config = conf.dial,
-    keys = keys.dial,
+		keys = keys.dial,
+	},
+	{
+		"johmsalas/text-case.nvim",
+		-- url =https://github.com/johmsalas/text-case.nvim
+		config = conf.textcase,
+		keys = keys.textcase,
+		cmd = {
+			"Subs",
+			"TextCaseOpenTelescope",
+			"TextCaseOpenTelescopeQuickChange",
+			"TextCaseOpenTelescopeLSPChange",
+			"TextCaseStartReplacingCommand",
+		},
 	},
 }

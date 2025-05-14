@@ -4,28 +4,6 @@ function M.surround()
 	require("nvim-surround").setup()
 end
 
--- function M.surround()
--- 	require("surround").setup({
--- 		context_offset = 100,
--- 		load_autogroups = false,
--- 		mappings_style = "sandwich",
--- 		map_insert_mode = true,
--- 		quotes = { "'", '"' },
--- 		brackets = { "(", "{", "[" },
--- 		space_on_closing_char = false,
--- 		pairs = {
--- 			nestable = {
--- 				b = { "(", ")" },
--- 				s = { "[", "]" },
--- 				B = { "{", "}" },
--- 				a = { "<", ">" },
--- 			},
--- 			linear = { q = { "'", "'" }, t = { "`", "`" }, d = { '"', '"' } },
--- 		},
--- 		prefix = "s",
--- 	})
--- end
-
 function M.eskk()
 	local g = vim.g
 	g["toggle_markdown_eskk"] = 1
@@ -103,6 +81,12 @@ function M.dial()
 			augend.date.alias["%H:%M:%S"],
 			augend.constant.alias.ja_weekday_full,
 		},
+	})
+end
+
+function M.textcase()
+	require("textcase").setup({
+		default_keymapings_enalbled = false,
 	})
 end
 
