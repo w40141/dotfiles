@@ -57,7 +57,7 @@ M.kensaku = {
 	{
 		"<CR>",
 		"<plug>(kensaku-search-replace)<cr>",
-		{ desc = "[kensaku] 置換検索を実行" },
+		{ mode = "c", desc = "[kensaku] 置換検索を実行" },
 	},
 }
 

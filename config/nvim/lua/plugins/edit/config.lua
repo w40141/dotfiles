@@ -34,34 +34,6 @@ function M.eskk()
 	g["eskk#marker_jisyo_touroku"] = "[辞書]"
 end
 
--- function M.comment()
--- 	require("Comment").setup({
--- 		pre_hook = function()
--- 			return require("ts_context_commentstring.internal").calculate_commentstring()
--- 		end,
--- 	})
--- end
-
--- function M.yanky()
--- 	require("yanky").setup({
--- 		ring = {
--- 			history_length = 100,
--- 			storage = "shada",
--- 			sync_with_numbered_registers = true,
--- 			cancel_event = "update",
--- 		},
--- 		system_clipboard = { sync_with_ring = true },
--- 	})
--- end
-
--- function M.ufo()
--- 	require("ufo").setup({
--- 		provider_selector = function(bufnr, filetype, buftype)
--- 			return { "treesitter", "indent" }
--- 		end,
--- 	})
--- end
-
 function M.dial()
 	local augend = require("dial.augend")
 	require("dial.config").augends:register_group({
@@ -79,11 +51,5 @@ function M.dial()
 		},
 	})
 end
-
--- function M.textcase()
--- 	require("textcase").setup({
--- 		default_keymapings_enalbled = false,
--- 	})
--- end
 
 return M

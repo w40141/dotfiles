@@ -1,4 +1,3 @@
--- local conf = require("plugins.cmp.config")
 local opts = require("plugins.ai.opts")
 
 return {
@@ -30,6 +29,5 @@ return {
 		opts = {
 			-- See Configuration section for options
 		},
-		-- See Commands section for default commands if you want to lazy load on them
 	},
 }

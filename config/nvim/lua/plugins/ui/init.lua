@@ -20,7 +20,6 @@ return {
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
 		init = setup.lualine,
-		-- config = conf.lualine,
     opts = opts.lualine,
 	},
 	{
@@ -68,7 +67,6 @@ return {
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
-		-- config = conf.bufferline,
     opts = opts.bufferline,
 		keys = keys.bufferline,
 	},
@@ -77,7 +75,6 @@ return {
 		"stevearc/aerial.nvim",
 		-- url = "https://github.com/stevearc/aerial.nvim",
 		cmd = { "Aerial" },
-		-- config = conf.aerial,
     opts = opts.aerial,
 		keys = keys.aerial,
 	},

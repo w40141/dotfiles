@@ -1,4 +1,3 @@
--- local conf = require("plugins.hover.config")
 local keys = require("plugins.hover.keys")
 
 return {

@@ -1,4 +1,4 @@
--- local conf = require("plugins.search.config")
+local conf = require("plugins.search.config")
 local keys = require("plugins.search.keys")
 
 return {
@@ -35,7 +35,8 @@ return {
 	{
 		"lambdalisue/vim-kensaku-search",
 		-- url = "https://github.com/lambdalisue/vim-kensaku-search"
-		-- config = conf.kensaku,
+		config = conf.kensaku,
+    -- keys = keys.kensaku,
 		event = { "CmdlineEnter" },
 	},
 }

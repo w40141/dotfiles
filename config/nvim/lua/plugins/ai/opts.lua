@@ -12,7 +12,8 @@ M.copilot = {
 			open = "<C-[>",
 		},
 		layout = {
-			position = "bottom", -- | top | left | right | horizontal | vertical
+			-- | top | left | right | horizontal | vertical
+			position = "bottom",
 			ratio = 0.4,
 		},
 	},

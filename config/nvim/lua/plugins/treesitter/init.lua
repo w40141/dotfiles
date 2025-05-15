@@ -1,4 +1,3 @@
--- local conf = require("plugins.treesitter.config")
 local opts = require("plugins.treesitter.opts")
 
 return {
@@ -8,7 +7,6 @@ return {
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufRead" },
-		-- config = conf.treesitter,
     opts = opts.treesitter,
 	},
 	{
@@ -30,13 +28,11 @@ return {
 		"m-demare/hlargs.nvim",
 		-- url = "https://github.com/m-demare/hlargs.nvim",
 		event = { "BufNewFile", "BufRead" },
-		-- config = conf.hlargs,
 		opts = {},
 	},
 	{
 		"andersevenrud/nvim_context_vt",
 		-- url = "https://github.com/andersevenrud/nvim_context_vt",
-		-- config = conf.context,
 		opts = {
 			enabled = true,
 			-- prefix = "",

@@ -1,4 +1,3 @@
-local conf = require("plugins.tool.config")
 local keys = require("plugins.tool.keys")
 
 return {
@@ -23,7 +22,6 @@ return {
 		-- Supports multiple languages and annotation conventions.
 		"danymat/neogen",
 		-- url = "https://github.com/danymat/neogen",
-		-- config = conf.neogen,
 		opts = {
 			snippet_engine = "luasnip",
 			enabled = true,
@@ -42,7 +40,6 @@ return {
 		"norcalli/nvim-colorizer.lua",
 		-- url = "https://github.com/norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
-		-- config = conf.colorizer,
 		opts = {
 			{
 				"css",
@@ -64,7 +61,6 @@ return {
 	{
 		"vinnymeller/swagger-preview.nvim",
 		-- url = "https://github.com/vinnymeller/swagger-preview.nvim",
-		config = conf.swagger,
 		opts = {
 			port = 8003,
 			host = "localhost",

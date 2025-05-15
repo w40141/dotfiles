@@ -1,14 +1,5 @@
 local M = {}
 
-function M.neogit()
-	require("neogit").setup({
-		integrations = {
-			telescope = true,
-			diffview = true,
-		},
-	})
-end
-
 -- TODO: 設定
 function M.gitsigns()
 	local v = vim

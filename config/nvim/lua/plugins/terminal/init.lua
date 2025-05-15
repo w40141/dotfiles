@@ -1,4 +1,3 @@
--- local conf = require("plugins.terminal.config")
 local keys = require("plugins.terminal.keys")
 
 return {
