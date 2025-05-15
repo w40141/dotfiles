@@ -34,7 +34,7 @@ function M.lint()
 
 	-- require("mason-nvim-lint").setup({
 	-- 	ensure_installed = anyfile,
-	-- 	automatic_installation = false,
+	-- 	automatic_installation = true,
 	-- 	quiet_mode = false,
 	-- 	ignore_install = {},
 	-- })
