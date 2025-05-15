@@ -17,11 +17,11 @@ return {
 		config = conf.skkeleton,
 		event = { "VeryLazy" },
 	},
-	{
+	({
 		"hrsh7th/nvim-cmp",
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
-	},
+	}),
 	-- url = "https://github.com/chrisgrieser/cmp_yanky",
 	i({ "chrisgrieser/cmp_yanky" }),
 	-- url = "https://github.com/f3fora/cmp-spell",

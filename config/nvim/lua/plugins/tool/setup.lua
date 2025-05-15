@@ -1,10 +1,6 @@
 local M = {}
 
 function M.winresizer()
-	if not pcall(require, "winresizer") then
-		return
-	end
-
 	local g = vim.g
 	g.winresizer_keycode_cancel = 122
 	-- To expand your window size toward upper using upper arrow (instead of k)
