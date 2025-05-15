@@ -1,4 +1,4 @@
-local conf = require("plugins.search.config")
+-- local conf = require("plugins.search.config")
 local keys = require("plugins.search.keys")
 
 return {
@@ -12,7 +12,8 @@ return {
 		-- Highlight length of search result
 		"kevinhwang91/nvim-hlslens",
 		-- url = "https://github.com/kevinhwang91/nvim-hlslens",
-		config = conf.hlslens,
+		-- config = conf.hlslens,
+    opts = {},
     keys = keys.hlslens,
 	},
 	{
@@ -34,7 +35,7 @@ return {
 	{
 		"lambdalisue/vim-kensaku-search",
 		-- url = "https://github.com/lambdalisue/vim-kensaku-search"
-		config = conf.kensaku,
+		-- config = conf.kensaku,
 		event = { "CmdlineEnter" },
 	},
 }

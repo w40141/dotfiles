@@ -17,7 +17,8 @@ return {
 		"kevinhwang91/nvim-bqf",
 		-- url = "https://github.com/kevinhwang91/nvim-bqf",
 		ft = "qf",
-		config = conf.bqf,
+		-- config = conf.bqf,
+    opts = {},
 	},
 	{
 		"folke/lazydev.nvim",
@@ -42,14 +43,18 @@ return {
 		"richardbizik/nvim-toc",
 		-- url = "https://github.com/richardbizik/nvim-toc"
 		ft = { "markdown" },
-		config = conf.toc,
+		-- config = conf.toc,
+    opts = {
+      toc_header = "Table of Contents",
+    },
 	},
 	{
 		"windwp/nvim-ts-autotag",
 		-- url = "https://github.com/windwp/nvim-ts-autotag"
 		-- event = "VeryLazy",
 		event = { "InsertEnter" },
-		config = conf.autotag,
+		-- config = conf.autotag,
+    opts = {},
 	},
 	{
 		"MeanderingProgrammer/markdown.nvim",
@@ -59,7 +64,8 @@ return {
 		-- 	"nvim-tree/nvim-web-devicons",
 		-- },
 		ft = { "markdown" },
-		config = conf.markdown,
+    opts = {},
+		-- config = conf.markdown,
 	},
 	-- {
 	-- 	-- TODO: watch

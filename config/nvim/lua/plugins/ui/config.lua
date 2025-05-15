@@ -150,34 +150,6 @@ function M.lualine()
 	})
 end
 
-function M.scrollbar()
-	require("scrollbar").setup()
-end
-
-function M.hlchunk()
-	require("hlchunk").setup({
-		chunk = {
-			enable = true,
-			chars = {
-				horizontal_line = "─",
-				vertical_line = "│",
-				left_top = "┌",
-				left_bottom = "└",
-				right_arrow = ">",
-			},
-			style = "#806d9c",
-		},
-		indent = {
-			enable = true,
-			chars = { "│", "¦", "┆", "┊" },
-			use_treesitter = true,
-		},
-		line_num = {
-			enable = false,
-		},
-	})
-end
-
 function M.bufferline()
 	local fn = vim.fn
 

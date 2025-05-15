@@ -1,4 +1,5 @@
-local conf = require("plugins.cmp.config")
+-- local conf = require("plugins.cmp.config")
+local opts = require("plugins.ai.opts")
 
 return {
 	{
@@ -7,7 +8,8 @@ return {
 		build = ":Copilot auth",
 		cmd = "Copilot",
 		event = { "InsertEnter" },
-		config = conf.copilot,
+		-- config = conf.copilot,
+		opts = opts.copilot,
 	},
 	{
 		"CopilotC-Nvim/CopilotChat.nvim",

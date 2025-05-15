@@ -23,7 +23,12 @@ return {
 		-- Supports multiple languages and annotation conventions.
 		"danymat/neogen",
 		-- url = "https://github.com/danymat/neogen",
-		config = conf.neogen,
+		-- config = conf.neogen,
+		opts = {
+			snippet_engine = "luasnip",
+			enabled = true,
+			input_after_comment = true,
+		},
 		cmd = { "Neogen" },
 		keys = keys.neogen,
 	},
@@ -37,12 +42,33 @@ return {
 		"norcalli/nvim-colorizer.lua",
 		-- url = "https://github.com/norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
-		config = conf.colorizer,
+		-- config = conf.colorizer,
+		opts = {
+			{
+				"css",
+				"javascript",
+				"typescript",
+			},
+			{
+				RGB = true, -- #RGB hex codes
+				RRGGBB = true, -- #RRGGBB hex codes
+				names = true, -- "Name" codes like Blue
+				RRGGBBAA = true, -- #RRGGBBAA hex codes
+				rgb_fn = false, -- CSS rgb() and rgba() functions
+				hsl_fn = false, -- CSS hsl() and hsla() functions
+				css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+				css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+			},
+		},
 	},
 	{
 		"vinnymeller/swagger-preview.nvim",
 		-- url = "https://github.com/vinnymeller/swagger-preview.nvim",
 		config = conf.swagger,
+		opts = {
+			port = 8003,
+			host = "localhost",
+		},
 		build = "npm install -g swagger-ui-watcher",
 		cmd = {
 			"SwaggerPreview",

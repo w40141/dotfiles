@@ -17,11 +17,11 @@ return {
 		config = conf.skkeleton,
 		event = { "VeryLazy" },
 	},
-	({
+	{
 		"hrsh7th/nvim-cmp",
 		-- url = "https://github.com/hrsh7th/nvim-cmp",
 		config = conf.cmp,
-	}),
+	},
 	-- url = "https://github.com/chrisgrieser/cmp_yanky",
 	i({ "chrisgrieser/cmp_yanky" }),
 	-- url = "https://github.com/f3fora/cmp-spell",
@@ -49,7 +49,7 @@ return {
 	i({
 		"ray-x/lsp_signature.nvim",
 		-- url = "https://github.com/ray-x/lsp_signature.nvim",
-		config = conf.signature,
+		opts = { hint_prefix = "󰛨 " },
 	}),
 	i({
 		"L3MON4D3/LuaSnip",
@@ -61,7 +61,7 @@ return {
 	i({
 		"zbirenbaum/copilot-cmp",
 		-- url = "https://github.com/zbirenbaum/copilot-cmp",
-		config = conf.copilot_cmp,
+		opts = {},
 		dependencies = {
 			"zbirenbaum/copilot.lua",
 		},
@@ -69,6 +69,6 @@ return {
 	i({
 		"windwp/nvim-autopairs",
 		-- url = "https://github.com/windwp/nvim-autopairs",
-		config = conf.autopairs,
+		opts = {},
 	}),
 }

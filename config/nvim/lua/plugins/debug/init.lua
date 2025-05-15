@@ -1,13 +1,14 @@
 -- TODO: https://github.com/mfussenegger/nvim-dap
 -- TODO: https://github.com/rcarriga/nvim-dap-ui
-local conf = require("plugins.debug.config")
+-- local conf = require("plugins.debug.config")
 
 return {
 	{
 		"mfussenegger/nvim-dap",
 		-- url = "https://github.com/mfussenegger/nvim-dap",
 		lazy = true,
-		config = conf.dap,
+		-- config = conf.dap,
+    opts = {},
 	},
 	{
 		"rcarriga/nvim-dap-ui",
@@ -16,7 +17,8 @@ return {
 	{
 		"theHamsta/nvim-dap-virtual-text",
 		-- url = "https://github.com/theHamsta/nvim-dap-virtual-text",
-		config = conf.virtual_text,
+		-- config = conf.virtual_text,
+    opts = {},
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",

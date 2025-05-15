@@ -6,7 +6,13 @@ return {
 		"NeogitOrg/neogit",
 		-- url = "https://github.com/NeogitOrg/neogit",
 		cmd = { "Neogit" },
-		config = conf.neogit,
+		opts = {
+			integrations = {
+				telescope = true,
+				diffview = true,
+			},
+		},
+		-- config = conf.neogit,
 	},
 	{
 		"sindrets/diffview.nvim",
@@ -30,7 +36,7 @@ return {
 		"akinsho/git-conflict.nvim",
 		-- url = "https://github.com/akinsho/git-conflict.nvim",
 		version = "*",
-		config = true,
+    opts = {},
 		-- init = setup.conflict,
 		cmd = {
 			"GitConflictChooseOurs",

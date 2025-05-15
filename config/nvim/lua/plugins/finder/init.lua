@@ -1,4 +1,5 @@
 local conf = require("plugins.finder.config")
+local opts = require("plugins.finder.opts")
 local keys = require("plugins.finder.keys")
 
 return {
@@ -16,7 +17,8 @@ return {
 		"folke/trouble.nvim",
 		-- url = "https://github.com/folke/trouble.nvim",
 		cmd = { "Trouble" },
-		config = conf.trouble,
+		-- config = conf.trouble,
+    opts = opts.trouble,
 		keys = keys.trouble,
 	},
 	{
@@ -29,8 +31,10 @@ return {
 		-- Highlight, list and search todo comments
 		"folke/todo-comments.nvim",
 		-- url = "https://github.com/folke/todo-comments.nvim",
+    event = "VeryLazy",
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
-		config = conf.todo,
+		-- config = conf.todo,
+    opts = opts.todo,
 		keys = keys.todo,
 	},
 }

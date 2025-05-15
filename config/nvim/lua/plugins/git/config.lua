@@ -9,6 +9,7 @@ function M.neogit()
 	})
 end
 
+-- TODO: 設定
 function M.gitsigns()
 	local v = vim
 	local set = v.keymap.set

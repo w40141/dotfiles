@@ -6,7 +6,18 @@ return {
 		"williamboman/mason.nvim",
 		-- url = "https://github.com/williamboman/mason.nvim",
 		cmd = { "Mason" },
-		config = conf.mason,
+		-- config = conf.mason,
+		opts = {
+			ui = {
+				icons = {
+					package_installed = "✓",
+					package_pending = "➜",
+					package_uninstalled = "✗",
+				},
+				width = 0.7,
+				height = 0.7,
+			},
+		},
 		build = ":MasonUpdate",
 	},
 	{
@@ -15,7 +26,7 @@ return {
 		-- init = setup.lspconfig,
 		config = conf.lspconfig,
 		event = { "FocusLost", "CursorHold" },
-    keys = keys.lspconfig,
+		keys = keys.lspconfig,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",

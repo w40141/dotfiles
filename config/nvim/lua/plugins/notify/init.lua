@@ -1,4 +1,5 @@
 local conf = require("plugins.notify.config")
+-- local opts = require("plugins.notify.opts")
 -- local setup = require("plugins.notiry.setup")
 
 return {
@@ -25,7 +26,7 @@ return {
 		"j-hui/fidget.nvim",
 		-- url = "https://github.com/j-hui/fidget.nvim",
 		config = conf.fidget,
-    -- event = { "LspAttach" },
+		-- opts = opts.fidget,
 		event = { "VeryLazy" },
 	},
 }
