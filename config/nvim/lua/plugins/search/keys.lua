@@ -4,14 +4,18 @@ M.quickhl = {
 	{
 		",m",
 		"<plug>(quickhl-manual-this)",
-		mode = { "n", "x" },
-		{ desc = "[quickhl] 現在の単語をマークする" },
+		{
+			mode = { "n", "x" },
+			desc = "[quickhl] 現在の単語をマークする",
+		},
 	},
 	{
 		",M",
 		"<plug>(quickhl-manual-reset)",
-		mode = { "n", "x" },
-		{ desc = "[quickhl] すべてのマークをリセットする" },
+		{
+			mode = { "n", "x" },
+			desc = "[quickhl] すべてのマークをリセットする",
+		},
 	},
 }
 

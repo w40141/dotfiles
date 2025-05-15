@@ -1,11 +1,13 @@
 local M = {}
 
-M.toggleterm_float = {
+M.toggleterm = {
 	{
 		"<leader>l",
 		"<cmd>ToggleTerm direction=float<cr>",
-		mode = { "n", "t" },
-		{ desc = "[toggleterm] ターミナルをトグル" },
+		{
+			mode = { "n", "t" },
+			desc = "[toggleterm] ターミナルをトグル",
+		},
 	},
 }
 

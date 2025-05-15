@@ -1,5 +1,5 @@
 local conf = require("plugins.lsp.config")
-local setup = require("plugins.lsp.setup")
+local keys = require("plugins.lsp.keys")
 
 return {
 	{
@@ -12,10 +12,10 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
-		init = setup.lspconfig,
+		-- init = setup.lspconfig,
 		config = conf.lspconfig,
 		event = { "FocusLost", "CursorHold" },
-		-- cmd = { "LspInfo", "LspInstall", "LspUninstall" },
+    keys = keys.lspconfig,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",

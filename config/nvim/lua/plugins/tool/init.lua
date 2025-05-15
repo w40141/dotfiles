@@ -1,15 +1,11 @@
 local conf = require("plugins.tool.config")
-local setup = require("plugins.tool.setup")
+local keys = require("plugins.tool.keys")
 
 return {
 	{
-		-- Resizing of windows
-		"simeji/winresizer",
-		-- url = "https://github.com/simeji/winresizer",
-		keys = {
-			{ "<C-e>", mode = "n" },
-		},
-		init = setup.winresizer,
+		"pogyomo/winresize.nvim",
+		-- url = "https://github.com/pogyomo/winresize.nvim"
+		keys = keys.winresize,
 	},
 	{
 		-- Generating images of source code using
@@ -27,14 +23,9 @@ return {
 		-- Supports multiple languages and annotation conventions.
 		"danymat/neogen",
 		-- url = "https://github.com/danymat/neogen",
-		init = setup.neogen,
 		config = conf.neogen,
 		cmd = { "Neogen" },
-		keys = {
-			{ "<C-l>", mode = "i" },
-			{ "<C-h>", mode = "i" },
-			{ ",n", mode = "n" },
-		},
+		keys = keys.neogen,
 	},
 	{
 		"folke/zen-mode.nvim",

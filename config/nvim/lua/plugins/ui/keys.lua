@@ -43,11 +43,11 @@ M.aerial = {
 }
 
 M.tree = {
-  {
+	{
 		"<leader>e",
 		"<cmd>NvimTreeFindFileToggle<cr>",
-		{ desc = "[NvimTree] NvimTree を切り替え" }
-  },
+		{ desc = "[NvimTree] NvimTree を切り替え" },
+	},
 }
 
 return M
