@@ -34,32 +34,32 @@ M.flash = {
 	{
 		"<C-s>",
 		flash("jump"),
+		mode = { "n", "o", "x" },
 		{
-			mode = { "n", "o", "x" },
 			desc = "[flash] 文字ジャンプ (Flash)",
 		},
 	},
 	{
 		"S",
 		flash("treesitter"),
+		mode = { "n", "o", "x" },
 		{
-			mode = { "n", "o", "x" },
 			desc = "[flash] Treesitter でジャンプ",
 		},
 	},
 	{
 		"r",
 		flash("remote"),
+		mode = { "o" },
 		{
-			mode = { "o" },
 			desc = "[flash] リモートジャンプ (Remote Flash)",
 		},
 	},
 	{
 		"R",
 		flash("treesitter_search"),
+		mode = { "x", "o" },
 		{
-			mode = { "x", "o" },
 			desc = "[flash] Treesitter 検索",
 		},
 	},

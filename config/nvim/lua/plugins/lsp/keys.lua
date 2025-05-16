@@ -20,7 +20,7 @@ M.lspconfig = {
 	{ "]d", d("goto_next"), { desc = "[LSP] 次の診断メッセージへ移動" } },
 	{ "[d", d("goto_prev"), { desc = "[LSP] 前の診断メッセージへ移動" } },
 
-	{ "[DEV]a", b("code_action"), { mode = { "n", "v" }, desc = "[LSP] コードアクションを適用" } },
+	{ "[DEV]a", b("code_action"), mode = { "n", "v" }, { desc = "[LSP] コードアクションを適用" } },
 	{ "[DEV]r", b("references"), { desc = "[LSP] 参照を表示" } },
 	{ "[DEV]d", b("definition"), { desc = "[LSP] 定義へ移動" } },
 	{ "[DEV]D", b("declaration"), { desc = "[LSP] 宣言へ移動" } },

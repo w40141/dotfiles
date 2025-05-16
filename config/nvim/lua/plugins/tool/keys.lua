@@ -10,16 +10,16 @@ M.neogen = {
 	{
 		"<C-l>",
 		neogen("jump_next"),
+		mode = "i",
 		{
-			mode = "i",
 			desc = "[Neogen] 次のコメントセクションへジャンプする",
 		},
 	},
 	{
 		"<C-h>",
 		neogen("jump_prev"),
+		mode = "i",
 		{
-			mode = "i",
 			desc = "[Neogen] 前のコメントセクションへジャンプする",
 		},
 	},

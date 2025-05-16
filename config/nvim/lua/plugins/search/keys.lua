@@ -4,16 +4,16 @@ M.quickhl = {
 	{
 		",m",
 		"<plug>(quickhl-manual-this)",
+		mode = { "n", "x" },
 		{
-			mode = { "n", "x" },
 			desc = "[quickhl] 現在の単語をマークする",
 		},
 	},
 	{
 		",M",
 		"<plug>(quickhl-manual-reset)",
+		mode = { "n", "x" },
 		{
-			mode = { "n", "x" },
 			desc = "[quickhl] すべてのマークをリセットする",
 		},
 	},
@@ -57,7 +57,10 @@ M.kensaku = {
 	{
 		"<CR>",
 		"<plug>(kensaku-search-replace)<cr>",
-		{ mode = "c", desc = "[kensaku] 置換検索を実行" },
+		mode = "c",
+		{
+			desc = "[kensaku] 置換検索を実行",
+		},
 	},
 }
 
