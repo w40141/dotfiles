@@ -1,4 +1,5 @@
-local opts = require("plugins.treesitter.opts")
+-- local opts = require("plugins.treesitter.opts")
+local conf = require("plugins.treesitter.config")
 
 return {
 	{
@@ -7,12 +8,17 @@ return {
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufRead" },
-    opts = opts.treesitter,
-	},
-	{
+		-- opts = opts.treesitter,
+    config = conf.treesitter,
+    dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+    },
 	},
+	-- {
+	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
+	-- 	-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+	-- 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+	-- },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		-- url = https://github.com/nvim-treesitter/nvim-treesitter-context
@@ -43,5 +49,14 @@ return {
 			-- min_rows_ft = {},
 		},
 		event = { "BufNewFile", "BufRead" },
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		-- url = "https://github.com/windwp/nvim-ts-autotag"
+		event = { "InsertEnter" },
+		opts = {},
 	},
 }

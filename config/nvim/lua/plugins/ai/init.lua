@@ -1,5 +1,8 @@
 local opts = require("plugins.ai.opts")
 
+-- TODO: cursor
+-- https://github.com/yetone/avante.nvim
+
 return {
 	{
 		"zbirenbaum/copilot.lua",
@@ -7,10 +10,13 @@ return {
 		build = ":Copilot auth",
 		cmd = "Copilot",
 		event = { "InsertEnter" },
-		-- config = conf.copilot,
 		opts = opts.copilot,
 	},
 	{
+		-- TODO: copilot chat
+		-- https://github.com/CopilotC-Nvim/CopilotChat.nvim
+		-- https://tomato3713.hatenablog.com/entry/2024/05/29/211918
+		-- https://qiita.com/lx-sasabo/items/97c49d0f354ea3bdd525
 		"CopilotC-Nvim/CopilotChat.nvim",
 		-- url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
 		dependencies = {

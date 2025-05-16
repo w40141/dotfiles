@@ -13,12 +13,26 @@ return {
 		config = conf.previm,
 	},
 	{
-		-- TODO: 設定
+		"OXY2DEV/markview.nvim",
+		-- url = "https://github.com/OXY2DEV/markview.nvim",
+		ft = { "markdown", "html", "tex", "latex", "yaml" },
+		-- config = function()
+		-- 	require("mark").setup({})
+		-- end,
+	},
+	{
+		"richardbizik/nvim-toc",
+		-- url = "https://github.com/richardbizik/nvim-toc"
+		ft = { "markdown" },
+		opts = {
+			toc_header = "Table of Contents",
+		},
+	},
+	{
 		"kevinhwang91/nvim-bqf",
 		-- url = "https://github.com/kevinhwang91/nvim-bqf",
 		ft = "qf",
-		-- config = conf.bqf,
-    opts = {},
+		opts = {},
 	},
 	{
 		"folke/lazydev.nvim",
@@ -26,58 +40,13 @@ return {
 		ft = "lua", -- only load on lua files
 		opts = {
 			library = {
-				-- See the configuration section for more details
-				-- Load luvit types when the `vim.uv` word is found
 				{ path = "luvit-meta/library", words = { "vim%.uv" } },
 			},
 		},
 	},
-	{ "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
-	-- {
-	-- 	"folke/neodev.nvim",
-	-- 	-- url = "https://github.com/folke/neodev.nvim",
-	-- 	opts = {},
-	-- 	ft = { "lua" },
-	-- },
 	{
-		"richardbizik/nvim-toc",
-		-- url = "https://github.com/richardbizik/nvim-toc"
-		ft = { "markdown" },
-		-- config = conf.toc,
-    opts = {
-      toc_header = "Table of Contents",
-    },
+		"Bilal2453/luvit-meta",
+		-- url = "https://github.com/Bilal2453/luvit-meta",
+		ft = "lua",
 	},
-	{
-		"windwp/nvim-ts-autotag",
-		-- url = "https://github.com/windwp/nvim-ts-autotag"
-		-- event = "VeryLazy",
-		event = { "InsertEnter" },
-		-- config = conf.autotag,
-    opts = {},
-	},
-	{
-		"MeanderingProgrammer/markdown.nvim",
-		-- url = "https://github.com/MeanderingProgrammer/markdown.nvim"
-		-- dependencies = {
-		-- 	"nvim-treesitter/nvim-treesitter",
-		-- 	"nvim-tree/nvim-web-devicons",
-		-- },
-		ft = { "markdown" },
-    opts = {},
-		-- config = conf.markdown,
-	},
-	-- {
-	-- 	-- TODO: watch
-	-- 	"OXY2DEV/markview.nvim",
-	-- 	-- url = "https://github.com/OXY2DEV/markview.nvim",
-	-- 	dependencies = {
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 		"nvim-tree/nvim-web-devicons",
-	-- 	},
-	-- 	ft = { "markdown" },
-	-- 	-- config = function()
-	-- 	-- 	require("mark").setup({})
-	-- 	-- end,
-	-- },
 }

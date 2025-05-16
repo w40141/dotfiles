@@ -95,6 +95,7 @@ function M.telescope()
 	telescope.load_extension("aerial")
 	telescope.load_extension("memo")
 	telescope.load_extension("textcase")
+	telescope.load_extension("frecency")
 end
 
 return M

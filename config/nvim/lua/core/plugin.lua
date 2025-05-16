@@ -1,18 +1,7 @@
 local v = vim
 
--- TODO: https://github.com/folke/which-key.nvim
--- Create key bindings that stick. WhichKey is a lua plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
-
 -- TODO: todo.txt
 -- https://github.com/arnarg/todotxt.nvim
-
--- TODO: cursor
--- https://github.com/yetone/avante.nvim
-
--- TODO: copilot chat
--- https://github.com/CopilotC-Nvim/CopilotChat.nvim
--- https://tomato3713.hatenablog.com/entry/2024/05/29/211918
--- https://qiita.com/lx-sasabo/items/97c49d0f354ea3bdd525
 
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
