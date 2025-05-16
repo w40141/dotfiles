@@ -12,7 +12,6 @@ return {
 				diffview = true,
 			},
 		},
-		-- config = conf.neogit,
 	},
 	{
 		"sindrets/diffview.nvim",
