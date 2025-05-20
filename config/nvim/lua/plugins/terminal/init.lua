@@ -6,7 +6,6 @@ return {
 		"akinsho/toggleterm.nvim",
 		-- url = "https://github.com/akinsho/toggleterm.nvim",
 		cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" },
-		-- config = conf.toggleterm,
 		opts = {
 			shade_terminals = false,
 			shading_factor = "1",

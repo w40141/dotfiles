@@ -53,15 +53,4 @@ M.hlslens = {
 	},
 }
 
-M.kensaku = {
-	{
-		"<CR>",
-		"<plug>(kensaku-search-replace)<cr>",
-		mode = "c",
-		{
-			desc = "[kensaku] 置換検索を実行",
-		},
-	},
-}
-
 return M

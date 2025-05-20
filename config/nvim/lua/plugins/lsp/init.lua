@@ -6,7 +6,6 @@ return {
 		"williamboman/mason.nvim",
 		-- url = "https://github.com/williamboman/mason.nvim",
 		cmd = { "Mason" },
-		-- config = conf.mason,
 		opts = {
 			ui = {
 				icons = {
@@ -23,7 +22,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
-		-- init = setup.lspconfig,
 		config = conf.lspconfig,
 		event = { "FocusLost", "CursorHold" },
 		keys = keys.lspconfig,

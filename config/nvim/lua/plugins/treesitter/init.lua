@@ -8,17 +8,11 @@ return {
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufRead" },
-		-- opts = opts.treesitter,
-    config = conf.treesitter,
-    dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-    },
+		config = conf.treesitter,
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 	},
-	-- {
-	-- 	"nvim-treesitter/nvim-treesitter-textobjects",
-	-- 	-- url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-	-- 	event = { "BufReadPost", "BufWritePost", "BufNewFile" },
-	-- },
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		-- url = https://github.com/nvim-treesitter/nvim-treesitter-context
@@ -27,7 +21,6 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-		-- event = "VeryLazy",
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 	{
@@ -41,17 +34,12 @@ return {
 		-- url = "https://github.com/andersevenrud/nvim_context_vt",
 		opts = {
 			enabled = true,
-			-- prefix = "",
-			-- highlight = "CustomContextVt",
-			-- disable_ft = { "markdown" },
 			disable_virtual_lines_ft = { "python", "yaml" },
-			-- min_rows = 1,
-			-- min_rows_ft = {},
 		},
 		event = { "BufNewFile", "BufRead" },
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-    },
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
 	},
 	{
 		"windwp/nvim-ts-autotag",

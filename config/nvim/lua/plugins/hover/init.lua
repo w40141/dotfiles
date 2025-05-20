@@ -4,7 +4,6 @@ return {
 	{
 		"lewis6991/hover.nvim",
 		-- url = "https://github.com/lewis6991/hover.nvim",
-		-- config = conf.hover,
 		opts = {
 			init = function()
 				-- Require providers

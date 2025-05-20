@@ -49,6 +49,11 @@ M.telescope = {
 	{ "[FF]/", telescope("grep_string"), { desc = "[telescope] カーソル下の文字列を検索" } },
 	{ "[FF]b", telescope("buffers"), { desc = "[telescope] 開いているバッファを検索" } },
 	{
+		"[FF]i",
+		telescope("lsp_implementations"),
+		{ desc = "[telescope] カーソル下の単語の実装を一覧表示" },
+	},
+	{
 		"[FF]l",
 		telescope("current_buffer_fuzzy_find"),
 		{ desc = "[telescope] 現在のバッファ内を検索" },

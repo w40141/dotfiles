@@ -6,9 +6,6 @@ return {
 		-- url = "https://github.com/iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		-- build = function()
-		-- 	vim.fn["mkdp#util#install"]()
-		-- end,
 		build = ":call mkdp#util#install()",
 		config = conf.previm,
 	},
@@ -16,9 +13,6 @@ return {
 		"OXY2DEV/markview.nvim",
 		-- url = "https://github.com/OXY2DEV/markview.nvim",
 		ft = { "markdown", "html", "tex", "latex", "yaml" },
-		-- config = function()
-		-- 	require("mark").setup({})
-		-- end,
 	},
 	{
 		"richardbizik/nvim-toc",

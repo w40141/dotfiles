@@ -12,15 +12,17 @@ return {
 		},
 		keys = keys.telescope,
 		config = conf.telescope,
-	},
-	{
-		"nvim-telescope/telescope-ui-select.nvim",
-	},
-	{
-		"delphinus/telescope-memo.nvim",
-	},
-	{
-		"nvim-telescope/telescope-frecency.nvim",
+		dependencies = {
+			{
+				"nvim-telescope/telescope-ui-select.nvim",
+			},
+			{
+				"delphinus/telescope-memo.nvim",
+			},
+			{
+				"nvim-telescope/telescope-frecency.nvim",
+			},
+		},
 	},
 	{
 		-- Highlight, list and search todo comments

@@ -8,7 +8,6 @@ return {
 		-- url = "https://github.com/stevearc/conform.nvim",
 		event = { "FocusLost", "CursorHold" },
 		cmd = { "ConformInfo" },
-		-- config = conf.conform,
 		opts = opts.conform,
 		init = setup.conform,
 		keys = keys.conform,

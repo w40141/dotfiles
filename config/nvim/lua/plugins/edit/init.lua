@@ -6,7 +6,6 @@ return {
 		-- Add/change/delete surrounding delimiter pairs with ease.
 		"kylechui/nvim-surround",
 		-- url = "https://github.com/kylechui/nvim-surround",
-		-- config = conf.surround,
 		opts = {},
 		event = { "FocusLost", "CursorHold" },
 	},
@@ -14,7 +13,6 @@ return {
 		-- Comment out
 		"numToStr/Comment.nvim",
 		-- url = "https://github.com/numToStr/Comment.nvim",
-		-- config = conf.comment,
 		opts = {
 			pre_hook = function()
 				return require("ts_context_commentstring.internal").calculate_commentstring()
@@ -23,13 +21,9 @@ return {
 		event = { "FocusLost", "CursorHold" },
 	},
 	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-	},
-	{
 		-- Improved Yank and Put functionalities for Neovim
 		"gbprod/yanky.nvim",
 		-- url = "https://github.com/gbprod/yanky.nvim",
-		-- config = conf.yanky,
 		opts = {
 			ring = {
 				history_length = 100,
@@ -45,16 +39,12 @@ return {
 		-- Not UFO in the sky, but an ultra fold in Neovim.
 		"kevinhwang91/nvim-ufo",
 		-- url = "https://github.com/kevinhwang91/nvim-ufo"
-		-- config = conf.ufo,
 		opts = {
 			provider_selector = function(bufnr, filetype, buftype)
 				return { "treesitter", "indent" }
 			end,
 		},
 		keys = keys.ufo,
-	},
-	{
-		"kevinhwang91/promise-async",
 	},
 	{
 		"monaqa/dial.nvim",
@@ -68,7 +58,6 @@ return {
 		opts = {
 			default_keymapings_enalbled = false,
 		},
-		-- config = conf.textcase,
 		keys = keys.textcase,
 		cmd = {
 			"Subs",

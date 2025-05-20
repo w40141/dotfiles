@@ -18,20 +18,15 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		event = { "BufReadPost", "BufAdd", "BufNewFile" },
+		event = "VimEnter",
 		init = setup.lualine,
-    opts = opts.lualine,
-	},
-	{
-		-- "pnx/lualine-lsp-status",
-		-- url = "https://github.com/pnx/lualine-lsp-status"
+		opts = opts.lualine,
 	},
 	{
 		-- highlight indent line and the current chunk (context) cursor stayed
 		"shellRaining/hlchunk.nvim",
 		-- url = "https://github.com/shellRaining/hlchunk.nvim"
 		event = { "BufReadPre", "BufNewFile" },
-		-- config = conf.hlchunk,
 		opts = {
 			chunk = {
 				enable = true,
@@ -60,14 +55,13 @@ return {
 		-- url = "https://github.com/petertriho/nvim-scrollbar",
 		event = { "VeryLazy" },
 		opts = {},
-		-- config = conf.scrollbar,
 	},
 	{
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
 		event = { "BufReadPost", "BufAdd", "BufNewFile" },
-    opts = opts.bufferline,
+		opts = opts.bufferline,
 		keys = keys.bufferline,
 	},
 	{
@@ -75,7 +69,7 @@ return {
 		"stevearc/aerial.nvim",
 		-- url = "https://github.com/stevearc/aerial.nvim",
 		cmd = { "Aerial" },
-    opts = opts.aerial,
+		opts = opts.aerial,
 		keys = keys.aerial,
 	},
 	{
