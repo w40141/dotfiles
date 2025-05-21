@@ -29,6 +29,7 @@ return {
 		dependencies = {
 			"sirasagi62/tinysegmenter.nvim",
 		},
-		event = "VeryLazy",
+		-- event = "VeryLazy",
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 }

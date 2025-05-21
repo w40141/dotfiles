@@ -18,7 +18,8 @@ return {
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		event = "VimEnter",
+		-- event = "VimEnter",
+		event = { "BufReadPre", "BufNewFile" },
 		init = setup.lualine,
 		opts = opts.lualine,
 	},
@@ -53,7 +54,8 @@ return {
 		-- Scrollbar
 		"petertriho/nvim-scrollbar",
 		-- url = "https://github.com/petertriho/nvim-scrollbar",
-		event = { "VeryLazy" },
+		-- event = { "VeryLazy" },
+		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		opts = {},
 	},
 	{
