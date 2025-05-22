@@ -45,7 +45,7 @@ end
 M.telescope = {
 	{ "[FF]f", telescope("find_files"), { desc = "[telescope] ファイルを検索" } },
 	{ "[FF]p", telescope("git_files"), { desc = "[telescope] Git管理されているファイルを検索" } },
-	{ "[FF]s", telescope("live_grep"), { desc = "[telescope] 文字列をリアルタイム検索" } },
+	{ "[FF]g", telescope("live_grep"), { desc = "[telescope] 文字列をリアルタイム検索" } },
 	{ "[FF]/", telescope("grep_string"), { desc = "[telescope] カーソル下の文字列を検索" } },
 	{ "[FF]b", telescope("buffers"), { desc = "[telescope] 開いているバッファを検索" } },
 	{
@@ -80,13 +80,13 @@ M.telescope = {
 		{ desc = "[telescope] カーソル下の単語のスペル候補を一覧表示し置換" },
 	},
 	{
-		"[FF]gs",
+		"[FF]Gs",
 		telescope("git_status"),
 		{ desc = "[telescope] Gitの変更ファイルを一覧表示（差分プレビューあり）" },
 	},
-	{ "[FF]gc", telescope("git_commits"), { desc = "[telescope] Gitコミット履歴を一覧表示" } },
+	{ "[FF]Gc", telescope("git_commits"), { desc = "[telescope] Gitコミット履歴を一覧表示" } },
 	{
-		"[FF]gC",
+		"[FF]GC",
 		telescope("git_bcommits"),
 		{
 			desc = "[telescope] 現在のバッファのGitコミット履歴を表示（差分プレビューあり）",
