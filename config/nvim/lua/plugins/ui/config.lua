@@ -22,7 +22,7 @@ function M.alpha()
 	d.section.buttons.val = {
 		d.button("e", "󰝒 New file", ":ene <bar> startinsert<cr>"),
 		d.button("f", "󰱼 Find file", "<cmd>Telescope find_files<cr>"),
-		d.button("s", "󱎸 Find word", "<cmd>Telescope live_grep<cr>"),
+		d.button("g", "󱎸 Find word", "<cmd>Telescope live_grep<cr>"),
 		d.button("t", "󰄲 Find TODO", "<cmd>TodoTelescope<cr>"),
 		d.button("o", "󰌀 Open explorer", "<cmd>NvimTreeToggle<cr>"),
 		d.button("c", "󰓙 Check health", "<cmd>checkhealth<cr>"),
