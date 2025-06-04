@@ -36,4 +36,23 @@ return {
 			-- See Configuration section for options
 		},
 	},
+	{
+		"yetone/avante.nvim",
+		event = "VeryLazy",
+		version = false,
+		opts = opts.avante,
+		build = "make",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"stevearc/dressing.nvim",
+			"nvim-lua/plenary.nvim",
+			"MunifTanjim/nui.nvim",
+			"nvim-telescope/telescope.nvim",
+			"hrsh7th/nvim-cmp",
+			"nvim-tree/nvim-web-devicons",
+			"zbirenbaum/copilot.lua",
+			"MeanderingProgrammer/render-markdown.nvim",
+			"HakonHarnes/img-clip.nvim",
+		},
+	},
 }

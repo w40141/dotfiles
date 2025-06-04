@@ -2,6 +2,14 @@ local conf = require("plugins.lang.config")
 
 return {
 	{
+		"MeanderingProgrammer/render-markdown.nvim",
+    -- url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+		opts = {
+			file_types = { "markdown", "Avante" },
+		},
+		ft = { "markdown", "Avante" },
+	},
+	{
 		"iamcco/markdown-preview.nvim",
 		-- url = "https://github.com/iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -9,11 +17,11 @@ return {
 		build = ":call mkdp#util#install()",
 		config = conf.previm,
 	},
-	{
-		"OXY2DEV/markview.nvim",
-		-- url = "https://github.com/OXY2DEV/markview.nvim",
-		ft = { "markdown", "html", "tex", "latex", "yaml" },
-	},
+	-- {
+	-- 	"OXY2DEV/markview.nvim",
+	-- 	-- url = "https://github.com/OXY2DEV/markview.nvim",
+	-- 	ft = { "markdown", "html", "tex", "latex", "yaml" },
+	-- },
 	{
 		"richardbizik/nvim-toc",
 		-- url = "https://github.com/richardbizik/nvim-toc"

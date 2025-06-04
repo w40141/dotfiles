@@ -45,4 +45,43 @@ M.copilot = {
 	server_opts_overrides = {},
 }
 
+M.avante = {
+	provider = "copilot", -- copilotを使用
+	-- auto_suggestions_provider = "copilot", -- 自動提案もcopilotを使用
+
+	behaviour = {
+		auto_suggestions = false,
+		auto_set_highlight_group = true,
+		auto_set_keymaps = true,
+		auto_apply_diff_after_generation = true,
+		support_paste_from_clipboard = true,
+		minimize_diff = true,
+	},
+
+	windows = {
+		position = "right",
+		wrap = true,
+		width = 30,
+		sidebar_header = {
+			enabled = true,
+			align = "center",
+			rounded = true,
+		},
+		input = {
+			prefix = "> ",
+			height = 8,
+		},
+		edit = {
+			border = "rounded",
+			start_insert = true,
+		},
+		ask = {
+			floating = false,
+			start_insert = true,
+			border = "rounded",
+			focus_on_apply = "ours",
+		},
+	},
+}
+
 return M
