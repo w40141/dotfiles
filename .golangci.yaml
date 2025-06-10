@@ -1,10 +1,13 @@
 version: "2"
 linters:
-  default: fast
+  default: all
   disable:
     - depguard
-    - gosmopolitan
     - gochecknoglobals
+    - godot
+    - gosmopolitan
+    - inamedparam
+    - nlreturn
     - wsl
   settings:
     # https://golangci-lint.run/usage/linters/#linters-configuration
@@ -32,7 +35,11 @@ linters:
 formatters:
   # https://golangci-lint.run/usage/configuration/#formatters-configuration
   enable:
+    - gci
     - gofmt
+    - gofumpt
+    - goimports
+    - golines
   exclusions:
     warn-unused: true
     generated: strict
