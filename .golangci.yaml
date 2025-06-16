@@ -1,13 +1,74 @@
 version: "2"
 linters:
-  default: all
+  # Default set of linters.
+  # The value can be:
+  # https://golangci-lint.run/usage/linters/#enabled-by-default
+  # default: standard
+  #   - errcheck
+  #   - govet
+  #   - ineffassign
+  #   - staticcheck
+  #   - unused
+  # - `all`: enables all linters by default.
+  # - `none`: disables all linters by default.
+  # - `fast`: enables only linters considered as "fast" (`golangci-lint help linters --json | jq -r '.[] | select(.fast==true) | "-\(.name)"'`).
+  default: fast
+  #   -asciicheck
+  #   -bidichk
+  #   -copyloopvar
+  #   -cyclop
+  #   -decorder
+  #   -depguard
+  #   -dogsled
+  #   -dupl
+  #   -dupword
+  #   -funcorder
+  #   -funlen
+  #   -gocheckcompilerdirectives
+  #   -gochecknoinits
+  #   -gocognit
+  #   -gocyclo
+  #   -godot
+  #   -godox
+  #   -goheader
+  #   -mnd
+  #   -gomoddirectives
+  #   -gomodguard
+  #   -goprintffuncname
+  #   -grouper
+  #   -inamedparam
+  #   -ineffassign
+  #   -interfacebloat
+  #   -lll
+  #   -maintidx
+  #   -misspell
+  #   -nakedret
+  #   -nestif
+  #   -nlreturn
+  #   -nosprintfhostport
+  #   -prealloc
+  #   -predeclared
+  #   -promlinter
+  #   -tagalign
+  #   -testableexamples
+  #   -testpackage
+  #   -usestdlibvars
+  #   -whitespace
+  #   -wsl
+  #   -nolintlint
+  # default: all
+  # Enable specific linter.
   disable:
     - depguard
+    - exhaustruct
+    - forbidigo
     - gochecknoglobals
     - godot
     - gosmopolitan
-    - inamedparam
-    - nlreturn
+    # - inamedparam
+    # - nlreturn
+    - tagliatelle
+    - varnamelen
     - wsl
   settings:
     # https://golangci-lint.run/usage/linters/#linters-configuration
