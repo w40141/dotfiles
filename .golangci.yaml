@@ -59,17 +59,19 @@ linters:
   # default: all
   # Enable specific linter.
   disable:
+    # Go linter that checks if package imports are in a list of acceptable packages.
     - depguard
     - exhaustruct
     - forbidigo
     - gochecknoglobals
+    # Check if comments end in a period.
     - godot
     - gosmopolitan
     # - inamedparam
     # - nlreturn
     - tagliatelle
     - varnamelen
-    - wsl
+    # - wsl
   settings:
     # https://golangci-lint.run/usage/linters/#linters-configuration
     godox:
