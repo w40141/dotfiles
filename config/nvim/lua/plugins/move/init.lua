@@ -25,7 +25,12 @@ return {
 	{
 		"s-show/extend_word_motion.nvim",
 		-- url = "https://github.com/s-show/extend_word_motion.nvim"
-		opts = {},
+		opts = {
+			-- -- 拡張する Motion を `w`, `b`, `e` に限定
+			-- extend_word_motions = { "w", "b", "e" },
+			-- -- 拡張した Motion を適用するモードをノーマルモードとビジュアルモードに限定
+			-- extend_modes = { "n", "v" },
+		},
 		dependencies = {
 			"sirasagi62/tinysegmenter.nvim",
 		},
