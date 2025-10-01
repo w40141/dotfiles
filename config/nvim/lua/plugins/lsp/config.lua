@@ -450,7 +450,8 @@ function M.lspconfig()
 		root_markers = { ".git", ".marksman.toml" },
 	})
 
-	lsp.config("sqlls", {})
+	-- lsp.config("sqlls", {})
+	lsp.config("sqls", {})
 
 	lsp.config("taplo", {})
 
