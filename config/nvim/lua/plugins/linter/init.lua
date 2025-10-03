@@ -9,8 +9,8 @@ return {
 	},
 	{
 		-- "rshkarin/mason-nvim-lint",
-    -- "mimikun/mason-nvim-lint",
 		-- url = "https://github.com/rshkarin/mason-nvim-lint",
-    -- url = "https://github.com/mimikun/mason-nvim-lint"
+		-- "mimikun/mason-nvim-lint",
+		-- url = "https://github.com/mimikun/mason-nvim-lint",
 	},
 }
