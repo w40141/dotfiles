@@ -112,6 +112,8 @@ function M.lspconfig()
 		},
 	})
 
+	lsp.config("fish-lsp", {})
+
 	lsp.config("gopls", {
 		settings = {
 			gopls = {
@@ -205,10 +207,11 @@ function M.lspconfig()
 	local ensure_installed = {
 		"bashls",
 		"biome",
-    "cspell_lsp",
+		"cspell_lsp",
 		"docker_compose_language_service",
 		"docker_language_server",
 		"efm",
+    "fish-lsp",
 		"gopls",
 		"html",
 		"lua_ls",
