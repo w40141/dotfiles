@@ -3,18 +3,28 @@ local conf = require("plugins.lang.config")
 return {
 	{
 		"MeanderingProgrammer/render-markdown.nvim",
-    -- url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
+		-- url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
 		opts = {
 			file_types = { "markdown", "Avante" },
 		},
 		ft = { "markdown", "Avante" },
 	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	-- url = "https://github.com/iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	ft = { "markdown" },
+	-- 	build = ":call mkdp#util#install()",
+	-- 	config = conf.previm,
+	-- },
 	{
 		"iamcco/markdown-preview.nvim",
-		-- url = "https://github.com/iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+		build = "cd app && yarn install",
+		init = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
 		ft = { "markdown" },
-		build = ":call mkdp#util#install()",
 		config = conf.previm,
 	},
 	-- {

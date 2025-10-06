@@ -207,11 +207,11 @@ function M.lspconfig()
 	local ensure_installed = {
 		"bashls",
 		"biome",
-		"cspell_lsp",
+		"cspell_ls",
 		"docker_compose_language_service",
 		"docker_language_server",
 		"efm",
-    "fish-lsp",
+    "fish_lsp",
 		"gopls",
 		"html",
 		"lua_ls",
