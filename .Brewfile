@@ -1,3 +1,4 @@
+tap "ariga/tap"
 tap "beeftornado/rmtree"
 tap "brona/iproute2mac"
 tap "buo/cask-upgrade"
@@ -229,6 +230,7 @@ brew "xvid"
 brew "zellij"
 brew "zeromq"
 brew "zoxide"
+brew "ariga/tap/atlas"
 brew "reviewdog/tap/reviewdog"
 brew "sonatype-nexus-community/nancy-tap/nancy"
 brew "teamookla/speedtest/speedtest"
@@ -257,7 +259,6 @@ brew "teamookla/speedtest/speedtest"
 # cask "font-biz-udmincho"
 # # Developer targeted fonts with a high number of glyphs
 # cask "font-hack-nerd-font"
-# # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 # cask "font-hackgen"
 # # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
 # cask "font-hackgen-nerd"
