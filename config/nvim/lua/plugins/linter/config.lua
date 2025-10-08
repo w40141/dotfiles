@@ -18,7 +18,7 @@ function M.lint()
 		python = { "ruff" },
 		sh = { "shellcheck" },
 		-- sql = { "sqlfluff" },
-    sql = {"sqruff"},
+		sql = { "sqruff" },
 		-- typescript = { "biomejs" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
