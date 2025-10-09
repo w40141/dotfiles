@@ -8,11 +8,6 @@
   ],
   "dictionaryDefinitions": [
     {
-      "name": "dotfiles",
-      "path": "~/.config/cspell/dotfiles.txt",
-      "description": "dotfiles dictionary"
-    },
-    {
       "name": "user",
       "path": "~/.local/share/cspell/user.txt",
       "description": "User local dictionary"
@@ -44,5 +39,11 @@
         "vim"
       ]
     }
+  ],
+  "userWords": [
+    "akinsho"
+  ],
+  "words": [
+    "bashls"
   ]
 }

@@ -182,12 +182,12 @@ function M.lspconfig()
 
 	lsp.config("taplo", {})
 
-	lsp.config("typos_lsp", {
-		init_options = {
-			config = "~/.config/nvim/spell/.typos.toml",
-			diagnosticSeverity = "Hint",
-		},
-	})
+	-- lsp.config("typos_lsp", {
+	-- 	init_options = {
+	-- 		config = "~/.config/nvim/spell/.typos.toml",
+	-- 		diagnosticSeverity = "Hint",
+	-- 	},
+	-- })
 
 	lsp.config("yamlls", {
 		settings = {
@@ -218,7 +218,7 @@ function M.lspconfig()
 		"marksman",
 		"sqls",
 		"taplo",
-		"typos_lsp",
+		-- "typos_lsp",
 		"yamlls",
 	}
 
