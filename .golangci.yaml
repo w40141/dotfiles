@@ -58,6 +58,8 @@ linters:
   #   -nolintlint
   # default: all
   # Enable specific linter.
+  enable:
+    - revive
   disable:
     # Go linter that checks if package imports are in a list of acceptable packages.
     - depguard
@@ -82,6 +84,17 @@ linters:
         - NOTE
         - OPTIMIZE
         - HACK
+    revive:
+      enable-all-rules: true
+    #   rules:
+    #     - name: package-comments
+    #       severity: warning
+    #       disabled: true
+    #       exclude: [""]
+    #     - name: identical-switch-conditions
+    #       severity: warning
+    #       disabled: false
+    #       exclude: [""]
   exclusions:
     generated: strict
     warn-unused: true
