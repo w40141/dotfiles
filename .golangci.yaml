@@ -86,15 +86,13 @@ linters:
         - HACK
     revive:
       enable-all-rules: true
-    #   rules:
-    #     - name: package-comments
-    #       severity: warning
-    #       disabled: true
-    #       exclude: [""]
-    #     - name: identical-switch-conditions
-    #       severity: warning
-    #       disabled: false
-    #       exclude: [""]
+      rules:
+        # https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md#line-length-limit
+        - name: line-length-limit
+          severity: warning
+          disabled: false
+          exclude: [""]
+          arguments: [100]
   exclusions:
     generated: strict
     warn-unused: true
