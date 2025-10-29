@@ -2,6 +2,10 @@ local v = vim
 
 -- TODO: todo.txt
 -- https://github.com/arnarg/todotxt.nvim
+-- TODO: edit window
+-- https://github.com/anuvyklack/windows.nvim
+-- TODO: key menu
+-- https://github.com/emmanueltouzery/key-menu.nvim
 
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
