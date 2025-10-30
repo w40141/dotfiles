@@ -129,7 +129,7 @@ function M.fidget()
 			poll_rate = 10, -- How frequently to update and render notifications
 			filter = vim.log.levels.INFO, -- Minimum notifications level
 			history_size = 128, -- Number of removed messages to retain in history
-			override_vim_notify = false, -- Automatically override vim.notify() with Fidget
+			-- override_vim_notify = false, -- Automatically override vim.notify() with Fidget
 			-- How to configure notification groups when instantiated
 			configs = { default = require("fidget.notification").default_config },
 			-- Conditionally redirect notifications to another backend
@@ -164,16 +164,6 @@ function M.fidget()
 				y_padding = 0, -- Padding from bottom edge of window boundary
 				align = "bottom", -- How to align the notification window
 				relative = "editor", -- What the notification window position is relative to
-			},
-		},
-
-		-- Options related to integrating with other plugins
-		integration = {
-			["nvim-tree"] = {
-				enable = true, -- Integrate with nvim-tree/nvim-tree.lua (if installed)
-			},
-			["xcodebuild-nvim"] = {
-				enable = true, -- Integrate with wojciech-kulik/xcodebuild.nvim (if installed)
 			},
 		},
 
