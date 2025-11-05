@@ -68,6 +68,7 @@ linters:
     - gochecknoglobals
     # Check if comments end in a period.
     - godot
+    - gochecknoinits
     - gosmopolitan
     # - inamedparam
     # - nlreturn
