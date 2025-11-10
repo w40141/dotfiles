@@ -86,8 +86,18 @@ linters:
         - OPTIMIZE
         - HACK
     revive:
+      # https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md
       enable-all-rules: true
       rules:
+        # https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md#add-constant
+        - name: add-constant
+          severity: warning
+          disabled: false
+          exclude: [""]
+          arguments:
+            - max-lint-count: "3"
+              allow-strs: ""
+              allow-ints: [0, 1, 2, 3]
         # https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md#line-length-limit
         - name: line-length-limit
           severity: warning

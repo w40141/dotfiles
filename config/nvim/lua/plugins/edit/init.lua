@@ -37,14 +37,14 @@ return {
 	},
 	{
 		-- Not UFO in the sky, but an ultra fold in Neovim.
-		"kevinhwang91/nvim-ufo",
-		-- url = "https://github.com/kevinhwang91/nvim-ufo"
-		opts = {
-			provider_selector = function(bufnr, filetype, buftype)
-				return { "treesitter", "indent" }
-			end,
-		},
-		keys = keys.ufo,
+		-- "kevinhwang91/nvim-ufo",
+		-- -- url = "https://github.com/kevinhwang91/nvim-ufo"
+		-- opts = {
+		-- 	provider_selector = function(bufnr, filetype, buftype)
+		-- 		return { "treesitter", "indent" }
+		-- 	end,
+		-- },
+		-- keys = keys.ufo,
 	},
 	{
 		"monaqa/dial.nvim",

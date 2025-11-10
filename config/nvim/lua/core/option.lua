@@ -1,11 +1,13 @@
 local v = vim
 local opt = v.opt
+local o = v.o
 
-opt.foldcolumn = "1" -- '0' is not bad
-opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
-opt.foldlevelstart = 99
-opt.foldenable = true
-v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+o.foldlevel = 99
+o.foldmethod = "expr"
+o.foldcolumn = "1" -- '0' is not bad
+-- opt.foldlevelstart = 99
+-- opt.foldenable = true
 
 -- 内容が変更されたら自動的に再読み込み
 -- opt.autoread = true
