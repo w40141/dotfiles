@@ -6,6 +6,14 @@ local v = vim
 -- https://github.com/anuvyklack/windows.nvim
 -- TODO: key menu
 -- https://github.com/emmanueltouzery/key-menu.nvim
+-- TODO:
+-- https://zenn.dev/vim_jp/articles/e2620b502913f4
+-- TODO: restart
+-- https://zenn.dev/vim_jp/articles/2308d5e7db8bc7
+-- TODO: quit
+-- https://zenn.dev/vim_jp/articles/ff6cd224fab0c7
+-- TODO: yank
+-- https://satorunooshie.medium.com/register-is-more-than-clipboard-a1b9e269ca59
 
 local lazypath = v.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (v.uv or v.loop).fs_stat(lazypath) then
