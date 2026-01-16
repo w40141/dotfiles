@@ -82,13 +82,18 @@ function M.lspconfig()
 			{
 				prefix = "textlint",
 				lintIgnoreExitCode = true,
-				lintSource = "efm/textlint",
+				-- lintSource = "efm/textlint",
 				lintStdin = true,
-				lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+				lintCommand = "textlint --no-color --format unix --stdin --stdin-filename ${INPUT}",
+				-- 例: README.md:1:2: error  message  rule-name
 				lintFormats = {
-					"%.%#: line %l, col %c, %trror - %m",
-					"%.%#: line %l, col %c, %tarning - %m",
+					"%f:%l:%c: %t%*[^ ]%*[^ ] %m",
 				},
+				-- lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+				-- lintFormats = {
+				-- 	"%.%#: line %l, col %c, %trror - %m",
+				-- 	"%.%#: line %l, col %c, %tarning - %m",
+				-- },
 				rootMarkers = {
 					".textlintrc",
 					".textlintrc.json",
@@ -98,19 +103,27 @@ function M.lspconfig()
 			},
 		},
 	}
-	lsp.config("efm", {
-		cmd = { "efm-langserver" },
-		init_options = {
-			documentFormatting = true,
-			hover = true,
-			codeAction = true,
-		},
-		filetypes = v.tbl_keys(efm_enabled_language),
-		settings = {
-			rootMarkers = { ".git/" },
-			languages = efm_enabled_language,
-		},
-	})
+	-- lsp.config("efm", {
+	-- 	cmd = { "efm-langserver" },
+	-- 	init_options = {
+	-- 		documentFormatting = true,
+	-- 		hover = true,
+	-- 		codeAction = true,
+	-- 	},
+	-- 	filetypes = vim.tbl_keys(efm_enabled_language),
+	-- 	settings = {
+	-- 		-- ここに textlint の rootMarker も入れると「どこで動くか」迷子になりにくい
+	-- 		rootMarkers = {
+	-- 			".git/",
+	-- 			".textlintrc",
+	-- 			".textlintrc.json",
+	-- 			".textlintrc.yml",
+	-- 			".textlintrc.yaml",
+	-- 			"package.json",
+	-- 		},
+	-- 		languages = efm_enabled_language,
+	-- 	},
+	-- })
 
 	lsp.config("fish-lsp", {})
 
@@ -211,7 +224,7 @@ function M.lspconfig()
 		"docker_compose_language_service",
 		"docker_language_server",
 		"efm",
-    "fish_lsp",
+		"fish_lsp",
 		"gopls",
 		"html",
 		"lua_ls",
