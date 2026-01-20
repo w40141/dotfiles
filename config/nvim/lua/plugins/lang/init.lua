@@ -9,16 +9,9 @@ return {
 		},
 		ft = { "markdown", "Avante" },
 	},
-	-- {
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	-- url = "https://github.com/iamcco/markdown-preview.nvim",
-	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-	-- 	ft = { "markdown" },
-	-- 	build = ":call mkdp#util#install()",
-	-- 	config = conf.previm,
-	-- },
 	{
 		"iamcco/markdown-preview.nvim",
+		-- url = "https://github.com/iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		build = "cd app && yarn install",
 		init = function()
@@ -32,14 +25,14 @@ return {
 	-- 	-- url = "https://github.com/OXY2DEV/markview.nvim",
 	-- 	ft = { "markdown", "html", "tex", "latex", "yaml" },
 	-- },
-	{
-		"richardbizik/nvim-toc",
-		-- url = "https://github.com/richardbizik/nvim-toc"
-		ft = { "markdown" },
-		opts = {
-			toc_header = "Table of Contents",
-		},
-	},
+	-- {
+	-- 	"richardbizik/nvim-toc",
+	-- 	-- url = "https://github.com/richardbizik/nvim-toc"
+	-- 	ft = { "markdown" },
+	-- 	opts = {
+	-- 		toc_header = "Table of Contents",
+	-- 	},
+	-- },
 	{
 		"kevinhwang91/nvim-bqf",
 		-- url = "https://github.com/kevinhwang91/nvim-bqf",

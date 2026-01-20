@@ -38,6 +38,7 @@ return {
 	},
 	{
 		"yetone/avante.nvim",
+		-- url = "https://github.com/yetone/avante.nvim",
 		event = "VeryLazy",
 		version = false,
 		opts = opts.avante,
