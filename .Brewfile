@@ -53,8 +53,9 @@ brew "libtasn1"
 brew "nettle"
 brew "p11-kit"
 brew "gnutls"
-brew "tree-sitter"
 brew "emacs"
+brew "icu4c@77"
+brew "tree-sitter"
 brew "cask"
 brew "llvm"
 brew "ccls"
@@ -174,7 +175,6 @@ brew "mise"
 brew "mosquitto"
 brew "msgpack"
 brew "protobuf"
-brew "mysql"
 brew "mysql-client"
 brew "navi"
 brew "neovim"
@@ -237,96 +237,39 @@ brew "ariga/tap/atlas"
 brew "reviewdog/tap/reviewdog"
 brew "sonatype-nexus-community/nancy-tap/nancy"
 brew "teamookla/speedtest/speedtest"
-# cask "alfred"
-# # Web browser focusing on privacy
-# cask "brave-browser"
-# # Clipboard extension app
-# cask "clipy"
-# cask "color-oracle"
-# # Universal database tool and SQL client
-# cask "dbeaver-community"
-# # Trains AIs to understand and translate texts
-# cask "deepl"
-# # Voice and text chat software
-# cask "discord"
-# # App to build and share containerized applications and microservices
-# cask "docker"
-# # Online diagram software
-# cask "drawio"
-# # Collaborative team software
-# cask "figma"
-# # Web browser
-# cask "firefox"
-# cask "font-biz-udgothic"
-# # Universal design typeface in the Japanese Mincho type tradition
-# cask "font-biz-udmincho"
-# # Developer targeted fonts with a high number of glyphs
-# cask "font-hack-nerd-font"
-# cask "font-hackgen"
-# # Japanese programming font which is a composed of Hack and GenJyuu-Gothic
-# cask "font-hackgen-nerd"
-# cask "font-noto-sans-cjk"
-# # Font editor and converter for outline and bitmap fonts
-# cask "fontforge"
-# # Git client focusing on productivity
-# cask "gitkraken"
-# # Web browser
-# cask "google-chrome"
-# # Client for the Google Drive storage service
-# cask "google-drive"
-# # Interface for reading and syncing eBooks
-# cask "kindle"
-# # Client for the Google Drive storage service
-# cask "google-drive"
-# # Japanese input software
-# cask "google-japanese-ime"
-# # Utility to fix grammar errors and style issues in text
-# cask "grammarly"
-# # Screenshot and screen recording tool
-# cask "gyazo"
-# # IDE for Java development - community edition
-# cask "intellij-idea-ce"
-# # Terminal emulator as alternative to Apple's Terminal app
-# cask "iterm2"
-# # Software for Logitech devices
-# cask "logi-options-plus"
-# # Full TeX Live distribution without GUI applications
-# cask "mactex-no-gui"
-# # Provides updates to various Microsoft products
-# cask "microsoft-auto-update"
-# # Office suite
-# cask "microsoft-office"
-# # App to write, plan, collaborate, and get organized
-# cask "notion"
-# # Collaboration platform for API development
-# cask "postman"
-# # MySQL/MariaDB database management
-# cask "sequel-ace"
-# # PDF reader and note-taking application
-# cask "skim"
-# # Video chat, voice call and instant messaging application
-# cask "skype"
-# # Team communication and collaboration software
-# cask "slack"
-# # Music streaming service
-# cask "spotify"
-# # Development environment
-# cask "vagrant"
-# # Open-source code editor
-# cask "visual-studio-code"
-# # Web browser with built-in email client focusing on customization and control
-# cask "vivaldi"
-# # Video communication and virtual meeting platform
-# cask "zoom"
-# mas "Amphetamine", id: 937984704
-# mas "GarageBand", id: 682658836
-# mas "iMovie", id: 408981434
-# mas "Keynote", id: 409183694
-# mas "LINE", id: 539883307
-# mas "Magnet", id: 441258766
-# mas "Mathpix Snipping Tool", id: 1349670778
-# mas "NanoBrowser", id: 1440590513
-# mas "Numbers", id: 409203825
-# mas "Pages", id: 409201541
-# mas "TweetDeck", id: 485812721
-# mas "Xcode", id: 497799835
+go "github.com/w40141/UsdmApi"
+go "github.com/air-verse/air"
+go "golang.org/x/tools/go/analysis/passes/defers/cmd/defers"
+go "github.com/go-delve/delve/cmd/dlv"
+go "golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment"
+go "golang.org/x/tools/go/analysis/passes/findcall/cmd/findcall"
+go "github.com/ramya-rao-a/go-outline"
+go "golang.org/x/tools/cmd/godoc"
+go "mvdan.cc/gofumpt"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/golangci/golangci-lint/cmd/golangci-lint"
+go "github.com/segmentio/golines"
+go "github.com/sanposhiho/gomockhandler"
+go "github.com/fatih/gomodifytags"
+go "github.com/uudashr/gopkgs/v2/cmd/gopkgs"
+go "github.com/haya14busa/goplay/cmd/goplay"
+go "golang.org/x/tools/gopls"
+go "github.com/cweill/gotests/gotests"
+go "golang.org/x/vuln/cmd/govulncheck"
+go "golang.org/x/tools/cmd/guru"
+go "github.com/gohugoio/hugo"
+go "github.com/josharian/impl"
+go "github.com/lestrrat-go/jwx/v2/cmd/jwx"
+go "github.com/w40141/memo"
+go "github.com/golang-migrate/migrate/v4/cmd/migrate"
+go "github.com/golang/mock/mockgen"
+go "golang.org/x/tools/go/analysis/passes/nilness/cmd/nilness"
+go "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
+go "github.com/stateful/runme"
+go "github.com/k1LoW/runn/cmd/runn"
+go "github.com/zoncoen/scenarigo/cmd/scenarigo"
+go "golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow"
+go "github.com/volatiletech/sqlboiler/v4"
+go "github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "github.com/rhysd/vim-startuptime"

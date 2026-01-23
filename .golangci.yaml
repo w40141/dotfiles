@@ -60,6 +60,7 @@ linters:
   # Enable specific linter.
   enable:
     - revive
+    - wsl_v5
   disable:
     # Go linter that checks if package imports are in a list of acceptable packages.
     - depguard
@@ -97,13 +98,17 @@ linters:
           arguments:
             - max-lint-count: "3"
               allow-strs: ""
-              allow-ints: [0, 1, 2, 3]
+              allow-ints: "0,1,2,3"
         # https://github.com/mgechev/revive/blob/HEAD/RULES_DESCRIPTIONS.md#line-length-limit
         - name: line-length-limit
           severity: warning
           disabled: false
           exclude: [""]
           arguments: [100]
+    wsl_v5:
+      allow-first-in-block: true
+      allow-whole-block: false
+      branch-max-lines: 2
   exclusions:
     generated: strict
     warn-unused: true
