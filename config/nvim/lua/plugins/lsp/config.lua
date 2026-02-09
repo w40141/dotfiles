@@ -190,6 +190,12 @@ function M.lspconfig()
 		root_markers = { ".git", ".marksman.toml" },
 	})
 
+	-- lsp.config("rumdl", {
+	-- 	cmd = { "rumdl", "server" },
+	-- 	filetypes = { "markdown" },
+	-- 	root_markers = { ".git" },
+	-- })
+
 	-- lsp.config("sqlls", {})
 	lsp.config("sqls", {})
 
@@ -220,7 +226,7 @@ function M.lspconfig()
 	local ensure_installed = {
 		"bashls",
 		"biome",
-		"cspell_ls",
+		-- "cspell_ls",
 		"docker_compose_language_service",
 		"docker_language_server",
 		"efm",
@@ -229,6 +235,7 @@ function M.lspconfig()
 		"html",
 		"lua_ls",
 		"marksman",
+		-- "rumdl",
 		"sqls",
 		"taplo",
 		-- "typos_lsp",
