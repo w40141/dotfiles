@@ -24,6 +24,11 @@ M.conform = {
 		-- xml = { "xmlformat" },
 		["_"] = { "trim_whitespace", "trim_newlines", "squeeze_blanks" },
 	},
+	formatters = {
+		golines = {
+			args = { "--max-len=120", "--tab-len=1", "--shorten-comments", "--reformat-tags" },
+		},
+	},
 	log_level = vim.log.levels.ERROR,
 	notify_on_error = true,
 }
