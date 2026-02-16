@@ -42,10 +42,16 @@ function M.lint()
 	-- 	ignore_install = {},
 	-- })
 
-	autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+	autocmd({ "BufWritePost" }, {
 		callback = function()
 			lint.try_lint()
 			lint.try_lint(anyfile)
+		end,
+	})
+
+	autocmd({ "BufEnter", "InsertLeave" }, {
+		callback = function()
+			lint.try_lint()
 		end,
 	})
 end
