@@ -26,7 +26,7 @@ M.conform = {
 	},
 	formatters = {
 		golines = {
-			args = { "--max-len=120", "--tab-len=1", "--shorten-comments", "--reformat-tags" },
+			args = { "--max-len=100", "--tab-len=1", "--shorten-comments", "--reformat-tags" },
 		},
 	},
 	log_level = vim.log.levels.ERROR,
