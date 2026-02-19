@@ -37,6 +37,7 @@ M.lspconfig = {
 		end,
 		{ desc = "[LSP] ワークスペースフォルダ一覧を表示" },
 	},
+  {"K", b("hover"), { desc = "[LSP] 型情報/ドキュメントを表示" }},
 }
 
 return M

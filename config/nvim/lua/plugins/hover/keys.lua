@@ -1,27 +1,46 @@
 local M = {}
 
 local v = vim
-local api = v.api
 
 M.hover = {
 	{
 		"K",
 		function()
-			local hover_window = v.b.hover_preview
-			if hover_window and api.nvim_win_is_valid(hover_window) then
-				api.nvim_set_current_win(hover_window)
+			if v.b.hover_preview then
+				require("hover").switch("next")
 			else
-				require("hover").hover()
+				require("hover").open()
 			end
 		end,
-		{ desc = "[hover] ホバーを表示" },
+		desc = "[hover] ホバーを開く / 次へ切り替える",
 	},
 	{
 		"gK",
 		function()
-			require("hover").hover_select()
+			require("hover").enter()
 		end,
-		{ desc = "[hover] ホバーを選択" },
+		desc = "[hover] ホバーを開いてフォーカスする",
+	},
+	{
+		"[h",
+		function()
+			require("hover").switch("previous")
+		end,
+		desc = "[hover] 前のソースに切り替える",
+	},
+	{
+		"]h",
+		function()
+			require("hover").switch("next")
+		end,
+		desc = "[hover] 次のソースに切り替える",
+	},
+	{
+		"<MouseMove>",
+		function()
+			require("hover").mouse()
+		end,
+		desc = "[hover] マウスでホバーを操作する",
 	},
 }
 

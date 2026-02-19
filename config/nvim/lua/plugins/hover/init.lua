@@ -1,30 +1,33 @@
 local keys = require("plugins.hover.keys")
 
 return {
-	{
-		"lewis6991/hover.nvim",
-		-- url = "https://github.com/lewis6991/hover.nvim",
-		opts = {
-			init = function()
-				-- Require providers
-				require("hover.providers.lsp")
-				-- require('hover.providers.gh')
-				-- require('hover.providers.gh_user')
-				-- require('hover.providers.jira')
-				-- require('hover.providers.man')
-				require("hover.providers.dictionary")
-			end,
-			preview_opts = {
-				border = "single",
-			},
-			-- to a :h preview-window when pressing the hover keymap.
-			preview_window = false,
-			title = true,
-			mouse_providers = {
-				"LSP",
-			},
-			mouse_delay = 1000,
-		},
-		keys = keys.hover,
-	},
+	-- {
+	-- 	"lewis6991/hover.nvim",
+	-- 	-- url = "https://github.com/lewis6991/hover.nvim",
+	-- 	opts = {
+	-- 		providers = {
+	-- 			"hover.providers.diagnostic",
+	-- 			"hover.providers.lsp",
+	-- 			"hover.providers.dap",
+	-- 			"hover.providers.man",
+	-- 			"hover.providers.dictionary",
+	-- 			-- Optional, disabled by default:
+	-- 			-- 'hover.providers.gh',
+	-- 			-- 'hover.providers.gh_user',
+	-- 			-- 'hover.providers.jira',
+	-- 			-- 'hover.providers.fold_preview',
+	-- 			-- 'hover.providers.highlight',
+	-- 		},
+	-- 		preview_opts = {
+	-- 			border = "single",
+	-- 		},
+	-- 		preview_window = false,
+	-- 		title = true,
+	-- 		mouse_providers = {
+	-- 			"hover.providers.lsp",
+	-- 		},
+	-- 		mouse_delay = 1000,
+	-- 	},
+	-- 	keys = keys.hover,
+	-- },
 }

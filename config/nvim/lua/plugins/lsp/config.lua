@@ -27,8 +27,19 @@ function M.lspconfig()
 	diag.config({
 		virtual_text = {
 			format = function(d)
-				return string.format("%s (%s: %s)", d.message, d.source, d.code)
+				local msg = d.message
+				local code = d.code
+
+				if code then
+					return string.format("[%s] %s", code, msg)
+				end
+
+				return msg
 			end,
+		},
+		float = {
+			border = "rounded",
+			source = "if_many",
 		},
 		signs = {
 			text = {
