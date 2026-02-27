@@ -11,7 +11,7 @@ function M.lint()
 		dockerfile = { "hadolint" },
 		-- go = { "golangcilint", "revive" },
 		go = { "golangcilint" },
-		-- javascript = { "biomejs" },
+		javascript = { "biomejs" },
 		json = { "jsonlint" },
 		lua = { "selene" },
 		-- markdown = { "rumdl" },
@@ -21,7 +21,7 @@ function M.lint()
 		sh = { "shellcheck" },
 		-- sql = { "sqlfluff" },
 		sql = { "sqruff" },
-		-- typescript = { "biomejs" },
+		typescript = { "biomejs" },
 		yaml = { "yamllint" },
 		zsh = { "shellcheck" },
 	}

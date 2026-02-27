@@ -250,6 +250,71 @@ function M.lspconfig()
 		},
 	})
 
+	-- TypeScript LSP (vtsls)
+	lsp.config("vtsls", {
+		-- vtslsは型/補完/定義ジャンプ担当。formatはBiomeに任せる
+		root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+		single_file_support = false,
+
+		settings = {
+			typescript = {
+				preferences = {
+					importModuleSpecifier = "non-relative",
+				},
+				inlayHints = {
+					enumMemberValues = { enabled = true },
+					functionLikeReturnTypes = { enabled = true },
+					parameterNames = { enabled = "literals" },
+					parameterTypes = { enabled = true },
+					propertyDeclarationTypes = { enabled = true },
+					variableTypes = { enabled = false },
+				},
+			},
+		},
+
+		on_attach = function(client, bufnr)
+			-- ★重要: フォーマットはBiomeのみ
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end,
+	})
+
+	-- biome実行パスを「プロジェクトのnode_modules/.bin優先」で解決する
+	local function biome_cmd(root_dir)
+		local local_biome = root_dir and (root_dir .. "/node_modules/.bin/biome") or nil
+		if local_biome and v.uv.fs_stat(local_biome) then
+			return { local_biome, "lsp-proxy" }
+		end
+		return { "biome", "lsp-proxy" }
+	end
+
+	lsp.config("biome", {
+		-- ★pnpm/monorepoで最重要：Biome設定ファイルを最優先でrootにする
+		root_markers = { "biome.json", "biome.jsonc", ".git" },
+
+		-- rootごとに「そのrootのbiome」を使う
+		on_new_config = function(new_config, root_dir)
+			new_config.cmd = biome_cmd(root_dir)
+		end,
+
+		single_file_support = false,
+
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"json",
+			"jsonc",
+			"css",
+		},
+
+		on_attach = function(client, bufnr)
+			client.server_capabilities.documentFormattingProvider = true
+			client.server_capabilities.documentRangeFormattingProvider = true
+		end,
+	})
+
 	local ensure_installed = {
 		"bashls",
 		"biome",
@@ -267,6 +332,7 @@ function M.lspconfig()
 		"taplo",
 		-- "typos_lsp",
 		"yamlls",
+		"vtsls",
 	}
 
 	require("mason-lspconfig").setup({
