@@ -97,13 +97,13 @@ function M.cmp()
 					fallback()
 				end
 			end, { "i", "s" }),
-			["<Tab>"] = v.schedule_wrap(function(fallback)
+			["<Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() and has_words_before() then
 					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
 				else
 					fallback()
 				end
-			end),
+			end, { "i", "s" }),
 			["<S-Tab>"] = cmp.mapping(function(fallback)
 				if cmp.visible() then
 					cmp.select_prev_item()

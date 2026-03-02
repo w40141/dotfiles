@@ -1,13 +1,18 @@
 local M = {}
 
 M.treesitter = {
+  -- FIXME: only install languages that I use, but for now, install all to avoid issues with missing parsers
 	ensure_installed = "all",
+  auto_install = true,
 	ignore_install = { "org" },
 	sync_install = false,
 	highlight = {
 		enable = true,
 		additional_vim_regex_highlighting = false,
 	},
+  indent = {
+    enable = true,
+  },
 	textobjects = {
 		select = {
 			enable = true,

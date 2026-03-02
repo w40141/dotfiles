@@ -42,14 +42,18 @@ function M.lint()
 	-- 	ignore_install = {},
 	-- })
 
+	local grp = v.api.nvim_create_augroup("MyLint", { clear = true })
+
 	autocmd({ "BufWritePost" }, {
+		group = grp,
 		callback = function()
 			lint.try_lint()
 			lint.try_lint(anyfile)
 		end,
 	})
 
-	autocmd({ "BufEnter", "InsertLeave" }, {
+	autocmd({ "InsertLeave" }, {
+		group = grp,
 		callback = function()
 			lint.try_lint()
 		end,

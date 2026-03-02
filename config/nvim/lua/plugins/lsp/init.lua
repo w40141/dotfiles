@@ -3,9 +3,10 @@ local keys = require("plugins.lsp.keys")
 
 return {
 	{
-		"williamboman/mason.nvim",
-		-- url = "https://github.com/williamboman/mason.nvim",
+		"mason-org/mason.nvim",
+		-- url = "https://github.com/mason-org/mason.nvim"
 		cmd = { "Mason" },
+		build = ":MasonUpdate",
 		opts = {
 			ui = {
 				icons = {
@@ -17,18 +18,24 @@ return {
 				height = 0.7,
 			},
 		},
-		build = ":MasonUpdate",
+	},
+	{
+		"mason-org/mason-lspconfig.nvim",
+		-- url = "https://github.com/mason-org/mason-lspconfig.nvim"
+		opts = {
+			automatic_enable = true,
+		},
+    event = { "FocusLost", "CursorHold" },
+		dependencies = {
+			"mason-org/mason.nvim",
+			"neovim/nvim-lspconfig",
+		},
 	},
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
+    event = { "FocusLost", "CursorHold" },
 		config = conf.lspconfig,
-		event = { "FocusLost", "CursorHold" },
 		keys = keys.lspconfig,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		-- url = "https://github.com/williamboman/mason-lspconfig.nvim",
-		event = { "FocusLost", "CursorHold" },
 	},
 }

@@ -38,7 +38,11 @@ M.trouble = {
 
 local function telescope(name)
 	return function()
-		return require("telescope.builtin")[name]()
+		local ok, builtin = pcall(require, "telescope.builtin")
+		if not ok then
+			return
+		end
+		return builtin[name]()
 	end
 end
 

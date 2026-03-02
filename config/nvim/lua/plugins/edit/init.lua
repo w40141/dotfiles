@@ -54,9 +54,9 @@ return {
 	},
 	{
 		"johmsalas/text-case.nvim",
-		-- url =https://github.com/johmsalas/text-case.nvim
+		-- url = "https://github.com/johmsalas/text-case.nvim"
 		opts = {
-			default_keymapings_enalbled = false,
+			default_keymappings_enalbled = false,
 		},
 		keys = keys.textcase,
 		cmd = {

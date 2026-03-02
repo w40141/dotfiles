@@ -59,7 +59,8 @@ function M.tree()
 			return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 		end
 
-		api.config.mappings.default_on_attach(bufnr)
+		-- api.config.mappings.default_on_attach(bufnr)
+    api.map.on_attach.default(bufnr)
 
 		key("n", "l", api.tree.change_root_to_node, opts("CD"))
 		key("n", "h", api.tree.change_root_to_parent, opts("Up"))

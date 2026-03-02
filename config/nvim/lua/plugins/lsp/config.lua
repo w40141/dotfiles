@@ -16,25 +16,18 @@ end
 
 function M.lspconfig()
 	local v = vim
-	local lsp = v.lsp
 	local api = v.api
-	local hl = api.nvim_set_hl
-	local buf = lsp.buf
-	local augroup = api.nvim_create_augroup
-	local autocmd = api.nvim_create_autocmd
+	local lsp = v.lsp
+	local util = require("lspconfig.util")
 
-	local diag = v.diagnostic
-	diag.config({
+	-- ========= Diagnostic =========
+	v.diagnostic.config({
 		virtual_text = {
 			format = function(d)
-				local msg = d.message
-				local code = d.code
-
-				if code then
-					return string.format("[%s] %s", code, msg)
+				if d.code then
+					return string.format("[%s] %s", d.code, d.message)
 				end
-
-				return msg
+				return d.message
 			end,
 		},
 		float = {
@@ -43,105 +36,91 @@ function M.lspconfig()
 		},
 		signs = {
 			text = {
-				[diag.severity.ERROR] = "",
-				[diag.severity.WARN] = "",
-				[diag.severity.INFO] = "",
-				[diag.severity.HINT] = "",
+				[v.diagnostic.severity.ERROR] = "",
+				[v.diagnostic.severity.WARN] = "",
+				[v.diagnostic.severity.INFO] = "",
+				[v.diagnostic.severity.HINT] = "",
 			},
 		},
 	})
 
+	-- ========= Capabilities =========
 	local capabilities = lsp.protocol.make_client_capabilities()
+	capabilities.textDocument.semanticTokens = capabilities.textDocument.semanticTokens or {}
 	capabilities.textDocument.semanticTokens.multilineTokenSupport = true
-	--Enable (broadcasting) snippet capability for completion
+	capabilities.textDocument.completion = capabilities.textDocument.completion or {}
+	capabilities.textDocument.completion.completionItem = capabilities.textDocument.completion.completionItem or {}
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-	lsp.config("*", {
-		capabilities = capabilities,
-		root_markers = { ".git" },
-		on_attach = function(client, bufnr)
-			if client.server_capabilities.documentHighlightProvider then
-				hl(0, "LspReferenceText", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
-				hl(0, "LspReferenceRead", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
-				hl(0, "LspReferenceWrite", { underline = true, bold = true, fg = "#A00000", bg = "#104040" })
-				local ldh = augroup("LspDocumentHighlight", {})
-				autocmd({ "CursorHold", "CursorHoldI" }, {
-					buffer = bufnr,
-					callback = buf.document_highlight,
-					group = ldh,
-				})
-				autocmd({ "CursorMoved", "CursorMovedI" }, {
-					buffer = bufnr,
-					callback = buf.clear_references,
-					group = ldh,
-				})
-			end
-		end,
-	})
+	-- cmp-nvim-lsp があるなら統合
+	local ok_cmp, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+	if ok_cmp then
+		capabilities = cmp_lsp.default_capabilities(capabilities)
+	end
 
-	lsp.config("bashls", {})
+	-- ========= on_attach =========
+	local function on_attach(client, bufnr)
+		-- Document highlight（色直指定はやめる：colorschemeと衝突する）
+		if client.server_capabilities.documentHighlightProvider then
+			local grp = api.nvim_create_augroup("LspDocumentHighlight:" .. bufnr, { clear = true })
+			api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+				group = grp,
+				buffer = bufnr,
+				callback = lsp.buf.document_highlight,
+			})
+			api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+				group = grp,
+				buffer = bufnr,
+				callback = lsp.buf.clear_references,
+			})
+			-- 見た目は控えめに：underlineだけで十分強い
+			api.nvim_set_hl(0, "LspReferenceText", { underline = true, bold = true })
+			api.nvim_set_hl(0, "LspReferenceRead", { underline = true, bold = true })
+			api.nvim_set_hl(0, "LspReferenceWrite", { underline = true, bold = true })
+		end
 
-	lsp.config("cspell_lsp", {})
+		-- biome / vtsls のフォーマット責務分離
+		if client.name == "vtsls" then
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end
+		if client.name == "biome" then
+			client.server_capabilities.documentFormattingProvider = true
+			client.server_capabilities.documentRangeFormattingProvider = true
+		end
+	end
 
-	lsp.config("docker_compose_language_service", {})
+	-- ========= helper =========
+	local function safe_setup(server, cfg)
+		cfg = cfg or {}
+		cfg.capabilities = cfg.capabilities or capabilities
+		cfg.on_attach = cfg.on_attach or on_attach
+    lsp.config(server, cfg)
+	end
 
-	lsp.config("docker_language_server", {})
+	-- ========= biome command resolver (local node_modules priority) =========
+	local function biome_cmd(root_dir)
+		local local_biome = root_dir and (root_dir .. "/node_modules/.bin/biome") or nil
+		if local_biome and v.uv.fs_stat(local_biome) then
+			return { local_biome, "lsp-proxy" }
+		end
+		return { "biome", "lsp-proxy" }
+	end
 
-	local efm_enabled_language = {
-		markdown = {
-			-- 配列を渡す必要がある
-			{
-				prefix = "textlint",
-				lintIgnoreExitCode = true,
-				-- lintSource = "efm/textlint",
-				lintStdin = true,
-				lintCommand = "textlint --no-color --format unix --stdin --stdin-filename ${INPUT}",
-				-- 例: README.md:1:2: error  message  rule-name
-				lintFormats = {
-					"%f:%l:%c: %t%*[^ ]%*[^ ] %m",
-				},
-				-- lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
-				-- lintFormats = {
-				-- 	"%.%#: line %l, col %c, %trror - %m",
-				-- 	"%.%#: line %l, col %c, %tarning - %m",
-				-- },
-				rootMarkers = {
-					".textlintrc",
-					".textlintrc.json",
-					".textlintrc.yml",
-					".textlintrc.yaml",
-				},
-			},
-		},
-	}
-	-- lsp.config("efm", {
-	-- 	cmd = { "efm-langserver" },
-	-- 	init_options = {
-	-- 		documentFormatting = true,
-	-- 		hover = true,
-	-- 		codeAction = true,
-	-- 	},
-	-- 	filetypes = vim.tbl_keys(efm_enabled_language),
-	-- 	settings = {
-	-- 		-- ここに textlint の rootMarker も入れると「どこで動くか」迷子になりにくい
-	-- 		rootMarkers = {
-	-- 			".git/",
-	-- 			".textlintrc",
-	-- 			".textlintrc.json",
-	-- 			".textlintrc.yml",
-	-- 			".textlintrc.yaml",
-	-- 			"package.json",
-	-- 		},
-	-- 		languages = efm_enabled_language,
-	-- 	},
-	-- })
+	-- ========= Servers =========
+	safe_setup("bashls", {})
 
-	lsp.config("fish-lsp", {})
+	safe_setup("cspell_lsp", {})
 
-	lsp.config("gopls", {
+	safe_setup("docker_compose_language_service", {})
+	safe_setup("dockerls", {}) -- docker_language_server の lspconfig 名は dockerls が一般的
+
+	safe_setup("fish_lsp", {}) -- fish-lsp は fish_lsp が一般的
+
+	safe_setup("gopls", {
+		root_dir = util.root_pattern("go.work", "go.mod", ".git"),
 		settings = {
 			gopls = {
-				-- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
 				analyses = {
 					shadow = true,
 					unusedparams = true,
@@ -175,11 +154,26 @@ function M.lspconfig()
 		},
 	})
 
-	lsp.config("html", {})
+	safe_setup("html", {})
 
-	lsp.config("lua_ls", {
-		cmd = { "lua-language-server" },
-		filetypes = { "lua" },
+	safe_setup("lua_ls", {
+		settings = {
+			Lua = {
+				diagnostics = {
+					unusedLocalExclude = { "_*" },
+					globals = { "vim" },
+				},
+				runtime = { version = "LuaJIT" },
+				workspace = {
+					checkThirdParty = false,
+					library = v.list_extend(v.api.nvim_get_runtime_file("lua", true), {
+						"${3rd}/luv/library",
+						"${3rd}/busted/library",
+					}),
+				},
+			},
+		},
+		-- .luarc があるプロジェクトは尊重（あなたの意図を保持）
 		on_init = function(client)
 			if client.workspace_folders then
 				local path = client.workspace_folders[1].name
@@ -190,72 +184,39 @@ function M.lspconfig()
 					return
 				end
 			end
-			client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
-				runtime = { version = "LuaJIT" },
-				workspace = {
-					checkThirdParty = false,
-					library = v.list_extend(v.api.nvim_get_runtime_file("lua", true), {
-						"${3rd}/luv/library",
-						"${3rd}/busted/library",
-					}),
-				},
-			})
 		end,
-		settings = {
-			Lua = {
-				diagnostics = {
-					unusedLocalExclude = { "_*" },
-					globals = { "vim" },
-				},
-			},
-		},
 	})
 
-	lsp.config("marksman", {
+	safe_setup("marksman", {
 		cmd = { "marksman", "server" },
 		filetypes = { "markdown" },
-		root_markers = { ".git", ".marksman.toml" },
+		root_dir = util.root_pattern(".marksman.toml", ".git"),
 	})
 
-	-- lsp.config("rumdl", {
-	-- 	cmd = { "rumdl", "server" },
-	-- 	filetypes = { "markdown" },
-	-- 	root_markers = { ".git" },
-	-- })
+	safe_setup("sqls", {})
+	safe_setup("taplo", {})
 
-	-- lsp.config("sqlls", {})
-	lsp.config("sqls", {})
-
-	lsp.config("taplo", {})
-
-	-- lsp.config("typos_lsp", {
-	-- 	init_options = {
-	-- 		config = "~/.config/nvim/spell/.typos.toml",
-	-- 		diagnosticSeverity = "Hint",
-	-- 	},
-	-- })
-
-	lsp.config("yamlls", {
+	safe_setup("yamlls", {
 		settings = {
-			schemas = {
-				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			yaml = {
+				schemas = {
+					["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+				},
+				format = {
+					enable = true,
+					bracketSpacing = true,
+					proseWrap = "Always",
+				},
+				hover = true,
+				validate = true,
 			},
-			format = {
-				enable = true,
-				bracketSpacing = true,
-				proseWrap = "Always",
-			},
-			hover = true,
-			validate = true,
 		},
 	})
 
-	-- TypeScript LSP (vtsls)
-	lsp.config("vtsls", {
-		-- vtslsは型/補完/定義ジャンプ担当。formatはBiomeに任せる
-		root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+	-- TypeScript (vtsls)
+	safe_setup("vtsls", {
+		root_dir = util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git"),
 		single_file_support = false,
-
 		settings = {
 			typescript = {
 				preferences = {
@@ -271,34 +232,12 @@ function M.lspconfig()
 				},
 			},
 		},
-
-		on_attach = function(client, bufnr)
-			-- ★重要: フォーマットはBiomeのみ
-			client.server_capabilities.documentFormattingProvider = false
-			client.server_capabilities.documentRangeFormattingProvider = false
-		end,
 	})
 
-	-- biome実行パスを「プロジェクトのnode_modules/.bin優先」で解決する
-	local function biome_cmd(root_dir)
-		local local_biome = root_dir and (root_dir .. "/node_modules/.bin/biome") or nil
-		if local_biome and v.uv.fs_stat(local_biome) then
-			return { local_biome, "lsp-proxy" }
-		end
-		return { "biome", "lsp-proxy" }
-	end
-
-	lsp.config("biome", {
-		-- ★pnpm/monorepoで最重要：Biome設定ファイルを最優先でrootにする
-		root_markers = { "biome.json", "biome.jsonc", ".git" },
-
-		-- rootごとに「そのrootのbiome」を使う
-		on_new_config = function(new_config, root_dir)
-			new_config.cmd = biome_cmd(root_dir)
-		end,
-
+	-- Biome
+	safe_setup("biome", {
+		root_dir = util.root_pattern("biome.json", "biome.jsonc", ".git"),
 		single_file_support = false,
-
 		filetypes = {
 			"javascript",
 			"javascriptreact",
@@ -308,12 +247,59 @@ function M.lspconfig()
 			"jsonc",
 			"css",
 		},
-
-		on_attach = function(client, bufnr)
-			client.server_capabilities.documentFormattingProvider = true
-			client.server_capabilities.documentRangeFormattingProvider = true
+		on_new_config = function(new_config, root_dir)
+			new_config.cmd = biome_cmd(root_dir)
 		end,
 	})
+
+	-- local efm_enabled_language = {
+	-- 	markdown = {
+	-- 		-- 配列を渡す必要がある
+	-- 		{
+	-- 			prefix = "textlint",
+	-- 			lintIgnoreExitCode = true,
+	-- 			-- lintSource = "efm/textlint",
+	-- 			lintStdin = true,
+	-- 			lintCommand = "textlint --no-color --format unix --stdin --stdin-filename ${INPUT}",
+	-- 			-- 例: README.md:1:2: error  message  rule-name
+	-- 			lintFormats = {
+	-- 				"%f:%l:%c: %t%*[^ ]%*[^ ] %m",
+	-- 			},
+	-- 			-- lintCommand = "textlint --no-color --format compact --stdin --stdin-filename ${INPUT}",
+	-- 			-- lintFormats = {
+	-- 			-- 	"%.%#: line %l, col %c, %trror - %m",
+	-- 			-- 	"%.%#: line %l, col %c, %tarning - %m",
+	-- 			-- },
+	-- 			rootMarkers = {
+	-- 				".textlintrc",
+	-- 				".textlintrc.json",
+	-- 				".textlintrc.yml",
+	-- 				".textlintrc.yaml",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- }
+	-- lsp.config("efm", {
+	-- 	cmd = { "efm-langserver" },
+	-- 	init_options = {
+	-- 		documentFormatting = true,
+	-- 		hover = true,
+	-- 		codeAction = true,
+	-- 	},
+	-- 	filetypes = vim.tbl_keys(efm_enabled_language),
+	-- 	settings = {
+	-- 		-- ここに textlint の rootMarker も入れると「どこで動くか」迷子になりにくい
+	-- 		rootMarkers = {
+	-- 			".git/",
+	-- 			".textlintrc",
+	-- 			".textlintrc.json",
+	-- 			".textlintrc.yml",
+	-- 			".textlintrc.yaml",
+	-- 			"package.json",
+	-- 		},
+	-- 		languages = efm_enabled_language,
+	-- 	},
+	-- })
 
 	local ensure_installed = {
 		"bashls",
@@ -336,7 +322,6 @@ function M.lspconfig()
 	}
 
 	require("mason-lspconfig").setup({
-		automatic_enable = true,
 		ensure_installed = ensure_installed,
 	})
 end

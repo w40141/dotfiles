@@ -3,20 +3,29 @@ local api = v.api
 local augroup = api.nvim_create_augroup
 local autocmd = api.nvim_create_autocmd
 
-local myAutoCmd = augroup("MyAutoCmd", { clear = true })
+local my = augroup("MyAutoCmd", { clear = true })
 
--- Don't auto commenting new lines
-autocmd("BufEnter", {
+autocmd("FileType", {
+	group = my,
 	pattern = "*",
-	command = "set fo-=c fo-=r fo-=o",
-	group = myAutoCmd,
+	callback = function()
+		-- formatoptions から c r o を外す（自動コメント継続を殺す）
+		v.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
 })
 
-local memoAutoCommit = augroup("MemoAutoCommit", { clear = true })
-local pattern = "*/vault/**.md"
-
-autocmd("VimLeave", {
-	pattern = pattern,
-	command = "MemoCommit",
-	group = memoAutoCommit,
-})
+-- -- Don't auto commenting new lines
+-- autocmd("BufEnter", {
+-- 	pattern = "*",
+-- 	command = "set fo-=c fo-=r fo-=o",
+-- 	group = myAutoCmd,
+-- })
+--
+-- local memoAutoCommit = augroup("MemoAutoCommit", { clear = true })
+-- local pattern = "*/vault/**.md"
+--
+-- autocmd("VimLeave", {
+-- 	pattern = pattern,
+-- 	command = "MemoCommit",
+-- 	group = memoAutoCommit,
+-- })

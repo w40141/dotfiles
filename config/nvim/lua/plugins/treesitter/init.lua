@@ -1,5 +1,4 @@
--- local opts = require("plugins.treesitter.opts")
-local conf = require("plugins.treesitter.config")
+local opts = require("plugins.treesitter.opts")
 
 return {
 	{
@@ -7,8 +6,8 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		event = { "BufRead" },
-		config = conf.treesitter,
+    event = { "BufWritePost", "BufNewFile" },
+    opts = opts.treesitter,
 		dependencies = {
 			"nvim-treesitter/nvim-treesitter-textobjects",
 		},
@@ -16,31 +15,33 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter-context",
 		-- url = https://github.com/nvim-treesitter/nvim-treesitter-context
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
+    opts = {},
 	},
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
+    opts = {},
 	},
 	{
 		"m-demare/hlargs.nvim",
 		-- url = "https://github.com/m-demare/hlargs.nvim",
-		event = { "BufNewFile", "BufRead" },
+    event = { "BufReadPost", "BufNewFile" },
 		opts = {},
 	},
-	{
-		"andersevenrud/nvim_context_vt",
-		-- url = "https://github.com/andersevenrud/nvim_context_vt",
-		opts = {
-			enabled = true,
-			disable_virtual_lines_ft = { "python", "yaml" },
-		},
-		event = { "BufNewFile", "BufRead" },
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-		},
-	},
+	-- {
+	-- 	"andersevenrud/nvim_context_vt",
+	-- 	-- url = "https://github.com/andersevenrud/nvim_context_vt",
+	-- 	opts = {
+	-- 		enabled = true,
+	-- 		disable_virtual_lines_ft = { "python", "yaml" },
+	-- 	},
+	-- 	event = { "BufNewFile", "BufRead" },
+	-- 	dependencies = {
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- },
 	{
 		"windwp/nvim-ts-autotag",
 		-- url = "https://github.com/windwp/nvim-ts-autotag"

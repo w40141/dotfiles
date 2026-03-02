@@ -1,33 +1,32 @@
 local v = vim
 local opt = v.opt
 local o = v.o
+local fn = v.fn
 
-o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-o.foldlevel = 99
-o.foldmethod = "expr"
-o.foldcolumn = "1" -- '0' is not bad
--- opt.foldlevelstart = 99
--- opt.foldenable = true
+-- ===== FOLD (treesitter if available, otherwise indent) =====
+do
+	local ok_ts = pcall(require, "vim.treesitter")
+	if ok_ts then
+		o.foldmethod = "expr"
+		o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+	else
+		o.foldmethod = "indent"
+	end
+	o.foldlevel = 99
+	o.foldcolumn = "1"
+end
 
--- 内容が変更されたら自動的に再読み込み
--- opt.autoread = true
--- opt.mousemoveevent = true
--- 全モードでマウスを有効化
+-- ===== UI / UX =====
 opt.mouse = "a"
--- 変更中のファイルでも、保存しないで他のファイルを表示する
--- opt.hidden = true
--- 行番号を表示
 opt.number = true
--- クリップボードをWindowsと連携する
-opt.clipboard = "unnamedplus"
--- ビープ音すべてを無効にする
-opt.visualbell = true
--- opt.errorbells = false
--- 自動更新の時間
-opt.updatetime = 300
--- タイトルをウィンドウ枠に表示する
-opt.title = true
--- 不可視文字を表示
+opt.signcolumn = "yes"
+opt.cursorline = true
+opt.termguicolors = true
+
+-- cmdheight=0 は好みだが事故りやすいので toggle 前提
+opt.cmdheight = 0
+
+-- 不可視文字（好み。toggleも用意する）
 opt.list = true
 opt.listchars = {
 	tab = "▸ ",
@@ -38,67 +37,100 @@ opt.listchars = {
 	nbsp = "%",
 	space = "⋅",
 }
--- opt.shada = ""
--- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
--- opt.wrap = true
--- コマンド行の長さ
-opt.cmdheight = 0
--- カラムを表示
-opt.signcolumn = "yes"
--- 1行が長くても全部表示
--- opt.display = "lastline"
--- ポップアップメニューの高さを指定
--- カーソル行の強調表示
-opt.cursorline = true
--- opt.background = ""
--- 文字を隠す
-opt.conceallevel = 1
--- opt.conceallevel = 2
--- opt.concealcursor = 'nc'
--- 検索時に大/小を区別しない
+
+-- conceal は filetype で変えるのが安全（ここは最小）
+opt.conceallevel = 0
+
+-- ===== Search =====
 opt.ignorecase = true
--- 検索時に大文字を含んでいたら大/小を区別
 opt.smartcase = true
--- deleteでインデントを削除可能にする
+
+-- ===== Editing =====
 opt.backspace = { "indent", "eol", "start" }
 opt.completeopt = { "menuone", "noselect", "popup" }
--- 閉括弧が入力された時、対応する括弧を強調する
 opt.showmatch = true
-opt.fileformats = { "unix", "mac", "dos" }
--- 閉括弧が入力された時対応する括弧に一時的に移動
 opt.startofline = false
--- コマンドライン履歴保存
 opt.history = 10000
--- カーソルを常に画面の中央に表示させる
-opt.scrolloff = 999
--- C-vの矩形選択で行末より後ろもカーソルを置ける
 opt.virtualedit = "block"
--- 新しく開く代わりにすでに開いてあるバッファを開く
 opt.switchbuf = "useopen"
--- <"や">"でインデントする際に"shiftwidth"の倍数に丸める
+
+-- scrolloff=999 は撤退。中心寄せはキーでやる。
+opt.scrolloff = 10
+
+-- ===== Indent =====
 opt.shiftround = true
--- 行頭での<tab>の幅
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.tabstop = 2
--- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
--- opt.smarttab = true
--- タブを空白入力に置換
 opt.expandtab = true
--- 補完時に大文字小文字を区別しない
 opt.infercase = true
--- 必要ない設定
+
+-- ===== Performance =====
+opt.updatetime = 300
+
+-- ===== Clipboard =====
+opt.clipboard = "unnamedplus"
+
+-- ===== Backups / Undo =====
+-- swap/backup切るなら undo 永続化はほぼ必須
 opt.writebackup = false
 opt.swapfile = false
--- opt.backup = false
-opt.termguicolors = true
--- カーソルを行頭、行末で止まらないにする
-opt.whichwrap = "b,s,h,l,<,>,[,]"
+-- opt.undofile = true
+-- do
+-- 	local undodir = fn.stdpath("state") .. "/undo"
+-- 	if fn.isdirectory(undodir) == 0 then
+-- 		fn.mkdir(undodir, "p")
+-- 	end
+-- 	opt.undodir = undodir
+-- end
+
+-- ===== Blend =====
 opt.winblend = 20
 opt.pumblend = 20
 
-opt.spell = true
+-- ===== Spell (default OFF, toggle前提) =====
+opt.spell = false
 opt.spelllang = { "en_us" }
--- opt.incsearch = true
 
-opt.dictionary = "/usr/share/dict/words"
+-- ===== Dictionary (guard) =====
+do
+	local dict = "/usr/share/dict/words"
+	if fn.filereadable(dict) == 1 then
+		opt.dictionary = dict
+	end
+end
+
+-- -- 変更中のファイルでも、保存しないで他のファイルを表示する
+-- -- opt.hidden = true
+-- -- ビープ音すべてを無効にする
+-- opt.visualbell = true
+-- -- opt.errorbells = false
+-- -- タイトルをウィンドウ枠に表示する
+-- opt.title = true
+--
+-- -- opt.shada = ""
+-- -- ウィンドウ幅より長い行は折り返して、次の行に続けて表示す
+-- -- opt.wrap = true
+-- -- 1行が長くても全部表示
+-- -- opt.display = "lastline"
+-- -- ポップアップメニューの高さを指定
+-- -- opt.background = ""
+-- -- opt.concealcursor = 'nc'
+-- -- opt.fileformats = { "unix", "mac", "dos" }
+-- -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
+-- -- opt.smarttab = true
+-- -- opt.backup = false
+-- -- カーソルを行頭、行末で止まらないにする
+-- opt.whichwrap = "b,s,h,l,<,>,[,]"
+-- opt.winblend = 20
+-- opt.pumblend = 20
+--
+-- opt.spell = true
+-- opt.spelllang = { "en_us" }
+-- -- opt.incsearch = true
+--
+-- -- dictionary path guard
+-- local dict = "/usr/share/dict/words"
+-- if v.fn.filereadable(dict) == 1 then
+-- 	v.opt.dictionary = dict
+-- end

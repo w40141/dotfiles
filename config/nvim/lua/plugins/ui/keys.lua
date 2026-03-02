@@ -2,16 +2,6 @@ local M = {}
 
 M.bufferline = {
 	{
-		"[BUF]d",
-		"<cmd>Bdelete<cr>",
-		{ desc = "[bufferline] 前のバッファを削除" },
-	},
-	{
-		"[BUF]w",
-		"<cmd>Bwipeout<cr>",
-		{ desc = "[bufferline] バッファを完全に削除" },
-	},
-	{
 		"[b",
 		"<cmd>BufferLineCyclePrev<cr>",
 		{ desc = "[bufferline] 前のバッファに移動" },
