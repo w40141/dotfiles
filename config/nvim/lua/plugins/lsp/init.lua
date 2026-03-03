@@ -5,7 +5,7 @@ return {
 	{
 		"mason-org/mason.nvim",
 		-- url = "https://github.com/mason-org/mason.nvim"
-		cmd = { "Mason" },
+		cmd = { "Mason", "MasonUpdate", "MasonLog", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
 		build = ":MasonUpdate",
 		opts = {
 			ui = {
@@ -25,7 +25,7 @@ return {
 		opts = {
 			automatic_enable = true,
 		},
-    event = { "FocusLost", "CursorHold" },
+		event = { "FocusLost", "CursorHold" },
 		dependencies = {
 			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
@@ -34,7 +34,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
-    event = { "FocusLost", "CursorHold" },
+		event = { "FocusLost", "CursorHold" },
 		config = conf.lspconfig,
 		keys = keys.lspconfig,
 	},

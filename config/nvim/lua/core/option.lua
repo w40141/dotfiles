@@ -4,17 +4,9 @@ local o = v.o
 local fn = v.fn
 
 -- ===== FOLD (treesitter if available, otherwise indent) =====
-do
-	local ok_ts = pcall(require, "vim.treesitter")
-	if ok_ts then
-		o.foldmethod = "expr"
-		o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-	else
-		o.foldmethod = "indent"
-	end
-	o.foldlevel = 99
-	o.foldcolumn = "1"
-end
+o.foldmethod = "indent"
+o.foldlevel = 99
+o.foldcolumn = "1"
 
 -- ===== UI / UX =====
 opt.mouse = "a"

@@ -16,9 +16,8 @@ end
 
 function M.lspconfig()
 	local v = vim
-	local api = v.api
 	local lsp = v.lsp
-	local util = require("lspconfig.util")
+	local api = v.api
 
 	-- ========= Diagnostic =========
 	v.diagnostic.config({
@@ -60,7 +59,7 @@ function M.lspconfig()
 
 	-- ========= on_attach =========
 	local function on_attach(client, bufnr)
-		-- Document highlight（色直指定はやめる：colorschemeと衝突する）
+		-- Document highlight
 		if client.server_capabilities.documentHighlightProvider then
 			local grp = api.nvim_create_augroup("LspDocumentHighlight:" .. bufnr, { clear = true })
 			api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
@@ -73,7 +72,6 @@ function M.lspconfig()
 				buffer = bufnr,
 				callback = lsp.buf.clear_references,
 			})
-			-- 見た目は控えめに：underlineだけで十分強い
 			api.nvim_set_hl(0, "LspReferenceText", { underline = true, bold = true })
 			api.nvim_set_hl(0, "LspReferenceRead", { underline = true, bold = true })
 			api.nvim_set_hl(0, "LspReferenceWrite", { underline = true, bold = true })
@@ -90,167 +88,19 @@ function M.lspconfig()
 		end
 	end
 
-	-- ========= helper =========
-	local function safe_setup(server, cfg)
-		cfg = cfg or {}
-		cfg.capabilities = cfg.capabilities or capabilities
-		cfg.on_attach = cfg.on_attach or on_attach
-    lsp.config(server, cfg)
-	end
-
-	-- ========= biome command resolver (local node_modules priority) =========
-	local function biome_cmd(root_dir)
-		local local_biome = root_dir and (root_dir .. "/node_modules/.bin/biome") or nil
-		if local_biome and v.uv.fs_stat(local_biome) then
-			return { local_biome, "lsp-proxy" }
-		end
-		return { "biome", "lsp-proxy" }
-	end
-
-	-- ========= Servers =========
-	safe_setup("bashls", {})
-
-	safe_setup("cspell_lsp", {})
-
-	safe_setup("docker_compose_language_service", {})
-	safe_setup("dockerls", {}) -- docker_language_server の lspconfig 名は dockerls が一般的
-
-	safe_setup("fish_lsp", {}) -- fish-lsp は fish_lsp が一般的
-
-	safe_setup("gopls", {
-		root_dir = util.root_pattern("go.work", "go.mod", ".git"),
-		settings = {
-			gopls = {
-				analyses = {
-					shadow = true,
-					unusedparams = true,
-					unusedwrite = true,
-					nilness = true,
-					useany = true,
-				},
-				hints = {
-					assignVariableTypes = true,
-					compositeLiteralFields = true,
-					compositeLiteralTypes = true,
-					functionTypeParameters = true,
-					parameterNames = true,
-					rangeVariableTypes = true,
-					constantValues = true,
-					ignoredError = true,
-				},
-				staticcheck = true,
-				gofumpt = true,
-				codelenses = {
-					tidy = true,
-					upgrade_dependency = true,
-					run_govulncheck = true,
-					test = true,
-					gc_details = false,
-					vendor = false,
-					generate = false,
-					regenerate_cgo = false,
-				},
-			},
-		},
+	lsp.config("*", {
+		root_markers = { ".git" },
+		capabilities = capabilities,
+		on_attach = on_attach,
 	})
 
-	safe_setup("html", {})
+	lsp.config("bashls", {})
 
-	safe_setup("lua_ls", {
-		settings = {
-			Lua = {
-				diagnostics = {
-					unusedLocalExclude = { "_*" },
-					globals = { "vim" },
-				},
-				runtime = { version = "LuaJIT" },
-				workspace = {
-					checkThirdParty = false,
-					library = v.list_extend(v.api.nvim_get_runtime_file("lua", true), {
-						"${3rd}/luv/library",
-						"${3rd}/busted/library",
-					}),
-				},
-			},
-		},
-		-- .luarc があるプロジェクトは尊重（あなたの意図を保持）
-		on_init = function(client)
-			if client.workspace_folders then
-				local path = client.workspace_folders[1].name
-				if
-					path ~= v.fn.stdpath("config")
-					and (v.uv.fs_stat(path .. "/.luarc.json") or v.uv.fs_stat(path .. "/.luarc.jsonc"))
-				then
-					return
-				end
-			end
-		end,
-	})
+	lsp.config("cspell_lsp", {})
 
-	safe_setup("marksman", {
-		cmd = { "marksman", "server" },
-		filetypes = { "markdown" },
-		root_dir = util.root_pattern(".marksman.toml", ".git"),
-	})
+	lsp.config("docker_compose_language_service", {})
 
-	safe_setup("sqls", {})
-	safe_setup("taplo", {})
-
-	safe_setup("yamlls", {
-		settings = {
-			yaml = {
-				schemas = {
-					["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
-				},
-				format = {
-					enable = true,
-					bracketSpacing = true,
-					proseWrap = "Always",
-				},
-				hover = true,
-				validate = true,
-			},
-		},
-	})
-
-	-- TypeScript (vtsls)
-	safe_setup("vtsls", {
-		root_dir = util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", ".git"),
-		single_file_support = false,
-		settings = {
-			typescript = {
-				preferences = {
-					importModuleSpecifier = "non-relative",
-				},
-				inlayHints = {
-					enumMemberValues = { enabled = true },
-					functionLikeReturnTypes = { enabled = true },
-					parameterNames = { enabled = "literals" },
-					parameterTypes = { enabled = true },
-					propertyDeclarationTypes = { enabled = true },
-					variableTypes = { enabled = false },
-				},
-			},
-		},
-	})
-
-	-- Biome
-	safe_setup("biome", {
-		root_dir = util.root_pattern("biome.json", "biome.jsonc", ".git"),
-		single_file_support = false,
-		filetypes = {
-			"javascript",
-			"javascriptreact",
-			"typescript",
-			"typescriptreact",
-			"json",
-			"jsonc",
-			"css",
-		},
-		on_new_config = function(new_config, root_dir)
-			new_config.cmd = biome_cmd(root_dir)
-		end,
-	})
+	lsp.config("docker_language_server", {})
 
 	-- local efm_enabled_language = {
 	-- 	markdown = {
@@ -301,6 +151,174 @@ function M.lspconfig()
 	-- 	},
 	-- })
 
+	lsp.config("fish-lsp", {})
+
+	lsp.config("gopls", {
+		settings = {
+			gopls = {
+				-- https://github.com/golang/tools/blob/master/gopls/doc/analyzers.md
+				analyses = {
+					shadow = true,
+					unusedparams = true,
+					unusedwrite = true,
+					nilness = true,
+					useany = true,
+				},
+				hints = {
+					assignVariableTypes = true,
+					compositeLiteralFields = true,
+					compositeLiteralTypes = true,
+					functionTypeParameters = true,
+					parameterNames = true,
+					rangeVariableTypes = true,
+					constantValues = true,
+					ignoredError = true,
+				},
+				staticcheck = true,
+				gofumpt = true,
+				codelenses = {
+					tidy = true,
+					upgrade_dependency = true,
+					run_govulncheck = true,
+					test = true,
+					gc_details = false,
+					vendor = false,
+					generate = false,
+					regenerate_cgo = false,
+				},
+			},
+		},
+	})
+
+	lsp.config("html", {})
+
+	lsp.config("lua_ls", {
+		cmd = { "lua-language-server" },
+		filetypes = { "lua" },
+		on_init = function(client)
+			if client.workspace_folders then
+				local path = client.workspace_folders[1].name
+				if
+					path ~= v.fn.stdpath("config")
+					and (v.uv.fs_stat(path .. "/.luarc.json") or v.uv.fs_stat(path .. "/.luarc.jsonc"))
+				then
+					return
+				end
+			end
+			client.config.settings.Lua = v.tbl_deep_extend("force", client.config.settings.Lua, {
+				runtime = { version = "LuaJIT" },
+				workspace = {
+					checkThirdParty = false,
+					library = v.list_extend(v.api.nvim_get_runtime_file("lua", true), {
+						"${3rd}/luv/library",
+						"${3rd}/busted/library",
+					}),
+				},
+			})
+		end,
+		settings = {
+			Lua = {
+				diagnostics = {
+					unusedLocalExclude = { "_*" },
+					globals = { "vim" },
+				},
+			},
+		},
+	})
+
+	lsp.config("marksman", {
+		cmd = { "marksman", "server" },
+		filetypes = { "markdown" },
+		root_markers = { ".git", ".marksman.toml" },
+	})
+
+	-- lsp.config("rumdl", {
+	-- 	cmd = { "rumdl", "server" },
+	-- 	filetypes = { "markdown" },
+	-- 	root_markers = { ".git" },
+	-- })
+
+	-- lsp.config("sqlls", {})
+	lsp.config("sqls", {})
+
+	lsp.config("taplo", {})
+
+	-- lsp.config("typos_lsp", {
+	-- 	init_options = {
+	-- 		config = "~/.config/nvim/spell/.typos.toml",
+	-- 		diagnosticSeverity = "Hint",
+	-- 	},
+	-- })
+
+	lsp.config("yamlls", {
+		settings = {
+			schemas = {
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+			},
+			format = {
+				enable = true,
+				bracketSpacing = true,
+				proseWrap = "Always",
+			},
+			hover = true,
+			validate = true,
+		},
+	})
+
+	-- TypeScript LSP (vtsls)
+	lsp.config("vtsls", {
+		-- vtslsは型/補完/定義ジャンプ担当。formatはBiomeに任せる
+		root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+		single_file_support = false,
+
+		settings = {
+			typescript = {
+				preferences = {
+					importModuleSpecifier = "non-relative",
+				},
+				inlayHints = {
+					enumMemberValues = { enabled = true },
+					functionLikeReturnTypes = { enabled = true },
+					parameterNames = { enabled = "literals" },
+					parameterTypes = { enabled = true },
+					propertyDeclarationTypes = { enabled = true },
+					variableTypes = { enabled = false },
+				},
+			},
+		},
+	})
+
+	-- biome実行パスを「プロジェクトのnode_modules/.bin優先」で解決する
+	local function biome_cmd(root_dir)
+		local local_biome = root_dir and (root_dir .. "/node_modules/.bin/biome") or nil
+		if local_biome and v.uv.fs_stat(local_biome) then
+			return { local_biome, "lsp-proxy" }
+		end
+		return { "biome", "lsp-proxy" }
+	end
+
+	lsp.config("biome", {
+		-- ★pnpm/monorepoで最重要：Biome設定ファイルを最優先でrootにする
+		root_markers = { "biome.json", "biome.jsonc", ".git" },
+
+		-- rootごとに「そのrootのbiome」を使う
+		on_new_config = function(new_config, root_dir)
+			new_config.cmd = biome_cmd(root_dir)
+		end,
+
+		single_file_support = false,
+
+		filetypes = {
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact",
+			"json",
+			"jsonc",
+			"css",
+		},
+	})
+
 	local ensure_installed = {
 		"bashls",
 		"biome",
@@ -322,6 +340,7 @@ function M.lspconfig()
 	}
 
 	require("mason-lspconfig").setup({
+		automatic_enable = true,
 		ensure_installed = ensure_installed,
 	})
 end
