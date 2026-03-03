@@ -13,26 +13,26 @@ autocmd("FileType", {
 		v.opt_local.formatoptions:remove({ "c", "r", "o" })
 	end,
 })
-vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client then
-      client.server_capabilities.semanticTokensProvider = nil
-    end
-  end,
+
+autocmd("QuitPre", {
+	callback = function()
+		-- 現在のウィンドウ番号を取得
+		local current_win = api.nvim_get_current_win()
+		-- すべてのウィンドウをループして調べる
+		for _, win in ipairs(api.nvim_list_wins()) do
+			-- カレント以外を調査
+			if win ~= current_win then
+				local buf = api.nvim_win_get_buf(win)
+				-- buftypeが空文字（通常のバッファ）があればループ終了
+				if vim.bo[buf].buftype == "" then
+					return
+				end
+			end
+		end
+		-- ここまで来たらカレント以外がすべて特殊ウィンドウということなので
+		-- カレント以外をすべて閉じる
+		v.cmd.only({ bang = true })
+		-- この後、ウィンドウ1つの状態でquitが実行されるので、Vimが終了する
+	end,
+	desc = "Close all special buffers and quit Neovim",
 })
--- -- Don't auto commenting new lines
--- autocmd("BufEnter", {
--- 	pattern = "*",
--- 	command = "set fo-=c fo-=r fo-=o",
--- 	group = myAutoCmd,
--- })
---
--- local memoAutoCommit = augroup("MemoAutoCommit", { clear = true })
--- local pattern = "*/vault/**.md"
---
--- autocmd("VimLeave", {
--- 	pattern = pattern,
--- 	command = "MemoCommit",
--- 	group = memoAutoCommit,
--- })
