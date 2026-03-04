@@ -12,15 +12,15 @@ key({ "n", "x" }, ",", "<nop>")
 
 -- <leader>f = find
 key({ "n", "x" }, "[FF]", "<nop>")
-key({ "n", "x" }, "<leader>f", "[FF]", { remap = true })
+key({ "n", "x" }, "<c-f>", "[FF]", { remap = true })
 
 -- <leader>m = dev
 key({ "n", "x" }, "[DEV]", "<nop>")
-key({ "n", "x" }, "<leader>m", "[DEV]", { remap = true })
+key({ "n", "x" }, "m", "[DEV]", { remap = true })
 
 -- <leader>t = toggle/tools
 key({ "n", "x" }, "[TR]", "<nop>")
-key({ "n", "x" }, "<leader>t", "[TR]", { remap = true })
+key({ "n", "x" }, "<c-t>", "[TR]", { remap = true })
 
 -- <leader>g = git
 key({ "n", "x" }, "[GIT]", "<nop>")
@@ -28,7 +28,7 @@ key({ "n", "x" }, "<leader>g", "[GIT]", { remap = true })
 
 -- <leader>b = buffer
 key({ "n", "x" }, "[BUF]", "<nop>")
-key({ "n", "x" }, "<leader>b", "[BUF]", { remap = true })
+key({ "n", "x" }, "<c-b>", "[BUF]", { remap = true })
 
 -- <leader>w = window
 key({ "n", "x" }, "[WIN]", "<nop>")
@@ -39,6 +39,10 @@ key({ "n", "x" }, "<leader>w", "[WIN]", { remap = true })
 -- ;と:を入れ替
 key("", ";", ":")
 key("", ":", ";")
+
+-- 行頭と行末への移動
+key("", "0", "$")
+key("", "1", "0")
 
 -- 検索結果の中心寄せ
 key("n", "n", "nzz")
@@ -51,11 +55,18 @@ key("n", "g#", "g#zz")
 -- 表示行移動
 key("n", "j", "gj")
 key("n", "k", "gk")
+key("n", "gj", "j")
+key("n", "gk", "k")
+
+-- 水平方向の移動を簡単にする
+key("n", "zl", "zL")
+key("n", "zh", "zH")
 
 -- 行頭/行末
-key("n", "<c-h>", "^")
-key("n", "<c-l>", "$")
-key("n", "<leader>p", "%")
+-- キー置換
+key("", "<leader>h", "^")
+key("", "<leader>l", "$")
+key("", "<leader>p", "%")
 
 -- ノーマルモードでも改行可能
 key("n", "<cr>", "i<cr><esc>", { desc = "Insert line below" })
@@ -72,13 +83,15 @@ key("n", "<leader>O", "O<esc>", { desc = "New line above" })
 key("n", "<tab>", "%", { desc = "Match pair" })
 
 -- ウィンドウ操作
-key("n", "[WIN]s", "<cmd>split<cr>", { desc = "Split" })
-key("n", "[WIN]v", "<cmd>vsplit<cr>", { desc = "Vsplit" })
-key("n", "[WIN]w", "<C-w>w", { desc = "Next window" })
-key("n", "[WIN]j", "<C-w>j", { desc = "Win down" })
-key("n", "[WIN]k", "<C-w>k", { desc = "Win up" })
-key("n", "[WIN]l", "<C-w>l", { desc = "Win right" })
-key("n", "[WIN]h", "<C-w>h", { desc = "Win left" })
+-- ウィンドウを分割
+key("n", "sp", ":<c-u>sp<cr>")
+key("n", "sv", ":<c-u>vs<cr>")
+-- 分割したウィンドウ間を移動
+key("n", "sw", "<c-w>w")
+key("n", "sj", "<c-w>j")
+key("n", "sk", "<c-w>k")
+key("n", "sl", "<c-w>l")
+key("n", "sh", "<c-w>h")
 key("n", "[WIN]c", "<C-w>c", { desc = "Close window" })
 key("n", "[WIN]o", "<C-w>o", { desc = "Only window" })
 
@@ -178,29 +191,6 @@ key("n", "gf", function()
 		v.cmd("normal! gF")
 	end
 end)
--- Windows判定が雑だったので改善（Wslも想定）
--- key("n", "gf", function()
--- 	local cfile = fn.expand("<cfile>")
--- 	if cfile:match("^https?://") then
--- 		local uname = v.loop.os_uname()
--- 		local sys = uname.sysname
--- 		if sys == "Darwin" then
--- 			v.ui.open(cfile)
--- 		elseif sys:match("Windows") then
--- 			fn.system({ "cmd.exe", "/c", "start", "", cfile })
--- 		else
--- 			-- Linux/WSL: xdg-open があればそれ
--- 			if fn.executable("xdg-open") == 1 then
--- 				fn.system({ "xdg-open", cfile })
--- 			else
--- 				-- 最後の手段：何もしない
--- 				v.notify("No opener found for URL", v.log.levels.WARN)
--- 			end
--- 		end
--- 	else
--- 		v.cmd("normal! gF")
--- 	end
--- end, { desc = "gf (open URL or file)" })
 
 -- ===== Toggles =====
 local function toggle_opt(name, on, off)

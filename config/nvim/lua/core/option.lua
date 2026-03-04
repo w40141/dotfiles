@@ -109,18 +109,15 @@ end
 -- -- opt.background = ""
 -- -- opt.concealcursor = 'nc'
 -- -- opt.fileformats = { "unix", "mac", "dos" }
--- -- 行頭ではshiftwidthの数だけ，以外ではtabstopの数だけindent
--- -- opt.smarttab = true
--- -- opt.backup = false
--- -- カーソルを行頭、行末で止まらないにする
--- opt.whichwrap = "b,s,h,l,<,>,[,]"
+-- カーソルを行頭、行末で止まらないにする
+opt.whichwrap = "b,s,h,l,<,>,[,]"
 -- opt.winblend = 20
 -- opt.pumblend = 20
 --
--- opt.spell = true
--- opt.spelllang = { "en_us" }
--- -- opt.incsearch = true
---
+opt.spell = true
+opt.spelllang = { "en_us" }
+-- opt.incsearch = true
+
 -- -- dictionary path guard
 -- local dict = "/usr/share/dict/words"
 -- if v.fn.filereadable(dict) == 1 then
