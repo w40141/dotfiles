@@ -202,29 +202,6 @@ local function toggle_opt(name, on, off)
 	end
 end
 
-key("n", "[TR]s", function()
-	v.opt.spell = not v.opt.spell:get()
-end, { desc = "Toggle spell" })
-
-key("n", "[TR]l", function()
-	v.opt.list = not v.opt.list:get()
-end, { desc = "Toggle listchars" })
-
-key("n", "[TR]c", function()
-	-- conceallevel 0 <-> 2
-	toggle_opt("conceallevel", 2, 0)
-end, { desc = "Toggle conceal" })
-
-key("n", "[TR]C", function()
-	-- cmdheight 0 <-> 1
-	toggle_opt("cmdheight", 0, 1)
-end, { desc = "Toggle cmdheight 0/1" })
-
-key("n", "[TR]z", function()
-	-- 一時的に中心へ寄せたい時用（scrolloffは適度にしておく）
-	v.cmd("normal! zz")
-end, { desc = "Center cursor" })
-
 -- カーソル下の単語を小文字にする
 key("n", "<leader>u", [[mzg~iw`z<Cmd>delmarks z<cr>]])
 -- カーソル下の単語を大文字にする
