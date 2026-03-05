@@ -30,8 +30,7 @@ g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 
-
-
+require("core.filetype")
 require("core.option")
 require("core.keymap")
 require("core.event")

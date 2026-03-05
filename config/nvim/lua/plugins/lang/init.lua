@@ -6,6 +6,7 @@ return {
 		-- url = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
 		opts = {
 			file_types = { "markdown", "Avante" },
+			latex = { enabled = false },
 		},
 		ft = { "markdown", "Avante" },
 	},
