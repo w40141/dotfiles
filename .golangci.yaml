@@ -41,7 +41,6 @@ linters:
     - unused
     - usestdlibvars
     - wastedassign
-    - wrapcheck
   settings:
     gocyclo:
       min-complexity: 12
