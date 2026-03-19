@@ -26,7 +26,6 @@ function M.lint()
 		"codespell",
 		-- "cspell",
 		"typos",
-		"woke",
 	}
 
 	lint.linters_by_ft = linters

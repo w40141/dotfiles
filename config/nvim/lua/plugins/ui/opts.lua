@@ -141,7 +141,12 @@ M.bufferline = {
 }
 
 M.aerial = {
-	backends = { "lsp", "treesitter", "markdown", "man" },
+	backends = {
+		["_"] = { "lsp", "treesitter" },
+		markdown = { "markdown" },
+		help = { "man" },
+	},
+	-- backends = { "lsp", "treesitter", "markdown", "man", "asciidoc" },
 	close_automatic_events = { "unsupported" },
 	default_bindings = true,
 	disable_max_lines = 10000,
