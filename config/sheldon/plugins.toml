@@ -1,0 +1,47 @@
+# `sheldon` configuration file
+# ----------------------------
+#
+# You can modify this file directly or you can use one of the following
+# `sheldon` commands which are provided to assist in editing the config file:
+#
+# - `sheldon add` to add a new plugin to the config file
+# - `sheldon edit` to open up the config file in the default editor
+# - `sheldon remove` to remove a plugin from the config file
+#
+# See the documentation for more https://github.com/rossmacarthur/sheldon#readme
+
+shell = "zsh"
+
+# fishライクな強力なTab補完を追加するプラグイン
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+# 補完機能の初期化（キャッシュを利用して起動を高速化）
+# ※必ずzsh-completionsの後、ハイライトなどの前に実行します
+[plugins.compinit]
+inline = 'autoload -Uz compinit && if [[ ! -f ~/.zcompdump ]]; then compinit; else compinit -C; fi'
+
+# Gitコマンド（addやcheckoutなど）をfzfでインタラクティブに操作できるようにするプラグイン
+[plugins.forgit]
+github = "wfxr/forgit"
+
+# fishの「abbr（スペースキーで展開されるエイリアス）」機能をzshで完全に再現するプラグイン
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+# コマンドを途中まで入力して上矢印キーを押すと、前方一致で履歴を検索・遡れるようにするプラグイン
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+# fishの「オートサジェスチョン（入力中に過去の履歴に基づいた灰色の予測候補を表示する機能）」を再現するプラグイン
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+# Tabキーでの補完メニューを、fzfの検索インターフェースに置き換えるプラグイン
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+# コマンドや構文に色を付けて見やすくするシンタックスハイライトプラグイン
+# ※正しい色付けのため、必ず一番最後に読み込みます
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"

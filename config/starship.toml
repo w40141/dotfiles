@@ -97,7 +97,24 @@ format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+# 文字色を暗いグレー(bg1)の太字に変更し、背景色(aqua)とのコントラストを高める
+format = '[[($all_status$ahead_behind )](bold fg:color_bg1 bg:color_aqua)]($style)'
+
+# 単なる記号ではなく、Nerd Fontアイコン＋件数＋スペース にして視認性を劇的に上げる
+modified = " ${count} "                       # 変更あり
+deleted = " ${count} "                        # 削除
+untracked = " ${count} "                      # 未追跡
+staged = " ${count} "                         # ステージ済み
+renamed = "󰑕 ${count} "                        # リネーム
+stashed = " ${count} "                        # スタッシュ
+conflicted = "💥 ${count} "                     # コンフリクト
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+
+# [git_status]
+# style = "bg:color_aqua"
+# format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
