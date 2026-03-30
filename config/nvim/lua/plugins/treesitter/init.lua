@@ -18,9 +18,9 @@ return {
 		init = function()
 			vim.g.no_plugin_maps = true
 		end,
-    config = conf.treesitter_textobjects,
+		config = conf.treesitter_textobjects,
 		keys = keys.treesitter_textobjects,
-			-- put your config here
+		-- put your config here
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",
@@ -30,7 +30,10 @@ return {
 	{
 		"JoosepAlviste/nvim-ts-context-commentstring",
 		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			enable_autocmd = false,
+		},
 	},
 	{
 		"m-demare/hlargs.nvim",

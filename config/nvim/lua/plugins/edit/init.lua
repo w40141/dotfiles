@@ -13,12 +13,15 @@ return {
 		-- Comment out
 		"numToStr/Comment.nvim",
 		-- url = "https://github.com/numToStr/Comment.nvim",
-		opts = {
-			pre_hook = function()
-				return require("ts_context_commentstring.internal").calculate_commentstring()
-			end,
+		event = { "BufReadPost", "BufNewFile" },
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
 		},
-		event = { "FocusLost", "CursorHold" },
+		opts = function()
+			return {
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			}
+		end,
 	},
 	{
 		-- Improved Yank and Put functionalities for Neovim
