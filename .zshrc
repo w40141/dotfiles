@@ -68,6 +68,20 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 # killコマンドの補完時にプロセス一覧をプレビュー表示する
 zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+# docker のサブコマンド補完時に help を下に表示
+zstyle ':fzf-tab:complete:docker:*' fzf-preview '
+  case "$group" in
+    subcommands)
+      docker "$word" --help 2>/dev/null | sed -n "1,120p"
+      ;;
+    options)
+      docker --help 2>/dev/null | grep -E -- "$word"
+      ;;
+    *)
+      docker "$word" --help 2>/dev/null | sed -n "1,80p"
+      ;;
+  esac
+'
 
 # ==========================================
 # ツールとプラグインの初期化
