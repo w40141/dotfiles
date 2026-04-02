@@ -23,6 +23,7 @@ M.conform = {
 		toml = { "taplo" },
 		yaml = { "yamlfmt" },
 		-- xml = { "xmlformat" },
+    zsh = { "beautysh" },
 		["_"] = { "trim_whitespace", "trim_newlines", "squeeze_blanks" },
 	},
 	formatters = {
