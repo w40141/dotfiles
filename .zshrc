@@ -239,3 +239,4 @@ _git_custom_wrapper() {
 }
 
 compdef _git_custom_wrapper git
+alias explorer.exe="/mnt/c/Windows/explorer.exe"
