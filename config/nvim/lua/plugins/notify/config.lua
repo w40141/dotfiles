@@ -1,73 +1,5 @@
 local M = {}
 
-function M.noice()
-	require("noice").setup({
-		lsp = {
-			override = {
-				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-				["vim.lsp.util.stylize_markdown"] = true,
-				["cmp.entry.get_documentation"] = true,
-			},
-			hover = {
-				enabled = true,
-			},
-			signature = {
-				-- lsp_signature.nvimを使うためfalseにする
-				enabled = false,
-			},
-			format = {
-				spinner = {
-					name = "dots12",
-				},
-			},
-		},
-		cmdline = {
-			format = {
-				search_down = {
-					kind = "search",
-					pattern = "^/",
-					icon = " ",
-					lang = "regex",
-				},
-				search_up = {
-					kind = "search",
-					pattern = "^%?",
-					icon = " ",
-					lang = "regex",
-				},
-				filter = {
-					pattern = "^:%s*!",
-					icon = " ",
-					lang = "bash",
-				},
-			},
-		},
-		presets = {
-			bottom_search = true, -- use a classic bottom cmdline for search
-			command_palette = true, -- position the cmdline and popupmenu together
-			long_message_to_split = true, -- long messages will be sent to a split
-			inc_rename = false, -- enables an input dialog for inc-rename.nvim
-			lsp_doc_border = false, -- add a border to hover docs and signature help
-		},
-		views = {
-			confirm = {
-				position = {
-					row = "90%",
-					col = "90%",
-				},
-			},
-		},
-	})
-end
-
-function M.notify()
-	require("notify").setup({
-		stages = "slide",
-		background_colour = "FloatShadow",
-		timeout = 3000,
-	})
-end
-
 function M.fidget()
 	require("fidget").setup({
 		-- Options related to LSP progress subsystem
@@ -176,10 +108,6 @@ function M.fidget()
 			path = string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
 		},
 	})
-end
-
-function M.dressing()
-	require("dressing").setup()
 end
 
 return M

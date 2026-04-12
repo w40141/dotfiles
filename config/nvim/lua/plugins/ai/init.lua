@@ -1,8 +1,5 @@
 local opts = require("plugins.ai.opts")
 
--- TODO: cursor
--- https://github.com/yetone/avante.nvim
-
 return {
 	{
 		"zbirenbaum/copilot.lua",
@@ -13,30 +10,6 @@ return {
 		opts = opts.copilot,
 	},
 	{
-		-- TODO: copilot chat
-		-- https://github.com/CopilotC-Nvim/CopilotChat.nvim
-		-- https://tomato3713.hatenablog.com/entry/2024/05/29/211918
-		-- https://qiita.com/lx-sasabo/items/97c49d0f354ea3bdd525
-		"CopilotC-Nvim/CopilotChat.nvim",
-		-- url = "https://github.com/CopilotC-Nvim/CopilotChat.nvim",
-		dependencies = {
-			"zbirenbaum/copilot.lua",
-			"nvim-lua/plenary.nvim",
-		},
-		cmd = {
-			"CopilotChat",
-			"CopilotChatOpen",
-			"CopilotChatToggle",
-			"CopilotChatAgents",
-			"CopilotChatModels",
-			"CopilotChatPrompts",
-		},
-		build = "make tiktoken", -- Only on MacOS or Linux
-		opts = {
-			-- See Configuration section for options
-		},
-	},
-	{
 		"yetone/avante.nvim",
 		-- url = "https://github.com/yetone/avante.nvim",
 		event = "VeryLazy",
@@ -44,16 +17,30 @@ return {
 		opts = opts.avante,
 		build = "make",
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
-			"stevearc/dressing.nvim",
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
+			--- The below dependencies are optional,
 			"nvim-telescope/telescope.nvim",
-			-- "hrsh7th/nvim-cmp",
+			"hrsh7th/nvim-cmp",
 			"nvim-tree/nvim-web-devicons",
-			"zbirenbaum/copilot.lua",
-			"MeanderingProgrammer/render-markdown.nvim",
-			"HakonHarnes/img-clip.nvim",
+			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			{
+				-- support for image pasting
+				"HakonHarnes/img-clip.nvim",
+				event = "VeryLazy",
+				opts = {
+					-- recommended settings
+					default = {
+						embed_image_as_base64 = false,
+						prompt_for_file_name = false,
+						drag_and_drop = {
+							insert_mode = true,
+						},
+						-- required for Windows users
+						use_absolute_path = true,
+					},
+				},
+			},
 		},
 	},
 }

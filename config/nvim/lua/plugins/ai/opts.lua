@@ -47,8 +47,6 @@ M.copilot = {
 
 M.avante = {
 	provider = "copilot", -- copilotを使用
-	-- auto_suggestions_provider = "copilot", -- 自動提案もcopilotを使用
-
 	behaviour = {
 		auto_suggestions = false,
 		auto_set_highlight_group = true,
@@ -57,7 +55,6 @@ M.avante = {
 		support_paste_from_clipboard = true,
 		minimize_diff = true,
 	},
-
 	windows = {
 		position = "right",
 		wrap = true,
@@ -76,7 +73,7 @@ M.avante = {
 			start_insert = true,
 		},
 		ask = {
-			floating = false,
+			floating = true,
 			start_insert = true,
 			border = "rounded",
 			focus_on_apply = "ours",

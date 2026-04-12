@@ -1,32 +1,26 @@
-local conf = require("plugins.notify.config")
--- local opts = require("plugins.notify.opts")
--- local setup = require("plugins.notiry.setup")
+local opts = require("plugins.notify.opts")
 
 return {
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {
-	-- 		-- add any options here
-	-- 	},
-	-- 	dependencies = {
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		{ "rcarriga/nvim-notify", config = conf.notify },
-	-- 	},
-	-- 	init = setup.noice,
-	-- 	config = conf.noice,
-	-- },
-	-- {
-	-- 	"stevearc/dressing.nvim",
-	-- 	-- url = "https://github.com/stevearc/dressing.nvim",
-	-- 	opts = {},
-	-- 	config = conf.dressing,
-	-- },
+	{
+		"folke/noice.nvim",
+		-- url = "https://github.com/folke/noice.nvim",
+		event = "VeryLazy",
+		opts = opts.noice,
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+			"rcarriga/nvim-notify",
+		},
+	},
+	{
+		"rcarriga/nvim-notify",
+		-- url = "https://github.com/rcarriga/nvim-notify",
+		event = "VeryLazy",
+		opts = opts.notify,
+	},
 	{
 		"j-hui/fidget.nvim",
 		-- url = "https://github.com/j-hui/fidget.nvim",
-		config = conf.fidget,
-		-- opts = opts.fidget,
-		event = { "VeryLazy" },
+		event = "LspAttach",
+		opts = opts.fidget,
 	},
 }
