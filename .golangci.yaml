@@ -1,6 +1,7 @@
 version: "2"
 run:
   timeout: 5m
+  allow-parallel-runners: true
 linters:
   default: none
   enable:
@@ -15,6 +16,7 @@ linters:
     - errorlint
     - exhaustive
     - funlen
+    - gocognit
     - gocritic
     - gocyclo
     - gomoddirectives
@@ -43,7 +45,9 @@ linters:
     - wastedassign
   settings:
     gocyclo:
-      min-complexity: 12
+      min-complexity: 15
+    gocognit:
+      min-complexity: 20
     funlen:
       lines: 80
       statements: 40
@@ -63,8 +67,7 @@ linters:
         - style
         - diagnostic
     lll:
-      line-length: 120
-      tab-width: 1
+      line-length: 100
   exclusions:
     generated: strict
     warn-unused: true
@@ -85,7 +88,7 @@ formatters:
     - golines
   settings:
     golines:
-      max-len: 120
+      max-len: 100
       tab-len: 1
       shorten-comments: true
       reformat-tags: true
