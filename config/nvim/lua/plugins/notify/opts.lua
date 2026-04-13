@@ -9,7 +9,8 @@ M.fidget = {
 }
 
 M.notify = {
-	stages = "slide",
+	-- stages = "slide",
+	stages = "fade",
 	background_colour = "FloatShadow",
 	timeout = 3000,
 }
@@ -21,24 +22,24 @@ M.noice = {
 				kind = "search",
 				pattern = "^/",
 				icon = " ",
-				lng = "regex",
+				lang = "regex",
 			},
 			search_up = {
 				kind = "search",
 				pattern = "^%?",
 				icon = " ",
-				lng = "regex",
+				lang = "regex",
 			},
 			filter = {
 				pattern = "^:%s*!",
 				icon = " ",
-				lng = "bash",
+				lang = "bash",
 			},
 		},
 	},
 	lsp = {
 		progress = {
-			enabled = false,
+			enabled = true,
 		},
 		override = {
 			["vim.lsp.util.convert_input_to_markdown_lines"] = true,
@@ -59,7 +60,7 @@ M.noice = {
 		},
 	},
 	presets = {
-		bottom_search = true, -- use a classic bottom cmdline for search
+		bottom_search = false, -- use a classic bottom cmdline for search
 		command_palette = true, -- position the cmdline and popupmenu together
 		long_message_to_split = true, -- long messages will be sent to a split
 		inc_rename = false, -- enables an input dialog for inc-rename.nvim
