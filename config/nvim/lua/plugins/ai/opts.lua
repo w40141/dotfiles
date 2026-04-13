@@ -46,7 +46,7 @@ M.copilot = {
 }
 
 M.avante = {
-	provider = "copilot", -- copilotを使用
+  provider = "copilot",
 	behaviour = {
 		auto_suggestions = false,
 		auto_set_highlight_group = true,
