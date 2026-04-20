@@ -9,6 +9,7 @@ M.conform = {
 		fsharp = { "fantomas" },
 		go = { "gofumpt", "goimports", "golines" },
 		hcl = { "hclfmt" },
+    html = { "prettier" },
 		json = { "fixjson" },
 		lua = { "stylua" },
 		markdown = { "markdownlint-cli2" },
