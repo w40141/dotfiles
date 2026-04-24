@@ -40,13 +40,12 @@ return {
 		"norcalli/nvim-colorizer.lua",
 		-- url = "https://github.com/norcalli/nvim-colorizer.lua",
 		cmd = { "ColorizerToggle" },
-		opts = {
-			{
+		config = function()
+			require("colorizer").setup({
 				"css",
 				"javascript",
 				"typescript",
-			},
-			{
+			}, {
 				RGB = true, -- #RGB hex codes
 				RRGGBB = true, -- #RRGGBB hex codes
 				names = true, -- "Name" codes like Blue
@@ -55,8 +54,8 @@ return {
 				hsl_fn = false, -- CSS hsl() and hsla() functions
 				css = false, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
 				css_fn = false, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-			},
-		},
+			})
+		end,
 	},
 	{
 		"vinnymeller/swagger-preview.nvim",
