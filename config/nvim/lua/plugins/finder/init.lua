@@ -13,15 +13,10 @@ return {
 		keys = keys.telescope,
 		config = conf.telescope,
 		dependencies = {
-			{
-				"nvim-telescope/telescope-ui-select.nvim",
-			},
-			{
-				"delphinus/telescope-memo.nvim",
-			},
-			{
-				"nvim-telescope/telescope-frecency.nvim",
-			},
+			"nvim-telescope/telescope-ui-select.nvim",
+			"delphinus/telescope-memo.nvim",
+			"nvim-telescope/telescope-frecency.nvim",
+			-- "delphinus/md-render.nvim",
 		},
 	},
 	{

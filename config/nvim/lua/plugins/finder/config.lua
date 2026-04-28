@@ -20,6 +20,7 @@ function M.telescope()
 			actions.file_edit(prompt_bufnr)
 		end
 	end
+
 	telescope.setup({
 		defaults = {
 			vimgrep_arguments = {
@@ -96,6 +97,10 @@ function M.telescope()
 	telescope.load_extension("memo")
 	telescope.load_extension("textcase")
 	telescope.load_extension("frecency")
+
+	-- local previewer = require("md-render.telescope").previewer()
+	-- require("telescope.builtin").find_files({ previewer = previewer })
+	-- require("telescope").extensions.egrepify.egrepify({ previewer = previewer })
 end
 
 return M
