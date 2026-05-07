@@ -192,16 +192,6 @@ key("n", "gf", function()
 	end
 end)
 
--- ===== Toggles =====
-local function toggle_opt(name, on, off)
-	local cur = v.opt[name]:get()
-	if cur == on then
-		v.opt[name] = off
-	else
-		v.opt[name] = on
-	end
-end
-
 -- カーソル下の単語を小文字にする
 key("n", "<leader>u", [[mzg~iw`z<Cmd>delmarks z<cr>]])
 -- カーソル下の単語を大文字にする
