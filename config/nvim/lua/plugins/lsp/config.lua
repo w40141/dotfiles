@@ -56,9 +56,30 @@ function M.lspconfig()
 	if ok_cmp then
 		capabilities = cmp_lsp.default_capabilities(capabilities)
 	end
-
 	-- ========= on_attach =========
 	local function on_attach(client, bufnr)
+    -- Inlay Hint
+		if client.server_capabilities.inlayHintProvider then
+			-- 初期状態はオン
+			lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
+			local hint_grp = v.api.nvim_create_augroup("LspInlayHintToggle:" .. bufnr, { clear = true })
+			v.api.nvim_create_autocmd("InsertEnter", {
+				group = hint_grp,
+				buffer = bufnr,
+				callback = function()
+					lsp.inlay_hint.enable(false, { bufnr = bufnr })
+				end,
+			})
+			-- Insertモードを抜けたら(Normalに戻ったら)再表示する
+			v.api.nvim_create_autocmd("InsertLeave", {
+				group = hint_grp,
+				buffer = bufnr,
+				callback = function()
+					lsp.inlay_hint.enable(true, { bufnr = bufnr })
+				end,
+			})
+		end
 		-- Document highlight
 		if client.server_capabilities.documentHighlightProvider then
 			local grp = api.nvim_create_augroup("LspDocumentHighlight:" .. bufnr, { clear = true })
@@ -85,6 +106,15 @@ function M.lspconfig()
 		if client.name == "biome" then
 			client.server_capabilities.documentFormattingProvider = true
 			client.server_capabilities.documentRangeFormattingProvider = true
+		end
+		-- Elixir の保存時自動フォーマット
+		if client.name == "elixirls" then
+			api.nvim_create_autocmd("BufWritePre", {
+				buffer = bufnr,
+				callback = function()
+					lsp.buf.format({ async = false, id = client.id })
+				end,
+			})
 		end
 	end
 
@@ -150,6 +180,32 @@ function M.lspconfig()
 	-- 		languages = efm_enabled_language,
 	-- 	},
 	-- })
+
+	lsp.config("elixirls", {
+		cmd = { "elixir-ls" },
+		-- プロジェクトのルートディレクトリ判定（mix.exs を基準にする）
+		root_markers = { "mix.exs", ".git" },
+		settings = {
+			elixirLS = {
+				-- 補完や静的解析のための基本設定
+				dialyzerEnabled = true,
+				fetchDeps = false, -- エディタを開くたびに依存関係を取得して重くなるのを防ぐ
+				enableTestLenses = true,
+				suggestSpecs = true,
+			},
+		},
+	})
+
+	lsp.config("elp", {
+		-- ELP (Erlang Language Platform) の設定
+		-- Erlangプロジェクトのルートディレクトリ判定基準
+		root_markers = { "rebar.config", "erlang.mk", ".git" },
+		settings = {
+			elp = {
+				-- 必要に応じてELP特有の設定を書けます（デフォルトでも十分強力に動きます）
+			},
+		},
+	})
 
 	lsp.config("fish-lsp", {})
 
@@ -322,21 +378,23 @@ function M.lspconfig()
 	local ensure_installed = {
 		"bashls",
 		"biome",
-		-- "cspell_ls",
 		"docker_compose_language_service",
 		"docker_language_server",
 		"efm",
+		"elixirls",
+		"elp",
 		"fish_lsp",
 		"gopls",
 		"html",
 		"lua_ls",
 		"marksman",
-		-- "rumdl",
 		"sqls",
 		"taplo",
-		-- "typos_lsp",
-		"yamlls",
 		"vtsls",
+		"yamlls",
+		-- "cspell_ls",
+		-- "rumdl",
+		-- "typos_lsp",
 	}
 
 	require("mason-lspconfig").setup({

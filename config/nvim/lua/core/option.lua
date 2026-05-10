@@ -4,9 +4,11 @@ local o = v.o
 local fn = v.fn
 
 -- ===== FOLD (treesitter if available, otherwise indent) =====
-o.foldmethod = "indent"
-o.foldlevel = 99
 o.foldcolumn = "1"
+o.foldmethod = "expr"
+o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- o.foldtext = "v:lua.vim.treesitter.foldtext()" -- (任意: 折りたたまれた行もシンタックスハイライトされます)
+o.foldlevel = 99
 
 -- ===== UI / UX =====
 opt.mouse = "a"

@@ -24,7 +24,7 @@ autocmd("QuitPre", {
 			if win ~= current_win then
 				local buf = api.nvim_win_get_buf(win)
 				-- buftypeが空文字（通常のバッファ）があればループ終了
-				if vim.bo[buf].buftype == "" then
+				if v.bo[buf].buftype == "" then
 					return
 				end
 			end
@@ -35,4 +35,11 @@ autocmd("QuitPre", {
 		-- この後、ウィンドウ1つの状態でquitが実行されるので、Vimが終了する
 	end,
 	desc = "Close all special buffers and quit Neovim",
+})
+
+autocmd("TextYankPost", {
+	group = augroup("HighlightYank", { clear = true }),
+	callback = function()
+		v.highlight.on_yank({ higroup = "IncSearch", timeout = 200 })
+	end,
 })
