@@ -1,6 +1,6 @@
--- local opts = require("plugins.format.opts")
+local opts = require("plugins.format.opts")
 local setup = require("plugins.format.setup")
--- local keys = require("plugins.format.keys")
+local keys = require("plugins.format.keys")
 
 return {
 	{
@@ -9,10 +9,8 @@ return {
 		event = { "FocusLost", "CursorHold" },
 		cmd = { "ConformInfo" },
 		init = setup.conform,
-		-- keys = keys.conform,
-		-- opts = opts.conform,
-		keys = require("plugins.format.keys"),
-		opts = require("plugins.format.opts"),
+		keys = keys.conform,
+		opts = opts.conform,
 		dependencies = {
 			{
 				"zapling/mason-conform.nvim",
