@@ -59,27 +59,27 @@ function M.lspconfig()
 	-- ========= on_attach =========
 	local function on_attach(client, bufnr)
     -- Inlay Hint
-		if client.server_capabilities.inlayHintProvider then
-			-- 初期状態はオン
-			lsp.inlay_hint.enable(true, { bufnr = bufnr })
-
-			local hint_grp = v.api.nvim_create_augroup("LspInlayHintToggle:" .. bufnr, { clear = true })
-			v.api.nvim_create_autocmd("InsertEnter", {
-				group = hint_grp,
-				buffer = bufnr,
-				callback = function()
-					lsp.inlay_hint.enable(false, { bufnr = bufnr })
-				end,
-			})
-			-- Insertモードを抜けたら(Normalに戻ったら)再表示する
-			v.api.nvim_create_autocmd("InsertLeave", {
-				group = hint_grp,
-				buffer = bufnr,
-				callback = function()
-					lsp.inlay_hint.enable(true, { bufnr = bufnr })
-				end,
-			})
-		end
+		-- if client.server_capabilities.inlayHintProvider then
+		-- 	-- 初期状態はオン
+		-- 	lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		--
+		-- 	local hint_grp = v.api.nvim_create_augroup("LspInlayHintToggle:" .. bufnr, { clear = true })
+		-- 	v.api.nvim_create_autocmd("InsertEnter", {
+		-- 		group = hint_grp,
+		-- 		buffer = bufnr,
+		-- 		callback = function()
+		-- 			lsp.inlay_hint.enable(false, { bufnr = bufnr })
+		-- 		end,
+		-- 	})
+		-- 	-- Insertモードを抜けたら(Normalに戻ったら)再表示する
+		-- 	v.api.nvim_create_autocmd("InsertLeave", {
+		-- 		group = hint_grp,
+		-- 		buffer = bufnr,
+		-- 		callback = function()
+		-- 			lsp.inlay_hint.enable(true, { bufnr = bufnr })
+		-- 		end,
+		-- 	})
+		-- end
 		-- Document highlight
 		if client.server_capabilities.documentHighlightProvider then
 			local grp = api.nvim_create_augroup("LspDocumentHighlight:" .. bufnr, { clear = true })
