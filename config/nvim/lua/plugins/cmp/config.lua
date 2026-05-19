@@ -36,6 +36,7 @@ function M.cmp()
 		return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 	end
 	cmp.setup({
+		preselect = cmp.PreselectMode.None,
 		performance = {
 			debounce = 0,
 			throttle = 0,
@@ -70,10 +71,18 @@ function M.cmp()
 			documentation = cmp.config.window.bordered(),
 		},
 		mapping = {
-			["<CR>"] = cmp.mapping.confirm({
-				behavior = cmp.ConfirmBehavior.Replace,
-				select = true,
-			}),
+			["<CR>"] = cmp.mapping(function(fallback)
+				if cmp.visible() and cmp.get_selected_entry() then
+					cmp.confirm({
+						behavior = cmp.ConfirmBehavior.Replace,
+						select = false,
+					})
+				elseif cmp.visible() then
+					cmp.abort()
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
 			-- ["<C-,>"] = cmp.mapping.complete(),
 			["<C-n>"] = cmp.mapping.select_next_item(),
 			["<C-p>"] = cmp.mapping.select_prev_item(),
