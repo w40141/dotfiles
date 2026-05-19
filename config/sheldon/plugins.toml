@@ -16,20 +16,43 @@ shell = "zsh"
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
-# Docker の補完定義を fpath に追加
-[plugins.docker-completion]
+[plugins.completion-paths]
 inline = '''
-if command -v docker >/dev/null 2>&1; then
-  mkdir -p ~/.zsh/completions
-  docker completion zsh > ~/.zsh/completions/_docker 2>/dev/null
-  fpath=(~/.zsh/completions $fpath)
+# 自作・各ツール生成の zsh 補完置き場
+fpath=("$HOME/.zsh/completions" $fpath)
+
+# Homebrew が持っている zsh 補完
+if command -v brew >/dev/null 2>&1; then
+  fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
 fi
 '''
+[templates]
+ohmyzsh-terraform = '''
+fpath=( "{{ dir }}/plugins/terraform" $fpath )
+'''
+
+[plugins.ohmyzsh-terraform]
+github = "ohmyzsh/ohmyzsh"
+apply = ["ohmyzsh-terraform"]
+
+# Docker の補完定義を fpath に追加
+# [plugins.docker-completion]
+# inline = '''
+# if command -v docker >/dev/null 2>&1; then
+#   mkdir -p ~/.zsh/completions
+#   docker completion zsh > ~/.zsh/completions/_docker 2>/dev/null
+#   fpath=(~/.zsh/completions $fpath)
+# fi
+# '''
 
 # 補完機能の初期化（キャッシュを利用して起動を高速化）
 # ※必ずzsh-completionsの後、ハイライトなどの前に実行します
 [plugins.compinit]
 inline = 'autoload -Uz compinit && if [[ ! -f ~/.zcompdump ]]; then compinit; else compinit -C; fi'
+
+# Tabキーでの補完メニューを、fzfの検索インターフェースに置き換えるプラグイン
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
 
 # Gitコマンド（addやcheckoutなど）をfzfでインタラクティブに操作できるようにするプラグイン
 [plugins.forgit]
@@ -46,10 +69,6 @@ github = "zsh-users/zsh-history-substring-search"
 # fishの「オートサジェスチョン（入力中に過去の履歴に基づいた灰色の予測候補を表示する機能）」を再現するプラグイン
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-
-# Tabキーでの補完メニューを、fzfの検索インターフェースに置き換えるプラグイン
-[plugins.fzf-tab]
-github = "Aloxaf/fzf-tab"
 
 # コマンドや構文に色を付けて見やすくするシンタックスハイライトプラグイン
 # ※正しい色付けのため、必ず一番最後に読み込みます

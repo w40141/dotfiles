@@ -49,38 +49,75 @@ setopt HIST_REDUCE_BLANKS
 setopt INTERACTIVE_COMMENTS
 
 zmodload zsh/complist
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' verbose yes
 
 # fzf-tab
-zstyle ':fzf-tab:*' use-fzf-default-opts yes
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+zstyle ':fzf-tab:*' fzf-flags --height=40% --layout=reverse --border
+zstyle ':fzf-tab:*' show-group full
+zstyle ':fzf-tab:*' switch-group ',' '.'
 
-zstyle ':fzf-tab:complete:docker:*' fzf-preview '
-  case "$group" in
-    subcommands) docker "$word" --help 2>/dev/null | sed -n "1,120p" ;;
-    options)     docker --help 2>/dev/null | grep -E -- "$word" ;;
-    *)           docker "$word" --help 2>/dev/null | sed -n "1,80p" ;;
-  esac
-'
+# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# zstyle ':fzf-tab:complete:kill:*' fzf-preview 'ps --pid=$word -o cmd --no-headers -w -w'
+
+# zstyle ':fzf-tab:complete:docker:*' fzf-preview '
+#   case "$group" in
+#     subcommands) docker "$word" --help 2>/dev/null | sed -n "1,120p" ;;
+#     options)     docker --help 2>/dev/null | grep -E -- "$word" ;;
+#     *)           docker "$word" --help 2>/dev/null | sed -n "1,80p" ;;
+#   esac
+# '
+
+# zstyle ':fzf-tab:complete:terraform:*' fzf-preview '
+#   if [[ "$word" == -* ]]; then
+#     terraform -help 2>/dev/null | sed -n "1,120p"
+#   else
+#     terraform "$word" -help 2>/dev/null | sed -n "1,120p"
+#   fi
+# '
 
 # gitプレビュー
-zstyle ':fzf-tab:complete:git:*' fzf-preview 'git diff --color=always $word 2>/dev/null'
+# zstyle ':fzf-tab:complete:git:*' fzf-preview 'git diff --color=always $word 2>/dev/null'
+
+zstyle ':fzf-tab:*' fzf-preview '
+  if [[ -n "$realpath" ]]; then
+    if [[ -d "$realpath" ]]; then
+      eza -la --icons --color=always "$realpath" 2>/dev/null || ls -la "$realpath"
+    elif command -v bat >/dev/null 2>&1; then
+      bat --color=always --style=numbers --line-range :200 "$realpath" 2>/dev/null
+    else
+      sed -n "1,120p" "$realpath" 2>/dev/null
+    fi
+  elif [[ -n "$desc" ]]; then
+    print -r -- "$desc"
+  fi
+'
 
 # ==========================================
 # ツールとプラグインの初期化
 # ==========================================
+source <(fzf --zsh)
+
 eval "$(sheldon source)"
 eval "$(starship init zsh)"
-source <(fzf --zsh)
 
 if command -v zoxide >/dev/null; then
     eval "$(zoxide init zsh)"
 fi
+
 if command -v mise >/dev/null; then
     eval "$(mise activate zsh)"
 fi
+
+# Terraform 補完
+# if command -v terraform >/dev/null 2>&1; then
+#   autoload -U +X bashcompinit && bashcompinit
+#   complete -o nospace -C "$(command -v terraform)" terraform
+# fi
+
 # ==========================================
 # 展開されるエイリアス
 # ==========================================
