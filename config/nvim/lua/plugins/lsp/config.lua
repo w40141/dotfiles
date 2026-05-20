@@ -58,7 +58,7 @@ function M.lspconfig()
 	end
 	-- ========= on_attach =========
 	local function on_attach(client, bufnr)
-    -- Inlay Hint
+		-- Inlay Hint
 		-- if client.server_capabilities.inlayHintProvider then
 		-- 	-- 初期状態はオン
 		-- 	lsp.inlay_hint.enable(true, { bufnr = bufnr })
@@ -299,6 +299,20 @@ function M.lspconfig()
 
 	lsp.config("taplo", {})
 
+	lsp.config("terraformls", {
+		cmd = { "terraform-ls", "serve" },
+		filetypes = {
+			"terraform",
+			"terraform-vars",
+		},
+		root_markers = {
+			".terraform",
+			".git",
+			"main.tf",
+			"versions.tf",
+		},
+	})
+
 	-- lsp.config("typos_lsp", {
 	-- 	init_options = {
 	-- 		config = "~/.config/nvim/spell/.typos.toml",
@@ -390,6 +404,7 @@ function M.lspconfig()
 		"marksman",
 		"sqls",
 		"taplo",
+		"terraformls",
 		"vtsls",
 		"yamlls",
 		-- "cspell_ls",
