@@ -6,11 +6,11 @@ M.fidget = {
 			avoid = { "NvimTree" },
 		},
 	},
-	integration = {
-		["nvim-tree"] = {
-			enable = false,
-		},
-	},
+	-- integration = {
+	-- 	["nvim-tree"] = {
+	-- 		enable = false,
+	-- 	},
+	-- },
 }
 
 M.notify = {
