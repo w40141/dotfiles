@@ -5,6 +5,7 @@ M.fidget = {
 		window = {
 			avoid = { "NvimTree" },
 		},
+		override_vim_notify = true,
 	},
 	-- integration = {
 	-- 	["nvim-tree"] = {
