@@ -10,16 +10,36 @@ return {
 		},
 		ft = { "markdown", "Avante" },
 	},
+	-- {
+	-- 	"iamcco/markdown-preview.nvim",
+	-- 	-- url = "https://github.com/iamcco/markdown-preview.nvim",
+	-- 	cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+	-- 	build = "cd app && yarn install",
+	-- 	init = function()
+	-- 		vim.g.mkdp_filetypes = { "markdown" }
+	-- 	end,
+	-- 	ft = { "markdown" },
+	-- 	config = conf.previm,
+	-- },
 	{
-		"iamcco/markdown-preview.nvim",
-		-- url = "https://github.com/iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		build = "cd app && yarn install",
-		init = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
+		"selimacerbas/markdown-preview.nvim",
+		dependencies = { "selimacerbas/live-server.nvim" },
 		ft = { "markdown" },
-		config = conf.previm,
+		cmd = {
+			"MarkdownPreview",
+			"MarkdownPreviewRefresh",
+			"MarkdownPreviewStop",
+		},
+		config = function()
+			require("markdown_preview").setup({
+				instance_mode = "takeover",
+				port = 0,
+				open_browser = true,
+				default_theme = "dark",
+				debounce_ms = 300,
+        browser = "wslview",
+			})
+		end,
 	},
 	-- {
 	-- 	"OXY2DEV/markview.nvim",
@@ -58,7 +78,7 @@ return {
 	-- {
 	-- 	"delphinus/md-render.nvim",
 	-- 	version = "*",
- --    ft = { "markdown", "Avante" },
+	--    ft = { "markdown", "Avante" },
 	-- 	dependencies = {
 	-- 		{ "nvim-tree/nvim-web-devicons", version = "*" }, -- optional: file type icons in code blocks
 	-- 		{ "delphinus/budoux.lua", version = "*" }, -- optional: CJK phrase-level line breaking
