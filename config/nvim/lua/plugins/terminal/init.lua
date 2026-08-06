@@ -8,7 +8,7 @@ return {
 		cmd = { "ToggleTerm", "ToggleTermToggleAll", "TermExec" },
 		opts = {
 			shade_terminals = false,
-			shading_factor = "1",
+			shading_factor = 1,
 			start_in_insert = false,
 			insert_mappings = true,
 			direction = "float",

@@ -1,4 +1,4 @@
-local keys = require("plugins.hover.keys")
+-- local keys = require("plugins.hover.keys")
 
 return {
 	-- {

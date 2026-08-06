@@ -14,7 +14,9 @@ return {
 		-- url = "https://github.com/tkmpypy/chowcho.nvim"
 		config = conf.chowcho,
 		cmd = { "Chowcho" },
-		keys = { "<C-w><C-w>", mode = "n" },
+		keys = {
+			{ "<C-w><C-w>", mode = "n" },
+		},
 	},
 	{
 		-- Navigate your code with search labels, enhanced character motions and Treesitter integration

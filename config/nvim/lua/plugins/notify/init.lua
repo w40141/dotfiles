@@ -11,12 +11,13 @@ return {
 	-- 		"rcarriga/nvim-notify",
 	-- 	},
 	-- },
-	{
-		"rcarriga/nvim-notify",
-		-- url = "https://github.com/rcarriga/nvim-notify",
-		event = "VeryLazy",
-		opts = opts.notify,
-	},
+  -- TODO: setting
+	-- {
+	-- 	"rcarriga/nvim-notify",
+	-- 	-- url = "https://github.com/rcarriga/nvim-notify",
+	-- 	event = "VeryLazy",
+	-- 	opts = opts.notify,
+	-- },
 	{
 		"j-hui/fidget.nvim",
 		-- url = "https://github.com/j-hui/fidget.nvim",

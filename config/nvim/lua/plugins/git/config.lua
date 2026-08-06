@@ -3,7 +3,6 @@ local M = {}
 local v = vim
 
 function M.gitsigns()
-	local diff = v.wo.diff
 	local cmd = v.cmd
 	local fn = v.fn
 
@@ -19,7 +18,7 @@ function M.gitsigns()
 
 			-- Navigation
 			map("n", "]c", function()
-				if diff then
+				if v.wo.diff then
 					cmd.normal({ "]c", bang = true })
 				else
 					gitsigns.nav_hunk("next")
@@ -27,7 +26,7 @@ function M.gitsigns()
 			end)
 
 			map("n", "[c", function()
-				if diff then
+				if v.wo.diff then
 					cmd.normal({ "[c", bang = true })
 				else
 					gitsigns.nav_hunk("prev")

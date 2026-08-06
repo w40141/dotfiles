@@ -43,8 +43,8 @@ return {
 	},
 	{
 		"hrsh7th/cmp-nvim-lsp",
-		event = "InsertEnter",
-		dependencies = { "hrsh7th/nvim-cmp" },
+		-- event = "InsertEnter",
+		-- dependencies = { "hrsh7th/nvim-cmp" },
 	},
 	-- Insert modeとコマンドラインの両方で使う
 	{

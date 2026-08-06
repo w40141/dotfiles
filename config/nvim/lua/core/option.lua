@@ -71,7 +71,7 @@ opt.winblend = 20
 opt.pumblend = 20
 
 -- ===== Spell =====
-opt.spell = false
+opt.spell = true
 opt.spelllang = { "en_us" }
 
 -- ===== Dictionary (guard) =====
@@ -84,6 +84,3 @@ end
 
 -- カーソルを行頭、行末で止まらないにする
 opt.whichwrap = "b,s,h,l,<,>,[,]"
---
-opt.spell = true
-opt.spelllang = { "en_us" }

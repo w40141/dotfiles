@@ -25,12 +25,21 @@ function M.telescope()
 		defaults = {
 			vimgrep_arguments = {
 				"rg",
+				"--color=never",
+				"--no-heading",
+				"--with-filename",
+				"--line-number",
+				"--column",
+				"--smart-case",
 				"--hidden",
 				"--glob",
 				"!**/.git/**",
-				"--column",
 			},
-			find_command = { "fd", "-t=f", "-a" },
+			pickers = {
+				find_files = {
+					find_command = { "fd", "-t=f", "-a" },
+				},
+			},
 			path_display = { shorten = { len = 5, exclude = { 5, -5 } } },
 			wrap_results = true,
 			dynamic_preview_title = true,

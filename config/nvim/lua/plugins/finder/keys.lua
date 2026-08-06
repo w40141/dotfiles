@@ -62,7 +62,7 @@ M.telescope = {
 		telescope("current_buffer_fuzzy_find"),
 		desc = "[telescope] 現在のバッファ内を検索",
 	},
-	{ "[FF]q", telescope("diagnostics"), { desc = "[telescope] 診断リストを表示" } },
+	{ "[FF]q", telescope("diagnostics"), desc = "[telescope] 診断リストを表示" },
 	{
 		"[FF]r",
 		telescope("lsp_references"),
@@ -88,7 +88,7 @@ M.telescope = {
 		telescope("git_status"),
 		desc = "[telescope] Gitの変更ファイルを一覧表示（差分プレビューあり）",
 	},
-	{ "[FF]Gc", telescope("git_commits"), { desc = "[telescope] Gitコミット履歴を一覧表示" } },
+	{ "[FF]Gc", telescope("git_commits"), desc = "[telescope] Gitコミット履歴を一覧表示" },
 	{
 		"[FF]GC",
 		telescope("git_bcommits"),

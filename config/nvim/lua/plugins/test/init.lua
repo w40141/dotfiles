@@ -1,5 +1,5 @@
-local conf = require("plugins.test.config")
-local setup = require("plugins.test.setup")
+-- local conf = require("plugins.test.config")
+-- local setup = require("plugins.test.setup")
 
 -- TODO: https://github.com/andythigpen/nvim-coverage
 -- TODO: https://github.com/nvim-neotest/neotest
