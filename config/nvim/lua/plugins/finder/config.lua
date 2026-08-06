@@ -14,7 +14,8 @@ function M.telescope()
 		local num_selections = #picker:get_multi_selection()
 		if num_selections >= 1 then
 			for _, entry in ipairs(picker:get_multi_selection()) do
-				cmd(string.format("%s %s", ":e!", entry.value))
+				local path = entry.path or entry.value
+				cmd.edit({ args = { path } })
 			end
 		else
 			actions.file_edit(prompt_bufnr)

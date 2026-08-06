@@ -19,6 +19,9 @@ return {
 		},
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
+			opts = {
+				enable_autocmd = false,
+			},
 		},
 		opts = function()
 			return {
@@ -33,8 +36,8 @@ return {
 		opts = {
 			ring = {
 				history_length = 100,
-				-- storage = "shada",
-				storage = "memory",
+				storage = "shada",
+				-- storage = "memory",
 				sync_with_numbered_registers = true,
 				cancel_event = "update",
 			},

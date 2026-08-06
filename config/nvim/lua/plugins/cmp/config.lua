@@ -36,10 +36,10 @@ function M.cmp()
 	end
 	cmp.setup({
 		preselect = cmp.PreselectMode.None,
-		performance = {
-			debounce = 0,
-			throttle = 0,
-		},
+		-- performance = {
+		-- 	debounce = 0,
+		-- 	throttle = 0,
+		-- },
 		formatting = {
 			format = require("lspkind").cmp_format({
 				maxwidth = 50,
@@ -94,7 +94,6 @@ function M.cmp()
 					snip.expand_or_jump()
 				elseif has_words_before() then
 					cmp.complete()
-					snip.jump(1)
 				else
 					fallback()
 				end

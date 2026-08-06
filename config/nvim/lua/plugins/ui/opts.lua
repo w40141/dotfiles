@@ -4,7 +4,7 @@ local v = vim
 local fn = vim.fn
 
 local function skk()
-	if (v.fn.mode() == "i") and v.fn["skkeleton#is_enabled"]() then
+	if (v.fn.mode() == "i") and v.fn[v.exists("skkeleton#is_enabled")]() then
 		return v.fn["skkeleton#mode"]()
 	else
 		return ""
@@ -104,8 +104,8 @@ M.lualine = {
 M.bufferline = {
 	options = {
 		numbers = "ordinal",
-		close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-		right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+		close_command = "bdelete %d", -- can be a string | function, see "Mouse actions"
+		right_mouse_command = "bdelete %d", -- can be a string | function, see "Mouse actions"
 		left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
 		middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
 		indicator = { icon = "▎", style = "icon" },

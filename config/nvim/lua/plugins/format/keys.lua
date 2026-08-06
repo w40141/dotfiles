@@ -4,7 +4,7 @@ M.conform = {
 	{
 		"[DEV]f",
 		function()
-			require("conform").format({ async = true, lsp_fallback = true })
+			require("conform").format({ async = true, lsp_format = "fallback" })
 		end,
 		desc = "[conform] フォーマット",
 	},

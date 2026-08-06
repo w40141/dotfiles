@@ -182,11 +182,7 @@ key("n", "gf", function()
 	local os_name = v.loop.os_uname().sysname
 	local cfile = fn.expand("<cfile>")
 	if cfile:match("^https?://") then
-		if os_name == "Darwin" then
-			v.ui.open(cfile)
-		else
-			fn.system({ "explorer.exe", cfile })
-		end
+		v.ui.open(cfile)
 	else
 		v.cmd("normal! gF")
 	end

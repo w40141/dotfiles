@@ -37,7 +37,7 @@ return {
 				open_browser = true,
 				default_theme = "dark",
 				debounce_ms = 300,
-        browser = "wslview",
+        -- browser = "wslview",
 			})
 		end,
 	},

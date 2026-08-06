@@ -60,7 +60,7 @@ function M.tree()
 		end
 
 		-- api.config.mappings.default_on_attach(bufnr)
-    api.map.on_attach.default(bufnr)
+		api.map.on_attach.default(bufnr)
 
 		key("n", "l", api.tree.change_root_to_node, opts("CD"))
 		key("n", "h", api.tree.change_root_to_parent, opts("Up"))
@@ -70,7 +70,9 @@ function M.tree()
 	end
 
 	require("nvim-tree").setup({
-		sort_by = "case_sensitive",
+		sort = {
+			sorter = "case_sensitive",
+		},
 		on_attach = on_attach,
 		view = {
 			adaptive_size = true,

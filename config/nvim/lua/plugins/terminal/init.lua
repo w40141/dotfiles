@@ -14,7 +14,7 @@ return {
 			direction = "float",
 			persist_size = false,
 			close_on_exit = true,
-			shell = "fish",
+			shell = vim.o.shell,
 			float_opts = {
 				border = "double",
 				width = 150,

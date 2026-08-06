@@ -4,7 +4,7 @@ return {
 	{
 		"zbirenbaum/copilot.lua",
 		-- url = "https://github.com/zbirenbaum/copilot.lua",
-		build = ":Copilot auth",
+		-- build = ":Copilot auth",
 		cmd = "Copilot",
 		event = { "InsertEnter" },
 		opts = opts.copilot,
