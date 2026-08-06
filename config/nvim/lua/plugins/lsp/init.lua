@@ -24,7 +24,6 @@ return {
 	{
 		"mason-org/mason.nvim",
 		-- url = "https://github.com/mason-org/mason.nvim"
-		-- cmd = { "Mason", "MasonUpdate", "MasonLog", "MasonInstall", "MasonUninstall", "MasonUninstallAll" },
 		lazy = false,
 		build = ":MasonUpdate",
 		opts = {
@@ -40,22 +39,9 @@ return {
 			},
 		},
 	},
-	-- {
-	-- 	"mason-org/mason-lspconfig.nvim",
-	-- 	-- url = "https://github.com/mason-org/mason-lspconfig.nvim"
-	-- 	opts = {
-	-- 		automatic_enable = true,
-	-- 	},
-	-- 	event = "VeryLazy",
-	-- 	dependencies = {
-	-- 		"mason-org/mason.nvim",
-	-- 		"neovim/nvim-lspconfig",
-	-- 	},
-	-- },
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
-		-- event = { "BufReadPre", "BufNewFile" },
 		event = "VeryLazy",
 		config = function()
 			conf.lspconfig()

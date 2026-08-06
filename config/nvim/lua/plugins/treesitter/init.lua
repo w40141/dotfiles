@@ -28,14 +28,6 @@ return {
 		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 	},
 	{
-		"JoosepAlviste/nvim-ts-context-commentstring",
-		-- url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
-		event = { "BufReadPost", "BufNewFile" },
-		opts = {
-			enable_autocmd = false,
-		},
-	},
-	{
 		"m-demare/hlargs.nvim",
 		-- url = "https://github.com/m-demare/hlargs.nvim",
 		event = { "BufNewFile", "BufRead" },

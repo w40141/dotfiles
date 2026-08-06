@@ -1,19 +1,5 @@
 local M = {}
 
-function M.mason()
-	require("mason").setup({
-		ui = {
-			icons = {
-				package_installed = "✓",
-				package_pending = "➜",
-				package_uninstalled = "✗",
-			},
-			width = 0.7,
-			height = 0.7,
-		},
-	})
-end
-
 function M.lspconfig()
 	local v = vim
 	local lsp = v.lsp
