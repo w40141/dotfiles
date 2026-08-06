@@ -5,9 +5,7 @@ M.toggleterm = {
 		"<leader>l",
 		"<cmd>ToggleTerm direction=float<cr>",
 		mode = { "n", "t" },
-		{
-			desc = "[toggleterm] ターミナルをトグル",
-		},
+		desc = "[toggleterm] ターミナルをトグル",
 	},
 }
 

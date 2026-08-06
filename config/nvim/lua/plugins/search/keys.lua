@@ -5,17 +5,13 @@ M.quickhl = {
 		",m",
 		"<plug>(quickhl-manual-this)",
 		mode = { "n", "x" },
-		{
-			desc = "[quickhl] 現在の単語をマークする",
-		},
+		desc = "[quickhl] 現在の単語をマークする",
 	},
 	{
 		",M",
 		"<plug>(quickhl-manual-reset)",
 		mode = { "n", "x" },
-		{
-			desc = "[quickhl] すべてのマークをリセットする",
-		},
+		desc = "[quickhl] すべてのマークをリセットする",
 	},
 }
 
@@ -23,12 +19,12 @@ M.hlslens = {
 	{
 		"n",
 		[[<cmd>execute('normal!'.v:count1.'n')<cr><cmd>lua require('hlslens').start()<cr>]],
-		{ desc = "[hlslens] 次の検索結果へ移動" },
+		desc = "[hlslens] 次の検索結果へ移動",
 	},
 	{
 		"N",
 		[[<cmd>execute('normal!'.v:count1.'N')<cr><cmd>lua require('hlslens').start()<cr>]],
-		{ desc = "[hlslens] 前の検索結果へ移動" },
+		desc = "[hlslens] 前の検索結果へ移動",
 	},
 	{
 		"*",
@@ -36,7 +32,7 @@ M.hlslens = {
 			require("hlslens").start()
 			require("lasterisk").search()
 		end,
-		{ desc = "[hlslens] 現在の単語を検索" },
+		desc = "[hlslens] 現在の単語を検索",
 	},
 	{
 		"g*",
@@ -44,12 +40,12 @@ M.hlslens = {
 			require("hlslens").start()
 			require("lasterisk").search({ is_whole = false })
 		end,
-		{ desc = "[hlslens] 現在の単語を部分一致で検索" },
+		desc = "[hlslens] 現在の単語を部分一致で検索",
 	},
 	{
 		"<C-c>",
 		"<cmd>nohlsearch<cr>",
-		{ desc = "[hlslens] 検索ハイライトをクリア" },
+		desc = "[hlslens] 検索ハイライトをクリア",
 	},
 }
 

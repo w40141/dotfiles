@@ -11,22 +11,18 @@ M.neogen = {
 		"<C-l>",
 		neogen("jump_next"),
 		mode = "i",
-		{
-			desc = "[Neogen] 次のコメントセクションへジャンプする",
-		},
+		desc = "[Neogen] 次のコメントセクションへジャンプする",
 	},
 	{
 		"<C-h>",
 		neogen("jump_prev"),
 		mode = "i",
-		{
-			desc = "[Neogen] 前のコメントセクションへジャンプする",
-		},
+		desc = "[Neogen] 前のコメントセクションへジャンプする",
 	},
 	{
 		"<leader>n",
 		neogen("generate"),
-		{ desc = "[Neogen] 関数のドキュメントコメントを生成する" },
+		desc = "[Neogen] 関数のドキュメントコメントを生成する",
 	},
 }
 
@@ -40,22 +36,22 @@ M.winresize = {
 	{
 		"<C-e>h",
 		winresize(0, 2, "left"),
-		{ desc = "[Winresize] 左にウィンドウをリサイズ" },
+		desc = "[Winresize] 左にウィンドウをリサイズ",
 	},
 	{
 		"<C-e>l",
 		winresize(0, 2, "right"),
-		{ desc = "[Winresize] 右にウィンドウをリサイズ" },
+		desc = "[Winresize] 右にウィンドウをリサイズ",
 	},
 	{
 		"<C-e>j",
 		winresize(0, 1, "down"),
-		{ desc = "[Winresize] 下にウィンドウをリサイズ" },
+		desc = "[Winresize] 下にウィンドウをリサイズ",
 	},
 	{
 		"<C-e>k",
 		winresize(0, 1, "up"),
-		{ desc = "[Winresize] 上にウィンドウをリサイズ" },
+		desc = "[Winresize] 上にウィンドウをリサイズ",
 	},
 }
 

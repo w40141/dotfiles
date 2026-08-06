@@ -99,28 +99,6 @@ function M.lspconfig()
 		capabilities = capabilities,
 		on_attach = on_attach,
 	})
-
-	require("mason-lspconfig").setup({
-		automatic_enable = true,
-		ensure_installed = {
-			"bashls",
-			"biome",
-			"docker_compose_language_service",
-			"docker_language_server",
-			"elixirls",
-			"elp",
-			"fish_lsp",
-			"gopls",
-			"html",
-			"lua_ls",
-			"marksman",
-			"sqls",
-			"taplo",
-			"terraformls",
-			"vtsls",
-			"yamlls",
-		},
-	})
 end
 
 return M
