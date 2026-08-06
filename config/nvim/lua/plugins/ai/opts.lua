@@ -46,7 +46,7 @@ M.copilot = {
 }
 
 M.avante = {
-  provider = "copilot",
+	provider = "copilot",
 	behaviour = {
 		auto_suggestions = false,
 		auto_set_highlight_group = true,

@@ -7,7 +7,7 @@ return {
 		"kylechui/nvim-surround",
 		-- url = "https://github.com/kylechui/nvim-surround",
 		opts = {},
-		event = { "FocusLost", "CursorHold" },
+		event = { "VeryLazy" },
 	},
 	{
 		-- Comment out
@@ -59,7 +59,7 @@ return {
 		"johmsalas/text-case.nvim",
 		-- url = "https://github.com/johmsalas/text-case.nvim"
 		opts = {
-			default_keymappings_enalbled = false,
+			default_keymappings_enabled = false,
 		},
 		keys = keys.textcase,
 		cmd = {

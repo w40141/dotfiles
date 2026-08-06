@@ -19,17 +19,36 @@ require("lazy").setup({
 	defaults = {
 		lazy = true,
 	},
+	-- performance = {
+	-- 	cache = {
+	-- 		enabled = true,
+	-- 		path = v.fn.stdpath("cache") .. "/lazy/cache",
+	-- 		disable_events = { "UIEnter", "BufReadPre" },
+	-- 	},
+	-- 	reset_packpath = true, -- reset the package path to improve startup time
+	-- 	rtp = {
+	-- 		reset = true, -- reset the runtime path to $VIMRUNTIME and the config directory
+	-- 		---@type string[]
+	-- 		paths = {}, -- add any custom paths here that you want to include in the rtp
+	-- 	},
+	-- },
 	performance = {
 		cache = {
 			enabled = true,
-			path = v.fn.stdpath("cache") .. "/lazy/cache",
-			disable_events = { "UIEnter", "BufReadPre" },
 		},
-		reset_packpath = true, -- reset the package path to improve startup time
+		reset_packpath = true,
 		rtp = {
-			reset = true, -- reset the runtime path to $VIMRUNTIME and the config directory
-			---@type string[]
-			paths = {}, -- add any custom paths here that you want to include in the rtp
+			reset = true,
+			paths = {},
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tutor",
+				"zipPlugin",
+			},
 		},
 	},
 })
