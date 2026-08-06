@@ -1,14 +1,14 @@
 local M = {}
 
 local v = vim
-local fn = vim.fn
+local fn = v.fn
 
 local function skk()
-	if (v.fn.mode() == "i") and v.fn[v.exists("skkeleton#is_enabled")]() then
-		return v.fn["skkeleton#mode"]()
-	else
-		return ""
+	if fn.exists("*skkeleton#is_enabled") == 1 and fn.mode() == "i" and fn["skkeleton#is_enabled"]() then
+		return fn["skkeleton#mode"]()
 	end
+
+	return ""
 end
 
 local function lsp_status()

@@ -15,13 +15,14 @@ function M.treesitter()
 	v.api.nvim_create_autocmd("FileType", {
 		group = v.api.nvim_create_augroup("vim-treesitter-start", {}),
 		callback = function()
-			-- folds, provided by Neovim
-			v.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
-			v.wo[0][0].foldmethod = "expr"
-			-- indentation, provided by nvim-treesitter
+			local ok = pcall(v.treesitter.start)
+			if not ok then
+				return
+			end
+
+			v.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+			v.wo.foldmethod = "expr"
 			v.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-			-- syntax highlighting, provided by Neovim
-			pcall(v.treesitter.start)
 		end,
 	})
 end

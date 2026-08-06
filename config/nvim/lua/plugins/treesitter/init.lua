@@ -6,33 +6,21 @@ return {
 		-- Treesitter configurations
 		"nvim-treesitter/nvim-treesitter",
 		-- url = "https://github.com/nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-		event = { "BufRead" },
-		config = conf.treesitter,
 		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
+		config = conf.treesitter,
 		-- opts = opts.treesitter,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		lazy = false,
 		branch = "main",
-		build = ":TSUpdate",
+		lazy = false,
 		init = function()
 			vim.g.no_plugin_maps = true
 		end,
 		config = conf.treesitter_textobjects,
 		keys = keys.treesitter_textobjects,
-		callback = function()
-			local ok = pcall(vim.treesitter.start)
-			if not ok then
-				return
-			end
-
-			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-			vim.wo.foldmethod = "expr"
-			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-		end,
-		-- put your config here
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-context",

@@ -65,6 +65,7 @@ opt.clipboard = "unnamedplus"
 -- ===== Backups / Undo =====
 opt.writebackup = false
 opt.swapfile = false
+opt.undofile = true
 
 -- ===== Blend =====
 opt.winblend = 20
