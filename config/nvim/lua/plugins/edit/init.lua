@@ -13,7 +13,10 @@ return {
 		-- Comment out
 		"numToStr/Comment.nvim",
 		-- url = "https://github.com/numToStr/Comment.nvim",
-		event = { "BufReadPost", "BufNewFile" },
+		keys = {
+			{ "gc", mode = { "n", "v" }, desc = "[Comment] コメントアウト" },
+			{ "gb", mode = { "n", "v" }, desc = "[Comment] ブロックコメントアウト" },
+		},
 		dependencies = {
 			"JoosepAlviste/nvim-ts-context-commentstring",
 		},

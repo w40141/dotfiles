@@ -23,8 +23,7 @@ return {
 		-- Highlight, list and search todo comments
 		"folke/todo-comments.nvim",
 		-- url = "https://github.com/folke/todo-comments.nvim",
-		-- event = "VeryLazy",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = "VeryLazy",
 		cmd = { "TodoQuickFix", "TodoLocList", "TodoTrouble", "TodoTelescope" },
 		opts = opts.todo,
 		keys = keys.todo,

@@ -37,6 +37,11 @@ return {
 			"sirasagi62/tinysegmenter.nvim",
 		},
 		-- event = "VeryLazy",
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		-- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		keys = {
+			{ "w", mode = { "n", "x" } },
+			{ "e", mode = { "n", "x" } },
+			{ "b", mode = { "n", "x" } },
+		},
 	},
 }

@@ -12,14 +12,17 @@ return {
 		"goolord/alpha-nvim",
 		-- url = "https://github.com/goolord/alpha-nvim",
 		event = "VimEnter",
+		cond = function()
+			return vim.fn.argc() == 0
+		end,
 		config = conf.alpha,
 	},
 	{
 		-- Status line
 		"nvim-lualine/lualine.nvim",
 		-- url = "https://github.com/nvim-lualine/lualine.nvim",
-		-- event = "VimEnter",
-		event = { "BufReadPre", "BufNewFile" },
+		-- event = { "BufReadPre", "BufNewFile" },
+    event = "VeryLazy",
 		init = setup.lualine,
 		opts = opts.lualine,
 	},
@@ -54,15 +57,16 @@ return {
 		-- Scrollbar
 		"petertriho/nvim-scrollbar",
 		-- url = "https://github.com/petertriho/nvim-scrollbar",
-		-- event = { "VeryLazy" },
-		event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+		event = { "VeryLazy" },
+		-- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
 		opts = {},
 	},
 	{
 		-- Buffer line
 		"akinsho/bufferline.nvim",
 		-- url = "https://github.com/akinsho/bufferline.nvim",
-		event = { "BufReadPost", "BufAdd", "BufNewFile" },
+		-- event = { "BufReadPost", "BufAdd", "BufNewFile" },
+    event = "VeryLazy",
 		opts = opts.bufferline,
 		keys = keys.bufferline,
 	},
