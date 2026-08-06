@@ -35,11 +35,6 @@ function M.telescope()
 				"--glob",
 				"!**/.git/**",
 			},
-			pickers = {
-				find_files = {
-					find_command = { "fd", "-t=f", "-a" },
-				},
-			},
 			path_display = { shorten = { len = 5, exclude = { 5, -5 } } },
 			wrap_results = true,
 			dynamic_preview_title = true,
@@ -84,6 +79,11 @@ function M.telescope()
 					["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 					["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
 				},
+			},
+		},
+		pickers = {
+			find_files = {
+				find_command = { "fd", "-t=f", "-a" },
 			},
 		},
 		extensions = {

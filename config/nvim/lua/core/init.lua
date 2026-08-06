@@ -30,40 +30,30 @@ g.loaded_perl_provider = 0
 g.loaded_python3_provider = 0
 g.loaded_ruby_provider = 0
 
-
 local function is_wsl()
 	local release = v.loop.os_uname().release:lower()
 	return release:find("microsoft") ~= nil or release:find("wsl") ~= nil
 end
 
+local win32yank = v.fs.joinpath(v.env.HOME, ".local", "bin", "win32yank.exe")
 
 -- curl -sLo/tmp/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
 -- unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
 -- chmod +x /tmp/win32yank.exe
 -- sudo mv /tmp/win32yank.exe /usr/local/bin/
-if is_wsl() then
-	-- local win32yank = v.fn.expand("~/.local/bin/win32yank.exe")
-
-
-  if v.fn.executable('win32yank.exe') == 1 then
-
-    v.g.clipboard = {
-			name = "win32yank-wsl",
-      copy = {
-				["+"] = { 'win32yank.exe', "-i", "--crlf" },
-				["*"] = { 'win32yank.exe', "-i", "--crlf" },
-			},
-      paste = {
-				["+"] = { 'win32yank.exe', "-o", "--lf" },
-				["*"] = { 'win32yank.exe', "-o", "--lf" },
-			},
-			cache_enabled = 0,
-		}
-
-		v.opt.clipboard = "unnamedplus"
-	else
-		v.notify("win32yank.exe not found: " .. 'win32yank.exe', v.log.levels.WARN)
-	end
+if is_wsl() and v.uv.fs_stat(win32yank) then
+	v.g.clipboard = {
+		name = "win32yank-wsl",
+		copy = {
+			["+"] = { win32yank, "-i", "--crlf" },
+			["*"] = { win32yank, "-i", "--crlf" },
+		},
+		paste = {
+			["+"] = { win32yank, "-o", "--lf" },
+			["*"] = { win32yank, "-o", "--lf" },
+		},
+		cache_enabled = 0,
+	}
 end
 
 require("core.filetype")
