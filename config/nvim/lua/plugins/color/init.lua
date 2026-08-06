@@ -1,10 +1,12 @@
-local conf = require("plugins.color.config")
-
 return {
 	{
 		"rebelot/kanagawa.nvim",
 		-- url = "https://github.com/rebelot/kanagawa.nvim",
-		config = conf.kanagawa,
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd("colorscheme kanagawa")
+		end,
 		opts = {
 			theme = "wave",
 			background = {
@@ -13,6 +15,6 @@ return {
 			},
 		},
 		-- lazy = false,
-		event = "VimEnter",
+		-- event = "VimEnter",
 	},
 }

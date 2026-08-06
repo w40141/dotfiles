@@ -27,7 +27,6 @@ function M.cmp()
 	local v = vim
 	local api = v.api
 	local cmp = require("cmp")
-	local snip = require("luasnip")
 	local has_words_before = function()
 		if api.nvim_get_option_value("buftype", {}) == "prompt" then
 			return false
@@ -63,7 +62,7 @@ function M.cmp()
 		},
 		snippet = {
 			expand = function(args)
-				snip.lsp_expand(args.body)
+				require("luasnip").lsp_expand(args.body)
 			end,
 		},
 		window = {
@@ -90,6 +89,7 @@ function M.cmp()
 			["<C-b>"] = cmp.mapping.scroll_docs(4),
 			["<C-e>"] = cmp.mapping.abort(),
 			["<C-j>"] = cmp.mapping(function(fallback)
+				local snip = require("luasnip")
 				if snip.expand_or_jumpable() then
 					snip.expand_or_jump()
 				elseif has_words_before() then
@@ -100,6 +100,7 @@ function M.cmp()
 				end
 			end, { "i", "s" }),
 			["<C-k>"] = cmp.mapping(function(fallback)
+				local snip = require("luasnip")
 				if snip.jumpable(-1) then
 					snip.jump(-1)
 				else
@@ -127,7 +128,6 @@ function M.cmp()
 		sources = cmp.config.sources({
 			{ name = "copilot" },
 			{ name = "nvim_lsp" },
-			{ name = "nvim_lsp_document_symbol" },
 			{ name = "buffer" },
 			{ name = "path" },
 			{ name = "luasnip" },
@@ -173,9 +173,6 @@ function M.cmp()
 			{ name = "cmdline" },
 		}, {}),
 	})
-
-	local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-	cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 end
 
 return M

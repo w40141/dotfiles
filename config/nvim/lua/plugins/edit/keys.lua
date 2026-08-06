@@ -14,8 +14,8 @@ M.ufo = {
 }
 
 M.yanky = {
-	{ "p", "<Plug>(YankyPutAfter)", { "n", "x" }, { desc = "[yanky] カーソルの後ろにペースト" } },
-	{ "P", "<Plug>(YankyPutBefore)", { "n", "x" }, { desc = "[yanky] カーソルの前にペースト" } },
+	{ "p", "<Plug>(YankyPutAfter)", mode = { "n", "x" }, { desc = "[yanky] カーソルの後ろにペースト" } },
+	{ "P", "<Plug>(YankyPutBefore)", mode = { "n", "x" }, { desc = "[yanky] カーソルの前にペースト" } },
 	{
 		"gp",
 		"<Plug>(YankyGPutAfter)",

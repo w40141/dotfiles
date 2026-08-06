@@ -24,8 +24,26 @@ return {
 		-- url = "https://github.com/mason-org/mason-lspconfig.nvim"
 		opts = {
 			automatic_enable = true,
+			ensure_installed = {
+				"bashls",
+				"biome",
+				"docker_compose_language_service",
+				"docker_language_server",
+				"elixirls",
+				"elp",
+				"fish_lsp",
+				"gopls",
+				"html",
+				"lua_ls",
+				"marksman",
+				"sqls",
+				"taplo",
+				"terraformls",
+				"vtsls",
+				"yamlls",
+			},
 		},
-		event = { "FocusLost", "CursorHold" },
+    event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"mason-org/mason.nvim",
 			"neovim/nvim-lspconfig",
@@ -34,7 +52,7 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		-- url = "https://github.com/neovim/nvim-lspconfig",
-		event = { "FocusLost", "CursorHold" },
+    event = { "BufReadPre", "BufNewFile" },
 		config = conf.lspconfig,
 		keys = keys.lspconfig,
 	},

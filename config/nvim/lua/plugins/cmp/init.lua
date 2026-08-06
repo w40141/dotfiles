@@ -1,74 +1,124 @@
 local conf = require("plugins.cmp.config")
 local setup = require("plugins.cmp.setup")
 
-local function i(s)
-	s.event = { "InsertEnter", "CmdlineEnter" }
-	return s
-end
-
 return {
 	{
 		"vim-skk/skkeleton",
-		-- url = "https://github.com/vim-skk/skkeleton",
 		dependencies = {
 			"vim-denops/denops.vim",
 		},
 		init = setup.skkeleton,
 		config = conf.skkeleton,
-		event = { "VeryLazy" },
+		event = "VeryLazy",
 	},
+	-- 補完エンジン本体
 	{
 		"hrsh7th/nvim-cmp",
-		-- url = "https://github.com/hrsh7th/nvim-cmp",
+		event = { "InsertEnter", "CmdlineEnter" },
 		config = conf.cmp,
+		dependencies = {
+			"onsails/lspkind.nvim",
+		},
 	},
-	-- url = "https://github.com/chrisgrieser/cmp_yanky",
-	i({ "chrisgrieser/cmp_yanky" }),
-	-- url = "https://github.com/f3fora/cmp-spell",
-	i({ "f3fora/cmp-spell" }),
-	-- url = "https://github.com/hrsh7th/cmp-buffer",
-	i({ "hrsh7th/cmp-buffer" }),
-	-- url = "https://github.com/hrsh7th/cmp-cmdline",
-	i({ "hrsh7th/cmp-cmdline" }),
-	-- url = "https://github.com/hrsh7th/cmp-nvim-lsp",
-	i({ "hrsh7th/cmp-nvim-lsp" }),
-	-- url = "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol",
-	i({ "hrsh7th/cmp-nvim-lsp-document-symbol" }),
-	-- url = "https://github.com/hrsh7th/cmp-path",
-	i({ "hrsh7th/cmp-path" }),
-	-- url = "https://github.com/onsails/lspkind.nvim",
-	i({ "onsails/lspkind.nvim" }),
-	-- url = "https://github.com/ray-x/cmp-treesitter",
-	i({ "ray-x/cmp-treesitter" }),
-	-- url = "https://github.com/rinx/cmp-skkeleton",
-	i({ "rinx/cmp-skkeleton" }),
-	-- url = "https://github.com/saadparwaiz1/cmp_luasnip",
-	i({ "saadparwaiz1/cmp_luasnip" }),
-	-- url = "https://github.com/rafamadriz/friendly-snippets",
-	i({ "rafamadriz/friendly-snippets" }),
-	i({
-		"ray-x/lsp_signature.nvim",
-		-- url = "https://github.com/ray-x/lsp_signature.nvim",
-		opts = { hint_prefix = "󰛨 " },
-	}),
-	i({
+	-- Insert mode専用
+	{
+		"chrisgrieser/cmp_yanky",
+		event = "InsertEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"f3fora/cmp-spell",
+		event = "InsertEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"ray-x/cmp-treesitter",
+		event = "InsertEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"rinx/cmp-skkeleton",
+		event = "InsertEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"hrsh7th/cmp-nvim-lsp",
+		event = "InsertEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	-- Insert modeとコマンドラインの両方で使う
+	{
+		"hrsh7th/cmp-buffer",
+		event = { "InsertEnter", "CmdlineEnter" },
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"hrsh7th/cmp-path",
+		event = { "InsertEnter", "CmdlineEnter" },
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+
+	-- コマンドライン専用
+	{
+		"hrsh7th/cmp-cmdline",
+		event = "CmdlineEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	{
+		"hrsh7th/cmp-nvim-lsp-document-symbol",
+		event = "CmdlineEnter",
+		dependencies = { "hrsh7th/nvim-cmp" },
+	},
+	-- Snippet
+	{
 		"L3MON4D3/LuaSnip",
-		-- url = "https://github.com/L3MON4D3/LuaSnip",
+		event = "InsertEnter",
 		build = "make install_jsregexp",
 		config = conf.luasnip,
-		dependencies = { "rafamadriz/friendly-snippets" },
-	}),
-	i({
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
+	},
+	{
+		"saadparwaiz1/cmp_luasnip",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+			"L3MON4D3/LuaSnip",
+		},
+	},
+	-- Copilot補完
+	{
 		"zbirenbaum/copilot-cmp",
-		-- url = "https://github.com/zbirenbaum/copilot-cmp",
+		event = "InsertEnter",
 		opts = {},
 		dependencies = {
+			"hrsh7th/nvim-cmp",
 			"zbirenbaum/copilot.lua",
 		},
-	}),
-	i({
+	},
+	-- シグネチャ
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			hint_prefix = "󰛨 ",
+		},
+	},
+	-- Autopairs
+	{
 		"windwp/nvim-autopairs",
-		-- url = "https://github.com/windwp/nvim-autopairs",
-		opts = {},
-	}),
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/nvim-cmp",
+		},
+		config = function(_, opts)
+			require("nvim-autopairs").setup(opts)
+
+			local cmp = require("cmp")
+			local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
+			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+		end,
+	},
 }

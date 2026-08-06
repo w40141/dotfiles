@@ -4,7 +4,7 @@ return {
 	{
 		"mfussenegger/nvim-lint",
 		-- url = "https://github.com/mfussenegger/nvim-lint",
-		event = { "FocusLost", "CursorHold" },
+    event = { "BufWritePost", "InsertLeave" },
 		config = conf.lint,
 	},
 	{

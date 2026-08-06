@@ -6,7 +6,7 @@ return {
 	{
 		"stevearc/conform.nvim",
 		-- url = "https://github.com/stevearc/conform.nvim",
-		event = { "FocusLost", "CursorHold" },
+		event = { "BufReadPre", "BufNewFile" },
 		cmd = { "ConformInfo" },
 		init = setup.conform,
 		keys = keys.conform,
