@@ -1,12 +1,11 @@
 filters:
 rules:
-  preset-smarthr: true
   # preset-bengo4: true
-  # preset-ja-technical-writing: true
-  # preset-japanese: true
-  # preset-ja-technical-writing: true
-  # preset-ja-spacing: true
+  preset-ja-spacing: true
+  preset-ja-technical-writing: true
+  preset-japanese: true
   # preset-jtf-style: true
+  # preset-smarthr: true
   # terminology:
   #   defaultTerms: true
   prh:
