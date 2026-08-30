@@ -4,7 +4,7 @@ tap "brona/iproute2mac", trusted: true
 tap "buo/cask-upgrade", trusted: true
 tap "delphinus/sfmono-square", trusted: true
 tap "hashicorp/tap", trusted: true
-tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
+tap "k1low/tap", trusted: true
 tap "neovim/neovim", trusted: true
 tap "reviewdog/tap", trusted: true
 tap "sonatype-nexus-community/nancy-tap", trusted: true
@@ -36,8 +36,6 @@ brew "icu4c@78"
 brew "libffi"
 # Multi-platform support library with a focus on asynchronous I/O
 brew "libuv"
-# Extraction utility for .zip compressed archives
-brew "unzip"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # All in one CLI for all AsyncAPI tools
@@ -82,6 +80,8 @@ brew "freetype"
 brew "fontconfig"
 # Low-level library for pixel manipulation
 brew "pixman"
+# Extraction utility for .zip compressed archives
+brew "unzip"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # GNU multiple precision arithmetic library
@@ -100,10 +100,12 @@ brew "nettle"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Asynchronous event library
-brew "libevent"
+# Incremental parsing library
+brew "tree-sitter"
 # GNU Emacs text editor
 brew "emacs"
+# Asynchronous event library
+brew "libevent"
 # Emacs dependency management
 brew "cask"
 # Next-gen compiler infrastructure
@@ -116,7 +118,7 @@ brew "pycparser"
 brew "cffi"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
-# Enables you to reproduce the CircleCI environment locally
+# Official command-line tool for CircleCI
 brew "circleci"
 # Cross-platform make
 brew "cmake"
@@ -130,10 +132,10 @@ brew "cmigemo"
 brew "curl"
 # Library and utilities for processing GIFs
 brew "giflib"
-# Color management engine supporting ICC profiles
-brew "little-cms2"
 # Image format providing lossless and lossy compression for web images
 brew "webp"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
 # Graphics library to dynamically manipulate images
 brew "gd"
 # Common error values for all GnuPG components
@@ -274,8 +276,6 @@ brew "grype"
 brew "gsettings-desktop-schemas"
 # Fallback theme for FreeDesktop.org icon themes
 brew "hicolor-icon-theme"
-# GUI toolkit
-brew "gtk+"
 # Library for handling OpenGL function pointer management
 brew "libepoxy"
 # Keyboard configuration database for the X Window System
@@ -352,8 +352,6 @@ brew "msgpack"
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
-# Incremental parsing library
-brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -505,13 +503,11 @@ vscode "ics.japanese-proofreading"
 vscode "meezilla.json"
 vscode "mhutchie.git-graph"
 vscode "mosapride.zenkaku"
-vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-ceintl.vscode-language-pack-ja"
 vscode "ms-python.debugpy"
 vscode "ms-python.python"
 vscode "ms-python.vscode-pylance"
-vscode "ms-python.vscode-python-envs"
 vscode "ms-toolsai.jupyter"
 vscode "ms-toolsai.jupyter-keymap"
 vscode "ms-toolsai.jupyter-renderers"
@@ -548,7 +544,6 @@ go "golang.org/x/vuln/cmd/govulncheck"
 go "golang.org/x/tools/cmd/guru"
 go "github.com/gohugoio/hugo"
 go "github.com/josharian/impl"
-go "github.com/lestrrat-go/jwx/v2/cmd/jwx"
 go "github.com/w40141/memo"
 go "github.com/golang-migrate/migrate/v4/cmd/migrate"
 go "github.com/golang/mock/mockgen"
@@ -558,25 +553,37 @@ go "github.com/stateful/runme"
 go "github.com/k1LoW/runn/cmd/runn"
 go "github.com/zoncoen/scenarigo/cmd/scenarigo"
 go "golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow"
-go "github.com/volatiletech/sqlboiler/v4"
-go "github.com/volatiletech/sqlboiler/v4/drivers/sqlboiler-mysql"
 go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/rhysd/vim-startuptime"
+winget "ALCPU.CoreTemp"
+winget "Amazon.Kindle"
+winget "Apple.Bonjour"
+winget "Audacity.Audacity"
 winget "Audient.EVO"
 winget "Canonical.Ubuntu"
+winget "CPUID.CPU-Z"
+winget "DeepCool.DeepCool"
+winget "DevToys-app.DevToys"
+winget "Docker.DockerDesktop"
+winget "EpicGames.EpicGamesLauncher"
+winget "EpicGames.EpicOnlineServices"
 winget "equalsraf.win32yank"
-winget "Google.Chrome.EXE"
-winget "Google.CloudSDK"
+winget "Eugeny.Tabby"
+winget "GOG.Galaxy"
 winget "Google.GoogleDrive"
-winget "Microsoft.Office"
+winget "Logitech.OptionsPlus"
+winget "Microsoft.Outlook"
 winget "Microsoft.PowerShell"
-winget "Microsoft.Teams"
 winget "Microsoft.Teams.Classic"
 winget "Microsoft.VisualStudioCode"
 winget "Microsoft.WindowsTerminal"
 winget "Obsidian.Obsidian"
-winget "SlackTechnologies.Slack"
-winget "WiresharkFoundation.Wireshark"
+winget "sunfish-shogi.shogihome"
+winget "Valve.Steam"
 winget "Zoom.Zoom.EXE"
+winget "XP8BT8DW290MPQ", source: "msstore"
+winget "XP8K0J757HHRDW", source: "msstore"
+winget "XP9KHM4BK9FZ7Q", source: "msstore"
 npm "corepack"
 npm "neovim"
+npm "textlint"
