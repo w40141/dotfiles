@@ -13,6 +13,17 @@ function M.cmp()
 	local v = vim
 	local api = v.api
 	local cmp = require("cmp")
+
+	local skk_source = require("plugins.cmp.skk")
+
+	cmp.register_source(
+		"skk",
+		skk_source.new({
+			max_readings = 20,
+			max_items = 50,
+		})
+	)
+
 	local has_words_before = function()
 		if api.nvim_get_option_value("buftype", {}) == "prompt" then
 			return false
@@ -20,6 +31,53 @@ function M.cmp()
 		local line, col = unpack(api.nvim_win_get_cursor(0))
 		return col ~= 0 and api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 	end
+
+	local skk_group = api.nvim_create_augroup("CmpSkk", { clear = true })
+	local skk_passthrough_guard_set = false
+
+	api.nvim_create_autocmd("User", {
+		group = skk_group,
+		pattern = "SkkHenkanChanged",
+		callback = function()
+			if not skk_passthrough_guard_set then
+				local ok_capture, capture = pcall(require, "skk.capture")
+				if ok_capture then
+					capture.set_passthrough_guard(function()
+						return cmp.visible()
+					end)
+					skk_passthrough_guard_set = true
+				end
+			end
+
+			vim.schedule(function()
+				local ok, state = pcall(require, "skk.henkan.state")
+				if not ok then
+					return
+				end
+
+				local phase = state.get_phase()
+				local reading = state.current_reading()
+
+				if (phase == "midashi" or phase == "abbrev") and reading and reading ~= "" then
+					cmp.complete({
+						config = {
+							sources = {
+								{
+									name = "skk",
+									priority = 2000,
+									keyword_length = 0,
+									keyword_pattern = [[\%x00]],
+								},
+							},
+						},
+					})
+				elseif cmp.visible() then
+					cmp.abort()
+				end
+			end)
+		end,
+	})
+
 	cmp.setup({
 		preselect = cmp.PreselectMode.None,
 		formatting = {
@@ -31,9 +89,9 @@ function M.cmp()
 					luasnip = "[SNP]",
 					path = "[PTH]",
 					spell = "[SPL]",
-					treesitter = "[TST]",
 					copilot = "[COP]",
 					cmp_yanky = "[YNK]",
+					skk = "[SKK]",
 				},
 				symbol_map = {
 					Copilot = "",
@@ -58,7 +116,18 @@ function M.cmp()
 						select = false,
 					})
 				elseif cmp.visible() then
-					cmp.abort()
+					local ok, state = pcall(require, "skk.henkan.state")
+
+					if ok and state.is_active() then
+						cmp.abort()
+
+						local ok_skk, skk = pcall(require, "skk")
+						if ok_skk then
+							skk.confirm_henkan()
+						end
+					else
+						cmp.abort()
+					end
 				else
 					fallback()
 				end
@@ -88,8 +157,10 @@ function M.cmp()
 				end
 			end, { "i", "s" }),
 			["<Tab>"] = cmp.mapping(function(fallback)
-				if cmp.visible() and has_words_before() then
-					cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+				if cmp.visible() then
+					cmp.select_next_item({
+						behavior = cmp.SelectBehavior.Select,
+					})
 				else
 					fallback()
 				end
@@ -120,25 +191,51 @@ function M.cmp()
 			ghost_text = true,
 		},
 		sources = cmp.config.sources({
-			{ name = "nvim_lsp", priority = 1000 },
-			{ name = "copilot", priority = 900 },
-			{ name = "luasnip", priority = 800 },
-			{ name = "path", priority = 700 },
-			{ name = "buffer", priority = 500, keyword_length = 3 },
-			{ name = "treesitter", priority = 400, trigger_characters = { "." } },
-			{ name = "cmp_yanky", priority = 300, keyword_length = 3 },
+			{ name = "lazydev", priority = 100, group_index = 0 },
+
+			{
+				name = "nvim_lsp",
+				priority = 1000,
+			},
+			{
+				name = "copilot",
+				priority = 900,
+				max_item_count = 3,
+			},
+			{
+				name = "luasnip",
+				priority = 800,
+				max_item_count = 5,
+			},
+			{
+				name = "path",
+				priority = 700,
+				max_item_count = 10,
+			},
+			{
+				name = "buffer",
+				priority = 500,
+				keyword_length = 3,
+				max_item_count = 5,
+			},
+			{
+				name = "cmp_yanky",
+				priority = 300,
+				keyword_length = 3,
+				max_item_count = 3,
+			},
 			{
 				name = "spell",
 				priority = 200,
 				keyword_length = 4,
+				max_item_count = 5,
 				option = {
 					keep_all_entries = false,
-					-- enable_in_context = function()
-					-- 	return true
-					-- end,
+					enable_in_context = function()
+						return require("cmp.config.context").in_treesitter_capture("spell")
+					end,
 				},
 			},
-			{ name = "lazydev", priority = 100, group_index = 0 },
 		}),
 	})
 
