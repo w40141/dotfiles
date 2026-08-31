@@ -169,8 +169,8 @@ if command -v ghq >/dev/null; then
 fi
 
 abbr -f -S bci='brew install --cask' >/dev/null 2>&1
-abbr -f -S bbc='brew bundle --global --force cleanup' >/dev/null 2>&1
-abbr -f -S bbd='brew bundle dump --global --force' >/dev/null 2>&1
+abbr -f -S bbc='brew bundle cleanup --global --force --no-winget' >/dev/null 2>&1
+abbr -f -S bbd='brew bundle dump --global --force --no-winget' >/dev/null 2>&1
 abbr -f -S bbi='brew bundle --global --force' >/dev/null 2>&1
 abbr -f -S ghci='stack ghci' >/dev/null 2>&1
 abbr -f -S ghc='stack ghc --' >/dev/null 2>&1

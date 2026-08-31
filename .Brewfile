@@ -4,7 +4,7 @@ tap "brona/iproute2mac", trusted: true
 tap "buo/cask-upgrade", trusted: true
 tap "delphinus/sfmono-square", trusted: true
 tap "hashicorp/tap", trusted: true
-tap "k1low/tap", trusted: true
+tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
 tap "neovim/neovim", trusted: true
 tap "reviewdog/tap", trusted: true
 tap "sonatype-nexus-community/nancy-tap", trusted: true
@@ -38,14 +38,10 @@ brew "libffi"
 brew "libuv"
 # General-purpose data compression with high compression ratio
 brew "xz"
+# Extraction utility for .zip compressed archives
+brew "unzip"
 # All in one CLI for all AsyncAPI tools
 brew "asyncapi"
-# Perl compatible regular expressions library with a new API
-brew "pcre2"
-# Core application library for C
-brew "glib"
-# Protocol definitions and daemon for D-Bus at-spi
-brew "at-spi2-core"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
 # Highly capable, feature-rich programming language
@@ -60,6 +56,8 @@ brew "awscli"
 brew "bandwhich"
 # C library implementing the SSH2 protocol
 brew "libssh2"
+# Perl compatible regular expressions library with a new API
+brew "pcre2"
 # Regular expressions library
 brew "oniguruma"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -78,10 +76,10 @@ brew "libpng"
 brew "freetype"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
+# Core application library for C
+brew "glib"
 # Low-level library for pixel manipulation
 brew "pixman"
-# Extraction utility for .zip compressed archives
-brew "unzip"
 # Vector graphics library with cross-device output support
 brew "cairo"
 # GNU multiple precision arithmetic library
@@ -112,10 +110,6 @@ brew "cask"
 brew "llvm"
 # C/C++/ObjC language server
 brew "ccls"
-# C parser in Python
-brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
 # Create and view interactive cheat sheets for *nix commands
 brew "cheat"
 # Official command-line tool for CircleCI
@@ -154,14 +148,14 @@ brew "php"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
-# CLI tool for Amazon ECS and AWS Fargate
-brew "copilot"
 # High performance csv viewer for cli
 brew "csview"
 # Portable devkit for CI/CD pipelines
 brew "dagger"
 # POSIX-compliant descendant of NetBSD's ash (the Almquist SHell)
 brew "dash-shell"
+# Debugger for the Go programming language
+brew "delve"
 # Command-line DNS Client for Humans
 brew "doggo"
 # Disk Usage/Free Utility - a better 'df' alternative
@@ -170,8 +164,6 @@ brew "duf"
 brew "dust"
 # General purpose Language Server
 brew "efm-langserver"
-# C++ template library for linear algebra
-brew "eigen"
 # Simple command-line tool for creating clusters on Amazon EKS
 brew "eksctl"
 # Official Go implementation of the Ethereum protocol
@@ -180,20 +172,12 @@ brew "ethereum"
 brew "evans"
 # Modern, maintained replacement for ls
 brew "eza"
-# ISO AAC audio encoder
-brew "faac"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Standalone library of the Fraunhofer FDK AAC code from Android
-brew "fdk-aac"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
 # Ogg Bitstream Library
 brew "libogg"
-# Graphics Library
-brew "mesa"
-# Library to extract data from Excel .xls files
-brew "freexl"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
 # Command-line fuzzy finder written in Go
@@ -212,8 +196,6 @@ brew "gcc"
 brew "shared-mime-info"
 # Toolkit for image loading and pixel buffer manipulation
 brew "gdk-pixbuf"
-# Geometry Engine
-brew "geos"
 # GitHub command-line tool
 brew "gh"
 # Smart font renderer for non-Roman scripts
@@ -252,14 +234,28 @@ brew "pinentry"
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Live reload for Go apps
+brew "go-air"
 # Task is a task runner/build tool that aims to be simpler and easier to use
 brew "go-task"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
-# Generate introspection data for GObject libraries
-brew "gobject-introspection"
+# Stricter gofmt
+brew "gofumpt"
+# Go formatter that additionally inserts import statements
+brew "goimports"
+# Database migrations CLI tool
+brew "golang-migrate"
 # Fast linters runner for Go
 brew "golangci-lint"
+# Golang formatter that fixes long lines
+brew "golines"
+# Go tool to modify struct field tags
+brew "gomodifytags"
+# Language server for the Go language
+brew "gopls"
+# Automatically generate Go test boilerplate from your source code
+brew "gotests"
+# Database client and tools for the Go vulnerability database
+brew "govulncheck"
 # Library access to GnuPG
 brew "gpgme"
 # Ping, but with a graph
@@ -272,16 +268,8 @@ brew "graphviz"
 brew "grex"
 # Vulnerability scanner for container images and filesystems
 brew "grype"
-# GSettings schemas for desktop components
-brew "gsettings-desktop-schemas"
-# Fallback theme for FreeDesktop.org icon themes
-brew "hicolor-icon-theme"
-# Library for handling OpenGL function pointer management
-brew "libepoxy"
-# Keyboard configuration database for the X Window System
-brew "xkeyboard-config"
-# Toolkit for creating graphical user interfaces
-brew "gtk+3"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
 # Smarter Dockerfile linter to validate best practices
@@ -304,34 +292,20 @@ brew "libheif"
 brew "imagemagick"
 # Tool to measure maximum TCP and UDP bandwidth
 brew "iperf"
-# Implementation of malloc emphasizing fragmentation avoidance
-brew "jemalloc"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# JSON parser for C
-brew "json-c"
 # Run local Kubernetes cluster in Docker
 brew "kind"
 # Kubernetes command-line interface
 brew "kubernetes-cli"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
-# Blu-Ray disc playback library for media players like VLC
-brew "libbluray"
 # Convert pixel information into colored ASCII art
 brew "libcaca"
-# Portable low-level networking library
-brew "libdnet"
 # Vorbis general audio compression codec
 brew "libvorbis"
 # Audio codec
 brew "opus"
-# Very basic terminfo library
-brew "unibilium"
-# Library for processing keyboard entry from the terminal
-brew "libtermkey"
-# VP8/VP9 video codec
-brew "libvpx"
 # LLVM Project Linker
 brew "lld"
 # Powerful, lightweight programming language
@@ -346,12 +320,12 @@ brew "minikube"
 brew "mise"
 # Message broker implementing the MQTT protocol
 brew "mosquitto"
-# Library for a binary-based efficient data interchange format
-brew "msgpack"
 # Open source relational database management system
 brew "mysql-client"
 # Interactive cheatsheet tool for the command-line
 brew "navi"
+# Very basic terminfo library
+brew "unibilium"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Network Kanji code conversion Filter (NKF)
@@ -382,8 +356,6 @@ brew "peco"
 brew "poppler"
 # Modern replacement for ps written in Rust
 brew "procs"
-# Cartographic Projections Library
-brew "proj"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Persistent key-value database, with built-in net interface
@@ -394,18 +366,16 @@ brew "rig"
 brew "ripgrep"
 # Tool for downloading RTMP streaming media
 brew "rtmpdump"
+# Execute commands inside your runbooks, docs, and READMEs
+brew "runme"
 # Rust toolchain installer
 brew "rustup"
 # Intuitive find & replace CLI
 brew "sd"
-# SDL2 compatibility layer that uses SDL3 behind the scenes
-brew "sdl2-compat"
 # Blazing-fast modern Lua linter
 brew "selene"
 # Fast, configurable, shell plugin manager
 brew "sheldon"
-# Compression/decompression library aiming for high speed
-brew "snappy"
 # Contract-oriented programming language
 brew "solidity"
 # Launcher to analyze a project with SonarQube
@@ -416,6 +386,8 @@ brew "sox"
 brew "sqlite-utils"
 # Cross-shell prompt for astronauts
 brew "starship"
+# State of the art linter for the Go programming language
+brew "staticcheck"
 # Tail multiple Kubernetes pods & their containers
 brew "stern"
 # Version control system designed to be a better CVS
@@ -424,16 +396,12 @@ brew "subversion"
 brew "swftools"
 # CLI for generating a Software Bill of Materials from container images
 brew "syft"
-# Rich and complete approach to parallelism in C++
-brew "tbb"
 # CI-Friendly tool to document a database
 brew "tbls"
 # Tool Command Language
 brew "tcl-tk"
 # Very fast implementation of tldr in Rust
 brew "tealdeer"
-# Open video compression format
-brew "theora"
 # Terminal multiplexer
 brew "tmux"
 # Minimal, todo.txt-focused editor
@@ -466,14 +434,10 @@ brew "w3m"
 brew "watchexec"
 # Internet file retriever
 brew "wget"
-# High-performance, high-quality MPEG-4 video library
-brew "xvid"
 # Process YAML, JSON, XML, CSV and properties documents from the CLI
 brew "yq"
 # Pluggable terminal workspace, with terminal multiplexer as the base feature
 brew "zellij"
-# High-performance, asynchronous messaging library
-brew "zeromq"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # UNIX shell (command interpreter)
@@ -484,6 +448,8 @@ brew "ariga/tap/atlas", trusted: true
 brew "hashicorp/tap/terraform", trusted: true
 # mo is a Markdown viewer that opens .md files in a browser.
 brew "k1low/tap/mo", trusted: true
+# runn is a tool for running operations following a scenario.
+brew "k1low/tap/runn", trusted: true
 # Automated code review tool integrated with any code analysis tools regardless of programming language.
 brew "reviewdog/tap/reviewdog", trusted: true
 # A tool to check for vulnerabilities in your Golang dependencies, powered by Sonatype Guide
@@ -503,6 +469,7 @@ vscode "ics.japanese-proofreading"
 vscode "meezilla.json"
 vscode "mhutchie.git-graph"
 vscode "mosapride.zenkaku"
+vscode "ms-azuretools.vscode-containers"
 vscode "ms-azuretools.vscode-docker"
 vscode "ms-ceintl.vscode-language-pack-ja"
 vscode "ms-python.debugpy"
@@ -522,68 +489,11 @@ vscode "rust-lang.rust-analyzer"
 vscode "shd101wyy.markdown-preview-enhanced"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "yzhang.markdown-all-in-one"
-go "github.com/w40141/UsdmApi"
-go "github.com/air-verse/air"
-go "golang.org/x/tools/go/analysis/passes/defers/cmd/defers"
-go "github.com/go-delve/delve/cmd/dlv"
-go "golang.org/x/tools/go/analysis/passes/fieldalignment/cmd/fieldalignment"
-go "golang.org/x/tools/go/analysis/passes/findcall/cmd/findcall"
-go "github.com/ramya-rao-a/go-outline"
-go "golang.org/x/tools/cmd/godoc"
-go "mvdan.cc/gofumpt"
-go "golang.org/x/tools/cmd/goimports"
-go "github.com/golangci/golangci-lint/cmd/golangci-lint"
-go "github.com/segmentio/golines"
 go "github.com/sanposhiho/gomockhandler"
-go "github.com/fatih/gomodifytags"
-go "github.com/uudashr/gopkgs/v2/cmd/gopkgs"
-go "github.com/haya14busa/goplay/cmd/goplay"
-go "golang.org/x/tools/gopls"
-go "github.com/cweill/gotests/gotests"
-go "golang.org/x/vuln/cmd/govulncheck"
-go "golang.org/x/tools/cmd/guru"
-go "github.com/gohugoio/hugo"
 go "github.com/josharian/impl"
-go "github.com/w40141/memo"
-go "github.com/golang-migrate/migrate/v4/cmd/migrate"
-go "github.com/golang/mock/mockgen"
-go "golang.org/x/tools/go/analysis/passes/nilness/cmd/nilness"
 go "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
-go "github.com/stateful/runme"
-go "github.com/k1LoW/runn/cmd/runn"
 go "github.com/zoncoen/scenarigo/cmd/scenarigo"
-go "golang.org/x/tools/go/analysis/passes/shadow/cmd/shadow"
-go "honnef.co/go/tools/cmd/staticcheck"
 go "github.com/rhysd/vim-startuptime"
-winget "ALCPU.CoreTemp"
-winget "Amazon.Kindle"
-winget "Apple.Bonjour"
-winget "Audacity.Audacity"
-winget "Audient.EVO"
-winget "Canonical.Ubuntu"
-winget "CPUID.CPU-Z"
-winget "DeepCool.DeepCool"
-winget "DevToys-app.DevToys"
-winget "Docker.DockerDesktop"
-winget "EpicGames.EpicGamesLauncher"
-winget "EpicGames.EpicOnlineServices"
-winget "equalsraf.win32yank"
-winget "Eugeny.Tabby"
-winget "GOG.Galaxy"
-winget "Google.GoogleDrive"
-winget "Logitech.OptionsPlus"
-winget "Microsoft.Outlook"
-winget "Microsoft.PowerShell"
-winget "Microsoft.Teams.Classic"
-winget "Microsoft.VisualStudioCode"
-winget "Microsoft.WindowsTerminal"
-winget "Obsidian.Obsidian"
-winget "sunfish-shogi.shogihome"
-winget "Valve.Steam"
-winget "Zoom.Zoom.EXE"
-winget "XP8BT8DW290MPQ", source: "msstore"
-winget "XP8K0J757HHRDW", source: "msstore"
-winget "XP9KHM4BK9FZ7Q", source: "msstore"
 npm "corepack"
 npm "neovim"
 npm "textlint"
