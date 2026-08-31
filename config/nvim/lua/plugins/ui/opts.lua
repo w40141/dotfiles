@@ -4,11 +4,19 @@ local v = vim
 local fn = v.fn
 
 local function skk()
-	if fn.exists("*skkeleton#is_enabled") == 1 and fn.mode() == "i" and fn["skkeleton#is_enabled"]() then
-		return fn["skkeleton#mode"]()
+	local capture = package.loaded["skk.capture"]
+	if not capture then
+		return ""
 	end
 
-	return ""
+	local labels = {
+		ascii = "A",
+		hira = "あ",
+		kata = "ア",
+		zenei = "Ａ",
+	}
+
+	return labels[capture.get_mode()] or ""
 end
 
 local function lsp_status()

@@ -1,16 +1,6 @@
 local conf = require("plugins.cmp.config")
-local setup = require("plugins.cmp.setup")
 
 return {
-	{
-		"vim-skk/skkeleton",
-		dependencies = {
-			"vim-denops/denops.vim",
-		},
-		init = setup.skkeleton,
-		config = conf.skkeleton,
-		event = "VeryLazy",
-	},
 	-- 補完エンジン本体
 	{
 		"hrsh7th/nvim-cmp",
@@ -33,11 +23,6 @@ return {
 	},
 	{
 		"ray-x/cmp-treesitter",
-		event = "InsertEnter",
-		dependencies = { "hrsh7th/nvim-cmp" },
-	},
-	{
-		"rinx/cmp-skkeleton",
 		event = "InsertEnter",
 		dependencies = { "hrsh7th/nvim-cmp" },
 	},

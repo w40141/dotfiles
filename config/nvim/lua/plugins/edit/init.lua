@@ -3,6 +3,23 @@ local keys = require("plugins.edit.keys")
 
 return {
 	{
+		"nabehan/skk.nvim",
+		event = { "InsertEnter", "CmdlineEnter" },
+		config = function()
+			require("skk").setup({
+				buffer_enter_key = "jk",
+				cmdline_enter_key = "jk",
+				egg_like_newline = true,
+				dictionaries = {
+					{
+						path = vim.fn.expand("~/.config/skk/SKK-JISYO.L"),
+						encoding = "utf-8",
+					},
+				},
+			})
+		end,
+	},
+	{
 		-- Add/change/delete surrounding delimiter pairs with ease.
 		"kylechui/nvim-surround",
 		-- url = "https://github.com/kylechui/nvim-surround",

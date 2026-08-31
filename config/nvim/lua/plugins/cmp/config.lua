@@ -9,20 +9,6 @@ function M.luasnip()
 	require("luasnip.loaders.from_vscode").lazy_load()
 end
 
-function M.skkeleton()
-	local fn = vim.fn
-	fn["skkeleton#config"]({
-		globalDictionaries = {
-			{
-				"~/.config/skk/SKK-JISYO.L",
-				"utf-8",
-			},
-		},
-		eggLikeNewline = true,
-		registerConvertResult = true,
-	})
-end
-
 function M.cmp()
 	local v = vim
 	local api = v.api
@@ -36,10 +22,6 @@ function M.cmp()
 	end
 	cmp.setup({
 		preselect = cmp.PreselectMode.None,
-		-- performance = {
-		-- 	debounce = 0,
-		-- 	throttle = 0,
-		-- },
 		formatting = {
 			format = require("lspkind").cmp_format({
 				maxwidth = 50,
@@ -52,7 +34,6 @@ function M.cmp()
 					treesitter = "[TST]",
 					copilot = "[COP]",
 					cmp_yanky = "[YNK]",
-					skkeleton = "[SKK]",
 				},
 				symbol_map = {
 					Copilot = "",
@@ -121,40 +102,44 @@ function M.cmp()
 				end
 			end, { "i", "s" }),
 		},
+		sorting = {
+			priority_weight = 2,
+			comparators = {
+				cmp.config.compare.offset,
+				cmp.config.compare.exact,
+				cmp.config.compare.score,
+				cmp.config.compare.recently_used,
+				cmp.config.compare.locality,
+				cmp.config.compare.kind,
+				cmp.config.compare.sort_text,
+				cmp.config.compare.length,
+				cmp.config.compare.order,
+			},
+		},
 		experimental = {
 			ghost_text = true,
 		},
 		sources = cmp.config.sources({
-			{ name = "copilot" },
-			{ name = "nvim_lsp" },
-			{ name = "buffer" },
-			{ name = "path" },
-			{ name = "luasnip" },
-			{
-				name = "treesitter",
-				trigger_characters = { "." },
-				option = {},
-			},
+			{ name = "nvim_lsp", priority = 1000 },
+			{ name = "copilot", priority = 900 },
+			{ name = "luasnip", priority = 800 },
+			{ name = "path", priority = 700 },
+			{ name = "buffer", priority = 500, keyword_length = 3 },
+			{ name = "treesitter", priority = 400, trigger_characters = { "." } },
+			{ name = "cmp_yanky", priority = 300, keyword_length = 3 },
 			{
 				name = "spell",
+				priority = 200,
+				keyword_length = 4,
 				option = {
 					keep_all_entries = false,
-					enable_in_context = function()
-						return true
-					end,
+					-- enable_in_context = function()
+					-- 	return true
+					-- end,
 				},
 			},
-			{ name = "cmp_yanky" },
-			-- { name = "orgmode" },
-			{ name = "skkeleton" },
-			{
-				name = "lazydev",
-				group_index = 0, -- set group index to 0 to skip loading LuaLS completions
-			},
+			{ name = "lazydev", priority = 100, group_index = 0 },
 		}),
-		-- view = {
-		-- 	entries = "native",
-		-- },
 	})
 
 	cmp.setup.cmdline({ "/", "?" }, {
