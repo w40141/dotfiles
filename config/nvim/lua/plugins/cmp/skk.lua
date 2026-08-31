@@ -49,7 +49,7 @@ function Source:complete(params, callback)
 	end
 
 	-- まずはローカル辞書だけを対象にする。
-	-- 第5引数 true = skkserv を使わない。
+	-- 第4引数 true = skkserv を使わない。
 	local ok, readings = pcall(dict.lookup_prefix, reading, false, self.max_readings, true)
 
 	if not ok or not readings then

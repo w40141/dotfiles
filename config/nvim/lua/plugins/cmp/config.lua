@@ -43,13 +43,17 @@ function M.cmp()
 				local ok_capture, capture = pcall(require, "skk.capture")
 				if ok_capture then
 					capture.set_passthrough_guard(function()
-						return cmp.visible()
+						return api.nvim_get_mode().mode:sub(1, 1) == "i" and cmp.visible()
 					end)
 					skk_passthrough_guard_set = true
 				end
 			end
 
 			vim.schedule(function()
+				if api.nvim_get_mode().mode:sub(1, 1) ~= "i" then
+					return
+				end
+
 				local ok, state = pcall(require, "skk.henkan.state")
 				if not ok then
 					return
