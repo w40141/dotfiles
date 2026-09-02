@@ -1,7 +1,6 @@
 tap "ariga/tap", trusted: true
 tap "beeftornado/rmtree", trusted: true
 tap "brona/iproute2mac", trusted: true
-tap "buo/cask-upgrade", trusted: true
 tap "delphinus/sfmono-square", trusted: true
 tap "hashicorp/tap", trusted: true
 tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
@@ -104,8 +103,6 @@ brew "tree-sitter"
 brew "emacs"
 # Asynchronous event library
 brew "libevent"
-# Emacs dependency management
-brew "cask"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
