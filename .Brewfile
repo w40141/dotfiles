@@ -81,28 +81,6 @@ brew "glib"
 brew "pixman"
 # Vector graphics library with cross-device output support
 brew "cairo"
-# GNU multiple precision arithmetic library
-brew "gmp"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# C string library for manipulating Unicode strings
-brew "libunistring"
-# International domain name library (IDNA2008, Punycode and TR46)
-brew "libidn2"
-# ASN.1 structure parser library
-brew "libtasn1"
-# Low-level cryptographic library
-brew "nettle"
-# Library to load and enumerate PKCS#11 modules
-brew "p11-kit"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
-# Incremental parsing library
-brew "tree-sitter"
-# GNU Emacs text editor
-brew "emacs"
-# Asynchronous event library
-brew "libevent"
 # Next-gen compiler infrastructure
 brew "llvm"
 # C/C++/ObjC language server
@@ -119,6 +97,10 @@ brew "cmake-docs"
 brew "cmatrix"
 # Migemo is a tool that supports Japanese incremental search with Romaji
 brew "cmigemo"
+# C string library for manipulating Unicode strings
+brew "libunistring"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Library and utilities for processing GIFs
@@ -129,6 +111,8 @@ brew "webp"
 brew "little-cms2"
 # Graphics library to dynamically manipulate images
 brew "gd"
+# GNU multiple precision arithmetic library
+brew "gmp"
 # Common error values for all GnuPG components
 brew "libgpg-error"
 # Cryptographic library based on the code from GnuPG
@@ -145,6 +129,8 @@ brew "php"
 brew "composer"
 # Filename encoding conversion tool
 brew "convmv"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
 # High performance csv viewer for cli
 brew "csview"
 # Portable devkit for CI/CD pipelines
@@ -163,6 +149,18 @@ brew "dust"
 brew "efm-langserver"
 # Simple command-line tool for creating clusters on Amazon EKS
 brew "eksctl"
+# ASN.1 structure parser library
+brew "libtasn1"
+# Low-level cryptographic library
+brew "nettle"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Incremental parsing library
+brew "tree-sitter"
+# GNU Emacs text editor
+brew "emacs"
 # Official Go implementation of the Ethereum protocol
 brew "ethereum"
 # More expressive universal gRPC client
@@ -229,6 +227,8 @@ brew "npth"
 brew "pinentry"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Asynchronous event library
+brew "libevent"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Live reload for Go apps
@@ -452,7 +452,7 @@ brew "reviewdog/tap/reviewdog", trusted: true
 # A tool to check for vulnerabilities in your Golang dependencies, powered by Sonatype Guide
 brew "sonatype-nexus-community/nancy-tap/nancy", trusted: true
 # Ookla Speedtest
-brew "teamookla/speedtest/speedtest", trusted: true
+brew "teamookla/speedtest/speedtest"
 vscode "arjun.swagger-viewer"
 vscode "bierner.markdown-mermaid"
 vscode "davidanson.vscode-markdownlint"
