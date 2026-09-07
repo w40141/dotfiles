@@ -7,7 +7,6 @@ tap "k1low/tap", "https://github.com/k1LoW/homebrew-tap", trusted: true
 tap "neovim/neovim", trusted: true
 tap "reviewdog/tap", trusted: true
 tap "sonatype-nexus-community/nancy-tap", trusted: true
-tap "teamookla/speedtest", trusted: true
 tap "terraform-linters/tap", trusted: true
 # Run your GitHub Actions locally
 brew "act"
@@ -451,8 +450,6 @@ brew "k1low/tap/runn", trusted: true
 brew "reviewdog/tap/reviewdog", trusted: true
 # A tool to check for vulnerabilities in your Golang dependencies, powered by Sonatype Guide
 brew "sonatype-nexus-community/nancy-tap/nancy", trusted: true
-# Ookla Speedtest
-brew "teamookla/speedtest/speedtest"
 vscode "arjun.swagger-viewer"
 vscode "bierner.markdown-mermaid"
 vscode "davidanson.vscode-markdownlint"
