@@ -102,7 +102,7 @@ brew bundle --global
 
 fishを設定する。
 
-1. fishのパスの確認する（`brew bundle --global` でインストール済なはず）
+1. fishのパスの確認する（`brew bundle --global`でインストール済なはず）
 
     ```sh
     which fish
@@ -123,7 +123,7 @@ fishを設定する。
     chsh -s /usr/local/bin/fish
     ```
 
-1. [fisher](https://github.com/jorgebucaran/fisher) をインストールする
+1. [fisher](https://github.com/jorgebucaran/fisher)をインストールする
 
     ```sh
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -252,7 +252,7 @@ fishを設定する。
 1. [eskk の辞書ファイル](http://openlab.jp/skk/wiki/wiki.cgi?page=SKK%BC%AD%BD%F1)をダウンロードする。
     1. SKK-JISYO.SとSKK-JISYO.Lをダウンロードする
     1. SKK-JISYO.Sをmy-jisyoにリネームする
-    1. 上記2ファイルを `~/.config/eskk` のディレクトリへ移動する
+    1. 上記2ファイルを`~/.config/eskk`のディレクトリへ移動する
 
         ```sh
         mv my-jisyo SKK-JISYO.L ~/.config/eskk
@@ -281,7 +281,7 @@ yarn global add \
 
 ### Texの文字の設定
 
-1. <https://texwiki.texjp.org/?TeX%20Live%2FMac> ここに従い、 設定する。
+1. <https://texwiki.texjp.org/?TeX%20Live%2FMac>ここに従い、 設定する。
 
 ### Macのクリーンインストール方法
 
