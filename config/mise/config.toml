@@ -15,4 +15,7 @@ lua = "5.1.5"
 dotnet = "8.0.402"
 python = "3.12.2"
 pnpm = "latest"
+
+[settings.node]
+npm_shim = false
 # kotlin = "latest"
